@@ -1,0 +1,101 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:29:51 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL logrotate
++ pkgs=logrotate
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs logrotate --node 1 --tempfile ''
+Fri May 26 00:29:58 2023 - INFO  - pkgs:(logrotate) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:29:58 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:29:59 2023 - INFO  - Start testing...
++ test -f /etc/logrotate.d/logrotate_test3
++ cat
++ echo test
++ logrotate --force /etc/logrotate.d/logrotate_test3
++ CHECK_RESULT 0 0 0 'logrotate --force failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='logrotate --force failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f /var/log/logrotate_test3.log.1.gz
++ CHECK_RESULT 0 0 0 'file no exit'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='file no exit'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:30:00 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:30:00 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.   '
++ message='start environment cleanup.   '
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.   '
+Fri May 26 00:30:01 2023 - INFO  - start environment cleanup.   
++ rm -rf /etc/logrotate.d/logrotate_test3
++ rm -rf /var/log/logrotate_test3
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri May 26 00:30:01 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finsh environment cleanup! '
++ message='Finsh environment cleanup! '
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finsh environment cleanup! '
+Fri May 26 00:30:02 2023 - INFO  - Finsh environment cleanup! 

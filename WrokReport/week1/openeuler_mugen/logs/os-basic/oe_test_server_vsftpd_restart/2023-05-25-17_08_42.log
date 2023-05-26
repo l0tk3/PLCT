@@ -1,0 +1,3122 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 17:08:44 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'net-tools vsftpd'
++ pkgs='net-tools vsftpd'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'net-tools vsftpd' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpizeun5qo
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpizeun5qo
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 17:09:12 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 17:09:13 2023 - INFO  - Start to run test.
+++ seq 1 50
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:13 CST; 210ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4388/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:14 CST; 112ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:17 CST; 205ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4408/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:18 CST; 109ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ grep dead
++ systemctl status vsftpd
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:21 CST; 197ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4426/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:22 CST; 109ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:25 CST; 195ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4445/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:26 CST; 104ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:29 CST; 203ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4464/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:30 CST; 109ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:33 CST; 189ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4484/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:34 CST; 112ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:37 CST; 206ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4502/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:38 CST; 109ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:41 CST; 202ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4521/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:42 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:45 CST; 196ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4541/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:46 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:49 CST; 182ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4559/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:50 CST; 107ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:53 CST; 193ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4577/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:54 CST; 110ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:57 CST; 204ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4595/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:09:58 CST; 111ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:01 CST; 196ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4613/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:02 CST; 112ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:05 CST; 193ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4631/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:06 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:09 CST; 198ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4649/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:09 CST; 234ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:13 CST; 197ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4667/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:14 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:17 CST; 195ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4685/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:18 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:21 CST; 196ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4704/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:22 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:25 CST; 203ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4722/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:26 CST; 114ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:29 CST; 203ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4740/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:30 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:33 CST; 197ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4758/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:33 CST; 107ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:37 CST; 192ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4776/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:37 CST; 110ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:41 CST; 182ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4794/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:41 CST; 104ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:45 CST; 185ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4812/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:45 CST; 88ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:48 CST; 206ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4830/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:49 CST; 100ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:52 CST; 186ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4848/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:53 CST; 94ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:56 CST; 190ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4866/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:10:57 CST; 103ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:00 CST; 202ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4884/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:01 CST; 110ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:04 CST; 186ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4902/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:05 CST; 109ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:08 CST; 192ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4921/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:08 CST; 103ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:12 CST; 183ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4940/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:12 CST; 99ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:16 CST; 205ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4958/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:16 CST; 111ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:19 CST; 198ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4976/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:20 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:23 CST; 191ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      4994/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:24 CST; 104ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:27 CST; 196ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5012/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:28 CST; 102ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:31 CST; 211ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5039/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:32 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ grep dead
++ systemctl status vsftpd
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:35 CST; 193ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5079/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:36 CST; 100ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:39 CST; 190ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5098/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:40 CST; 108ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:43 CST; 193ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5117/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:44 CST; 109ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:47 CST; 185ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5141/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:48 CST; 106ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:51 CST; 192ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5159/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:52 CST; 106ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:55 CST; 183ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5177/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:55 CST; 103ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:59 CST; 185ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5195/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:11:59 CST; 105ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:03 CST; 190ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5213/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:03 CST; 106ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:07 CST; 188ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5231/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:07 CST; 103ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:10 CST; 196ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5249/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:11 CST; 104ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:14 CST; 189ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5267/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:15 CST; 101ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:18 CST; 193ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5285/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:19 CST; 101ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:22 CST; 183ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5303/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:22 CST; 100ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ for i in $(seq 1 50)
++ systemctl start vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:26 CST; 245ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netstat -tulnp
++ grep 21
+tcp6       0      0 :::21                   :::*                    LISTEN      5321/vsftpd         
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart vsftpd
++ systemctl status vsftpd
++ grep running
+     Active: active (running) since Thu 2023-05-25 17:12:27 CST; 102ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop vsftpd
++ systemctl status vsftpd
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 17:12:30 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 17:12:31 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 17:12:31 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpizeun5qo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpizeun5qo
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 17:12:43 2023 - INFO  - End to restore the test environment.

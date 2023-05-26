@@ -1,0 +1,102 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 22:34:38 2023 - INFO  - Start to run test.
++ service auditd restart
+oe_test_audit_track_designated_access.sh: line 25: service: command not found
++ auditctl -D
+oe_test_audit_track_designated_access.sh: line 26: auditctl: command not found
++ CHECK_RESULT 127 0 0 'delete failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='delete failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'delete failed'
++ LOG_ERROR 'delete failed'
++ message='delete failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'delete failed'
+Thu May 25 22:34:39 2023 - ERROR - delete failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_track_designated_access.sh line 27'
++ message='oe_test_audit_track_designated_access.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_track_designated_access.sh line 27'
+Thu May 25 22:34:39 2023 - ERROR - oe_test_audit_track_designated_access.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
+++ autrace /usr/bin/ls
+++ grep ausearch
+oe_test_audit_track_designated_access.sh: line 28: autrace: command not found
+++ awk -F \' '{print $2}'
++ record=
++ CHECK_RESULT 0 0 0 'grep failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aureport --summary -i
+oe_test_audit_track_designated_access.sh: line 30: aureport: command not found
++ CHECK_RESULT 127 0 0 'aureport failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='aureport failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'aureport failed'
++ LOG_ERROR 'aureport failed'
++ message='aureport failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'aureport failed'
+Thu May 25 22:34:40 2023 - ERROR - aureport failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_track_designated_access.sh line 31'
++ message='oe_test_audit_track_designated_access.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_track_designated_access.sh line 31'
+Thu May 25 22:34:40 2023 - ERROR - oe_test_audit_track_designated_access.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 22:34:41 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:34:41 2023 - ERROR - failed to execute the case.
++ exit 2
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_audit_track_designated_access.sh post_test'
++ message='oe_test_audit_track_designated_access.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_audit_track_designated_access.sh post_test'
+Thu May 25 22:34:42 2023 - INFO  - oe_test_audit_track_designated_access.sh post_test

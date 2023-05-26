@@ -1,0 +1,373 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu May 25 01:19:25 2023 - INFO  - Start environment preparation.
++ ls test
+ls: cannot access 'test': No such file or directory
++ (( i=1 ))
++ (( i<=100 ))
++ echo 1
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 2
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 3
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 4
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 5
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 6
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 7
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 8
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 9
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 10
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 11
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 12
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 13
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 14
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 15
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 16
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 17
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 18
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 19
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 20
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 21
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 22
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 23
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 24
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 25
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 26
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 27
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 28
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 29
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 30
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 31
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 32
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 33
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 34
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 35
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 36
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 37
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 38
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 39
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 40
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 41
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 42
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 43
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 44
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 45
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 46
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 47
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 48
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 49
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 50
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 51
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 52
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 53
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 54
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 55
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 56
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 57
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 58
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 59
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 60
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 61
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 62
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 63
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 64
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 65
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 66
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 67
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 68
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 69
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 70
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 71
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 72
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 73
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 74
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 75
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 76
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 77
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 78
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 79
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 80
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 81
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 82
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 83
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 84
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 85
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 86
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 87
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 88
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 89
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 90
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 91
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 92
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 93
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 94
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 95
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 96
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 97
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 98
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 99
++ (( i+=1 ))
++ (( i<=100 ))
++ echo 100
++ (( i+=1 ))
++ (( i<=100 ))
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 01:19:25 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 01:19:26 2023 - INFO  - Start to run test.
++ split -10 test
+++ ls -l
+++ grep -c -E 'xa[a-z]'
++ count=10
++ '[' 10 -eq 10 ']'
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 01:19:27 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 01:19:27 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 01:19:28 2023 - INFO  - Start to restore the test environment.
++ rm -rf test xaa xab xac xad xae xaf xag xah xai xaj
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 01:19:28 2023 - INFO  - End to restore the test environment.

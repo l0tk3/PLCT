@@ -1,0 +1,15 @@
+× atuned.service
+     Loaded: not-found (Reason: Unit atuned.service not found.)
+     Active: failed (Result: exit-code) since Thu 2023-05-25 22:52:22 CST; 42s ago
+   Main PID: 3809 (code=exited, status=2)
+
+May 25 22:52:22 openeuler-riscv64 atuned[3809]: os/signal.signal_recv()
+May 25 22:52:22 openeuler-riscv64 atuned[3809]:         /usr/lib/golang/src/runtime/sigqueue.go:152 +0x34 fp=0xc0001ac7c0 sp=0xc0001ac7a8 pc=0xaaaaaabbec9a4c
+May 25 22:52:22 openeuler-riscv64 atuned[3809]: os/signal.loop()
+May 25 22:52:22 openeuler-riscv64 atuned[3809]:         /usr/lib/golang/src/os/signal/signal_unix.go:23 +0x20 fp=0xc0001ac7d8 sp=0xc0001ac7c0 pc=0xaaaaaabc36a030
+May 25 22:52:22 openeuler-riscv64 atuned[3809]: runtime.goexit()
+May 25 22:52:22 openeuler-riscv64 atuned[3809]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc0001ac7d8 sp=0xc0001ac7d8 pc=0xaaaaaabbecc46c
+May 25 22:52:22 openeuler-riscv64 atuned[3809]: created by os/signal.Notify.func1.1
+May 25 22:52:22 openeuler-riscv64 atuned[3809]:         /usr/lib/golang/src/os/signal/signal.go:151 +0x2c
+May 25 22:52:22 openeuler-riscv64 systemd[1]: atuned.service: Failed with result 'exit-code'.
+May 25 22:52:22 openeuler-riscv64 systemd[1]: Failed to start A-Tune Daemon.

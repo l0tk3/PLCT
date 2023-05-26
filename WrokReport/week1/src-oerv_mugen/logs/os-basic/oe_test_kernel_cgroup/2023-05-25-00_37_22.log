@@ -1,0 +1,101 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to pre test.'
++ message='Start to pre test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to pre test.'
+Thu May 25 00:37:24 2023 - INFO  - Start to pre test.
++ echo '#!/bin/bash
+while true
+do
+    sleep 1
+done'
++ sh testcgroup.sh
+++ pgrep -f 'sh testcgroup.sh'
++ pid=29591
++ mkdir /sys/fs/cgroup/memory/example
++ LOG_INFO 'Start to pre test.'
++ message='Start to pre test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to pre test.'
+Thu May 25 00:37:25 2023 - INFO  - Start to pre test.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu May 25 00:37:25 2023 - INFO  - Start executing testcase.
++ echo 1000000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo 29591
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ps -o cgroup 29591
++ grep devices
++ grep pids
+7:devices:/system.slice/sshd.service,5:pids:/system.slice/sshd.service,2:memory:/example,1:name=systemd:/system.slice/sshd.service
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of testcase execution.'
++ message='End of testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of testcase execution.'
+Thu May 25 00:37:26 2023 - INFO  - End of testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 00:37:27 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 00:37:27 2023 - INFO  - start environment cleanup.
++ kill -9 29591
++ rm -rf testcgroup.sh
+oe_test_kernel_cgroup.sh: line 45: 29591 Killed                  sh testcgroup.sh
++ LOG_INFO 'Finish environment cleanup.'
++ message='Finish environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup.'
+Thu May 25 00:37:28 2023 - INFO  - Finish environment cleanup.

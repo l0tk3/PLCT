@@ -1,0 +1,2319 @@
+May 25 17:39:33 openeuler-riscv64 [RPM][14310]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:33 openeuler-riscv64 [RPM][14310]: Transaction ID 646f2cb5 finished: 0
+May 25 17:39:35 openeuler-riscv64 systemctl[14358]: [systemctl start mariadb.service] called by PID 14287 (bash -x oe_test_server_mariadb_dumpMulDB.sh)
+May 25 17:39:35 openeuler-riscv64 systemd[1]: Starting MariaDB 10.5.15 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 13613.
+May 25 17:39:36 openeuler-riscv64 mariadb-prepare-db-dir[14382]: Initializing MariaDB database
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: Two all-privilege accounts were created.
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: One is root@localhost, it has no password, but you need to
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: be system 'root' user to connect. Use, for example, sudo mysql
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: The second is mysql@localhost, it has no password either, but
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: you need to be the system 'mysql' user to connect.
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: After connecting you can set the password, if you would need to be
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: able to connect as any of these users with a password and without sudo
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: See the MariaDB Knowledgebase at https://mariadb.com/kb
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: Please report any problems at https://mariadb.org/jira
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: The latest information about MariaDB is available at https://mariadb.org/.
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: Consider joining MariaDB's strong and vibrant community:
+May 25 17:39:41 openeuler-riscv64 mariadb-prepare-db-dir[14420]: https://mariadb.org/get-involved/
+May 25 17:39:41 openeuler-riscv64 mariadbd[14468]: 2023-05-25 17:39:41 0 [Note] /usr/libexec/mariadbd (mysqld 10.5.16-MariaDB) starting as process 14468 ...
+May 25 17:39:42 openeuler-riscv64 systemd[1]: Started MariaDB 10.5.15 database server.
+░░ Subject: A start job for unit mariadb.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished successfully.
+░░ 
+░░ The job identifier is 13613.
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: Transaction ID 646f2ce9 started
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:53 openeuler-riscv64 [RPM][14543]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:54 openeuler-riscv64 systemctl[14548]: [/usr/bin/systemctl --no-reload --now disable mariadb.service] called by PID 14547 (/bin/sh /var/tmp/rpm-tmp.V75HjB 0)
+May 25 17:39:54 openeuler-riscv64 systemd[1]: Stopping MariaDB 10.5.15 database server...
+░░ Subject: A stop job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 13676.
+May 25 17:39:54 openeuler-riscv64 systemd[1]: mariadb.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has successfully entered the 'dead' state.
+May 25 17:39:54 openeuler-riscv64 systemd[1]: Stopped MariaDB 10.5.15 database server.
+░░ Subject: A stop job for unit mariadb.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has finished.
+░░ 
+░░ The job identifier is 13676 and the job result is done.
+May 25 17:39:55 openeuler-riscv64 systemctl[14555]: [/usr/bin/systemctl daemon-reload] called by PID 14553 (/bin/sh /var/tmp/rpm-tmp.PTyFWs 0)
+May 25 17:39:55 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:39:57 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:39:58 openeuler-riscv64 [RPM][14543]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:39:59 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r1020c9f7eaf346de83f6c4039c22965c.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r1020c9f7eaf346de83f6c4039c22965c.service has finished successfully.
+░░ 
+░░ The job identifier is 13677.
+May 25 17:39:59 openeuler-riscv64 [RPM][14543]: Transaction ID 646f2ce9 finished: 0
+May 25 17:39:59 openeuler-riscv64 systemctl[14571]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:39:59 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 13740.
+May 25 17:40:00 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:40:00 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 13740.
+May 25 17:40:00 openeuler-riscv64 systemd[1]: run-r1020c9f7eaf346de83f6c4039c22965c.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r1020c9f7eaf346de83f6c4039c22965c.service has successfully entered the 'dead' state.
+May 25 17:40:03 openeuler-riscv64 sudo[14240]: pam_unix(sudo:session): session closed for user root
+May 25 17:40:03 openeuler-riscv64 sudo[14595]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f os-basic -r oe_test_server_mariadb_dump -x
+May 25 17:40:03 openeuler-riscv64 sudo[14595]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 17:40:37 openeuler-riscv64 [RPM][14665]: Transaction ID 646f2d13 started
+May 25 17:40:37 openeuler-riscv64 [RPM][14665]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:40:38 openeuler-riscv64 [RPM][14665]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:40:38 openeuler-riscv64 [RPM][14665]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:40:38 openeuler-riscv64 [RPM][14665]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:40:38 openeuler-riscv64 [RPM][14665]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:40:39 openeuler-riscv64 [RPM][14665]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:40:39 openeuler-riscv64 [RPM][14665]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:40:39 openeuler-riscv64 [RPM][14665]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:40:40 openeuler-riscv64 [RPM][14665]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:40:44 openeuler-riscv64 [RPM][14665]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:40:48 openeuler-riscv64 [RPM][14665]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:40:48 openeuler-riscv64 [RPM][14665]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:40:49 openeuler-riscv64 [RPM][14665]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:40:49 openeuler-riscv64 useradd[14673]: failed adding user 'mysql', exit code: 9
+May 25 17:41:01 openeuler-riscv64 systemctl[14675]: [/usr/bin/systemctl --no-reload preset mariadb.service] called by PID 14674 (/bin/sh /var/tmp/rpm-tmp.F4TR5v 1)
+May 25 17:41:01 openeuler-riscv64 [RPM][14665]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:02 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r49258dea4fde4c279eb56321123d8105.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r49258dea4fde4c279eb56321123d8105.service has finished successfully.
+░░ 
+░░ The job identifier is 13743.
+May 25 17:41:02 openeuler-riscv64 systemctl[14680]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:41:02 openeuler-riscv64 systemctl[14682]: [/usr/bin/systemctl daemon-reload] called by PID 14681 (/bin/sh /var/tmp/rpm-tmp.opoK79 0)
+May 25 17:41:02 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 13806.
+May 25 17:41:03 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:41:05 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:41:06 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:41:06 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 13806.
+May 25 17:41:06 openeuler-riscv64 systemd[1]: run-r49258dea4fde4c279eb56321123d8105.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r49258dea4fde4c279eb56321123d8105.service has successfully entered the 'dead' state.
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:06 openeuler-riscv64 [RPM][14665]: Transaction ID 646f2d13 finished: 0
+May 25 17:41:08 openeuler-riscv64 systemctl[14712]: [systemctl start mariadb.service] called by PID 14642 (bash -x oe_test_server_mariadb_dump.sh)
+May 25 17:41:08 openeuler-riscv64 systemd[1]: Starting MariaDB 10.5.15 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 13809.
+May 25 17:41:10 openeuler-riscv64 mariadb-prepare-db-dir[14736]: Initializing MariaDB database
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: Two all-privilege accounts were created.
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: One is root@localhost, it has no password, but you need to
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: be system 'root' user to connect. Use, for example, sudo mysql
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: The second is mysql@localhost, it has no password either, but
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: you need to be the system 'mysql' user to connect.
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: After connecting you can set the password, if you would need to be
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: able to connect as any of these users with a password and without sudo
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: See the MariaDB Knowledgebase at https://mariadb.com/kb
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: Please report any problems at https://mariadb.org/jira
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: The latest information about MariaDB is available at https://mariadb.org/.
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: Consider joining MariaDB's strong and vibrant community:
+May 25 17:41:14 openeuler-riscv64 mariadb-prepare-db-dir[14774]: https://mariadb.org/get-involved/
+May 25 17:41:14 openeuler-riscv64 mariadbd[14822]: 2023-05-25 17:41:14 0 [Note] /usr/libexec/mariadbd (mysqld 10.5.16-MariaDB) starting as process 14822 ...
+May 25 17:41:16 openeuler-riscv64 systemd[1]: Started MariaDB 10.5.15 database server.
+░░ Subject: A start job for unit mariadb.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished successfully.
+░░ 
+░░ The job identifier is 13809.
+May 25 17:41:26 openeuler-riscv64 [RPM][14891]: Transaction ID 646f2d46 started
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 [RPM][14891]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:27 openeuler-riscv64 systemctl[14896]: [/usr/bin/systemctl --no-reload --now disable mariadb.service] called by PID 14895 (/bin/sh /var/tmp/rpm-tmp.WL96x1 0)
+May 25 17:41:27 openeuler-riscv64 systemd[1]: Stopping MariaDB 10.5.15 database server...
+░░ Subject: A stop job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 13872.
+May 25 17:41:27 openeuler-riscv64 systemd[1]: mariadb.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has successfully entered the 'dead' state.
+May 25 17:41:27 openeuler-riscv64 systemd[1]: Stopped MariaDB 10.5.15 database server.
+░░ Subject: A stop job for unit mariadb.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has finished.
+░░ 
+░░ The job identifier is 13872 and the job result is done.
+May 25 17:41:28 openeuler-riscv64 systemctl[14903]: [/usr/bin/systemctl daemon-reload] called by PID 14901 (/bin/sh /var/tmp/rpm-tmp.EF3h4d 0)
+May 25 17:41:28 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:41:30 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:41:31 openeuler-riscv64 [RPM][14891]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:31 openeuler-riscv64 [RPM][14891]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:31 openeuler-riscv64 [RPM][14891]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:41:31 openeuler-riscv64 [RPM][14891]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:32 openeuler-riscv64 [RPM][14891]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:32 openeuler-riscv64 [RPM][14891]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:41:32 openeuler-riscv64 [RPM][14891]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:41:32 openeuler-riscv64 [RPM][14891]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:41:32 openeuler-riscv64 [RPM][14891]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:41:32 openeuler-riscv64 [RPM][14891]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:41:32 openeuler-riscv64 [RPM][14891]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:41:32 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r0d9613fe89784621b2eee8e5c9cc8424.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r0d9613fe89784621b2eee8e5c9cc8424.service has finished successfully.
+░░ 
+░░ The job identifier is 13873.
+May 25 17:41:32 openeuler-riscv64 [RPM][14891]: Transaction ID 646f2d46 finished: 0
+May 25 17:41:32 openeuler-riscv64 systemctl[14919]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:41:33 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 13936.
+May 25 17:41:33 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:41:33 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 13936.
+May 25 17:41:34 openeuler-riscv64 systemd[1]: run-r0d9613fe89784621b2eee8e5c9cc8424.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r0d9613fe89784621b2eee8e5c9cc8424.service has successfully entered the 'dead' state.
+May 25 17:41:36 openeuler-riscv64 sudo[14595]: pam_unix(sudo:session): session closed for user root
+May 25 17:41:37 openeuler-riscv64 sudo[14943]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f os-basic -r oe_test_server_mariadb_copy -x
+May 25 17:41:37 openeuler-riscv64 sudo[14943]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 17:42:10 openeuler-riscv64 [RPM][15013]: Transaction ID 646f2d71 started
+May 25 17:42:10 openeuler-riscv64 [RPM][15013]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:42:11 openeuler-riscv64 [RPM][15013]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:42:11 openeuler-riscv64 [RPM][15013]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:42:11 openeuler-riscv64 [RPM][15013]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:42:11 openeuler-riscv64 [RPM][15013]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:12 openeuler-riscv64 [RPM][15013]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:12 openeuler-riscv64 [RPM][15013]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:42:12 openeuler-riscv64 [RPM][15013]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:42:13 openeuler-riscv64 [RPM][15013]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:42:17 openeuler-riscv64 [RPM][15013]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:21 openeuler-riscv64 [RPM][15013]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:21 openeuler-riscv64 [RPM][15013]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:22 openeuler-riscv64 [RPM][15013]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:22 openeuler-riscv64 useradd[15021]: failed adding user 'mysql', exit code: 9
+May 25 17:42:34 openeuler-riscv64 systemctl[15023]: [/usr/bin/systemctl --no-reload preset mariadb.service] called by PID 15022 (/bin/sh /var/tmp/rpm-tmp.tecQjh 1)
+May 25 17:42:35 openeuler-riscv64 [RPM][15013]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:35 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r89e7122f42294b7bbc67ff588d0af2a6.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r89e7122f42294b7bbc67ff588d0af2a6.service has finished successfully.
+░░ 
+░░ The job identifier is 13939.
+May 25 17:42:35 openeuler-riscv64 systemctl[15028]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:42:35 openeuler-riscv64 systemctl[15030]: [/usr/bin/systemctl daemon-reload] called by PID 15029 (/bin/sh /var/tmp/rpm-tmp.2x0902 0)
+May 25 17:42:36 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14002.
+May 25 17:42:36 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:42:38 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:42:39 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:42:39 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14002.
+May 25 17:42:39 openeuler-riscv64 systemd[1]: run-r89e7122f42294b7bbc67ff588d0af2a6.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r89e7122f42294b7bbc67ff588d0af2a6.service has successfully entered the 'dead' state.
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:42:40 openeuler-riscv64 [RPM][15013]: Transaction ID 646f2d71 finished: 0
+May 25 17:42:41 openeuler-riscv64 systemctl[15059]: [systemctl start mariadb.service] called by PID 14990 (bash -x oe_test_server_mariadb_copy.sh)
+May 25 17:42:41 openeuler-riscv64 systemd[1]: Starting MariaDB 10.5.15 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14005.
+May 25 17:42:43 openeuler-riscv64 mariadb-prepare-db-dir[15083]: Initializing MariaDB database
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: Two all-privilege accounts were created.
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: One is root@localhost, it has no password, but you need to
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: be system 'root' user to connect. Use, for example, sudo mysql
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: The second is mysql@localhost, it has no password either, but
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: you need to be the system 'mysql' user to connect.
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: After connecting you can set the password, if you would need to be
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: able to connect as any of these users with a password and without sudo
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: See the MariaDB Knowledgebase at https://mariadb.com/kb
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: Please report any problems at https://mariadb.org/jira
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: The latest information about MariaDB is available at https://mariadb.org/.
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: Consider joining MariaDB's strong and vibrant community:
+May 25 17:42:47 openeuler-riscv64 mariadb-prepare-db-dir[15121]: https://mariadb.org/get-involved/
+May 25 17:42:47 openeuler-riscv64 mariadbd[15169]: 2023-05-25 17:42:47 0 [Note] /usr/libexec/mariadbd (mysqld 10.5.16-MariaDB) starting as process 15169 ...
+May 25 17:42:49 openeuler-riscv64 systemd[1]: Started MariaDB 10.5.15 database server.
+░░ Subject: A start job for unit mariadb.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished successfully.
+░░ 
+░░ The job identifier is 14005.
+May 25 17:43:00 openeuler-riscv64 [RPM][15243]: Transaction ID 646f2da4 started
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 [RPM][15243]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:01 openeuler-riscv64 systemctl[15248]: [/usr/bin/systemctl --no-reload --now disable mariadb.service] called by PID 15247 (/bin/sh /var/tmp/rpm-tmp.uVHwPA 0)
+May 25 17:43:01 openeuler-riscv64 systemd[1]: Stopping MariaDB 10.5.15 database server...
+░░ Subject: A stop job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14068.
+May 25 17:43:02 openeuler-riscv64 systemd[1]: mariadb.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has successfully entered the 'dead' state.
+May 25 17:43:02 openeuler-riscv64 systemd[1]: Stopped MariaDB 10.5.15 database server.
+░░ Subject: A stop job for unit mariadb.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has finished.
+░░ 
+░░ The job identifier is 14068 and the job result is done.
+May 25 17:43:02 openeuler-riscv64 systemctl[15255]: [/usr/bin/systemctl daemon-reload] called by PID 15253 (/bin/sh /var/tmp/rpm-tmp.Cs1GCO 0)
+May 25 17:43:02 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:43:05 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:43:06 openeuler-riscv64 [RPM][15243]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:43:07 openeuler-riscv64 [RPM][15243]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:43:07 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r0ae3597780444664ac4271f976fd3e94.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r0ae3597780444664ac4271f976fd3e94.service has finished successfully.
+░░ 
+░░ The job identifier is 14069.
+May 25 17:43:07 openeuler-riscv64 [RPM][15243]: Transaction ID 646f2da4 finished: 0
+May 25 17:43:07 openeuler-riscv64 systemctl[15271]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:43:07 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14132.
+May 25 17:43:08 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:43:08 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14132.
+May 25 17:43:08 openeuler-riscv64 systemd[1]: run-r0ae3597780444664ac4271f976fd3e94.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r0ae3597780444664ac4271f976fd3e94.service has successfully entered the 'dead' state.
+May 25 17:43:11 openeuler-riscv64 sudo[14943]: pam_unix(sudo:session): session closed for user root
+May 25 17:43:11 openeuler-riscv64 sudo[15297]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f os-basic -r oe_test_server_mariadb_backuptable -x
+May 25 17:43:11 openeuler-riscv64 sudo[15297]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 17:44:03 openeuler-riscv64 [RPM][15367]: Transaction ID 646f2de1 started
+May 25 17:44:03 openeuler-riscv64 [RPM][15367]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:44:03 openeuler-riscv64 [RPM][15367]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:44:04 openeuler-riscv64 [RPM][15367]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:44:04 openeuler-riscv64 [RPM][15367]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:44:04 openeuler-riscv64 [RPM][15367]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:04 openeuler-riscv64 [RPM][15367]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:04 openeuler-riscv64 [RPM][15367]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:44:04 openeuler-riscv64 [RPM][15367]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:44:05 openeuler-riscv64 [RPM][15367]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:44:09 openeuler-riscv64 [RPM][15367]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:13 openeuler-riscv64 [RPM][15367]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:13 openeuler-riscv64 [RPM][15367]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:14 openeuler-riscv64 [RPM][15367]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:14 openeuler-riscv64 useradd[15376]: failed adding user 'mysql', exit code: 9
+May 25 17:44:26 openeuler-riscv64 systemctl[15378]: [/usr/bin/systemctl --no-reload preset mariadb.service] called by PID 15377 (/bin/sh /var/tmp/rpm-tmp.wEOlIk 1)
+May 25 17:44:27 openeuler-riscv64 [RPM][15367]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:27 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-rbcf93162fcb64be6980e37beb8d2f185.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-rbcf93162fcb64be6980e37beb8d2f185.service has finished successfully.
+░░ 
+░░ The job identifier is 14135.
+May 25 17:44:27 openeuler-riscv64 systemctl[15383]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:44:27 openeuler-riscv64 systemctl[15385]: [/usr/bin/systemctl daemon-reload] called by PID 15384 (/bin/sh /var/tmp/rpm-tmp.xs2Ty3 0)
+May 25 17:44:27 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14198.
+May 25 17:44:28 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:44:30 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:44:31 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:44:31 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14198.
+May 25 17:44:31 openeuler-riscv64 systemd[1]: run-rbcf93162fcb64be6980e37beb8d2f185.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-rbcf93162fcb64be6980e37beb8d2f185.service has successfully entered the 'dead' state.
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:31 openeuler-riscv64 [RPM][15367]: Transaction ID 646f2de1 finished: 0
+May 25 17:44:33 openeuler-riscv64 systemctl[15418]: [systemctl start mariadb.service] called by PID 15344 (bash -x oe_test_server_mariadb_backuptable.sh)
+May 25 17:44:33 openeuler-riscv64 systemd[1]: Starting MariaDB 10.5.15 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14201.
+May 25 17:44:35 openeuler-riscv64 mariadb-prepare-db-dir[15442]: Initializing MariaDB database
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: Two all-privilege accounts were created.
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: One is root@localhost, it has no password, but you need to
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: be system 'root' user to connect. Use, for example, sudo mysql
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: The second is mysql@localhost, it has no password either, but
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: you need to be the system 'mysql' user to connect.
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: After connecting you can set the password, if you would need to be
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: able to connect as any of these users with a password and without sudo
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: See the MariaDB Knowledgebase at https://mariadb.com/kb
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: Please report any problems at https://mariadb.org/jira
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: The latest information about MariaDB is available at https://mariadb.org/.
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: Consider joining MariaDB's strong and vibrant community:
+May 25 17:44:39 openeuler-riscv64 mariadb-prepare-db-dir[15480]: https://mariadb.org/get-involved/
+May 25 17:44:40 openeuler-riscv64 mariadbd[15528]: 2023-05-25 17:44:40 0 [Note] /usr/libexec/mariadbd (mysqld 10.5.16-MariaDB) starting as process 15528 ...
+May 25 17:44:41 openeuler-riscv64 systemd[1]: Started MariaDB 10.5.15 database server.
+░░ Subject: A start job for unit mariadb.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished successfully.
+░░ 
+░░ The job identifier is 14201.
+May 25 17:44:50 openeuler-riscv64 [RPM][15601]: Transaction ID 646f2e12 started
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 [RPM][15601]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:51 openeuler-riscv64 systemctl[15606]: [/usr/bin/systemctl --no-reload --now disable mariadb.service] called by PID 15605 (/bin/sh /var/tmp/rpm-tmp.L6LICb 0)
+May 25 17:44:51 openeuler-riscv64 systemd[1]: Stopping MariaDB 10.5.15 database server...
+░░ Subject: A stop job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14264.
+May 25 17:44:52 openeuler-riscv64 systemd[1]: mariadb.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has successfully entered the 'dead' state.
+May 25 17:44:52 openeuler-riscv64 systemd[1]: Stopped MariaDB 10.5.15 database server.
+░░ Subject: A stop job for unit mariadb.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has finished.
+░░ 
+░░ The job identifier is 14264 and the job result is done.
+May 25 17:44:52 openeuler-riscv64 systemctl[15613]: [/usr/bin/systemctl daemon-reload] called by PID 15611 (/bin/sh /var/tmp/rpm-tmp.XNjrvn 0)
+May 25 17:44:52 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:44:54 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:44:55 openeuler-riscv64 [RPM][15601]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:55 openeuler-riscv64 [RPM][15601]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:55 openeuler-riscv64 [RPM][15601]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:44:55 openeuler-riscv64 [RPM][15601]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:55 openeuler-riscv64 [RPM][15601]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:56 openeuler-riscv64 [RPM][15601]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:44:56 openeuler-riscv64 [RPM][15601]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:44:56 openeuler-riscv64 [RPM][15601]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:44:56 openeuler-riscv64 [RPM][15601]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:44:56 openeuler-riscv64 [RPM][15601]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:44:56 openeuler-riscv64 [RPM][15601]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:44:56 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r284f299b3a624781a66c545d83124f9d.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r284f299b3a624781a66c545d83124f9d.service has finished successfully.
+░░ 
+░░ The job identifier is 14265.
+May 25 17:44:56 openeuler-riscv64 [RPM][15601]: Transaction ID 646f2e12 finished: 0
+May 25 17:44:56 openeuler-riscv64 systemctl[15629]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:44:56 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14328.
+May 25 17:44:57 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:44:57 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14328.
+May 25 17:44:58 openeuler-riscv64 systemd[1]: run-r284f299b3a624781a66c545d83124f9d.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r284f299b3a624781a66c545d83124f9d.service has successfully entered the 'dead' state.
+May 25 17:45:00 openeuler-riscv64 sudo[15297]: pam_unix(sudo:session): session closed for user root
+May 25 17:45:00 openeuler-riscv64 sudo[15658]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f os-basic -r oe_test_server_mariadb_backupDB -x
+May 25 17:45:00 openeuler-riscv64 sudo[15658]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 17:45:35 openeuler-riscv64 [RPM][15728]: Transaction ID 646f2e3e started
+May 25 17:45:35 openeuler-riscv64 [RPM][15728]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:45:36 openeuler-riscv64 [RPM][15728]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:45:36 openeuler-riscv64 [RPM][15728]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:45:36 openeuler-riscv64 [RPM][15728]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:45:37 openeuler-riscv64 [RPM][15728]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:45:37 openeuler-riscv64 [RPM][15728]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:45:37 openeuler-riscv64 [RPM][15728]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:45:37 openeuler-riscv64 [RPM][15728]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:45:38 openeuler-riscv64 [RPM][15728]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:45:42 openeuler-riscv64 [RPM][15728]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:45:46 openeuler-riscv64 [RPM][15728]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:45:46 openeuler-riscv64 [RPM][15728]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:45:47 openeuler-riscv64 [RPM][15728]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:45:47 openeuler-riscv64 useradd[15736]: failed adding user 'mysql', exit code: 9
+May 25 17:45:59 openeuler-riscv64 systemctl[15738]: [/usr/bin/systemctl --no-reload preset mariadb.service] called by PID 15737 (/bin/sh /var/tmp/rpm-tmp.54X20n 1)
+May 25 17:45:59 openeuler-riscv64 [RPM][15728]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:00 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r9d6455156dce459e9bb2e54be8f4252d.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r9d6455156dce459e9bb2e54be8f4252d.service has finished successfully.
+░░ 
+░░ The job identifier is 14331.
+May 25 17:46:00 openeuler-riscv64 systemctl[15743]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:46:00 openeuler-riscv64 systemctl[15745]: [/usr/bin/systemctl daemon-reload] called by PID 15744 (/bin/sh /var/tmp/rpm-tmp.mzyceu 0)
+May 25 17:46:00 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14394.
+May 25 17:46:00 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:46:03 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:46:03 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:46:03 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14394.
+May 25 17:46:04 openeuler-riscv64 systemd[1]: run-r9d6455156dce459e9bb2e54be8f4252d.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r9d6455156dce459e9bb2e54be8f4252d.service has successfully entered the 'dead' state.
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:04 openeuler-riscv64 [RPM][15728]: Transaction ID 646f2e3e finished: 0
+May 25 17:46:06 openeuler-riscv64 systemctl[15773]: [systemctl start mariadb.service] called by PID 15705 (bash -x oe_test_server_mariadb_backupDB.sh)
+May 25 17:46:06 openeuler-riscv64 systemd[1]: Starting MariaDB 10.5.15 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14397.
+May 25 17:46:08 openeuler-riscv64 mariadb-prepare-db-dir[15797]: Initializing MariaDB database
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: Two all-privilege accounts were created.
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: One is root@localhost, it has no password, but you need to
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: be system 'root' user to connect. Use, for example, sudo mysql
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: The second is mysql@localhost, it has no password either, but
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: you need to be the system 'mysql' user to connect.
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: After connecting you can set the password, if you would need to be
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: able to connect as any of these users with a password and without sudo
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: See the MariaDB Knowledgebase at https://mariadb.com/kb
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: Please report any problems at https://mariadb.org/jira
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: The latest information about MariaDB is available at https://mariadb.org/.
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: Consider joining MariaDB's strong and vibrant community:
+May 25 17:46:12 openeuler-riscv64 mariadb-prepare-db-dir[15835]: https://mariadb.org/get-involved/
+May 25 17:46:12 openeuler-riscv64 mariadbd[15883]: 2023-05-25 17:46:12 0 [Note] /usr/libexec/mariadbd (mysqld 10.5.16-MariaDB) starting as process 15883 ...
+May 25 17:46:13 openeuler-riscv64 systemd[1]: Started MariaDB 10.5.15 database server.
+░░ Subject: A start job for unit mariadb.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished successfully.
+░░ 
+░░ The job identifier is 14397.
+May 25 17:46:23 openeuler-riscv64 [RPM][15950]: Transaction ID 646f2e6f started
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 [RPM][15950]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:24 openeuler-riscv64 systemctl[15955]: [/usr/bin/systemctl --no-reload --now disable mariadb.service] called by PID 15954 (/bin/sh /var/tmp/rpm-tmp.x5y6cH 0)
+May 25 17:46:24 openeuler-riscv64 systemd[1]: Stopping MariaDB 10.5.15 database server...
+░░ Subject: A stop job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14460.
+May 25 17:46:24 openeuler-riscv64 systemd[1]: mariadb.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has successfully entered the 'dead' state.
+May 25 17:46:24 openeuler-riscv64 systemd[1]: Stopped MariaDB 10.5.15 database server.
+░░ Subject: A stop job for unit mariadb.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has finished.
+░░ 
+░░ The job identifier is 14460 and the job result is done.
+May 25 17:46:25 openeuler-riscv64 systemctl[15962]: [/usr/bin/systemctl daemon-reload] called by PID 15960 (/bin/sh /var/tmp/rpm-tmp.J8zsH3 0)
+May 25 17:46:25 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:46:27 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:46:28 openeuler-riscv64 [RPM][15950]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:28 openeuler-riscv64 [RPM][15950]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:28 openeuler-riscv64 [RPM][15950]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:46:28 openeuler-riscv64 [RPM][15950]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:28 openeuler-riscv64 [RPM][15950]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:28 openeuler-riscv64 [RPM][15950]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:46:28 openeuler-riscv64 [RPM][15950]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:46:28 openeuler-riscv64 [RPM][15950]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:46:29 openeuler-riscv64 [RPM][15950]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:46:29 openeuler-riscv64 [RPM][15950]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:46:29 openeuler-riscv64 [RPM][15950]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:46:29 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r4099612053d24437b7192de171e4cd15.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r4099612053d24437b7192de171e4cd15.service has finished successfully.
+░░ 
+░░ The job identifier is 14461.
+May 25 17:46:29 openeuler-riscv64 [RPM][15950]: Transaction ID 646f2e6f finished: 0
+May 25 17:46:29 openeuler-riscv64 systemctl[15978]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:46:29 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14524.
+May 25 17:46:30 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:46:30 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14524.
+May 25 17:46:31 openeuler-riscv64 systemd[1]: run-r4099612053d24437b7192de171e4cd15.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r4099612053d24437b7192de171e4cd15.service has successfully entered the 'dead' state.
+May 25 17:46:33 openeuler-riscv64 sudo[15658]: pam_unix(sudo:session): session closed for user root
+May 25 17:46:33 openeuler-riscv64 sudo[16003]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f os-basic -r oe_test_server_mariadb_backup -x
+May 25 17:46:33 openeuler-riscv64 sudo[16003]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 17:47:05 openeuler-riscv64 [RPM][16073]: Transaction ID 646f2e97 started
+May 25 17:47:05 openeuler-riscv64 [RPM][16073]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:47:05 openeuler-riscv64 [RPM][16073]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:47:06 openeuler-riscv64 [RPM][16073]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:47:06 openeuler-riscv64 [RPM][16073]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:47:06 openeuler-riscv64 [RPM][16073]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:06 openeuler-riscv64 [RPM][16073]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:06 openeuler-riscv64 [RPM][16073]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:47:06 openeuler-riscv64 [RPM][16073]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:47:07 openeuler-riscv64 [RPM][16073]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:47:11 openeuler-riscv64 [RPM][16073]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:15 openeuler-riscv64 [RPM][16073]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:15 openeuler-riscv64 [RPM][16073]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:16 openeuler-riscv64 [RPM][16073]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:16 openeuler-riscv64 useradd[16081]: failed adding user 'mysql', exit code: 9
+May 25 17:47:28 openeuler-riscv64 systemctl[16083]: [/usr/bin/systemctl --no-reload preset mariadb.service] called by PID 16082 (/bin/sh /var/tmp/rpm-tmp.jnJr0R 1)
+May 25 17:47:28 openeuler-riscv64 [RPM][16073]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:29 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r0f34adfb3ab24d28a3982ec1609ee521.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r0f34adfb3ab24d28a3982ec1609ee521.service has finished successfully.
+░░ 
+░░ The job identifier is 14527.
+May 25 17:47:29 openeuler-riscv64 systemctl[16088]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:47:29 openeuler-riscv64 systemctl[16090]: [/usr/bin/systemctl daemon-reload] called by PID 16089 (/bin/sh /var/tmp/rpm-tmp.mwCN3A 0)
+May 25 17:47:29 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14590.
+May 25 17:47:30 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:47:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:47:33 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:47:33 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14590.
+May 25 17:47:33 openeuler-riscv64 systemd[1]: run-r0f34adfb3ab24d28a3982ec1609ee521.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r0f34adfb3ab24d28a3982ec1609ee521.service has successfully entered the 'dead' state.
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: install mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:33 openeuler-riscv64 [RPM][16073]: Transaction ID 646f2e97 finished: 0
+May 25 17:47:35 openeuler-riscv64 systemctl[16119]: [systemctl start mariadb.service] called by PID 16050 (bash -x oe_test_server_mariadb_backup.sh)
+May 25 17:47:35 openeuler-riscv64 systemd[1]: Starting MariaDB 10.5.15 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14593.
+May 25 17:47:37 openeuler-riscv64 mariadb-prepare-db-dir[16143]: Initializing MariaDB database
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: Two all-privilege accounts were created.
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: One is root@localhost, it has no password, but you need to
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: be system 'root' user to connect. Use, for example, sudo mysql
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: The second is mysql@localhost, it has no password either, but
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: you need to be the system 'mysql' user to connect.
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: After connecting you can set the password, if you would need to be
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: able to connect as any of these users with a password and without sudo
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: See the MariaDB Knowledgebase at https://mariadb.com/kb
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: Please report any problems at https://mariadb.org/jira
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: The latest information about MariaDB is available at https://mariadb.org/.
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: Consider joining MariaDB's strong and vibrant community:
+May 25 17:47:41 openeuler-riscv64 mariadb-prepare-db-dir[16181]: https://mariadb.org/get-involved/
+May 25 17:47:41 openeuler-riscv64 mariadbd[16225]: 2023-05-25 17:47:41 0 [Note] /usr/libexec/mariadbd (mysqld 10.5.16-MariaDB) starting as process 16225 ...
+May 25 17:47:43 openeuler-riscv64 systemd[1]: Started MariaDB 10.5.15 database server.
+░░ Subject: A start job for unit mariadb.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished successfully.
+░░ 
+░░ The job identifier is 14593.
+May 25 17:47:44 openeuler-riscv64 systemctl[16279]: [systemctl stop mariadb] called by PID 16050 (bash -x oe_test_server_mariadb_backup.sh)
+May 25 17:47:44 openeuler-riscv64 systemd[1]: Stopping MariaDB 10.5.15 database server...
+░░ Subject: A stop job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14656.
+May 25 17:47:44 openeuler-riscv64 systemd[1]: mariadb.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has successfully entered the 'dead' state.
+May 25 17:47:44 openeuler-riscv64 systemd[1]: Stopped MariaDB 10.5.15 database server.
+░░ Subject: A stop job for unit mariadb.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has finished.
+░░ 
+░░ The job identifier is 14656 and the job result is done.
+May 25 17:47:45 openeuler-riscv64 systemctl[16287]: [systemctl start mariadb] called by PID 16050 (bash -x oe_test_server_mariadb_backup.sh)
+May 25 17:47:45 openeuler-riscv64 systemd[1]: Starting MariaDB 10.5.15 database server...
+░░ Subject: A start job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14657.
+May 25 17:47:47 openeuler-riscv64 mariadb-prepare-db-dir[16311]: Database MariaDB is probably initialized in /var/lib/mysql already, nothing is done.
+May 25 17:47:47 openeuler-riscv64 mariadb-prepare-db-dir[16311]: If this is not the case, make sure the /var/lib/mysql is empty before running mariadb-prepare-db-dir.
+May 25 17:47:47 openeuler-riscv64 mariadbd[16347]: 2023-05-25 17:47:47 0 [Note] /usr/libexec/mariadbd (mysqld 10.5.16-MariaDB) starting as process 16347 ...
+May 25 17:47:48 openeuler-riscv64 systemd[1]: Started MariaDB 10.5.15 database server.
+░░ Subject: A start job for unit mariadb.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mariadb.service has finished successfully.
+░░ 
+░░ The job identifier is 14657.
+May 25 17:47:56 openeuler-riscv64 [RPM][16406]: Transaction ID 646f2ecc started
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-gssapi-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 [RPM][16406]: erase mariadb-backup-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:47:57 openeuler-riscv64 systemctl[16411]: [/usr/bin/systemctl --no-reload --now disable mariadb.service] called by PID 16410 (/bin/sh /var/tmp/rpm-tmp.I2PZO4 0)
+May 25 17:47:57 openeuler-riscv64 systemd[1]: Stopping MariaDB 10.5.15 database server...
+░░ Subject: A stop job for unit mariadb.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has begun execution.
+░░ 
+░░ The job identifier is 14720.
+May 25 17:47:57 openeuler-riscv64 systemd[1]: mariadb.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mariadb.service has successfully entered the 'dead' state.
+May 25 17:47:57 openeuler-riscv64 systemd[1]: Stopped MariaDB 10.5.15 database server.
+░░ Subject: A stop job for unit mariadb.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit mariadb.service has finished.
+░░ 
+░░ The job identifier is 14720 and the job result is done.
+May 25 17:47:58 openeuler-riscv64 systemctl[16418]: [/usr/bin/systemctl daemon-reload] called by PID 16416 (/bin/sh /var/tmp/rpm-tmp.00cA7B 0)
+May 25 17:47:58 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:48:00 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase mariadb-server-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase mariadb-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase iproute-1:6.1.0-7.oe2303.riscv64: success
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase mariadb-server-utils-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase mariadb-errmsg-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase perl-DBD-MariaDB-1.22-1.oe2303.riscv64: success
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase mariadb-common-4:10.5.16-3.oe2303.riscv64: success
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase greatsql-mysql-config-8.0.25-16.7.oe2303.oe2303.riscv64: success
+May 25 17:48:01 openeuler-riscv64 [RPM][16406]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:48:02 openeuler-riscv64 [RPM][16406]: erase perl-DBI-1.643-3.oe2303.riscv64: success
+May 25 17:48:02 openeuler-riscv64 [RPM][16406]: erase libbpf-2:0.8.1-5.oe2303.riscv64: success
+May 25 17:48:02 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r57d6c60793994cc1993a5fd707bca48a.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r57d6c60793994cc1993a5fd707bca48a.service has finished successfully.
+░░ 
+░░ The job identifier is 14721.
+May 25 17:48:02 openeuler-riscv64 [RPM][16406]: Transaction ID 646f2ecc finished: 0
+May 25 17:48:02 openeuler-riscv64 systemctl[16434]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:48:02 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14784.
+May 25 17:48:03 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:48:03 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14784.
+May 25 17:48:04 openeuler-riscv64 systemd[1]: run-r57d6c60793994cc1993a5fd707bca48a.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r57d6c60793994cc1993a5fd707bca48a.service has successfully entered the 'dead' state.
+May 25 17:48:06 openeuler-riscv64 sudo[16003]: pam_unix(sudo:session): session closed for user root
+May 25 17:48:06 openeuler-riscv64 sudo[16458]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f os-basic -r oe_test_server_httpd_tls -x
+May 25 17:48:06 openeuler-riscv64 sudo[16458]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 17:48:32 openeuler-riscv64 [RPM][16528]: Transaction ID 646f2ef0 started
+May 25 17:48:32 openeuler-riscv64 [RPM][16528]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:48:33 openeuler-riscv64 [RPM][16528]: install apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:48:33 openeuler-riscv64 [RPM][16528]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:48:33 openeuler-riscv64 [RPM][16528]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:48:33 openeuler-riscv64 [RPM][16528]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:48:33 openeuler-riscv64 [RPM][16528]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:48:34 openeuler-riscv64 [RPM][16528]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:48:34 openeuler-riscv64 [RPM][16528]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:48:34 openeuler-riscv64 [RPM][16528]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:48:35 openeuler-riscv64 systemctl[16542]: [/usr/bin/systemctl --no-reload preset httpd.service htcacheclean.service httpd.socket] called by PID 16541 (/bin/sh /var/tmp/rpm-tmp.ZiUjRC 1)
+May 25 17:48:35 openeuler-riscv64 [RPM][16528]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:48:35 openeuler-riscv64 [RPM][16528]: install libtalloc-2.3.4-1.oe2303.riscv64: success
+May 25 17:48:36 openeuler-riscv64 [RPM][16528]: install ding-libs-0.6.1-45.oe2303.riscv64: success
+May 25 17:48:36 openeuler-riscv64 [RPM][16528]: install sscg-3.0.3-1.oe2303.riscv64: success
+May 25 17:48:36 openeuler-riscv64 [RPM][16528]: install mod_ssl-1:2.4.55-1.oe2303.riscv64: success
+May 25 17:48:36 openeuler-riscv64 systemctl[16546]: [/bin/systemctl --no-block try-restart httpd.service htcacheclean.service] called by PID 16545 (/bin/sh /var/tmp/rpm-tmp.8uYhTl 1)
+May 25 17:48:36 openeuler-riscv64 [RPM][16528]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:48:37 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-ra6d0894ca30c4d559d8e8350597991ca.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-ra6d0894ca30c4d559d8e8350597991ca.service has finished successfully.
+░░ 
+░░ The job identifier is 14789.
+May 25 17:48:37 openeuler-riscv64 systemctl[16551]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:48:37 openeuler-riscv64 systemctl[16553]: [/usr/bin/systemctl daemon-reload] called by PID 16552 (/bin/sh /var/tmp/rpm-tmp.qyQVDE 0)
+May 25 17:48:37 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 14852.
+May 25 17:48:37 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:48:40 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:48:41 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:48:41 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 14852.
+May 25 17:48:41 openeuler-riscv64 systemd[1]: run-ra6d0894ca30c4d559d8e8350597991ca.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-ra6d0894ca30c4d559d8e8350597991ca.service has successfully entered the 'dead' state.
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install libtalloc-2.3.4-1.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install ding-libs-0.6.1-45.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install sscg-3.0.3-1.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: install mod_ssl-1:2.4.55-1.oe2303.riscv64: success
+May 25 17:48:41 openeuler-riscv64 [RPM][16528]: Transaction ID 646f2ef0 finished: 0
+May 25 17:48:44 openeuler-riscv64 systemctl[16581]: [systemctl enable httpd] called by PID 16505 (bash -x oe_test_server_httpd_tls.sh)
+May 25 17:48:44 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:48:47 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:48:47 openeuler-riscv64 systemctl[16592]: [systemctl start httpd] called by PID 16505 (bash -x oe_test_server_httpd_tls.sh)
+May 25 17:48:47 openeuler-riscv64 systemd[1]: Starting One-time temporary TLS key generation for httpd.service...
+░░ Subject: A start job for unit httpd-init.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd-init.service has begun execution.
+░░ 
+░░ The job identifier is 14918.
+May 25 17:49:13 openeuler-riscv64 systemd[1]: httpd-init.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd-init.service has successfully entered the 'dead' state.
+May 25 17:49:13 openeuler-riscv64 systemd[1]: Finished One-time temporary TLS key generation for httpd.service.
+░░ Subject: A start job for unit httpd-init.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd-init.service has finished successfully.
+░░ 
+░░ The job identifier is 14918.
+May 25 17:49:13 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 14855.
+May 25 17:49:14 openeuler-riscv64 httpd[16600]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:49:15 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 14855.
+May 25 17:49:17 openeuler-riscv64 systemctl[16786]: [systemctl restart httpd] called by PID 16505 (bash -x oe_test_server_httpd_tls.sh)
+May 25 17:49:17 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 14920.
+May 25 17:49:18 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:49:18 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 14920 and the job result is done.
+May 25 17:49:18 openeuler-riscv64 systemd[1]: Condition check resulted in One-time temporary TLS key generation for httpd.service being skipped.
+░░ Subject: A start job for unit httpd-init.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd-init.service has finished successfully.
+░░ 
+░░ The job identifier is 14983.
+May 25 17:49:18 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 14920.
+May 25 17:49:18 openeuler-riscv64 httpd[16790]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:49:18 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 14920.
+May 25 17:49:21 openeuler-riscv64 systemctl[16975]: [systemctl reload httpd] called by PID 16505 (bash -x oe_test_server_httpd_tls.sh)
+May 25 17:49:21 openeuler-riscv64 systemd[1]: Reloading The Apache HTTP Server...
+░░ Subject: A reload job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A reload job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 14985.
+May 25 17:49:21 openeuler-riscv64 httpd[16976]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:49:22 openeuler-riscv64 systemd[1]: Reloaded The Apache HTTP Server.
+░░ Subject: A reload job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A reload job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 14985 and the job result is done.
+May 25 17:49:22 openeuler-riscv64 systemctl[16977]: [systemctl stop httpd] called by PID 16505 (bash -x oe_test_server_httpd_tls.sh)
+May 25 17:49:22 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 14986.
+May 25 17:49:23 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:49:23 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 14986 and the job result is done.
+May 25 17:49:28 openeuler-riscv64 [RPM][16983]: Transaction ID 646f2f28 started
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase mod_ssl-1:2.4.55-1.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase sscg-3.0.3-1.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase ding-libs-0.6.1-45.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase libtalloc-2.3.4-1.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 [RPM][16983]: erase mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:49:29 openeuler-riscv64 systemctl[16989]: [/usr/bin/systemctl daemon-reload] called by PID 16987 (/bin/sh /var/tmp/rpm-tmp.dSOpke 0)
+May 25 17:49:29 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:49:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:49:32 openeuler-riscv64 [RPM][16983]: erase mod_ssl-1:2.4.55-1.oe2303.riscv64: success
+May 25 17:49:32 openeuler-riscv64 systemctl[17001]: [/usr/bin/systemctl --no-reload --now disable httpd.service htcacheclean.service httpd.socket] called by PID 17000 (/bin/sh /var/tmp/rpm-tmp.pdq7vB 0)
+May 25 17:49:33 openeuler-riscv64 [RPM][16983]: erase httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:49:33 openeuler-riscv64 [RPM][16983]: erase sscg-3.0.3-1.oe2303.riscv64: success
+May 25 17:49:33 openeuler-riscv64 [RPM][16983]: erase httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase ding-libs-0.6.1-45.oe2303.riscv64: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase libtalloc-2.3.4-1.oe2303.riscv64: success
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: erase mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:49:34 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r81d4025477ec461f87a3c7c5cf2b6901.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r81d4025477ec461f87a3c7c5cf2b6901.service has finished successfully.
+░░ 
+░░ The job identifier is 14990.
+May 25 17:49:34 openeuler-riscv64 [RPM][16983]: Transaction ID 646f2f28 finished: 0
+May 25 17:49:35 openeuler-riscv64 systemctl[17015]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:49:35 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 15053.
+May 25 17:49:36 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:49:36 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 15053.
+May 25 17:49:36 openeuler-riscv64 systemd[1]: run-r81d4025477ec461f87a3c7c5cf2b6901.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r81d4025477ec461f87a3c7c5cf2b6901.service has successfully entered the 'dead' state.
+May 25 17:49:38 openeuler-riscv64 sudo[16458]: pam_unix(sudo:session): session closed for user root
+May 25 17:49:39 openeuler-riscv64 sudo[17041]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f os-basic -r oe_test_server_httpd_restart -x
+May 25 17:49:39 openeuler-riscv64 sudo[17041]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 17:50:04 openeuler-riscv64 [RPM][17111]: Transaction ID 646f2f4c started
+May 25 17:50:04 openeuler-riscv64 [RPM][17111]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:50:04 openeuler-riscv64 [RPM][17111]: install apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:50:05 openeuler-riscv64 [RPM][17111]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:50:05 openeuler-riscv64 [RPM][17111]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:50:05 openeuler-riscv64 [RPM][17111]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:50:05 openeuler-riscv64 [RPM][17111]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:50:05 openeuler-riscv64 [RPM][17111]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:50:05 openeuler-riscv64 [RPM][17111]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:50:05 openeuler-riscv64 [RPM][17111]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:50:07 openeuler-riscv64 systemctl[17125]: [/usr/bin/systemctl --no-reload preset httpd.service htcacheclean.service httpd.socket] called by PID 17124 (/bin/sh /var/tmp/rpm-tmp.P5fQ31 1)
+May 25 17:50:07 openeuler-riscv64 [RPM][17111]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:50:07 openeuler-riscv64 systemctl[17127]: [/bin/systemctl --no-block try-restart httpd.service htcacheclean.service] called by PID 17126 (/bin/sh /var/tmp/rpm-tmp.wrQISp 1)
+May 25 17:50:07 openeuler-riscv64 [RPM][17111]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:50:08 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-rda4f443667774c7a8ee253d7b081105b.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-rda4f443667774c7a8ee253d7b081105b.service has finished successfully.
+░░ 
+░░ The job identifier is 15058.
+May 25 17:50:08 openeuler-riscv64 systemctl[17132]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:50:08 openeuler-riscv64 systemctl[17134]: [/usr/bin/systemctl daemon-reload] called by PID 17133 (/bin/sh /var/tmp/rpm-tmp.gJybh4 0)
+May 25 17:50:08 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 15121.
+May 25 17:50:08 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:50:11 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:50:12 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:50:12 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 15121.
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:50:12 openeuler-riscv64 [RPM][17111]: Transaction ID 646f2f4c finished: 0
+May 25 17:50:12 openeuler-riscv64 systemd[1]: run-rda4f443667774c7a8ee253d7b081105b.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-rda4f443667774c7a8ee253d7b081105b.service has successfully entered the 'dead' state.
+May 25 17:50:15 openeuler-riscv64 systemctl[17163]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:15 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:50:17 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:50:18 openeuler-riscv64 systemctl[17174]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:18 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15124.
+May 25 17:50:19 openeuler-riscv64 httpd[17175]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:50:19 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 15124.
+May 25 17:50:27 openeuler-riscv64 systemctl[17358]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:27 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15188.
+May 25 17:50:28 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:50:28 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 15188 and the job result is done.
+May 25 17:50:28 openeuler-riscv64 systemctl[17364]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:28 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:50:30 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:50:31 openeuler-riscv64 systemctl[17377]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:31 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15189.
+May 25 17:50:32 openeuler-riscv64 httpd[17378]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:50:32 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 15189.
+May 25 17:50:40 openeuler-riscv64 systemctl[17561]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:40 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:50:42 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:50:43 openeuler-riscv64 systemctl[17572]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:51 openeuler-riscv64 systemctl[17576]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:51 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15316.
+May 25 17:50:52 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:50:52 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 15316 and the job result is done.
+May 25 17:50:52 openeuler-riscv64 systemctl[17582]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:52 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:50:55 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:50:56 openeuler-riscv64 systemctl[17595]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:50:56 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15317.
+May 25 17:50:56 openeuler-riscv64 httpd[17596]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:50:56 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 15317.
+May 25 17:51:04 openeuler-riscv64 systemctl[17779]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:04 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:51:07 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:51:07 openeuler-riscv64 systemctl[17790]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:16 openeuler-riscv64 systemctl[17794]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:16 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15444.
+May 25 17:51:17 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:51:17 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 15444 and the job result is done.
+May 25 17:51:17 openeuler-riscv64 systemctl[17800]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:17 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:51:19 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:51:20 openeuler-riscv64 systemctl[17813]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:20 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15445.
+May 25 17:51:21 openeuler-riscv64 httpd[17814]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:51:21 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 15445.
+May 25 17:51:29 openeuler-riscv64 systemctl[17997]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:29 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:51:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:51:32 openeuler-riscv64 systemctl[18008]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:40 openeuler-riscv64 systemctl[18012]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:40 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15572.
+May 25 17:51:41 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:51:41 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 15572 and the job result is done.
+May 25 17:51:42 openeuler-riscv64 systemctl[18018]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:42 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:51:44 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:51:45 openeuler-riscv64 systemctl[18031]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:45 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15573.
+May 25 17:51:46 openeuler-riscv64 httpd[18032]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:51:46 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 15573.
+May 25 17:51:53 openeuler-riscv64 systemctl[18215]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:51:54 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:51:56 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:51:57 openeuler-riscv64 systemctl[18226]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:01 openeuler-riscv64 anacron[1790]: Job `cron.monthly' started
+May 25 17:52:01 openeuler-riscv64 anacron[1790]: Job `cron.monthly' terminated
+May 25 17:52:01 openeuler-riscv64 anacron[1790]: Normal exit (3 jobs run)
+May 25 17:52:05 openeuler-riscv64 systemctl[18232]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:05 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15700.
+May 25 17:52:06 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:52:06 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 15700 and the job result is done.
+May 25 17:52:06 openeuler-riscv64 systemctl[18238]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:06 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:52:08 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:52:09 openeuler-riscv64 systemctl[18251]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:09 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15701.
+May 25 17:52:10 openeuler-riscv64 httpd[18252]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:52:10 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 15701.
+May 25 17:52:18 openeuler-riscv64 systemctl[18435]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:18 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:52:20 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:52:21 openeuler-riscv64 systemctl[18446]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:29 openeuler-riscv64 systemctl[18450]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:29 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15828.
+May 25 17:52:30 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:52:30 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 15828 and the job result is done.
+May 25 17:52:30 openeuler-riscv64 systemctl[18456]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:30 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:52:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:52:33 openeuler-riscv64 systemctl[18469]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:33 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15829.
+May 25 17:52:34 openeuler-riscv64 httpd[18470]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:52:34 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 15829.
+May 25 17:52:42 openeuler-riscv64 systemctl[18653]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:42 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:52:44 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:52:45 openeuler-riscv64 systemctl[18664]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:53 openeuler-riscv64 systemctl[18668]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:53 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15956.
+May 25 17:52:54 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:52:54 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 15956 and the job result is done.
+May 25 17:52:55 openeuler-riscv64 systemctl[18674]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:55 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:52:57 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:52:58 openeuler-riscv64 systemctl[18687]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:52:58 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 15957.
+May 25 17:52:58 openeuler-riscv64 httpd[18688]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:52:59 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 15957.
+May 25 17:53:06 openeuler-riscv64 systemctl[18871]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:07 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:53:09 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:53:10 openeuler-riscv64 systemctl[18882]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:18 openeuler-riscv64 systemctl[18886]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:18 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16084.
+May 25 17:53:19 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:53:19 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 16084 and the job result is done.
+May 25 17:53:19 openeuler-riscv64 systemctl[18892]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:19 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:53:21 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:53:22 openeuler-riscv64 systemctl[18905]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:22 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16085.
+May 25 17:53:23 openeuler-riscv64 httpd[18906]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:53:23 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 16085.
+May 25 17:53:31 openeuler-riscv64 systemctl[19089]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:31 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:53:33 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:53:34 openeuler-riscv64 systemctl[19100]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:42 openeuler-riscv64 systemctl[19104]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:42 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16212.
+May 25 17:53:43 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:53:43 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 16212 and the job result is done.
+May 25 17:53:43 openeuler-riscv64 systemctl[19111]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:44 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:53:46 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:53:47 openeuler-riscv64 systemctl[19124]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:47 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16213.
+May 25 17:53:47 openeuler-riscv64 httpd[19125]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:53:47 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 16213.
+May 25 17:53:55 openeuler-riscv64 systemctl[19308]: [systemctl enable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:53:55 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:53:58 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:53:58 openeuler-riscv64 systemctl[19319]: [systemctl start httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:54:06 openeuler-riscv64 systemctl[19323]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:54:06 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16340.
+May 25 17:54:08 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:54:08 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 16340 and the job result is done.
+May 25 17:54:08 openeuler-riscv64 systemctl[19329]: [systemctl disable httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:54:08 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:54:10 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:54:11 openeuler-riscv64 systemctl[19342]: [systemctl restart httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:54:11 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16341.
+May 25 17:54:12 openeuler-riscv64 httpd[19343]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:54:12 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 16341.
+May 25 17:54:21 openeuler-riscv64 systemctl[19530]: [systemctl stop httpd] called by PID 17088 (bash -x oe_test_server_httpd_restart.sh)
+May 25 17:54:21 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16405.
+May 25 17:54:22 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:54:22 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 16405 and the job result is done.
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: Transaction ID 646f3054 started
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:54:28 openeuler-riscv64 [RPM][19535]: erase mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:54:29 openeuler-riscv64 systemctl[19540]: [/usr/bin/systemctl --no-reload --now disable httpd.service htcacheclean.service httpd.socket] called by PID 19539 (/bin/sh /var/tmp/rpm-tmp.RRqmsN 0)
+May 25 17:54:29 openeuler-riscv64 systemctl[19543]: [/usr/bin/systemctl daemon-reload] called by PID 19541 (/bin/sh /var/tmp/rpm-tmp.5VhLA9 0)
+May 25 17:54:29 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:54:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:54:32 openeuler-riscv64 [RPM][19535]: erase httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:54:33 openeuler-riscv64 [RPM][19535]: erase httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:54:33 openeuler-riscv64 [RPM][19535]: erase mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:54:33 openeuler-riscv64 [RPM][19535]: erase openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:54:33 openeuler-riscv64 [RPM][19535]: erase httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:54:33 openeuler-riscv64 [RPM][19535]: erase apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:54:33 openeuler-riscv64 [RPM][19535]: erase apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:54:33 openeuler-riscv64 [RPM][19535]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:54:33 openeuler-riscv64 [RPM][19535]: erase mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:54:34 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r03b551177cb74b5ba9169891adddb091.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r03b551177cb74b5ba9169891adddb091.service has finished successfully.
+░░ 
+░░ The job identifier is 16409.
+May 25 17:54:34 openeuler-riscv64 [RPM][19535]: Transaction ID 646f3054 finished: 0
+May 25 17:54:34 openeuler-riscv64 systemctl[19564]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:54:34 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 16472.
+May 25 17:54:35 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:54:35 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 16472.
+May 25 17:54:35 openeuler-riscv64 systemd[1]: run-r03b551177cb74b5ba9169891adddb091.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r03b551177cb74b5ba9169891adddb091.service has successfully entered the 'dead' state.
+May 25 17:54:37 openeuler-riscv64 sudo[17041]: pam_unix(sudo:session): session closed for user root
+May 25 17:54:37 openeuler-riscv64 sudo[19590]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f os-basic -r oe_test_server_httpd_recover -x
+May 25 17:54:37 openeuler-riscv64 sudo[19590]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 17:55:02 openeuler-riscv64 [RPM][19660]: Transaction ID 646f3076 started
+May 25 17:55:02 openeuler-riscv64 [RPM][19660]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:55:03 openeuler-riscv64 [RPM][19660]: install apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:55:03 openeuler-riscv64 [RPM][19660]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:55:03 openeuler-riscv64 [RPM][19660]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:55:04 openeuler-riscv64 [RPM][19660]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:55:04 openeuler-riscv64 [RPM][19660]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:04 openeuler-riscv64 [RPM][19660]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:55:04 openeuler-riscv64 [RPM][19660]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:55:04 openeuler-riscv64 [RPM][19660]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:55:05 openeuler-riscv64 systemctl[19674]: [/usr/bin/systemctl --no-reload preset httpd.service htcacheclean.service httpd.socket] called by PID 19673 (/bin/sh /var/tmp/rpm-tmp.7ApfM5 1)
+May 25 17:55:06 openeuler-riscv64 [RPM][19660]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:06 openeuler-riscv64 systemctl[19676]: [/bin/systemctl --no-block try-restart httpd.service htcacheclean.service] called by PID 19675 (/bin/sh /var/tmp/rpm-tmp.SqeWGH 1)
+May 25 17:55:06 openeuler-riscv64 [RPM][19660]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:06 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r51e4ea75a5c04d2f822b04dcee897ca0.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r51e4ea75a5c04d2f822b04dcee897ca0.service has finished successfully.
+░░ 
+░░ The job identifier is 16477.
+May 25 17:55:07 openeuler-riscv64 systemctl[19681]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:55:07 openeuler-riscv64 systemctl[19683]: [/usr/bin/systemctl daemon-reload] called by PID 19682 (/bin/sh /var/tmp/rpm-tmp.IJN10f 0)
+May 25 17:55:07 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 16540.
+May 25 17:55:07 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:55:09 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:55:10 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:55:10 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 16540.
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:11 openeuler-riscv64 [RPM][19660]: Transaction ID 646f3076 finished: 0
+May 25 17:55:11 openeuler-riscv64 systemd[1]: run-r51e4ea75a5c04d2f822b04dcee897ca0.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r51e4ea75a5c04d2f822b04dcee897ca0.service has successfully entered the 'dead' state.
+May 25 17:55:13 openeuler-riscv64 systemctl[19713]: [systemctl restart httpd] called by PID 19637 (bash -x oe_test_server_httpd_recover.sh)
+May 25 17:55:13 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16543.
+May 25 17:55:14 openeuler-riscv64 httpd[19714]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:55:14 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 16543.
+May 25 17:55:24 openeuler-riscv64 systemctl[19898]: [systemctl restart httpd] called by PID 19637 (bash -x oe_test_server_httpd_recover.sh)
+May 25 17:55:24 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16607.
+May 25 17:55:25 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:55:25 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 16607 and the job result is done.
+May 25 17:55:25 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16607.
+May 25 17:55:26 openeuler-riscv64 httpd[19902]: httpd: Could not open configuration file /etc/httpd/conf/httpd.conf: No such file or directory
+May 25 17:55:26 openeuler-riscv64 systemd[1]: httpd.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit httpd.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 25 17:55:26 openeuler-riscv64 systemd[1]: httpd.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has entered the 'failed' state with result 'exit-code'.
+May 25 17:55:26 openeuler-riscv64 systemd[1]: Failed to start The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished with a failure.
+░░ 
+░░ The job identifier is 16607 and the job result is failed.
+May 25 17:55:26 openeuler-riscv64 systemctl[19909]: [systemctl restart httpd.service] called by PID 19637 (bash -x oe_test_server_httpd_recover.sh)
+May 25 17:55:26 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16670.
+May 25 17:55:27 openeuler-riscv64 httpd[19910]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9b13:c5a0:6585:4b27%eth0. Set the 'ServerName' directive globally to suppress this message
+May 25 17:55:27 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 16670.
+May 25 17:55:34 openeuler-riscv64 systemctl[20091]: [systemctl start httpd] called by PID 19637 (bash -x oe_test_server_httpd_recover.sh)
+May 25 17:55:44 openeuler-riscv64 systemctl[20098]: [systemctl stop httpd] called by PID 19637 (bash -x oe_test_server_httpd_recover.sh)
+May 25 17:55:44 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 16797.
+May 25 17:55:45 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 25 17:55:45 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 16797 and the job result is done.
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: Transaction ID 646f30a7 started
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:55:51 openeuler-riscv64 [RPM][20104]: erase mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:55:51 openeuler-riscv64 systemctl[20109]: [/usr/bin/systemctl --no-reload --now disable httpd.service htcacheclean.service httpd.socket] called by PID 20108 (/bin/sh /var/tmp/rpm-tmp.DuoTQF 0)
+May 25 17:55:52 openeuler-riscv64 systemctl[20112]: [/usr/bin/systemctl daemon-reload] called by PID 20110 (/bin/sh /var/tmp/rpm-tmp.jvavpM 0)
+May 25 17:55:52 openeuler-riscv64 systemd[1]: Reloading.
+May 25 17:55:55 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 17:55:55 openeuler-riscv64 [RPM][20104]: erase httpd-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:55 openeuler-riscv64 [RPM][20104]: erase httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 25 17:55:56 openeuler-riscv64 [RPM][20104]: erase mailcap-2.1.53-3.oe2303.noarch: success
+May 25 17:55:56 openeuler-riscv64 [RPM][20104]: erase openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 25 17:55:56 openeuler-riscv64 [RPM][20104]: erase httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 25 17:55:56 openeuler-riscv64 [RPM][20104]: erase apr-util-1.6.1-14.oe2303.riscv64: success
+May 25 17:55:56 openeuler-riscv64 [RPM][20104]: erase apr-1.7.0-5.oe2303.riscv64: success
+May 25 17:55:56 openeuler-riscv64 [RPM][20104]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 25 17:55:56 openeuler-riscv64 [RPM][20104]: erase mod_http2-2.0.3-1.oe2303.riscv64: success
+May 25 17:55:56 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-rada94510dd344155b08a3977953cda42.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-rada94510dd344155b08a3977953cda42.service has finished successfully.
+░░ 
+░░ The job identifier is 16801.
+May 25 17:55:57 openeuler-riscv64 [RPM][20104]: Transaction ID 646f30a7 finished: 0
+May 25 17:55:57 openeuler-riscv64 systemctl[20133]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 17:55:57 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 16864.
+May 25 17:55:58 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 17:55:58 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 16864.
+May 25 17:55:58 openeuler-riscv64 systemd[1]: run-rada94510dd344155b08a3977953cda42.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-rada94510dd344155b08a3977953cda42.service has successfully entered the 'dead' state.
+May 25 17:56:00 openeuler-riscv64 sudo[19590]: pam_unix(sudo:session): session closed for user root
+May 25 17:56:00 openeuler-riscv64 sudo[20153]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/journalctl -xe --no-pager
+May 25 17:56:00 openeuler-riscv64 sudo[20153]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)

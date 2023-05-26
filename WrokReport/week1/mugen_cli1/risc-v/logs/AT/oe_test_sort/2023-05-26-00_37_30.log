@@ -1,0 +1,119 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:37:33 2023 - INFO  - Start environment preparation.
++ cat
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:37:33 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:37:34 2023 - INFO  - Start testing...
+++ sort sort_test.txt
+++ head -1
++ res=66
++ CHECK_RESULT 66 66 0 'sort faild'
++ actual_result=66
++ expect_result=66
++ mode=0
++ error_log='sort faild'
++ exit_mode=0
++ '[' -z 66 ']'
++ '[' 0 -eq 0 ']'
++ test 66x '!=' 66x
++ return 0
++ sort -c sort_test.txt
+sort: sort_test.txt:3: disorder:  openeuler
++ CHECK_RESULT 1 1 0 'sort -c faild'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='sort -c faild'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ sort -d sort_test.txt
++ head -3
++ grep aa
+   aa
++ CHECK_RESULT 0 0 0 'sort -d faild'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sort -d faild'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sort -g sort_test.txt
++ head -2
++ grep hello
+hello
++ CHECK_RESULT 0 0 0 'sort -g faild'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sort -g faild'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sort --help
++ CHECK_RESULT 0 0 0 'sort help faild'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sort help faild'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:37:34 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:37:35 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:37:35 2023 - INFO  - start environment cleanup.
++ rm -rf ./sort_test.txt
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:37:36 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,238 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu May 25 21:17:30 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL ModemManager
++ pkgs=ModemManager
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs ModemManager --node 1 --tempfile ''
++ tmpfile2=/tmp/tmphzjhfvv0
++ '[' -z '' ']'
++ tmpfile=/tmp/tmphzjhfvv0
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 21:18:05 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu May 25 21:18:06 2023 - INFO  - Start testing...
++ test_execution ModemManager.service
++ service=ModemManager.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-05-25 21:18:06'
++ test_restart ModemManager.service
++ service=ModemManager.service
++ systemctl restart ModemManager.service
++ CHECK_RESULT 0 0 0 'ModemManager.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ModemManager.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ModemManager.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-05-25 21:18:06 CST; 5s ago
++ CHECK_RESULT 0 0 0 'ModemManager.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ModemManager.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop ModemManager.service
++ CHECK_RESULT 0 0 0 'ModemManager.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ModemManager.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ModemManager.service
++ grep 'Active: inactive'
+     Active: inactive (dead) since Thu 2023-05-25 21:18:12 CST; 5s ago
++ CHECK_RESULT 0 0 0 'ModemManager.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ModemManager.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start ModemManager.service
++ CHECK_RESULT 0 0 0 'ModemManager.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ModemManager.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ModemManager.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-05-25 21:18:19 CST; 5s ago
++ CHECK_RESULT 0 0 0 'ModemManager.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ModemManager.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled ModemManager.service
++ service=ModemManager.service
+++ systemctl is-enabled ModemManager.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable ModemManager.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ symlink_file='/etc/systemd/system/dbus-org.freedesktop.ModemManager1.service
+/etc/systemd/system/multi-user.target.wants/ModemManager.service'
++ find /etc/systemd/system/dbus-org.freedesktop.ModemManager1.service /etc/systemd/system/multi-user.target.wants/ModemManager.service
+find: ‘/etc/systemd/system/dbus-org.freedesktop.ModemManager1.service’: No such file or directory
+find: ‘/etc/systemd/system/multi-user.target.wants/ModemManager.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'ModemManager.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ModemManager.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable ModemManager.service
+Created symlink /etc/systemd/system/dbus-org.freedesktop.ModemManager1.service → /usr/lib/systemd/system/ModemManager.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/ModemManager.service → /usr/lib/systemd/system/ModemManager.service.
++ find /etc/systemd/system/dbus-org.freedesktop.ModemManager1.service /etc/systemd/system/multi-user.target.wants/ModemManager.service
+/etc/systemd/system/dbus-org.freedesktop.ModemManager1.service
+/etc/systemd/system/multi-user.target.wants/ModemManager.service
++ CHECK_RESULT 0 0 0 'ModemManager.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ModemManager.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-05-25 21:18:06' -u ModemManager.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of ModemManager.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of ModemManager.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload ModemManager.service
++ service=ModemManager.service
++ systemctl start ModemManager.service
++ systemctl reload ModemManager.service
++ grep 'Job type reload is not applicable'
+Failed to reload ModemManager.service: Job type reload is not applicable for unit ModemManager.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit ModemManager.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit ModemManager.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status ModemManager.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-05-25 21:18:19 CST; 12s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu May 25 21:18:32 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:18:33 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 21:18:33 2023 - INFO  - start environment cleanup.
++ systemctl stop ModemManager.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmphzjhfvv0 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmphzjhfvv0
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 21:18:46 2023 - INFO  - Finish environment cleanup!

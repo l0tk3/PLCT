@@ -1,0 +1,1259 @@
+May 25 22:52:38 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atuned.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 22:52:39 openeuler-riscv64 systemctl[3866]: [/usr/bin/systemctl daemon-reload] called by PID 3864 (/bin/sh /var/tmp/rpm-tmp.h36XZB 0)
+May 25 22:52:39 openeuler-riscv64 systemd[1]: Reloading.
+May 25 22:52:41 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 22:52:42 openeuler-riscv64 [RPM][3858]: erase atune-1.0.0-8.oe2303.riscv64: success
+May 25 22:52:42 openeuler-riscv64 [RPM][3858]: erase atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 22:52:42 openeuler-riscv64 [RPM][3858]: erase python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 22:52:43 openeuler-riscv64 [RPM][3858]: erase python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 22:52:43 openeuler-riscv64 [RPM][3858]: erase python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 22:52:43 openeuler-riscv64 [RPM][3858]: erase python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 22:52:43 openeuler-riscv64 [RPM][3858]: erase python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 22:52:44 openeuler-riscv64 [RPM][3858]: erase python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 22:52:44 openeuler-riscv64 [RPM][3858]: erase python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 22:52:44 openeuler-riscv64 [RPM][3858]: erase python3-click-8.0.4-1.oe2303.noarch: success
+May 25 22:52:44 openeuler-riscv64 [RPM][3858]: erase atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 22:52:46 openeuler-riscv64 [RPM][3858]: erase python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 22:52:50 openeuler-riscv64 [RPM][3858]: erase python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 22:52:50 openeuler-riscv64 [RPM][3858]: erase python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 22:52:51 openeuler-riscv64 [RPM][3858]: erase python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 22:52:51 openeuler-riscv64 [RPM][3858]: erase python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 22:52:52 openeuler-riscv64 [RPM][3858]: erase python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 22:52:54 openeuler-riscv64 [RPM][3858]: erase python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 22:52:56 openeuler-riscv64 [RPM][3858]: erase python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 22:52:57 openeuler-riscv64 [RPM][3858]: erase openblas-0.3.18-2.oe2303.riscv64: success
+May 25 22:52:57 openeuler-riscv64 [RPM][3858]: erase hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 22:52:57 openeuler-riscv64 [RPM][3858]: erase libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 22:52:57 openeuler-riscv64 systemctl[3883]: [/usr/bin/systemctl --no-reload --now disable sysstat.service sysstat-collect.timer sysstat-summary.timer] called by PID 3882 (/bin/sh /var/tmp/rpm-tmp.YLkc6K 0)
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase hwdata-0.366-1.oe2303.noarch: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase python3-packaging-21.3-3.oe2303.noarch: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase python3-py-1.11.0-2.oe2303.noarch: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 22:52:58 openeuler-riscv64 [RPM][3858]: erase python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 22:52:59 openeuler-riscv64 [RPM][3858]: erase python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 22:52:59 openeuler-riscv64 [RPM][3858]: erase python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 22:52:59 openeuler-riscv64 [RPM][3858]: erase python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 22:52:59 openeuler-riscv64 [RPM][3858]: erase python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 22:52:59 openeuler-riscv64 [RPM][3858]: erase python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 22:52:59 openeuler-riscv64 [RPM][3858]: erase python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 22:52:59 openeuler-riscv64 [RPM][3858]: erase python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 22:53:00 openeuler-riscv64 [RPM][3858]: erase python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 22:53:00 openeuler-riscv64 [RPM][3858]: erase atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 22:53:00 openeuler-riscv64 systemctl[3888]: [/usr/bin/systemctl --no-reload --now disable lm_sensors.service] called by PID 3887 (/bin/sh /var/tmp/rpm-tmp.womiwa 0)
+May 25 22:53:00 openeuler-riscv64 [RPM][3858]: erase lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 22:53:00 openeuler-riscv64 [RPM][3858]: erase libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 22:53:00 openeuler-riscv64 [RPM][3858]: erase python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 22:53:00 openeuler-riscv64 [RPM][3858]: erase python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 22:53:00 openeuler-riscv64 [RPM][3858]: erase atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 22:53:01 openeuler-riscv64 [RPM][3858]: erase perf-6.1.19-2.oe2303.riscv64: success
+May 25 22:53:01 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r36b4df91d4374688ab9d4cd82b797c83.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r36b4df91d4374688ab9d4cd82b797c83.service has finished successfully.
+░░ 
+░░ The job identifier is 2658.
+May 25 22:53:01 openeuler-riscv64 [RPM][3858]: Transaction ID 646f7634 finished: 0
+May 25 22:53:01 openeuler-riscv64 systemctl[3893]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 22:53:01 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 2723.
+May 25 22:53:02 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 22:53:02 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 2723.
+May 25 22:53:03 openeuler-riscv64 systemd[1]: run-r36b4df91d4374688ab9d4cd82b797c83.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r36b4df91d4374688ab9d4cd82b797c83.service has successfully entered the 'dead' state.
+May 25 22:53:05 openeuler-riscv64 sudo[3650]: pam_unix(sudo:session): session closed for user root
+May 25 22:53:05 openeuler-riscv64 sudo[3912]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/journalctl -xe --no-pager
+May 25 22:53:05 openeuler-riscv64 sudo[3912]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 22:53:05 openeuler-riscv64 sudo[3912]: pam_unix(sudo:session): session closed for user root
+May 25 22:53:05 openeuler-riscv64 sudo[3915]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/systemctl status atuned.service --no-pager
+May 25 22:53:05 openeuler-riscv64 sudo[3915]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 22:53:05 openeuler-riscv64 sudo[3915]: pam_unix(sudo:session): session closed for user root
+May 25 22:53:06 openeuler-riscv64 sudo[3924]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f atune -r oe_test_service_atuned_07 -x
+May 25 22:53:06 openeuler-riscv64 sudo[3924]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 22:54:23 openeuler-riscv64 [RPM][3995]: Transaction ID 646f7696 started
+May 25 22:54:26 openeuler-riscv64 [RPM][3995]: install python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 22:54:26 openeuler-riscv64 [RPM][3995]: install python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 22:54:27 openeuler-riscv64 [RPM][3995]: install python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 22:54:27 openeuler-riscv64 [RPM][3995]: install python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 22:54:27 openeuler-riscv64 [RPM][3995]: install python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 22:54:28 openeuler-riscv64 [RPM][3995]: install libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 22:54:28 openeuler-riscv64 [RPM][3995]: install openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 22:55:56 openeuler-riscv64 [RPM][3995]: install openblas-0.3.18-2.oe2303.riscv64: success
+May 25 22:56:02 openeuler-riscv64 [RPM][3995]: install python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 22:56:14 openeuler-riscv64 [RPM][3995]: install python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 22:56:14 openeuler-riscv64 [RPM][3995]: install python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 22:56:18 openeuler-riscv64 [RPM][3995]: install python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 22:56:19 openeuler-riscv64 [RPM][3995]: install atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 22:56:19 openeuler-riscv64 [RPM][3995]: install python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 22:56:24 openeuler-riscv64 [RPM][3995]: install python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 22:56:24 openeuler-riscv64 [RPM][3995]: install python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 22:56:24 openeuler-riscv64 [RPM][3995]: install python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 22:56:25 openeuler-riscv64 [RPM][3995]: install python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 22:56:32 openeuler-riscv64 [RPM][3995]: install python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 22:56:33 openeuler-riscv64 [RPM][3995]: install python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 22:56:33 openeuler-riscv64 [RPM][3995]: install python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 22:56:34 openeuler-riscv64 [RPM][3995]: install python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 22:56:34 openeuler-riscv64 [RPM][3995]: install python3-py-1.11.0-2.oe2303.noarch: success
+May 25 22:56:34 openeuler-riscv64 [RPM][3995]: install python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 22:56:34 openeuler-riscv64 [RPM][3995]: install python3-packaging-21.3-3.oe2303.noarch: success
+May 25 22:56:34 openeuler-riscv64 [RPM][3995]: install python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 22:56:34 openeuler-riscv64 [RPM][3995]: install python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 22:56:35 openeuler-riscv64 [RPM][3995]: install python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 22:56:35 openeuler-riscv64 [RPM][3995]: install python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 22:56:35 openeuler-riscv64 [RPM][3995]: install python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 22:56:36 openeuler-riscv64 [RPM][3995]: install python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 22:56:36 openeuler-riscv64 [RPM][3995]: install python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 22:56:49 openeuler-riscv64 [RPM][3995]: install python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 22:56:49 openeuler-riscv64 [RPM][3995]: install python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 22:56:49 openeuler-riscv64 [RPM][3995]: install python3-click-8.0.4-1.oe2303.noarch: success
+May 25 22:56:49 openeuler-riscv64 [RPM][3995]: install python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 22:56:50 openeuler-riscv64 [RPM][3995]: install python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 22:56:50 openeuler-riscv64 [RPM][3995]: install python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 22:56:51 openeuler-riscv64 [RPM][3995]: install perf-6.1.19-2.oe2303.riscv64: success
+May 25 22:56:51 openeuler-riscv64 systemctl[4002]: [/usr/bin/systemctl --no-reload preset lm_sensors.service] called by PID 4001 (/bin/sh /var/tmp/rpm-tmp.sf7c4D 1)
+May 25 22:56:52 openeuler-riscv64 [RPM][3995]: install lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 22:56:52 openeuler-riscv64 systemctl[4005]: [/usr/bin/systemctl --no-reload preset sysstat.service sysstat-collect.timer sysstat-summary.timer] called by PID 4004 (/bin/sh /var/tmp/rpm-tmp.sW1dcy 1)
+May 25 22:56:52 openeuler-riscv64 [RPM][3995]: install sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 22:56:53 openeuler-riscv64 [RPM][3995]: install hwdata-0.366-1.oe2303.noarch: success
+May 25 22:56:54 openeuler-riscv64 [RPM][3995]: install libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 22:56:54 openeuler-riscv64 [RPM][3995]: install hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 22:56:56 openeuler-riscv64 [RPM][3995]: install atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 22:56:58 openeuler-riscv64 [RPM][3995]: install atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:04 openeuler-riscv64 systemctl[4008]: [/usr/bin/systemctl --no-reload preset atuned.service] called by PID 4007 (/bin/sh /var/tmp/rpm-tmp.IIDJBQ 1)
+May 25 22:57:04 openeuler-riscv64 [RPM][3995]: install atune-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:15 openeuler-riscv64 [RPM][3995]: install atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:16 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r50e1a91d469c443f83df0a051db6b576.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r50e1a91d469c443f83df0a051db6b576.service has finished successfully.
+░░ 
+░░ The job identifier is 2726.
+May 25 22:57:16 openeuler-riscv64 systemctl[4014]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 22:57:16 openeuler-riscv64 systemctl[4016]: [/usr/bin/systemctl daemon-reload] called by PID 4015 (/bin/sh /var/tmp/rpm-tmp.nHF80o 0)
+May 25 22:57:16 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 2791.
+May 25 22:57:16 openeuler-riscv64 systemd[1]: Reloading.
+May 25 22:57:18 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 22:57:19 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atuned.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 22:57:19 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 2791.
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install openblas-0.3.18-2.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-py-1.11.0-2.oe2303.noarch: success
+May 25 22:57:19 openeuler-riscv64 [RPM][3995]: install python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-packaging-21.3-3.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-click-8.0.4-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install perf-6.1.19-2.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install hwdata-0.366-1.oe2303.noarch: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install atune-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: install atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:20 openeuler-riscv64 [RPM][3995]: Transaction ID 646f7696 finished: 0
+May 25 22:57:20 openeuler-riscv64 systemd[1]: run-r50e1a91d469c443f83df0a051db6b576.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r50e1a91d469c443f83df0a051db6b576.service has successfully entered the 'dead' state.
+May 25 22:57:28 openeuler-riscv64 systemctl[4073]: [systemctl start atuned] called by PID 3971 (bash -x oe_test_service_atuned_07.sh)
+May 25 22:57:28 openeuler-riscv64 systemd[1]: Starting A-Tune Daemon...
+░░ Subject: A start job for unit atuned.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit atuned.service has begun execution.
+░░ 
+░░ The job identifier is 2794.
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: time="2023-05-25T22:57:29+08:00" level=info msg="valid network : eth0" file="config.go:321"
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: time="2023-05-25T22:57:29+08:00" level=info msg="Connecting to DB: /var/lib/atuned/atuned.db" file="sqlstore.go:47"
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: time="2023-05-25T22:57:29+08:00" level=info msg="initializing service: monitor" file="atuned.go:126"
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: time="2023-05-25T22:57:29+08:00" level=info msg="initializing service: pyengine" file="atuned.go:126"
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: fatal error: runtime: no plugin module data
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 1 [running]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.throw({0xaaaaaab8986ee1?, 0xc00011f367?})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/panic.go:1047 +0x44 fp=0xc00011f368 sp=0xc00011f340 pc=0xaaaaaab82959e4
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: plugin.lastmoduleinit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/plugin.go:20 +0x730 fp=0xc00011f448 sp=0xc00011f368 pc=0xaaaaaab82c14b8
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: plugin.open({0xc000222000, 0x30})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/plugin/plugin_dlopen.go:77 +0x390 fp=0xc00011f6b0 sp=0xc00011f448 pc=0xaaaaaab8657ba8
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: plugin.Open(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/plugin/plugin.go:32
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/utils.LoadPlugins({0xaaaaaab8980acf?, 0xaaaaaab8983e0e?})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/utils/utils.go:138 +0xfc fp=0xc00011f768 sp=0xc00011f6b0 pc=0xaaaaaab866caec
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: main.loadModules(0x0?, 0x0?, {0xaaaaaab8980acf, 0x17})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:95 +0x70 fp=0xc00011f790 sp=0xc00011f768 pc=0xaaaaaab8763cb8
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: main.runatuned(0xc00018ca70?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:209 +0x4dc fp=0xc00011f960 sp=0xc00011f790 pc=0xaaaaaab876461c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: github.com/urfave/cli.HandleAction({0xaaaaaab8895ae0?, 0xaaaaaab89a6ba8?}, 0xc00002a680?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/vendor/github.com/urfave/cli/app.go:490 +0x80 fp=0xc00011f970 sp=0xc00011f960 pc=0xaaaaaab8660a20
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: github.com/urfave/cli.(*App).Run(0xc00015d040, {0xc00001e280, 0x1, 0x1})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/vendor/github.com/urfave/cli/app.go:264 +0x538 fp=0xc00011ff30 sp=0xc00011f970 pc=0xaaaaaab865e6e0
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: main.main()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:238 +0x128 fp=0xc00011ff80 sp=0xc00011ff30 pc=0xaaaaaab8764a30
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.main()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:250 +0x218 fp=0xc00011ffd8 sp=0xc00011ff80 pc=0xaaaaaab8298290
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00011ffd8 sp=0xc00011ffd8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 2 [force gc (idle)]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003efb0 sp=0xc00003ef98 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goparkunlock(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:369
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.forcegchelper()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:302 +0xb0 fp=0xc00003efd8 sp=0xc00003efb0 pc=0xaaaaaab8298508
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003efd8 sp=0xc00003efd8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by runtime.init.5
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:290 +0x28
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 3 [GC sweep wait]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003f798 sp=0xc00003f780 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goparkunlock(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:369
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.bgsweep(0x0?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mgcsweep.go:278 +0xa8 fp=0xc00003f7c8 sp=0xc00003f798 pc=0xaaaaaab8283320
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gcenable.func1()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mgc.go:178 +0x2c fp=0xc00003f7d8 sp=0xc00003f7c8 pc=0xaaaaaab8277a54
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003f7d8 sp=0xc00003f7d8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by runtime.gcenable
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mgc.go:178 +0x70
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 4 [GC scavenge wait]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0xc000064000?, 0xaaaaaab8a5d750?, 0x0?, 0x0?, 0x0?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003ff80 sp=0xc00003ff68 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goparkunlock(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:369
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.(*scavengerState).park(0xaaaaaab8ea2360)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mgcscavenge.go:389 +0x68 fp=0xc00003ffa8 sp=0xc00003ff80 pc=0xaaaaaab8281210
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.bgscavenge(0x0?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mgcscavenge.go:617 +0x50 fp=0xc00003ffc8 sp=0xc00003ffa8 pc=0xaaaaaab8281778
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gcenable.func2()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mgc.go:179 +0x2c fp=0xc00003ffd8 sp=0xc00003ffc8 pc=0xaaaaaab82779f4
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003ffd8 sp=0xc00003ffd8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by runtime.gcenable
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mgc.go:179 +0xb0
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 5 [finalizer wait]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0x3000?, 0x18000?, 0x0?, 0x30?, 0x3000?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003e5a8 sp=0xc00003e590 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goparkunlock(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:369
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.runfinq()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mfinal.go:180 +0x110 fp=0xc00003e7d8 sp=0xc00003e5a8 pc=0xaaaaaab8276c48
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003e7d8 sp=0xc00003e7d8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by runtime.createfing
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/mfinal.go:157 +0x64
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 6 [select]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0xc000040798?, 0x2?, 0xb8?, 0xf5?, 0xc000040794?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc000040650 sp=0xc000040638 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.selectgo(0xc000040798, 0xc000040790, 0x0?, 0x0, 0x0?, 0x1)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/select.go:328 +0x3b4 fp=0xc000040758 sp=0xc000040650 pc=0xaaaaaab82a7c8c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: database/sql.(*DB).connectionOpener(0xc00018b110, {0xaaaaaab8a65738, 0xc000067cc0})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/database/sql/sql.go:1224 +0xa4 fp=0xc0000407b8 sp=0xc000040758 pc=0xaaaaaab86923d4
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: database/sql.OpenDB.func1()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/database/sql/sql.go:792 +0x34 fp=0xc0000407d8 sp=0xc0000407b8 pc=0xaaaaaab8690894
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc0000407d8 sp=0xc0000407d8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by database/sql.OpenDB
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/database/sql/sql.go:792 +0x184
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 7 [select]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0xc00004ce38?, 0x2?, 0xe?, 0x0?, 0xc00004ce1c?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00004ccc8 sp=0xc00004ccb0 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.selectgo(0xc00004ce38, 0xc00004ce18, 0x0?, 0x0, 0x0?, 0x1)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/select.go:328 +0x3b4 fp=0xc00004cdd0 sp=0xc00004ccc8 pc=0xaaaaaab82a7c8c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/utils.WaitForPyservice()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/utils/utils.go:268 +0xc4 fp=0xc00004ce58 sp=0xc00004cdd0 pc=0xaaaaaab866cdc4
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/service/monitor.(*Monitor).Run(0xc00000e568)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/monitor/monitors.go:50 +0x30 fp=0xc00004cf70 sp=0xc00004ce58 pc=0xaaaaaab8762240
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: main.doBeforeJob.func1()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:142 +0x34 fp=0xc00004cfd8 sp=0xc00004cf70 pc=0xaaaaaab87640ac
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00004cfd8 sp=0xc00004cfd8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by main.doBeforeJob
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:141 +0x340
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 8 [syscall]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: syscall.Syscall6(0xaaaaaab831b0e4?, 0xaaaaaab82bfeac?, 0xc0000415f0?, 0xaaaaaab82bfffc?, 0x3000?, 0x3?, 0x3000?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/syscall/syscall_linux.go:90 +0x2c fp=0xc000051d08 sp=0xc000051c88 pc=0xaaaaaab831b184
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os.(*Process).blockUntilWaitable(0xc000026e40)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/wait_waitid.go:32 +0x6c fp=0xc000051dd8 sp=0xc000051d08 pc=0xaaaaaab8345cac
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os.(*Process).wait(0xc000026e40)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/exec_unix.go:22 +0x38 fp=0xc000051e30 sp=0xc000051dd8 pc=0xaaaaaab833f6f0
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os.(*Process).Wait(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/exec.go:132
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os/exec.(*Cmd).Wait(0xc0001534a0)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/exec/exec.go:599 +0x4c fp=0xc000051ea8 sp=0xc000051e30 pc=0xaaaaaab865263c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run(0x0?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:73 +0x40c fp=0xc000051f70 sp=0xc000051ea8 pc=0xaaaaaab8763664
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: main.doBeforeJob.func1()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:142 +0x34 fp=0xc000051fd8 sp=0xc000051f70 pc=0xaaaaaab87640ac
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc000051fd8 sp=0xc000051fd8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by main.doBeforeJob
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:141 +0x340
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 9 [chan receive]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0xaaaaaab8762c3c?, 0xc00000000f?, 0xe4?, 0x2c?, 0xaaaaaab8762afc?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc000041ec8 sp=0xc000041eb0 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.chanrecv(0xc000090240, 0x0, 0x60?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/chan.go:583 +0x498 fp=0xc000041f58 sp=0xc000041ec8 pc=0xaaaaaab8264e40
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.chanrecv1(0xc000090240?, 0xc000041fa8?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/chan.go:442 +0x14 fp=0xc000041f78 sp=0xc000041f58 pc=0xaaaaaab8264964
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/service/pyservice.listenToSystemSignals(0xc0001534a0)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:95 +0x98 fp=0xc000041fc8 sp=0xc000041f78 pc=0xaaaaaab87639b8
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run.func1()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:63 +0x2c fp=0xc000041fd8 sp=0xc000041fc8 pc=0xaaaaaab8763804
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc000041fd8 sp=0xc000041fd8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:63 +0x32c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 10 [IO wait]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0xaaaaaab8ece208?, 0xffffff6906d498?, 0xb?, 0x0?, 0x3f?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003a500 sp=0xc00003a4e8 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.netpollblock(0xffffffffffffffff?, 0xb833634c?, 0xaa?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/netpoll.go:526 +0x158 fp=0xc00003a530 sp=0xc00003a500 pc=0xaaaaaab8291240
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: internal/poll.runtime_pollWait(0xffffff6a0c8240, 0x72)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/netpoll.go:305 +0xe4 fp=0xc00003a550 sp=0xc00003a530 pc=0xaaaaaab82c036c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: internal/poll.(*pollDesc).wait(0xc0000206c0?, 0xc0001f0000?, 0x1)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x44 fp=0xc00003a578 sp=0xc00003a550 pc=0xaaaaaab8334fa4
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: internal/poll.(*pollDesc).waitRead(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: internal/poll.(*FD).Read(0xc0000206c0, {0xc0001f0000, 0x1000, 0x1000})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/internal/poll/fd_unix.go:167 +0x218 fp=0xc00003a5f0 sp=0xc00003a578 pc=0xaaaaaab8336328
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os.(*File).read(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/file_posix.go:31
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os.(*File).Read(0xc00000e5a8, {0xc0001f0000?, 0x0?, 0x0?})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/file.go:119 +0x80 fp=0xc00003a640 sp=0xc00003a5f0 pc=0xaaaaaab833fe10
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: bufio.(*Scanner).Scan(0xc00003a740)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/bufio/scan.go:214 +0x7e4 fp=0xc00003a710 sp=0xc00003a640 pc=0xaaaaaab84a9cbc
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/service/pyservice.logStdout({0xaaaaaab8a63728?, 0xc00000e5a8})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:85 +0xc0 fp=0xc00003a7c0 sp=0xc00003a710 pc=0xaaaaaab87638f8
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run.func2()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:64 +0x30 fp=0xc00003a7d8 sp=0xc00003a7c0 pc=0xaaaaaab87637b0
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003a7d8 sp=0xc00003a7d8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:64 +0x374
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 11 [IO wait]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0x0?, 0x0?, 0xb?, 0x0?, 0x3f?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003ad00 sp=0xc00003ace8 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.netpollblock(0xffffffffffffffff?, 0xb833634c?, 0xaa?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/netpoll.go:526 +0x158 fp=0xc00003ad30 sp=0xc00003ad00 pc=0xaaaaaab8291240
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: internal/poll.runtime_pollWait(0xffffff6a0c8060, 0x72)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/netpoll.go:305 +0xe4 fp=0xc00003ad50 sp=0xc00003ad30 pc=0xaaaaaab82c036c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: internal/poll.(*pollDesc).wait(0xc000020780?, 0xc0001df000?, 0x1)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x44 fp=0xc00003ad78 sp=0xc00003ad50 pc=0xaaaaaab8334fa4
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: internal/poll.(*pollDesc).waitRead(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: internal/poll.(*FD).Read(0xc000020780, {0xc0001df000, 0x1000, 0x1000})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/internal/poll/fd_unix.go:167 +0x218 fp=0xc00003adf0 sp=0xc00003ad78 pc=0xaaaaaab8336328
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os.(*File).read(...)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/file_posix.go:31
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os.(*File).Read(0xc00000e5b8, {0xc0001df000?, 0x0?, 0x0?})
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/file.go:119 +0x80 fp=0xc00003ae40 sp=0xc00003adf0 pc=0xaaaaaab833fe10
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: bufio.(*Scanner).Scan(0xc00003af40)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/bufio/scan.go:214 +0x7e4 fp=0xc00003af10 sp=0xc00003ae40 pc=0xaaaaaab84a9cbc
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/service/pyservice.logStdout({0xaaaaaab8a63728?, 0xc00000e5b8})
+May 25 22:57:29 openeuler-riscv64 systemd[1]: atuned.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit atuned.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 2.
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:85 +0xc0 fp=0xc00003afc0 sp=0xc00003af10 pc=0xaaaaaab87638f8
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run.func3()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:65 +0x30 fp=0xc00003afd8 sp=0xc00003afc0 pc=0xaaaaaab8763748
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003afd8 sp=0xc00003afd8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:65 +0x3bc
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 18 [select, locked to thread]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.gopark(0xc000040fb0?, 0x2?, 0x0?, 0x0?, 0xc000040fac?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc000286e50 sp=0xc000286e38 pc=0xaaaaaab8298680
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.selectgo(0xc000286fb0, 0xc000040fa8, 0x0?, 0x0, 0x0?, 0x1)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/select.go:328 +0x3b4 fp=0xc000286f58 sp=0xc000286e50 pc=0xaaaaaab82a7c8c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.ensureSigM.func1()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/signal_unix.go:991 +0x1e8 fp=0xc000286fd8 sp=0xc000286f58 pc=0xaaaaaab82ac2c0
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc000286fd8 sp=0xc000286fd8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by runtime.ensureSigM
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/signal_unix.go:974 +0xdc
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: goroutine 19 [syscall]:
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.notetsleepg(0x0?, 0x0?)
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/lock_futex.go:236 +0x48 fp=0xc0000ac7a8 sp=0xc0000ac778 pc=0xaaaaaab82698b0
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os/signal.signal_recv()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/sigqueue.go:152 +0x34 fp=0xc0000ac7c0 sp=0xc0000ac7a8 pc=0xaaaaaab82c2a4c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: os/signal.loop()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/signal/signal_unix.go:23 +0x20 fp=0xc0000ac7d8 sp=0xc0000ac7c0 pc=0xaaaaaab8763030
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: runtime.goexit()
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc0000ac7d8 sp=0xc0000ac7d8 pc=0xaaaaaab82c546c
+May 25 22:57:29 openeuler-riscv64 atuned[4074]: created by os/signal.Notify.func1.1
+May 25 22:57:29 openeuler-riscv64 atuned[4074]:         /usr/lib/golang/src/os/signal/signal.go:151 +0x2c
+May 25 22:57:29 openeuler-riscv64 systemd[1]: atuned.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit atuned.service has entered the 'failed' state with result 'exit-code'.
+May 25 22:57:29 openeuler-riscv64 systemd[1]: Failed to start A-Tune Daemon.
+░░ Subject: A start job for unit atuned.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit atuned.service has finished with a failure.
+░░ 
+░░ The job identifier is 2794 and the job result is failed.
+May 25 22:57:29 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atuned.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 22:57:31 openeuler-riscv64 systemctl[4088]: [systemctl start atune-engine] called by PID 3971 (bash -x oe_test_service_atuned_07.sh)
+May 25 22:57:31 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atune-engine.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 22:57:31 openeuler-riscv64 systemd[1]: Started A-Tune AI service.
+░░ Subject: A start job for unit atune-engine.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit atune-engine.service has finished successfully.
+░░ 
+░░ The job identifier is 2861.
+May 25 22:57:31 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atune-engine.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 22:57:39 openeuler-riscv64 systemctl[4145]: [systemctl stop atuned] called by PID 3971 (bash -x oe_test_service_atuned_07.sh)
+May 25 22:57:39 openeuler-riscv64 systemctl[4146]: [systemctl stop atune-engine] called by PID 3971 (bash -x oe_test_service_atuned_07.sh)
+May 25 22:57:39 openeuler-riscv64 systemd[1]: Stopping A-Tune AI service...
+░░ Subject: A stop job for unit atune-engine.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit atune-engine.service has begun execution.
+░░ 
+░░ The job identifier is 2929.
+May 25 22:57:39 openeuler-riscv64 systemd[1]: atune-engine.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit atune-engine.service has successfully entered the 'dead' state.
+May 25 22:57:39 openeuler-riscv64 systemd[1]: Stopped A-Tune AI service.
+░░ Subject: A stop job for unit atune-engine.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit atune-engine.service has finished.
+░░ 
+░░ The job identifier is 2929 and the job result is done.
+May 25 22:57:39 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atune-engine.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 22:57:39 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atune-engine.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 22:57:48 openeuler-riscv64 [RPM][4154]: Transaction ID 646f776c started
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase atune-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-click-8.0.4-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase openblas-0.3.18-2.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase hwdata-0.366-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-packaging-21.3-3.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-py-1.11.0-2.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 [RPM][4154]: erase perf-6.1.19-2.oe2303.riscv64: success
+May 25 22:57:50 openeuler-riscv64 systemctl[4159]: [/usr/bin/systemctl --no-reload --now disable atuned.service] called by PID 4158 (/bin/sh /var/tmp/rpm-tmp.VNl0ky 0)
+May 25 22:57:50 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atuned.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 22:57:51 openeuler-riscv64 systemctl[4162]: [/usr/bin/systemctl daemon-reload] called by PID 4160 (/bin/sh /var/tmp/rpm-tmp.JmKUDK 0)
+May 25 22:57:51 openeuler-riscv64 systemd[1]: Reloading.
+May 25 22:57:53 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 22:57:54 openeuler-riscv64 [RPM][4154]: erase atune-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:54 openeuler-riscv64 [RPM][4154]: erase atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 22:57:54 openeuler-riscv64 [RPM][4154]: erase python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 22:57:55 openeuler-riscv64 [RPM][4154]: erase python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 22:57:55 openeuler-riscv64 [RPM][4154]: erase python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 22:57:55 openeuler-riscv64 [RPM][4154]: erase python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 22:57:56 openeuler-riscv64 [RPM][4154]: erase python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 22:57:56 openeuler-riscv64 [RPM][4154]: erase python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 22:57:56 openeuler-riscv64 [RPM][4154]: erase python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 22:57:56 openeuler-riscv64 [RPM][4154]: erase python3-click-8.0.4-1.oe2303.noarch: success
+May 25 22:57:56 openeuler-riscv64 [RPM][4154]: erase atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 22:57:58 openeuler-riscv64 [RPM][4154]: erase python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 22:58:02 openeuler-riscv64 [RPM][4154]: erase python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 22:58:02 openeuler-riscv64 [RPM][4154]: erase python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 22:58:02 openeuler-riscv64 [RPM][4154]: erase python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 22:58:03 openeuler-riscv64 [RPM][4154]: erase python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 22:58:04 openeuler-riscv64 [RPM][4154]: erase python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 22:58:06 openeuler-riscv64 [RPM][4154]: erase python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 22:58:08 openeuler-riscv64 [RPM][4154]: erase python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 22:58:09 openeuler-riscv64 [RPM][4154]: erase openblas-0.3.18-2.oe2303.riscv64: success
+May 25 22:58:09 openeuler-riscv64 [RPM][4154]: erase hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 22:58:10 openeuler-riscv64 [RPM][4154]: erase libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 22:58:10 openeuler-riscv64 systemctl[4179]: [/usr/bin/systemctl --no-reload --now disable sysstat.service sysstat-collect.timer sysstat-summary.timer] called by PID 4178 (/bin/sh /var/tmp/rpm-tmp.jMlSTn 0)
+May 25 22:58:10 openeuler-riscv64 [RPM][4154]: erase sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 22:58:10 openeuler-riscv64 [RPM][4154]: erase hwdata-0.366-1.oe2303.noarch: success
+May 25 22:58:10 openeuler-riscv64 [RPM][4154]: erase openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 22:58:10 openeuler-riscv64 [RPM][4154]: erase python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 22:58:10 openeuler-riscv64 [RPM][4154]: erase python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 22:58:10 openeuler-riscv64 [RPM][4154]: erase python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 22:58:10 openeuler-riscv64 [RPM][4154]: erase python3-packaging-21.3-3.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-py-1.11.0-2.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 22:58:11 openeuler-riscv64 [RPM][4154]: erase python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 22:58:12 openeuler-riscv64 [RPM][4154]: erase python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 22:58:12 openeuler-riscv64 [RPM][4154]: erase python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 22:58:12 openeuler-riscv64 [RPM][4154]: erase atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 22:58:12 openeuler-riscv64 systemctl[4184]: [/usr/bin/systemctl --no-reload --now disable lm_sensors.service] called by PID 4183 (/bin/sh /var/tmp/rpm-tmp.3YbcVX 0)
+May 25 22:58:12 openeuler-riscv64 [RPM][4154]: erase lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 22:58:12 openeuler-riscv64 [RPM][4154]: erase libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 22:58:12 openeuler-riscv64 [RPM][4154]: erase python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 22:58:13 openeuler-riscv64 [RPM][4154]: erase python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 22:58:13 openeuler-riscv64 [RPM][4154]: erase atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 22:58:13 openeuler-riscv64 [RPM][4154]: erase perf-6.1.19-2.oe2303.riscv64: success
+May 25 22:58:13 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r29fa2849ce3b432393f70db5310af65e.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r29fa2849ce3b432393f70db5310af65e.service has finished successfully.
+░░ 
+░░ The job identifier is 2935.
+May 25 22:58:13 openeuler-riscv64 [RPM][4154]: Transaction ID 646f776c finished: 0
+May 25 22:58:13 openeuler-riscv64 systemctl[4189]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 22:58:14 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 3000.
+May 25 22:58:15 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 22:58:15 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 3000.
+May 25 22:58:15 openeuler-riscv64 systemd[1]: run-r29fa2849ce3b432393f70db5310af65e.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r29fa2849ce3b432393f70db5310af65e.service has successfully entered the 'dead' state.
+May 25 22:58:17 openeuler-riscv64 sudo[3924]: pam_unix(sudo:session): session closed for user root
+May 25 22:58:17 openeuler-riscv64 sudo[4214]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/journalctl -xe --no-pager
+May 25 22:58:17 openeuler-riscv64 sudo[4214]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 22:58:17 openeuler-riscv64 sudo[4214]: pam_unix(sudo:session): session closed for user root
+May 25 22:58:18 openeuler-riscv64 sudo[4217]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/systemctl status atuned.service --no-pager
+May 25 22:58:18 openeuler-riscv64 sudo[4217]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 22:58:18 openeuler-riscv64 sudo[4217]: pam_unix(sudo:session): session closed for user root
+May 25 22:58:18 openeuler-riscv64 sudo[4226]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f atune -r oe_test_service_atuned_08 -x
+May 25 22:58:18 openeuler-riscv64 sudo[4226]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 22:59:34 openeuler-riscv64 [RPM][4297]: Transaction ID 646f77cd started
+May 25 22:59:37 openeuler-riscv64 [RPM][4297]: install python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 22:59:37 openeuler-riscv64 [RPM][4297]: install python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 22:59:38 openeuler-riscv64 [RPM][4297]: install python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 22:59:38 openeuler-riscv64 [RPM][4297]: install python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 22:59:38 openeuler-riscv64 [RPM][4297]: install python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 22:59:39 openeuler-riscv64 [RPM][4297]: install libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 22:59:39 openeuler-riscv64 [RPM][4297]: install openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 23:01:01 openeuler-riscv64 CROND[4302]: (root) CMD (run-parts /etc/cron.hourly)
+May 25 23:01:01 openeuler-riscv64 run-parts[4305]: (/etc/cron.hourly) starting 0anacron
+May 25 23:01:02 openeuler-riscv64 run-parts[4311]: (/etc/cron.hourly) finished 0anacron
+May 25 23:01:02 openeuler-riscv64 CROND[4301]: (root) CMDEND (run-parts /etc/cron.hourly)
+May 25 23:01:07 openeuler-riscv64 [RPM][4297]: install openblas-0.3.18-2.oe2303.riscv64: success
+May 25 23:01:12 openeuler-riscv64 [RPM][4297]: install python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 23:01:23 openeuler-riscv64 [RPM][4297]: install python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 23:01:23 openeuler-riscv64 [RPM][4297]: install python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 23:01:26 openeuler-riscv64 [RPM][4297]: install python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 23:01:27 openeuler-riscv64 [RPM][4297]: install atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 23:01:27 openeuler-riscv64 [RPM][4297]: install python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 23:01:32 openeuler-riscv64 [RPM][4297]: install python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 23:01:32 openeuler-riscv64 [RPM][4297]: install python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 23:01:32 openeuler-riscv64 [RPM][4297]: install python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 23:01:33 openeuler-riscv64 [RPM][4297]: install python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 23:01:40 openeuler-riscv64 [RPM][4297]: install python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 23:01:40 openeuler-riscv64 [RPM][4297]: install python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 23:01:40 openeuler-riscv64 [RPM][4297]: install python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 23:01:41 openeuler-riscv64 [RPM][4297]: install python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 23:01:41 openeuler-riscv64 [RPM][4297]: install python3-py-1.11.0-2.oe2303.noarch: success
+May 25 23:01:41 openeuler-riscv64 [RPM][4297]: install python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 23:01:41 openeuler-riscv64 [RPM][4297]: install python3-packaging-21.3-3.oe2303.noarch: success
+May 25 23:01:41 openeuler-riscv64 [RPM][4297]: install python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 23:01:42 openeuler-riscv64 [RPM][4297]: install python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 23:01:42 openeuler-riscv64 [RPM][4297]: install python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 23:01:42 openeuler-riscv64 [RPM][4297]: install python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 23:01:42 openeuler-riscv64 [RPM][4297]: install python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 23:01:43 openeuler-riscv64 [RPM][4297]: install python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 23:01:43 openeuler-riscv64 [RPM][4297]: install python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 23:01:55 openeuler-riscv64 [RPM][4297]: install python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 23:01:55 openeuler-riscv64 [RPM][4297]: install python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 23:01:56 openeuler-riscv64 [RPM][4297]: install python3-click-8.0.4-1.oe2303.noarch: success
+May 25 23:01:56 openeuler-riscv64 [RPM][4297]: install python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 23:01:56 openeuler-riscv64 [RPM][4297]: install python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 23:01:56 openeuler-riscv64 [RPM][4297]: install python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 23:01:58 openeuler-riscv64 [RPM][4297]: install perf-6.1.19-2.oe2303.riscv64: success
+May 25 23:01:58 openeuler-riscv64 systemctl[4315]: [/usr/bin/systemctl --no-reload preset lm_sensors.service] called by PID 4314 (/bin/sh /var/tmp/rpm-tmp.2ul0DO 1)
+May 25 23:01:58 openeuler-riscv64 [RPM][4297]: install lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 23:01:59 openeuler-riscv64 systemctl[4318]: [/usr/bin/systemctl --no-reload preset sysstat.service sysstat-collect.timer sysstat-summary.timer] called by PID 4317 (/bin/sh /var/tmp/rpm-tmp.mJgM7L 1)
+May 25 23:01:59 openeuler-riscv64 [RPM][4297]: install sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 23:02:00 openeuler-riscv64 [RPM][4297]: install hwdata-0.366-1.oe2303.noarch: success
+May 25 23:02:00 openeuler-riscv64 [RPM][4297]: install libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 23:02:00 openeuler-riscv64 [RPM][4297]: install hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 23:02:02 openeuler-riscv64 [RPM][4297]: install atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:04 openeuler-riscv64 [RPM][4297]: install atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:10 openeuler-riscv64 systemctl[4321]: [/usr/bin/systemctl --no-reload preset atuned.service] called by PID 4320 (/bin/sh /var/tmp/rpm-tmp.vLehcu 1)
+May 25 23:02:10 openeuler-riscv64 [RPM][4297]: install atune-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:20 openeuler-riscv64 [RPM][4297]: install atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:21 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-rf1a7287b2b454d5cb61641f11573034c.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-rf1a7287b2b454d5cb61641f11573034c.service has finished successfully.
+░░ 
+░░ The job identifier is 3003.
+May 25 23:02:21 openeuler-riscv64 systemctl[4327]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 23:02:21 openeuler-riscv64 systemctl[4329]: [/usr/bin/systemctl daemon-reload] called by PID 4328 (/bin/sh /var/tmp/rpm-tmp.IoeyhG 0)
+May 25 23:02:21 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 3068.
+May 25 23:02:21 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:02:24 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:02:24 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atuned.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:02:25 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 3068.
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install openblas-0.3.18-2.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-py-1.11.0-2.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-packaging-21.3-3.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-click-8.0.4-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install perf-6.1.19-2.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install hwdata-0.366-1.oe2303.noarch: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install atune-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: install atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:25 openeuler-riscv64 [RPM][4297]: Transaction ID 646f77cd finished: 0
+May 25 23:02:25 openeuler-riscv64 systemd[1]: run-rf1a7287b2b454d5cb61641f11573034c.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-rf1a7287b2b454d5cb61641f11573034c.service has successfully entered the 'dead' state.
+May 25 23:02:37 openeuler-riscv64 systemctl[4388]: [systemctl start atuned] called by PID 4273 (bash -x oe_test_service_atuned_08.sh)
+May 25 23:02:37 openeuler-riscv64 systemd[1]: Starting A-Tune Daemon...
+░░ Subject: A start job for unit atuned.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit atuned.service has begun execution.
+░░ 
+░░ The job identifier is 3071.
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: time="2023-05-25T23:02:37+08:00" level=info msg="valid network : eth0" file="config.go:321"
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: time="2023-05-25T23:02:37+08:00" level=info msg="Connecting to DB: /var/lib/atuned/atuned.db" file="sqlstore.go:47"
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: time="2023-05-25T23:02:37+08:00" level=info msg="initializing service: monitor" file="atuned.go:126"
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: time="2023-05-25T23:02:37+08:00" level=info msg="initializing service: pyengine" file="atuned.go:126"
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: fatal error: runtime: no plugin module data
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 1 [running]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.throw({0xaaaaaab826bee1?, 0xc00009f367?})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/panic.go:1047 +0x44 fp=0xc00009f368 sp=0xc00009f340 pc=0xaaaaaab7b7a9e4
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: plugin.lastmoduleinit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/plugin.go:20 +0x730 fp=0xc00009f448 sp=0xc00009f368 pc=0xaaaaaab7ba64b8
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: plugin.open({0xc000240000, 0x30})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/plugin/plugin_dlopen.go:77 +0x390 fp=0xc00009f6b0 sp=0xc00009f448 pc=0xaaaaaab7f3cba8
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: plugin.Open(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/plugin/plugin.go:32
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/utils.LoadPlugins({0xaaaaaab8265acf?, 0xaaaaaab8268e0e?})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/utils/utils.go:138 +0xfc fp=0xc00009f768 sp=0xc00009f6b0 pc=0xaaaaaab7f51aec
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: main.loadModules(0x0?, 0x0?, {0xaaaaaab8265acf, 0x17})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:95 +0x70 fp=0xc00009f790 sp=0xc00009f768 pc=0xaaaaaab8048cb8
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: main.runatuned(0xc00019c310?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:209 +0x4dc fp=0xc00009f960 sp=0xc00009f790 pc=0xaaaaaab804961c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: github.com/urfave/cli.HandleAction({0xaaaaaab817aae0?, 0xaaaaaab828bba8?}, 0xc00002a680?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/vendor/github.com/urfave/cli/app.go:490 +0x80 fp=0xc00009f970 sp=0xc00009f960 pc=0xaaaaaab7f45a20
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: github.com/urfave/cli.(*App).Run(0xc0000dd1e0, {0xc00001e280, 0x1, 0x1})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/vendor/github.com/urfave/cli/app.go:264 +0x538 fp=0xc00009ff30 sp=0xc00009f970 pc=0xaaaaaab7f436e0
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: main.main()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:238 +0x128 fp=0xc00009ff80 sp=0xc00009ff30 pc=0xaaaaaab8049a30
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.main()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:250 +0x218 fp=0xc00009ffd8 sp=0xc00009ff80 pc=0xaaaaaab7b7d290
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00009ffd8 sp=0xc00009ffd8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 2 [force gc (idle)]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003efb0 sp=0xc00003ef98 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goparkunlock(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:369
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.forcegchelper()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:302 +0xb0 fp=0xc00003efd8 sp=0xc00003efb0 pc=0xaaaaaab7b7d508
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003efd8 sp=0xc00003efd8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by runtime.init.5
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:290 +0x28
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 3 [GC sweep wait]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003f798 sp=0xc00003f780 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goparkunlock(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:369
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.bgsweep(0x0?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mgcsweep.go:278 +0xa8 fp=0xc00003f7c8 sp=0xc00003f798 pc=0xaaaaaab7b68320
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gcenable.func1()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mgc.go:178 +0x2c fp=0xc00003f7d8 sp=0xc00003f7c8 pc=0xaaaaaab7b5ca54
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003f7d8 sp=0xc00003f7d8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by runtime.gcenable
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mgc.go:178 +0x70
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 4 [GC scavenge wait]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0xc000064000?, 0xaaaaaab8342750?, 0x0?, 0x0?, 0x0?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003ff80 sp=0xc00003ff68 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goparkunlock(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:369
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.(*scavengerState).park(0xaaaaaab8787360)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mgcscavenge.go:389 +0x68 fp=0xc00003ffa8 sp=0xc00003ff80 pc=0xaaaaaab7b66210
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.bgscavenge(0x0?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mgcscavenge.go:617 +0x50 fp=0xc00003ffc8 sp=0xc00003ffa8 pc=0xaaaaaab7b66778
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gcenable.func2()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mgc.go:179 +0x2c fp=0xc00003ffd8 sp=0xc00003ffc8 pc=0xaaaaaab7b5c9f4
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003ffd8 sp=0xc00003ffd8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by runtime.gcenable
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mgc.go:179 +0xb0
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 5 [finalizer wait]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0x3000?, 0x18000?, 0x0?, 0x30?, 0x3000?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003e5a8 sp=0xc00003e590 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goparkunlock(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:369
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.runfinq()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mfinal.go:180 +0x110 fp=0xc00003e7d8 sp=0xc00003e5a8 pc=0xaaaaaab7b5bc48
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003e7d8 sp=0xc00003e7d8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by runtime.createfing
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/mfinal.go:157 +0x64
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 18 [select]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0xc00003a798?, 0x2?, 0x8?, 0x11?, 0xc00003a794?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00003a650 sp=0xc00003a638 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.selectgo(0xc00003a798, 0xc00003a790, 0x0?, 0x0, 0x0?, 0x1)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/select.go:328 +0x3b4 fp=0xc00003a758 sp=0xc00003a650 pc=0xaaaaaab7b8cc8c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: database/sql.(*DB).connectionOpener(0xc00019e270, {0xaaaaaab834a738, 0xc000194180})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/database/sql/sql.go:1224 +0xa4 fp=0xc00003a7b8 sp=0xc00003a758 pc=0xaaaaaab7f773d4
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: database/sql.OpenDB.func1()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/database/sql/sql.go:792 +0x34 fp=0xc00003a7d8 sp=0xc00003a7b8 pc=0xaaaaaab7f75894
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00003a7d8 sp=0xc00003a7d8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by database/sql.OpenDB
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/database/sql/sql.go:792 +0x184
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 19 [select]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0xc00003ae38?, 0x2?, 0xe?, 0x0?, 0xc00003ae1c?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00004ccc8 sp=0xc00004ccb0 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.selectgo(0xc00004ce38, 0xc00003ae18, 0x0?, 0x0, 0x0?, 0x1)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/select.go:328 +0x3b4 fp=0xc00004cdd0 sp=0xc00004ccc8 pc=0xaaaaaab7b8cc8c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/utils.WaitForPyservice()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/utils/utils.go:268 +0xc4 fp=0xc00004ce58 sp=0xc00004cdd0 pc=0xaaaaaab7f51dc4
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/service/monitor.(*Monitor).Run(0xc00000e568)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/monitor/monitors.go:50 +0x30 fp=0xc00004cf70 sp=0xc00004ce58 pc=0xaaaaaab8047240
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: main.doBeforeJob.func1()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:142 +0x34 fp=0xc00004cfd8 sp=0xc00004cf70 pc=0xaaaaaab80490ac
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00004cfd8 sp=0xc00004cfd8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by main.doBeforeJob
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:141 +0x340
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 20 [syscall]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: syscall.Syscall6(0xaaaaaab7b4f514?, 0xaaaaaab7ba4eac?, 0xc00003b5f0?, 0x100?, 0x3000?, 0x3?, 0x3000?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/syscall/syscall_linux.go:90 +0x2c fp=0xc000051d08 sp=0xc000051c88 pc=0xaaaaaab7c00184
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os.(*Process).blockUntilWaitable(0xc000026780)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/wait_waitid.go:32 +0x6c fp=0xc000051dd8 sp=0xc000051d08 pc=0xaaaaaab7c2acac
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os.(*Process).wait(0xc000026780)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/exec_unix.go:22 +0x38 fp=0xc000051e30 sp=0xc000051dd8 pc=0xaaaaaab7c246f0
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os.(*Process).Wait(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/exec.go:132
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os/exec.(*Cmd).Wait(0xc0001ce000)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/exec/exec.go:599 +0x4c fp=0xc000051ea8 sp=0xc000051e30 pc=0xaaaaaab7f3763c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run(0x0?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:73 +0x40c fp=0xc000051f70 sp=0xc000051ea8 pc=0xaaaaaab8048664
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: main.doBeforeJob.func1()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:142 +0x34 fp=0xc000051fd8 sp=0xc000051f70 pc=0xaaaaaab80490ac
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc000051fd8 sp=0xc000051fd8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by main.doBeforeJob
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/cmd/atuned/atuned.go:141 +0x340
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 6 [chan receive]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0xaaaaaab8047c3c?, 0xc00000000f?, 0xe4?, 0x7c?, 0xaaaaaab8047afc?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc0000406c8 sp=0xc0000406b0 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.chanrecv(0xc00028e000, 0x0, 0x60?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/chan.go:583 +0x498 fp=0xc000040758 sp=0xc0000406c8 pc=0xaaaaaab7b49e40
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.chanrecv1(0xc00028e000?, 0xc0000407a8?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/chan.go:442 +0x14 fp=0xc000040778 sp=0xc000040758 pc=0xaaaaaab7b49964
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/service/pyservice.listenToSystemSignals(0xc0001ce000)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:95 +0x98 fp=0xc0000407c8 sp=0xc000040778 pc=0xaaaaaab80489b8
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run.func1()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:63 +0x2c fp=0xc0000407d8 sp=0xc0000407c8 pc=0xaaaaaab8048804
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc0000407d8 sp=0xc0000407d8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:63 +0x32c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 7 [IO wait]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0x0?, 0x0?, 0xb?, 0x0?, 0x3f?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc000040d00 sp=0xc000040ce8 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.netpollblock(0xffffffffffffffff?, 0xb7c1b34c?, 0xaa?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/netpoll.go:526 +0x158 fp=0xc000040d30 sp=0xc000040d00 pc=0xaaaaaab7b76240
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: internal/poll.runtime_pollWait(0xffffff8edae1d8, 0x72)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/netpoll.go:305 +0xe4 fp=0xc000040d50 sp=0xc000040d30 pc=0xaaaaaab7ba536c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: internal/poll.(*pollDesc).wait(0xc000020600?, 0xc0001c7000?, 0x1)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x44 fp=0xc000040d78 sp=0xc000040d50 pc=0xaaaaaab7c19fa4
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: internal/poll.(*pollDesc).waitRead(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: internal/poll.(*FD).Read(0xc000020600, {0xc0001c7000, 0x1000, 0x1000})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/internal/poll/fd_unix.go:167 +0x218 fp=0xc000040df0 sp=0xc000040d78 pc=0xaaaaaab7c1b328
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os.(*File).read(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/file_posix.go:31
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os.(*File).Read(0xc00000e598, {0xc0001c7000?, 0x0?, 0x0?})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/file.go:119 +0x80 fp=0xc000040e40 sp=0xc000040df0 pc=0xaaaaaab7c24e10
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: bufio.(*Scanner).Scan(0xc000040f40)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/bufio/scan.go:214 +0x7e4 fp=0xc000040f10 sp=0xc000040e40 pc=0xaaaaaab7d8ecbc
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/service/pyservice.logStdout({0xaaaaaab8348728?, 0xc00000e598})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:85 +0xc0 fp=0xc000040fc0 sp=0xc000040f10 pc=0xaaaaaab80488f8
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run.func2()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:64 +0x30 fp=0xc000040fd8 sp=0xc000040fc0 pc=0xaaaaaab80487b0
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc000040fd8 sp=0xc000040fd8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:64 +0x374
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 8 [IO wait]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0xaaaaaab87b3208?, 0xffffff8eda8038?, 0xb?, 0x0?, 0x3f?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc000041500 sp=0xc0000414e8 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.netpollblock(0xffffffffffffffff?, 0xb7c1b34c?, 0xaa?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/netpoll.go:526 +0x158 fp=0xc000041530 sp=0xc000041500 pc=0xaaaaaab7b76240
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: internal/poll.runtime_pollWait(0xffffff8edadff8, 0x72)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/netpoll.go:305 +0xe4 fp=0xc000041550 sp=0xc000041530 pc=0xaaaaaab7ba536c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: internal/poll.(*pollDesc).wait(0xc0000206c0?, 0xc0001d0000?, 0x1)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x44 fp=0xc000041578 sp=0xc000041550 pc=0xaaaaaab7c19fa4
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: internal/poll.(*pollDesc).waitRead(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: internal/poll.(*FD).Read(0xc0000206c0, {0xc0001d0000, 0x1000, 0x1000})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/internal/poll/fd_unix.go:167 +0x218 fp=0xc0000415f0 sp=0xc000041578 pc=0xaaaaaab7c1b328
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os.(*File).read(...)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/file_posix.go:31
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os.(*File).Read(0xc00000e5a8, {0xc0001d0000?, 0x0?, 0x0?})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/file.go:119 +0x80 fp=0xc000041640 sp=0xc0000415f0 pc=0xaaaaaab7c24e10
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: bufio.(*Scanner).Scan(0xc000041740)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/bufio/scan.go:214 +0x7e4 fp=0xc000041710 sp=0xc000041640 pc=0xaaaaaab7d8ecbc
+May 25 23:02:37 openeuler-riscv64 systemd[1]: atuned.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit atuned.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 2.
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/service/pyservice.logStdout({0xaaaaaab8348728?, 0xc00000e5a8})
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:85 +0xc0 fp=0xc0000417c0 sp=0xc000041710 pc=0xaaaaaab80488f8
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run.func3()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:65 +0x30 fp=0xc0000417d8 sp=0xc0000417c0 pc=0xaaaaaab8048748
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc0000417d8 sp=0xc0000417d8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:65 +0x3bc
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 34 [select, locked to thread]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.gopark(0xc00029e7b0?, 0x2?, 0x0?, 0x0?, 0xc00029e7ac?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/proc.go:363 +0x110 fp=0xc00029e650 sp=0xc00029e638 pc=0xaaaaaab7b7d680
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.selectgo(0xc00029e7b0, 0xc00029e7a8, 0x0?, 0x0, 0x0?, 0x1)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/select.go:328 +0x3b4 fp=0xc00029e758 sp=0xc00029e650 pc=0xaaaaaab7b8cc8c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.ensureSigM.func1()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/signal_unix.go:991 +0x1e8 fp=0xc00029e7d8 sp=0xc00029e758 pc=0xaaaaaab7b912c0
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00029e7d8 sp=0xc00029e7d8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by runtime.ensureSigM
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/signal_unix.go:974 +0xdc
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: goroutine 35 [syscall]:
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.notetsleepg(0x0?, 0x0?)
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/lock_futex.go:236 +0x48 fp=0xc00029efa8 sp=0xc00029ef78 pc=0xaaaaaab7b4e8b0
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os/signal.signal_recv()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/sigqueue.go:152 +0x34 fp=0xc00029efc0 sp=0xc00029efa8 pc=0xaaaaaab7ba7a4c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: os/signal.loop()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/signal/signal_unix.go:23 +0x20 fp=0xc00029efd8 sp=0xc00029efc0 pc=0xaaaaaab8048030
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: runtime.goexit()
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc00029efd8 sp=0xc00029efd8 pc=0xaaaaaab7baa46c
+May 25 23:02:37 openeuler-riscv64 atuned[4389]: created by os/signal.Notify.func1.1
+May 25 23:02:37 openeuler-riscv64 systemd[1]: atuned.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit atuned.service has entered the 'failed' state with result 'exit-code'.
+May 25 23:02:37 openeuler-riscv64 atuned[4389]:         /usr/lib/golang/src/os/signal/signal.go:151 +0x2c
+May 25 23:02:37 openeuler-riscv64 systemd[1]: Failed to start A-Tune Daemon.
+░░ Subject: A start job for unit atuned.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit atuned.service has finished with a failure.
+░░ 
+░░ The job identifier is 3071 and the job result is failed.
+May 25 23:02:38 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atuned.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:02:39 openeuler-riscv64 systemctl[4404]: [systemctl start atune-engine] called by PID 4273 (bash -x oe_test_service_atuned_08.sh)
+May 25 23:02:39 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atune-engine.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:02:39 openeuler-riscv64 systemd[1]: Started A-Tune AI service.
+░░ Subject: A start job for unit atune-engine.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit atune-engine.service has finished successfully.
+░░ 
+░░ The job identifier is 3138.
+May 25 23:02:39 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atune-engine.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:02:43 openeuler-riscv64 systemctl[4446]: [systemctl stop atuned] called by PID 4273 (bash -x oe_test_service_atuned_08.sh)
+May 25 23:02:43 openeuler-riscv64 systemctl[4447]: [systemctl stop atune-engine] called by PID 4273 (bash -x oe_test_service_atuned_08.sh)
+May 25 23:02:43 openeuler-riscv64 systemd[1]: Stopping A-Tune AI service...
+░░ Subject: A stop job for unit atune-engine.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit atune-engine.service has begun execution.
+░░ 
+░░ The job identifier is 3206.
+May 25 23:02:43 openeuler-riscv64 systemd[1]: atune-engine.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit atune-engine.service has successfully entered the 'dead' state.
+May 25 23:02:43 openeuler-riscv64 systemd[1]: Stopped A-Tune AI service.
+░░ Subject: A stop job for unit atune-engine.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit atune-engine.service has finished.
+░░ 
+░░ The job identifier is 3206 and the job result is done.
+May 25 23:02:43 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atune-engine.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:02:43 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atune-engine.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:02:51 openeuler-riscv64 [RPM][4453]: Transaction ID 646f789b started
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase atune-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-click-8.0.4-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase openblas-0.3.18-2.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase hwdata-0.366-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-packaging-21.3-3.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-py-1.11.0-2.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 [RPM][4453]: erase perf-6.1.19-2.oe2303.riscv64: success
+May 25 23:02:53 openeuler-riscv64 systemctl[4458]: [/usr/bin/systemctl --no-reload --now disable atuned.service] called by PID 4457 (/bin/sh /var/tmp/rpm-tmp.7Ok1WQ 0)
+May 25 23:02:53 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/atuned.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:02:54 openeuler-riscv64 systemctl[4461]: [/usr/bin/systemctl daemon-reload] called by PID 4459 (/bin/sh /var/tmp/rpm-tmp.tahXO9 0)
+May 25 23:02:54 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:02:56 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:02:57 openeuler-riscv64 [RPM][4453]: erase atune-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:57 openeuler-riscv64 [RPM][4453]: erase atune-engine-1.0.0-8.oe2303.riscv64: success
+May 25 23:02:57 openeuler-riscv64 [RPM][4453]: erase python3-flask-restful-0.3.9-1.oe2303.noarch: success
+May 25 23:02:57 openeuler-riscv64 [RPM][4453]: erase python3-flask-1:2.1.2-3.oe2303.noarch: success
+May 25 23:02:58 openeuler-riscv64 [RPM][4453]: erase python3-scikit-optimize-0.9.0-1.oe2303.noarch: success
+May 25 23:02:58 openeuler-riscv64 [RPM][4453]: erase python3-jinja2-3.1.2-1.oe2303.noarch: success
+May 25 23:02:58 openeuler-riscv64 [RPM][4453]: erase python3-babel-2.11.0-1.oe2303.noarch: success
+May 25 23:02:58 openeuler-riscv64 [RPM][4453]: erase python3-lhsmdu-1.1.1-1.oe2303.noarch: success
+May 25 23:02:58 openeuler-riscv64 [RPM][4453]: erase python3-pyaml-21.10.1-1.oe2303.noarch: success
+May 25 23:02:58 openeuler-riscv64 [RPM][4453]: erase python3-click-8.0.4-1.oe2303.noarch: success
+May 25 23:02:59 openeuler-riscv64 [RPM][4453]: erase atune-collector-1.1.0-1.oe2303.riscv64: success
+May 25 23:03:01 openeuler-riscv64 [RPM][4453]: erase python3-scikit-learn-1.1.3-1.oe2303.riscv64: success
+May 25 23:03:04 openeuler-riscv64 [RPM][4453]: erase python3-pandas-1.3.2-1.oe2303.riscv64: success
+May 25 23:03:04 openeuler-riscv64 [RPM][4453]: erase python3-pytest-xdist-3.1.0-1.oe2303.noarch: success
+May 25 23:03:05 openeuler-riscv64 [RPM][4453]: erase python3-pytest-7.0.1-1.oe2303.noarch: success
+May 25 23:03:05 openeuler-riscv64 [RPM][4453]: erase python3-hypothesis-6.47.0-1.oe2303.noarch: success
+May 25 23:03:06 openeuler-riscv64 [RPM][4453]: erase python3-xgboost-0.90-7.oe2303.riscv64: success
+May 25 23:03:08 openeuler-riscv64 [RPM][4453]: erase python3-scipy-1.6.2-1.oe2303.riscv64: success
+May 25 23:03:10 openeuler-riscv64 [RPM][4453]: erase python3-numpy-1:1.21.4-6.oe2303.riscv64: success
+May 25 23:03:11 openeuler-riscv64 [RPM][4453]: erase openblas-0.3.18-2.oe2303.riscv64: success
+May 25 23:03:11 openeuler-riscv64 [RPM][4453]: erase hwloc-2.7.1-1.oe2303.riscv64: success
+May 25 23:03:11 openeuler-riscv64 [RPM][4453]: erase libpciaccess-0.17-1.oe2303.riscv64: success
+May 25 23:03:11 openeuler-riscv64 systemctl[4478]: [/usr/bin/systemctl --no-reload --now disable sysstat.service sysstat-collect.timer sysstat-summary.timer] called by PID 4477 (/bin/sh /var/tmp/rpm-tmp.oyNkSI 0)
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase sysstat-12.6.2-1.oe2303.riscv64: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase hwdata-0.366-1.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase openblas-devel-0.3.18-2.oe2303.riscv64: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-attrs-22.1.0-5.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-sortedcontainers-2.4.0-3.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-iniconfig-1.1.1-2.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-packaging-21.3-3.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-pluggy-0.13.1-2.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-py-1.11.0-2.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-tomli-2.0.1-2.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-execnet-1.9.0-1.oe2303.noarch: success
+May 25 23:03:12 openeuler-riscv64 [RPM][4453]: erase python3-pytz-2022.6-1.oe2303.noarch: success
+May 25 23:03:13 openeuler-riscv64 [RPM][4453]: erase python3-joblib-1.1.0-2.oe2303.noarch: success
+May 25 23:03:13 openeuler-riscv64 [RPM][4453]: erase python3-threadpoolctl-3.1.0-1.oe2303.noarch: success
+May 25 23:03:13 openeuler-riscv64 [RPM][4453]: erase python3-dict2xml-1.7.2-1.oe2303.noarch: success
+May 25 23:03:13 openeuler-riscv64 [RPM][4453]: erase python3-colorama-0.4.5-1.oe2303.noarch: success
+May 25 23:03:13 openeuler-riscv64 [RPM][4453]: erase python3-itsdangerous-2.1.2-1.oe2303.noarch: success
+May 25 23:03:13 openeuler-riscv64 [RPM][4453]: erase python3-werkzeug-2.0.3-2.oe2303.noarch: success
+May 25 23:03:13 openeuler-riscv64 [RPM][4453]: erase python3-aniso8601-9.0.1-1.oe2303.noarch: success
+May 25 23:03:13 openeuler-riscv64 [RPM][4453]: erase atune-db-1.0.0-8.oe2303.riscv64: success
+May 25 23:03:13 openeuler-riscv64 systemctl[4483]: [/usr/bin/systemctl --no-reload --now disable lm_sensors.service] called by PID 4482 (/bin/sh /var/tmp/rpm-tmp.fAw1Zu 0)
+May 25 23:03:14 openeuler-riscv64 [RPM][4453]: erase lm_sensors-3.6.0-5.oe2303.riscv64: success
+May 25 23:03:14 openeuler-riscv64 [RPM][4453]: erase libgfortran-10.3.1-27.oe2303.riscv64: success
+May 25 23:03:14 openeuler-riscv64 [RPM][4453]: erase python3-pyyaml-6.0-2.oe2303.riscv64: success
+May 25 23:03:14 openeuler-riscv64 [RPM][4453]: erase python3-markupsafe-2.1.1-1.oe2303.riscv64: success
+May 25 23:03:14 openeuler-riscv64 [RPM][4453]: erase atune-client-1.0.0-8.oe2303.riscv64: success
+May 25 23:03:14 openeuler-riscv64 [RPM][4453]: erase perf-6.1.19-2.oe2303.riscv64: success
+May 25 23:03:14 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r034e7d9e75074820b2fa548b4aa7a70a.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r034e7d9e75074820b2fa548b4aa7a70a.service has finished successfully.
+░░ 
+░░ The job identifier is 3212.
+May 25 23:03:14 openeuler-riscv64 [RPM][4453]: Transaction ID 646f789b finished: 0
+May 25 23:03:14 openeuler-riscv64 systemctl[4488]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+May 25 23:03:15 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 3277.
+May 25 23:03:16 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 25 23:03:16 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 3277.
+May 25 23:03:16 openeuler-riscv64 systemd[1]: run-r034e7d9e75074820b2fa548b4aa7a70a.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r034e7d9e75074820b2fa548b4aa7a70a.service has successfully entered the 'dead' state.
+May 25 23:03:18 openeuler-riscv64 sudo[4226]: pam_unix(sudo:session): session closed for user root
+May 25 23:03:18 openeuler-riscv64 sudo[4509]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/journalctl -xe --no-pager
+May 25 23:03:18 openeuler-riscv64 sudo[4509]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)

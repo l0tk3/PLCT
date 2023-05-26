@@ -1,0 +1,239 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:41:57 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL amanda
++ pkgs=amanda
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs amanda --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpn7d1d5da
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpn7d1d5da
++ [[ ! -d /etc/amanda ]]
++ mkdir -p /amanda /amanda/vtapes/slot1 /amanda/vtapes/slot2 /amanda/vtapes/slot3 /amanda/vtapes/slot4 /amanda/holding /amanda/state/curinfo /amanda/state/log /amanda/state/index /etc/amanda/MyConfig
++ cp ./common/amanda.conf /etc/amanda/MyConfig
++ echo 'localhost /etc simple-gnutar-local'
++ echo 'windowsdesktop.company.com  '
++ chown -R amandabackup.disk /amanda /etc/amanda /amanda/tmp /var/lib/amanda/.amandahosts
+chown: cannot access '/amanda/tmp': No such file or directory
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:42:31 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:42:32 2023 - INFO  - Start to run test.
++ su - amandabackup -c 'amssl --init'
++ CHECK_RESULT 0 0 0 'Check amssl failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amssl failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amaddclient --config MyConfig --client windowsdesktop.company.com  --diskdev /amanda/'
++ grep 'Creating amanda-client.conf'
+ssh: Could not resolve hostname windowsdesktop.company.com: Name or service not known
+scp: Connection closed
+ssh: Could not resolve hostname windowsdesktop.company.com: Name or service not known
+Creating amanda-client.conf for windowsdesktop.company.com
++ CHECK_RESULT 0 0 0 'Check amaddclient failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amaddclient failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /etc/amanda/MyConfig/disklist
++ echo 'localhost /etc simple-gnutar-local'
++ chown -R amandabackup.disk /etc/amanda/MyConfig/disklist
++ su - amandabackup -c 'echo '\''MyConfig'\'' > /var/lib/amanda/.am_passphrase'
++ su - amandabackup -c 'amcryptsimple &'
++ ps -ef
++ grep -v grep
++ grep amcryptsimple
+amandab+    2516       1 99 21:42 ?        00:00:00 /usr/bin/perl -w /usr/sbin/amcryptsimple
++ CHECK_RESULT 0 0 0 'Check amcryptsimple failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amcryptsimple failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amreindex MyConfig'
++ grep 'All images successfully'
+Œ	ò/ûm@ñ“¾Ò1WðR¾¿%b5åØ9úÿý-‹ÔÞZ-ŽzáE®ÔþÇ.¢¥ËLÞµÓÉïüÿöà¯I.W=All images successfully reindexed
++ CHECK_RESULT 0 0 0 'Check amreindex failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amreindex failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amserverconfig tmpConfig'
+Logging to /var/log/amanda/amserverconfig.20230525214252.debug
+mkdir /etc/amanda/tmpConfig
+mkdir /etc/amanda/template.d
+/etc/amanda/template.d directory created
+/var/lib/amanda/gnutar-lists directory exists
+/etc/amanda/tmpConfig/advanced.conf created and updated
+mkdir /etc/amanda/tmpConfig/curinfo
+mkdir /etc/amanda/tmpConfig/index
+curinfo and index directory created
+tapelist file created
+disklist file created
+custom amanda.conf created
+/var/lib/amanda/example/xinetd.amandaserver contains the latest Amanda server daemon configuration.
+Please merge it to /etc/xinetd.d/amandaserver.
+DONE.
++ test -d /etc/amanda/tmpConfig/
++ CHECK_RESULT 0 0 0 'Check amserverconfig failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amserverconfig failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amcheck MyConfig'
+Amanda Tape Server Host Check
+-----------------------------
+NOTE: tapelist file does not exists
+      it will be created on the next run
+NOTE: Holding disk '/amanda/holding': 13512704 KB disk space available, using 51200 KB as requested
+slot 1: contains an empty volume
+Will write label 'MyData01' to new volume in slot 1.
+NOTE: skipping tape-writable test
+NOTE: host info dir '/amanda/state/curinfo/localhost' does not exist
+      It will be created on the next run
+NOTE: index dir '/amanda/state/index/localhost' does not exist
+      it will be created on the next run
+Server check took 1.964 seconds
+Amanda Backup Client Hosts Check
+--------------------------------
+Client check: 1 host checked in 2.535 seconds.  0 problems found.
+(brought to you by Amanda 3.5.1)
++ su - amandabackup -c 'amlabel MyConfig'
+Reading label...
+Found an empty tape.
+Writing label 'MyData01'...
+Checking label...
+Success!
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ su - amandabackup -c 'amrmtape MyConfig MyData01'
++ grep 'Removed label'
+Warning: no curinfo record for localhost:/etc
+Removed label 'MyData01' from tapelist file.
++ CHECK_RESULT 0 0 0 'Check amrmtape failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amrmtape failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /etc/amanda/DailySet1/tapelist
++ cp /etc/amanda/DailySet1/tapelistbak /etc/amanda/DailySet1/tapelist
+cp: cannot stat '/etc/amanda/DailySet1/tapelistbak': No such file or directory
++ sed '12arest-api-port 2254' /etc/amanda/amanda.conf
+sed: can't read /etc/amanda/amanda.conf: No such file or directory
++ su - amandabackup -c 'amanda-rest-server --development stop'
+The Amanda Rest Server is not running
++ CHECK_RESULT 0 0 0 'Check amanda-rest-server failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amanda-rest-server failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /etc/amanda/amanda.conf
++ amandad --version
++ grep amandad-
+amandad-3.5.1
++ CHECK_RESULT 0 0 0 'Check amandad failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amandad failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:43:12 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:43:13 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:43:13 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpn7d1d5da ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpn7d1d5da
++ '[' 0 -ne 0 ']'
++ rm -rf /amanda /etc/amanda
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:43:28 2023 - INFO  - End to restore the test environment.

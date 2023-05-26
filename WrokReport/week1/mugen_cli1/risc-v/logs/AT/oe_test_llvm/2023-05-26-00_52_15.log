@@ -1,0 +1,263 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:52:18 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL 'llvm clang'
++ pkgs='llvm clang'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'llvm clang' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp70k7vkwn
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp70k7vkwn
++ mkdir /tmp/test_llvm
++ path=/tmp/test_llvm
++ cat
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:53:51 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:53:52 2023 - INFO  - Start testing...
++ rpm -qa
++ grep llvm
+llvm-libs-15.0.7-1.oe2303.riscv64
+llvm-15.0.7-1.oe2303.riscv64
++ CHECK_RESULT 0 0 0 'Installation failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Installation failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpm -ql llvm
+/usr/bin/FileCheck
+/usr/bin/UnicodeNameMappingGenerator
+/usr/bin/bugpoint
+/usr/bin/count
+/usr/bin/dsymutil
+/usr/bin/llc
+/usr/bin/lli
+/usr/bin/lli-child-target
+/usr/bin/llvm-PerfectShuffle
+/usr/bin/llvm-addr2line
+/usr/bin/llvm-ar
+/usr/bin/llvm-as
+/usr/bin/llvm-bcanalyzer
+/usr/bin/llvm-bitcode-strip
+/usr/bin/llvm-c-test
+/usr/bin/llvm-cat
+/usr/bin/llvm-cfi-verify
+/usr/bin/llvm-cov
+/usr/bin/llvm-cvtres
+/usr/bin/llvm-cxxdump
+/usr/bin/llvm-cxxfilt
+/usr/bin/llvm-cxxmap
+/usr/bin/llvm-debuginfod
+/usr/bin/llvm-debuginfod-find
+/usr/bin/llvm-diff
+/usr/bin/llvm-dis
+/usr/bin/llvm-dlltool
+/usr/bin/llvm-dwarfdump
+/usr/bin/llvm-dwarfutil
+/usr/bin/llvm-dwp
+/usr/bin/llvm-exegesis
+/usr/bin/llvm-extract
+/usr/bin/llvm-gsymutil
+/usr/bin/llvm-ifs
+/usr/bin/llvm-install-name-tool
+/usr/bin/llvm-isel-fuzzer
+/usr/bin/llvm-jitlink
+/usr/bin/llvm-jitlink-executor
+/usr/bin/llvm-lib
+/usr/bin/llvm-libtool-darwin
+/usr/bin/llvm-link
+/usr/bin/llvm-lipo
+/usr/bin/llvm-lto
+/usr/bin/llvm-lto2
+/usr/bin/llvm-mc
+/usr/bin/llvm-mca
+/usr/bin/llvm-ml
+/usr/bin/llvm-modextract
+/usr/bin/llvm-mt
+/usr/bin/llvm-nm
+/usr/bin/llvm-objcopy
+/usr/bin/llvm-objdump
+/usr/bin/llvm-opt-fuzzer
+/usr/bin/llvm-opt-report
+/usr/bin/llvm-otool
+/usr/bin/llvm-pdbutil
+/usr/bin/llvm-profdata
+/usr/bin/llvm-profgen
+/usr/bin/llvm-ranlib
+/usr/bin/llvm-rc
+/usr/bin/llvm-readelf
+/usr/bin/llvm-readobj
+/usr/bin/llvm-reduce
+/usr/bin/llvm-remark-size-diff
+/usr/bin/llvm-rtdyld
+/usr/bin/llvm-sim
+/usr/bin/llvm-size
+/usr/bin/llvm-split
+/usr/bin/llvm-stress
+/usr/bin/llvm-strings
+/usr/bin/llvm-strip
+/usr/bin/llvm-symbolizer
+/usr/bin/llvm-tapi-diff
+/usr/bin/llvm-tblgen
+/usr/bin/llvm-tli-checker
+/usr/bin/llvm-undname
+/usr/bin/llvm-windres
+/usr/bin/llvm-xray
+/usr/bin/not
+/usr/bin/obj2yaml
+/usr/bin/opt
+/usr/bin/sancov
+/usr/bin/sanstats
+/usr/bin/split-file
+/usr/bin/verify-uselistorder
+/usr/bin/yaml-bench
+/usr/bin/yaml2obj
+/usr/share/licenses/llvm
+/usr/share/licenses/llvm/LICENSE.TXT
+/usr/share/opt-viewer/opt-diff.py
+/usr/share/opt-viewer/opt-stats.py
+/usr/share/opt-viewer/opt-viewer.py
+/usr/share/opt-viewer/optpmap.py
+/usr/share/opt-viewer/optrecord.py
+/usr/share/opt-viewer/style.css
++ CHECK_RESULT 0 0 0 'No path is queried'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='No path is queried'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clang /tmp/test_llvm/llvm_test.c -o /tmp/test_llvm/test
++ CHECK_RESULT 0 0 0 'compilation fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='compilation fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls /tmp/test_llvm/test
+/tmp/test_llvm/test
++ CHECK_RESULT 0 0 0 'test does not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test does not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clang -O3 -emit-llvm /tmp/test_llvm/llvm_test.c -c -o /tmp/test_llvm/test.bc
++ CHECK_RESULT 0 0 0 'compilation fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='compilation fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls /tmp/test_llvm/test.bc
+/tmp/test_llvm/test.bc
++ CHECK_RESULT 0 0 0 'test.bc does not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test.bc does not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /tmp/test_llvm/test
++ grep -w 'hello llvm'
+hello llvm
++ CHECK_RESULT 0 0 0 'test on failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test on failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lli /tmp/test_llvm/test.bc
++ grep -w 'hello llvm'
+hello llvm
++ CHECK_RESULT 0 0 0 'test.bc on failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test.bc on failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:53:59 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:53:59 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/test_llvm
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp70k7vkwn ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp70k7vkwn
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:54:09 2023 - INFO  - Finish environment cleanup!

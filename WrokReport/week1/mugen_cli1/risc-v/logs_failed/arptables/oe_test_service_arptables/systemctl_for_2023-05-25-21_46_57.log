@@ -1,0 +1,10 @@
+× arptables.service
+     Loaded: not-found (Reason: Unit arptables.service not found.)
+     Active: failed (Result: exit-code) since Thu 2023-05-25 21:47:58 CST; 16s ago
+   Main PID: 536 (code=exited, status=1/FAILURE)
+
+May 25 21:47:58 openeuler-riscv64 systemd[1]: Starting Automates a packet filtering firewall with arptables...
+May 25 21:47:58 openeuler-riscv64 arptables-helper[536]: /usr/libexec/arptables-helper: line 5: /etc/init.d/functions: No such file or directory
+May 25 21:47:58 openeuler-riscv64 systemd[1]: arptables.service: Main process exited, code=exited, status=1/FAILURE
+May 25 21:47:58 openeuler-riscv64 systemd[1]: arptables.service: Failed with result 'exit-code'.
+May 25 21:47:58 openeuler-riscv64 systemd[1]: Failed to start Automates a packet filtering firewall with arptables.

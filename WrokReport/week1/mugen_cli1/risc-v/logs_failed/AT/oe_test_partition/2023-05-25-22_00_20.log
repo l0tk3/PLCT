@@ -1,0 +1,259 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu May 25 22:00:22 2023 - INFO  - Start testing...
++ lsblk
++ grep '/boot$'
+├─vda1 254:1    0  512M  0 part /boot
++ CHECK_RESULT 0 0 0 'No boot partition'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='No boot partition'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsblk
++ grep '/$'
+└─vda2 254:2    0 19.5G  0 part /
++ CHECK_RESULT 0 0 0 'No / partition'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='No / partition'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsblk
++ grep SWAP
++ CHECK_RESULT 1 0 0 'No swap partition'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='No swap partition'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'No swap partition'
++ LOG_ERROR 'No swap partition'
++ message='No swap partition'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'No swap partition'
+Thu May 25 22:00:23 2023 - ERROR - No swap partition
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_partition.sh line 29'
++ message='oe_test_partition.sh line 29'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_partition.sh line 29'
+Thu May 25 22:00:23 2023 - ERROR - oe_test_partition.sh line 29
++ '[' 0 -eq 1 ']'
++ return 0
++ lsblk
++ grep '/home$'
++ CHECK_RESULT 1 0 0 'No home partition'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='No home partition'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'No home partition'
++ LOG_ERROR 'No home partition'
++ message='No home partition'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'No home partition'
+Thu May 25 22:00:24 2023 - ERROR - No home partition
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_partition.sh line 31'
++ message='oe_test_partition.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_partition.sh line 31'
+Thu May 25 22:00:25 2023 - ERROR - oe_test_partition.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ lsblk --help
+
+Usage:
+ lsblk [options] [<device> ...]
+
+List information about block devices.
+
+Options:
+ -D, --discard        print discard capabilities
+ -E, --dedup <column> de-duplicate output by <column>
+ -I, --include <list> show only devices with specified major numbers
+ -J, --json           use JSON output format
+ -O, --output-all     output all columns
+ -P, --pairs          use key="value" output format
+ -S, --scsi           output info about SCSI devices
+ -T, --tree[=<column>] use tree format output
+ -a, --all            print all devices
+ -b, --bytes          print SIZE in bytes rather than in human readable format
+ -d, --nodeps         don't print slaves or holders
+ -e, --exclude <list> exclude devices by major number (default: RAM disks)
+ -f, --fs             output info about filesystems
+ -i, --ascii          use ascii characters only
+ -l, --list           use list format output
+ -M, --merge          group parents of sub-trees (usable for RAIDs, Multi-path)
+ -m, --perms          output info about permissions
+ -n, --noheadings     don't print headings
+ -o, --output <list>  output columns
+ -p, --paths          print complete device path
+ -r, --raw            use raw output format
+ -s, --inverse        inverse dependencies
+ -t, --topology       output info about topology
+ -w, --width <num>    specifies output width as number of characters
+ -x, --sort <column>  sort output by <column>
+ -z, --zoned          print zone model
+     --sysroot <dir>  use specified directory as system root
+
+ -h, --help           display this help
+ -V, --version        display version
+
+Available output columns:
+         NAME  device name
+        KNAME  internal kernel device name
+         PATH  path to the device node
+      MAJ:MIN  major:minor device number
+      FSAVAIL  filesystem size available
+       FSSIZE  filesystem size
+       FSTYPE  filesystem type
+       FSUSED  filesystem size used
+       FSUSE%  filesystem use percentage
+      FSROOTS  mounted filesystem roots
+        FSVER  filesystem version
+   MOUNTPOINT  where the device is mounted
+  MOUNTPOINTS  all locations where device is mounted
+        LABEL  filesystem LABEL
+         UUID  filesystem UUID
+       PTUUID  partition table identifier (usually UUID)
+       PTTYPE  partition table type
+     PARTTYPE  partition type code or UUID
+ PARTTYPENAME  partition type name
+    PARTLABEL  partition LABEL
+     PARTUUID  partition UUID
+    PARTFLAGS  partition flags
+           RA  read-ahead of the device
+           RO  read-only device
+           RM  removable device
+      HOTPLUG  removable or hotplug device (usb, pcmcia, ...)
+        MODEL  device identifier
+       SERIAL  disk serial number
+         SIZE  size of the device
+        STATE  state of the device
+        OWNER  user name
+        GROUP  group name
+         MODE  device node permissions
+    ALIGNMENT  alignment offset
+       MIN-IO  minimum I/O size
+       OPT-IO  optimal I/O size
+      PHY-SEC  physical sector size
+      LOG-SEC  logical sector size
+         ROTA  rotational device
+        SCHED  I/O scheduler name
+      RQ-SIZE  request queue size
+         TYPE  device type
+     DISC-ALN  discard alignment offset
+    DISC-GRAN  discard granularity
+     DISC-MAX  discard max bytes
+    DISC-ZERO  discard zeroes data
+        WSAME  write same max bytes
+          WWN  unique storage identifier
+         RAND  adds randomness
+       PKNAME  internal parent kernel device name
+         HCTL  Host:Channel:Target:Lun for SCSI
+         TRAN  device transport type
+   SUBSYSTEMS  de-duplicated chain of subsystems
+          REV  device revision
+       VENDOR  device vendor
+        ZONED  zone model
+          DAX  dax-capable device
+
+For more details see lsblk(8).
++ CHECK_RESULT 0 0 0 'lsblk -h info error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lsblk -h info error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsblk -t
++ grep SCHED
+NAME   ALIGNMENT MIN-IO OPT-IO PHY-SEC LOG-SEC ROTA SCHED       RQ-SIZE  RA WSAME
++ CHECK_RESULT 0 0 0 'lsblk -t info error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lsblk -t info error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsblk -m
++ grep MODE
+NAME    SIZE OWNER GROUP MODE
++ CHECK_RESULT 0 0 0 'lsblk -m info error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lsblk -m info error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsblk -b
++ grep MOUNTPOINTS
+NAME   MAJ:MIN RM        SIZE RO TYPE MOUNTPOINTS
++ CHECK_RESULT 0 0 0 'lsblk -b info error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lsblk -b info error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu May 25 22:00:26 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:00:26 2023 - ERROR - failed to execute the case.
++ exit 2
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_partition.sh post_test'
++ message='oe_test_partition.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_partition.sh post_test'
+Thu May 25 22:00:27 2023 - INFO  - oe_test_partition.sh post_test

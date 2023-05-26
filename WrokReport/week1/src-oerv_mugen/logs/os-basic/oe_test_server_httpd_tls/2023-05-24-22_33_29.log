@@ -1,0 +1,211 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Wed May 24 22:33:32 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'httpd mod_ssl'
++ pkgs='httpd mod_ssl'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'httpd mod_ssl' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpmj2fy7ts
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpmj2fy7ts
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Wed May 24 22:34:04 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Wed May 24 22:34:05 2023 - INFO  - Start to run test.
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:34:17 CST; 1s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sed -i 's/#SSLProtocol all -SSLv3/SSLProtocol -all +TLSv1.3/g' /etc/httpd/conf.d/ssl.conf
++ grep 'SSLProtocol -all +TLSv1.3' /etc/httpd/conf.d/ssl.conf
+SSLProtocol -all +TLSv1.3
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ openssl s_client -connect 127.0.0.1:443 -tls1_3
+Can't use SSL_get_servername
+depth=1 C = US, O = Unspecified, OU = ca-19394193508608244, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+verify error:num=19:self-signed certificate in certificate chain
+verify return:1
+depth=1 C = US, O = Unspecified, OU = ca-19394193508608244, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+verify return:1
+depth=0 C = US, O = Unspecified, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+verify return:1
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:C = US, O = Unspecified, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+   i:C = US, O = Unspecified, OU = ca-19394193508608244, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: May 24 14:34:16 2023 GMT; NotAfter: May 23 14:34:16 2024 GMT
+ 1 s:C = US, O = Unspecified, OU = ca-19394193508608244, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+   i:C = US, O = Unspecified, OU = ca-19394193508608244, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+   a:PKEY: rsaEncryption, 4096 (bit); sigalg: RSA-SHA256
+   v:NotBefore: May 24 14:34:14 2023 GMT; NotAfter: May 23 14:34:14 2024 GMT
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIE3zCCAsegAwIBAgIIGHp/HWOhJPwwDQYJKoZIhvcNAQELBQAwgYUxCzAJBgNV
+BAYTAlVTMRQwEgYDVQQKDAtVbnNwZWNpZmllZDEdMBsGA1UECwwUY2EtMTkzOTQx
+OTM1MDg2MDgyNDQxGjAYBgNVBAMMEW9wZW5ldWxlci1yaXNjdjY0MSUwIwYJKoZI
+hvcNAQkBFhZyb290QG9wZW5ldWxlci1yaXNjdjY0MB4XDTIzMDUyNDE0MzQxNloX
+DTI0MDUyMzE0MzQxNlowZjELMAkGA1UEBhMCVVMxFDASBgNVBAoMC1Vuc3BlY2lm
+aWVkMRowGAYDVQQDDBFvcGVuZXVsZXItcmlzY3Y2NDElMCMGCSqGSIb3DQEJARYW
+cm9vdEBvcGVuZXVsZXItcmlzY3Y2NDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+AQoCggEBAKqjzp8WGn8ZpTGIOBhMfBeHB2jRw/YFHWezQof2e6OZCyr0mjEb8Lal
+iHlqXc1JSJqpHg6mH3j3wdq3dtwNh61S1K/OLNts8BH33jVxqpdklPr1T6KiATzG
+IkXyfLp37nwX4sNzHsI+qp2wAJDZmrmHPikVivEbB1P8qFJUHB9hN1MPGngzoaZr
+O7v6lBru3p0/AIb/HqjEg0WPf1NtKyfV9aHmHM/gpoU3EkTWTg0idfvze501DBhJ
+Kt4vJBJNFrNtiS42gk/3LvI90BsnVfF46DXXB6M7zdoksxW2UhrbMo7qJzxypccF
+tpmfYtmr6irFvW5aC2ApDB8gdrjnPukCAwEAAaNxMG8wDgYDVR0PAQH/BAQDAgWg
+MBMGA1UdJQQMMAoGCCsGAQUFBwMBMAkGA1UdEwQCMAAwHAYDVR0RBBUwE4IRb3Bl
+bmV1bGVyLXJpc2N2NjQwHwYDVR0jBBgwFoAUn/PJzOcSFt/7NZKhowIYugEu49Yw
+DQYJKoZIhvcNAQELBQADggIBABcrfR7eqwFtOr/AEOsJlcWPrlPAxiBZppngGapm
+qHmuhEDJrZc58/LUJ2szn6h1QjPuWRNMcM1wYUImaFg76nXSrfwsxRXpLJWOUqi8
+9xadr/G8CDP6Tv74V3fM1ZdBosVKfNIiErkrrhAGrQrThM9iZuG35G7gkzjrHEwZ
++n/ELzkFpf3l9lQXPr/qepTyvbvgFyl7tIMmkjvLh6VkPYWYQZeSdlFNwJLVhgsA
+H+dSQJ3lsI6XK3MFRGxDKuVr9GRBlOmc/ASDOhKnLVaiKpp6JSfKSRVTPOuqolCv
+GLAiTyq0NGK0bFBiyr2OZwOxF07chIuZJjPD5icb4A248KQ/6eQPYKpKXMOPaRr6
+Ylkmfpgrv/xIoj2Zjone2n32qLR9ugeru4JnFnyFDUFDKfGENk3ovAxnCRi/gH+/
+VRzRmhbBFGlBPc6q6KQJHehUJZwnI9dgwLp4m32QVJgIB+DmSoej8n9cBS9VfFeN
+mGi867ej98iS7DTgm5JGC0Y+cj/qNcGoOf1gpMqcdD6FedLDH8APWH1oQFNGRlrJ
+2JPmyw1F9ewGjvd4h9tnselSit2O5ZpiTAveD2djPOScaqXAOPeGsnXgz98LK3uY
+iceuW6KbbLLieu1C/PS4YZ3pG/B2zfkF9N5BJPrq/KKECJ+sn3Ei6XXZnI6n76zU
+RQvD
+-----END CERTIFICATE-----
+subject=C = US, O = Unspecified, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+issuer=C = US, O = Unspecified, OU = ca-19394193508608244, CN = openeuler-riscv64, emailAddress = root@openeuler-riscv64
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 3364 bytes and written 305 bytes
+Verification error: self-signed certificate in certificate chain
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 19 (self-signed certificate in certificate chain)
+---
+DONE
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sed -i 's/SSLProtocol -all +TLSv1.3/#SSLProtocol all -SSLv3/g' /etc/httpd/conf.d/ssl.conf
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Wed May 24 22:34:22 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Wed May 24 22:34:22 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Wed May 24 22:34:23 2023 - INFO  - Start to restore the test environment.
++ systemctl reload httpd
++ systemctl stop httpd
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpmj2fy7ts ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpmj2fy7ts
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Wed May 24 22:34:39 2023 - INFO  - End to restore the test environment.

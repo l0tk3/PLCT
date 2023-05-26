@@ -1,0 +1,148 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ pwd
++ src_dir=/root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir1_17062
+++ pwd
++ des_dir=/root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062
++ conf_file=/etc/rsyncd.conf
++ se_stat=Enforcing
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:36:30 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL rsync
++ pkgs=rsync
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs rsync --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp5hhb20it
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp5hhb20it
++ cp /etc/rsyncd.conf conf_bak
++ mkdir -p /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir1_17062 /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062
+++ getenforce
++ se_stat=Disabled
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:36:58 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:36:58 2023 - INFO  - Start testing...
++ cp -raf /lib/udev/ata_id /lib/udev/cdrom_id /lib/udev/fido_id /lib/udev/hwdb.d /lib/udev/kdump-udev-throttler /lib/udev/kpartx_id /lib/udev/mtd_probe /lib/udev/rdma_rename /lib/udev/rules.d /lib/udev/scsi_id /lib/udev/v4l_id /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir1_17062
++ touch /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/file_17062
++ rsync -a --delete /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir1_17062/ /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ diff /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir1_17062 /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062 -r
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -rf /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/ata_id /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/cdrom_id /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/fido_id /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/hwdb.d /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/kdump-udev-throttler /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/kpartx_id /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/mtd_probe /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/rdma_rename /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/rules.d /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/scsi_id /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/v4l_id
++ echo -e '[test]\npath = /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062\nread only = no\nuid = root'
++ getenforce
++ grep Enforcing
++ systemctl restart rsyncd
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ hostname
++ rsync -a oe_test_rsync.sh openeuler-riscv64::test
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ diff oe_test_rsync.sh /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062/oe_test_rsync.sh
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:37:00 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:37:01 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:37:01 2023 - INFO  - start environment cleanup.
++ systemctl stop rsyncd
++ mv conf_bak /etc/rsyncd.conf
++ rm -rf /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir1_17062 /root/mugen/testcases/smoke-test/smoke-basic-os/oe_test_rsync/dir2_17062
++ setenforce Disabled
+setenforce: SELinux is disabled
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp5hhb20it ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp5hhb20it
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:37:16 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,177 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu May 25 23:47:48 2023 - INFO  - Start environment preparation.
++ touch ./test.txt
++ mkdir -p ./testdir1/testdir2/testdir3
++ touch ./testdir1/testfile1
++ touch ./testdir1/testdir2/testfile2
++ touch ./testdir1/testdir2/testdir3/testfile3
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 23:47:49 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu May 25 23:47:50 2023 - INFO  - Start testing...
++ chattr +i ./test.txt
++ lsattr ./test.txt
++ grep '\-i\-'
+grep: warning: stray \ before -
+----i---------e------- ./test.txt
++ CHECK_RESULT 0 0 0 'lsattr failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lsattr failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm ./test.txt
+rm: cannot remove './test.txt': Operation not permitted
++ CHECK_RESULT 1 1 0 'rm success'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='rm success'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ mv ./test.txt ./test1.txt
+mv: cannot move './test.txt' to './test1.txt': Operation not permitted
++ CHECK_RESULT 1 1 0 'mv success'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='mv success'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ chattr -R +i ./testdir1
++ lsattr -R ./testdir1
++ grep testdir1/testdir2/testfile2
++ grep '\-i\-'
+grep: warning: stray \ before -
+----i---------e------- ./testdir1/testdir2/testfile2
++ CHECK_RESULT 0 0 0 'lsattr -R testdir1/|grep testdir1/testdir2/testfile2  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lsattr -R testdir1/|grep testdir1/testdir2/testfile2  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsattr -R ./testdir1
++ grep testdir1/testdir2/testdir3/testfile3
++ grep '\-i\-'
+grep: warning: stray \ before -
+----i---------e------- ./testdir1/testdir2/testdir3/testfile3
++ CHECK_RESULT 0 0 0 'lsattr -R testdir1/ | grep testdir1/testdir2/testdir3/testfile3 failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lsattr -R testdir1/ | grep testdir1/testdir2/testdir3/testfile3 failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chattr -R -i ./testdir1
++ lsattr -R ./testdir1
++ grep testdir1/testdir2/testfile2
++ grep '\-i\-'
+grep: warning: stray \ before -
++ CHECK_RESULT 1 0 1 'lsattr -R testdir1/|grep testdir1/testdir2/testfile2  success'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='lsattr -R testdir1/|grep testdir1/testdir2/testfile2  success'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ chattr -V +i testdir1/testfile1
++ grep testdir1/testfile1
++ grep '\-i\-'
+chattr 1.46.5 (30-Dec-2021)
+grep: warning: stray \ before -
+Flags of testdir1/testfile1 set as ----i---------e-------
++ CHECK_RESULT 0 0 0 'chattr -V +i testdir1/testfile1 failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='chattr -V +i testdir1/testfile1 failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chattr -V -i testdir1/testfile1
++ grep testdir1/testfile1
++ grep '\-i\-'
+chattr 1.46.5 (30-Dec-2021)
+grep: warning: stray \ before -
++ CHECK_RESULT 1 0 1 'chattr -V -i testdir1/testfile1 success'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='chattr -V -i testdir1/testfile1 success'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu May 25 23:47:51 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 23:47:51 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 23:47:52 2023 - INFO  - start environment cleanup.
++ chattr -i test.txt
++ rm -f ./test.txt
++ rm -rf ./testdir1
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 23:47:52 2023 - INFO  - Finish environment cleanup!

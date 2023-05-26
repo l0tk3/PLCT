@@ -1,0 +1,131 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 22:34:24 2023 - INFO  - Start to prepare the test environment.
++ useradd Jevons
+useradd: warning: the home directory /home/Jevons already exists.
+useradd: Not copying any file from skel directory into it.
+Creating mailbox file: File exists
++ echo HUAWEI666
++ passwd Jevons --stdin
+Changing password for user Jevons.
+passwd: all authentication tokens updated successfully.
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 22:34:25 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 22:34:25 2023 - INFO  - Start to run test.
++ service auditd restart
+oe_test_audit_monitor_network_visit.sh: line 32: service: command not found
++ auditctl -D
+oe_test_audit_monitor_network_visit.sh: line 33: auditctl: command not found
++ CHECK_RESULT 127 0 0 'delete failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='delete failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'delete failed'
++ LOG_ERROR 'delete failed'
++ message='delete failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'delete failed'
+Thu May 25 22:34:26 2023 - ERROR - delete failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_monitor_network_visit.sh line 34'
++ message='oe_test_audit_monitor_network_visit.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_monitor_network_visit.sh line 34'
+Thu May 25 22:34:27 2023 - ERROR - oe_test_audit_monitor_network_visit.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
+++ date +%T
++ starttime=22:34:27
++ expect
+spawn ssh Jevons@localhost
+invalid command name "expect{"
+    while executing
+"expect{"
+++ date +%T
++ endtime=22:34:27
++ ausearch -ts 22:34:27 -te 22:34:27 -ul 1000 -m USER_LOGIN -x ssh -sv yes
+oe_test_audit_monitor_network_visit.sh: line 47: ausearch: command not found
++ CHECK_RESULT 127 1 0 'ausearch failed'
++ actual_result=127
++ expect_result=1
++ mode=0
++ error_log='ausearch failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 1x
++ test -n 'ausearch failed'
++ LOG_ERROR 'ausearch failed'
++ message='ausearch failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ausearch failed'
+Thu May 25 22:34:28 2023 - ERROR - ausearch failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_monitor_network_visit.sh line 48'
++ message='oe_test_audit_monitor_network_visit.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_monitor_network_visit.sh line 48'
+Thu May 25 22:34:28 2023 - ERROR - oe_test_audit_monitor_network_visit.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ cat
++ grep -e '<no matches>'
++ CHECK_RESULT 1 1 0 'grep failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 22:34:29 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:34:29 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 22:34:30 2023 - INFO  - Start to restore the test environment.
++ userdel -rf Jevons
++ rm -rf /tmp/log.log
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 22:34:31 2023 - INFO  - End to restore the test environment.

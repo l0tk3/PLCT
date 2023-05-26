@@ -1,0 +1,11 @@
+× ipmi.service
+     Loaded: not-found (Reason: Unit ipmi.service not found.)
+     Active: failed (Result: exit-code) since Thu 2023-05-25 21:22:17 CST; 16s ago
+   Main PID: 599 (code=exited, status=3)
+
+May 25 21:22:16 openeuler-riscv64 systemd[1]: Starting IPMI Driver...
+May 25 21:22:17 openeuler-riscv64 openipmi-helper[612]: /usr/bin/systemd-detect-virt
+May 25 21:22:17 openeuler-riscv64 openipmi-helper[599]: Startup failed.
+May 25 21:22:17 openeuler-riscv64 systemd[1]: ipmi.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED
+May 25 21:22:17 openeuler-riscv64 systemd[1]: ipmi.service: Failed with result 'exit-code'.
+May 25 21:22:17 openeuler-riscv64 systemd[1]: Failed to start IPMI Driver.

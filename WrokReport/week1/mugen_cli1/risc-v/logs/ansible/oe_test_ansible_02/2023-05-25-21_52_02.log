@@ -1,0 +1,307 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ main
++++ type -t post_test
+++ '[' -n '' ']'
+++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
+++ rpm -qa
+++ grep expect
++++ type -t config_params
+++ '[' -n '' ']'
++++ type -t pre_test
+++ '[' -n '' ']'
++++ type -t run_test
+++ '[' -n '' ']'
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:52:05 2023 - INFO  - Start to prepare the test environment.
++ Pre_Test
++ DNF_INSTALL ansible
++ pkgs=ansible
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs ansible --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpbt6egu5q
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpbt6egu5q
++ sed -i '1i\${NODE2_IPV4}' /etc/ansible/hosts
++ expect
+spawn ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:Jgrjmq9jvGD0Se6LVxbeiKsrhXn1thpiFikCeJS7yQ0 root@openeuler-riscv64
+The key's randomart image is:
++---[RSA 3072]----+
+|  ..             |
+|...              |
+|o ..             |
+|..E...           |
+|o==Bo.= S        |
+|=oX=o*o+         |
+|o+=+*. .         |
+|=Bo+ ..          |
+|*O*oo.           |
++----[SHA256]-----+
++ expect
+spawn ssh-copy-id root@
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: ERROR: ssh: Could not resolve hostname : Name or service not known
+
+send: spawn id exp3 not open
+    while executing
+"send "yes\n""
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:53:29 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:53:29 2023 - INFO  - Start to run test.
++ ansible-config --version
++ grep ansible-config
+ansible-config 2.9.27
+  executable location = /usr/bin/ansible-config
++ CHECK_RESULT 0 0 0 'Check ansible-config --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-config --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-config --help
++ grep -i Usage:
+usage: ansible-config [-h] [--version] [-v] {list,dump,view} ...
++ CHECK_RESULT 0 0 0 'Check ansible-config --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-config --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn ansible-config view
+WARNING: terminal is not fully functional
+Press RETURN to continue 
+# config file for ansible -- https://ansible.com/[m
+# ===============================================[m
+[m
+# nearly all parameters can be overridden in ansible-playbook[m
+# or with command line flags. ansible will read ANSIBLE_CONFIG,[m
+# ansible.cfg in the current working directory, .ansible.cfg in[m
+# the home directory or /etc/ansible/ansible.cfg, whichever it[m
+# finds first[m
+[m
+[defaults][m
+[m
+# some basic default values...[m
+[m
+#inventory      = /etc/ansible/hosts[m
+#library        = /usr/share/my_modules/[m
+#module_utils   = /usr/share/my_module_utils/[m
+#remote_tmp     = ~/.ansible/tmp[m
+#local_tmp      = ~/.ansible/tmp[m
+#plugin_filters_cfg = /etc/ansible/plugin_filters.yml[m
+#forks          = 5[m
+#poll_interval  = 15[m
+#sudo_user      = root[m
+#ask_sudo_pass = True[m
+:+ CHECK_RESULT 0 0 0 'Check ansible-config view failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-config view failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn ansible-config dump
+WARNING: terminal is not fully functional
+Press RETURN to continue 
+ACTION_WARNINGS(default) = True[m
+AGNOSTIC_BECOME_PROMPT(default) = True[m
+ALLOW_WORLD_READABLE_TMPFILES(default) = False[m
+ANSIBLE_CONNECTION_PATH(default) = None[m
+ANSIBLE_COW_PATH(default) = None[m
+ANSIBLE_COW_SELECTION(default) = default[m
+ANSIBLE_COW_WHITELIST(default) = ['bud-frogs', 'bunny', 'cheese', 'daemon', 'de[m>
+ANSIBLE_FORCE_COLOR(default) = False[m
+ANSIBLE_NOCOLOR(default) = False[m
+ANSIBLE_NOCOWS(default) = False[m
+ANSIBLE_PIPELINING(default) = False[m
+ANSIBLE_SSH_ARGS(default) = -C -o ControlMaster=auto -o ControlPersist=60s[m
+ANSIBLE_SSH_CONTROL_PATH(default) = None[m
+ANSIBLE_SSH_CONTROL_PATH_DIR(default) = ~/.ansible/cp[m
+ANSIBLE_SSH_EXECUTABLE(default) = ssh[m
+ANSIBLE_SSH_RETRIES(default) = 0[m
+ANY_ERRORS_FATAL(default) = False[m
+BECOME_ALLOW_SAME_USER(default) = False[m
+BECOME_PLUGIN_PATH(default) = ['/root/.ansible/plugins/become', '/usr/share/ans[m>
+CACHE_PLUGIN(default) = memory[m
+CACHE_PLUGIN_CONNECTION(default) = None[m
+CACHE_PLUGIN_PREFIX(default) = ansible_facts[m
+CACHE_PLUGIN_TIMEOUT(default) = 86400[m
+:+ CHECK_RESULT 0 0 0 'Check ansible-config dump failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-config dump failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn ansible-config list -v
+Using /etc/ansible/ansible.cfg as config file
+WARNING: terminal is not fully functional
+Press RETURN to continue 
+ACTION_WARNINGS:[m
+  default: true[m
+  description:[m
+  - By default Ansible will issue a warning when received from a task action (m[m>
+    or action plugin)[m
+  - These warnings can be silenced by adjusting this setting to False.[m
+  env:[m
+  - name: ANSIBLE_ACTION_WARNINGS[m
+  ini:[m
+  - key: action_warnings[m
+    section: defaults[m
+  name: Toggle action warnings[m
+  type: boolean[m
+  version_added: '2.5'[m
+AGNOSTIC_BECOME_PROMPT:[m
+  default: true[m
+  description: Display an agnostic become prompt instead of displaying a prompt[m>
+    the command line supplied become method[m
+  env:[m
+  - name: ANSIBLE_AGNOSTIC_BECOME_PROMPT[m
+  ini:[m
+  - key: agnostic_become_prompt[m
+    section: privilege_escalation[m
+:+ CHECK_RESULT 0 0 0 'Check ansible-config list -v failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-config list -v failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-console --help
++ grep -i Usage:
+usage: ansible-console [-h] [--version] [-v] [-b]
++ CHECK_RESULT 0 0 0 'Check ansible-console --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-console --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-console --version
++ grep ansible-console
+ansible-console 2.9.27
+  executable location = /usr/bin/ansible-console
++ CHECK_RESULT 0 0 0 'Check ansible-console --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-console --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn ansible-console
+ip a
+ls
+exit
+Welcome to the ansible console.
+Type help or ? to list commands.
+
+root@all (1)[f:5]$ ip a
++ CHECK_RESULT 0 0 0 'Check ansible-console failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-console failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:54:24 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:54:24 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:54:25 2023 - INFO  - Start to restore the test environment.
++ Post_Test
++ rm -rf /etc/ansible/hosts
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpbt6egu5q ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpbt6egu5q
++ '[' 0 -ne 0 ']'
++ rm -rf /root/.ssh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:54:51 2023 - INFO  - End to restore the test environment.

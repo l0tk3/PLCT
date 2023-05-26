@@ -1,0 +1,156 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:51:53 2023 - INFO  - Start environment preparation.
+++ echo en_US.UTF-8
++ cur_lang=en_US.UTF-8
++ export LANG=zh_CN.UTF-8
++ LANG=zh_CN.UTF-8
++ DNF_INSTALL expect
++ pkgs=expect
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs expect --node 1 --tempfile ''
+Fri May 26 00:51:59 2023 - INFO  - pkgs:(expect) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ useradd -d /home/euler euler
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:52:00 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:52:01 2023 - INFO  - Start testing...
++ umask
++ grep 0022
+0022
++ CHECK_RESULT 0 0 0 'The umask permission of the root is incorrect'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The umask permission of the root is incorrect'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - euler -c 'umask | grep 0022'
+0022
++ CHECK_RESULT 0 0 0 'The umask permission of common users is incorrect'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The umask permission of common users is incorrect'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mkdir testdir
++ ls -ld testdir
++ grep drwxr-xr-x.
+drwxr-xr-x 2 root root 4096  5月 26 00:52 testdir
++ CHECK_RESULT 0 0 0 'The root user has incorrect permission to create a folder.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The root user has incorrect permission to create a folder.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ touch testfile
++ ls -lh testfile
++ grep rw-r--r--.
+-rw-r--r-- 1 root root 0  5月 26 00:52 testfile
++ CHECK_RESULT 0 0 0 'The root user has incorrect permission to create files.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The root user has incorrect permission to create files.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - euler -c 'mkdir testdir && ls -ld testdir | grep '\''drwxr-xr-x.'\'''
+drwxr-xr-x 2 euler euler 4096 May 26 00:52 testdir
++ CHECK_RESULT 0 0 0 'Common users have incorrect permission to create folders.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Common users have incorrect permission to create folders.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - euler -c 'touch testfile && ls -lh testfile | grep '\''rw-r--r--.'\'''
+-rw-r--r-- 1 euler euler 0 May 26 00:52 testfile
++ CHECK_RESULT 0 0 0 'The permission for common users to create files is incorrect.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The permission for common users to create files is incorrect.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:52:08 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:52:09 2023 - INFO  - start environment cleanup.
++ userdel -rf euler
++ rm -rf testdir testfile
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri May 26 00:52:09 2023 - WARN  - no thing to do.
++ return 0
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:52:10 2023 - INFO  - Finish environment cleanup!

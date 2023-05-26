@@ -1,0 +1,235 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start to config params of the case.'
++ message='Start to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to config params of the case.'
+Fri May 26 00:26:29 2023 - INFO  - Start to config params of the case.
++ lun1=/home/iscsi_lun1_14617
++ lun2=/home/iscsi_lun2_14617
++ local_addr=127.0.0.1
++ iscsi_name=iqn.2020-07.org.openeuler:iscsi14617
++ firewall_status=0
++ LOG_INFO 'End to config params of the case.'
++ message='End to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to config params of the case.'
+Fri May 26 00:26:29 2023 - INFO  - End to config params of the case.
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:26:30 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL 'open-iscsi multipath-tools target-restore targetcli'
++ pkgs='open-iscsi multipath-tools target-restore targetcli'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'open-iscsi multipath-tools target-restore targetcli' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpprfau27f
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpprfau27f
++ dd if=/dev/zero of=/home/iscsi_lun1_14617 count=10 bs=1M
+10+0 records in
+10+0 records out
+10485760 bytes (10 MB, 10 MiB) copied, 0.253161 s, 41.4 MB/s
++ dd if=/dev/zero of=/home/iscsi_lun2_14617 count=10 bs=1M
+10+0 records in
+10+0 records out
+10485760 bytes (10 MB, 10 MiB) copied, 0.241338 s, 43.4 MB/s
++ systemctl status --no-pager firewalld
+Unit firewalld.service could not be found.
++ systemctl stop firewalld
+Failed to stop firewalld.service: Unit firewalld.service not loaded.
++ mv /etc/iscsi/initiatorname.iscsi .
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:27:04 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:27:04 2023 - INFO  - Start testing...
++ echo -e 'cd /\n clearconfig confirm=true\n'
++ targetcli
+Warning: Could not load preferences file /root/.targetcli/prefs.bin.
+Could not load module: configfs
++ echo -e 'cd /backstores/fileio\n create name=disk1 file_or_dev=/home/iscsi_lun1_14617\n'
++ targetcli
+Could not load module: configfs
++ echo -e 'cd /backstores/fileio\n create name=disk2 file_or_dev=/home/iscsi_lun2_14617\n'
++ targetcli
+Could not load module: configfs
++ echo -e 'cd /iscsi\n create iqn.2020-07.org.openeuler:iscsi14617\n'
++ targetcli
+Could not load module: configfs
++ echo -e 'cd /iscsi/iqn.2020-07.org.openeuler:iscsi14617/tpg1/acls\n create iqn.2020-07.org.openeuler:iscsi14617:client\n'
++ targetcli
+Could not load module: configfs
++ echo -e 'cd /iscsi/iqn.2020-07.org.openeuler:iscsi14617/tpg1/luns\n create /backstores/fileio/disk1 lun1\n'
++ targetcli
+Could not load module: configfs
++ echo -e 'cd /iscsi/iqn.2020-07.org.openeuler:iscsi14617/tpg1/luns\n create /backstores/fileio/disk2 lun2\n'
++ targetcli
+Could not load module: configfs
++ systemctl restart target
+Job for target.service failed because the control process exited with error code.
+See "systemctl status target.service" and "journalctl -xeu target.service" for details.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iscsi.sh line 53'
++ message='oe_test_iscsi.sh line 53'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iscsi.sh line 53'
+Fri May 26 00:27:25 2023 - ERROR - oe_test_iscsi.sh line 53
++ '[' 0 -eq 1 ']'
++ return 0
++ echo InitiatorName=iqn.2020-07.org.openeuler:iscsi14617:client
++ systemctl restart iscsid
+Job for iscsid.service failed because the control process exited with error code.
+See "systemctl status iscsid.service" and "journalctl -xeu iscsid.service" for details.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iscsi.sh line 56'
++ message='oe_test_iscsi.sh line 56'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iscsi.sh line 56'
+Fri May 26 00:27:26 2023 - ERROR - oe_test_iscsi.sh line 56
++ '[' 0 -eq 1 ']'
++ return 0
++ iscsiadm -m discovery -t st -p 127.0.0.1
+iscsiadm: wait 300 seconds timeout, try again?
+iscsiadm: Could not scan /sys/class/iscsi_transport.
+libkmod: kmod_module_insert_module: could not find module by name='iscsi_tcp'
+iscsiadm: Could not insert module tcp. Kmod error -2
+iscsiadm: iSCSI driver tcp is not loaded. Load the module then retry the command.
+iscsiadm: Could not perform SendTargets discovery: iSCSI driver not found. Please make sure it is loaded, and retry the operation
++ iscsiadm -m node -p 127.0.0.1 -l
+iscsiadm: No records found
++ CHECK_RESULT 21
++ actual_result=21
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 21 ']'
++ '[' 0 -eq 0 ']'
++ test 21x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iscsi.sh line 59'
++ message='oe_test_iscsi.sh line 59'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iscsi.sh line 59'
+Fri May 26 00:27:27 2023 - ERROR - oe_test_iscsi.sh line 59
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl restart multipathd
+Job for multipathd.service failed because the control process exited with error code.
+See "systemctl status multipathd.service" and "journalctl -xeu multipathd.service" for details.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iscsi.sh line 61'
++ message='oe_test_iscsi.sh line 61'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iscsi.sh line 61'
+Fri May 26 00:27:29 2023 - ERROR - oe_test_iscsi.sh line 61
++ '[' 0 -eq 1 ']'
++ return 0
++ multipath -v2
+9148.492436 | DM multipath kernel driver not loaded
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
+++ multipath -ll
+++ grep disk1
+++ awk '{print $1}'
+9152.270893 | DM multipath kernel driver not loaded
++ path1=
+++ multipath -ll
+++ grep disk2
+++ awk '{print $1}'
+9152.426526 | DM multipath kernel driver not loaded
++ path2=
++ test -n ''
++ return 1
++ CASE_RESULT 1
++ case_re=1
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri May 26 00:27:33 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:27:34 2023 - INFO  - start environment cleanup.
++ iscsiadm -m node -p 127.0.0.1 -u
+iscsiadm: No matching sessions found
++ iscsiadm -m node -o delete -p 127.0.0.1
+iscsiadm: No records found
++ systemctl stop multipathd
++ systemctl stop iscsid
++ systemctl stop target
++ echo -e 'cd /\n clearconfig confirm=true\n'
++ targetcli
+Could not load module: configfs
++ test -f initiatorname.iscsi
++ mv initiatorname.iscsi /etc/iscsi/initiatorname.iscsi
++ rm -rf /home/iscsi_lun1_14617 /home/iscsi_lun2_14617
++ test 0 -eq 1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpprfau27f ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpprfau27f
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:27:52 2023 - INFO  - Finish environment cleanup!

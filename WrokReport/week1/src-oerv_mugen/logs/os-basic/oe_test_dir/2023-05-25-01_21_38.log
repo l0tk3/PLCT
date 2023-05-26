@@ -1,0 +1,74 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 01:21:40 2023 - INFO  - Start to run test.
++ grep -E '[r-][w-][x-]+'
++ dir -l /
+dr-xr-xr-x   2 root root  4096 Mar 20 23:25 afs
+lrwxrwxrwx   1 root root     7 Mar 20 23:25 bin -> usr/bin
+dr-xr-xr-x   6 root root  4096 May 25 00:02 boot
+drwxr-xr-x  13 root root 13060 May 25 00:40 dev
+-rw-r--r--   1 root root   769 May 24 22:34 dhparams.pem
+drwxr-xr-x  82 root root  4096 May 25 01:17 etc
+drwxr-xr-x   3 root root  4096 May 25 00:43 home
+lrwxrwxrwx   1 root root     7 Mar 20 23:25 lib -> usr/lib
+lrwxrwxrwx   1 root root     9 Mar 20 23:25 lib64 -> usr/lib64
+drwx------   2 root root 16384 Mar 31 16:32 lost+found
+drwxr-xr-x   2 root root  4096 Mar 20 23:25 media
+drwxr-xr-x   2 root root  4096 Mar 20 23:25 mnt
+drwxr-xr-x   2 root root  4096 May 25 00:41 opt
+dr-xr-xr-x 147 root root     0 May 24 21:45 proc
+dr-xr-x---   5 root root  4096 May 24 23:26 root
+drwxr-xr-x  25 root root   700 May 25 00:40 run
+lrwxrwxrwx   1 root root     8 Mar 20 23:25 sbin -> usr/sbin
+drwxr-xr-x   2 root root  4096 Mar 20 23:25 srv
+dr-xr-xr-x  12 root root     0 May 24 21:45 sys
+drwxrwxrwt   8 root root  1200 May 25 01:20 tmp
+drwxr-xr-x  12 root root  4096 Mar 31 16:35 usr
+drwxr-xr-x  20 root root  4096 May 25 00:02 var
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 01:21:41 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 01:21:41 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_dir.sh post_test'
++ message='oe_test_dir.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_dir.sh post_test'
+Thu May 25 01:21:42 2023 - INFO  - oe_test_dir.sh post_test

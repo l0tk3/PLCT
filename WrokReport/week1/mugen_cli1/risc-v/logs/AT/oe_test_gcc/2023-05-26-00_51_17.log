@@ -1,0 +1,215 @@
++ '﻿#!/usr/bin/bash'
+oe_test_gcc.sh: line 1: ﻿#!/usr/bin/bash: No such file or directory
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:51:19 2023 - INFO  - Start environment preparation.
++ mkdir /tmp/test
++ path=/tmp/test
++ cat
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:51:20 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:51:20 2023 - INFO  - Start testing...
++ gcc -o /tmp/test/a.out /tmp/test/test1.c
++ ls /tmp/test/a.out
+/tmp/test/a.out
++ CHECK_RESULT 0 0 0 'gcc file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gcc file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /tmp/test/a.out
++ CHECK_RESULT 0 0 0 'Compilation fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Compilation fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'hello world!' /tmp/test/tmp.1
+hello world!
++ CHECK_RESULT 0 0 0 'Compilation fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Compilation fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gcc /tmp/test/test1.c -o /tmp/test/test2
++ ls /tmp/test/test2
+/tmp/test/test2
++ CHECK_RESULT 0 0 0 'gcc -o file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gcc -o file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /tmp/test/test2
++ CHECK_RESULT 0 0 0 'test2 Compilation fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test2 Compilation fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'hello world!' /tmp/test/tmp.2
+hello world!
++ CHECK_RESULT 0 0 0 'nothingness hello word'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='nothingness hello word'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gcc -E /tmp/test/test1.c -o /tmp/test/test.i
++ ls /tmp/test/test.i
+/tmp/test/test.i
++ CHECK_RESULT 0 0 0 'gcc -E file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gcc -E file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gcc -S /tmp/test/test.i -o /tmp/test/test.s
++ ls /tmp/test/test.s
+/tmp/test/test.s
++ CHECK_RESULT 0 0 0 'gcc -S file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gcc -S file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gcc -c /tmp/test/test.s -o /tmp/test/test.o
++ ls /tmp/test/test.o
+/tmp/test/test.o
++ CHECK_RESULT 0 0 0 'gcc -c file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gcc -c file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gcc /tmp/test/test.o -o /tmp/test/test1
++ ls /tmp/test/test1
+/tmp/test/test1
++ CHECK_RESULT 0 0 0 'tset1 Generate failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='tset1 Generate failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /tmp/test/test1
++ CHECK_RESULT 0 0 0 'test1 Compilation fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test1 Compilation fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'hello world!' /tmp/test/tmp.3
+hello world!
++ CHECK_RESULT 0 0 0 'test1 Compilation fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test1 Compilation fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ gcc -g /tmp/test/test1.c -o /tmp/test/test1_d
++ ls /tmp/test/test1_d
+/tmp/test/test1_d
++ CHECK_RESULT 0 0 0 'gcc -d file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gcc -d file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:51:25 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:51:25 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/test
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:51:26 2023 - INFO  - Finish environment cleanup!

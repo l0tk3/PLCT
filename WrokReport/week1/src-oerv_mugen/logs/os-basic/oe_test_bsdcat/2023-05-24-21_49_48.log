@@ -1,0 +1,141 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Wed May 24 21:49:51 2023 - INFO  - Start to prepare the test environment.
++ OLD_LANG=en_US.UTF-8
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Wed May 24 21:49:51 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Wed May 24 21:49:52 2023 - INFO  - Start to run test.
++ echo 111
++ CHECK_RESULT 0 0 0 'check create file fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check create file fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bsdcat testfile1
++ grep 111
+oe_test_bsdcat.sh: line 33: bsdcat: command not found
++ CHECK_RESULT 1 0 0 'look file fail'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='look file fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'look file fail'
++ LOG_ERROR 'look file fail'
++ message='look file fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'look file fail'
+Wed May 24 21:49:52 2023 - ERROR - look file fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_bsdcat.sh line 34'
++ message='oe_test_bsdcat.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_bsdcat.sh line 34'
+Wed May 24 21:49:53 2023 - ERROR - oe_test_bsdcat.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ bsdcat --help
++ grep bsdcat
+oe_test_bsdcat.sh: line 35: bsdcat: command not found
++ CHECK_RESULT 1 0 0 'check command fail'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='check command fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'check command fail'
++ LOG_ERROR 'check command fail'
++ message='check command fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'check command fail'
+Wed May 24 21:49:54 2023 - ERROR - check command fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_bsdcat.sh line 36'
++ message='oe_test_bsdcat.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_bsdcat.sh line 36'
+Wed May 24 21:49:54 2023 - ERROR - oe_test_bsdcat.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ bsdcat --version
+oe_test_bsdcat.sh: line 37: bsdcat: command not found
++ grep libarchive
++ CHECK_RESULT 1 0 0 'check command fail'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='check command fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'check command fail'
++ LOG_ERROR 'check command fail'
++ message='check command fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'check command fail'
+Wed May 24 21:49:55 2023 - ERROR - check command fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_bsdcat.sh line 38'
++ message='oe_test_bsdcat.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_bsdcat.sh line 38'
+Wed May 24 21:49:55 2023 - ERROR - oe_test_bsdcat.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Wed May 24 21:49:56 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Wed May 24 21:49:56 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Wed May 24 21:49:57 2023 - INFO  - start environment cleanup.
++ rm -rf testfile1
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Wed May 24 21:49:58 2023 - INFO  - Finish environment cleanup!

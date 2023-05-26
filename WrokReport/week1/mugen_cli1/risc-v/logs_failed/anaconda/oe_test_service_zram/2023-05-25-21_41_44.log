@@ -1,0 +1,302 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu May 25 21:41:47 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL anaconda-core
++ pkgs=anaconda-core
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs anaconda-core --node 1 --tempfile ''
+Thu May 25 21:41:53 2023 - INFO  - pkgs:(anaconda-core) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ sed -i s/MAX_RAM_ON=2097152/MAX_RAM_ON=4097152/g /usr/libexec/anaconda/zramswapon
+sed: can't read /usr/libexec/anaconda/zramswapon: No such file or directory
++ systemctl start zram.service
+Failed to start zram.service: Unit zram.service not found.
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 21:41:54 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu May 25 21:41:54 2023 - INFO  - Start testing...
++ test_execution zram.service
++ service=zram.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-05-25 21:41:54'
++ test_restart zram.service
++ service=zram.service
++ systemctl restart zram.service
+Failed to restart zram.service: Unit zram.service not found.
++ CHECK_RESULT 5 0 0 'zram.service restart failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='zram.service restart failed'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'zram.service restart failed'
++ LOG_ERROR 'zram.service restart failed'
++ message='zram.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'zram.service restart failed'
+Thu May 25 21:41:55 2023 - ERROR - zram.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Thu May 25 21:41:56 2023 - ERROR - ../common/common_lib.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status zram.service
++ grep 'Active: active'
+Unit zram.service could not be found.
++ CHECK_RESULT 1 0 0 'zram.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='zram.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'zram.service restart failed'
++ LOG_ERROR 'zram.service restart failed'
++ message='zram.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'zram.service restart failed'
+Thu May 25 21:42:02 2023 - ERROR - zram.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Thu May 25 21:42:02 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop zram.service
+Failed to stop zram.service: Unit zram.service not loaded.
++ CHECK_RESULT 5 0 0 'zram.service stop failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='zram.service stop failed'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'zram.service stop failed'
++ LOG_ERROR 'zram.service stop failed'
++ message='zram.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'zram.service stop failed'
+Thu May 25 21:42:03 2023 - ERROR - zram.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 39'
++ message='../common/common_lib.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 39'
+Thu May 25 21:42:04 2023 - ERROR - ../common/common_lib.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status zram.service
++ grep 'Active: inactive'
+Unit zram.service could not be found.
++ CHECK_RESULT 1 0 0 'zram.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='zram.service stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'zram.service stop failed'
++ LOG_ERROR 'zram.service stop failed'
++ message='zram.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'zram.service stop failed'
+Thu May 25 21:42:10 2023 - ERROR - zram.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Thu May 25 21:42:10 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start zram.service
+Failed to start zram.service: Unit zram.service not found.
++ CHECK_RESULT 5 0 0 'zram.service start failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='zram.service start failed'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'zram.service start failed'
++ LOG_ERROR 'zram.service start failed'
++ message='zram.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'zram.service start failed'
+Thu May 25 21:42:11 2023 - ERROR - zram.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Thu May 25 21:42:12 2023 - ERROR - ../common/common_lib.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status zram.service
++ grep 'Active: active'
+Unit zram.service could not be found.
++ CHECK_RESULT 1 0 0 'zram.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='zram.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'zram.service start failed'
++ LOG_ERROR 'zram.service start failed'
++ message='zram.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'zram.service start failed'
+Thu May 25 21:42:18 2023 - ERROR - zram.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Thu May 25 21:42:18 2023 - ERROR - ../common/common_lib.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ test_enabled zram.service
++ service=zram.service
+++ systemctl is-enabled zram.service
+Failed to get unit file state for zram.service: No such file or directory
++ state=
++ '[' '' == enabled ']'
++ '[' '' == disabled ']'
++ '[' '' == masked ']'
++ '[' '' == static ']'
++ LOG_INFO 'Unit is indirect, ignoring.'
++ message='Unit is indirect, ignoring.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Unit is indirect, ignoring.'
+Thu May 25 21:42:19 2023 - INFO  - Unit is indirect, ignoring.
++ journalctl --since '2023-05-25 21:41:54' -u zram.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of zram.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of zram.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload zram.service
++ service=zram.service
++ systemctl start zram.service
+Failed to start zram.service: Unit zram.service not found.
++ systemctl reload zram.service
++ grep 'Job type reload is not applicable'
++ CHECK_RESULT 1 0 0 'Job type reload is not applicable for unit zram.service'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit zram.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Job type reload is not applicable for unit zram.service'
++ LOG_ERROR 'Job type reload is not applicable for unit zram.service'
++ message='Job type reload is not applicable for unit zram.service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Job type reload is not applicable for unit zram.service'
+Thu May 25 21:42:20 2023 - ERROR - Job type reload is not applicable for unit zram.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 91'
++ message='../common/common_lib.sh line 91'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 91'
+Thu May 25 21:42:20 2023 - ERROR - ../common/common_lib.sh line 91
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl status zram.service
++ grep 'Active: active'
+Unit zram.service could not be found.
++ systemctl status zram.service
++ grep 'inactive (dead)'
+Unit zram.service could not be found.
++ return 1
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu May 25 21:42:21 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 7
++ test 7 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 21:42:22 2023 - ERROR - failed to execute the case.
++ exit 7
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 21:42:22 2023 - INFO  - start environment cleanup.
++ sed -i s/MAX_RAM_ON=4097152/MAX_RAM_ON=2097152/g /usr/libexec/anaconda/zramswapon
+sed: can't read /usr/libexec/anaconda/zramswapon: No such file or directory
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu May 25 21:42:23 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 21:42:24 2023 - INFO  - Finish environment cleanup!

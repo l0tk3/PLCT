@@ -1,0 +1,166 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri May 26 00:23:55 2023 - INFO  - Start to prepare the test environment.
++ OLD_LANG=en_US.UTF-8
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri May 26 00:23:56 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:23:56 2023 - INFO  - Start testing...
++ grep -c id /proc/cpuinfo
+12
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -n id /proc/cpuinfo
+5:mvendorid	: 0x0
+6:marchid		: 0x80000
+7:mimpid		: 0x80000
+13:mvendorid	: 0x0
+14:marchid		: 0x80000
+15:mimpid		: 0x80000
+21:mvendorid	: 0x0
+22:marchid		: 0x80000
+23:mimpid		: 0x80000
+29:mvendorid	: 0x0
+30:marchid		: 0x80000
+31:mimpid		: 0x80000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ps -aux
++ grep auditd
+root          34  0.0  0.0      0     0 ?        S    May25   0:00 [kauditd]
+root        1996  0.0  0.0  92052  3636 ?        S<sl May25   0:02 /sbin/auditd
+root       13545 27.2  0.0  21612  1792 ?        S    00:23   0:00 grep auditd
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep --help
++ grep Usage
+Usage: grep [OPTION]... PATTERNS [FILE]...
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls /tmp/test
+ls: cannot access '/tmp/test': No such file or directory
++ echo abc
++ grep -i A /tmp/test
+abc
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -v A /tmp/test
+abc
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -r ssh_config /etc/ssh
+/etc/ssh/ssh_config:#	$OpenBSD: ssh_config,v 1.35 2020/07/17 03:43:42 dtucker Exp $
+/etc/ssh/ssh_config:# ssh_config(5) for more information.  This file provides defaults for
+/etc/ssh/ssh_config:# ssh_config(5) man page.
+/etc/ssh/ssh_config:#  file under  /etc/ssh/ssh_config.d/  which will be automatically
+/etc/ssh/ssh_config:#  update-crypto-policies(8)  and  ssh_config(5).
+/etc/ssh/ssh_config:Include /etc/ssh/ssh_config.d/*.conf
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:23:57 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:23:58 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:23:58 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/test
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:23:59 2023 - INFO  - Finish environment cleanup!

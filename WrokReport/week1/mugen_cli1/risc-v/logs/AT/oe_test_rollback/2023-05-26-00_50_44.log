@@ -1,0 +1,174 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:50:46 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL git
++ pkgs=git
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs git --node 1 --tempfile ''
+Fri May 26 00:50:53 2023 - INFO  - pkgs:(git) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:50:54 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:50:54 2023 - INFO  - Start testing...
+++ yum history list
+++ grep 'install git'
+++ awk 'NR==1 {print $1}'
++ ID=
++ CHECK_RESULT 0 0 0 'install fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='install fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ yum history undo -y
+No transaction ID or package name given.
+Error: No transaction ID or package name given.
++ CHECK_RESULT 1 0 0 'remove fail'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='remove fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'remove fail'
++ LOG_ERROR 'remove fail'
++ message='remove fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'remove fail'
+Fri May 26 00:51:01 2023 - ERROR - remove fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rollback.sh line 33'
++ message='oe_test_rollback.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rollback.sh line 33'
+Fri May 26 00:51:02 2023 - ERROR - oe_test_rollback.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ rpm -qa
++ grep -w git
+git-core-2.39.1-3.oe2303.riscv64
+git-2.39.1-3.oe2303.riscv64
++ CHECK_RESULT 0 0 1 'remove fail'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='remove fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'remove fail'
++ LOG_ERROR 'remove fail'
++ message='remove fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'remove fail'
+Fri May 26 00:51:03 2023 - ERROR - remove fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rollback.sh line 35'
++ message='oe_test_rollback.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rollback.sh line 35'
+Fri May 26 00:51:04 2023 - ERROR - oe_test_rollback.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ yum history redo -y
+No transaction ID or package name given.
+Error: No transaction ID or package name given.
++ CHECK_RESULT 1 0 0 'install fail'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='install fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'install fail'
++ LOG_ERROR 'install fail'
++ message='install fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'install fail'
+Fri May 26 00:51:07 2023 - ERROR - install fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rollback.sh line 37'
++ message='oe_test_rollback.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rollback.sh line 37'
+Fri May 26 00:51:08 2023 - ERROR - oe_test_rollback.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ rpm -qa
++ grep -w git
+git-core-2.39.1-3.oe2303.riscv64
+git-2.39.1-3.oe2303.riscv64
++ CHECK_RESULT 0 0 0 'install fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='install fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:51:09 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri May 26 00:51:10 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:51:10 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri May 26 00:51:11 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:51:11 2023 - INFO  - Finish environment cleanup!

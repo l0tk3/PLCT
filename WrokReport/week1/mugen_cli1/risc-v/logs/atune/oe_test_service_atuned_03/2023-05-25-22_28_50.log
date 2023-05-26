@@ -1,0 +1,867 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ source ./common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ ARRAY_PROFILE=("arm-native-android-container-robox" "basic-test-suite-baseline-fio" "basic-test-suite-baseline-lmbench" "basic-test-suite-baseline-netperf" "basic-test-suite-baseline-stream" "basic-test-suite-baseline-unixbench" "basic-test-suite-speccpu-speccpu2006" "basic-test-suite-specjbb-specjbb2015" "big-data-hadoop-hdfs-dfsio-hdd" "big-data-hadoop-hdfs-dfsio-ssd" "big-data-hadoop-spark-bayesian" "big-data-hadoop-spark-kmeans" "big-data-hadoop-spark-sql1" "big-data-hadoop-spark-sql10" "big-data-hadoop-spark-sql2" "big-data-hadoop-spark-sql3" "big-data-hadoop-spark-sql4" "big-data-hadoop-spark-sql5" "big-data-hadoop-spark-sql6" "big-data-hadoop-spark-sql7" "big-data-hadoop-spark-sql8" "big-data-hadoop-spark-sql9" "big-data-hadoop-spark-tersort" "big-data-hadoop-spark-wordcount" "cloud-compute-kvm-host" "database-mariadb-2p-tpcc-c3" "database-mariadb-4p-tpcc-c3" "database-mongodb-2p-sysbench" "database-mysql-2p-sysbench-hdd" "database-mysql-2p-sysbench-ssd" "database-postgresql-2p-sysbench-hdd" "database-postgresql-2p-sysbench-ssd" "default-default" "docker-mariadb-2p-tpcc-c3" "docker-mariadb-4p-tpcc-c3" "hpc-gatk4-human-genome" "in-memory-database-redis-redis-benchmark" "middleware-dubbo-dubbo-benchmark" "storage-ceph-vdbench-hdd" "storage-ceph-vdbench-ssd" "virtualization-consumer-cloud-olc" "virtualization-mariadb-2p-tpcc-c3" "virtualization-mariadb-4p-tpcc-c3" "web-apache-traffic-server-spirent-pingpo" "web-nginx-http-long-connection" "web-nginx-https-short-connection")
+++ ARRAY_SERVICE=("arm-native" "basic-test-suite" "big-data" "cloud-compute" "database" "default" "docker" "hpc" "in-memory-database" "middleware" "storage" "virtualization" "web")
+++ SPECIAL_CHARACTERS='~\!@#%^*'
+++ ULTRA_LONG_CHARACTERS=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu May 25 22:28:52 2023 - INFO  - Start environment preparation.
++ deploy_autund
++ DNF_INSTALL 'atune  atune-engine'
++ pkgs='atune  atune-engine'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'atune  atune-engine' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp2_2pv_v0
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp2_2pv_v0
+++ lsblk
+++ grep disk
+++ awk 'NR==1{print $1}'
++ disk_name=vda
++ cp /etc/atuned/atuned.cnf /etc/atuned/atuned.cnf.bak
++ cp /etc/atuned/engine.cnf /etc/atuned/engine.cnf.bak
++ sed -i 's/^disk =.*/disk = vda/g' /etc/atuned/atuned.cnf
++ sed -i 's/^network =.*/network = /g' /etc/atuned/atuned.cnf
++ sed -i 's/rest_tls = true/rest_tls = false/g' /etc/atuned/atuned.cnf
++ sed -i 's/engine_tls = true/engine_tls = false/g' /etc/atuned/atuned.cnf
++ sed -i 's/engine_tls = true/engine_tls = false/g' /etc/atuned/engine.cnf
++ creat_ca
++ CERT_PATH=demo
++ mkdir demo
+mkdir: cannot create directory ‘demo’: File exists
++ openssl genrsa -out demo/ca.key 2048
++ openssl req -new -x509 -days 3650 -subj /CN=ca -key demo/ca.key -out demo/ca.crt
++ IP_ADDR=localhost
++ openssl genrsa -out demo/server.key 2048
++ cp /etc/pki/tls/openssl.cnf demo
++ test localhost == localhost
++ echo '[SAN]\nsubjectAltName=DNS:localhost'
++ echo subjectAltName=DNS:localhost
++ openssl req -new -subj /CN=localhost -config demo/openssl.cnf -key demo/server.key -out demo/server.csr
++ openssl x509 -req -sha256 -CA demo/ca.crt -CAkey demo/ca.key -CAcreateserial -days 3650 -extfile demo/extfile.cnf -in demo/server.csr -out demo/server.crt
+Certificate request self-signature ok
+subject=CN = localhost
++ rm -rf demo/ca.srl demo/server.csr demo/extfile.cnf demo/openssl.cnf
++ IP_ADDR=localhost
++ openssl genrsa -out demo/client.key 2048
++ cp /etc/pki/tls/openssl.cnf demo
++ test localhost == localhost
++ echo '[SAN]\nsubjectAltName=DNS:localhost'
++ echo subjectAltName=DNS:localhost
++ openssl req -new -subj /CN=localhost -config demo/openssl.cnf -key demo/client.key -out demo/client.csr
++ openssl x509 -req -sha256 -CA demo/ca.crt -CAkey demo/ca.key -CAcreateserial -days 3650 -extfile demo/extfile.cnf -in demo/client.csr -out demo/client.crt
+Certificate request self-signature ok
+subject=CN = localhost
++ rm -rf demo/ca.srl demo/client.csr demo/extfile.cnf demo/openssl.cnf
+++ pwd
++ cp -ar /root/mugen/testcases/cli-test/atune/demo/ca.crt demo/server.crt demo/server.key /etc/atuned/rest_certs/
+++ pwd
++ cp -ar /root/mugen/testcases/cli-test/atune/demo/ca.crt demo/client.crt demo/client.key /etc/atuned/engine_certs/
+++ pwd
++ cp -ar /root/mugen/testcases/cli-test/atune/demo/ca.crt demo/server.crt demo/server.key /etc/atuned/engine_certs/
++ systemctl start atuned
+Job for atuned.service failed because the control process exited with error code.
+See "systemctl status atuned.service" and "journalctl -xeu atuned.service" for details.
++ systemctl status atuned
++ grep running
++ CHECK_RESULT 1 0 0 'atuned service startup failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atuned service startup failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atuned service startup failure'
++ LOG_ERROR 'atuned service startup failure'
++ message='atuned service startup failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atuned service startup failure'
+Thu May 25 22:34:11 2023 - ERROR - atuned service startup failure
++ (( exec_result++ ))
++ LOG_ERROR './common/common_lib.sh line 40'
++ message='./common/common_lib.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message './common/common_lib.sh line 40'
+Thu May 25 22:34:12 2023 - ERROR - ./common/common_lib.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start atune-engine
++ systemctl status atune-engine
++ grep running
+     Active: active (running) since Thu 2023-05-25 22:34:12 CST; 200ms ago
++ CHECK_RESULT 0 0 0 'atune-engine service startup failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='atune-engine service startup failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_service=test_service
++ test_app=test_app
++ test_scenario=test_scenario
++ profile_path=./common/example.conf
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 22:34:12 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ atune-adm define -h
++ grep DESCRIPTION
+DESCRIPTION:
++ CHECK_RESULT 0 0 0 'The help information is displayed incorrectly'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The help information is displayed incorrectly'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ atune-adm define test_service test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' temp.log
++ CHECK_RESULT 1 0 0 'atune-adm define command execution failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atune-adm define command execution failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atune-adm define command execution failure'
++ LOG_ERROR 'atune-adm define command execution failure'
++ message='atune-adm define command execution failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atune-adm define command execution failure'
+Thu May 25 22:34:14 2023 - ERROR - atune-adm define command execution failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 38'
++ message='oe_test_service_atuned_03.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 38'
+Thu May 25 22:34:14 2023 - ERROR - oe_test_service_atuned_03.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i=0 ))
++ (( i<13 ))
++ atune-adm define arm-native test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:15 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:16 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine arm-native-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:17 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:17 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define basic-test-suite test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:18 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:19 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine basic-test-suite-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:20 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:20 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define big-data test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:21 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:22 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine big-data-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:23 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:23 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define cloud-compute test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:24 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:25 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine cloud-compute-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:26 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:26 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define database test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:27 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:28 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine database-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:28 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:29 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define default test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:30 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:30 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine default-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:31 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:32 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define docker test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:33 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:33 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine docker-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:34 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:35 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define hpc test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:36 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:36 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine hpc-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:37 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:37 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define in-memory-database test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:38 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:39 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine in-memory-database-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:40 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:40 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define middleware test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:41 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:42 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine middleware-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:43 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:43 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define storage test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:44 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:45 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine storage-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:45 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:46 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define virtualization test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:47 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:47 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine virtualization-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:48 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:49 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ atune-adm define web test_app test_scenario ./common/example.conf
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'define a new application profile success' define.log
++ CHECK_RESULT 1 0 0 'define failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='define failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'define failure'
++ LOG_ERROR 'define failure'
++ message='define failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'define failure'
+Thu May 25 22:34:50 2023 - ERROR - define failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 42'
++ message='oe_test_service_atuned_03.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 42'
+Thu May 25 22:34:50 2023 - ERROR - oe_test_service_atuned_03.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ atune-adm undefine web-test_app-test_scenario
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ grep 'delete application profile success' undefine.log
++ CHECK_RESULT 1 0 0 'undefine failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='undefine failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'undefine failure'
++ LOG_ERROR 'undefine failure'
++ message='undefine failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'undefine failure'
+Thu May 25 22:34:51 2023 - ERROR - undefine failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_03.sh line 45'
++ message='oe_test_service_atuned_03.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_03.sh line 45'
+Thu May 25 22:34:52 2023 - ERROR - oe_test_service_atuned_03.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ (( i++ ))
++ (( i<13 ))
++ CASE_RESULT 0
++ case_re=0
++ test -z 28
++ test 28 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:34:52 2023 - ERROR - failed to execute the case.
++ exit 28
++ post_test
+++ atune-adm define test_service test_app test_scenario ./common/example.conf
+++ awk -F ' ' '{print $1}'
+failed to dial "/var/run/atuned/atuned.sock" : connection error: desc = "transport: error while dialing: dial unix /var/run/atuned/atuned.sock: connect: connection refused"
++ project=
++ atune-adm undefine
+Incorrect Usage.
+
+NAME:
+   atune-adm undefine - delete the specified profile
+
+USAGE:
+   atune-adm undefine [profile]
+
+DESCRIPTION:
+   
+   delete the specified profile.
+
+atune-adm: "undefine" requires exactly 1 argument(s)
++ clean_autund
++ systemctl stop atuned
++ systemctl stop atune-engine
++ rm -fr /etc/atuned/atuned.cnf /etc/atuned/atuned.cnf
++ mv /etc/atuned/atuned.cnf.bak /etc/atuned/atuned.cnf
++ mv /etc/atuned/engine.cnf.bak /etc/atuned/engine.cnf
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp2_2pv_v0 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp2_2pv_v0
++ '[' 0 -ne 0 ']'
++ rm -fr temp.log define.log undefine.log

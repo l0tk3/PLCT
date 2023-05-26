@@ -1,0 +1,15 @@
+× atuned.service
+     Loaded: not-found (Reason: Unit atuned.service not found.)
+     Active: failed (Result: exit-code) since Thu 2023-05-25 23:08:03 CST; 2min 48s ago
+   Main PID: 4672 (code=exited, status=2)
+
+May 25 23:08:03 openeuler-riscv64 atuned[4672]: goroutine 50 [runnable]:
+May 25 23:08:03 openeuler-riscv64 atuned[4672]: runtime.ensureSigM.func1()
+May 25 23:08:03 openeuler-riscv64 atuned[4672]:         /usr/lib/golang/src/runtime/signal_unix.go:974 fp=0xc0002a67d8 sp=0xc0002a67d8 pc=0xaaaaaaaf0d10d8
+May 25 23:08:03 openeuler-riscv64 atuned[4672]: runtime.goexit()
+May 25 23:08:03 openeuler-riscv64 atuned[4672]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc0002a67d8 sp=0xc0002a67d8 pc=0xaaaaaaaf0ea46c
+May 25 23:08:03 openeuler-riscv64 atuned[4672]: created by runtime.ensureSigM
+May 25 23:08:03 openeuler-riscv64 atuned[4672]:         /usr/lib/golang/src/runtime/signal_unix.go:974 +0xdc
+May 25 23:08:03 openeuler-riscv64 systemd[1]: atuned.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+May 25 23:08:03 openeuler-riscv64 systemd[1]: atuned.service: Failed with result 'exit-code'.
+May 25 23:08:03 openeuler-riscv64 systemd[1]: Failed to start A-Tune Daemon.

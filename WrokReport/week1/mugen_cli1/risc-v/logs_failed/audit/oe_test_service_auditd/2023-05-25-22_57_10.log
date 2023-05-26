@@ -1,0 +1,262 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu May 25 22:57:12 2023 - INFO  - Start environmental preparation.
++ service=auditd
+++ date '+%Y-%m-%d %T'
++ log_time='2023-05-25 22:57:13'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 22:57:13 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu May 25 22:57:14 2023 - INFO  - Start testing...
++ service auditd restart
+oe_test_service_auditd.sh: line 31: service: command not found
++ CHECK_RESULT 127 0 0 'auditd restart failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='auditd restart failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'auditd restart failed'
++ LOG_ERROR 'auditd restart failed'
++ message='auditd restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'auditd restart failed'
+Thu May 25 22:57:14 2023 - ERROR - auditd restart failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_auditd.sh line 32'
++ message='oe_test_service_auditd.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_auditd.sh line 32'
+Thu May 25 22:57:15 2023 - ERROR - oe_test_service_auditd.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status auditd
++ grep 'Active: active'
+Unit auditd.service could not be found.
++ CHECK_RESULT 1 0 0 'auditd restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='auditd restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'auditd restart failed'
++ LOG_ERROR 'auditd restart failed'
++ message='auditd restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'auditd restart failed'
+Thu May 25 22:57:21 2023 - ERROR - auditd restart failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_auditd.sh line 35'
++ message='oe_test_service_auditd.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_auditd.sh line 35'
+Thu May 25 22:57:21 2023 - ERROR - oe_test_service_auditd.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ service auditd stop
+oe_test_service_auditd.sh: line 36: service: command not found
++ CHECK_RESULT 127 0 0 'auditd stop failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='auditd stop failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'auditd stop failed'
++ LOG_ERROR 'auditd stop failed'
++ message='auditd stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'auditd stop failed'
+Thu May 25 22:57:22 2023 - ERROR - auditd stop failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_auditd.sh line 37'
++ message='oe_test_service_auditd.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_auditd.sh line 37'
+Thu May 25 22:57:22 2023 - ERROR - oe_test_service_auditd.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status auditd
++ grep 'Active: inactive'
+Unit auditd.service could not be found.
++ CHECK_RESULT 1 0 0 'auditd stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='auditd stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'auditd stop failed'
++ LOG_ERROR 'auditd stop failed'
++ message='auditd stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'auditd stop failed'
+Thu May 25 22:57:29 2023 - ERROR - auditd stop failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_auditd.sh line 40'
++ message='oe_test_service_auditd.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_auditd.sh line 40'
+Thu May 25 22:57:29 2023 - ERROR - oe_test_service_auditd.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ service auditd start
+oe_test_service_auditd.sh: line 41: service: command not found
++ CHECK_RESULT 127 0 0 'auditd start failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='auditd start failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'auditd start failed'
++ LOG_ERROR 'auditd start failed'
++ message='auditd start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'auditd start failed'
+Thu May 25 22:57:30 2023 - ERROR - auditd start failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_auditd.sh line 42'
++ message='oe_test_service_auditd.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_auditd.sh line 42'
+Thu May 25 22:57:30 2023 - ERROR - oe_test_service_auditd.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status auditd
++ grep 'Active: active'
+Unit auditd.service could not be found.
++ CHECK_RESULT 1 0 0 'auditd start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='auditd start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'auditd start failed'
++ LOG_ERROR 'auditd start failed'
++ message='auditd start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'auditd start failed'
+Thu May 25 22:57:37 2023 - ERROR - auditd start failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_auditd.sh line 45'
++ message='oe_test_service_auditd.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_auditd.sh line 45'
+Thu May 25 22:57:37 2023 - ERROR - oe_test_service_auditd.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl is-enabled auditd
++ grep enabled
+Failed to get unit file state for auditd.service: No such file or directory
++ LOG_ERROR 'auditd is not enabled'
++ message='auditd is not enabled'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'auditd is not enabled'
+Thu May 25 22:57:38 2023 - ERROR - auditd is not enabled
++ (( exec_result++ ))
++ journalctl --since '2023-05-25 22:57:13' -u auditd
++ grep -i 'fail\|error'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of auditd'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of auditd'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload auditd
++ service=auditd
++ systemctl start auditd
+Failed to start auditd.service: Unit auditd.service not found.
++ systemctl reload auditd
++ grep 'Job type reload is not applicable'
++ CHECK_RESULT 1 0 0 'Job type reload is not applicable for unit auditd'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit auditd'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Job type reload is not applicable for unit auditd'
++ LOG_ERROR 'Job type reload is not applicable for unit auditd'
++ message='Job type reload is not applicable for unit auditd'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Job type reload is not applicable for unit auditd'
+Thu May 25 22:57:39 2023 - ERROR - Job type reload is not applicable for unit auditd
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 91'
++ message='../common/common_lib.sh line 91'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 91'
+Thu May 25 22:57:40 2023 - ERROR - ../common/common_lib.sh line 91
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl status auditd
++ grep 'Active: active'
+Unit auditd.service could not be found.
++ grep 'inactive (dead)'
++ systemctl status auditd
+Unit auditd.service could not be found.
++ return 1
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu May 25 22:57:41 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:57:41 2023 - ERROR - failed to execute the case.
++ exit 8
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_service_auditd.sh post_test'
++ message='oe_test_service_auditd.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_service_auditd.sh post_test'
+Thu May 25 22:57:42 2023 - INFO  - oe_test_service_auditd.sh post_test

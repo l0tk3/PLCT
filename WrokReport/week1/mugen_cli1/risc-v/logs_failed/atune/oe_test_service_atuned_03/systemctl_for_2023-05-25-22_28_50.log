@@ -1,0 +1,15 @@
+× atuned.service
+     Loaded: not-found (Reason: Unit atuned.service not found.)
+     Active: failed (Result: exit-code) since Thu 2023-05-25 22:34:10 CST; 1min 21s ago
+   Main PID: 2184 (code=exited, status=2)
+
+May 25 22:34:10 openeuler-riscv64 atuned[2184]: goroutine 36 [runnable]:
+May 25 22:34:10 openeuler-riscv64 atuned[2184]: gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run.func3()
+May 25 22:34:10 openeuler-riscv64 atuned[2184]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:65 fp=0xc0002aafd8 sp=0xc0002aafd8 pc=0xaaaaaac82b1718
+May 25 22:34:10 openeuler-riscv64 systemd[1]: atuned.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+May 25 22:34:10 openeuler-riscv64 atuned[2184]: runtime.goexit()
+May 25 22:34:10 openeuler-riscv64 atuned[2184]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc0002aafd8 sp=0xc0002aafd8 pc=0xaaaaaac7e1346c
+May 25 22:34:10 openeuler-riscv64 atuned[2184]: created by gitee.com/openeuler/A-Tune/common/service/pyservice.(*PyEngine).Run
+May 25 22:34:10 openeuler-riscv64 atuned[2184]:         /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/common/service/pyservice/pyservice.go:65 +0x3bc
+May 25 22:34:10 openeuler-riscv64 systemd[1]: atuned.service: Failed with result 'exit-code'.
+May 25 22:34:10 openeuler-riscv64 systemd[1]: Failed to start A-Tune Daemon.

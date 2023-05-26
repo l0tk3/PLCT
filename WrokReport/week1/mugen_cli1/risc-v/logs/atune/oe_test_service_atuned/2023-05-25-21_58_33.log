@@ -1,0 +1,324 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu May 25 21:58:35 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'atune atune-engine'
++ pkgs='atune atune-engine'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'atune atune-engine' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwg58v1hb
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwg58v1hb
+++ lsblk
+++ grep disk
+++ awk 'NR==1{print $1}'
++ disk_name=vda
++ sed -i 's\disk = sda\disk = vda\g' /etc/atuned/atuned.cnf
++ sed -i 's\network = enp189s0f0\network = \g' /etc/atuned/atuned.cnf
++ sed -i 's\rest_tls = true\rest_tls = false\g' /etc/atuned/atuned.cnf
++ sed -i 's\engine_tls = true\engine_tls = false\g' /etc/atuned/atuned.cnf
++ sed -i 's\engine_tls = true\engine_tls = false\g' /etc/atuned/engine.cnf
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 22:04:59 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu May 25 22:04:59 2023 - INFO  - Start testing...
++ test_execution atuned.service
++ service=atuned.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-05-25 22:04:59'
++ test_restart atuned.service
++ service=atuned.service
++ systemctl restart atuned.service
+Job for atuned.service failed because the control process exited with error code.
+See "systemctl status atuned.service" and "journalctl -xeu atuned.service" for details.
++ CHECK_RESULT 1 0 0 'atuned.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atuned.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atuned.service restart failed'
++ LOG_ERROR 'atuned.service restart failed'
++ message='atuned.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atuned.service restart failed'
+Thu May 25 22:05:01 2023 - ERROR - atuned.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Thu May 25 22:05:01 2023 - ERROR - ../common/common_lib.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status atuned.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'atuned.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atuned.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atuned.service restart failed'
++ LOG_ERROR 'atuned.service restart failed'
++ message='atuned.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atuned.service restart failed'
+Thu May 25 22:05:08 2023 - ERROR - atuned.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Thu May 25 22:05:08 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop atuned.service
++ CHECK_RESULT 0 0 0 'atuned.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='atuned.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status atuned.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'atuned.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atuned.service stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atuned.service stop failed'
++ LOG_ERROR 'atuned.service stop failed'
++ message='atuned.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atuned.service stop failed'
+Thu May 25 22:05:14 2023 - ERROR - atuned.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Thu May 25 22:05:15 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start atuned.service
+Job for atuned.service failed because the control process exited with error code.
+See "systemctl status atuned.service" and "journalctl -xeu atuned.service" for details.
++ CHECK_RESULT 1 0 0 'atuned.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atuned.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atuned.service start failed'
++ LOG_ERROR 'atuned.service start failed'
++ message='atuned.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atuned.service start failed'
+Thu May 25 22:05:16 2023 - ERROR - atuned.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Thu May 25 22:05:17 2023 - ERROR - ../common/common_lib.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status atuned.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'atuned.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atuned.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atuned.service start failed'
++ LOG_ERROR 'atuned.service start failed'
++ message='atuned.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atuned.service start failed'
+Thu May 25 22:05:23 2023 - ERROR - atuned.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Thu May 25 22:05:24 2023 - ERROR - ../common/common_lib.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ test_enabled atuned.service
++ service=atuned.service
+++ systemctl is-enabled atuned.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable atuned.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/atuned.service
++ find /etc/systemd/system/multi-user.target.wants/atuned.service
+/etc/systemd/system/multi-user.target.wants/atuned.service
++ CHECK_RESULT 0 0 0 'atuned.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='atuned.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable atuned.service
+Removed /etc/systemd/system/multi-user.target.wants/atuned.service.
++ find /etc/systemd/system/multi-user.target.wants/atuned.service
+find: ‘/etc/systemd/system/multi-user.target.wants/atuned.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'atuned.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='atuned.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-05-25 22:04:59' -u atuned.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+May 25 22:05:00 openeuler-riscv64 atuned[532]: fatal error: runtime: no plugin module data
+May 25 22:05:00 openeuler-riscv64 systemd[1]: atuned.service: Failed with result 'exit-code'.
+May 25 22:05:00 openeuler-riscv64 systemd[1]: Failed to start A-Tune Daemon.
+May 25 22:05:16 openeuler-riscv64 atuned[564]: fatal error: runtime: no plugin module data
+May 25 22:05:16 openeuler-riscv64 systemd[1]: atuned.service: Failed with result 'exit-code'.
+May 25 22:05:16 openeuler-riscv64 systemd[1]: Failed to start A-Tune Daemon.
++ CHECK_RESULT 0 0 1 'There is an error message for the log of atuned.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of atuned.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of atuned.service'
++ LOG_ERROR 'There is an error message for the log of atuned.service'
++ message='There is an error message for the log of atuned.service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of atuned.service'
+Thu May 25 22:05:31 2023 - ERROR - There is an error message for the log of atuned.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Thu May 25 22:05:32 2023 - ERROR - ../common/common_lib.sh line 28
++ '[' 0 -eq 1 ']'
++ return 0
++ test_reload atuned.service
++ service=atuned.service
++ systemctl start atuned.service
+Job for atuned.service failed because the control process exited with error code.
+See "systemctl status atuned.service" and "journalctl -xeu atuned.service" for details.
++ systemctl reload atuned.service
++ grep 'Job type reload is not applicable'
+Failed to reload atuned.service: Job type reload is not applicable for unit atuned.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit atuned.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit atuned.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status atuned.service
++ grep 'Active: active'
++ systemctl status atuned.service
++ grep 'inactive (dead)'
++ return 1
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu May 25 22:05:34 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:05:34 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 22:05:35 2023 - INFO  - start environment cleanup.
++ systemctl stop atuned.service
++ sed -i 's\disk = vda\disk = sda\g' /etc/atuned/atuned.cnf
++ sed -i 's\network = \network = enp189s0f0\g' /etc/atuned/atuned.cnf
++ sed -i 's\rest_tls = false\rest_tls = true\g' /etc/atuned/atuned.cnf
++ sed -i 's\engine_tls = false\engine_tls = true\g' /etc/atuned/atuned.cnf
++ sed -i 's\engine_tls = false\engine_tls = true\g' /etc/atuned/engine.cnf
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpwg58v1hb ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwg58v1hb
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 22:06:09 2023 - INFO  - Finish environment cleanup!

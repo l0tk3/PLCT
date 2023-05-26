@@ -1,0 +1,773 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Wed May 24 22:34:46 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL httpd
++ pkgs=httpd
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs httpd --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpbu7hrokr
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpbu7hrokr
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Wed May 24 22:35:17 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Wed May 24 22:35:17 2023 - INFO  - Start to run test.
+++ seq 1 10
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:35:21 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ grep dead
++ systemctl status httpd
+     Active: inactive (dead) since Wed 2023-05-24 22:35:31 CST; 131ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:35:35 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:35:35 CST; 18s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:35:55 CST; 123ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:35:59 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:35:59 CST; 18s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:36:19 CST; 123ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:36:23 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:36:23 CST; 18s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:36:44 CST; 124ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:36:48 CST; 8s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:36:48 CST; 19s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:37:08 CST; 123ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:37:12 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:37:12 CST; 19s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:37:32 CST; 138ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:37:37 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:37:37 CST; 18s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:37:57 CST; 125ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:38:01 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:38:01 CST; 18s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:38:21 CST; 127ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:38:26 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:38:26 CST; 18s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:38:46 CST; 125ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:38:50 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for count_httpd in $(seq 1 10)
++ systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
++ systemctl start httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:38:50 CST; 18s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop httpd
++ systemctl status httpd
++ grep dead
+     Active: inactive (dead) since Wed 2023-05-24 22:39:10 CST; 119ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable httpd
+Removed /etc/systemd/system/multi-user.target.wants/httpd.service.
++ systemctl is-enabled httpd
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart httpd
++ SLEEP_WAIT 7
++ wait_time=7
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 7 --cmd '' --mode 1
++ systemctl status httpd
++ grep running
+     Active: active (running) since Wed 2023-05-24 22:39:14 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Wed May 24 22:39:22 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Wed May 24 22:39:23 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Wed May 24 22:39:23 2023 - INFO  - Start to restore the test environment.
++ systemctl stop httpd
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpbu7hrokr ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpbu7hrokr
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Wed May 24 22:39:38 2023 - INFO  - End to restore the test environment.

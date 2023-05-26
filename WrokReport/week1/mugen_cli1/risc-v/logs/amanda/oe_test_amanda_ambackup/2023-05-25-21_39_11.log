@@ -1,0 +1,220 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:39:13 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'amanda openssl'
++ pkgs='amanda openssl'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'amanda openssl' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpod8ygcro
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpod8ygcro
++ [[ ! -d /etc/amanda ]]
++ mkdir -p /amanda /amanda/vtapes/slot1 /amanda/vtapes/slot2 /amanda/vtapes/slot3 /amanda/vtapes/slot4 /amanda/holding /amanda/state/curinfo /amanda/state/log /amanda/state/index /etc/amanda/MyConfig
++ cp ./common/amanda.conf /etc/amanda/MyConfig
++ echo 'localhost /etc simple-gnutar-local'
++ cp ./common/backup-pubkey.pem /var/lib/amanda/backup-pubkey.pem
++ su - amandabackup -c 'echo MyConfig > /var/lib/amanda/.am_passphrase'
++ chown -R amandabackup.disk /amanda /etc/amanda
++ su - amandabackup -c 'amdump MyConfig'
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:40:09 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:40:10 2023 - INFO  - Start to run test.
++ su - amandabackup -c 'ambackup --config MyConfig check'
++ grep 'check succeeded'
+check succeeded
++ CHECK_RESULT 0 0 0 'Check ambackup failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ambackup failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amcleanup MyConfig'
++ grep 'clean up'
+amcleanup: no unprocessed logfile to clean up
++ CHECK_RESULT 0 0 0 'Check amcleanup failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amcleanup failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amcleanupdisk MyConfig'
++ CHECK_RESULT 0 0 0 'Check amcleanupdisk failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amcleanupdisk failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amgetconf MyConfig logdir'
++ grep /amanda/state/log
+/amanda/state/log
++ CHECK_RESULT 0 0 0 'Check amgetconf failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amgetconf failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c amgpgcrypt
++ grep gpg-agent
+gpg-agent[1911]: directory '/var/lib/amanda/.gnupg' created
+gpg-agent[1911]: directory '/var/lib/amanda/.gnupg/private-keys-v1.d' created
+gpg-agent[1912]: gpg-agent (GnuPG) 2.3.6 started
+gpg-agent[1912]: parent process died - shutting down
+gpg-agent[1912]: gpg-agent (GnuPG) 2.3.6 stopped
++ CHECK_RESULT 0 0 0 'Check amgpgcrypt failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amgpgcrypt failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amtape MyConfig show'
+scanning all 4 slots in changer:
+slot   1: unlabeled volume
+slot   2: unlabeled volume
+slot   3: unlabeled volume
+slot   4: unlabeled volume
+++ amgetconf MyConfig logdir
++ export logdir=/amanda/state/log
++ logdir=/amanda/state/log
+++ head -1
+++ ls -1t /amanda/state/log/log.20230525213953.0
++ export log=/amanda/state/log/log.20230525213953.0
++ log=/amanda/state/log/log.20230525213953.0
++ su - amandabackup -c 'amtoc -a /amanda/state/log/log.20230525213953.0'
++ CHECK_RESULT 0 0 0 'Check amtoc failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amtoc failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - amandabackup -c 'amtape MyConfig show'
++ grep 'scanning all 4 slots'
+scanning all 4 slots in changer:
++ CHECK_RESULT 0 0 0 'Check amtape failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amtape failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ nohup amcrypt-ossl
++ grep 'would be better' tmp.txt
+grep: tmp.txt: binary file matches
++ CHECK_RESULT 0 0 0 'Check amcrypt-ossl failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amcrypt-ossl failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ nohup amcrypt-ossl-asym
++ grep 'would be better' tmp.txt
+grep: tmp.txt: binary file matches
++ CHECK_RESULT 0 0 0 'Check amcrypt-ossl-asym failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check amcrypt-ossl-asym failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:41:33 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:41:34 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:41:34 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpod8ygcro ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpod8ygcro
++ '[' 0 -ne 0 ']'
++ rm -rf /amanda /etc/amanda tmp.txt
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:41:49 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,210 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:32:57 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'OpenEXR OpenEXR-devel'
++ pkgs='OpenEXR OpenEXR-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'OpenEXR OpenEXR-devel' --node 1 --tempfile ''
+Thu May 25 21:33:04 2023 - INFO  - pkgs:(OpenEXR OpenEXR-devel) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:33:04 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:33:05 2023 - INFO  - Start to run test.
++ exrmaketiled -o bind_29_1.exr test1
++ test -f test1
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -o failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -o failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -m bind_29_1.exr test2
++ test -f test2
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -m failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -m failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -r bind_29_1.exr test3
++ test -f test3
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -r failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -r failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -f c bind_29_1.exr test4
++ test -f test4
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -f failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -f failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -e black clamp bind_29_1.exr test5
++ test -f test5
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -e failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -e failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -t 22 44 bind_29_1.exr test6
++ test -f test6
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -t failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -t failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -d bind_29_1.exr test7
++ test -f test7
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -d failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -d failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -u bind_29_1.exr test8
++ test -f test8
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -u failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -u failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -z pxr24 bind_29_1.exr test9
++ test -f test9
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -z failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -z failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -v bind_29_1.exr test10
++ grep done
+done.
++ test -f test10
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -v failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -v failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmaketiled -h
++ grep usage:
+usage: exrmaketiled [options] infile outfile
++ CHECK_RESULT 0 0 0 'Check exrmaketiled -h failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmaketiled -h failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:33:12 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:33:13 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:33:13 2023 - INFO  - Start to restore the test environment.
++ rm -rf test1 test10 test2 test3 test4 test5 test6 test7 test8 test9
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu May 25 21:33:14 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:33:15 2023 - INFO  - End to restore the test environment.

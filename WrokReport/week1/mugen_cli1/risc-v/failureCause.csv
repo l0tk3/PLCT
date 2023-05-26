@@ -1,0 +1,190 @@
+测试套/软件包名,测试用例名,日志文件,原因,Broken testcase,pkg not found,preinstall absent,kernel module absent,file missing,systemd unit restart failure,systemd unit runtime error,systemd unit enable failure,timeout
+anaconda,oe_test_service_zram,2023-05-25-21_41_44.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+ant,oe_test_ant_002,2023-05-25-21_46_23.log,,0,0,0,0,0,0,0,0,0
+atune,oe_test_service_atuned_07,systemctl_for_2023-05-25-22_53_09.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned_09,systemctl_for_2023-05-25-23_03_22.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned_08,systemctl_for_2023-05-25-22_58_21.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned_06,systemctl_for_2023-05-25-22_47_57.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned_01,systemctl_for_2023-05-25-22_14_49.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned,systemctl_for_2023-05-25-21_58_33.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned_04,systemctl_for_2023-05-25-22_35_35.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned_03,systemctl_for_2023-05-25-22_28_50.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned_02,systemctl_for_2023-05-25-22_22_52.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+atune,oe_test_service_atuned_05,systemctl_for_2023-05-25-22_42_47.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+OpenIPMI,oe_test_service_ipmi,systemctl_for_2023-05-25-21_21_10.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+apache-commons-daemon,oe_test_jsvc_base,2023-05-25-21_44_16.log,,0,0,0,0,0,0,0,0,0
+amanda,oe_test_amanda_amcheck,2023-05-25-21_37_19.log,"file missing
+",0,0,0,0,1,0,0,0,0
+ansible,oe_test_ansible_04,2023-05-25-21_58_33.log,,0,0,0,0,0,0,0,0,0
+arptables,oe_test_service_arptables,systemctl_for_2023-05-25-21_46_57.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_system_use,2023-05-25-22_33_17.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_network_visit,2023-05-25-22_34_21.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_ausearch,2023-05-25-22_58_32.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_show_event_list,2023-05-25-22_37_30.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_start_audit,2023-05-25-22_58_18.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_fetch_file_in_order,2023-05-25-22_36_21.log,"file missing
+",0,0,0,0,1,0,0,0,0
+audit,oe_test_audit_max_log_file_keep_logs,2023-05-25-22_50_35.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_use_d_audit,2023-05-25-22_34_47.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_count_number_of_event,2023-05-25-22_37_18.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_track_designated_access,2023-05-25-22_34_36.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_rule_conflict_strategy,2023-05-25-22_35_47.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_do_command,2023-05-25-22_33_36.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_dictionary_access,2023-05-25-22_33_01.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_aulastlog,2023-05-25-22_58_53.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_max_log_file_syslog,2023-05-25-22_48_03.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_user_build_connection,2023-05-25-22_37_42.log,"file missing
+",0,0,0,0,1,0,0,0,0
+audit,oe_test_service_auditd,2023-05-25-22_57_10.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_available_disk_space,2023-05-25-22_51_28.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_max_log_file_rotate,2023-05-25-22_39_42.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_monitor_file_access,2023-05-25-22_02_54.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+audit,oe_test_audit_max_log_file_suspend,2023-05-25-22_49_20.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_count_time,2023-05-25-22_37_08.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_other,2023-05-25-22_58_00.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_max_log_file_ignore,2023-05-25-22_40_37.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_rule_fetch_from_rule,2023-05-25-22_36_08.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_rule_contact_strategy,2023-05-25-22_35_13.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_use_w_audit,2023-05-25-22_35_01.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_event_log,2023-05-25-22_57_47.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_inject_time_fault,2023-05-25-22_55_53.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+aspell,oe_test_aspell_01,2023-05-25-21_52_26.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_numactl,2023-05-26-00_33_41.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_partition,2023-05-25-22_00_20.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_yumgroup_001,2023-05-26-00_48_08.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_cat_001,2023-05-25-23_47_23.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_docker_rename_pause_resume_001,2023-05-25-22_35_55.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_rollback,2023-05-26-00_50_44.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_pwd_001,2023-05-26-00_36_05.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+AT,oe_test_docker_start_stop_delete_001,2023-05-25-22_48_54.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_save_load_001,2023-05-25-22_58_45.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_OVS,2023-05-25-22_03_22.log,"timeout
+",0,0,0,0,0,0,0,0,1
+AT,oe_test_iSula_export_001,2023-05-25-23_34_43.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_create_001,2023-05-25-22_56_46.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_exec_cmd_001,2023-05-25-22_52_50.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_custom_image,2023-05-25-23_00_48.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_CPUinfo_001,2023-05-25-23_48_32.log,"timeout
+",0,0,0,0,0,0,0,0,1
+AT,oe_test_network_001,2023-05-26-00_32_33.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_iSula_cp_001,2023-05-25-23_36_03.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_log_001,2023-05-26-00_29_31.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+AT,oe_test_perf,2023-05-26-00_35_14.log,"timeout
+",0,0,0,0,0,0,0,0,1
+AT,oe_test_iscsi,systemctl_for_2023-05-26-00_26_26.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_cp_001,2023-05-25-22_33_29.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_MEMinfo_001,2023-05-26-00_31_15.log,"file missing
+",0,0,0,0,1,0,0,0,0
+AT,oe_test_iSula_exec_cmd_001,2023-05-25-23_41_27.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_iSula_pause_resume_001,2023-05-25-23_45_34.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_rpm_suffix_name,2023-05-25-22_02_51.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_firewalld,2023-05-25-22_00_05.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+AT,oe_test_dmesg_messages_log,2023-05-25-21_55_20.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+AT,oe_test_docker_image_history_001,2023-05-25-22_40_26.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_service,2023-05-25-22_02_09.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+AT,oe_test_docker_attach_001,2023-05-25-22_46_57.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_arping,2023-05-26-01_19_34.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_iSula_search_info_001,2023-05-25-23_40_07.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_syslog_logrotate_001,2023-05-26-00_45_20.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+AT,oe_test_iSula_mkdir100_001,2023-05-25-23_44_13.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_create_002,2023-05-25-22_44_58.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_tag_001,2023-05-25-22_50_53.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_commit_export_import_001,2023-05-25-22_43_02.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_criu,2023-05-26-00_18_38.log,"file missing
+",0,0,0,0,1,0,0,0,0
+AT,oe_test_iSula_query_state_001,2023-05-25-23_32_02.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_iSula_restart_stop_001,2023-05-25-23_38_46.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_iSula_create_start_001,2023-05-25-23_37_24.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_create_003,2023-05-25-22_54_48.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_skopeo,2023-05-26-00_37_41.log,,0,0,0,0,0,0,0,0,0
+AT,oe_test_iSula_attach_rename_001,2023-05-25-23_33_22.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+AT,oe_test_docker_search_info_001,2023-05-25-22_38_06.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+alsa-utils,oe_test_service_alsa-restore,2023-05-25-21_35_07.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0

@@ -1,0 +1,1759 @@
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:41:12 openeuler-riscv64 [RPM][10695]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:41:13 openeuler-riscv64 systemctl[10700]: [/usr/bin/systemctl --no-reload --now disable isulad] called by PID 10699 (/bin/sh /var/tmp/rpm-tmp.VEORhb 0)
+May 25 23:41:13 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:41:13 openeuler-riscv64 systemd[1]: Stopping iSulad Application Container Engine...
+░░ Subject: A stop job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4021.
+May 25 23:41:13 openeuler-riscv64 isulad[10593]:           iSula 20230525154113.266 - Begin shutdown daemon
+May 25 23:41:13 openeuler-riscv64 isulad[10593]:           iSula 20230525154113.279 - Grpc Server shutdown completed
+May 25 23:41:13 openeuler-riscv64 isulad[10593]:           iSula 20230525154113.285 - Graph driver overlay cleanup completed
+May 25 23:41:13 openeuler-riscv64 isulad[10593]:           iSula 20230525154113.285 - Image oci clean resource completed
+May 25 23:41:13 openeuler-riscv64 isulad[10593]:           iSula 20230525154113.285 - Image module exit completed
+May 25 23:41:13 openeuler-riscv64 isulad[10593]:           iSula 20230525154113.286 - Umount daemon mntpoint completed
+May 25 23:41:13 openeuler-riscv64 isulad[10593]:           iSula 20230525154113.286 - Network module exit completed
+May 25 23:41:13 openeuler-riscv64 isulad[10593]:           iSula 20230525154113.287 - Clean residual files completed
+May 25 23:41:13 openeuler-riscv64 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-storage-overlay.mount has successfully entered the 'dead' state.
+May 25 23:41:13 openeuler-riscv64 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-mnt.mount has successfully entered the 'dead' state.
+May 25 23:41:13 openeuler-riscv64 systemd[1]: isulad.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit isulad.service has successfully entered the 'dead' state.
+May 25 23:41:13 openeuler-riscv64 systemd[1]: Stopped iSulad Application Container Engine.
+░░ Subject: A stop job for unit isulad.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has finished.
+░░ 
+░░ The job identifier is 4021 and the job result is done.
+May 25 23:41:13 openeuler-riscv64 systemctl[10704]: [/usr/bin/systemctl daemon-reload] called by PID 10702 (/bin/sh /var/tmp/rpm-tmp.uHBCLd 0)
+May 25 23:41:13 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:41:14 openeuler-riscv64 systemd-rc-local-generator[10715]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:41:16 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:41:16 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:41:16 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:41:18 openeuler-riscv64 [RPM][10695]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:41:18 openeuler-riscv64 [RPM][10695]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:41:18 openeuler-riscv64 [RPM][10695]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:41:18 openeuler-riscv64 [RPM][10695]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:41:19 openeuler-riscv64 [RPM][10695]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:41:19 openeuler-riscv64 [RPM][10695]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:41:19 openeuler-riscv64 systemctl[10727]: [/usr/bin/systemctl --no-reload --now disable rsyncd.service] called by PID 10726 (/bin/sh /var/tmp/rpm-tmp.tnPeKZ 0)
+May 25 23:41:19 openeuler-riscv64 [RPM][10695]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:41:19 openeuler-riscv64 [RPM][10695]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:41:19 openeuler-riscv64 [RPM][10695]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:41:19 openeuler-riscv64 [RPM][10695]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:41:20 openeuler-riscv64 [RPM][10695]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:41:20 openeuler-riscv64 [RPM][10695]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:41:20 openeuler-riscv64 [RPM][10695]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:41:20 openeuler-riscv64 [RPM][10695]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:41:20 openeuler-riscv64 [RPM][10695]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:41:20 openeuler-riscv64 [RPM][10695]: Transaction ID 646f8197 finished: 0
+May 25 23:41:24 openeuler-riscv64 sudo[10490]: pam_unix(sudo:session): session closed for user root
+May 25 23:41:24 openeuler-riscv64 sudo[10745]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_iSula_exec_cmd_001 -x
+May 25 23:41:24 openeuler-riscv64 sudo[10745]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:41:58 openeuler-riscv64 [RPM][10815]: Transaction ID 646f81c6 started
+May 25 23:42:00 openeuler-riscv64 [RPM][10815]: install protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:42:00 openeuler-riscv64 [RPM][10815]: install abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:42:01 openeuler-riscv64 [RPM][10815]: install protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:42:01 openeuler-riscv64 systemctl[10821]: [/usr/bin/systemctl --no-reload preset rsyncd.service] called by PID 10820 (/bin/sh /var/tmp/rpm-tmp.n80hJT 1)
+May 25 23:42:01 openeuler-riscv64 [RPM][10815]: install rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:42:02 openeuler-riscv64 [RPM][10815]: install lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:42:02 openeuler-riscv64 [RPM][10815]: install lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:42:02 openeuler-riscv64 [RPM][10815]: install lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:42:03 openeuler-riscv64 [RPM][10815]: install re2-20211101-3.oe2303.riscv64: success
+May 25 23:42:03 openeuler-riscv64 [RPM][10815]: install libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:42:03 openeuler-riscv64 [RPM][10815]: install libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:42:05 openeuler-riscv64 [RPM][10815]: install lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:42:05 openeuler-riscv64 [RPM][10815]: install http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:42:05 openeuler-riscv64 [RPM][10815]: install c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:42:08 openeuler-riscv64 [RPM][10815]: install grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:42:10 openeuler-riscv64 systemctl[10830]: [systemctl enable isulad] called by PID 10828 (/bin/sh /var/tmp/rpm-tmp.5qmcMN 1)
+May 25 23:42:10 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:42:10 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:42:10 openeuler-riscv64 systemd-rc-local-generator[10841]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:42:12 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:42:13 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:42:13 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:42:13 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:42:14 openeuler-riscv64 systemctl[10847]: [systemctl start isulad] called by PID 10828 (/bin/sh /var/tmp/rpm-tmp.5qmcMN 1)
+May 25 23:42:14 openeuler-riscv64 systemd[1]: Starting iSulad Application Container Engine...
+░░ Subject: A start job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4023.
+May 25 23:42:15 openeuler-riscv64 isulad[10848]:          isulad 20230525154215.563 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/utils/cutils/utils_file.c:util_list_all_subdir:953 - Failed to open directory: /var/lib/isulad/engines error:No such file or directory
+May 25 23:42:15 openeuler-riscv64 isulad[10848]:          isulad 20230525154215.564 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/daemon/modules/container/restore/restore.c:containers_restore:549 - Failed to list engines
+May 25 23:42:15 openeuler-riscv64 isulad[10848]:          isulad 20230525154215.840 - iSulad successfully booted in 0.434 s
+May 25 23:42:15 openeuler-riscv64 systemd[1]: Started iSulad Application Container Engine.
+░░ Subject: A start job for unit isulad.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has finished successfully.
+░░ 
+░░ The job identifier is 4023.
+May 25 23:42:15 openeuler-riscv64 [RPM][10815]: install iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:42:16 openeuler-riscv64 systemctl[10867]: [/usr/bin/systemctl daemon-reload] called by PID 10866 (/bin/sh /var/tmp/rpm-tmp.WVV6v6 0)
+May 25 23:42:16 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:42:17 openeuler-riscv64 systemd-rc-local-generator[10879]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:42:19 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:42:19 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:42:19 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:42:19 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install re2-20211101-3.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: install iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:42:20 openeuler-riscv64 [RPM][10815]: Transaction ID 646f81c6 finished: 0
+May 25 23:42:23 openeuler-riscv64 isulad-client[10890]: received command [isula stop] from parent [10792] cmdline [bash]
+May 25 23:42:23 openeuler-riscv64 isulad-client[10895]: received command [isula rm] from parent [10792] cmdline [bash]
+May 25 23:42:27 openeuler-riscv64 isulad-client[10930]: received command [isula stop] from parent [10792] cmdline [bash]
+May 25 23:42:28 openeuler-riscv64 isulad-client[10936]: received command [isula rm] from parent [10792] cmdline [bash]
+May 25 23:42:36 openeuler-riscv64 [RPM][10950]: Transaction ID 646f81ec started
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 [RPM][10950]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:42:37 openeuler-riscv64 systemctl[10955]: [/usr/bin/systemctl --no-reload --now disable isulad] called by PID 10954 (/bin/sh /var/tmp/rpm-tmp.TiOhGP 0)
+May 25 23:42:37 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:42:37 openeuler-riscv64 isulad[10848]:           iSula 20230525154237.780 - Begin shutdown daemon
+May 25 23:42:37 openeuler-riscv64 systemd[1]: Stopping iSulad Application Container Engine...
+░░ Subject: A stop job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4089.
+May 25 23:42:37 openeuler-riscv64 isulad[10848]:           iSula 20230525154237.789 - Grpc Server shutdown completed
+May 25 23:42:37 openeuler-riscv64 isulad[10848]:           iSula 20230525154237.792 - Graph driver overlay cleanup completed
+May 25 23:42:37 openeuler-riscv64 isulad[10848]:           iSula 20230525154237.792 - Image oci clean resource completed
+May 25 23:42:37 openeuler-riscv64 isulad[10848]:           iSula 20230525154237.792 - Image module exit completed
+May 25 23:42:37 openeuler-riscv64 isulad[10848]:           iSula 20230525154237.792 - Umount daemon mntpoint completed
+May 25 23:42:37 openeuler-riscv64 isulad[10848]:           iSula 20230525154237.792 - Network module exit completed
+May 25 23:42:37 openeuler-riscv64 isulad[10848]:           iSula 20230525154237.793 - Clean residual files completed
+May 25 23:42:37 openeuler-riscv64 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-storage-overlay.mount has successfully entered the 'dead' state.
+May 25 23:42:37 openeuler-riscv64 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-mnt.mount has successfully entered the 'dead' state.
+May 25 23:42:37 openeuler-riscv64 systemd[1]: isulad.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit isulad.service has successfully entered the 'dead' state.
+May 25 23:42:37 openeuler-riscv64 systemd[1]: Stopped iSulad Application Container Engine.
+░░ Subject: A stop job for unit isulad.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has finished.
+░░ 
+░░ The job identifier is 4089 and the job result is done.
+May 25 23:42:38 openeuler-riscv64 systemctl[10959]: [/usr/bin/systemctl daemon-reload] called by PID 10957 (/bin/sh /var/tmp/rpm-tmp.yVSCpx 0)
+May 25 23:42:38 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:42:38 openeuler-riscv64 systemd-rc-local-generator[10970]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:42:40 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:42:41 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:42:41 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:42:42 openeuler-riscv64 [RPM][10950]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:42:42 openeuler-riscv64 [RPM][10950]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:42:42 openeuler-riscv64 [RPM][10950]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:42:43 openeuler-riscv64 [RPM][10950]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:42:43 openeuler-riscv64 [RPM][10950]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:42:43 openeuler-riscv64 [RPM][10950]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:42:43 openeuler-riscv64 systemctl[10983]: [/usr/bin/systemctl --no-reload --now disable rsyncd.service] called by PID 10982 (/bin/sh /var/tmp/rpm-tmp.8ivA8O 0)
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:42:44 openeuler-riscv64 [RPM][10950]: Transaction ID 646f81ec finished: 0
+May 25 23:42:48 openeuler-riscv64 sudo[10745]: pam_unix(sudo:session): session closed for user root
+May 25 23:42:49 openeuler-riscv64 sudo[11002]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_iSula_install_deploy_001 -x
+May 25 23:42:49 openeuler-riscv64 sudo[11002]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:43:23 openeuler-riscv64 [RPM][11072]: Transaction ID 646f821b started
+May 25 23:43:25 openeuler-riscv64 [RPM][11072]: install protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:43:26 openeuler-riscv64 [RPM][11072]: install abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:43:26 openeuler-riscv64 [RPM][11072]: install protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:43:27 openeuler-riscv64 systemctl[11078]: [/usr/bin/systemctl --no-reload preset rsyncd.service] called by PID 11077 (/bin/sh /var/tmp/rpm-tmp.IsPITt 1)
+May 25 23:43:27 openeuler-riscv64 [RPM][11072]: install rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:43:27 openeuler-riscv64 [RPM][11072]: install lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:43:27 openeuler-riscv64 [RPM][11072]: install lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:43:28 openeuler-riscv64 [RPM][11072]: install lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:43:28 openeuler-riscv64 [RPM][11072]: install re2-20211101-3.oe2303.riscv64: success
+May 25 23:43:28 openeuler-riscv64 [RPM][11072]: install libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:43:28 openeuler-riscv64 [RPM][11072]: install libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:43:31 openeuler-riscv64 [RPM][11072]: install lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:43:31 openeuler-riscv64 [RPM][11072]: install http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:43:31 openeuler-riscv64 [RPM][11072]: install c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:43:33 openeuler-riscv64 [RPM][11072]: install grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:43:35 openeuler-riscv64 systemctl[11087]: [systemctl enable isulad] called by PID 11085 (/bin/sh /var/tmp/rpm-tmp.tAth3l 1)
+May 25 23:43:35 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:43:35 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:43:35 openeuler-riscv64 systemd-rc-local-generator[11098]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:43:37 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:43:38 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:43:38 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:43:38 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:43:39 openeuler-riscv64 systemctl[11104]: [systemctl start isulad] called by PID 11085 (/bin/sh /var/tmp/rpm-tmp.tAth3l 1)
+May 25 23:43:39 openeuler-riscv64 systemd[1]: Starting iSulad Application Container Engine...
+░░ Subject: A start job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4091.
+May 25 23:43:40 openeuler-riscv64 isulad[11105]:          isulad 20230525154340.588 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/utils/cutils/utils_file.c:util_list_all_subdir:953 - Failed to open directory: /var/lib/isulad/engines error:No such file or directory
+May 25 23:43:40 openeuler-riscv64 isulad[11105]:          isulad 20230525154340.589 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/daemon/modules/container/restore/restore.c:containers_restore:549 - Failed to list engines
+May 25 23:43:40 openeuler-riscv64 isulad[11105]:          isulad 20230525154340.862 - iSulad successfully booted in 0.423 s
+May 25 23:43:40 openeuler-riscv64 systemd[1]: Started iSulad Application Container Engine.
+░░ Subject: A start job for unit isulad.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has finished successfully.
+░░ 
+░░ The job identifier is 4091.
+May 25 23:43:40 openeuler-riscv64 [RPM][11072]: install iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:43:41 openeuler-riscv64 systemctl[11124]: [/usr/bin/systemctl daemon-reload] called by PID 11123 (/bin/sh /var/tmp/rpm-tmp.CT7IkB 0)
+May 25 23:43:41 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:43:42 openeuler-riscv64 systemd-rc-local-generator[11135]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:43:44 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:43:44 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:43:44 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:43:44 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install re2-20211101-3.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: install iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:43:45 openeuler-riscv64 [RPM][11072]: Transaction ID 646f821b finished: 0
+May 25 23:43:48 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:43:48 openeuler-riscv64 systemctl[11147]: [systemctl restart isulad] called by PID 11049 (bash -x oe_test_iSula_install_deploy_001.sh)
+May 25 23:43:48 openeuler-riscv64 isulad[11105]:           iSula 20230525154348.457 - Begin shutdown daemon
+May 25 23:43:48 openeuler-riscv64 systemd[1]: Stopping iSulad Application Container Engine...
+░░ Subject: A stop job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4157.
+May 25 23:43:48 openeuler-riscv64 isulad[11105]:           iSula 20230525154348.473 - Grpc Server shutdown completed
+May 25 23:43:48 openeuler-riscv64 isulad[11105]:           iSula 20230525154348.476 - Graph driver overlay cleanup completed
+May 25 23:43:48 openeuler-riscv64 isulad[11105]:           iSula 20230525154348.477 - Image oci clean resource completed
+May 25 23:43:48 openeuler-riscv64 isulad[11105]:           iSula 20230525154348.477 - Image module exit completed
+May 25 23:43:48 openeuler-riscv64 isulad[11105]:           iSula 20230525154348.477 - Umount daemon mntpoint completed
+May 25 23:43:48 openeuler-riscv64 isulad[11105]:           iSula 20230525154348.478 - Network module exit completed
+May 25 23:43:48 openeuler-riscv64 isulad[11105]:           iSula 20230525154348.478 - Clean residual files completed
+May 25 23:43:48 openeuler-riscv64 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-storage-overlay.mount has successfully entered the 'dead' state.
+May 25 23:43:48 openeuler-riscv64 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-mnt.mount has successfully entered the 'dead' state.
+May 25 23:43:48 openeuler-riscv64 systemd[1]: isulad.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit isulad.service has successfully entered the 'dead' state.
+May 25 23:43:48 openeuler-riscv64 systemd[1]: Stopped iSulad Application Container Engine.
+░░ Subject: A stop job for unit isulad.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has finished.
+░░ 
+░░ The job identifier is 4157 and the job result is done.
+May 25 23:43:48 openeuler-riscv64 systemd[1]: Starting iSulad Application Container Engine...
+░░ Subject: A start job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4157.
+May 25 23:43:49 openeuler-riscv64 isulad[11156]:          isulad 20230525154349.127 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/utils/cutils/utils_file.c:util_list_all_subdir:953 - Failed to open directory: /var/lib/isulad/engines error:No such file or directory
+May 25 23:43:49 openeuler-riscv64 isulad[11156]:          isulad 20230525154349.128 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/daemon/modules/container/restore/restore.c:containers_restore:549 - Failed to list engines
+May 25 23:43:49 openeuler-riscv64 isulad[11156]:          isulad 20230525154349.332 - iSulad successfully booted in 0.331 s
+May 25 23:43:49 openeuler-riscv64 systemd[1]: Started iSulad Application Container Engine.
+░░ Subject: A start job for unit isulad.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has finished successfully.
+░░ 
+░░ The job identifier is 4157.
+May 25 23:43:57 openeuler-riscv64 [RPM][11180]: Transaction ID 646f823d started
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 [RPM][11180]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:43:59 openeuler-riscv64 systemctl[11185]: [/usr/bin/systemctl --no-reload --now disable isulad] called by PID 11184 (/bin/sh /var/tmp/rpm-tmp.WIi4Nw 0)
+May 25 23:43:59 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:43:59 openeuler-riscv64 isulad[11156]:           iSula 20230525154359.567 - Begin shutdown daemon
+May 25 23:43:59 openeuler-riscv64 systemd[1]: Stopping iSulad Application Container Engine...
+░░ Subject: A stop job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4223.
+May 25 23:43:59 openeuler-riscv64 isulad[11156]:           iSula 20230525154359.597 - Grpc Server shutdown completed
+May 25 23:43:59 openeuler-riscv64 isulad[11156]:           iSula 20230525154359.600 - Graph driver overlay cleanup completed
+May 25 23:43:59 openeuler-riscv64 isulad[11156]:           iSula 20230525154359.601 - Image oci clean resource completed
+May 25 23:43:59 openeuler-riscv64 isulad[11156]:           iSula 20230525154359.601 - Image module exit completed
+May 25 23:43:59 openeuler-riscv64 isulad[11156]:           iSula 20230525154359.602 - Umount daemon mntpoint completed
+May 25 23:43:59 openeuler-riscv64 isulad[11156]:           iSula 20230525154359.602 - Network module exit completed
+May 25 23:43:59 openeuler-riscv64 isulad[11156]:           iSula 20230525154359.603 - Clean residual files completed
+May 25 23:43:59 openeuler-riscv64 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-storage-overlay.mount has successfully entered the 'dead' state.
+May 25 23:43:59 openeuler-riscv64 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-mnt.mount has successfully entered the 'dead' state.
+May 25 23:43:59 openeuler-riscv64 systemd[1]: isulad.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit isulad.service has successfully entered the 'dead' state.
+May 25 23:43:59 openeuler-riscv64 systemd[1]: Stopped iSulad Application Container Engine.
+░░ Subject: A stop job for unit isulad.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has finished.
+░░ 
+░░ The job identifier is 4223 and the job result is done.
+May 25 23:43:59 openeuler-riscv64 systemctl[11190]: [/usr/bin/systemctl daemon-reload] called by PID 11188 (/bin/sh /var/tmp/rpm-tmp.nxMChX 0)
+May 25 23:43:59 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:44:00 openeuler-riscv64 systemd-rc-local-generator[11201]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:44:02 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:44:02 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:44:02 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:44:04 openeuler-riscv64 [RPM][11180]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:44:04 openeuler-riscv64 [RPM][11180]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:44:04 openeuler-riscv64 [RPM][11180]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:44:05 openeuler-riscv64 [RPM][11180]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:44:05 openeuler-riscv64 [RPM][11180]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:44:05 openeuler-riscv64 [RPM][11180]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:44:05 openeuler-riscv64 systemctl[11229]: [/usr/bin/systemctl --no-reload --now disable rsyncd.service] called by PID 11228 (/bin/sh /var/tmp/rpm-tmp.ahqyyf 0)
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:44:06 openeuler-riscv64 [RPM][11180]: Transaction ID 646f823d finished: 0
+May 25 23:44:10 openeuler-riscv64 sudo[11002]: pam_unix(sudo:session): session closed for user root
+May 25 23:44:10 openeuler-riscv64 sudo[11245]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_iSula_mkdir100_001 -x
+May 25 23:44:11 openeuler-riscv64 sudo[11245]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:44:41 openeuler-riscv64 [RPM][11315]: Transaction ID 646f8268 started
+May 25 23:44:42 openeuler-riscv64 [RPM][11315]: install protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:44:43 openeuler-riscv64 [RPM][11315]: install abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:44:43 openeuler-riscv64 [RPM][11315]: install protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:44:44 openeuler-riscv64 systemctl[11321]: [/usr/bin/systemctl --no-reload preset rsyncd.service] called by PID 11320 (/bin/sh /var/tmp/rpm-tmp.BL1Oe5 1)
+May 25 23:44:44 openeuler-riscv64 [RPM][11315]: install rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:44:44 openeuler-riscv64 [RPM][11315]: install lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:44:44 openeuler-riscv64 [RPM][11315]: install lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:44:45 openeuler-riscv64 [RPM][11315]: install lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:44:45 openeuler-riscv64 [RPM][11315]: install re2-20211101-3.oe2303.riscv64: success
+May 25 23:44:45 openeuler-riscv64 [RPM][11315]: install libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:44:45 openeuler-riscv64 [RPM][11315]: install libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:44:48 openeuler-riscv64 [RPM][11315]: install lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:44:48 openeuler-riscv64 [RPM][11315]: install http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:44:48 openeuler-riscv64 [RPM][11315]: install c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:44:50 openeuler-riscv64 [RPM][11315]: install grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:44:52 openeuler-riscv64 systemctl[11330]: [systemctl enable isulad] called by PID 11328 (/bin/sh /var/tmp/rpm-tmp.7JDVBH 1)
+May 25 23:44:52 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:44:52 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:44:53 openeuler-riscv64 systemd-rc-local-generator[11341]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:44:55 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:44:55 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:44:55 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:44:55 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:44:57 openeuler-riscv64 systemctl[11347]: [systemctl start isulad] called by PID 11328 (/bin/sh /var/tmp/rpm-tmp.7JDVBH 1)
+May 25 23:44:57 openeuler-riscv64 systemd[1]: Starting iSulad Application Container Engine...
+░░ Subject: A start job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4225.
+May 25 23:44:57 openeuler-riscv64 isulad[11348]:          isulad 20230525154457.892 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/utils/cutils/utils_file.c:util_list_all_subdir:953 - Failed to open directory: /var/lib/isulad/engines error:No such file or directory
+May 25 23:44:57 openeuler-riscv64 isulad[11348]:          isulad 20230525154457.893 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/daemon/modules/container/restore/restore.c:containers_restore:549 - Failed to list engines
+May 25 23:44:58 openeuler-riscv64 isulad[11348]:          isulad 20230525154458.163 - iSulad successfully booted in 0.432 s
+May 25 23:44:58 openeuler-riscv64 systemd[1]: Started iSulad Application Container Engine.
+░░ Subject: A start job for unit isulad.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has finished successfully.
+░░ 
+░░ The job identifier is 4225.
+May 25 23:44:58 openeuler-riscv64 [RPM][11315]: install iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:44:59 openeuler-riscv64 systemctl[11367]: [/usr/bin/systemctl daemon-reload] called by PID 11366 (/bin/sh /var/tmp/rpm-tmp.BbUxB4 0)
+May 25 23:44:59 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:44:59 openeuler-riscv64 systemd-rc-local-generator[11378]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:45:01 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:45:01 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:45:01 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:45:01 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install re2-20211101-3.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: install iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:45:02 openeuler-riscv64 [RPM][11315]: Transaction ID 646f8268 finished: 0
+May 25 23:45:05 openeuler-riscv64 isulad-client[11389]: received command [isula stop] from parent [11292] cmdline [bash]
+May 25 23:45:06 openeuler-riscv64 isulad-client[11394]: received command [isula rm] from parent [11292] cmdline [bash]
+May 25 23:45:10 openeuler-riscv64 isulad-client[11430]: received command [isula stop] from parent [11292] cmdline [bash]
+May 25 23:45:10 openeuler-riscv64 isulad-client[11436]: received command [isula rm] from parent [11292] cmdline [bash]
+May 25 23:45:18 openeuler-riscv64 [RPM][11450]: Transaction ID 646f828e started
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 [RPM][11450]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:45:20 openeuler-riscv64 systemctl[11455]: [/usr/bin/systemctl --no-reload --now disable isulad] called by PID 11454 (/bin/sh /var/tmp/rpm-tmp.7OlBiU 0)
+May 25 23:45:20 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:45:20 openeuler-riscv64 systemd[1]: Stopping iSulad Application Container Engine...
+░░ Subject: A stop job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4291.
+May 25 23:45:20 openeuler-riscv64 isulad[11348]:           iSula 20230525154520.316 - Begin shutdown daemon
+May 25 23:45:20 openeuler-riscv64 isulad[11348]:           iSula 20230525154520.325 - Grpc Server shutdown completed
+May 25 23:45:20 openeuler-riscv64 isulad[11348]:           iSula 20230525154520.327 - Graph driver overlay cleanup completed
+May 25 23:45:20 openeuler-riscv64 isulad[11348]:           iSula 20230525154520.327 - Image oci clean resource completed
+May 25 23:45:20 openeuler-riscv64 isulad[11348]:           iSula 20230525154520.327 - Image module exit completed
+May 25 23:45:20 openeuler-riscv64 isulad[11348]:           iSula 20230525154520.328 - Umount daemon mntpoint completed
+May 25 23:45:20 openeuler-riscv64 isulad[11348]:           iSula 20230525154520.328 - Network module exit completed
+May 25 23:45:20 openeuler-riscv64 isulad[11348]:           iSula 20230525154520.329 - Clean residual files completed
+May 25 23:45:20 openeuler-riscv64 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-storage-overlay.mount has successfully entered the 'dead' state.
+May 25 23:45:20 openeuler-riscv64 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-mnt.mount has successfully entered the 'dead' state.
+May 25 23:45:20 openeuler-riscv64 systemd[1]: isulad.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit isulad.service has successfully entered the 'dead' state.
+May 25 23:45:20 openeuler-riscv64 systemd[1]: Stopped iSulad Application Container Engine.
+░░ Subject: A stop job for unit isulad.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has finished.
+░░ 
+░░ The job identifier is 4291 and the job result is done.
+May 25 23:45:20 openeuler-riscv64 systemctl[11459]: [/usr/bin/systemctl daemon-reload] called by PID 11457 (/bin/sh /var/tmp/rpm-tmp.535r8a 0)
+May 25 23:45:20 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:45:21 openeuler-riscv64 systemd-rc-local-generator[11470]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:45:23 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:45:23 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:45:23 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:45:25 openeuler-riscv64 [RPM][11450]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:45:25 openeuler-riscv64 [RPM][11450]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:45:25 openeuler-riscv64 [RPM][11450]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:45:25 openeuler-riscv64 [RPM][11450]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:45:25 openeuler-riscv64 [RPM][11450]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:45:26 openeuler-riscv64 [RPM][11450]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:45:26 openeuler-riscv64 systemctl[11496]: [/usr/bin/systemctl --no-reload --now disable rsyncd.service] called by PID 11495 (/bin/sh /var/tmp/rpm-tmp.yS2dfu 0)
+May 25 23:45:26 openeuler-riscv64 [RPM][11450]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:45:26 openeuler-riscv64 [RPM][11450]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:45:26 openeuler-riscv64 [RPM][11450]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:45:26 openeuler-riscv64 [RPM][11450]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:45:27 openeuler-riscv64 [RPM][11450]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:45:27 openeuler-riscv64 [RPM][11450]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:45:27 openeuler-riscv64 [RPM][11450]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:45:27 openeuler-riscv64 [RPM][11450]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:45:27 openeuler-riscv64 [RPM][11450]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:45:27 openeuler-riscv64 [RPM][11450]: Transaction ID 646f828e finished: 0
+May 25 23:45:31 openeuler-riscv64 sudo[11245]: pam_unix(sudo:session): session closed for user root
+May 25 23:45:31 openeuler-riscv64 sudo[11514]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_iSula_pause_resume_001 -x
+May 25 23:45:31 openeuler-riscv64 sudo[11514]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:46:03 openeuler-riscv64 [RPM][11584]: Transaction ID 646f82bb started
+May 25 23:46:05 openeuler-riscv64 [RPM][11584]: install protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:46:05 openeuler-riscv64 [RPM][11584]: install abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:46:06 openeuler-riscv64 [RPM][11584]: install protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:46:06 openeuler-riscv64 systemctl[11591]: [/usr/bin/systemctl --no-reload preset rsyncd.service] called by PID 11590 (/bin/sh /var/tmp/rpm-tmp.KG7jUv 1)
+May 25 23:46:06 openeuler-riscv64 [RPM][11584]: install rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:46:07 openeuler-riscv64 [RPM][11584]: install lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:46:07 openeuler-riscv64 [RPM][11584]: install lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:46:07 openeuler-riscv64 [RPM][11584]: install lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:46:08 openeuler-riscv64 [RPM][11584]: install re2-20211101-3.oe2303.riscv64: success
+May 25 23:46:08 openeuler-riscv64 [RPM][11584]: install libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:46:08 openeuler-riscv64 [RPM][11584]: install libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:46:10 openeuler-riscv64 [RPM][11584]: install lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:46:10 openeuler-riscv64 [RPM][11584]: install http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:46:10 openeuler-riscv64 [RPM][11584]: install c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:46:13 openeuler-riscv64 [RPM][11584]: install grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:46:15 openeuler-riscv64 systemctl[11600]: [systemctl enable isulad] called by PID 11598 (/bin/sh /var/tmp/rpm-tmp.IlfaHD 1)
+May 25 23:46:15 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:46:15 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:46:15 openeuler-riscv64 systemd-rc-local-generator[11611]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:46:17 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:46:17 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:46:18 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:46:18 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:46:19 openeuler-riscv64 systemctl[11617]: [systemctl start isulad] called by PID 11598 (/bin/sh /var/tmp/rpm-tmp.IlfaHD 1)
+May 25 23:46:19 openeuler-riscv64 systemd[1]: Starting iSulad Application Container Engine...
+░░ Subject: A start job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4293.
+May 25 23:46:20 openeuler-riscv64 isulad[11618]:          isulad 20230525154620.371 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/utils/cutils/utils_file.c:util_list_all_subdir:953 - Failed to open directory: /var/lib/isulad/engines error:No such file or directory
+May 25 23:46:20 openeuler-riscv64 isulad[11618]:          isulad 20230525154620.372 ERROR    /home/abuild/rpmbuild/BUILD/iSulad-v2.1.1/src/daemon/modules/container/restore/restore.c:containers_restore:549 - Failed to list engines
+May 25 23:46:20 openeuler-riscv64 isulad[11618]:          isulad 20230525154620.641 - iSulad successfully booted in 0.410 s
+May 25 23:46:20 openeuler-riscv64 systemd[1]: Started iSulad Application Container Engine.
+░░ Subject: A start job for unit isulad.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit isulad.service has finished successfully.
+░░ 
+░░ The job identifier is 4293.
+May 25 23:46:20 openeuler-riscv64 [RPM][11584]: install iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:46:21 openeuler-riscv64 systemctl[11637]: [/usr/bin/systemctl daemon-reload] called by PID 11636 (/bin/sh /var/tmp/rpm-tmp.BJFxdV 0)
+May 25 23:46:21 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:46:21 openeuler-riscv64 systemd-rc-local-generator[11648]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:46:24 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:46:24 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:46:24 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:46:24 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install re2-20211101-3.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: install iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:46:25 openeuler-riscv64 [RPM][11584]: Transaction ID 646f82bb finished: 0
+May 25 23:46:27 openeuler-riscv64 isulad-client[11659]: received command [isula stop] from parent [11561] cmdline [bash]
+May 25 23:46:28 openeuler-riscv64 isulad-client[11664]: received command [isula rm] from parent [11561] cmdline [bash]
+May 25 23:46:32 openeuler-riscv64 isulad-client[11699]: received command [isula stop] from parent [11561] cmdline [bash]
+May 25 23:46:33 openeuler-riscv64 isulad-client[11705]: received command [isula rm] from parent [11561] cmdline [bash]
+May 25 23:46:41 openeuler-riscv64 [RPM][11719]: Transaction ID 646f82e1 started
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 [RPM][11719]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:46:42 openeuler-riscv64 systemctl[11724]: [/usr/bin/systemctl --no-reload --now disable isulad] called by PID 11723 (/bin/sh /var/tmp/rpm-tmp.fZuEVM 0)
+May 25 23:46:42 openeuler-riscv64 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 25 23:46:43 openeuler-riscv64 systemd[1]: Stopping iSulad Application Container Engine...
+░░ Subject: A stop job for unit isulad.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has begun execution.
+░░ 
+░░ The job identifier is 4359.
+May 25 23:46:43 openeuler-riscv64 isulad[11618]:           iSula 20230525154643.469 - Begin shutdown daemon
+May 25 23:46:43 openeuler-riscv64 isulad[11618]:           iSula 20230525154643.610 - Grpc Server shutdown completed
+May 25 23:46:43 openeuler-riscv64 isulad[11618]:           iSula 20230525154643.641 - Graph driver overlay cleanup completed
+May 25 23:46:43 openeuler-riscv64 isulad[11618]:           iSula 20230525154643.643 - Image oci clean resource completed
+May 25 23:46:43 openeuler-riscv64 isulad[11618]:           iSula 20230525154643.645 - Image module exit completed
+May 25 23:46:43 openeuler-riscv64 isulad[11618]:           iSula 20230525154643.654 - Umount daemon mntpoint completed
+May 25 23:46:43 openeuler-riscv64 isulad[11618]:           iSula 20230525154643.656 - Network module exit completed
+May 25 23:46:43 openeuler-riscv64 isulad[11618]:           iSula 20230525154643.662 - Clean residual files completed
+May 25 23:46:43 openeuler-riscv64 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-storage-overlay.mount has successfully entered the 'dead' state.
+May 25 23:46:43 openeuler-riscv64 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit var-lib-isulad-mnt.mount has successfully entered the 'dead' state.
+May 25 23:46:43 openeuler-riscv64 systemd[1]: isulad.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit isulad.service has successfully entered the 'dead' state.
+May 25 23:46:43 openeuler-riscv64 systemd[1]: Stopped iSulad Application Container Engine.
+░░ Subject: A stop job for unit isulad.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit isulad.service has finished.
+░░ 
+░░ The job identifier is 4359 and the job result is done.
+May 25 23:46:43 openeuler-riscv64 systemctl[11728]: [/usr/bin/systemctl daemon-reload] called by PID 11726 (/bin/sh /var/tmp/rpm-tmp.5mtX9x 0)
+May 25 23:46:43 openeuler-riscv64 systemd[1]: Reloading.
+May 25 23:46:44 openeuler-riscv64 systemd-rc-local-generator[11739]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 25 23:46:46 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 25 23:46:46 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 25 23:46:46 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 25 23:46:48 openeuler-riscv64 [RPM][11719]: erase iSulad-2.1.1-7.oe2303.riscv64: success
+May 25 23:46:48 openeuler-riscv64 [RPM][11719]: erase grpc-1.50.1-1.oe2303.riscv64: success
+May 25 23:46:48 openeuler-riscv64 [RPM][11719]: erase protobuf-compiler-3.14.0-6.oe2303.riscv64: success
+May 25 23:46:48 openeuler-riscv64 [RPM][11719]: erase lcr-2.1.1-6.oe2303.riscv64: success
+May 25 23:46:48 openeuler-riscv64 [RPM][11719]: erase lxc-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:46:48 openeuler-riscv64 [RPM][11719]: erase lxc-libs-4.0.3-2022102413.oe2303.riscv64: success
+May 25 23:46:49 openeuler-riscv64 systemctl[11751]: [/usr/bin/systemctl --no-reload --now disable rsyncd.service] called by PID 11750 (/bin/sh /var/tmp/rpm-tmp.5y8tIM 0)
+May 25 23:46:49 openeuler-riscv64 [RPM][11719]: erase rsync-3.2.5-1.oe2303.riscv64: success
+May 25 23:46:49 openeuler-riscv64 [RPM][11719]: erase protobuf-3.14.0-6.oe2303.riscv64: success
+May 25 23:46:49 openeuler-riscv64 [RPM][11719]: erase abseil-cpp-20220623.1-3.oe2303.riscv64: success
+May 25 23:46:49 openeuler-riscv64 [RPM][11719]: erase c-ares-1.18.1-4.oe2303.riscv64: success
+May 25 23:46:50 openeuler-riscv64 [RPM][11719]: erase re2-20211101-3.oe2303.riscv64: success
+May 25 23:46:50 openeuler-riscv64 [RPM][11719]: erase http-parser-2.9.4-2.oe2303.riscv64: success
+May 25 23:46:50 openeuler-riscv64 [RPM][11719]: erase lib-shim-v2-0.0.1-4.oe2303.riscv64: success
+May 25 23:46:50 openeuler-riscv64 [RPM][11719]: erase libisula-2.1.1-6.oe2303.riscv64: success
+May 25 23:46:50 openeuler-riscv64 [RPM][11719]: erase libwebsockets-4.3.0-4.oe2303.riscv64: success
+May 25 23:46:50 openeuler-riscv64 [RPM][11719]: Transaction ID 646f82e1 finished: 0
+May 25 23:46:54 openeuler-riscv64 sudo[11514]: pam_unix(sudo:session): session closed for user root
+May 25 23:46:54 openeuler-riscv64 sudo[11769]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_acl_001 -x
+May 25 23:46:54 openeuler-riscv64 sudo[11769]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:47:00 openeuler-riscv64 useradd[11826]: new group: name=testuser, GID=1001
+May 25 23:47:00 openeuler-riscv64 useradd[11826]: new user: name=testuser, UID=1001, GID=1001, home=/home/testuser, shell=/bin/bash, from=none
+May 25 23:47:03 openeuler-riscv64 userdel[11877]: delete user 'testuser'
+May 25 23:47:03 openeuler-riscv64 userdel[11877]: removed group 'testuser' owned by 'testuser'
+May 25 23:47:03 openeuler-riscv64 userdel[11877]: removed shadow group 'testuser' owned by 'testuser'
+May 25 23:47:06 openeuler-riscv64 sudo[11769]: pam_unix(sudo:session): session closed for user root
+May 25 23:47:06 openeuler-riscv64 sudo[11895]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_basic_ssh_001 -x
+May 25 23:47:06 openeuler-riscv64 sudo[11895]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:47:11 openeuler-riscv64 useradd[11951]: new group: name=testuser1, GID=1001
+May 25 23:47:11 openeuler-riscv64 useradd[11951]: new user: name=testuser1, UID=1001, GID=1001, home=/home/testuser1, shell=/bin/bash, from=none
+May 25 23:47:13 openeuler-riscv64 usermod[11961]: add 'testuser1' to group 'wheel'
+May 25 23:47:13 openeuler-riscv64 usermod[11961]: add 'testuser1' to shadow group 'wheel'
+May 25 23:47:13 openeuler-riscv64 passwd[11968]: pam_unix(passwd:chauthtok): password changed for testuser1
+May 25 23:47:14 openeuler-riscv64 sshd[11974]: Accepted password for testuser1 from 127.0.0.1 port 41704 ssh2
+May 25 23:47:14 openeuler-riscv64 sshd[11974]: pam_unix(sshd:session): session opened for user testuser1(uid=1001) by (uid=0)
+May 25 23:47:16 openeuler-riscv64 sshd[11976]: Received disconnect from 127.0.0.1 port 41704:11: disconnected by user
+May 25 23:47:16 openeuler-riscv64 sshd[11976]: Disconnected from user testuser1 127.0.0.1 port 41704
+May 25 23:47:16 openeuler-riscv64 sshd[11974]: pam_unix(sshd:session): session closed for user testuser1
+May 25 23:47:17 openeuler-riscv64 userdel[12035]: delete user 'testuser1'
+May 25 23:47:17 openeuler-riscv64 userdel[12035]: delete 'testuser1' from group 'wheel'
+May 25 23:47:18 openeuler-riscv64 userdel[12035]: removed group 'testuser1' owned by 'testuser1'
+May 25 23:47:18 openeuler-riscv64 userdel[12035]: removed shadow group 'testuser1' owned by 'testuser1'
+May 25 23:47:18 openeuler-riscv64 userdel[12035]: delete 'testuser1' from shadow group 'wheel'
+May 25 23:47:20 openeuler-riscv64 sudo[11895]: pam_unix(sudo:session): session closed for user root
+May 25 23:47:20 openeuler-riscv64 sudo[12054]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_cat_001 -x
+May 25 23:47:20 openeuler-riscv64 sudo[12054]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:47:32 openeuler-riscv64 sudo[12054]: pam_unix(sudo:session): session closed for user root
+May 25 23:47:32 openeuler-riscv64 sudo[12138]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_cd_002 -x
+May 25 23:47:32 openeuler-riscv64 sudo[12138]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:47:43 openeuler-riscv64 sudo[12138]: pam_unix(sudo:session): session closed for user root
+May 25 23:47:43 openeuler-riscv64 sudo[12220]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_chattr -x
+May 25 23:47:43 openeuler-riscv64 sudo[12220]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:47:54 openeuler-riscv64 sudo[12220]: pam_unix(sudo:session): session closed for user root
+May 25 23:47:54 openeuler-riscv64 sudo[12322]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_chmod_001 -x
+May 25 23:47:54 openeuler-riscv64 sudo[12322]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:48:05 openeuler-riscv64 sudo[12322]: pam_unix(sudo:session): session closed for user root
+May 25 23:48:06 openeuler-riscv64 sudo[12425]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_chown_001 -x
+May 25 23:48:06 openeuler-riscv64 sudo[12425]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:48:12 openeuler-riscv64 useradd[12484]: new group: name=test, GID=1001
+May 25 23:48:12 openeuler-riscv64 useradd[12484]: new user: name=test, UID=1001, GID=1001, home=/home/test, shell=/bin/bash, from=none
+May 25 23:48:13 openeuler-riscv64 passwd[12492]: pam_unix(passwd:chauthtok): password changed for test
+May 25 23:48:15 openeuler-riscv64 userdel[12517]: delete user 'test'
+May 25 23:48:15 openeuler-riscv64 userdel[12517]: removed group 'test' owned by 'test'
+May 25 23:48:15 openeuler-riscv64 userdel[12517]: removed shadow group 'test' owned by 'test'
+May 25 23:48:17 openeuler-riscv64 sudo[12425]: pam_unix(sudo:session): session closed for user root
+May 25 23:48:18 openeuler-riscv64 sudo[12535]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_cp_001 -x
+May 25 23:48:18 openeuler-riscv64 sudo[12535]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:48:28 openeuler-riscv64 sudo[12535]: pam_unix(sudo:session): session closed for user root
+May 25 23:48:29 openeuler-riscv64 sudo[12624]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_CPUinfo_001 -x
+May 25 23:48:29 openeuler-riscv64 sudo[12624]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 25 23:48:55 openeuler-riscv64 [RPM][12694]: Transaction ID 646f8367 started
+May 25 23:48:55 openeuler-riscv64 [RPM][12694]: install lshw-B.02.19.2-2.oe2303.riscv64: success
+May 25 23:48:55 openeuler-riscv64 [RPM][12694]: install lshw-B.02.19.2-2.oe2303.riscv64: success
+May 25 23:48:55 openeuler-riscv64 [RPM][12694]: Transaction ID 646f8367 finished: 0
+May 26 00:01:01 openeuler-riscv64 CROND[12718]: (root) CMD (run-parts /etc/cron.hourly)
+May 26 00:01:01 openeuler-riscv64 run-parts[12721]: (/etc/cron.hourly) starting 0anacron
+May 26 00:01:01 openeuler-riscv64 anacron[12729]: Anacron started on 2023-05-26
+May 26 00:01:01 openeuler-riscv64 anacron[12729]: Normal exit (0 jobs run)
+May 26 00:01:01 openeuler-riscv64 run-parts[12731]: (/etc/cron.hourly) finished 0anacron
+May 26 00:01:01 openeuler-riscv64 CROND[12717]: (root) CMDEND (run-parts /etc/cron.hourly)
+May 26 00:18:35 openeuler-riscv64 sudo[12624]: pam_unix(sudo:session): session closed for user root
+May 26 00:18:35 openeuler-riscv64 sudo[12747]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_criu -x
+May 26 00:18:35 openeuler-riscv64 sudo[12747]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:19:10 openeuler-riscv64 sudo[12747]: pam_unix(sudo:session): session closed for user root
+May 26 00:19:11 openeuler-riscv64 sudo[12866]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_dateinfo_001 -x
+May 26 00:19:11 openeuler-riscv64 sudo[12866]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:19:16 openeuler-riscv64 dbus-daemon[272]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.45' (uid=0 pid=12923 comm="timedatectl")
+May 26 00:19:17 openeuler-riscv64 systemd[1]: Starting Time & Date Service...
+░░ Subject: A start job for unit systemd-timedated.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-timedated.service has begun execution.
+░░ 
+░░ The job identifier is 4361.
+May 26 00:19:17 openeuler-riscv64 dbus-daemon[272]: [system] Successfully activated service 'org.freedesktop.timedate1'
+May 26 00:19:17 openeuler-riscv64 systemd[1]: Started Time & Date Service.
+░░ Subject: A start job for unit systemd-timedated.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-timedated.service has finished successfully.
+░░ 
+░░ The job identifier is 4361.
+May 26 00:19:21 openeuler-riscv64 sudo[12866]: pam_unix(sudo:session): session closed for user root
+May 26 00:19:21 openeuler-riscv64 sudo[12939]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_dd_001 -x
+May 26 00:19:21 openeuler-riscv64 sudo[12939]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:19:48 openeuler-riscv64 systemd[1]: systemd-timedated.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-timedated.service has successfully entered the 'dead' state.
+May 26 00:19:55 openeuler-riscv64 sudo[12939]: pam_unix(sudo:session): session closed for user root
+May 26 00:19:56 openeuler-riscv64 sudo[13022]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_df -x
+May 26 00:19:56 openeuler-riscv64 sudo[13022]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:20:05 openeuler-riscv64 sudo[13022]: pam_unix(sudo:session): session closed for user root
+May 26 00:20:05 openeuler-riscv64 sudo[13120]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_file_001 -x
+May 26 00:20:05 openeuler-riscv64 sudo[13120]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:20:35 openeuler-riscv64 sudo[13120]: pam_unix(sudo:session): session closed for user root
+May 26 00:20:35 openeuler-riscv64 sudo[13195]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_golang -x
+May 26 00:20:35 openeuler-riscv64 sudo[13195]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:21:34 openeuler-riscv64 [RPM][13265]: Transaction ID 646f8b08 started
+May 26 00:21:34 openeuler-riscv64 [RPM][13265]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 26 00:21:34 openeuler-riscv64 [RPM][13265]: install golang-1.19.4-2.oe2303.riscv64: success
+May 26 00:21:38 openeuler-riscv64 [RPM][13265]: install apr-1.7.0-5.oe2303.riscv64: success
+May 26 00:21:38 openeuler-riscv64 [RPM][13265]: install utf8proc-2.8.0-1.oe2303.riscv64: success
+May 26 00:21:38 openeuler-riscv64 [RPM][13265]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 26 00:21:38 openeuler-riscv64 [RPM][13265]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 26 00:21:38 openeuler-riscv64 [RPM][13265]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 26 00:21:38 openeuler-riscv64 [RPM][13265]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 26 00:21:38 openeuler-riscv64 [RPM][13265]: install libserf-1.3.9-16.oe2303.riscv64: success
+May 26 00:21:38 openeuler-riscv64 [RPM][13265]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 26 00:21:39 openeuler-riscv64 groupadd[13277]: group added to /etc/group: name=apache, GID=48
+May 26 00:21:39 openeuler-riscv64 groupadd[13277]: group added to /etc/gshadow: name=apache
+May 26 00:21:39 openeuler-riscv64 groupadd[13277]: new group: name=apache, GID=48
+May 26 00:21:39 openeuler-riscv64 useradd[13284]: new user: name=apache, UID=48, GID=48, home=/usr/share/httpd, shell=/sbin/nologin, from=none
+May 26 00:21:39 openeuler-riscv64 [RPM][13265]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 26 00:21:39 openeuler-riscv64 [RPM][13265]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 26 00:21:40 openeuler-riscv64 systemctl[13292]: [/usr/bin/systemctl --no-reload preset httpd.service htcacheclean.service httpd.socket] called by PID 13291 (/bin/sh /var/tmp/rpm-tmp.CsxeK3 1)
+May 26 00:21:41 openeuler-riscv64 [RPM][13265]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 26 00:21:42 openeuler-riscv64 [RPM][13265]: install subversion-1.14.2-2.oe2303.riscv64: success
+May 26 00:22:13 openeuler-riscv64 [RPM][13265]: install golang-devel-1.19.4-2.oe2303.noarch: success
+May 26 00:23:02 openeuler-riscv64 [RPM][13265]: install golang-1.19.4-2.oe2303.riscv64: success
+May 26 00:23:02 openeuler-riscv64 systemctl[13298]: [/bin/systemctl --no-block try-restart httpd.service htcacheclean.service] called by PID 13297 (/bin/sh /var/tmp/rpm-tmp.moZfAv 1)
+May 26 00:23:02 openeuler-riscv64 [RPM][13265]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 26 00:23:03 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-rc7103aee6ac543d0b42274b82521e36a.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-rc7103aee6ac543d0b42274b82521e36a.service has finished successfully.
+░░ 
+░░ The job identifier is 4430.
+May 26 00:23:03 openeuler-riscv64 systemctl[13303]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/usr/lib/systemd/systemd --system --deserialize 22)
+May 26 00:23:03 openeuler-riscv64 systemctl[13305]: [/usr/bin/systemctl daemon-reload] called by PID 13304 (/bin/sh /var/tmp/rpm-tmp.h2BnCG 0)
+May 26 00:23:03 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 4496.
+May 26 00:23:03 openeuler-riscv64 systemd[1]: Reloading.
+May 26 00:23:04 openeuler-riscv64 systemd-rc-local-generator[13322]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 26 00:23:06 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 00:23:07 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 26 00:23:07 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 26 00:23:07 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 26 00:23:07 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 4496.
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install apr-1.7.0-5.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install utf8proc-2.8.0-1.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install libserf-1.3.9-16.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install subversion-1.14.2-2.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 systemd[1]: run-rc7103aee6ac543d0b42274b82521e36a.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-rc7103aee6ac543d0b42274b82521e36a.service has successfully entered the 'dead' state.
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install golang-devel-1.19.4-2.oe2303.noarch: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: install golang-1.19.4-2.oe2303.riscv64: success
+May 26 00:23:08 openeuler-riscv64 [RPM][13265]: Transaction ID 646f8b08 finished: 0
+May 26 00:23:24 openeuler-riscv64 [RPM][13418]: Transaction ID 646f8b7c started
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase golang-1.19.4-2.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase subversion-1.14.2-2.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase golang-devel-1.19.4-2.oe2303.noarch: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase httpd-2.4.55-1.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase libserf-1.3.9-16.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase mailcap-2.1.53-3.oe2303.noarch: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase apr-util-1.6.1-14.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase apr-1.7.0-5.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase mod_http2-2.0.3-1.oe2303.riscv64: success
+May 26 00:23:26 openeuler-riscv64 [RPM][13418]: erase utf8proc-2.8.0-1.oe2303.riscv64: success
+May 26 00:23:27 openeuler-riscv64 [RPM][13418]: erase golang-1.19.4-2.oe2303.riscv64: success
+May 26 00:23:28 openeuler-riscv64 [RPM][13418]: erase subversion-1.14.2-2.oe2303.riscv64: success
+May 26 00:23:39 openeuler-riscv64 [RPM][13418]: erase golang-devel-1.19.4-2.oe2303.noarch: success
+May 26 00:23:40 openeuler-riscv64 systemctl[13428]: [/usr/bin/systemctl --no-reload --now disable httpd.service htcacheclean.service httpd.socket] called by PID 13427 (/bin/sh /var/tmp/rpm-tmp.MVR3Tm 0)
+May 26 00:23:40 openeuler-riscv64 systemctl[13431]: [/usr/bin/systemctl daemon-reload] called by PID 13429 (/bin/sh /var/tmp/rpm-tmp.oZuGzZ 0)
+May 26 00:23:40 openeuler-riscv64 systemd[1]: Reloading.
+May 26 00:23:41 openeuler-riscv64 systemd-rc-local-generator[13442]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 26 00:23:43 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 00:23:43 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 26 00:23:43 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 26 00:23:44 openeuler-riscv64 [RPM][13418]: erase httpd-2.4.55-1.oe2303.riscv64: success
+May 26 00:23:44 openeuler-riscv64 [RPM][13418]: erase httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 26 00:23:44 openeuler-riscv64 [RPM][13418]: erase libserf-1.3.9-16.oe2303.riscv64: success
+May 26 00:23:44 openeuler-riscv64 [RPM][13418]: erase httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 26 00:23:44 openeuler-riscv64 [RPM][13418]: erase mailcap-2.1.53-3.oe2303.noarch: success
+May 26 00:23:44 openeuler-riscv64 [RPM][13418]: erase openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 26 00:23:44 openeuler-riscv64 [RPM][13418]: erase apr-util-1.6.1-14.oe2303.riscv64: success
+May 26 00:23:45 openeuler-riscv64 [RPM][13418]: erase apr-1.7.0-5.oe2303.riscv64: success
+May 26 00:23:45 openeuler-riscv64 [RPM][13418]: erase mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 26 00:23:45 openeuler-riscv64 [RPM][13418]: erase mod_http2-2.0.3-1.oe2303.riscv64: success
+May 26 00:23:45 openeuler-riscv64 [RPM][13418]: erase utf8proc-2.8.0-1.oe2303.riscv64: success
+May 26 00:23:45 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r1a2646fc2ffe422db5aa8e2168b6ff2e.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r1a2646fc2ffe422db5aa8e2168b6ff2e.service has finished successfully.
+░░ 
+░░ The job identifier is 4502.
+May 26 00:23:45 openeuler-riscv64 [RPM][13418]: Transaction ID 646f8b7c finished: 0
+May 26 00:23:45 openeuler-riscv64 systemctl[13458]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/usr/lib/systemd/systemd --system --deserialize 22)
+May 26 00:23:46 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 4568.
+May 26 00:23:47 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 26 00:23:47 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 4568.
+May 26 00:23:47 openeuler-riscv64 systemd[1]: run-r1a2646fc2ffe422db5aa8e2168b6ff2e.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r1a2646fc2ffe422db5aa8e2168b6ff2e.service has successfully entered the 'dead' state.
+May 26 00:23:49 openeuler-riscv64 sudo[13195]: pam_unix(sudo:session): session closed for user root
+May 26 00:23:50 openeuler-riscv64 sudo[13484]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_grep_001 -x
+May 26 00:23:50 openeuler-riscv64 sudo[13484]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:24:01 openeuler-riscv64 sudo[13484]: pam_unix(sudo:session): session closed for user root
+May 26 00:24:01 openeuler-riscv64 sudo[13567]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_group_001 -x
+May 26 00:24:01 openeuler-riscv64 sudo[13567]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:24:08 openeuler-riscv64 groupadd[13628]: group added to /etc/group: name=testgroup, GID=1001
+May 26 00:24:08 openeuler-riscv64 groupadd[13628]: group added to /etc/gshadow: name=testgroup
+May 26 00:24:08 openeuler-riscv64 groupadd[13628]: new group: name=testgroup, GID=1001
+May 26 00:24:08 openeuler-riscv64 groupadd[13635]: group added to /etc/group: name=testgroup1, GID=66
+May 26 00:24:08 openeuler-riscv64 groupadd[13635]: group added to /etc/gshadow: name=testgroup1
+May 26 00:24:08 openeuler-riscv64 groupadd[13635]: new group: name=testgroup1, GID=66
+May 26 00:24:08 openeuler-riscv64 groupadd[13643]: group added to /etc/group: name=testgroup2, GID=66
+May 26 00:24:08 openeuler-riscv64 groupadd[13643]: group added to /etc/gshadow: name=testgroup2
+May 26 00:24:08 openeuler-riscv64 groupadd[13643]: new group: name=testgroup2, GID=66
+May 26 00:24:09 openeuler-riscv64 groupdel[13654]: group 'testgroup' removed from /etc/group
+May 26 00:24:09 openeuler-riscv64 groupdel[13654]: group 'testgroup' removed from /etc/gshadow
+May 26 00:24:09 openeuler-riscv64 groupdel[13654]: group 'testgroup' removed
+May 26 00:24:09 openeuler-riscv64 groupdel[13660]: group 'testgroup1' removed from /etc/group
+May 26 00:24:09 openeuler-riscv64 groupdel[13660]: group 'testgroup1' removed from /etc/gshadow
+May 26 00:24:09 openeuler-riscv64 groupdel[13660]: group 'testgroup1' removed
+May 26 00:24:09 openeuler-riscv64 groupdel[13666]: group 'testgroup2' removed from /etc/group
+May 26 00:24:09 openeuler-riscv64 groupdel[13666]: group 'testgroup2' removed from /etc/gshadow
+May 26 00:24:09 openeuler-riscv64 groupdel[13666]: group 'testgroup2' removed
+May 26 00:24:12 openeuler-riscv64 sudo[13567]: pam_unix(sudo:session): session closed for user root
+May 26 00:24:13 openeuler-riscv64 sudo[13685]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_group_002 -x
+May 26 00:24:13 openeuler-riscv64 sudo[13685]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:24:18 openeuler-riscv64 useradd[13741]: new group: name=testuser1, GID=1001
+May 26 00:24:18 openeuler-riscv64 useradd[13741]: new user: name=testuser1, UID=1001, GID=1001, home=/home/testuser1, shell=/bin/bash, from=none
+May 26 00:24:18 openeuler-riscv64 groupadd[13750]: group added to /etc/group: name=testgroup1, GID=1002
+May 26 00:24:18 openeuler-riscv64 groupadd[13750]: group added to /etc/gshadow: name=testgroup1
+May 26 00:24:19 openeuler-riscv64 groupadd[13750]: new group: name=testgroup1, GID=1002
+May 26 00:24:19 openeuler-riscv64 groupmod[13756]: group changed in /etc/group (group testgroup1/1002, new gid: 66)
+May 26 00:24:19 openeuler-riscv64 groupmod[13756]: group changed in /etc/passwd (group testgroup1/1002, new gid: 66)
+May 26 00:24:20 openeuler-riscv64 groupmod[13765]: group changed in /etc/group (group testgroup1/66, new gid: 99)
+May 26 00:24:20 openeuler-riscv64 groupmod[13765]: group changed in /etc/passwd (group testgroup1/66, new gid: 99)
+May 26 00:24:20 openeuler-riscv64 groupmod[13773]: group changed in /etc/group (group testgroup1/99, new name: testgroup2)
+May 26 00:24:20 openeuler-riscv64 groupmod[13773]: group changed in /etc/gshadow (group testgroup1, new name: testgroup2)
+May 26 00:24:20 openeuler-riscv64 usermod[13782]: add 'testuser1' to group 'testgroup2'
+May 26 00:24:20 openeuler-riscv64 usermod[13782]: add 'testuser1' to shadow group 'testgroup2'
+May 26 00:24:22 openeuler-riscv64 groupdel[13795]: group 'testgroup2' removed from /etc/group
+May 26 00:24:22 openeuler-riscv64 groupdel[13795]: group 'testgroup2' removed from /etc/gshadow
+May 26 00:24:22 openeuler-riscv64 groupdel[13795]: group 'testgroup2' removed
+May 26 00:24:22 openeuler-riscv64 userdel[13801]: delete user 'testuser1'
+May 26 00:24:22 openeuler-riscv64 userdel[13801]: removed group 'testuser1' owned by 'testuser1'
+May 26 00:24:22 openeuler-riscv64 userdel[13801]: removed shadow group 'testuser1' owned by 'testuser1'
+May 26 00:24:25 openeuler-riscv64 sudo[13685]: pam_unix(sudo:session): session closed for user root
+May 26 00:24:25 openeuler-riscv64 sudo[13819]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_haproxy -x
+May 26 00:24:25 openeuler-riscv64 sudo[13819]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:24:55 openeuler-riscv64 [RPM][13889]: Transaction ID 646f8bd6 started
+May 26 00:24:55 openeuler-riscv64 [RPM][13889]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 26 00:24:55 openeuler-riscv64 [RPM][13889]: erase curl-7.86.0-3.oe2303.riscv64: success
+May 26 00:24:55 openeuler-riscv64 [RPM][13889]: erase libcurl-7.86.0-3.oe2303.riscv64: success
+May 26 00:24:55 openeuler-riscv64 [RPM][13889]: install apr-1.7.0-5.oe2303.riscv64: success
+May 26 00:24:56 openeuler-riscv64 [RPM][13889]: install libcurl-7.86.0-4.oe2303.riscv64: success
+May 26 00:24:56 openeuler-riscv64 [RPM][13889]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 26 00:24:56 openeuler-riscv64 [RPM][13889]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 26 00:24:56 openeuler-riscv64 [RPM][13889]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 26 00:24:56 openeuler-riscv64 [RPM][13889]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 26 00:24:56 openeuler-riscv64 [RPM][13889]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 26 00:24:57 openeuler-riscv64 [RPM][13889]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 26 00:24:57 openeuler-riscv64 [RPM][13889]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 26 00:24:58 openeuler-riscv64 systemctl[13903]: [/usr/bin/systemctl --no-reload preset httpd.service htcacheclean.service httpd.socket] called by PID 13902 (/bin/sh /var/tmp/rpm-tmp.tulw3L 1)
+May 26 00:24:58 openeuler-riscv64 [RPM][13889]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 26 00:24:58 openeuler-riscv64 [RPM][13889]: install curl-7.86.0-4.oe2303.riscv64: success
+May 26 00:24:58 openeuler-riscv64 groupadd[13906]: group added to /etc/group: name=haproxy, GID=980
+May 26 00:24:58 openeuler-riscv64 groupadd[13906]: group added to /etc/gshadow: name=haproxy
+May 26 00:24:58 openeuler-riscv64 groupadd[13906]: new group: name=haproxy, GID=980
+May 26 00:24:59 openeuler-riscv64 useradd[13913]: new user: name=haproxy, UID=983, GID=980, home=/var/lib/haproxy, shell=/sbin/nologin, from=none
+May 26 00:25:00 openeuler-riscv64 systemctl[13921]: [/usr/bin/systemctl --no-reload preset haproxy.service] called by PID 13920 (/bin/sh /var/tmp/rpm-tmp.qJRgXK 1)
+May 26 00:25:00 openeuler-riscv64 [RPM][13889]: install haproxy-2.6.6-2.oe2303.riscv64: success
+May 26 00:25:00 openeuler-riscv64 [RPM][13889]: erase curl-7.86.0-3.oe2303.riscv64: success
+May 26 00:25:00 openeuler-riscv64 [RPM][13889]: erase libcurl-7.86.0-3.oe2303.riscv64: success
+May 26 00:25:00 openeuler-riscv64 systemctl[13923]: [/bin/systemctl --no-block try-restart httpd.service htcacheclean.service] called by PID 13922 (/bin/sh /var/tmp/rpm-tmp.IHbf0y 1)
+May 26 00:25:00 openeuler-riscv64 [RPM][13889]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 26 00:25:01 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+░░ Subject: A start job for unit run-r7589744002ab43a998f0941884aa69f6.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit run-r7589744002ab43a998f0941884aa69f6.service has finished successfully.
+░░ 
+░░ The job identifier is 4573.
+May 26 00:25:01 openeuler-riscv64 systemctl[13928]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/usr/lib/systemd/systemd --system --deserialize 22)
+May 26 00:25:01 openeuler-riscv64 systemctl[13930]: [/usr/bin/systemctl daemon-reload] called by PID 13929 (/bin/sh /var/tmp/rpm-tmp.jvViRE 0)
+May 26 00:25:01 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+░░ Subject: A start job for unit man-db-cache-update.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has begun execution.
+░░ 
+░░ The job identifier is 4639.
+May 26 00:25:01 openeuler-riscv64 systemd[1]: Reloading.
+May 26 00:25:02 openeuler-riscv64 systemd-rc-local-generator[13951]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 26 00:25:04 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 00:25:05 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 26 00:25:05 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 26 00:25:05 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit man-db-cache-update.service has successfully entered the 'dead' state.
+May 26 00:25:05 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+░░ Subject: A start job for unit man-db-cache-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit man-db-cache-update.service has finished successfully.
+░░ 
+░░ The job identifier is 4639.
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install apr-1.7.0-5.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install libcurl-7.86.0-4.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install mariadb-connector-c-3.1.13-7.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install apr-util-1.6.1-14.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install httpd-tools-2.4.55-1.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install openEuler-logos-httpd-1.0-8.oe2303.noarch: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install mailcap-2.1.53-3.oe2303.noarch: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install httpd-filesystem-2.4.55-1.oe2303.noarch: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install mod_http2-2.0.3-1.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install httpd-2.4.55-1.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install curl-7.86.0-4.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: install haproxy-2.6.6-2.oe2303.riscv64: success
+May 26 00:25:06 openeuler-riscv64 [RPM][13889]: Transaction ID 646f8bd6 finished: 0
+May 26 00:25:06 openeuler-riscv64 systemd[1]: run-r7589744002ab43a998f0941884aa69f6.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit run-r7589744002ab43a998f0941884aa69f6.service has successfully entered the 'dead' state.
+May 26 00:25:08 openeuler-riscv64 systemctl[13968]: [systemctl stop haproxy] called by PID 13866 (bash -x oe_test_haproxy.sh)
+May 26 00:25:08 openeuler-riscv64 systemctl[13971]: [systemctl restart httpd] called by PID 13866 (bash -x oe_test_haproxy.sh)
+May 26 00:25:08 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 4643.
+May 26 00:25:09 openeuler-riscv64 httpd[13972]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9143:7476:af38:76d2%eth0. Set the 'ServerName' directive globally to suppress this message
+May 26 00:25:09 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 4643.
+May 26 00:25:10 openeuler-riscv64 systemctl[14158]: [systemctl restart haproxy] called by PID 13866 (bash -x oe_test_haproxy.sh)
+May 26 00:25:10 openeuler-riscv64 systemd[1]: Starting HAProxy Load Balancer...
+░░ Subject: A start job for unit haproxy.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit haproxy.service has begun execution.
+░░ 
+░░ The job identifier is 4710.
+May 26 00:25:11 openeuler-riscv64 haproxy[14162]: [NOTICE]   (14162) : haproxy version is 2.6.6-274d1a4
+May 26 00:25:11 openeuler-riscv64 haproxy[14162]: [NOTICE]   (14162) : path to executable is /usr/sbin/haproxy
+May 26 00:25:11 openeuler-riscv64 haproxy[14162]: [ALERT]    (14162) : config : parsing [/etc/haproxy/haproxy.cfg:12] : 'pidfile' already specified. Continuing.
+May 26 00:25:11 openeuler-riscv64 haproxy[14162]: [NOTICE]   (14162) : New worker (14164) forked
+May 26 00:25:11 openeuler-riscv64 haproxy[14162]: [NOTICE]   (14162) : Loading success.
+May 26 00:25:11 openeuler-riscv64 systemd[1]: Started HAProxy Load Balancer.
+░░ Subject: A start job for unit haproxy.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit haproxy.service has finished successfully.
+░░ 
+░░ The job identifier is 4710.
+May 26 00:25:11 openeuler-riscv64 haproxy[14164]: [WARNING]  (14164) : Server http_back/node2 is DOWN, reason: Layer4 connection problem, info: "Connection refused", check duration: 1ms. 3 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
+May 26 00:25:12 openeuler-riscv64 haproxy[14164]: [WARNING]  (14164) : Server http_back/node3 is DOWN, reason: Layer4 connection problem, info: "Connection refused", check duration: 1ms. 2 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
+May 26 00:25:12 openeuler-riscv64 haproxy[14164]: [WARNING]  (14164) : Server http_back/node4 is DOWN, reason: Layer4 connection problem, info: "Connection refused", check duration: 1ms. 1 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
+May 26 00:25:13 openeuler-riscv64 systemctl[14176]: [systemctl stop haproxy] called by PID 13866 (bash -x oe_test_haproxy.sh)
+May 26 00:25:13 openeuler-riscv64 haproxy[14162]: [NOTICE]   (14162) : haproxy version is 2.6.6-274d1a4
+May 26 00:25:13 openeuler-riscv64 haproxy[14162]: [NOTICE]   (14162) : path to executable is /usr/sbin/haproxy
+May 26 00:25:13 openeuler-riscv64 haproxy[14162]: [WARNING]  (14162) : Exiting Master process...
+May 26 00:25:13 openeuler-riscv64 systemd[1]: Stopping HAProxy Load Balancer...
+░░ Subject: A stop job for unit haproxy.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit haproxy.service has begun execution.
+░░ 
+░░ The job identifier is 4781.
+May 26 00:25:13 openeuler-riscv64 haproxy[14162]: [ALERT]    (14162) : Current worker (14164) exited with code 143 (Terminated)
+May 26 00:25:13 openeuler-riscv64 haproxy[14162]: [WARNING]  (14162) : All workers exited. Exiting... (0)
+May 26 00:25:13 openeuler-riscv64 systemd[1]: haproxy.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit haproxy.service has successfully entered the 'dead' state.
+May 26 00:25:13 openeuler-riscv64 systemd[1]: Stopped HAProxy Load Balancer.
+░░ Subject: A stop job for unit haproxy.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit haproxy.service has finished.
+░░ 
+░░ The job identifier is 4781 and the job result is done.
+May 26 00:25:13 openeuler-riscv64 systemctl[14178]: [systemctl stop httpd] called by PID 13866 (bash -x oe_test_haproxy.sh)
+May 26 00:25:13 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 4782.
+May 26 00:25:14 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 26 00:25:14 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 4782 and the job result is done.
+May 26 00:25:23 openeuler-riscv64 sudo[13819]: pam_unix(sudo:session): session closed for user root
+May 26 00:25:23 openeuler-riscv64 sudo[14198]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_hdparm -x
+May 26 00:25:23 openeuler-riscv64 sudo[14198]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:25:48 openeuler-riscv64 [RPM][14268]: Transaction ID 646f8c0c started
+May 26 00:25:48 openeuler-riscv64 [RPM][14268]: install hdparm-9.65-1.oe2303.riscv64: success
+May 26 00:25:48 openeuler-riscv64 [RPM][14268]: install hdparm-9.65-1.oe2303.riscv64: success
+May 26 00:25:48 openeuler-riscv64 [RPM][14268]: Transaction ID 646f8c0c finished: 0
+May 26 00:25:58 openeuler-riscv64 [RPM][14289]: Transaction ID 646f8c16 started
+May 26 00:25:58 openeuler-riscv64 [RPM][14289]: erase hdparm-9.65-1.oe2303.riscv64: success
+May 26 00:25:58 openeuler-riscv64 [RPM][14289]: erase hdparm-9.65-1.oe2303.riscv64: success
+May 26 00:25:59 openeuler-riscv64 [RPM][14289]: Transaction ID 646f8c16 finished: 0
+May 26 00:26:02 openeuler-riscv64 sudo[14198]: pam_unix(sudo:session): session closed for user root
+May 26 00:26:03 openeuler-riscv64 sudo[14301]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_httpd -x
+May 26 00:26:03 openeuler-riscv64 sudo[14301]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:26:16 openeuler-riscv64 systemctl[14363]: [systemctl start httpd] called by PID 14348 (bash -x oe_test_httpd.sh)
+May 26 00:26:16 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+░░ Subject: A start job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 4783.
+May 26 00:26:17 openeuler-riscv64 httpd[14364]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::9143:7476:af38:76d2%eth0. Set the 'ServerName' directive globally to suppress this message
+May 26 00:26:17 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+░░ Subject: A start job for unit httpd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit httpd.service has finished successfully.
+░░ 
+░░ The job identifier is 4783.
+May 26 00:26:19 openeuler-riscv64 systemctl[14549]: [systemctl stop httpd] called by PID 14348 (bash -x oe_test_httpd.sh)
+May 26 00:26:19 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+░░ Subject: A stop job for unit httpd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has begun execution.
+░░ 
+░░ The job identifier is 4850.
+May 26 00:26:20 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit httpd.service has successfully entered the 'dead' state.
+May 26 00:26:20 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+░░ Subject: A stop job for unit httpd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit httpd.service has finished.
+░░ 
+░░ The job identifier is 4850 and the job result is done.
+May 26 00:26:23 openeuler-riscv64 sudo[14301]: pam_unix(sudo:session): session closed for user root
+May 26 00:26:23 openeuler-riscv64 sudo[14570]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f AT -r oe_test_iscsi -x
+May 26 00:26:23 openeuler-riscv64 sudo[14570]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+May 26 00:26:53 openeuler-riscv64 [RPM][14642]: Transaction ID 646f8c4d started
+May 26 00:26:56 openeuler-riscv64 [RPM][14642]: install python3-urwid-2.1.2-4.oe2303.riscv64: success
+May 26 00:26:56 openeuler-riscv64 [RPM][14642]: install python3-configshell-1.1.27-4.oe2303.noarch: success
+May 26 00:26:56 openeuler-riscv64 [RPM][14642]: install python3-kmod-30-2.oe2303.riscv64: success
+May 26 00:26:56 openeuler-riscv64 [RPM][14642]: install python3-rtslib-2.1.75-1.oe2303.noarch: success
+May 26 00:26:56 openeuler-riscv64 systemctl[14647]: [/usr/bin/systemctl --no-reload preset target.service] called by PID 14646 (/bin/sh /var/tmp/rpm-tmp.MRRGUj 1)
+May 26 00:26:56 openeuler-riscv64 [RPM][14642]: install target-restore-2.1.75-1.oe2303.noarch: success
+May 26 00:26:56 openeuler-riscv64 [RPM][14642]: install targetcli-2.1.54-1.oe2303.noarch: success
+May 26 00:26:57 openeuler-riscv64 systemctl[14651]: [/usr/bin/systemctl daemon-reload] called by PID 14650 (/bin/sh /var/tmp/rpm-tmp.7Wfxgg 0)
+May 26 00:26:57 openeuler-riscv64 systemd[1]: Reloading.
+May 26 00:26:58 openeuler-riscv64 systemd-rc-local-generator[14662]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 26 00:27:00 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 00:27:00 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 26 00:27:00 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 26 00:27:01 openeuler-riscv64 [RPM][14642]: install python3-urwid-2.1.2-4.oe2303.riscv64: success
+May 26 00:27:01 openeuler-riscv64 [RPM][14642]: install python3-configshell-1.1.27-4.oe2303.noarch: success
+May 26 00:27:01 openeuler-riscv64 [RPM][14642]: install python3-kmod-30-2.oe2303.riscv64: success
+May 26 00:27:01 openeuler-riscv64 [RPM][14642]: install python3-rtslib-2.1.75-1.oe2303.noarch: success
+May 26 00:27:01 openeuler-riscv64 [RPM][14642]: install target-restore-2.1.75-1.oe2303.noarch: success
+May 26 00:27:01 openeuler-riscv64 [RPM][14642]: install targetcli-2.1.54-1.oe2303.noarch: success
+May 26 00:27:01 openeuler-riscv64 [RPM][14642]: Transaction ID 646f8c4d finished: 0
+May 26 00:27:03 openeuler-riscv64 systemctl[14671]: [systemctl stop firewalld] called by PID 14617 (bash -x oe_test_iscsi.sh)
+May 26 00:27:23 openeuler-riscv64 systemctl[14704]: [systemctl restart target] called by PID 14617 (bash -x oe_test_iscsi.sh)
+May 26 00:27:23 openeuler-riscv64 systemd[1]: Starting Load Kernel Module configfs...
+░░ Subject: A start job for unit modprobe@configfs.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit modprobe@configfs.service has begun execution.
+░░ 
+░░ The job identifier is 4855.
+May 26 00:27:23 openeuler-riscv64 systemd[1]: modprobe@configfs.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit modprobe@configfs.service has successfully entered the 'dead' state.
+May 26 00:27:23 openeuler-riscv64 systemd[1]: Finished Load Kernel Module configfs.
+░░ Subject: A start job for unit modprobe@configfs.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit modprobe@configfs.service has finished successfully.
+░░ 
+░░ The job identifier is 4855.
+May 26 00:27:23 openeuler-riscv64 systemd[1]: Condition check resulted in Kernel Configuration File System being skipped.
+░░ Subject: A start job for unit sys-kernel-config.mount has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sys-kernel-config.mount has finished successfully.
+░░ 
+░░ The job identifier is 4854.
+May 26 00:27:23 openeuler-riscv64 systemd[1]: Starting Restore LIO kernel target configuration...
+░░ Subject: A start job for unit target.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit target.service has begun execution.
+░░ 
+░░ The job identifier is 4851.
+May 26 00:27:24 openeuler-riscv64 target[14708]: Traceback (most recent call last):
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/lib/python3.10/site-packages/rtslib_fb/root.py", line 77, in __init__
+May 26 00:27:24 openeuler-riscv64 target[14708]:     mount_configfs()
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/lib/python3.10/site-packages/rtslib_fb/utils.py", line 449, in mount_configfs
+May 26 00:27:24 openeuler-riscv64 target[14708]:     raise RTSLibError("Cannot mount configfs")
+May 26 00:27:24 openeuler-riscv64 target[14708]: rtslib_fb.utils.RTSLibError: Cannot mount configfs
+May 26 00:27:24 openeuler-riscv64 target[14708]: During handling of the above exception, another exception occurred:
+May 26 00:27:24 openeuler-riscv64 target[14708]: Traceback (most recent call last):
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/lib/python3.10/site-packages/rtslib_fb/utils.py", line 436, in modprobe
+May 26 00:27:24 openeuler-riscv64 target[14708]:     kmod.Kmod().modprobe(module)
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "libkmod/python/kmod/kmod.pyx", line 114, in kmod.kmod.Kmod.modprobe
+May 26 00:27:24 openeuler-riscv64 target[14708]: kmod.error.KmodError: Could not modprobe configfs
+May 26 00:27:24 openeuler-riscv64 target[14708]: During handling of the above exception, another exception occurred:
+May 26 00:27:24 openeuler-riscv64 target[14708]: Traceback (most recent call last):
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/bin/targetctl", line 82, in <module>
+May 26 00:27:24 openeuler-riscv64 target[14708]:     main()
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/bin/targetctl", line 79, in main
+May 26 00:27:24 openeuler-riscv64 target[14708]:     funcs[sys.argv[1]](savefile)
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/bin/targetctl", line 47, in restore
+May 26 00:27:24 openeuler-riscv64 target[14708]:     errors = RTSRoot().restore_from_file(restore_file=from_file)
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/lib/python3.10/site-packages/rtslib_fb/root.py", line 79, in __init__
+May 26 00:27:24 openeuler-riscv64 target[14708]:     modprobe('configfs')
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/lib/python3.10/site-packages/rtslib_fb/utils.py", line 438, in modprobe
+May 26 00:27:24 openeuler-riscv64 target[14708]:     raise RTSLibError("Could not load module: %s" % module)
+May 26 00:27:24 openeuler-riscv64 target[14708]: rtslib_fb.utils.RTSLibError: Could not load module: configfs
+May 26 00:27:24 openeuler-riscv64 systemd[1]: target.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit target.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 26 00:27:24 openeuler-riscv64 systemd[1]: target.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit target.service has entered the 'failed' state with result 'exit-code'.
+May 26 00:27:24 openeuler-riscv64 systemd[1]: Failed to start Restore LIO kernel target configuration.
+░░ Subject: A start job for unit target.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit target.service has finished with a failure.
+░░ 
+░░ The job identifier is 4851 and the job result is failed.
+May 26 00:27:25 openeuler-riscv64 systemctl[14713]: [systemctl restart iscsid] called by PID 14617 (bash -x oe_test_iscsi.sh)
+May 26 00:27:25 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+░░ Subject: A start job for unit iscsid.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has begun execution.
+░░ 
+░░ The job identifier is 4917.
+May 26 00:27:25 openeuler-riscv64 iscsid[14714]: iscsid: can not create NETLINK_ISCSI socket [Protocol not supported]
+May 26 00:27:25 openeuler-riscv64 systemd[1]: iscsid.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit iscsid.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 26 00:27:25 openeuler-riscv64 systemd[1]: iscsid.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit iscsid.service has entered the 'failed' state with result 'exit-code'.
+May 26 00:27:25 openeuler-riscv64 systemd[1]: Failed to start Open-iSCSI.
+░░ Subject: A start job for unit iscsid.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has finished with a failure.
+░░ 
+░░ The job identifier is 4917 and the job result is failed.
+May 26 00:27:25 openeuler-riscv64 systemd[1]: iscsid.service: Scheduled restart job, restart counter is at 1.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit iscsid.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+May 26 00:27:25 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+░░ Subject: A stop job for unit iscsid.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit iscsid.service has finished.
+░░ 
+░░ The job identifier is 4922 and the job result is done.
+May 26 00:27:25 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+░░ Subject: A start job for unit iscsid.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has begun execution.
+░░ 
+░░ The job identifier is 4922.
+May 26 00:27:25 openeuler-riscv64 iscsid[14718]: iscsid: can not create NETLINK_ISCSI socket [Protocol not supported]
+May 26 00:27:25 openeuler-riscv64 systemd[1]: iscsid.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit iscsid.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 26 00:27:25 openeuler-riscv64 systemd[1]: iscsid.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit iscsid.service has entered the 'failed' state with result 'exit-code'.
+May 26 00:27:25 openeuler-riscv64 systemd[1]: Failed to start Open-iSCSI.
+░░ Subject: A start job for unit iscsid.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has finished with a failure.
+░░ 
+░░ The job identifier is 4922 and the job result is failed.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: iscsid.service: Scheduled restart job, restart counter is at 2.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit iscsid.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+░░ Subject: A stop job for unit iscsid.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit iscsid.service has finished.
+░░ 
+░░ The job identifier is 4927 and the job result is done.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+░░ Subject: A start job for unit iscsid.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has begun execution.
+░░ 
+░░ The job identifier is 4927.
+May 26 00:27:26 openeuler-riscv64 iscsid[14722]: iscsid: can not create NETLINK_ISCSI socket [Protocol not supported]
+May 26 00:27:26 openeuler-riscv64 systemd[1]: iscsid.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit iscsid.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: iscsid.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit iscsid.service has entered the 'failed' state with result 'exit-code'.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: Failed to start Open-iSCSI.
+░░ Subject: A start job for unit iscsid.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has finished with a failure.
+░░ 
+░░ The job identifier is 4927 and the job result is failed.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: iscsid.service: Scheduled restart job, restart counter is at 3.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit iscsid.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+░░ Subject: A stop job for unit iscsid.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit iscsid.service has finished.
+░░ 
+░░ The job identifier is 4932 and the job result is done.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+░░ Subject: A start job for unit iscsid.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has begun execution.
+░░ 
+░░ The job identifier is 4932.
+May 26 00:27:26 openeuler-riscv64 iscsid[14725]: iscsid: can not create NETLINK_ISCSI socket [Protocol not supported]
+May 26 00:27:26 openeuler-riscv64 systemd[1]: iscsid.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit iscsid.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: iscsid.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit iscsid.service has entered the 'failed' state with result 'exit-code'.
+May 26 00:27:26 openeuler-riscv64 systemd[1]: Failed to start Open-iSCSI.
+░░ Subject: A start job for unit iscsid.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has finished with a failure.
+░░ 
+░░ The job identifier is 4932 and the job result is failed.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: iscsid.service: Scheduled restart job, restart counter is at 4.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit iscsid.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+░░ Subject: A stop job for unit iscsid.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit iscsid.service has finished.
+░░ 
+░░ The job identifier is 4937 and the job result is done.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+░░ Subject: A start job for unit iscsid.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has begun execution.
+░░ 
+░░ The job identifier is 4937.
+May 26 00:27:27 openeuler-riscv64 iscsid[14728]: iscsid: can not create NETLINK_ISCSI socket [Protocol not supported]
+May 26 00:27:27 openeuler-riscv64 systemd[1]: iscsid.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit iscsid.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: iscsid.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit iscsid.service has entered the 'failed' state with result 'exit-code'.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: Failed to start Open-iSCSI.
+░░ Subject: A start job for unit iscsid.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has finished with a failure.
+░░ 
+░░ The job identifier is 4937 and the job result is failed.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: iscsid.service: Scheduled restart job, restart counter is at 5.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit iscsid.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+░░ Subject: A stop job for unit iscsid.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit iscsid.service has finished.
+░░ 
+░░ The job identifier is 4942 and the job result is done.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: iscsid.service: Start request repeated too quickly.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: iscsid.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit iscsid.service has entered the 'failed' state with result 'exit-code'.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: Failed to start Open-iSCSI.
+░░ Subject: A start job for unit iscsid.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit iscsid.service has finished with a failure.
+░░ 
+░░ The job identifier is 4942 and the job result is failed.
+May 26 00:27:27 openeuler-riscv64 systemd[1]: iscsid.socket: Failed with result 'service-start-limit-hit'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit iscsid.socket has entered the 'failed' state with result 'service-start-limit-hit'.
+May 26 00:27:27 openeuler-riscv64 systemctl[14733]: [systemctl restart multipathd] called by PID 14617 (bash -x oe_test_iscsi.sh)
+May 26 00:27:27 openeuler-riscv64 systemd[1]: Starting Wait for udev To Complete Device Initialization...
+░░ Subject: A start job for unit systemd-udev-settle.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-udev-settle.service has begun execution.
+░░ 
+░░ The job identifier is 4956.
+May 26 00:27:27 openeuler-riscv64 udevadm[14734]: systemd-udev-settle.service is deprecated. Please fix multipathd.service not to pull it in.
+May 26 00:27:28 openeuler-riscv64 systemd[1]: Finished Wait for udev To Complete Device Initialization.
+░░ Subject: A start job for unit systemd-udev-settle.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-udev-settle.service has finished successfully.
+░░ 
+░░ The job identifier is 4956.
+May 26 00:27:28 openeuler-riscv64 systemd[1]: Starting Device-Mapper Multipath Device Controller...
+░░ Subject: A start job for unit multipathd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit multipathd.service has begun execution.
+░░ 
+░░ The job identifier is 4947.
+May 26 00:27:28 openeuler-riscv64 modprobe[14736]: modprobe: WARNING: Module scsi_dh_alua not found in directory /lib/modules/6.1.8-3.oe2303.riscv64
+May 26 00:27:28 openeuler-riscv64 modprobe[14736]: modprobe: WARNING: Module scsi_dh_emc not found in directory /lib/modules/6.1.8-3.oe2303.riscv64
+May 26 00:27:28 openeuler-riscv64 modprobe[14736]: modprobe: WARNING: Module scsi_dh_rdac not found in directory /lib/modules/6.1.8-3.oe2303.riscv64
+May 26 00:27:28 openeuler-riscv64 modprobe[14736]: modprobe: WARNING: Module dm-multipath not found in directory /lib/modules/6.1.8-3.oe2303.riscv64
+May 26 00:27:28 openeuler-riscv64 multipathd[14739]: --------start up--------
+May 26 00:27:28 openeuler-riscv64 multipathd[14739]: read /etc/multipath.conf
+May 26 00:27:28 openeuler-riscv64 kernel: device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+May 26 00:27:28 openeuler-riscv64 multipathd[14739]: DM multipath kernel driver not loaded
+May 26 00:27:28 openeuler-riscv64 multipathd[14739]: path checkers start up
+May 26 00:27:28 openeuler-riscv64 systemd[1]: multipathd.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit multipathd.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 26 00:27:28 openeuler-riscv64 systemd[1]: multipathd.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit multipathd.service has entered the 'failed' state with result 'exit-code'.
+May 26 00:27:28 openeuler-riscv64 systemd[1]: Failed to start Device-Mapper Multipath Device Controller.
+░░ Subject: A start job for unit multipathd.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit multipathd.service has finished with a failure.
+░░ 
+░░ The job identifier is 4947 and the job result is failed.
+May 26 00:27:34 openeuler-riscv64 systemctl[14766]: [systemctl stop multipathd] called by PID 14617 (bash -x oe_test_iscsi.sh)
+May 26 00:27:34 openeuler-riscv64 systemctl[14767]: [systemctl stop iscsid] called by PID 14617 (bash -x oe_test_iscsi.sh)
+May 26 00:27:34 openeuler-riscv64 systemctl[14768]: [systemctl stop target] called by PID 14617 (bash -x oe_test_iscsi.sh)
+May 26 00:27:44 openeuler-riscv64 [RPM][14776]: Transaction ID 646f8c80 started
+May 26 00:27:45 openeuler-riscv64 [RPM][14776]: erase targetcli-2.1.54-1.oe2303.noarch: success
+May 26 00:27:45 openeuler-riscv64 [RPM][14776]: erase python3-configshell-1.1.27-4.oe2303.noarch: success
+May 26 00:27:45 openeuler-riscv64 [RPM][14776]: erase target-restore-2.1.75-1.oe2303.noarch: success
+May 26 00:27:45 openeuler-riscv64 [RPM][14776]: erase python3-rtslib-2.1.75-1.oe2303.noarch: success
+May 26 00:27:45 openeuler-riscv64 [RPM][14776]: erase python3-kmod-30-2.oe2303.riscv64: success
+May 26 00:27:45 openeuler-riscv64 [RPM][14776]: erase python3-urwid-2.1.2-4.oe2303.riscv64: success
+May 26 00:27:45 openeuler-riscv64 systemctl[14782]: [/usr/bin/systemctl daemon-reload] called by PID 14780 (/bin/sh /var/tmp/rpm-tmp.OMqjO5 0)
+May 26 00:27:45 openeuler-riscv64 systemd[1]: Reloading.
+May 26 00:27:46 openeuler-riscv64 systemd-rc-local-generator[14793]: /etc/rc.d/rc.local is not marked executable, skipping.
+May 26 00:27:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 00:27:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovs-vswitchd.service:12: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovs-vswitchd.pid → /run/openvswitch/ovs-vswitchd.pid; please update the unit file accordingly.
+May 26 00:27:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/ovsdb-server.service:10: PIDFile= references a path below legacy directory /var/run/, updating /var/run/openvswitch/ovsdb-server.pid → /run/openvswitch/ovsdb-server.pid; please update the unit file accordingly.
+May 26 00:27:49 openeuler-riscv64 [RPM][14776]: erase targetcli-2.1.54-1.oe2303.noarch: success
+May 26 00:27:49 openeuler-riscv64 [RPM][14776]: erase python3-configshell-1.1.27-4.oe2303.noarch: success
+May 26 00:27:49 openeuler-riscv64 systemctl[14800]: [/usr/bin/systemctl --no-reload --now disable target.service] called by PID 14799 (/bin/sh /var/tmp/rpm-tmp.BW9ylG 0)
+May 26 00:27:50 openeuler-riscv64 [RPM][14776]: erase target-restore-2.1.75-1.oe2303.noarch: success
+May 26 00:27:50 openeuler-riscv64 [RPM][14776]: erase python3-rtslib-2.1.75-1.oe2303.noarch: success
+May 26 00:27:50 openeuler-riscv64 [RPM][14776]: erase python3-kmod-30-2.oe2303.riscv64: success
+May 26 00:27:50 openeuler-riscv64 [RPM][14776]: erase python3-urwid-2.1.2-4.oe2303.riscv64: success
+May 26 00:27:50 openeuler-riscv64 [RPM][14776]: Transaction ID 646f8c80 finished: 0
+May 26 00:27:54 openeuler-riscv64 sudo[14570]: pam_unix(sudo:session): session closed for user root
+May 26 00:27:54 openeuler-riscv64 sudo[14810]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/journalctl -xe --no-pager
+May 26 00:27:54 openeuler-riscv64 sudo[14810]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)

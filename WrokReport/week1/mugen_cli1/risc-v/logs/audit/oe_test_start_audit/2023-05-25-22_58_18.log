@@ -1,0 +1,135 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu May 25 22:58:21 2023 - INFO  - Start executing testcase.
++ systemctl start auditd
+Failed to start auditd.service: Unit auditd.service not found.
++ CHECK_RESULT 5 0 0 'Failed to start auditd service'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to start auditd service'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to start auditd service'
++ LOG_ERROR 'Failed to start auditd service'
++ message='Failed to start auditd service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to start auditd service'
+Thu May 25 22:58:21 2023 - ERROR - Failed to start auditd service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_start_audit.sh line 25'
++ message='oe_test_start_audit.sh line 25'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_start_audit.sh line 25'
+Thu May 25 22:58:22 2023 - ERROR - oe_test_start_audit.sh line 25
++ '[' 0 -eq 1 ']'
++ return 0
++ chkconfig auditd
++ grep enable
++ CHECK_RESULT 1 0 0 'Failed to chkconfig auditd service with status enable'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to chkconfig auditd service with status enable'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to chkconfig auditd service with status enable'
++ LOG_ERROR 'Failed to chkconfig auditd service with status enable'
++ message='Failed to chkconfig auditd service with status enable'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to chkconfig auditd service with status enable'
+Thu May 25 22:58:22 2023 - ERROR - Failed to chkconfig auditd service with status enable
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_start_audit.sh line 27'
++ message='oe_test_start_audit.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_start_audit.sh line 27'
+Thu May 25 22:58:23 2023 - ERROR - oe_test_start_audit.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl disable auditd
+Failed to disable unit: Unit file auditd.service does not exist.
++ chkconfig auditd
++ grep disable
++ CHECK_RESULT 1 0 0 'Failed to chkconfig auditd service with status disable'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to chkconfig auditd service with status disable'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to chkconfig auditd service with status disable'
++ LOG_ERROR 'Failed to chkconfig auditd service with status disable'
++ message='Failed to chkconfig auditd service with status disable'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to chkconfig auditd service with status disable'
+Thu May 25 22:58:24 2023 - ERROR - Failed to chkconfig auditd service with status disable
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_start_audit.sh line 30'
++ message='oe_test_start_audit.sh line 30'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_start_audit.sh line 30'
+Thu May 25 22:58:24 2023 - ERROR - oe_test_start_audit.sh line 30
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl enable auditd
+Failed to enable unit: Unit file auditd.service does not exist.
++ chkconfig auditd
++ grep enable
++ CHECK_RESULT 1 0 0 'Failed to chkconfig auditd service with status enable'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to chkconfig auditd service with status enable'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to chkconfig auditd service with status enable'
++ LOG_ERROR 'Failed to chkconfig auditd service with status enable'
++ message='Failed to chkconfig auditd service with status enable'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to chkconfig auditd service with status enable'
+Thu May 25 22:58:25 2023 - ERROR - Failed to chkconfig auditd service with status enable
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_start_audit.sh line 33'
++ message='oe_test_start_audit.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_start_audit.sh line 33'
+Thu May 25 22:58:25 2023 - ERROR - oe_test_start_audit.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu May 25 22:58:26 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:58:27 2023 - ERROR - failed to execute the case.
++ exit 4
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_start_audit.sh post_test'
++ message='oe_test_start_audit.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_start_audit.sh post_test'
+Thu May 25 22:58:27 2023 - INFO  - oe_test_start_audit.sh post_test

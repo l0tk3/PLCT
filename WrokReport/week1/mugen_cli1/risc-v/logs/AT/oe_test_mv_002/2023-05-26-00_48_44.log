@@ -1,0 +1,39 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation'
++ message='Start environment preparation'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation'
+Fri May 26 00:48:46 2023 - INFO  - Start environment preparation
++ ls /tmp/name1
+ls: cannot access '/tmp/name1': No such file or directory
++ ls /tmp/name2
+ls: cannot access '/tmp/name2': No such file or directory
++ LOG_INFO 'End of enviornment preparation'
++ message='End of enviornment preparation'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of enviornment preparation'
+Fri May 26 00:48:47 2023 - INFO  - End of enviornment preparation
+++ type -t run_test
++ '[' -n '' ']'
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:48:47 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/name1
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:48:48 2023 - INFO  - Finish environment cleanup!

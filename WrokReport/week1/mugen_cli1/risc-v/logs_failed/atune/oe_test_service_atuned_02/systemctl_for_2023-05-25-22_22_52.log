@@ -1,0 +1,15 @@
+× atuned.service
+     Loaded: not-found (Reason: Unit atuned.service not found.)
+     Active: failed (Result: exit-code) since Thu 2023-05-25 22:27:50 CST; 56s ago
+   Main PID: 1838 (code=exited, status=2)
+
+May 25 22:27:50 openeuler-riscv64 atuned[1838]:         /usr/lib/golang/src/runtime/lock_futex.go:236 +0x48 fp=0xc0002347a8 sp=0xc000234778 pc=0xaaaaaac225b8b0
+May 25 22:27:50 openeuler-riscv64 atuned[1838]: os/signal.signal_recv()
+May 25 22:27:50 openeuler-riscv64 atuned[1838]:         /usr/lib/golang/src/runtime/sigqueue.go:152 +0x34 fp=0xc0002347c0 sp=0xc0002347a8 pc=0xaaaaaac22b4a4c
+May 25 22:27:50 openeuler-riscv64 atuned[1838]: os/signal.loop()
+May 25 22:27:50 openeuler-riscv64 atuned[1838]:         /usr/lib/golang/src/os/signal/signal_unix.go:23 +0x20 fp=0xc0002347d8 sp=0xc0002347c0 pc=0xaaaaaac2755030
+May 25 22:27:50 openeuler-riscv64 atuned[1838]: runtime.goexit()
+May 25 22:27:50 openeuler-riscv64 atuned[1838]:         /usr/lib/golang/src/runtime/asm_riscv64.s:516 +0x4 fp=0xc0002347d8 sp=0xc0002347d8 pc=0xaaaaaac22b746c
+May 25 22:27:50 openeuler-riscv64 atuned[1838]: created by os/signal.Notify.func1.1
+May 25 22:27:50 openeuler-riscv64 atuned[1838]:         /usr/lib/golang/src/os/signal/signal.go:151 +0x2c
+May 25 22:27:50 openeuler-riscv64 systemd[1]: Failed to start A-Tune Daemon.

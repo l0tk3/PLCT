@@ -1,0 +1,148 @@
++ source ../common/prepare_docker.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu May 25 22:54:50 2023 - INFO  - Start environment preparation.
++ pre_docker_env
++ DNF_INSTALL 'docker wget tar'
++ pkgs='docker wget tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'docker wget tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpetci5z_y
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpetci5z_y
++ clean_docker_env
+++ docker ps -aq
++ docker stop
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+++ docker ps -aq
++ docker rm
+"docker rm" requires at least 1 argument.
+See 'docker rm --help'.
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+Remove one or more containers
+++ docker images -q
++ docker rmi
+"docker rmi" requires at least 1 argument.
+See 'docker rmi --help'.
+
+Usage:  docker rmi [OPTIONS] IMAGE [IMAGE...]
+
+Remove one or more images
+++ docker images -q
++ test -z ''
++ rm -rf ../common/openEuler-docker.riscv64.tar.xz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -i version= /etc/os-release
++ awk -F '"' '{print$2}'
++ grep '('
++ grep -i version= /etc/os-release
++ awk -F '"' '{print$2}'
++ grep LTS
+++ grep -i version= /etc/os-release
+++ awk -F '"' '{print$2}'
++ os_version=23.03
++ wget -P ../common/ https://repo.openeuler.org/openEuler-23.03/docker_img/riscv64/openEuler-docker.riscv64.tar.xz
+--2023-05-25 22:56:10--  https://repo.openeuler.org/openEuler-23.03/docker_img/riscv64/openEuler-docker.riscv64.tar.xz
+Resolving repo.openeuler.org (repo.openeuler.org)... 49.0.230.196
+Connecting to repo.openeuler.org (repo.openeuler.org)|49.0.230.196|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2023-05-25 22:56:11 ERROR 404: Not Found.
+
++ docker load -i ../common/openEuler-docker.riscv64.tar.xz
+open ../common/openEuler-docker.riscv64.tar.xz: no such file or directory
+++ docker images
+++ grep latest
+++ awk '{print$1}'
++ Images_name=
++ test -n ''
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 22:56:13 2023 - INFO  - start environment cleanup.
++ clean_docker_env
+++ docker ps -aq
++ docker stop
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+++ docker ps -aq
++ docker rm
+"docker rm" requires at least 1 argument.
+See 'docker rm --help'.
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+Remove one or more containers
+++ docker images -q
++ docker rmi
+"docker rmi" requires at least 1 argument.
+See 'docker rmi --help'.
+
+Usage:  docker rmi [OPTIONS] IMAGE [IMAGE...]
+
+Remove one or more images
+++ docker images -q
++ test -z ''
++ rm -rf ../common/openEuler-docker.riscv64.tar.xz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpetci5z_y ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpetci5z_y
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup.'
++ message='Finish environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup.'
+Thu May 25 22:56:41 2023 - INFO  - Finish environment cleanup.

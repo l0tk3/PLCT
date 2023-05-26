@@ -1,0 +1,175 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu May 25 01:16:30 2023 - INFO  - Start environment preparation.
++ ls /tmp/test
+/tmp/test
++ rm -rf /tmp/test
++ (( i=1 ))
++ (( i<=10 ))
++ echo 1
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 2
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 3
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 4
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 5
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 6
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 7
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 8
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 9
++ (( i+=1 ))
++ (( i<=10 ))
++ echo 10
++ (( i+=1 ))
++ (( i<=10 ))
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 01:16:30 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 01:16:31 2023 - INFO  - Start to run test.
++ sed -i 3anewLine /tmp/test
++ grep newLine /tmp/test
+newLine
++ CHECK_RESULT 0 0 0 'append new line failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='append new line failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nl /tmp/test
++ sed 4d
++ grep newLine
++ CHECK_RESULT 1 0 1 'delete line failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='delete line failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ nl /tmp/test
++ sed '2i this is add_word'
++ grep this
+this is add_word
++ CHECK_RESULT 0 0 0 'add word when display failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='add word when display failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nl /tmp/test
++ sed '2,5c 2--5'
++ grep -w 2--5
+2--5
++ CHECK_RESULT 0 0 0 'replace word failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='replace word failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nl /tmp/test
++ sed -n 2,5p
++ grep -E '[2-5]'
+     2	2
+     3	3
+     4	newLine
+     5	4
++ CHECK_RESULT 0 0 0 'display part of document failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='display part of document failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ nl /tmp/test
+++ sed /1/p
+++ grep -c 1
++ count=6
++ '[' 6 -eq 6 ']'
++ CHECK_RESULT 0 0 0 'sed find text failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sed find text failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 01:16:32 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 01:16:32 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 01:16:33 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/test
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 01:16:33 2023 - INFO  - End to restore the test environment.

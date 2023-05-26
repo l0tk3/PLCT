@@ -1,0 +1,199 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start to config params of the case.'
++ message='Start to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to config params of the case.'
+Fri May 26 00:18:41 2023 - INFO  - Start to config params of the case.
++ last_num=300
++ LOG_INFO 'End to config params of the case.'
++ message='End to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to config params of the case.'
+Fri May 26 00:18:41 2023 - INFO  - End to config params of the case.
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:18:42 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL 'criu gcc'
++ pkgs='criu gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'criu gcc' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 2:01:07 ago on Thu 25 May 2023 10:17:51 PM CST.
+No match for argument: criu
+Package gcc-10.3.1-25.oe2303.riscv64 is already installed.
+Error: Unable to find a match: criu'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 2:01:07 ago on Thu 25 May 2023 10:17:51 PM CST.
+No match for argument: criu
+Package gcc-10.3.1-25.oe2303.riscv64 is already installed.
+Error: Unable to find a match: criu'
++ mkdir checkpoint_demo
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:18:59 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:19:00 2023 - INFO  - Start testing...
++ gcc -o demo demo.c
++ echo 12830
++ sleep 1
++ ./demo
+++ cat demo_pid
++ criu dump -D checkpoint_demo -j -t 12830
+oe_test_criu.sh: line 41: criu: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_criu.sh line 42'
++ message='oe_test_criu.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_criu.sh line 42'
+Fri May 26 00:19:03 2023 - ERROR - oe_test_criu.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ ps aux
++ grep demo
+++ cat demo_pid
++ grep -w 12830
+root       12830  1.1  0.0   2076   656 ?        S    00:19   0:00 ./demo
++ CHECK_RESULT 0 1
++ actual_result=0
++ expect_result=1
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 1x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_criu.sh line 44'
++ message='oe_test_criu.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_criu.sh line 44'
+Fri May 26 00:19:04 2023 - ERROR - oe_test_criu.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
+++ cat output.txt
+++ tail -1
++ num1=21
++ criu restore -D ./checkpoint_demo -j
+oe_test_criu.sh: line 46: criu: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_criu.sh line 47'
++ message='oe_test_criu.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_criu.sh line 47'
+Fri May 26 00:19:04 2023 - ERROR - oe_test_criu.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ let num2=num1+1
++ grep -w 300 output.txt
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_criu.sh line 50'
++ message='oe_test_criu.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_criu.sh line 50'
+Fri May 26 00:19:05 2023 - ERROR - oe_test_criu.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
++ grep -w 22 output.txt
+22
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:19:05 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri May 26 00:19:06 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:19:06 2023 - INFO  - start environment cleanup.
++ rm -rf checkpoint_demo demo output.txt demo_pid
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 2:01:07 ago on Thu 25 May 2023 10:17:51 PM CST.
+No match for argument: criu
+Package gcc-10.3.1-25.oe2303.riscv64 is already installed.
+Error: Unable to find a match: criu ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 2:01:07 ago on Thu 25 May 2023 10:17:51 PM CST.
+No match for argument: criu
+Package gcc-10.3.1-25.oe2303.riscv64 is already installed.
+Error: Unable to find a match: criu'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 2:01:07 ago on Thu 25 May 2023 10:17:51 PM CST.\nNo match for argument: criu\nPackage gcc-10.3.1-25.oe2303.riscv64 is already installed.\nError: Unable to find a match: criu'
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:19:09 2023 - INFO  - Finish environment cleanup!

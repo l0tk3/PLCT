@@ -1,0 +1,90 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri May 26 01:23:28 2023 - INFO  - Start to run test.
++ chrt -f -p 10 11
++ CHECK_RESULT 0 0 0 'Failed to execute chrt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute chrt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chrt -p 11
++ grep pid
+pid 11's current scheduling policy: SCHED_FIFO
+pid 11's current scheduling priority: 10
++ CHECK_RESULT 0 0 0 'Failed to execute chrt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute chrt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chrt -r -p 10 11
++ CHECK_RESULT 0 0 0 'Failed to execute chrt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute chrt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chrt -p 11
++ grep pid
+pid 11's current scheduling policy: SCHED_RR
+pid 11's current scheduling priority: 10
++ CHECK_RESULT 0 0 0 'Failed to execute chrt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute chrt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri May 26 01:23:29 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 01:23:29 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_chrt.sh post_test'
++ message='oe_test_chrt.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_chrt.sh post_test'
+Fri May 26 01:23:30 2023 - INFO  - oe_test_chrt.sh post_test

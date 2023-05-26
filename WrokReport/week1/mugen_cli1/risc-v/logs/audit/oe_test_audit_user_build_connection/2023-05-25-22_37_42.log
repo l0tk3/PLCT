@@ -1,0 +1,274 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 22:37:45 2023 - INFO  - Start to prepare the test environment.
+++ find / -name af_unix.conf
+find: ‘/proc/4767’: No such file or directory
++ path=
++ sed -i 's/active = no/active = yes/g' ''
+sed: can't read : No such file or directory
++ service auditd restart
+oe_test_audit_user_build_connection.sh: line 27: service: command not found
++ DNF_INSTALL gcc
++ pkgs=gcc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs gcc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp4fhqa9k4
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp4fhqa9k4
++ gcc -o audit_socket audit_socket.c
+In file included from /usr/include/bits/posix1_lim.h:161,
+                 from /usr/include/limits.h:195,
+                 from /usr/lib/gcc/riscv64-linux-gnu/10.3.1/include/limits.h:195,
+                 from /usr/lib/gcc/riscv64-linux-gnu/10.3.1/include/syslimits.h:7,
+                 from /usr/lib/gcc/riscv64-linux-gnu/10.3.1/include/limits.h:34,
+                 from /usr/include/sys/param.h:26,
+                 from audit_socket.c:2:
+/usr/include/bits/local_lim.h:38:10: fatal error: linux/limits.h: No such file or directory
+   38 | #include <linux/limits.h>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
++ touch /home/test
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 22:38:59 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 22:39:00 2023 - INFO  - Start to run test.
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ nohup unbuffer ./audit_socket
++ cat log
++ grep 'start audit thread now!'
++ CHECK_RESULT 1 0 0 'grep failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep failed'
++ LOG_ERROR 'grep failed'
++ message='grep failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'grep failed'
+Thu May 25 22:39:02 2023 - ERROR - grep failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_user_build_connection.sh line 40'
++ message='oe_test_audit_user_build_connection.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_user_build_connection.sh line 40'
+Thu May 25 22:39:03 2023 - ERROR - oe_test_audit_user_build_connection.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -w /home/test -p a
+oe_test_audit_user_build_connection.sh: line 41: auditctl: command not found
++ chmod 777 /home/test
++ (( i=0 ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' -f 1.txt ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<15 ))
++ '[' 15 -eq 15 ']'
++ CHECK_RESULT 1 0 0 'i failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='i failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'i failed'
++ LOG_ERROR 'i failed'
++ message='i failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'i failed'
+Thu May 25 22:39:28 2023 - ERROR - i failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_user_build_connection.sh line 52'
++ message='oe_test_audit_user_build_connection.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_user_build_connection.sh line 52'
+Thu May 25 22:39:29 2023 - ERROR - oe_test_audit_user_build_connection.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ '[' -f 1.txt ']'
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 22:39:29 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:39:30 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 22:39:30 2023 - INFO  - Start to restore the test environment.
++ rm -rf log 1.txt audit_socket /home/test wait_poll
++ sed -i 's/active = yes/active = no/g' ''
+sed: can't read : No such file or directory
++ service auditd restart
+oe_test_audit_user_build_connection.sh: line 69: service: command not found
++ auditctl -D
+oe_test_audit_user_build_connection.sh: line 70: auditctl: command not found
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp4fhqa9k4 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp4fhqa9k4
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 22:39:37 2023 - INFO  - End to restore the test environment.

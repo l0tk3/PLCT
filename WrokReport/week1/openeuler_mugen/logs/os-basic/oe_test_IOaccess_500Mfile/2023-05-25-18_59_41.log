@@ -1,0 +1,1425 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to pre test.'
++ message='Start to pre test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to pre test.'
+Thu May 25 18:59:43 2023 - INFO  - Start to pre test.
+++ date +%Y%m%d
++ testfile1=myfile20230525
+++ date +%Y%m%d
++ testfile2=mycpfile20230525
++ LOG_INFO 'Start to pre test.'
++ message='Start to pre test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to pre test.'
+Thu May 25 18:59:44 2023 - INFO  - Start to pre test.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 18:59:44 2023 - INFO  - Start to run test.
+++ seq 1 10
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 61.9046 s, 8.5 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.435 s, 45.8 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ awk '{print$5}'
++ ls -l myfile20230525
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 61.6667 s, 8.5 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.3221 s, 46.3 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 61.9532 s, 8.5 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.6241 s, 45.1 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 61.8011 s, 8.5 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.3973 s, 46.0 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 62.3581 s, 8.4 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ awk '{print$5}'
++ ls -l myfile20230525
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.7333 s, 44.7 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 62.78 s, 8.4 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.5852 s, 45.3 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 62.7181 s, 8.4 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.6091 s, 45.2 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 63.0797 s, 8.3 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.3644 s, 46.1 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 62.5463 s, 8.4 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.6722 s, 44.9 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ dd if=/dev/urandom of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 62.5719 s, 8.4 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ dd if=/dev/zero of=myfile20230525 bs=1M count=500
+500+0 records in
+500+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 11.5151 s, 45.5 MB/s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ awk '{print$5}'
++ grep -w 524288000
+524288000
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ ls -l myfile20230525
+++ awk '{print$5}'
++ file_size=524288000
+++ seq 1 10
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf mycpfile20230525
++ cp myfile20230525 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l mycpfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 mycpfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ seq 1 10
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525.zip
++ zip myfile20230525.zip myfile20230525
+  adding: myfile20230525 (deflated 100%)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f myfile20230525.zip
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ seq 1 10
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 524288000
++ ls -l myfile20230525
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 524288000
++ ls -l myfile20230525
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for i in $(seq 1 10)
++ rm -rf myfile20230525
++ unzip myfile20230525.zip
+Archive:  myfile20230525.zip
+  inflating: myfile20230525          
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l myfile20230525
++ grep 524288000
+-rw-r--r-- 1 root root 524288000 May 25 19:12 myfile20230525
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 19:16:39 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 19:16:39 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 19:16:40 2023 - INFO  - Start to restore the test environment.
++ rm -rf myfile20230525 mycpfile20230525 myfile20230525.zip
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 19:16:41 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,104 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri May 26 00:50:06 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL diffstat
++ pkgs=diffstat
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs diffstat --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp3nrpt51t
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp3nrpt51t
++ mkdir diff_test1 diff_test2
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri May 26 00:50:28 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:50:29 2023 - INFO  - Start testing...
++ echo -e 'abc\n123\ndef'
++ echo -e 'abc\n123\ndef'
++ diff diff_test1 diff_test2
++ diffstat
++ grep '0 files changed'
+ 0 files changed
++ CHECK_RESULT 0 0 0 'The file content is abnormal'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The file content is abnormal'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo -e 'abc\n456\njqk'
++ diff diff_test1 diff_test2
++ diffstat
++ grep '2 insertions(+), 2 deletions(-)'
+ 1 file changed, 2 insertions(+), 2 deletions(-)
++ CHECK_RESULT 0 0 0 'The file content is abnormal'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The file content is abnormal'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:50:29 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:50:30 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri May 26 00:50:30 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp3nrpt51t ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp3nrpt51t
++ '[' 0 -ne 0 ']'
++ rm -rf diff_test1 diff_test2
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri May 26 00:50:39 2023 - INFO  - End to restore the test environment.

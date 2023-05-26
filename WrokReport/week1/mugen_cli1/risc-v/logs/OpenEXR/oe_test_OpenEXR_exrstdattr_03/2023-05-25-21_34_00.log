@@ -1,0 +1,159 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:34:02 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'OpenEXR OpenEXR-devel'
++ pkgs='OpenEXR OpenEXR-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'OpenEXR OpenEXR-devel' --node 1 --tempfile ''
+Thu May 25 21:34:09 2023 - INFO  - pkgs:(OpenEXR OpenEXR-devel) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:34:10 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:34:10 2023 - INFO  - Start to run test.
++ exrstdattr -wrapmodes 2 bind_29_1.exr test21
++ test -f test21
++ CHECK_RESULT 0 0 0 'Check exrstdattr -wrapmodes failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -wrapmodes failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -pixelAspectRatio 10 bind_29_1.exr test22
++ test -f test22
++ CHECK_RESULT 0 0 0 'Check exrstdattr -pixelAspectRatio failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -pixelAspectRatio failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -screenWindowWidth 10 bind_29_1.exr test23
++ test -f test23
++ CHECK_RESULT 0 0 0 'Check exrstdattr -screenWindowWidth failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -screenWindowWidth failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -screenWindowCenter 10 10 bind_29_1.exr test24
++ test -f test24
++ CHECK_RESULT 0 0 0 'Check exrstdattr -screenWindowCenter failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -screenWindowCenter failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -string s s bind_29_1.exr test25
++ test -f test25
++ CHECK_RESULT 0 0 0 'Check exrstdattr -string failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -string failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -float s f bind_29_1.exr test26
++ test -f test26
++ CHECK_RESULT 0 0 0 'Check exrstdattr -float failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -float failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -int s i bind_29_1.exr test27
++ test -f test27
++ CHECK_RESULT 0 0 0 'Check exrstdattr -int failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -int failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:34:12 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:34:13 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:34:13 2023 - INFO  - Start to restore the test environment.
++ rm -rf test21 test22 test23 test24 test25 test26 test27
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu May 25 21:34:14 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:34:14 2023 - INFO  - End to restore the test environment.

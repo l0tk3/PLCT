@@ -1,0 +1,199 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:22:41 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'OpenEXR OpenEXR-devel'
++ pkgs='OpenEXR OpenEXR-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'OpenEXR OpenEXR-devel' --node 1 --tempfile ''
+Thu May 25 21:22:47 2023 - INFO  - pkgs:(OpenEXR OpenEXR-devel) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:22:48 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:22:48 2023 - INFO  - Start to run test.
++ exrenvmap -u bind_29_1.exr test11
++ test -f test11
++ CHECK_RESULT 0 0 0 'Check exrenvmap -u failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrenvmap -u failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrenvmap -z zip bind_29_1.exr test12
++ test -f test12
++ CHECK_RESULT 0 0 0 'Check exrenvmap -z failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrenvmap -z failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrenvmap -v bind_29_1.exr test13
++ grep done
+done.
++ test -f test13
++ CHECK_RESULT 0 0 0 'Check exrenvmap -v failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrenvmap -v failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrenvmap -w 256 bind_29_1.exr test14
++ test -f test14
++ CHECK_RESULT 0 0 0 'Check exrenvmap -w failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrenvmap -w failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrenvmap -f 3 4 bind_29_1.exr test15
++ test -f test15
++ CHECK_RESULT 0 0 0 'Check exrenvmap -f failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrenvmap -f failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrenvmap -t 256 156 bind_29_1.exr test16
++ test -f test16
++ CHECK_RESULT 0 0 0 'Check exrenvmap -t failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrenvmap -t failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmakepreview -w 100 bind_29_1.exr test1
++ test -f test1
++ CHECK_RESULT 0 0 0 'Check exrmakepreview -w failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmakepreview -w failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmakepreview -e 2 bind_29_1.exr test2
++ test -f test2
++ CHECK_RESULT 0 0 0 'Check exrmakepreview -e failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmakepreview -e failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmakepreview -v bind_29_1.exr test3
++ grep done
+done.
++ CHECK_RESULT 0 0 0 'Check exrmakepreview -v failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmakepreview -v failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmakepreview -h
++ grep usage:
+usage: exrmakepreview [options] infile outfile
++ CHECK_RESULT 0 0 0 'Check exrmakepreview -h failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmakepreview -h failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:24:44 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:24:45 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:24:45 2023 - INFO  - Start to restore the test environment.
++ rm -rf test1 test11 test12 test13 test14 test15 test16 test2 test3
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu May 25 21:24:46 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:24:47 2023 - INFO  - End to restore the test environment.

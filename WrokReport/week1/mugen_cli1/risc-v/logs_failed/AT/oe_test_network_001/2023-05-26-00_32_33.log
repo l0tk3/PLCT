@@ -1,0 +1,261 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:32:36 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL net-tools
++ pkgs=net-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs net-tools --node 1 --tempfile ''
+Fri May 26 00:32:43 2023 - INFO  - pkgs:(net-tools) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:32:43 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:32:44 2023 - INFO  - Start testing...
++ systemctl restart NetworkManager
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status NetworkManager
++ grep 'Active: active'
+     Active: active (running) since Fri 2023-05-26 00:32:44 CST; 234ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nmcli connection show
++ grep ''
+NAME                UUID                                  TYPE      DEVICE  
+docker0             61cd647f-97a0-431d-a449-6109f606ea96  bridge    docker0 
+Wired connection 1  337edb01-999d-3410-a3a4-bd92b8d979ee  ethernet  eth0    
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep ''
++ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:11:45:02 brd ff:ff:ff:ff:ff:ff
+3: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+5: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether 02:42:e2:27:bd:c4 brd ff:ff:ff:ff:ff:ff
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep default
++ route
+default         _gateway        0.0.0.0         UG    100    0        0 eth0
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ethtool ''
+netlink error: no device matches name (offset 24)
+netlink error: No such device
+netlink error: no device matches name (offset 24)
+netlink error: No such device
+netlink error: no device matches name (offset 24)
+netlink error: No such device
+netlink error: no device matches name (offset 24)
+netlink error: No such device
+netlink error: no device matches name (offset 24)
+netlink error: No such device
+No data available
++ CHECK_RESULT 75
++ actual_result=75
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 75 ']'
++ '[' 0 -eq 0 ']'
++ test 75x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_network_001.sh line 43'
++ message='oe_test_network_001.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_network_001.sh line 43'
+Fri May 26 00:32:47 2023 - ERROR - oe_test_network_001.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig
++ grep ''
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:e2:27:bd:c4  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::9143:7476:af38:76d2  prefixlen 64  scopeid 0x20<link>
+        inet6 fec0::6a2:8e4c:d92:9756  prefixlen 64  scopeid 0x40<site>
+        ether 52:54:00:11:45:02  txqueuelen 1000  (Ethernet)
+        RX packets 633453  bytes 851273259 (811.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 50670  bytes 2956085 (2.8 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 221  bytes 47864 (46.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 221  bytes 47864 (46.7 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a show ''
++ grep 192.1.1.11
+Device "" does not exist.
++ ip addr add 192.1.1.11 dev ''
+Cannot find device ""
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_network_001.sh line 48'
++ message='oe_test_network_001.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_network_001.sh line 48'
+Fri May 26 00:32:48 2023 - ERROR - oe_test_network_001.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ ip a show ''
++ grep 192.1.1.11
+Device "" does not exist.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_network_001.sh line 50'
++ message='oe_test_network_001.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_network_001.sh line 50'
+Fri May 26 00:32:48 2023 - ERROR - oe_test_network_001.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:32:49 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri May 26 00:32:49 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:32:50 2023 - INFO  - start environment cleanup.
++ ip addr del 192.1.1.11 dev ''
+Warning: Executing wildcard deletion to stay compatible with old scripts.
+         Explicitly specify the prefix length (192.1.1.11/32) to avoid this warning.
+         This special behaviour is likely to disappear in further releases,
+         fix your scripts!
+Cannot find device ""
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri May 26 00:32:50 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:32:51 2023 - INFO  - Finish environment cleanup!

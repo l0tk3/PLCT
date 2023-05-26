@@ -1,0 +1,137 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu May 25 21:31:08 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL abrt-addon-pstoreoops
++ pkgs=abrt-addon-pstoreoops
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs abrt-addon-pstoreoops --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp2hi6kvq_
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp2hi6kvq_
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 21:31:45 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu May 25 21:31:46 2023 - INFO  - Start testing...
++ test_oneshot abrt-pstoreoops.service 'inactive (dead)'
++ service=abrt-pstoreoops.service
++ status='inactive (dead)'
++ systemctl status abrt-pstoreoops.service
++ grep Active
++ grep -v 'inactive (dead)'
++ CHECK_RESULT 1 0 1 'There is an error for the status of abrt-pstoreoops.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error for the status of abrt-pstoreoops.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_enabled abrt-pstoreoops.service
++ service=abrt-pstoreoops.service
+++ systemctl is-enabled abrt-pstoreoops.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable abrt-pstoreoops.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/abrt-pstoreoops.service
++ find /etc/systemd/system/multi-user.target.wants/abrt-pstoreoops.service
+/etc/systemd/system/multi-user.target.wants/abrt-pstoreoops.service
++ CHECK_RESULT 0 0 0 'abrt-pstoreoops.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='abrt-pstoreoops.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable abrt-pstoreoops.service
+Removed /etc/systemd/system/multi-user.target.wants/abrt-pstoreoops.service.
++ find /etc/systemd/system/multi-user.target.wants/abrt-pstoreoops.service
+find: ‘/etc/systemd/system/multi-user.target.wants/abrt-pstoreoops.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'abrt-pstoreoops.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='abrt-pstoreoops.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl -u abrt-pstoreoops.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of abrt-pstoreoops.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of abrt-pstoreoops.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu May 25 21:31:54 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:31:54 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 21:31:55 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp2hi6kvq_ ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp2hi6kvq_
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 21:32:11 2023 - INFO  - Finish environment cleanup!

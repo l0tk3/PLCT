@@ -1,0 +1,278 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:19:39 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'OpenEXR OpenEXR-devel'
++ pkgs='OpenEXR OpenEXR-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'OpenEXR OpenEXR-devel' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwv8c9uwp
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwv8c9uwp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:22:01 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:22:02 2023 - INFO  - Start to run test.
++ exrmultipart -combine -i bind_29_1.exr -o test1.exr -override 1
+input:
+      bind_29_1.exr
+output:
+      test1.exr
+override:1
+
+-combine multipart input 
+part 0: scanlineimage
+
+Combine Success
++ test -f test1.exr
++ CHECK_RESULT 0 0 0 'Check exrmultipart -combine -i failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultipart -combine -i failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmultipart -separate -i bind_29_1.exr -o test2 -override 1
+input:
+      bind_29_1.exr
+output:
+      test2
+override:1
+
+-separate multipart input 
+numOutputs: 1
+outputfilename: test2.1.exr
+scanlineimage
+
+Seperate Success
++ test -f test2.1.exr
++ CHECK_RESULT 0 0 0 'Check exrmultipart -separate -i failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultipart -separate -i failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmultipart -convert -i bind_29_1.exr -o test3.exr -override 1
+input:
+      bind_29_1.exr
+output:
+      test3.exr
+override:1
+
+-convert input to EXR2 multipart
++ test -f test3.exr
++ CHECK_RESULT 0 0 0 'Check exrmultipart -convert -i failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultipart -convert -i failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -rf test1.exr test2.1.exr test3.exr
++ exrmultipart -combine -i bind_29_1.exr -o test1.exr view test1.exr
+input:
+      bind_29_1.exr
+output:
+      test1.exr
+override:0
+
+-combine multipart input 
+part 0: scanlineimage
+
+Combine Success
++ test -f test1.exr
++ CHECK_RESULT 0 0 0 'Check exrmultipart -convert view failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultipart -convert view failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmultipart -separate -i bind_29_1.exr -o test2 view test2
+input:
+      bind_29_1.exr
+output:
+      test2
+override:0
+
+-separate multipart input 
+numOutputs: 1
+outputfilename: test2.1.exr
+scanlineimage
+
+Seperate Success
++ test -f test2.1.exr
++ CHECK_RESULT 0 0 0 'Check exrmultipart -convert view failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultipart -convert view failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmultipart -convert -i bind_29_1.exr -o test3.exr view test3.exr
+input:
+      bind_29_1.exr
+output:
+      test3.exr
+override:0
+
+-convert input to EXR2 multipart
++ test -f test3.exr
++ CHECK_RESULT 0 0 0 'Check exrmultipart -convert view failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultipart -convert view failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrheader bind_29_1.exr
++ grep 'file bind_29_1.exr:'
+file bind_29_1.exr:
++ CHECK_RESULT 0 0 0 'Check exrheader failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrheader failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrheader -h
++ grep usage:
+usage: exrheader imagefile [imagefile ...]
++ CHECK_RESULT 0 0 0 'Check exrheader -h failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrheader -h failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrenvmap -o bind_29_1.exr test.exr
++ CHECK_RESULT 0 0 0 'Check exrenvmap -o failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrenvmap -o failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmultiview -z pxr24 example bind_29_1.exr test11 test.exr test5
++ test -f test5
++ CHECK_RESULT 0 0 0 'Check exrmultiview -z failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultiview -z failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmultiview -v example bind_29_1.exr test22 test.exr test2
++ grep 'writing file test2'
+writing file test2
++ CHECK_RESULT 0 0 0 'Check exrmultiview -v failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultiview -v failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrmultiview -h
++ grep usage:
+usage: exrmultiview [options] viewname1 infile1 viewname2 infile2 ... outfile
++ CHECK_RESULT 0 0 0 'Check exrmultiview -h failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrmultiview -h failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:22:26 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:22:27 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:22:27 2023 - INFO  - Start to restore the test environment.
++ rm -rf test1.exr test2 test2.1.exr test3.exr test5 test.exr
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpwv8c9uwp ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwv8c9uwp
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:22:33 2023 - INFO  - End to restore the test environment.

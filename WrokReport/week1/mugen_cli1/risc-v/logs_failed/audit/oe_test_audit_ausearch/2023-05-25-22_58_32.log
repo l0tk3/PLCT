@@ -1,0 +1,200 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 22:58:35 2023 - INFO  - Start to prepare the test environment.
++ useradd uos1
++ chmod 755 /home/uos1
++ su - uos1 -c 'touch /home/uos1/testfile'
++ auditctl -w /home/uos1/testfile -p rwxa -k testfile_audit
+oe_test_audit_ausearch.sh: line 26: auditctl: command not found
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 22:58:38 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'start to run test.'
++ message='start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start to run test.'
+Thu May 25 22:58:39 2023 - INFO  - start to run test.
++ ausearch --format csv
+oe_test_audit_ausearch.sh: line 32: ausearch: command not found
++ CHECK_RESULT 127 0 0 'format check fail'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='format check fail'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'format check fail'
++ LOG_ERROR 'format check fail'
++ message='format check fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'format check fail'
+Thu May 25 22:58:39 2023 - ERROR - format check fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_ausearch.sh line 33'
++ message='oe_test_audit_ausearch.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_ausearch.sh line 33'
+Thu May 25 22:58:40 2023 - ERROR - oe_test_audit_ausearch.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ ausearch -m ADD_USER
+oe_test_audit_ausearch.sh: line 34: ausearch: command not found
++ CHECK_RESULT 127 0 0 'AVC check fail'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='AVC check fail'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'AVC check fail'
++ LOG_ERROR 'AVC check fail'
++ message='AVC check fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'AVC check fail'
+Thu May 25 22:58:40 2023 - ERROR - AVC check fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_ausearch.sh line 35'
++ message='oe_test_audit_ausearch.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_ausearch.sh line 35'
+Thu May 25 22:58:41 2023 - ERROR - oe_test_audit_ausearch.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ ausearch -ua uos1
+oe_test_audit_ausearch.sh: line 36: ausearch: command not found
++ CHECK_RESULT 127 0 0 'ua check fail'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='ua check fail'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'ua check fail'
++ LOG_ERROR 'ua check fail'
++ message='ua check fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ua check fail'
+Thu May 25 22:58:42 2023 - ERROR - ua check fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_ausearch.sh line 37'
++ message='oe_test_audit_ausearch.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_ausearch.sh line 37'
+Thu May 25 22:58:42 2023 - ERROR - oe_test_audit_ausearch.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ ausearch -f /home/uos1/testfile
+oe_test_audit_ausearch.sh: line 38: ausearch: command not found
++ CHECK_RESULT 127 0 0 'ausearch -f fail'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='ausearch -f fail'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'ausearch -f fail'
++ LOG_ERROR 'ausearch -f fail'
++ message='ausearch -f fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ausearch -f fail'
+Thu May 25 22:58:43 2023 - ERROR - ausearch -f fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_ausearch.sh line 39'
++ message='oe_test_audit_ausearch.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_ausearch.sh line 39'
+Thu May 25 22:58:43 2023 - ERROR - oe_test_audit_ausearch.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ ausearch -k testfile_audit
+oe_test_audit_ausearch.sh: line 40: ausearch: command not found
++ CHECK_RESULT 127 0 0 'testfile_audit check fail'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='testfile_audit check fail'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'testfile_audit check fail'
++ LOG_ERROR 'testfile_audit check fail'
++ message='testfile_audit check fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'testfile_audit check fail'
+Thu May 25 22:58:44 2023 - ERROR - testfile_audit check fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_ausearch.sh line 41'
++ message='oe_test_audit_ausearch.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_ausearch.sh line 41'
+Thu May 25 22:58:44 2023 - ERROR - oe_test_audit_ausearch.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ ausearch -sv yes
+oe_test_audit_ausearch.sh: line 42: ausearch: command not found
++ ausearch -sv no
+oe_test_audit_ausearch.sh: line 43: ausearch: command not found
++ CHECK_RESULT 127 0 0 'sv check fail'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='sv check fail'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'sv check fail'
++ LOG_ERROR 'sv check fail'
++ message='sv check fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'sv check fail'
+Thu May 25 22:58:45 2023 - ERROR - sv check fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_ausearch.sh line 44'
++ message='oe_test_audit_ausearch.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_ausearch.sh line 44'
+Thu May 25 22:58:45 2023 - ERROR - oe_test_audit_ausearch.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 22:58:46 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:58:47 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 22:58:47 2023 - INFO  - start environment cleanup.
++ userdel -rf uos1
++ auditctl -D
+oe_test_audit_ausearch.sh: line 52: auditctl: command not found
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 22:58:48 2023 - INFO  - Finish environment cleanup!

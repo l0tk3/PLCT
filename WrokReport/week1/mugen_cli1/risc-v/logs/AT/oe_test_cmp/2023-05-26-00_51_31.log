@@ -1,0 +1,153 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:51:33 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL diffutils
++ pkgs=diffutils
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs diffutils --node 1 --tempfile ''
+Fri May 26 00:51:40 2023 - INFO  - pkgs:(diffutils) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
+++ localectl status
+++ grep System
+++ awk -F = '{print $2}'
++ local=en_US.UTF-8
++ localectl set-locale LANG=zh_CN.utf8
++ source /etc/locale.conf
+++ LANG=zh_CN.utf8
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:51:42 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:51:42 2023 - INFO  - Start testing...
++ cmp --version
+cmp (GNU diffutils) 3.9
+Copyright © 2023 Free Software Foundation, Inc.
+许可证 GPLv3+：GNU 通用公共许可证第 3 版或更新版本 <https://gnu.org/licenses/gpl.html>。
+本软件是自由软件：您可以自由修改和重新发布它。
+在法律允许的范围内，不提供任何保证。
+
+由 Torbjörn Granlund 和 David MacKenzie 编写。
++ CHECK_RESULT 0 0 0 'The version information cannot be queried'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The version information cannot be queried'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat
++ cat
++ CHECK_RESULT 0 0 0 'Failed to create a file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to create a file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cp /opt/file1 /opt/file3
++ cmp /opt/file1 /opt/file3
++ CHECK_RESULT 0 0 0 'The two files have the same content,but the detection fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The two files have the same content,but the detection fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cmp /opt/file1 /opt/file2
++ grep 不同
+/opt/file1 /opt/file2 不同：第 11 字节（第 3 行）
++ CHECK_RESULT 0 0 0 'The contents of the files are different,but no difference is detected'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The contents of the files are different,but no difference is detected'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cmp -l file1 file2
++ grep 结束
+cmp: file1: No such file or directory
++ CHECK_RESULT 1 1 0 'Unable to display details'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Unable to display details'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:51:43 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:51:43 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:51:44 2023 - INFO  - start environment cleanup.
++ rm -rf /opt/file1 /opt/file2 /opt/file3
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Fri May 26 00:51:44 2023 - WARN  - no thing to do.
++ return 0
++ localectl set-locale LANG=en_US.UTF-8
++ source /etc/locale.conf
+++ LANG=en_US.UTF-8
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:51:45 2023 - INFO  - Finish environment cleanup!

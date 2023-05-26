@@ -1,0 +1,70 @@
+测试套/软件包名,测试用例名,日志文件,原因,Broken testcase,pkg not found,preinstall absent,kernel module absent,file missing,systemd unit restart failure,systemd unit runtime error,systemd unit enable failure,timeout
+openssh,oe_test_sec_jump_login,2023-05-24-21_49_47.log,,0,0,0,0,0,0,0,0,0
+openssh,oe_test_openssh_cipher,2023-05-24-21_46_07.log,,0,0,0,0,0,0,0,0,0
+openssh,oe_test_sec_ssh,2023-05-24-21_48_29.log,"file missing
+",0,0,0,0,1,0,0,0,0
+net-tools,oe_test_net-tools_ipmaddr,2023-05-24-21_50_48.log,,0,0,0,0,0,0,0,0,0
+net-tools,oe_test_net-tools_route,2023-05-24-21_50_25.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_expect,2023-05-25-03_29_17.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+os-basic,oe_test_libffi,2023-05-25-02_28_53.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+os-basic,oe_test_ProcMgmt_crontab_cmd,2023-05-24-23_27_02.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+os-basic,oe_test_basic_set_account_expiration_time,2023-05-25-00_40_50.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_gmp,2023-05-25-01_58_45.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+os-basic,oe_test_power_measurement_internal,2023-05-24-23_18_39.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_disk_io_sched,2023-05-25-04_59_41.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+os-basic,oe_test_power_powertop2tuned_optimize,2023-05-24-23_16_00.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_net_mtr,2023-05-25-01_24_05.log,"timeout
+",0,0,0,0,0,0,0,0,1
+os-basic,oe_test_ntp_set_date_time,2023-05-25-00_44_37.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_disk_schedule_specific,2023-05-24-23_31_44.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_nmcli_set_team,2023-05-25-00_40_33.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_disk_graphics_card,2023-05-25-00_39_41.log,"file missing
+",0,0,0,0,1,0,0,0,0
+os-basic,oe_test_libunistring,2023-05-25-02_59_01.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+os-basic,oe_test_bsdcat,2023-05-24-21_49_48.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+os-basic,oe_test_server_squid_blacklist,2023-05-24-22_00_32.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_auditctl,2023-05-24-21_48_48.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+os-basic,oe_test_awk,2023-05-24-21_47_19.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_auditc_01,2023-05-25-01_28_37.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+os-basic,oe_test_kernel_kdump,2023-05-25-00_02_24.log,"file missing
+",0,0,0,0,1,0,0,0,0
+os-basic,oe_test_du,2023-05-25-01_27_37.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_system_log_recorded,2023-05-24-21_51_57.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+os-basic,oe_test_whatis,2023-05-25-01_28_25.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_tcl,2023-05-25-04_29_33.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+os-basic,oe_test_nmcli_set_bond,2023-05-25-00_38_47.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+os-basic,oe_test_system_monitor_share_total,2023-05-25-00_39_31.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_server_openssh_verifykey,2023-05-24-22_03_28.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+os-basic,oe_test_disk_schedule_udev,2023-05-24-23_32_00.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+os-basic,oe_test_xmlsec,2023-05-25-03_59_25.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+os-basic,oe_test_who,2023-05-24-21_46_06.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_more,2023-05-25-00_46_21.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+os-basic,oe_test_zlib,2023-05-25-00_43_47.log,"file missing
+",0,0,0,0,1,0,0,0,0
+os-basic,oe_test_sos,2023-05-24-22_43_13.log,"timeout
+",0,0,0,0,0,0,0,0,1
+os-basic,oe_test_IOaccess_1Gfile,2023-05-25-00_07_04.log,"timeout
+",0,0,0,0,0,0,0,0,1
+os-basic,oe_test_power_powertop_powerup,2023-05-24-23_14_16.log,,0,0,0,0,0,0,0,0,0
+os-basic,oe_test_shred,2023-05-25-02_59_09.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+os-basic,oe_test_fuse,2023-05-24-21_48_07.log,,0,0,0,0,0,0,0,0,0

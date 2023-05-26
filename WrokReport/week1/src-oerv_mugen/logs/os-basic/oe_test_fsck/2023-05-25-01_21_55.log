@@ -1,0 +1,156 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start loading data!'
++ message='Start loading data!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start loading data!'
+Thu May 25 01:21:57 2023 - INFO  - Start loading data!
+++ TEST_DISK 1
+++ id=1
+++ python3 /root/mugen/libs/locallibs/get_test_device.py --device disk --node 1
++ TEST_DISK=/dev/vdb
++ LOG_INFO 'Loading data is complete!'
++ message='Loading data is complete!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Loading data is complete!'
+Thu May 25 01:22:04 2023 - INFO  - Loading data is complete!
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu May 25 01:22:04 2023 - INFO  - Start environmental preparation.
++ echo -e 'n\np\n\n\n\nw'
++ fdisk /dev/vdb
+
+Welcome to fdisk (util-linux 2.37.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x5227ecdc.
+
+Command (m for help): Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): Partition number (1-4, default 1): First sector (2048-1023999, default 2048): Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-1023999, default 1023999): 
+Created a new partition 1 of type 'Linux' and of size 499 MiB.
+
+Command (m for help): The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
++ mkfs.ext4 /dev/vdb1
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/510976             done                            
+Creating filesystem with 510976 1k blocks and 127512 inodes
+Filesystem UUID: 93202ee3-ab45-4363-8206-3fbb8c51ea90
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729, 204801, 221185, 401409
+
+Allocating group tables:  0/63     done                            
+Writing inode tables:  0/63     done                            
+Creating journal (8192 blocks): done
+Writing superblocks and filesystem accounting information:  0/63     done
+
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 01:22:05 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu May 25 01:22:05 2023 - INFO  - Start executing testcase.
++ fsck -t msdos -a /dev/vdb1
++ grep fsck
+fsck from util-linux 2.37.2
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ fsck.minix /dev/vdb1
++ grep fsck.minix
+fsck.minix from util-linux 2.37.2
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu May 25 01:22:06 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 01:22:07 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 01:22:07 2023 - INFO  - start environment cleanup.
++ mkfs.ext4 /dev/vdb1 -F
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/510976             done                            
+Creating filesystem with 510976 1k blocks and 127512 inodes
+Filesystem UUID: 4e7fd5f5-d123-4fbb-8fd3-da52c7dfbfe6
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729, 204801, 221185, 401409
+
+Allocating group tables:  0/63     done                            
+Writing inode tables:  0/63     done                            
+Creating journal (8192 blocks): done
+Writing superblocks and filesystem accounting information:  0/63     done
+
++ echo -e 'd\n\nw'
++ fdisk /dev/vdb
+
+Welcome to fdisk (util-linux 2.37.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): Selected partition 1
+Partition 1 has been deleted.
+
+Command (m for help): 
+
+Command (m for help): 
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 01:22:08 2023 - INFO  - Finish environment cleanup!

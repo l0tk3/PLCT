@@ -1,0 +1,103 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Fri May 26 01:19:50 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'at bc'
++ pkgs='at bc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'at bc' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwfogehpg
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwfogehpg
++ systemctl start atd
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Fri May 26 01:20:17 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri May 26 01:20:17 2023 - INFO  - Start to run test.
++ date +%M
++ expect
+spawn at now+1 minutes
+warning: commands will be executed using /bin/sh
+at Fri May 26 01:21:00 2023
+at> date +%M >/tmp/timelog2
+at> <EOT>
+job 1 at Fri May 26 01:21:00 2023
++ SLEEP_WAIT 60
++ wait_time=60
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 60 --cmd '' --mode 1
++ bc
++ grep 1
+++ cat /tmp/timelog1
+++ cat /tmp/timelog2
++ echo 20-21
+-1
++ CHECK_RESULT 0 0 0 'Failed to execute at'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute at'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri May 26 01:21:19 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 01:21:20 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri May 26 01:21:20 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/timelog1 /tmp/timelog2
++ systemctl stop atd
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpwfogehpg ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwfogehpg
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri May 26 01:21:33 2023 - INFO  - End to restore the test environment.

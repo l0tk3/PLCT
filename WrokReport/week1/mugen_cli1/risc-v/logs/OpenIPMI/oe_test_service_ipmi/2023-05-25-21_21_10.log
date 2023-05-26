@@ -1,0 +1,310 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu May 25 21:21:13 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL OpenIPMI
++ pkgs=OpenIPMI
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs OpenIPMI --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp7t065zmf
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp7t065zmf
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 21:21:42 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu May 25 21:21:43 2023 - INFO  - Start testing...
++ test_execution ipmi.service
++ service=ipmi.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-05-25 21:21:43'
++ test_restart ipmi.service
++ service=ipmi.service
++ systemctl restart ipmi.service
+Job for ipmi.service failed because the control process exited with error code.
+See "systemctl status ipmi.service" and "journalctl -xeu ipmi.service" for details.
++ CHECK_RESULT 1 0 0 'ipmi.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmi.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmi.service restart failed'
++ LOG_ERROR 'ipmi.service restart failed'
++ message='ipmi.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmi.service restart failed'
+Thu May 25 21:21:44 2023 - ERROR - ipmi.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Thu May 25 21:21:45 2023 - ERROR - ../common/common_lib.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipmi.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'ipmi.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmi.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmi.service restart failed'
++ LOG_ERROR 'ipmi.service restart failed'
++ message='ipmi.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmi.service restart failed'
+Thu May 25 21:21:51 2023 - ERROR - ipmi.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Thu May 25 21:21:52 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop ipmi.service
++ CHECK_RESULT 0 0 0 'ipmi.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ipmi.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipmi.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'ipmi.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmi.service stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmi.service stop failed'
++ LOG_ERROR 'ipmi.service stop failed'
++ message='ipmi.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmi.service stop failed'
+Thu May 25 21:21:58 2023 - ERROR - ipmi.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Thu May 25 21:21:59 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start ipmi.service
+Job for ipmi.service failed because the control process exited with error code.
+See "systemctl status ipmi.service" and "journalctl -xeu ipmi.service" for details.
++ CHECK_RESULT 1 0 0 'ipmi.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmi.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmi.service start failed'
++ LOG_ERROR 'ipmi.service start failed'
++ message='ipmi.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmi.service start failed'
+Thu May 25 21:22:01 2023 - ERROR - ipmi.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Thu May 25 21:22:01 2023 - ERROR - ../common/common_lib.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipmi.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'ipmi.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmi.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmi.service start failed'
++ LOG_ERROR 'ipmi.service start failed'
++ message='ipmi.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmi.service start failed'
+Thu May 25 21:22:08 2023 - ERROR - ipmi.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Thu May 25 21:22:08 2023 - ERROR - ../common/common_lib.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ test_enabled ipmi.service
++ service=ipmi.service
+++ systemctl is-enabled ipmi.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable ipmi.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/ipmi.service
++ find /etc/systemd/system/multi-user.target.wants/ipmi.service
+/etc/systemd/system/multi-user.target.wants/ipmi.service
++ CHECK_RESULT 0 0 0 'ipmi.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ipmi.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable ipmi.service
+Removed /etc/systemd/system/multi-user.target.wants/ipmi.service.
++ find /etc/systemd/system/multi-user.target.wants/ipmi.service
+find: ‘/etc/systemd/system/multi-user.target.wants/ipmi.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'ipmi.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ipmi.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-05-25 21:21:43' -u ipmi.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+May 25 21:21:44 openeuler-riscv64 openipmi-helper[482]: Startup failed.
+May 25 21:21:44 openeuler-riscv64 systemd[1]: ipmi.service: Failed with result 'exit-code'.
+May 25 21:21:44 openeuler-riscv64 systemd[1]: Failed to start IPMI Driver.
+May 25 21:22:00 openeuler-riscv64 openipmi-helper[527]: Startup failed.
+May 25 21:22:00 openeuler-riscv64 systemd[1]: ipmi.service: Failed with result 'exit-code'.
+May 25 21:22:00 openeuler-riscv64 systemd[1]: Failed to start IPMI Driver.
++ CHECK_RESULT 0 0 1 'There is an error message for the log of ipmi.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of ipmi.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of ipmi.service'
++ LOG_ERROR 'There is an error message for the log of ipmi.service'
++ message='There is an error message for the log of ipmi.service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of ipmi.service'
+Thu May 25 21:22:15 2023 - ERROR - There is an error message for the log of ipmi.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Thu May 25 21:22:16 2023 - ERROR - ../common/common_lib.sh line 28
++ '[' 0 -eq 1 ']'
++ return 0
++ test_reload ipmi.service
++ service=ipmi.service
++ systemctl start ipmi.service
+Job for ipmi.service failed because the control process exited with error code.
+See "systemctl status ipmi.service" and "journalctl -xeu ipmi.service" for details.
++ systemctl reload ipmi.service
++ grep 'Job type reload is not applicable'
+Failed to reload ipmi.service: Job type reload is not applicable for unit ipmi.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit ipmi.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit ipmi.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status ipmi.service
++ grep 'Active: active'
++ systemctl status ipmi.service
++ grep 'inactive (dead)'
++ return 1
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu May 25 21:22:18 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 21:22:19 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 21:22:19 2023 - INFO  - start environment cleanup.
++ systemctl stop ipmi.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp7t065zmf ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp7t065zmf
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 21:22:31 2023 - INFO  - Finish environment cleanup!

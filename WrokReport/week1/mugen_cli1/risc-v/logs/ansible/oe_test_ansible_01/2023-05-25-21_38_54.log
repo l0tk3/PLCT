@@ -1,0 +1,362 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ main
++++ type -t post_test
+++ '[' -n '' ']'
+++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
+++ rpm -qa
+++ grep expect
++++ type -t config_params
+++ '[' -n '' ']'
++++ type -t pre_test
+++ '[' -n '' ']'
++++ type -t run_test
+++ '[' -n '' ']'
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:38:57 2023 - INFO  - Start to prepare the test environment.
++ Pre_Test
++ DNF_INSTALL ansible
++ pkgs=ansible
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs ansible --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpxru5mlr4
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpxru5mlr4
++ sed -i '1i\${NODE2_IPV4}' /etc/ansible/hosts
++ expect
+spawn ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:TLcJ47MNlvbuvcVBG7eoBdqDIb2Ezi0y47pSjwd8ijg root@openeuler-riscv64
+The key's randomart image is:
++---[RSA 3072]----+
+|                 |
+|        o        |
+|       o++..  o .|
+|      o++=*o...+.|
+|  .  + +S=oo oo. |
+|   +..+o.*  +. . |
+|. o *.  . o.  o  |
+|Eo o.o   . . .   |
+| ..oo    .o o.   |
++----[SHA256]-----+
++ expect
+spawn ssh-copy-id root@
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: ERROR: ssh: Could not resolve hostname : Name or service not known
+
+send: spawn id exp3 not open
+    while executing
+"send "yes\n""
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:40:25 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:40:25 2023 - INFO  - Start to run test.
++ ansible --version
++ grep ansible
+ansible 2.9.27
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.10/site-packages/ansible
+  executable location = /usr/bin/ansible
++ CHECK_RESULT 0 0 0 'Check ansible --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible --help
++ grep -i Usage:
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
++ CHECK_RESULT 0 0 0 'Check ansible --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible -m ping all|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible -m ping all|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible -m ping all|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -mfailed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -mfailed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -m ping -u root|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible all -m ping -u root|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -m ping -u root|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m ping failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m ping failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -e "ansible-python-interpreter=auto-legacy-silent" -m ping|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible all -e "ansible-python-interpreter=auto-legacy-silent" -m ping|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -e "ansible-python-interpreter=auto-legacy-silent" -m ping|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -e failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -e failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible -a "echo hello" |grep "hello"' 2
++ wait_time=5
++ cmd='ansible -a "echo hello" |grep "hello"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible -a "echo hello" |grep "hello"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -a failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -a failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible '\''*'\'' -m command -a '\''uptime'\''|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible '\''*'\'' -m command -a '\''uptime'\''|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible '\''*'\'' -m command -a '\''uptime'\''|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m update failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m update failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible -m command -a "date -R" |grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible -m command -a "date -R" |grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible -m command -a "date -R" |grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m date -R failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m date -R failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible -m shell -a '\''ps -ef|grep sshd|grep -v grep'\''  -v|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible -m shell -a '\''ps -ef|grep sshd|grep -v grep'\''  -v|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible -m shell -a '\''ps -ef|grep sshd|grep -v grep'\''  -v|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m shell failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m shell failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -m group -a '\''gid=2017 name=a'\''|grep "present"' 2
++ wait_time=5
++ cmd='ansible all -m group -a '\''gid=2017 name=a'\''|grep "present"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -m group -a '\''gid=2017 name=a'\''|grep "present"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m group failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m group failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -m user -a '\''name=aaa groups=a state=present'\''|grep ""name": "aaa","' 2
++ wait_time=5
++ cmd='ansible all -m user -a '\''name=aaa groups=a state=present'\''|grep ""name": "aaa","'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -m user -a '\''name=aaa groups=a state=present'\''|grep ""name": "aaa","' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m user failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m user failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -m user -a '\''name=aaa groups=a remove=yes'\''|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible all -m user -a '\''name=aaa groups=a remove=yes'\''|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -m user -a '\''name=aaa groups=a remove=yes'\''|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m -a remove failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m -a remove failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -m raw -a "ps aux|grep zabbix|awk '\''{print $2}'\''"|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible all -m raw -a "ps aux|grep zabbix|awk '\''{print $2}'\''"|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -m raw -a "ps aux|grep zabbix|awk '\''{print $2}'\''"|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m raw failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m raw failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -m copy -a "src=/opt/test dest=./" -vv|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible all -m copy -a "src=/opt/test dest=./" -vv|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -m copy -a "src=/opt/test dest=./" -vv|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m -vv failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m -vv failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -m group -a "name=jason10 system=yes gid=5000"|grep ""name": "jason10","' 2
++ wait_time=5
++ cmd='ansible all -m group -a "name=jason10 system=yes gid=5000"|grep ""name": "jason10","'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -m group -a "name=jason10 system=yes gid=5000"|grep ""name": "jason10","' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -m system=yes failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -m system=yes failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible all -m shell -a "chdir=. touch f2" -vv|grep "SUCCESS"' 2
++ wait_time=5
++ cmd='ansible all -m shell -a "chdir=. touch f2" -vv|grep "SUCCESS"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible all -m shell -a "chdir=. touch f2" -vv|grep "SUCCESS"' --mode 2
++ CHECK_RESULT 0 0 0 'Check ansible -vv -a failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible -vv -a failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:51:29 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:51:29 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:51:30 2023 - INFO  - Start to restore the test environment.
++ Post_Test
++ rm -rf /etc/ansible/hosts
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpxru5mlr4 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpxru5mlr4
++ '[' 0 -ne 0 ']'
++ rm -rf /root/.ssh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:51:57 2023 - INFO  - End to restore the test environment.

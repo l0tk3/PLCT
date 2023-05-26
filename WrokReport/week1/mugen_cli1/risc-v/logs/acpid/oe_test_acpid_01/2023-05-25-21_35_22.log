@@ -1,0 +1,304 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:35:25 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL acpid
++ pkgs=acpid
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs acpid --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpclozo6t8
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpclozo6t8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:35:50 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:35:51 2023 - INFO  - Start to run test.
++ acpid -v
++ grep 'invalid option'
++ acpid -v
++ grep 'acpid-[0-9]*.*'
+acpid-2.0.34
++ CHECK_RESULT 0 0 0 'Failed option: -v'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -v'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ acpid -h
++ grep 'invalid option'
++ acpid -h
++ grep 'Usage: acpid \[OPTIONS\]'
+Usage: acpid [OPTIONS]
++ CHECK_RESULT 0 0 0 'Failed option: -h'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -h'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn acpid -f
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
+starting up with netlink and the input layer
+^Cexiting
++ CHECK_RESULT 0 0 0 'Failed option: -f'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -f'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn acpid -lf
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
+starting up with netlink and the input layer
+1 rule loaded
+waiting for events: event logging is on
+^Cexiting
++ CHECK_RESULT 0 0 0 'Failed option: -l'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -l'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn acpid -df
+Deprecated /proc/acpi/event was not found.  Trying netlink and the input layer...
+inotify fd: 3
+inotify wd: 1
+input layer /dev/input/event0 (QEMU QEMU USB Keyboard) opened successfully, fd 4
+^C+ CHECK_RESULT 0 0 0 'Failed option: -d'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -d'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn acpid -ndf
+inotify fd: 3
+inotify wd: 1
+input layer /dev/input/event0 (QEMU QEMU USB Keyboard) opened successfully, fd 4
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
+netlink opened successfully
+starting up with netlink and the input layer
+^Cparsing conf file /etc/acpi/events/powerconf
+exiting
++ CHECK_RESULT 0 0 0 'Failed option: -n'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -n'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'Deprecated /proc/acpi/event was not found.' test
++ CHECK_RESULT 1 1 0 'Failed option: -n'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed option: -n'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ rm -f ./test
++ ls -al /run/
++ grep acpid.socket
++ grep root
+srw-rw-rw-  1 root root      0 May 25 21:35 acpid.socket
++ CHECK_RESULT 0 0 0 'acpid.socket is not found'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.socket is not found'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ groupadd test
++ acpid -g test
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
++ ls -al /run/
++ grep acpid.socket
++ grep test
+srw-rw-rw-  1 root test      0 May 25 21:35 acpid.socket
++ CHECK_RESULT 0 0 0 'Failed option: -g'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -g'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ acpid -g root
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
++ groupdel test
++ ls -al /run/
++ grep acpid.socket
++ grep srw-rw-rw-
+srw-rw-rw-  1 root root      0 May 25 21:35 acpid.socket
++ CHECK_RESULT 0 0 0 'Failed option: -m'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -m'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ acpid -m 0777
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
++ ls -al /run/
++ grep acpid.socket
++ grep srwxrwxrwx
+srwxrwxrwx  1 root root      0 May 25 21:35 acpid.socket
++ CHECK_RESULT 0 0 0 'Failed option: -m'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -m'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ acpid -m 0666
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
++ acpid -p /run/acpid.test.pid
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
++ ls -al /run/
++ grep acpid.test.pid
+-rw-r--r--  1 root root      4 May 25 21:36 acpid.test.pid
++ CHECK_RESULT 0 0 0 'Failed option: -p'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -p'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /run/acpid.test.pid
++ acpid -p /run/acpid.pid
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
+RTNETLINK1 answers: No such file or directory
+acpid: error talking to the kernel via netlink
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:36:04 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:36:05 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:36:05 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpclozo6t8 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpclozo6t8
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:36:17 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,237 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start to config params of the case.'
++ message='Start to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to config params of the case.'
+Fri May 26 00:32:59 2023 - INFO  - Start to config params of the case.
++ test_user=nfs_test_16231
++ server_dir=/home/nfs_server_16231
++ client_dir=/home/nfs_client_16231
++ LOG_INFO 'End to config params of the case.'
++ message='End to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to config params of the case.'
+Fri May 26 00:32:59 2023 - INFO  - End to config params of the case.
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Fri May 26 00:33:00 2023 - INFO  - Start environment preparation.
++ OLD_LANG=en_US.UTF-8
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ DNF_INSTALL 'nfs-utils nfs4-acl-tools'
++ pkgs='nfs-utils nfs4-acl-tools'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'nfs-utils nfs4-acl-tools' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpe3_xzi_5
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpe3_xzi_5
++ useradd nfs_test_16231
++ mkdir /home/nfs_server_16231 /home/nfs_client_16231
++ test -f /etc/exports
++ cp /etc/exports .
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Fri May 26 00:33:22 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:33:22 2023 - INFO  - Start testing...
++ echo '/home/nfs_server_16231 *(rw,sync,no_root_squash)'
++ systemctl restart nfs-server
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status nfs-server
++ grep 'Active: active'
+     Active: active (exited) since Fri 2023-05-26 00:33:24 CST; 235ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart rpcbind
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status rpcbind
++ grep 'Active: active'
+     Active: active (running) since Fri 2023-05-26 00:33:24 CST; 123ms ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ showmount -e localhost
++ grep -w /home/nfs_server_16231
+/home/nfs_server_16231 *
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mount -t nfs4 localhost:/home/nfs_server_16231 /home/nfs_client_16231
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo 16231
++ diff /home/nfs_server_16231/file /home/nfs_client_16231/file
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chmod 640 /home/nfs_client_16231/file
++ sudo -u nfs_test_16231 cat /home/nfs_client_16231/file
++ grep 'Permission denied' /tmp/error.log
+cat: /home/nfs_client_16231/file: Permission denied
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ id -u nfs_test_16231
++ uid=1001
++ nfs4_setfacl -a A::1001:r /home/nfs_client_16231/file
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nfs4_getfacl /home/nfs_client_16231/file
++ grep A::1001:r
+A::1001:rtcy
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sudo -u nfs_test_16231 cat /home/nfs_client_16231/file
+16231
++ umount /home/nfs_client_16231
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:33:26 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:33:27 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Fri May 26 00:33:27 2023 - INFO  - start environment cleanup.
++ umount /home/nfs_client_16231
+umount: /home/nfs_client_16231: not mounted.
++ rm -rf /home/nfs_client_16231 /home/nfs_server_16231
++ userdel -r nfs_test_16231
++ rm -f /tmp/error.log
++ test -f exports
++ mv exports /etc/exports
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpe3_xzi_5 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpe3_xzi_5
++ '[' 0 -ne 0 ']'
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Fri May 26 00:33:36 2023 - INFO  - Finish environment cleanup!

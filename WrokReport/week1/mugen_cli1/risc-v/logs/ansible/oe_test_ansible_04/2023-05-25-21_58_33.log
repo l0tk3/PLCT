@@ -1,0 +1,295 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ main
++++ type -t post_test
+++ '[' -n '' ']'
+++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
+++ rpm -qa
+++ grep expect
++++ type -t config_params
+++ '[' -n '' ']'
++++ type -t pre_test
+++ '[' -n '' ']'
++++ type -t run_test
+++ '[' -n '' ']'
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:58:36 2023 - INFO  - Start to prepare the test environment.
++ Pre_Test
++ DNF_INSTALL ansible
++ pkgs=ansible
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs ansible --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp9pd5yde3
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp9pd5yde3
++ sed -i '1i\${NODE2_IPV4}' /etc/ansible/hosts
++ expect
+spawn ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:OSaNshQddAyh1Rv+mlehjjGbVLBd5WdY/q4uSVEoAjc root@openeuler-riscv64
+The key's randomart image is:
++---[RSA 3072]----+
+|     .B*E    o. .|
+|     + +*.. o..+ |
+|    o .. B o .o +|
+|     . o+.o o  o.|
+|    o o So . o  .|
+|   . o o+.o o  . |
+|    .  . X o .  .|
+|        * o o  . |
+|         .   oo  |
++----[SHA256]-----+
++ expect
+spawn ssh-copy-id root@
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: ERROR: ssh: Could not resolve hostname : Name or service not known
+
+send: spawn id exp3 not open
+    while executing
+"send "yes\n""
++ echo ''
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 22:00:18 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 22:00:19 2023 - INFO  - Start to run test.
++ ansible-inventory --help
++ grep -i Usage:
+usage: ansible-inventory [-h] [--version] [-v] [-i INVENTORY]
++ CHECK_RESULT 0 0 0 'Check ansible-inventory --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-inventory --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-inventory --version
++ grep ansible-inventory
+ansible-inventory 2.9.27
+  executable location = /usr/bin/ansible-inventory
++ CHECK_RESULT 0 0 0 'Check ansible-inventory --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-inventory --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn ansible-console
+exit
+Welcome to the ansible console.
+Type help or ? to list commands.
+
+root@all (1)[f:5]$ exit
+
++ CHECK_RESULT 0 0 0 'Check ansible-console failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-console failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn ansible-console --ask-vault-pass
+Vault password: 
+[WARNING]: Error in vault password prompt (default): Invalid vault password was
+provided
+ERROR! Invalid vault password was provided
+send: spawn id exp3 not open
+    while executing
+"send "exit\n""
++ CHECK_RESULT 1 0 0 'Check ansible-console --ask-vault-pass failed.'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ansible-console --ask-vault-pass failed.'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ansible-console --ask-vault-pass failed.'
++ LOG_ERROR 'Check ansible-console --ask-vault-pass failed.'
++ message='Check ansible-console --ask-vault-pass failed.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ansible-console --ask-vault-pass failed.'
+Thu May 25 22:00:49 2023 - ERROR - Check ansible-console --ask-vault-pass failed.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ansible_04.sh line 46'
++ message='oe_test_ansible_04.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ansible_04.sh line 46'
+Thu May 25 22:00:50 2023 - ERROR - oe_test_ansible_04.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ expect
+spawn ansible-console --vault-password-file=/tmp/pass
+exit
+[WARNING]: Error in vault password file loading (default): Invalid vault
+password was provided from file (/tmp/pass)
+ERROR! Invalid vault password was provided from file (/tmp/pass)
++ CHECK_RESULT 0 0 0 'Check ansible-console --vault-password failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-console --vault-password failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-playbook --help
++ grep -i Usage:
+usage: ansible-playbook [-h] [--version] [-v] [-k]
++ CHECK_RESULT 0 0 0 'Check ansible-playbook --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-playbook --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-playbook --version
++ grep ansible-playbook
+ansible-playbook 2.9.27
+  executable location = /usr/bin/ansible-playbook
++ CHECK_RESULT 0 0 0 'Check ansible-playbook --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-playbook --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-pull --help
++ grep -i Usage:
+usage: ansible-pull [-h] [--version] [-v] [-k]
++ CHECK_RESULT 0 0 0 'Check ansible-pull --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-pull --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-pull --version
++ grep ansible-pull
+ansible-pull 2.9.27
+  executable location = /usr/bin/ansible-pull
++ CHECK_RESULT 0 0 0 'Check ansible-pull --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-pull --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-vault --help
++ grep -i Usage:
+usage: ansible-vault [-h] [--version] [-v]
++ CHECK_RESULT 0 0 0 'Check ansible-vault --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-vault --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-vault --version
++ grep ansible-vault
+ansible-vault 2.9.27
+  executable location = /usr/bin/ansible-vault
++ CHECK_RESULT 0 0 0 'Check ansible-vault --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-vault --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 22:01:33 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:01:33 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 22:01:34 2023 - INFO  - Start to restore the test environment.
++ Post_Test
++ rm -rf /etc/ansible/hosts
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp9pd5yde3 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp9pd5yde3
++ '[' 0 -ne 0 ']'
++ rm -rf /root/.ssh
++ rm -rf /tmp/pass
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 22:02:02 2023 - INFO  - End to restore the test environment.

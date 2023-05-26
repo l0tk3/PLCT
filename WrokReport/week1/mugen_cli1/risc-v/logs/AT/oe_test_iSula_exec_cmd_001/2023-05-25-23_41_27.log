@@ -1,0 +1,121 @@
++ source ../common/prepare_isulad.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu May 25 23:41:30 2023 - INFO  - Start environment preparation.
++ pre_isulad_env
++ DNF_INSTALL 'iSulad tar wget'
++ pkgs='iSulad tar wget'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'iSulad tar wget' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmps8t4_f_k
++ '[' -z '' ']'
++ tmpfile=/tmp/tmps8t4_f_k
++ clean_isulad_env
+++ isula ps -aq
++ isula stop
+Stop requires minimum of 1 container name
+++ isula ps -aq
++ isula rm
+"isula rm" requires at least 1 argument(s).
+See 'isula rm --help'.
+++ isula images -q
++ isula rmi
+"rmi" requires at least 1 image names
+++ isula images -q
++ test -z ''
++ rm -rf ../common/openEuler-docker.riscv64.tar.xz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -i version= /etc/os-release
++ awk -F '"' '{print$2}'
++ grep '('
++ grep -i version= /etc/os-release
++ awk -F '"' '{print$2}'
++ grep LTS
+++ grep -i version= /etc/os-release
+++ awk -F '"' '{print$2}'
++ os_version=23.03
++ wget -P ../common/ https://repo.openeuler.org/openEuler-23.03/docker_img/riscv64/openEuler-docker.riscv64.tar.xz
+--2023-05-25 23:42:25--  https://repo.openeuler.org/openEuler-23.03/docker_img/riscv64/openEuler-docker.riscv64.tar.xz
+Resolving repo.openeuler.org (repo.openeuler.org)... 49.0.230.196
+Connecting to repo.openeuler.org (repo.openeuler.org)|49.0.230.196|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2023-05-25 23:42:25 ERROR 404: Not Found.
+
++ isula load -i ../common/openEuler-docker.riscv64.tar.xz
+File /root/mugen/testcases/smoke-test/smoke-iSulad/oe_test_iSula_exec_cmd_001/../common/openEuler-docker.riscv64.tar.xz is not exist
+++ isula images
+++ grep latest
+++ awk '{print$1}'
++ Images_name=
++ test -n ''
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 23:42:27 2023 - INFO  - start environment cleanup.
++ clean_isulad_env
+++ isula ps -aq
++ isula stop
+Stop requires minimum of 1 container name
+++ isula ps -aq
++ isula rm
+"isula rm" requires at least 1 argument(s).
+See 'isula rm --help'.
+++ isula images -q
++ isula rmi
+"rmi" requires at least 1 image names
+++ isula images -q
++ test -z ''
++ rm -rf ../common/openEuler-docker.riscv64.tar.xz
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmps8t4_f_k ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmps8t4_f_k
++ '[' 0 -ne 0 ']'
++ rm -rf testlog
++ LOG_INFO 'Finish environment cleanup.'
++ message='Finish environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup.'
+Thu May 25 23:42:46 2023 - INFO  - Finish environment cleanup.

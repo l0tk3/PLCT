@@ -1,0 +1,108 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start to config params of the case.'
++ message='Start to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to config params of the case.'
+Fri May 26 00:45:10 2023 - INFO  - Start to config params of the case.
++ ls '/run/log/journal/*'
+ls: cannot access '/run/log/journal/*': No such file or directory
++ path=var
+++ ls /var/log/journal/
+++ head -n 1
++ folder=7102c13a6be44f418d1f09210bcfbfd9
++ LOG_INFO 'End to config params of the case.'
++ message='End to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to config params of the case.'
+Fri May 26 00:45:11 2023 - INFO  - End to config params of the case.
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri May 26 00:45:11 2023 - INFO  - Start to run test.
++ grep Storage /etc/systemd/journald.conf
++ egrep 'Storage=auto|Storage=persistent'
+egrep: warning: egrep is obsolescent; using grep -E
+#Storage=auto
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cp -r /var/log/journal/7102c13a6be44f418d1f09210bcfbfd9 /var/log/journal/7102c13a6be44f418d1f09210bcfbfd9bak
++ rm -rf /var/log/journal/7102c13a6be44f418d1f09210bcfbfd9
++ systemctl restart systemd-journald.service
++ '[' '!' -d /var/log/journal/7102c13a6be44f418d1f09210bcfbfd9 ']'
+++ ls -la /var/log/journal/7102c13a6be44f418d1f09210bcfbfd9
+++ grep '^-'
+++ wc -l
+++ grep journal
++ check_file=1
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ journalctl --file /var/log/journal/7102c13a6be44f418d1f09210bcfbfd9/system.journal
+++ grep -v ' No entries ' systemlog1
+++ wc -l
++ logsize=15
++ test 15 -gt 1
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri May 26 00:45:13 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:45:14 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri May 26 00:45:14 2023 - INFO  - Start to restore the test environment.
++ rm -rf /var/log/journal/7102c13a6be44f418d1f09210bcfbfd9bak systemlog1
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri May 26 00:45:15 2023 - INFO  - End to restore the test environment.

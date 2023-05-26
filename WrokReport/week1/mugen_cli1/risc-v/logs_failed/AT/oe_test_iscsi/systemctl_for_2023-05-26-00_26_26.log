@@ -1,0 +1,15 @@
+× target.service - Restore LIO kernel target configuration
+     Loaded: loaded (/usr/lib/systemd/system/target.service; bad; vendor preset: disabled)
+     Active: failed (Result: exit-code) since Fri 2023-05-26 00:27:24 CST; 30s ago
+   Main PID: 14708 (code=exited, status=1/FAILURE)
+
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/bin/targetctl", line 47, in restore
+May 26 00:27:24 openeuler-riscv64 target[14708]:     errors = RTSRoot().restore_from_file(restore_file=from_file)
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/lib/python3.10/site-packages/rtslib_fb/root.py", line 79, in __init__
+May 26 00:27:24 openeuler-riscv64 target[14708]:     modprobe('configfs')
+May 26 00:27:24 openeuler-riscv64 target[14708]:   File "/usr/lib/python3.10/site-packages/rtslib_fb/utils.py", line 438, in modprobe
+May 26 00:27:24 openeuler-riscv64 target[14708]:     raise RTSLibError("Could not load module: %s" % module)
+May 26 00:27:24 openeuler-riscv64 target[14708]: rtslib_fb.utils.RTSLibError: Could not load module: configfs
+May 26 00:27:24 openeuler-riscv64 systemd[1]: target.service: Main process exited, code=exited, status=1/FAILURE
+May 26 00:27:24 openeuler-riscv64 systemd[1]: target.service: Failed with result 'exit-code'.
+May 26 00:27:24 openeuler-riscv64 systemd[1]: Failed to start Restore LIO kernel target configuration.

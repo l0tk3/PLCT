@@ -1,0 +1,177 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 22:58:56 2023 - INFO  - Start to prepare the test environment.
++ useradd test1
++ useradd test2
++ echo 'test1:deepin12#$'
++ chpasswd
++ echo 'test2:deepin12#$'
++ chpasswd
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 22:58:57 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'start to run test.'
++ message='start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start to run test.'
+Thu May 25 22:58:57 2023 - INFO  - start to run test.
++ expect
+spawn ssh test1@localhost
+The authenticity of host 'localhost (::1)' can't be established.
+ED25519 key fingerprint is SHA256:Fv1x4yARyS9cXqu/FYUhMcWLhnDFZdpLsTtfr2GwzjY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'localhost' (ED25519) to the list of known hosts.
+test1@localhost's password: 
+
+
+Welcome to 6.1.8-3.oe2303.riscv64
+
+System information as of time: 	Thu May 25 10:59:00 PM CST 2023
+
+System load: 	[0;33;40m2.02[0m
+Processes: 	98
+Memory used: 	2.6%
+Swap used: 	0.0%
+Usage On: 	29%
+IP address: 	10.0.2.15
+Users online: 	1
+To run a command as administrator(user "root"),use "sudo <command>".
+[test1@openeuler-riscv64 ~]$ + systemctl status auditd.service
++ grep 'active (running)'
+Unit auditd.service could not be found.
++ CHECK_RESULT 1 0 0 'auditd.service is not running'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='auditd.service is not running'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'auditd.service is not running'
++ LOG_ERROR 'auditd.service is not running'
++ message='auditd.service is not running'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'auditd.service is not running'
+Thu May 25 22:59:08 2023 - ERROR - auditd.service is not running
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aulastlog.sh line 41'
++ message='oe_test_aulastlog.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aulastlog.sh line 41'
+Thu May 25 22:59:09 2023 - ERROR - oe_test_aulastlog.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ aulastlog
+oe_test_aulastlog.sh: line 42: aulastlog: command not found
++ CHECK_RESULT 127 0 0 'all login log is not find'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='all login log is not find'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'all login log is not find'
++ LOG_ERROR 'all login log is not find'
++ message='all login log is not find'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'all login log is not find'
+Thu May 25 22:59:09 2023 - ERROR - all login log is not find
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aulastlog.sh line 43'
++ message='oe_test_aulastlog.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aulastlog.sh line 43'
+Thu May 25 22:59:10 2023 - ERROR - oe_test_aulastlog.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ aulastlog -u test1
++ grep test1
+oe_test_aulastlog.sh: line 44: aulastlog: command not found
++ CHECK_RESULT 1 0 0 'test1 login log is not find'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='test1 login log is not find'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'test1 login log is not find'
++ LOG_ERROR 'test1 login log is not find'
++ message='test1 login log is not find'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'test1 login log is not find'
+Thu May 25 22:59:11 2023 - ERROR - test1 login log is not find
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aulastlog.sh line 45'
++ message='oe_test_aulastlog.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aulastlog.sh line 45'
+Thu May 25 22:59:11 2023 - ERROR - oe_test_aulastlog.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ aulastlog -u test2
++ grep 'Never logged in'
+oe_test_aulastlog.sh: line 46: aulastlog: command not found
++ CHECK_RESULT 1 0 0 'test2 login log is not find'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='test2 login log is not find'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'test2 login log is not find'
++ LOG_ERROR 'test2 login log is not find'
++ message='test2 login log is not find'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'test2 login log is not find'
+Thu May 25 22:59:12 2023 - ERROR - test2 login log is not find
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aulastlog.sh line 47'
++ message='oe_test_aulastlog.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aulastlog.sh line 47'
+Thu May 25 22:59:12 2023 - ERROR - oe_test_aulastlog.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 22:59:13 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:59:13 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 22:59:14 2023 - INFO  - start environment cleanup.
++ userdel -rf test1
++ userdel -rf test2
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 22:59:15 2023 - INFO  - Finish environment cleanup!

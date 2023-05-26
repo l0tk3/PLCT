@@ -1,0 +1,137 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to pre test.'
++ message='Start to pre test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to pre test.'
+Thu May 25 00:02:27 2023 - INFO  - Start to pre test.
++ DNF_INSTALL kexec-tools
++ pkgs=kexec-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs kexec-tools --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpdve2_q7a
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpdve2_q7a
++ LOG_INFO 'End to pre test.'
++ message='End to pre test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to pre test.'
+Thu May 25 00:03:02 2023 - INFO  - End to pre test.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu May 25 00:03:03 2023 - INFO  - Start executing testcase.
++ rpm -q kexec-tools
+kexec-tools-2.0.23-3.oe2303.riscv64
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grub2-mkconfig -o /boot/grub2/grub.cfg
+oe_test_kernel_kdump.sh: line 32: grub2-mkconfig: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_kernel_kdump.sh line 33'
++ message='oe_test_kernel_kdump.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_kernel_kdump.sh line 33'
+Thu May 25 00:03:03 2023 - ERROR - oe_test_kernel_kdump.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl enable kdump.service
++ systemctl start kdump.service
+Job for kdump.service failed because the control process exited with error code.
+See "systemctl status kdump.service" and "journalctl -xeu kdump.service" for details.
++ systemctl status kdump.service
++ grep active
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_kernel_kdump.sh line 37'
++ message='oe_test_kernel_kdump.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_kernel_kdump.sh line 37'
+Thu May 25 00:03:08 2023 - ERROR - oe_test_kernel_kdump.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop kdump.serviceactive
+Failed to stop kdump.serviceactive.service: Unit kdump.serviceactive.service not loaded.
++ systemctl disable kdump.service
+Removed /etc/systemd/system/multi-user.target.wants/kdump.service.
++ systemctl is-enabled kdump.service
++ grep disable
+disabled
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of testcase execution.'
++ message='End of testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of testcase execution.'
+Thu May 25 00:03:12 2023 - INFO  - End of testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 00:03:12 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 00:03:13 2023 - INFO  - start environment cleanup.
++ systemctl enable kdump.service
+Created symlink /etc/systemd/system/multi-user.target.wants/kdump.service → /usr/lib/systemd/system/kdump.service.
++ systemctl start kdump.service
+Job for kdump.service failed because the control process exited with error code.
+See "systemctl status kdump.service" and "journalctl -xeu kdump.service" for details.
++ LOG_INFO 'Finish environment cleanup.'
++ message='Finish environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup.'
+Thu May 25 00:03:17 2023 - INFO  - Finish environment cleanup.

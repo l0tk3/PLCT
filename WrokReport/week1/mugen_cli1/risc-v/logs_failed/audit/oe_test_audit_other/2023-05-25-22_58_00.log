@@ -1,0 +1,224 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu May 25 22:58:02 2023 - INFO  - Start executing testcase.
++ service auditd start
+oe_test_audit_other.sh: line 23: service: command not found
++ CHECK_RESULT 127 0 0 'Failed to start auditd service'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to start auditd service'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to start auditd service'
++ LOG_ERROR 'Failed to start auditd service'
++ message='Failed to start auditd service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to start auditd service'
+Thu May 25 22:58:03 2023 - ERROR - Failed to start auditd service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_other.sh line 24'
++ message='oe_test_audit_other.sh line 24'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_other.sh line 24'
+Thu May 25 22:58:04 2023 - ERROR - oe_test_audit_other.sh line 24
++ '[' 0 -eq 1 ']'
++ return 0
++ service auditd stop
+oe_test_audit_other.sh: line 25: service: command not found
++ CHECK_RESULT 127 0 0 'Failed to stop auditd service'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to stop auditd service'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to stop auditd service'
++ LOG_ERROR 'Failed to stop auditd service'
++ message='Failed to stop auditd service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to stop auditd service'
+Thu May 25 22:58:04 2023 - ERROR - Failed to stop auditd service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_other.sh line 26'
++ message='oe_test_audit_other.sh line 26'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_other.sh line 26'
+Thu May 25 22:58:05 2023 - ERROR - oe_test_audit_other.sh line 26
++ '[' 0 -eq 1 ']'
++ return 0
++ service auditd restart
+oe_test_audit_other.sh: line 27: service: command not found
++ CHECK_RESULT 127 0 0 'Failed to restart auditd service'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to restart auditd service'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to restart auditd service'
++ LOG_ERROR 'Failed to restart auditd service'
++ message='Failed to restart auditd service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart auditd service'
+Thu May 25 22:58:05 2023 - ERROR - Failed to restart auditd service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_other.sh line 28'
++ message='oe_test_audit_other.sh line 28'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_other.sh line 28'
+Thu May 25 22:58:06 2023 - ERROR - oe_test_audit_other.sh line 28
++ '[' 0 -eq 1 ']'
++ return 0
++ service auditd reload
+oe_test_audit_other.sh: line 29: service: command not found
++ CHECK_RESULT 127 0 0 'Failed to reload auditd service'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to reload auditd service'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to reload auditd service'
++ LOG_ERROR 'Failed to reload auditd service'
++ message='Failed to reload auditd service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to reload auditd service'
+Thu May 25 22:58:06 2023 - ERROR - Failed to reload auditd service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_other.sh line 30'
++ message='oe_test_audit_other.sh line 30'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_other.sh line 30'
+Thu May 25 22:58:07 2023 - ERROR - oe_test_audit_other.sh line 30
++ '[' 0 -eq 1 ']'
++ return 0
++ service auditd rotate
+oe_test_audit_other.sh: line 31: service: command not found
++ CHECK_RESULT 127 0 0 'Failed to rotate auditd service'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to rotate auditd service'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to rotate auditd service'
++ LOG_ERROR 'Failed to rotate auditd service'
++ message='Failed to rotate auditd service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to rotate auditd service'
+Thu May 25 22:58:07 2023 - ERROR - Failed to rotate auditd service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_other.sh line 32'
++ message='oe_test_audit_other.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_other.sh line 32'
+Thu May 25 22:58:08 2023 - ERROR - oe_test_audit_other.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ service auditd resume
+oe_test_audit_other.sh: line 33: service: command not found
++ CHECK_RESULT 127 0 0 'Failed to resume auditd service'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to resume auditd service'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to resume auditd service'
++ LOG_ERROR 'Failed to resume auditd service'
++ message='Failed to resume auditd service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to resume auditd service'
+Thu May 25 22:58:08 2023 - ERROR - Failed to resume auditd service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_other.sh line 34'
++ message='oe_test_audit_other.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_other.sh line 34'
+Thu May 25 22:58:09 2023 - ERROR - oe_test_audit_other.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ service auditd condrestart
+oe_test_audit_other.sh: line 35: service: command not found
++ CHECK_RESULT 127 0 0 'Failed to condrestart auditd service'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to condrestart auditd service'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to condrestart auditd service'
++ LOG_ERROR 'Failed to condrestart auditd service'
++ message='Failed to condrestart auditd service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to condrestart auditd service'
+Thu May 25 22:58:09 2023 - ERROR - Failed to condrestart auditd service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_other.sh line 36'
++ message='oe_test_audit_other.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_other.sh line 36'
+Thu May 25 22:58:10 2023 - ERROR - oe_test_audit_other.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl status auditd
++ grep running
+Unit auditd.service could not be found.
++ CHECK_RESULT 1 0 0 'Failed to systemctl auditd services with running status'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to systemctl auditd services with running status'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to systemctl auditd services with running status'
++ LOG_ERROR 'Failed to systemctl auditd services with running status'
++ message='Failed to systemctl auditd services with running status'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to systemctl auditd services with running status'
+Thu May 25 22:58:11 2023 - ERROR - Failed to systemctl auditd services with running status
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_other.sh line 38'
++ message='oe_test_audit_other.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_other.sh line 38'
+Thu May 25 22:58:11 2023 - ERROR - oe_test_audit_other.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu May 25 22:58:12 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu May 25 22:58:12 2023 - ERROR - failed to execute the case.
++ exit 8
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_audit_other.sh post_test'
++ message='oe_test_audit_other.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_audit_other.sh post_test'
+Thu May 25 22:58:13 2023 - INFO  - oe_test_audit_other.sh post_test

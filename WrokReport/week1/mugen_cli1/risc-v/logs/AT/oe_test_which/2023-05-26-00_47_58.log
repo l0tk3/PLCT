@@ -1,0 +1,79 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:48:00 2023 - INFO  - Start testing...
++ rpm -qa
++ grep which
+which-2.21-15.oe2303.riscv64
++ CHECK_RESULT 0 0 0 'which not install'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='which not install'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ which -v
++ grep -E 'GNU which v[0-9]\.[0-9]+'
+GNU which v2.21, Copyright (C) 1999 - 2015 Carlo Wood.
++ CHECK_RESULT 0 0 0 'check version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ which bash
++ grep /usr/bin/bash
+/usr/bin/bash
++ CHECK_RESULT 0 0 0 'which function failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='which function failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:48:02 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:48:03 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_which.sh post_test'
++ message='oe_test_which.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_which.sh post_test'
+Fri May 26 00:48:03 2023 - INFO  - oe_test_which.sh post_test

@@ -1,0 +1,120 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Fri May 26 00:48:56 2023 - INFO  - Start testing...
++ uname -s
+Linux
++ CHECK_RESULT 0 0 0 'uname -s display error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='uname -s display error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ uname -r
+6.1.8-3.oe2303.riscv64
++ CHECK_RESULT 0 0 0 'uname -r display error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='uname -r display error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ uname -m
+riscv64
++ CHECK_RESULT 0 0 0 'uname -m display error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='uname -m display error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ uname -a
+++ uname -r
++ grep 6.1.8-3.oe2303.riscv64
+Linux openeuler-riscv64 6.1.8-3.oe2303.riscv64 #1 SMP Wed Mar 29 16:00:08 UTC 2023 riscv64 riscv64 riscv64 GNU/Linux
++ CHECK_RESULT 0 0 0 'uname -a display error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='uname -a display error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ uname --help
+Usage: uname [OPTION]...
+Print certain system information.  With no OPTION, same as -s.
+
+  -a, --all                print all information, in the following order,
+                             except omit -p and -i if unknown:
+  -s, --kernel-name        print the kernel name
+  -n, --nodename           print the network node hostname
+  -r, --kernel-release     print the kernel release
+  -v, --kernel-version     print the kernel version
+  -m, --machine            print the machine hardware name
+  -p, --processor          print the processor type (non-portable)
+  -i, --hardware-platform  print the hardware platform (non-portable)
+  -o, --operating-system   print the operating system
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/uname>
+or available locally via: info '(coreutils) uname invocation'
++ CHECK_RESULT 0 0 0 'uname --help display error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='uname --help display error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Fri May 26 00:48:56 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:48:57 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_uname.sh post_test'
++ message='oe_test_uname.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_uname.sh post_test'
+Fri May 26 00:48:57 2023 - INFO  - oe_test_uname.sh post_test

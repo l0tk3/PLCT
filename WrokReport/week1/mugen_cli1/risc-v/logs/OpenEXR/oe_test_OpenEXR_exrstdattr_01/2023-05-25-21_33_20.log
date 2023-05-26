@@ -1,0 +1,195 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu May 25 21:33:22 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'OpenEXR OpenEXR-devel'
++ pkgs='OpenEXR OpenEXR-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'OpenEXR OpenEXR-devel' --node 1 --tempfile ''
+Thu May 25 21:33:29 2023 - INFO  - pkgs:(OpenEXR OpenEXR-devel) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu May 25 21:33:29 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:33:30 2023 - INFO  - Start to run test.
++ exrstdattr -chromaticities 10 10 10 10 10 10 10 10 bind_29_1.exr test1
++ test -f test1
++ CHECK_RESULT 0 0 0 'Check exrstdattr -chromaticities failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -chromaticities failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -whiteLuminance 10 bind_29_1.exr test2
++ test -f test2
++ CHECK_RESULT 0 0 0 'Check exrstdattr -whiteLuminance failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -whiteLuminance failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -adoptedNeutral 10 10 bind_29_1.exr test3
++ test -f test3
++ CHECK_RESULT 0 0 0 'Check exrstdattr -adoptedNeutral failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -adoptedNeutral failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -renderingTransform s bind_29_1.exr test4
++ test -f test4
++ CHECK_RESULT 0 0 0 'Check exrstdattr -renderingTransform failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -renderingTransform failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -lookModTransform s bind_29_1.exr test5
++ test -f test5
++ CHECK_RESULT 0 0 0 'Check exrstdattr -lookModTransform failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -lookModTransform failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -xDensity 10 bind_29_1.exr test6
++ test -f test6
++ CHECK_RESULT 0 0 0 'Check exrstdattr -xDensity failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -xDensity failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -owner ss bind_29_1.exr test7
++ test -f test7
++ CHECK_RESULT 0 0 0 'Check exrstdattr -owner failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -owner failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -comments ss bind_29_1.exr test8
++ test -f test8
++ CHECK_RESULT 0 0 0 'Check exrstdattr -comments failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -comments failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -capDate '2021:08:04 17:07:01' bind_29_1.exr test9
++ test -f test9
++ CHECK_RESULT 0 0 0 'Check exrstdattr -capDate failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -capDate failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exrstdattr -utcOffset 20 bind_29_1.exr test10
++ test -f test10
++ CHECK_RESULT 0 0 0 'Check exrstdattr -utcOffset failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check exrstdattr -utcOffset failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu May 25 21:33:33 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:33:33 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu May 25 21:33:34 2023 - INFO  - Start to restore the test environment.
++ rm -rf test1 test10 test2 test3 test4 test5 test6 test7 test8 test9
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu May 25 21:33:34 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu May 25 21:33:35 2023 - INFO  - End to restore the test environment.

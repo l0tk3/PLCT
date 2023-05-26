@@ -1,0 +1,107 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Fri May 26 00:45:22 2023 - INFO  - Start to run test.
++ ls /var/log/messages
+ls: cannot access '/var/log/messages': No such file or directory
++ CHECK_RESULT 2
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_syslog_logrotate_001.sh line 25'
++ message='oe_test_syslog_logrotate_001.sh line 25'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_syslog_logrotate_001.sh line 25'
+Fri May 26 00:45:23 2023 - ERROR - oe_test_syslog_logrotate_001.sh line 25
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -rf '/var/log/messages-*.gz'
++ mv /etc/logrotate.d/rsyslog /etc/logrotate.d/rsyslog_bak
+mv: cannot stat '/etc/logrotate.d/rsyslog': No such file or directory
++ cat
++ logrotate -f /etc/logrotate.d/rsyslog
+error: stat of /var/log/messages failed: No such file or directory
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_syslog_logrotate_001.sh line 43'
++ message='oe_test_syslog_logrotate_001.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_syslog_logrotate_001.sh line 43'
+Fri May 26 00:45:23 2023 - ERROR - oe_test_syslog_logrotate_001.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ ls '/var/log/messages-*.gz'
+ls: cannot access '/var/log/messages-*.gz': No such file or directory
++ CHECK_RESULT 2
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_syslog_logrotate_001.sh line 45'
++ message='oe_test_syslog_logrotate_001.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_syslog_logrotate_001.sh line 45'
+Fri May 26 00:45:24 2023 - ERROR - oe_test_syslog_logrotate_001.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Fri May 26 00:45:25 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Fri May 26 00:45:25 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Fri May 26 00:45:26 2023 - INFO  - Start to restore the test environment.
++ rm -rf /etc/logrotate.d/rsyslog
++ mv /etc/logrotate.d/rsyslog_bak /etc/logrotate.d/rsyslog
+mv: cannot stat '/etc/logrotate.d/rsyslog_bak': No such file or directory
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Fri May 26 00:45:26 2023 - INFO  - End to restore the test environment.

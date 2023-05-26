@@ -1,0 +1,241 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu May 25 21:34:11 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL acpid
++ pkgs=acpid
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs acpid --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp5mu4f3dh
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp5mu4f3dh
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu May 25 21:34:38 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu May 25 21:34:38 2023 - INFO  - Start to run test.
++ test_execution acpid.socket
++ service=acpid.socket
+++ date '+%Y-%m-%d %T'
++ log_time='2023-05-25 21:34:38'
++ test_restart acpid.socket
++ service=acpid.socket
++ systemctl restart acpid.socket
++ CHECK_RESULT 0 0 0 'acpid.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.socket restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status acpid.socket
++ grep 'Active: active'
+     Active: active (listening) since Thu 2023-05-25 21:34:38 CST; 5s ago
++ CHECK_RESULT 0 0 0 'acpid.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.socket restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop acpid.socket
++ CHECK_RESULT 0 0 0 'acpid.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status acpid.socket
++ grep 'Active: inactive'
+     Active: inactive (dead) since Thu 2023-05-25 21:34:44 CST; 5s ago
++ CHECK_RESULT 0 0 0 'acpid.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start acpid.socket
++ CHECK_RESULT 0 0 0 'acpid.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.socket start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status acpid.socket
++ grep 'Active: active'
+     Active: active (listening) since Thu 2023-05-25 21:34:50 CST; 5s ago
++ CHECK_RESULT 0 0 0 'acpid.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.socket start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled acpid.socket
++ service=acpid.socket
+++ systemctl is-enabled acpid.socket
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable acpid.socket
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ symlink_file=/etc/systemd/system/sockets.target.wants/acpid.socket
++ find /etc/systemd/system/sockets.target.wants/acpid.socket
+find: ‘/etc/systemd/system/sockets.target.wants/acpid.socket’: No such file or directory
++ CHECK_RESULT 1 0 1 'acpid.socket disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='acpid.socket disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable acpid.socket
+Created symlink /etc/systemd/system/sockets.target.wants/acpid.socket → /usr/lib/systemd/system/acpid.socket.
++ find /etc/systemd/system/sockets.target.wants/acpid.socket
+/etc/systemd/system/sockets.target.wants/acpid.socket
++ CHECK_RESULT 0 0 0 'acpid.socket enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='acpid.socket enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-05-25 21:34:38' -u acpid.socket
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of acpid.socket'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of acpid.socket'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start acpid.socket
++ systemctl reload acpid.socket
++ grep 'Job type reload is not applicable for unit acpid.socket'
+Failed to reload acpid.socket: Job type reload is not applicable for unit acpid.socket.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status acpid.socket
++ grep 'Active: active'
+     Active: active (listening) since Thu 2023-05-25 21:34:50 CST; 13s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu May 25 21:35:04 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu May 25 21:35:05 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu May 25 21:35:05 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp5mu4f3dh ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp5mu4f3dh
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu May 25 21:35:17 2023 - INFO  - Finish environment cleanup!

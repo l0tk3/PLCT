@@ -1,0 +1,134 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing'
++ message='Start testing'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing'
+Fri May 26 00:47:51 2023 - INFO  - Start testing
++ touch /tmp/test
++ CHECK_RESULT 0 0 0 'File creation failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='File creation failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mkdir /tmp/test1
++ CHECK_RESULT 0 0 0 'Directory creation failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Directory creation failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -rf /tmp/test
++ CHECK_RESULT 0 0 0 'Failed to delete files'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete files'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -rf /tmp/test1
++ CHECK_RESULT 0 0 0 'Failed to delete directory'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete directory'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm --help
+Usage: rm [OPTION]... [FILE]...
+Remove (unlink) the FILE(s).
+
+  -f, --force           ignore nonexistent files and arguments, never prompt
+  -i                    prompt before every removal
+  -I                    prompt once before removing more than three files, or
+                          when removing recursively; less intrusive than -i,
+                          while still giving protection against most mistakes
+      --interactive[=WHEN]  prompt according to WHEN: never, once (-I), or
+                          always (-i); without WHEN, prompt always
+      --one-file-system  when removing a hierarchy recursively, skip any
+                          directory that is on a file system different from
+                          that of the corresponding command line argument
+      --no-preserve-root  do not treat '/' specially
+      --preserve-root[=all]  do not remove '/' (default);
+                              with 'all', reject any command line argument
+                              on a separate device from its parent
+  -r, -R, --recursive   remove directories and their contents recursively
+  -d, --dir             remove empty directories
+  -v, --verbose         explain what is being done
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, rm does not remove directories.  Use the --recursive (-r or -R)
+option to remove each listed directory, too, along with all of its contents.
+
+To remove a file whose name starts with a '-', for example '-foo',
+use one of these commands:
+  rm -- -foo
+
+  rm ./-foo
+
+Note that if you use rm to remove a file, it might be possible to recover
+some of its contents, given sufficient expertise and/or time.  For greater
+assurance that the contents are truly unrecoverable, consider using shred(1).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/rm>
+or available locally via: info '(coreutils) rm invocation'
++ CHECK_RESULT 0 0 0 'rm --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rm --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finished test!'
++ message='Finished test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finished test!'
+Fri May 26 00:47:52 2023 - INFO  - Finished test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Fri May 26 00:47:52 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_rm_001.sh post_test'
++ message='oe_test_rm_001.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_rm_001.sh post_test'
+Fri May 26 00:47:53 2023 - INFO  - oe_test_rm_001.sh post_test
