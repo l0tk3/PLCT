@@ -1,0 +1,239 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 08:47:15 2025 - INFO  - Start to run test.
++ ip -6 route add 1001::2/64 dev
+Command line is not complete. Try option "help"
++ CHECK_RESULT 255 0 0 'Failed to add ipv6 route 1001::2'
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 route 1001::2'
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n 'Failed to add ipv6 route 1001::2'
++ LOG_ERROR 'Failed to add ipv6 route 1001::2'
++ message='Failed to add ipv6 route 1001::2'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 route 1001::2'
+Mon May 26 08:47:15 2025 - ERROR - Failed to add ipv6 route 1001::2
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iproute_ipv6_01.sh line 25'
++ message='oe_test_iproute_ipv6_01.sh line 25'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iproute_ipv6_01.sh line 25'
+Mon May 26 08:47:16 2025 - ERROR - oe_test_iproute_ipv6_01.sh line 25
++ '[' 0 -eq 1 ']'
++ return 0
++ ip -6 route show
++ grep 1001::/64
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 route 1001::2'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 route 1001::2'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 route 1001::2'
++ LOG_ERROR 'Failed to show ipv6 route 1001::2'
++ message='Failed to show ipv6 route 1001::2'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 route 1001::2'
+Mon May 26 08:47:16 2025 - ERROR - Failed to show ipv6 route 1001::2
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iproute_ipv6_01.sh line 27'
++ message='oe_test_iproute_ipv6_01.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iproute_ipv6_01.sh line 27'
+Mon May 26 08:47:16 2025 - ERROR - oe_test_iproute_ipv6_01.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ ip -6 route add 1002::2/64 via fe80:: dev
+Command line is not complete. Try option "help"
++ CHECK_RESULT 255 0 0 'Failed to add ipv6 route 1002::2'
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 route 1002::2'
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n 'Failed to add ipv6 route 1002::2'
++ LOG_ERROR 'Failed to add ipv6 route 1002::2'
++ message='Failed to add ipv6 route 1002::2'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 route 1002::2'
+Mon May 26 08:47:16 2025 - ERROR - Failed to add ipv6 route 1002::2
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iproute_ipv6_01.sh line 29'
++ message='oe_test_iproute_ipv6_01.sh line 29'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iproute_ipv6_01.sh line 29'
+Mon May 26 08:47:16 2025 - ERROR - oe_test_iproute_ipv6_01.sh line 29
++ '[' 0 -eq 1 ']'
++ return 0
++ ip -6 route show
++ grep '1002::/64 via fe80::'
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 route 1002::2'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 route 1002::2'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 route 1002::2'
++ LOG_ERROR 'Failed to show ipv6 route 1002::2'
++ message='Failed to show ipv6 route 1002::2'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 route 1002::2'
+Mon May 26 08:47:16 2025 - ERROR - Failed to show ipv6 route 1002::2
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iproute_ipv6_01.sh line 31'
++ message='oe_test_iproute_ipv6_01.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iproute_ipv6_01.sh line 31'
+Mon May 26 08:47:16 2025 - ERROR - oe_test_iproute_ipv6_01.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ ip -6 route add to 1003::2/64 dev table 1
+Error: either "to" is duplicate, or "1" is a garbage.
++ CHECK_RESULT 255 0 0 'Failed to add ipv6 route 1003::2'
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 route 1003::2'
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n 'Failed to add ipv6 route 1003::2'
++ LOG_ERROR 'Failed to add ipv6 route 1003::2'
++ message='Failed to add ipv6 route 1003::2'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 route 1003::2'
+Mon May 26 08:47:16 2025 - ERROR - Failed to add ipv6 route 1003::2
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iproute_ipv6_01.sh line 33'
++ message='oe_test_iproute_ipv6_01.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iproute_ipv6_01.sh line 33'
+Mon May 26 08:47:16 2025 - ERROR - oe_test_iproute_ipv6_01.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ ip -6 route list table 1
++ grep 1003::/64
+Error: ipv6: FIB table does not exist.
+Dump terminated
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 route 1003::2'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 route 1003::2'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 route 1003::2'
++ LOG_ERROR 'Failed to show ipv6 route 1003::2'
++ message='Failed to show ipv6 route 1003::2'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 route 1003::2'
+Mon May 26 08:47:16 2025 - ERROR - Failed to show ipv6 route 1003::2
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iproute_ipv6_01.sh line 35'
++ message='oe_test_iproute_ipv6_01.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iproute_ipv6_01.sh line 35'
+Mon May 26 08:47:16 2025 - ERROR - oe_test_iproute_ipv6_01.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ ip -6 route add default via fe80:: dev table 2
+Error: either "to" is duplicate, or "2" is a garbage.
++ CHECK_RESULT 255 0 0 'Failed to add ipv6 route fe80::'
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 route fe80::'
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n 'Failed to add ipv6 route fe80::'
++ LOG_ERROR 'Failed to add ipv6 route fe80::'
++ message='Failed to add ipv6 route fe80::'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 route fe80::'
+Mon May 26 08:47:16 2025 - ERROR - Failed to add ipv6 route fe80::
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iproute_ipv6_01.sh line 37'
++ message='oe_test_iproute_ipv6_01.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iproute_ipv6_01.sh line 37'
+Mon May 26 08:47:16 2025 - ERROR - oe_test_iproute_ipv6_01.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ ip -6 route list table 2
++ grep 'via fe80:: dev'
+Error: ipv6: FIB table does not exist.
+Dump terminated
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 fe80::'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 fe80::'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 fe80::'
++ LOG_ERROR 'Failed to show ipv6 fe80::'
++ message='Failed to show ipv6 fe80::'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 fe80::'
+Mon May 26 08:47:16 2025 - ERROR - Failed to show ipv6 fe80::
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iproute_ipv6_01.sh line 39'
++ message='oe_test_iproute_ipv6_01.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iproute_ipv6_01.sh line 39'
+Mon May 26 08:47:16 2025 - ERROR - oe_test_iproute_ipv6_01.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 08:47:16 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 08:47:16 2025 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 08:47:16 2025 - INFO  - Start to restore the test environment.
++ ip -6 route del 1001::2/64 dev
+Command line is not complete. Try option "help"
++ ip -6 route del 1002::2/64 via fe80:: dev
+Command line is not complete. Try option "help"
++ ip -6 route del to 1003::2/64 dev table 1
+Error: either "to" is duplicate, or "1" is a garbage.
++ ip -6 route del default via fe80:: dev table 2
+Error: either "to" is duplicate, or "2" is a garbage.
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 08:47:16 2025 - INFO  - End to restore the test environment.

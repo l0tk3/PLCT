@@ -1,0 +1,318 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 09:32:39 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL bc
++ pkgs=bc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs bc --node 1 --tempfile ''
+Mon May 26 09:32:40 2025 - INFO  - pkgs:(bc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 09:32:40 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:32:40 2025 - INFO  - Start to run test.
++ wget https://repo.openeuler.org/openEuler-22.03-LTS/ISO/aarch64/openEuler-22.03-LTS-aarch64-dvd.iso.sha256sum
+oe_test_wget.sh: line 30: wget: command not found
++ CHECK_RESULT 127 0 0 'Failed to execute wget'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to execute wget'
++ LOG_ERROR 'Failed to execute wget'
++ message='Failed to execute wget'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute wget'
+Mon May 26 09:32:40 2025 - ERROR - Failed to execute wget
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_wget.sh line 31'
++ message='oe_test_wget.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_wget.sh line 31'
+Mon May 26 09:32:40 2025 - ERROR - oe_test_wget.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ ls -l
++ grep 102
++ CHECK_RESULT 1 0 0 'Failed to download'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to download'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to download'
++ LOG_ERROR 'Failed to download'
++ message='Failed to download'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to download'
+Mon May 26 09:32:40 2025 - ERROR - Failed to download
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_wget.sh line 33'
++ message='oe_test_wget.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_wget.sh line 33'
+Mon May 26 09:32:40 2025 - ERROR - oe_test_wget.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ wget -O test.tar.gz https://repo.openeuler.org/openEuler-22.03-LTS/ISO/aarch64/openEuler-22.03-LTS-aarch64-dvd.iso.sha256sum --no-check-certificate
+oe_test_wget.sh: line 34: wget: command not found
++ CHECK_RESULT 127 0 0 'Failed to execute wget -O'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to execute wget -O'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to execute wget -O'
++ LOG_ERROR 'Failed to execute wget -O'
++ message='Failed to execute wget -O'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute wget -O'
+Mon May 26 09:32:40 2025 - ERROR - Failed to execute wget -O
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_wget.sh line 35'
++ message='oe_test_wget.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_wget.sh line 35'
+Mon May 26 09:32:40 2025 - ERROR - oe_test_wget.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ ls -l
++ grep test.tar.gz
++ grep 102
++ CHECK_RESULT 1 0 0 'Failed to find test.tar.gz'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to find test.tar.gz'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to find test.tar.gz'
++ LOG_ERROR 'Failed to find test.tar.gz'
++ message='Failed to find test.tar.gz'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to find test.tar.gz'
+Mon May 26 09:32:40 2025 - ERROR - Failed to find test.tar.gz
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_wget.sh line 37'
++ message='oe_test_wget.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_wget.sh line 37'
+Mon May 26 09:32:40 2025 - ERROR - oe_test_wget.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -rf 'openEuler-22.03-LTS-aarch64-dvd.iso*'
++ timeout 30 wget --limit-rate=1M https://repo.openeuler.org/openEuler-22.03-LTS/ISO/aarch64/openEuler-22.03-LTS-aarch64-dvd.iso
+timeout: failed to run command ‘wget’: No such file or directory
++ CHECK_RESULT 127 0 1 'Failed to execute wget --limit'
++ actual_result=127
++ expect_result=0
++ mode=1
++ error_log='Failed to execute wget --limit'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 1 -eq 0 ']'
++ test 127x == 0x
++ return 0
+++ ls -l
+++ grep openEuler-22.03-LTS-aarch64-dvd.iso
+++ awk '{print $5}'
++ ISO_SIZE=
+++ echo /1024/30
+++ bc
+(standard_in) 1: syntax error
++ DOWNLOAD=
++ test -le 1024
+oe_test_wget.sh: line 43: test: -le: unary operator expected
++ CHECK_RESULT 2 0 0 'Failed to limit download rate'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Failed to limit download rate'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Failed to limit download rate'
++ LOG_ERROR 'Failed to limit download rate'
++ message='Failed to limit download rate'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to limit download rate'
+Mon May 26 09:32:40 2025 - ERROR - Failed to limit download rate
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_wget.sh line 44'
++ message='oe_test_wget.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_wget.sh line 44'
+Mon May 26 09:32:40 2025 - ERROR - oe_test_wget.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -rf 'openEuler-22.03-LTS-aarch64-dvd.iso*'
++ CHECK_RESULT 0 0 0 'Failed to execute wget on backgroud'
++ actual_result=0
++ expect_result=0
++ wget https://repo.openeuler.org/openEuler-22.03-LTS/ISO/aarch64/openEuler-22.03-LTS-aarch64-dvd.iso
++ mode=0
++ error_log='Failed to execute wget on backgroud'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
+oe_test_wget.sh: line 46: wget: command not found
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
+++ pgrep wget
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ CHECK_RESULT 2 0 0 'Failed to kill wget'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Failed to kill wget'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Failed to kill wget'
++ LOG_ERROR 'Failed to kill wget'
++ message='Failed to kill wget'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to kill wget'
+Mon May 26 09:32:45 2025 - ERROR - Failed to kill wget
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_wget.sh line 50'
++ message='oe_test_wget.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_wget.sh line 50'
+Mon May 26 09:32:45 2025 - ERROR - oe_test_wget.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
++ CHECK_RESULT 0 0 0 'Failed to execute wget -c'
++ actual_result=0
++ expect_result=0
++ mode=0
++ wget -c https://repo.openeuler.org/openEuler-22.03-LTS/ISO/aarch64/openEuler-22.03-LTS-aarch64-dvd.iso
++ error_log='Failed to execute wget -c'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+oe_test_wget.sh: line 51: wget: command not found
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
+++ pgrep wget
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ CHECK_RESULT 2 0 0 'Failed to kill -9 wget'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Failed to kill -9 wget'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Failed to kill -9 wget'
++ LOG_ERROR 'Failed to kill -9 wget'
++ message='Failed to kill -9 wget'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to kill -9 wget'
+Mon May 26 09:32:50 2025 - ERROR - Failed to kill -9 wget
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_wget.sh line 55'
++ message='oe_test_wget.sh line 55'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_wget.sh line 55'
+Mon May 26 09:32:50 2025 - ERROR - oe_test_wget.sh line 55
++ '[' 0 -eq 1 ']'
++ return 0
++ ls ./
++ grep -c openEuler-22.03-LTS-aarch64-dvd.iso
++ grep 1
++ CHECK_RESULT 1 0 0 'Failed to continue execute wget'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to continue execute wget'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to continue execute wget'
++ LOG_ERROR 'Failed to continue execute wget'
++ message='Failed to continue execute wget'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to continue execute wget'
+Mon May 26 09:32:50 2025 - ERROR - Failed to continue execute wget
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_wget.sh line 57'
++ message='oe_test_wget.sh line 57'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_wget.sh line 57'
+Mon May 26 09:32:50 2025 - ERROR - oe_test_wget.sh line 57
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:32:50 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 09:32:50 2025 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:32:50 2025 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Mon May 26 09:32:50 2025 - WARN  - no thing to do.
++ return 0
++ rm -rf 'openEuler-22.03-LTS-aarch64-dvd.iso*' 'wget-log*' test.tar.gz
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:32:50 2025 - INFO  - End to restore the test environment.

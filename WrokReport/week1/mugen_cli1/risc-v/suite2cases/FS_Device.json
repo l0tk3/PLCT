@@ -1,0 +1,76 @@
+{
+    "path": "${OET_PATH}/testcases/system-test/fs-test/FS_Device",
+    "add disk": [20],
+    "machine num": 2,
+    "cases": [
+        {
+            "name": "oe_test_check_dm_info"
+        },
+        {
+            "name": "oe_test_dm_info"
+        },
+        {
+            "name": "oe_test_raid_auto_mount",
+            "machine num": 2,
+            "add disk": [20]
+        },
+        {
+            "name": "oe_test_raid_compress"
+        },
+        {
+            "name": "oe_test_raid_faulty_1"
+        },
+        {
+            "name": "oe_test_raid_faulty_2"
+        },
+        {
+            "name": "oe_test_raid_faulty_3"
+        },
+        {
+            "name": "oe_test_raid_faulty_add_device"
+        },
+        {
+            "name": "oe_test_raid_faulty_rw"
+        },
+        {
+            "name": "oe_test_raid_faulty_w"
+        },
+        {
+            "name": "oe_test_raid_react"
+        },
+        {
+            "name": "oe_test_raid_rm_ko"
+        },
+        {
+            "name": "oe_test_raid_ro"
+        },
+        {
+            "name": "oe_test_raid_rw"
+        },
+        {
+            "name": "oe_test_snapshot_dump"
+        },
+        {
+            "name": "oe_test_snapshot_lvconvert"
+        },
+        {
+            "name": "oe_test_snapshot_rw"
+        },
+        {
+            "name": "oe_test_swap_auto_mount",
+            "machine num": 2,
+            "add disk": [20]
+        },
+        {
+            "name": "oe_test_swap_close",
+            "machine num": 2
+        },
+        {
+            "name": "oe_test_swap_close_temp"
+        },
+        {
+            "name": "oe_test_swap_mkswap"
+        }
+    ]
+}
+

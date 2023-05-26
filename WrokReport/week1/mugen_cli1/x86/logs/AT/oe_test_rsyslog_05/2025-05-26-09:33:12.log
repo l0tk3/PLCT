@@ -1,0 +1,1543 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:33:12 2025 - INFO  - Start to run test.
++ flag=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=892063
++ grep rsyslog /var/log/messages
++ grep 892063
+May 26 09:33:17 Ymm1 rsyslogd[892063]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="892063" x-info="https://www.rsyslog.com"] start
+May 26 09:33:17 Ymm1 rsyslogd[892063]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=893808
++ grep rsyslog /var/log/messages
++ grep 893808
+May 26 09:33:23 Ymm1 rsyslogd[893808]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="893808" x-info="https://www.rsyslog.com"] start
+May 26 09:33:23 Ymm1 rsyslogd[893808]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=895544
++ grep rsyslog /var/log/messages
++ grep 895544
+May 26 09:33:30 Ymm1 rsyslogd[895544]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="895544" x-info="https://www.rsyslog.com"] start
+May 26 09:33:30 Ymm1 rsyslogd[895544]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=897275
++ grep rsyslog /var/log/messages
++ grep 897275
+May 26 09:33:36 Ymm1 rsyslogd[897275]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="897275" x-info="https://www.rsyslog.com"] start
+May 26 09:33:36 Ymm1 rsyslogd[897275]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=898904
++ grep rsyslog /var/log/messages
++ grep 898904
+May 26 09:33:43 Ymm1 rsyslogd[898904]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="898904" x-info="https://www.rsyslog.com"] start
+May 26 09:33:43 Ymm1 rsyslogd[898904]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=900593
++ grep rsyslog /var/log/messages
++ grep 900593
+May 26 09:33:49 Ymm1 rsyslogd[900593]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="900593" x-info="https://www.rsyslog.com"] start
+May 26 09:33:49 Ymm1 rsyslogd[900593]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=902295
++ grep rsyslog /var/log/messages
++ grep 902295
+May 26 09:33:56 Ymm1 rsyslogd[902295]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="902295" x-info="https://www.rsyslog.com"] start
+May 26 09:33:56 Ymm1 rsyslogd[902295]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=904036
++ grep rsyslog /var/log/messages
++ grep 904036
+May 26 09:34:03 Ymm1 rsyslogd[904036]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="904036" x-info="https://www.rsyslog.com"] start
+May 26 09:34:03 Ymm1 rsyslogd[904036]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=905743
++ grep rsyslog /var/log/messages
++ grep 905743
+May 26 09:34:09 Ymm1 rsyslogd[905743]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="905743" x-info="https://www.rsyslog.com"] start
+May 26 09:34:09 Ymm1 rsyslogd[905743]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=907448
++ grep rsyslog /var/log/messages
++ grep 907448
+May 26 09:34:16 Ymm1 rsyslogd[907448]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="907448" x-info="https://www.rsyslog.com"] start
+May 26 09:34:16 Ymm1 rsyslogd[907448]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=909192
++ grep rsyslog /var/log/messages
++ grep 909192
+May 26 09:34:22 Ymm1 rsyslogd[909192]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="909192" x-info="https://www.rsyslog.com"] start
+May 26 09:34:22 Ymm1 rsyslogd[909192]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=910933
++ grep rsyslog /var/log/messages
++ grep 910933
+May 26 09:34:29 Ymm1 rsyslogd[910933]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="910933" x-info="https://www.rsyslog.com"] start
+May 26 09:34:29 Ymm1 rsyslogd[910933]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=912677
++ grep rsyslog /var/log/messages
++ grep 912677
+May 26 09:34:35 Ymm1 rsyslogd[912677]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="912677" x-info="https://www.rsyslog.com"] start
+May 26 09:34:35 Ymm1 rsyslogd[912677]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=914349
++ grep rsyslog /var/log/messages
++ grep 914349
+May 26 09:34:42 Ymm1 rsyslogd[914349]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="914349" x-info="https://www.rsyslog.com"] start
+May 26 09:34:42 Ymm1 rsyslogd[914349]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=916058
++ grep rsyslog /var/log/messages
++ grep 916058
+May 26 09:34:48 Ymm1 rsyslogd[916058]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="916058" x-info="https://www.rsyslog.com"] start
+May 26 09:34:48 Ymm1 rsyslogd[916058]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=917740
++ grep rsyslog /var/log/messages
++ grep 917740
+May 26 09:34:55 Ymm1 rsyslogd[917740]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="917740" x-info="https://www.rsyslog.com"] start
+May 26 09:34:55 Ymm1 rsyslogd[917740]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=919456
++ grep rsyslog /var/log/messages
++ grep 919456
+May 26 09:35:02 Ymm1 rsyslogd[919456]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="919456" x-info="https://www.rsyslog.com"] start
+May 26 09:35:02 Ymm1 rsyslogd[919456]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=921207
++ grep rsyslog /var/log/messages
++ grep 921207
+May 26 09:35:08 Ymm1 rsyslogd[921207]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="921207" x-info="https://www.rsyslog.com"] start
+May 26 09:35:08 Ymm1 rsyslogd[921207]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ systemctl stop rsyslog
++ CHECK_RESULT 0 0 0 'Service not stoped'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not stoped'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl start rsyslog
++ CHECK_RESULT 0 0 0 'Service not start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Service not restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -s /run/log/imjournal.state
++ CHECK_RESULT 0 0 0 'Failed to find imjournal.state'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find imjournal.state'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
++ main_pid=922895
++ grep rsyslog /var/log/messages
++ grep 922895
+May 26 09:35:15 Ymm1 rsyslogd[922895]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="922895" x-info="https://www.rsyslog.com"] start
+May 26 09:35:15 Ymm1 rsyslogd[922895]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
++ CHECK_RESULT 0 0 0 'Failed to find main_pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find main_pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ let flag+=1
++ (( flag < 20 ))
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:35:17 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:35:17 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_rsyslog_05.sh post_test'
++ message='oe_test_rsyslog_05.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_rsyslog_05.sh post_test'
+Mon May 26 09:35:17 2025 - INFO  - oe_test_rsyslog_05.sh post_test

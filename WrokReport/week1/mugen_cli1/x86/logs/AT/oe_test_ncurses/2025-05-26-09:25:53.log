@@ -1,0 +1,166 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 09:25:53 2025 - INFO  - Start to prepare the test environment.
++ echo '#!/usr/bin/expect
+log_file testlog
+spawn ssh -o StrictHostKeyChecking=no 127.0.0.1
+expect {
+    "*?assword:*" {send "openEuler12#\$\r";exp_continue}
+    "Users" {send "\rexport TERM=vt100\r";exp_continue}
+    "export" {send "\recho \$TERM\r"; exp_continue}
+    "echo" {send "\rexit\n"}
+}
+expect eof
+'
++ chmod 777 run-term
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 09:25:53 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:25:53 2025 - INFO  - Start to run test.
++ '[' vt220 ']'
++ CHECK_RESULT 0 0 0 'Failed to execute xterm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute xterm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ infocmp
++ grep terminfo
+#	Reconstructed via infocmp from file: /usr/share/terminfo/v/vt220
++ CHECK_RESULT 0 0 0 'Failed to execute infocmp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute infocmp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ infocmp
++ infotocap test.log
++ grep capabilities
+# (untranslatable capabilities removed to fit entry within 1023 bytes)
+# (terminfo-only capabilities suppressed to fit entry within 1023 bytes)
++ CHECK_RESULT 0 0 0 'Failed to execute infotocap'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute infotocap'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ./run-term
+spawn ssh -o StrictHostKeyChecking=no 127.0.0.1
+Warning: Permanently added '127.0.0.1' (ED25519) to the list of known hosts.
+
+Authorized users only. All activities may be monitored and reported.
+root@127.0.0.1's password: 
+
+Authorized users only. All activities may be monitored and reported.
+Last login: Fri May 26 06:29:36 2023
+
+
+Welcome to 6.1.19-7.0.0.17.oe2303.x86_64
+
+System information as of time: 	Mon May 26 09:25:53 AM UTC 2025
+
+System load: 	[0;33;40m2.02[0m
+Processes: 	196
+Memory used: 	2.5%
+Swap used: 	0.0%
+Usage On: 	11%
+IP address: 	10.0.2.15
+IP address: 	172.17.0.1
+Users online: 	2
+
+
+
+export TERM=vt100
+
+echo $TERM
+[?2004h[root@Ymm1 ~]# 
+[?2004l[?2004h[root@Ymm1 ~]# export TERM=vt100
+[?2004l[?2004h[root@Ymm1 ~]# 
+[?2004l[?2004h[root@Ymm1 ~]# echo $TERM
+[?2004lvt100
+[?2004h[root@Ymm1 ~]# 
+[?2004l[?2004h[root@Ymm1 ~]# exit
+[?2004llogout
+Connection to 127.0.0.1 closed.
++ CHECK_RESULT 0 0 0 'Failed to execute run-term'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute run-term'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep '$TERM' testlog
+echo $TERM
+[?2004l[?2004h[root@Ymm1 ~]# echo $TERM
++ CHECK_RESULT 0 0 0 'Failed to display term'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display term'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:25:53 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:25:53 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:25:53 2025 - INFO  - Start to restore the test environment.
++ rm -rf testlog run-term test.log
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:25:53 2025 - INFO  - End to restore the test environment.

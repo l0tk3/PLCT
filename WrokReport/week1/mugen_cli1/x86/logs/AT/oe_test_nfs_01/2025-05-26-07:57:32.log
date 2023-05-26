@@ -1,0 +1,129 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 07:57:32 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL nfs-utils
++ pkgs=nfs-utils
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs nfs-utils --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp9fkfya17
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp9fkfya17
++ cp -f /etc/exports /etc/exports.bak
++ echo '/tmp/test 127.0.0.1(fsid=0,rw,sync)'
++ mkdir /tmp/test
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 07:57:36 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 07:57:36 2025 - INFO  - Start to run test.
++ exportfs -r
+exportfs: /etc/exports [1]: Neither 'subtree_check' or 'no_subtree_check' specified for export "127.0.0.1:/tmp/test".
+  Assuming default behaviour ('no_subtree_check').
+  NOTE: this default has changed since nfs-utils version 1.0.x
+
++ CHECK_RESULT 0 0 0 'Load failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Load failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exportfs -v
++ grep 127.0.0.1
+/tmp/test     	127.0.0.1(sync,wdelay,hide,no_subtree_check,fsid=0,sec=sys,rw,root_squash,no_all_squash)
++ CHECK_RESULT 0 0 0 'Failed to display ipv4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display ipv4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exportfs -u 127.0.0.1:/tmp/test
++ CHECK_RESULT 0 0 0 'Unload failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Unload failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ exportfs -v
++ grep 127.0.0.1
++ CHECK_RESULT 1 0 1 'Succeed to display ipv4'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Succeed to display ipv4'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 07:57:36 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 07:57:36 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 07:57:36 2025 - INFO  - Start to restore the test environment.
++ exportfs -au
++ rm -rf /tmp/test
++ mv -f /etc/exports.bak /etc/exports
++ exportfs -r
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp9fkfya17 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp9fkfya17
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 07:57:38 2025 - INFO  - End to restore the test environment.

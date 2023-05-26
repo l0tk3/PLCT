@@ -1,0 +1,129 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 08:50:45 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'ftp vsftpd'
++ pkgs='ftp vsftpd'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'ftp vsftpd' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpcxwdmt59
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpcxwdmt59
++ cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
++ sed -i s/anonymous_enable=NO/anonymous_enable=YES/g /etc/vsftpd/vsftpd.conf
++ sed -i s/#anon_upload_enable=YES/anon_upload_enable=YES/g /etc/vsftpd/vsftpd.conf
++ sed -i s/#anon_mkdir_write_enable=YES/anon_mkdir_write_enable=YES/g /etc/vsftpd/vsftpd.conf
++ echo 'anon_world_readable_only=YES
+anon_other_write_enable=YES
+anon_root=/var/ftp/pub/
+local_root=/var/ftp/pub/'
++ getenforce
++ grep Enforcing
++ systemctl status firewalld
++ grep running
+Unit firewalld.service could not be found.
++ chmod 777 /var/ftp/ -R
++ systemctl restart vsftpd
++ useradd example
++ passwd example
+New password: Retype new password: Changing password for user example.
+passwd: all authentication tokens updated successfully.
++ touch example.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 08:50:54 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 08:50:54 2025 - INFO  - Start to run test.
++ curl --upload-file example.txt --user 'example:openEuler12#$' ftp://127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
++ CHECK_RESULT 0 0 0 'Failed to execute curl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute curl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f /var/ftp/pub/example.txt
++ CHECK_RESULT 0 0 0 'Failed to execute curl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute curl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 08:50:54 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 08:50:54 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 08:50:54 2025 - INFO  - Start to restore the test environment.
++ mv -f /etc/vsftpd/vsftpd.conf.bak /etc/vsftpd/vsftpd.conf
++ getenforce
++ grep Permissive
++ systemctl status firewalld
++ grep dead
+Unit firewalld.service could not be found.
++ rm -rf example.txt /var/ftp/pub/example.txt
++ userdel -rf example
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpcxwdmt59 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpcxwdmt59
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 08:50:54 2025 - INFO  - End to restore the test environment.

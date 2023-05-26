@@ -1,0 +1,116 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 09:29:54 2025 - INFO  - Start to prepare the test environment.
++ cp -f /run/log/journal/37805f8cc6e049a585236d23819ea758/system.journal /run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8/system.journal '/run/log/journal/*/system.journal.bak'
+cp: target '/run/log/journal/*/system.journal.bak' is not a directory
++ cp -f /run/log/imjournal.state /run/log/imjournal.state.bak
++ echo ''
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 09:29:55 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:29:55 2025 - INFO  - Start to run test.
++ systemctl restart systemd-journald
++ CHECK_RESULT 0 0 0 'Systemd-journald not started'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Systemd-journald not started'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart rsyslog
++ CHECK_RESULT 0 0 0 'Rsyslog not started'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Rsyslog not started'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f /run/log/journal/37805f8cc6e049a585236d23819ea758/system.journal /run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8/system.journal
+oe_test_rsyslog_03.sh: line 36: test: /run/log/journal/37805f8cc6e049a585236d23819ea758/system.journal: binary operator expected
++ CHECK_RESULT 2 0 0 'Failed to find system.journal'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Failed to find system.journal'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Failed to find system.journal'
++ LOG_ERROR 'Failed to find system.journal'
++ message='Failed to find system.journal'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to find system.journal'
+Mon May 26 09:29:55 2025 - ERROR - Failed to find system.journal
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_03.sh line 37'
++ message='oe_test_rsyslog_03.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_03.sh line 37'
+Mon May 26 09:29:55 2025 - ERROR - oe_test_rsyslog_03.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ grep '[0-9]' /run/log/imjournal.state
+s=b97dc8514c4f40dca4ebd5becd0713dd;i=10922b;b=2d0018f643684db89b60effce3f7bbec;m=28718de8b;t=63606973d6701;x=8ae5b577e79bdf8f
++ CHECK_RESULT 0 0 0 'File has no content'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='File has no content'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:29:55 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 09:29:55 2025 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:29:55 2025 - INFO  - Start to restore the test environment.
++ mv -f '/run/log/journal/*/system.journal.bak' /run/log/journal/37805f8cc6e049a585236d23819ea758/system.journal /run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8/system.journal
+mv: target '/run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8/system.journal' is not a directory
++ mv -f /run/log/imjournal.state.bak /run/log/imjournal.state
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:29:55 2025 - INFO  - End to restore the test environment.

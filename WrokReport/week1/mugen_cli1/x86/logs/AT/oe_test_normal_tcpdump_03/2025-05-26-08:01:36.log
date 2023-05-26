@@ -1,0 +1,168 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 08:01:36 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL tcpdump
++ pkgs=tcpdump
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs tcpdump --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpvilfqjjb
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpvilfqjjb
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
++ ping -q -I baidu.com
+ping: usage error: Destination address required
+Mon May 26 08:01:38 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 08:01:38 2025 - INFO  - Start to run test.
++ tcpdump -i -c 10 -w test.pcap
++ grep 'listening on '
++ CHECK_RESULT 1 0 0 'Failed to execute tcpdump -w'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute tcpdump -w'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute tcpdump -w'
++ LOG_ERROR 'Failed to execute tcpdump -w'
++ message='Failed to execute tcpdump -w'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute tcpdump -w'
+Mon May 26 08:01:38 2025 - ERROR - Failed to execute tcpdump -w
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_normal_tcpdump_03.sh line 32'
++ message='oe_test_normal_tcpdump_03.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_normal_tcpdump_03.sh line 32'
+Mon May 26 08:01:38 2025 - ERROR - oe_test_normal_tcpdump_03.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f ./test.pcap
++ CHECK_RESULT 1 0 0 'Failed to find test.pcap'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to find test.pcap'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to find test.pcap'
++ LOG_ERROR 'Failed to find test.pcap'
++ message='Failed to find test.pcap'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to find test.pcap'
+Mon May 26 08:01:38 2025 - ERROR - Failed to find test.pcap
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_normal_tcpdump_03.sh line 34'
++ message='oe_test_normal_tcpdump_03.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_normal_tcpdump_03.sh line 34'
+Mon May 26 08:01:38 2025 - ERROR - oe_test_normal_tcpdump_03.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ tcpdump -r test.pcap
++ grep 'reading from file test.pcap'
++ CHECK_RESULT 1 0 0 'Failed to execute tcpdump -r'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute tcpdump -r'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute tcpdump -r'
++ LOG_ERROR 'Failed to execute tcpdump -r'
++ message='Failed to execute tcpdump -r'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute tcpdump -r'
+Mon May 26 08:01:39 2025 - ERROR - Failed to execute tcpdump -r
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_normal_tcpdump_03.sh line 36'
++ message='oe_test_normal_tcpdump_03.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_normal_tcpdump_03.sh line 36'
+Mon May 26 08:01:39 2025 - ERROR - oe_test_normal_tcpdump_03.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ tcpdump -r test.pcap
++ grep -E 'IP|ARP'
+tcpdump: test.pcap: No such file or directory
++ CHECK_RESULT 1 0 0 'Failed to display IP'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to display IP'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to display IP'
++ LOG_ERROR 'Failed to display IP'
++ message='Failed to display IP'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to display IP'
+Mon May 26 08:01:39 2025 - ERROR - Failed to display IP
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_normal_tcpdump_03.sh line 38'
++ message='oe_test_normal_tcpdump_03.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_normal_tcpdump_03.sh line 38'
+Mon May 26 08:01:39 2025 - ERROR - oe_test_normal_tcpdump_03.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 08:01:39 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 08:01:39 2025 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 08:01:39 2025 - INFO  - Start to restore the test environment.
+++ pgrep ping
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -rf ./test.pcap
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpvilfqjjb ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpvilfqjjb
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 08:01:39 2025 - INFO  - End to restore the test environment.

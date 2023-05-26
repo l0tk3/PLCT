@@ -1,0 +1,131 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start to config params of the case.'
++ message='Start to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to config params of the case.'
+Mon May 26 07:57:17 2025 - INFO  - Start to config params of the case.
++ ls /run/log/journal/37805f8cc6e049a585236d23819ea758 /run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8
+/run/log/journal/37805f8cc6e049a585236d23819ea758:
+system.journal
+
+/run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8:
+system@b97dc8514c4f40dca4ebd5becd0713dd-0000000000000001-0005fc92dabadee1.journal
+system@b97dc8514c4f40dca4ebd5becd0713dd-000000000000228a-000619569e101833.journal
+system.journal
++ path=run
+++ ls /run/log/journal/
+++ head -n 1
++ folder=37805f8cc6e049a585236d23819ea758
++ LOG_INFO 'End to config params of the case.'
++ message='End to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to config params of the case.'
+Mon May 26 07:57:17 2025 - INFO  - End to config params of the case.
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 07:57:17 2025 - INFO  - Start to run test.
++ grep Storage /etc/systemd/journald.conf
++ egrep 'Storage=auto|Storage=persistent'
+egrep: warning: egrep is obsolescent; using grep -E
+#Storage=auto
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cp -r /run/log/journal/37805f8cc6e049a585236d23819ea758 /run/log/journal/37805f8cc6e049a585236d23819ea758bak
++ rm -rf /run/log/journal/37805f8cc6e049a585236d23819ea758
++ systemctl restart systemd-journald.service
++ '[' '!' -d /run/log/journal/37805f8cc6e049a585236d23819ea758 ']'
++ CHECK_RESULT 0 1
++ actual_result=0
++ expect_result=1
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 1x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_syslog_journald_001.sh line 40'
++ message='oe_test_syslog_journald_001.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_syslog_journald_001.sh line 40'
+Mon May 26 07:57:17 2025 - ERROR - oe_test_syslog_journald_001.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ cp -r /run/log/journal/37805f8cc6e049a585236d23819ea758bak /run/log/journal/37805f8cc6e049a585236d23819ea758
+++ ls -la /run/log/journal/37805f8cc6e049a585236d23819ea758
+++ grep '^-'
+++ grep journal
+++ wc -l
++ check_file=1
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ journalctl --file /run/log/journal/37805f8cc6e049a585236d23819ea758/system.journal
+++ grep -v ' No entries ' systemlog1
+++ wc -l
++ logsize=711
++ test 711 -gt 1
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 07:57:17 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 07:57:17 2025 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 07:57:17 2025 - INFO  - Start to restore the test environment.
++ rm -rf /run/log/journal/37805f8cc6e049a585236d23819ea758bak systemlog1
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 07:57:17 2025 - INFO  - End to restore the test environment.

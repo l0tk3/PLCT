@@ -1,0 +1,121 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:30:44 2025 - INFO  - Start to run test.
++ echo -e 'net.ipv6.conf.all.disable_ipv6=1 \nnet.ipv6.conf.default.disable_ipv6=1'
++ CHECK_RESULT 0 0 0 'Set disable ipv6: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Set disable ipv6: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sysctl -p
++ grep -E 'net.ipv6.conf.all.disable_ipv6 = 1|net.ipv6.conf.default.disable_ipv6 = 1'
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
++ CHECK_RESULT 0 0 0 'Check disable ipv6: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check disable ipv6: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a
++ grep inet6
++ CHECK_RESULT 1 1 0 'Check all ipv6: failed!'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Check all ipv6: failed!'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ sed -i s/disable_ipv6=1/disable_ipv6=0/g /etc/sysctl.conf
++ CHECK_RESULT 0 0 0 'Enable all ipv6: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Enable all ipv6: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sysctl -p
++ grep -E 'net.ipv6.conf.all.disable_ipv6 = 0|net.ipv6.conf.default.disable_ipv6 = 0'
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.default.disable_ipv6 = 0
++ CHECK_RESULT 0 0 0 'Set enable ipv6: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Set enable ipv6: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a
++ grep inet6
+    inet6 ::1/128 scope host 
++ CHECK_RESULT 0 0 0 'Check all ipv6 is enable: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check all ipv6 is enable: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:30:44 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:30:44 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:30:44 2025 - INFO  - Start to restore the test environment.
++ sed -i /disable_ipv6=0/d /etc/sysctl.conf
++ sed -i /disable_ipv6=1/d /etc/sysctl.conf
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:30:44 2025 - INFO  - End to restore the test environment.

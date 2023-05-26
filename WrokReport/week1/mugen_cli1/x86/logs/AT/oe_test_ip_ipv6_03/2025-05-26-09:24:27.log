@@ -1,0 +1,197 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:24:27 2025 - INFO  - Start to run test.
++ ip -6 address show permanent
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 state UNKNOWN qlen 1000
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::2020:84b2:3694:396d/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
++ CHECK_RESULT 0 0 0 'Failed to show permanent'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show permanent'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dynamic
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fec0::704f:ae64:9663:6d34/64 scope site dynamic noprefixroute 
+       valid_lft 86375sec preferred_lft 14375sec
++ CHECK_RESULT 0 0 0 'Failed to show dynamic'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show dynamic'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show tentative
++ CHECK_RESULT 0 0 0 'Failed to show tentative'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show tentative'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show deprecated
++ CHECK_RESULT 0 0 0 'Failed to show deprecated'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show deprecated'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr show dev
+Command line is not complete. Try option "help"
++ CHECK_RESULT 255 0 0 'Failed to show '
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log='Failed to show '
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n 'Failed to show '
++ LOG_ERROR 'Failed to show '
++ message='Failed to show '
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show '
+Mon May 26 09:24:27 2025 - ERROR - Failed to show 
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_03.sh line 33'
++ message='oe_test_ip_ipv6_03.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_03.sh line 33'
+Mon May 26 09:24:27 2025 - ERROR - oe_test_ip_ipv6_03.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ ip -6 addr show dev eth10
++ grep 'Device "eth10" does not exist'
+Device "eth10" does not exist.
++ CHECK_RESULT 0 0 0 'Successd to show'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Successd to show'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr show scope host
++ grep host
+    inet6 ::1/128 scope host 
++ CHECK_RESULT 0 0 0 'Failed to show host'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show host'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr show scope link
++ grep link
+    inet6 fe80::2020:84b2:3694:396d/64 scope link noprefixroute 
++ CHECK_RESULT 0 0 0 'Failed to show link'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show link'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address add 1001::5/64 dev home
+Cannot find device "home"
++ ip -6 addr show scope global
++ CHECK_RESULT 0 0 0 'Failed to show global'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show global'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show label
++ grep inet6
+Command line is not complete. Try option "help"
++ CHECK_RESULT 1 0 0 'Failed to show inet6'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show inet6'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show inet6'
++ LOG_ERROR 'Failed to show inet6'
++ message='Failed to show inet6'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show inet6'
+Mon May 26 09:24:27 2025 - ERROR - Failed to show inet6
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_03.sh line 44'
++ message='oe_test_ip_ipv6_03.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_03.sh line 44'
+Mon May 26 09:24:27 2025 - ERROR - oe_test_ip_ipv6_03.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:24:27 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 09:24:27 2025 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:24:27 2025 - INFO  - Start to restore the test environment.
++ ip -6 address del 1001::5/64 dev home
+Cannot find device "home"
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:24:27 2025 - INFO  - End to restore the test environment.

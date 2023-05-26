@@ -1,0 +1,3901 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 08:42:30 2025 - INFO  - Start to prepare the test environment.
+++ lsmod
+++ grep -w 0
+++ awk '{print $1}'
+++ grep -vE 'Module|virtio|net_failover'
++ module_list='nf_conntrack_netlink
+rpcrdma
+br_netfilter
+overlay
+target_core_user
+target_core_pscsi
+target_core_file
+target_core_iblock
+arptable_filter
+ppdev
+rfkill
+snd_pcm
+pcspkr
+sg
+joydev
+i2c_piix4
+parport_pc
+sr_mod
+ata_generic
+ata_piix
+serio_raw
+btrfs
+xts
+lrw
+dm_crypt
+dm_round_robin
+dm_snapshot
+dm_mirror
+dm_zero
+linear
+raid10
+raid456
+raid1
+raid0
+squashfs
+cramfs'
+++ lsmod
+++ grep -vw 0
+++ awk '{print $1}'
+++ grep -vE 'Module|virtio|net_failover'
++ module_used_list='xt_MASQUERADE
+nfnetlink
+iptable_nat
+xt_addrtype
+iptable_filter
+ip_tables
+xt_conntrack
+nf_nat
+nf_conntrack
+nf_defrag_ipv6
+nf_defrag_ipv4
+rdma_cm
+iw_cm
+ib_cm
+ib_core
+nfsd
+auth_rpcgss
+nfs_acl
+lockd
+grace
+bridge
+stp
+llc
+dm_service_time
+sd_mod
+t10_pi
+crc64_rocksoft_generic
+crc64_rocksoft
+crc64
+iscsi_tcp
+libiscsi_tcp
+libiscsi
+scsi_transport_iscsi
+uio
+iscsi_target_mod
+target_core_mod
+sctp
+ip6_udp_tunnel
+udp_tunnel
+binfmt_misc
+arp_tables
+snd_timer
+snd
+soundcore
+parport
+vfat
+fat
+fuse
+ext4
+mbcache
+jbd2
+cdrom
+drm_shmem_helper
+drm_kms_helper
+syscopyarea
+sysfillrect
+sysimgblt
+fb_sys_fops
+drm
+failover
+libata
+sunrpc
+dm_multipath
+dm_bufio
+dm_region_hash
+dm_log
+dm_mod
+async_raid6_recov
+async_memcpy
+async_pq
+async_xor
+async_tx
+xor
+raid6_pq
+libcrc32c'
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 08:42:30 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 08:42:30 2025 - INFO  - Start to run test.
++ for mod in ${module_list}
++ modprobe -r nf_conntrack_netlink
++ CHECK_RESULT 0 0 0 'Failed to delete nf_conntrack_netlink'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete nf_conntrack_netlink'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nf_conntrack_netlink
++ CHECK_RESULT 1 1 0 'Failed to delete nf_conntrack_netlink'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete nf_conntrack_netlink'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe nf_conntrack_netlink
++ CHECK_RESULT 0 0 0 'Failed to load nf_conntrack_netlink'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_conntrack_netlink'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nf_conntrack_netlink
+nf_conntrack_netlink    61440  0
+nfnetlink              20480  1 nf_conntrack_netlink
+nf_conntrack          184320  4 xt_conntrack,nf_nat,nf_conntrack_netlink,xt_MASQUERADE
++ CHECK_RESULT 0 0 0 'Failed to load nf_conntrack_netlink'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_conntrack_netlink'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r rpcrdma
++ CHECK_RESULT 0 0 0 'Failed to delete rpcrdma'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete rpcrdma'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w rpcrdma
++ CHECK_RESULT 1 1 0 'Failed to delete rpcrdma'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete rpcrdma'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe rpcrdma
++ CHECK_RESULT 0 0 0 'Failed to load rpcrdma'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load rpcrdma'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w rpcrdma
+rpcrdma               368640  0
+rdma_cm               147456  1 rpcrdma
+ib_core               462848  4 rdma_cm,rpcrdma,iw_cm,ib_cm
+sunrpc                704512  5 nfsd,rpcrdma,auth_rpcgss,lockd,nfs_acl
++ CHECK_RESULT 0 0 0 'Failed to load rpcrdma'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load rpcrdma'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r br_netfilter
++ CHECK_RESULT 0 0 0 'Failed to delete br_netfilter'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete br_netfilter'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w br_netfilter
++ CHECK_RESULT 1 1 0 'Failed to delete br_netfilter'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete br_netfilter'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe br_netfilter
++ CHECK_RESULT 0 0 0 'Failed to load br_netfilter'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load br_netfilter'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w br_netfilter
+br_netfilter           36864  0
+bridge                331776  1 br_netfilter
++ CHECK_RESULT 0 0 0 'Failed to load br_netfilter'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load br_netfilter'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r overlay
++ CHECK_RESULT 0 0 0 'Failed to delete overlay'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete overlay'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w overlay
++ CHECK_RESULT 1 1 0 'Failed to delete overlay'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete overlay'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe overlay
++ CHECK_RESULT 0 0 0 'Failed to load overlay'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load overlay'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w overlay
+overlay               167936  0
++ CHECK_RESULT 0 0 0 'Failed to load overlay'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load overlay'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r target_core_user
++ CHECK_RESULT 0 0 0 'Failed to delete target_core_user'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete target_core_user'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_user
++ CHECK_RESULT 1 1 0 'Failed to delete target_core_user'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete target_core_user'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe target_core_user
++ CHECK_RESULT 0 0 0 'Failed to load target_core_user'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_user'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_user
+target_core_user       65536  0
+uio                    32768  1 target_core_user
+target_core_mod       458752  6 target_core_file,target_core_iblock,iscsi_target_mod,target_core_pscsi,target_core_user
++ CHECK_RESULT 0 0 0 'Failed to load target_core_user'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_user'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r target_core_pscsi
++ CHECK_RESULT 0 0 0 'Failed to delete target_core_pscsi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete target_core_pscsi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_pscsi
++ CHECK_RESULT 1 1 0 'Failed to delete target_core_pscsi'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete target_core_pscsi'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe target_core_pscsi
++ CHECK_RESULT 0 0 0 'Failed to load target_core_pscsi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_pscsi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_pscsi
+target_core_pscsi      28672  0
+target_core_mod       458752  6 target_core_file,target_core_iblock,iscsi_target_mod,target_core_pscsi,target_core_user
++ CHECK_RESULT 0 0 0 'Failed to load target_core_pscsi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_pscsi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r target_core_file
++ CHECK_RESULT 0 0 0 'Failed to delete target_core_file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete target_core_file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_file
++ CHECK_RESULT 1 1 0 'Failed to delete target_core_file'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete target_core_file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe target_core_file
++ CHECK_RESULT 0 0 0 'Failed to load target_core_file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_file
+target_core_file       28672  0
+target_core_mod       458752  6 target_core_file,target_core_iblock,iscsi_target_mod,target_core_pscsi,target_core_user
++ CHECK_RESULT 0 0 0 'Failed to load target_core_file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r target_core_iblock
++ CHECK_RESULT 0 0 0 'Failed to delete target_core_iblock'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete target_core_iblock'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_iblock
++ CHECK_RESULT 1 1 0 'Failed to delete target_core_iblock'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete target_core_iblock'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe target_core_iblock
++ CHECK_RESULT 0 0 0 'Failed to load target_core_iblock'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_iblock'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_iblock
+target_core_iblock     28672  0
+target_core_mod       458752  6 target_core_file,target_core_iblock,iscsi_target_mod,target_core_pscsi,target_core_user
++ CHECK_RESULT 0 0 0 'Failed to load target_core_iblock'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_iblock'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r arptable_filter
++ CHECK_RESULT 0 0 0 'Failed to delete arptable_filter'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete arptable_filter'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w arptable_filter
++ CHECK_RESULT 1 1 0 'Failed to delete arptable_filter'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete arptable_filter'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe arptable_filter
++ CHECK_RESULT 0 0 0 'Failed to load arptable_filter'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load arptable_filter'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w arptable_filter
+arptable_filter        16384  0
+arp_tables             28672  1 arptable_filter
++ CHECK_RESULT 0 0 0 'Failed to load arptable_filter'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load arptable_filter'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r ppdev
++ CHECK_RESULT 0 0 0 'Failed to delete ppdev'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete ppdev'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ppdev
++ CHECK_RESULT 1 1 0 'Failed to delete ppdev'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete ppdev'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe ppdev
++ CHECK_RESULT 0 0 0 'Failed to load ppdev'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ppdev'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ppdev
+ppdev                  24576  0
+parport                77824  2 parport_pc,ppdev
++ CHECK_RESULT 0 0 0 'Failed to load ppdev'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ppdev'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r rfkill
++ CHECK_RESULT 0 0 0 'Failed to delete rfkill'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete rfkill'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w rfkill
++ CHECK_RESULT 1 1 0 'Failed to delete rfkill'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete rfkill'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe rfkill
++ CHECK_RESULT 0 0 0 'Failed to load rfkill'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load rfkill'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w rfkill
+rfkill                 40960  0
++ CHECK_RESULT 0 0 0 'Failed to load rfkill'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load rfkill'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r snd_pcm
++ CHECK_RESULT 0 0 0 'Failed to delete snd_pcm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete snd_pcm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w snd_pcm
++ CHECK_RESULT 1 1 0 'Failed to delete snd_pcm'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete snd_pcm'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe snd_pcm
++ CHECK_RESULT 0 0 0 'Failed to load snd_pcm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load snd_pcm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w snd_pcm
+snd_pcm               155648  0
+snd_timer              49152  1 snd_pcm
+snd                   126976  2 snd_timer,snd_pcm
++ CHECK_RESULT 0 0 0 'Failed to load snd_pcm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load snd_pcm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r pcspkr
++ CHECK_RESULT 0 0 0 'Failed to delete pcspkr'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete pcspkr'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w pcspkr
++ CHECK_RESULT 1 1 0 'Failed to delete pcspkr'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete pcspkr'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe pcspkr
++ CHECK_RESULT 0 0 0 'Failed to load pcspkr'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load pcspkr'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w pcspkr
+pcspkr                 16384  0
++ CHECK_RESULT 0 0 0 'Failed to load pcspkr'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load pcspkr'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r sg
++ CHECK_RESULT 0 0 0 'Failed to delete sg'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete sg'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sg
++ CHECK_RESULT 1 1 0 'Failed to delete sg'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete sg'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe sg
++ CHECK_RESULT 0 0 0 'Failed to load sg'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sg'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sg
+sg                     49152  0
++ CHECK_RESULT 0 0 0 'Failed to load sg'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sg'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r joydev
++ CHECK_RESULT 0 0 0 'Failed to delete joydev'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete joydev'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w joydev
++ CHECK_RESULT 1 1 0 'Failed to delete joydev'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete joydev'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe joydev
++ CHECK_RESULT 0 0 0 'Failed to load joydev'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load joydev'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w joydev
+joydev                 28672  0
++ CHECK_RESULT 0 0 0 'Failed to load joydev'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load joydev'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r i2c_piix4
++ CHECK_RESULT 0 0 0 'Failed to delete i2c_piix4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete i2c_piix4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w i2c_piix4
++ CHECK_RESULT 1 1 0 'Failed to delete i2c_piix4'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete i2c_piix4'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe i2c_piix4
++ CHECK_RESULT 0 0 0 'Failed to load i2c_piix4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load i2c_piix4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w i2c_piix4
+i2c_piix4              32768  0
++ CHECK_RESULT 0 0 0 'Failed to load i2c_piix4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load i2c_piix4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r parport_pc
++ CHECK_RESULT 0 0 0 'Failed to delete parport_pc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete parport_pc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w parport_pc
++ CHECK_RESULT 1 1 0 'Failed to delete parport_pc'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete parport_pc'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe parport_pc
++ CHECK_RESULT 0 0 0 'Failed to load parport_pc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load parport_pc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w parport_pc
+parport_pc             40960  0
+parport                77824  2 parport_pc,ppdev
++ CHECK_RESULT 0 0 0 'Failed to load parport_pc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load parport_pc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r sr_mod
++ CHECK_RESULT 0 0 0 'Failed to delete sr_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete sr_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sr_mod
++ CHECK_RESULT 1 1 0 'Failed to delete sr_mod'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete sr_mod'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe sr_mod
++ CHECK_RESULT 0 0 0 'Failed to load sr_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sr_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sr_mod
+sr_mod                 28672  1
+cdrom                  81920  1 sr_mod
++ CHECK_RESULT 0 0 0 'Failed to load sr_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sr_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r ata_generic
++ CHECK_RESULT 0 0 0 'Failed to delete ata_generic'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete ata_generic'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ata_generic
++ CHECK_RESULT 1 1 0 'Failed to delete ata_generic'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete ata_generic'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe ata_generic
++ CHECK_RESULT 0 0 0 'Failed to load ata_generic'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ata_generic'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ata_generic
+ata_generic            16384  0
+libata                409600  2 ata_piix,ata_generic
++ CHECK_RESULT 0 0 0 'Failed to load ata_generic'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ata_generic'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r ata_piix
+modprobe: FATAL: Module ata_piix is in use.
++ CHECK_RESULT 1 0 0 'Failed to delete ata_piix'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to delete ata_piix'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to delete ata_piix'
++ LOG_ERROR 'Failed to delete ata_piix'
++ message='Failed to delete ata_piix'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to delete ata_piix'
+Mon May 26 08:42:31 2025 - ERROR - Failed to delete ata_piix
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_module.sh line 32'
++ message='oe_test_module.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_module.sh line 32'
+Mon May 26 08:42:31 2025 - ERROR - oe_test_module.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ lsmod
++ grep -w ata_piix
+ata_piix               45056  2
+libata                409600  2 ata_piix,ata_generic
++ CHECK_RESULT 0 1 0 'Failed to delete ata_piix'
++ actual_result=0
++ expect_result=1
++ mode=0
++ error_log='Failed to delete ata_piix'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 1x
++ test -n 'Failed to delete ata_piix'
++ LOG_ERROR 'Failed to delete ata_piix'
++ message='Failed to delete ata_piix'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to delete ata_piix'
+Mon May 26 08:42:31 2025 - ERROR - Failed to delete ata_piix
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_module.sh line 34'
++ message='oe_test_module.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_module.sh line 34'
+Mon May 26 08:42:31 2025 - ERROR - oe_test_module.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ modprobe ata_piix
++ CHECK_RESULT 0 0 0 'Failed to load ata_piix'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ata_piix'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ata_piix
+ata_piix               45056  1
+libata                409600  2 ata_piix,ata_generic
++ CHECK_RESULT 0 0 0 'Failed to load ata_piix'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ata_piix'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r serio_raw
++ CHECK_RESULT 0 0 0 'Failed to delete serio_raw'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete serio_raw'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w serio_raw
++ CHECK_RESULT 1 1 0 'Failed to delete serio_raw'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete serio_raw'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe serio_raw
++ CHECK_RESULT 0 0 0 'Failed to load serio_raw'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load serio_raw'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w serio_raw
+serio_raw              20480  0
++ CHECK_RESULT 0 0 0 'Failed to load serio_raw'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load serio_raw'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r btrfs
++ CHECK_RESULT 0 0 0 'Failed to delete btrfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete btrfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w btrfs
++ CHECK_RESULT 1 1 0 'Failed to delete btrfs'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete btrfs'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe btrfs
++ CHECK_RESULT 0 0 0 'Failed to load btrfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load btrfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w btrfs
+btrfs                1839104  0
+xor                    24576  2 async_xor,btrfs
+raid6_pq              122880  4 async_pq,btrfs,raid456,async_raid6_recov
+libcrc32c              16384  5 nf_conntrack,nf_nat,btrfs,raid456,sctp
++ CHECK_RESULT 0 0 0 'Failed to load btrfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load btrfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r xts
++ CHECK_RESULT 0 0 0 'Failed to delete xts'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete xts'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w xts
++ CHECK_RESULT 1 1 0 'Failed to delete xts'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete xts'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe xts
++ CHECK_RESULT 0 0 0 'Failed to load xts'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xts'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w xts
+xts                    16384  0
++ CHECK_RESULT 0 0 0 'Failed to load xts'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xts'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r lrw
++ CHECK_RESULT 0 0 0 'Failed to delete lrw'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete lrw'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w lrw
++ CHECK_RESULT 1 1 0 'Failed to delete lrw'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete lrw'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe lrw
++ CHECK_RESULT 0 0 0 'Failed to load lrw'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load lrw'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w lrw
+lrw                    16384  0
++ CHECK_RESULT 0 0 0 'Failed to load lrw'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load lrw'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r dm_crypt
++ CHECK_RESULT 0 0 0 'Failed to delete dm_crypt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete dm_crypt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_crypt
++ CHECK_RESULT 1 1 0 'Failed to delete dm_crypt'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete dm_crypt'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe dm_crypt
++ CHECK_RESULT 0 0 0 'Failed to load dm_crypt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_crypt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_crypt
+dm_crypt               61440  0
+dm_mod                188416  8 dm_crypt,dm_zero,dm_multipath,dm_log,dm_snapshot,dm_mirror,dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_crypt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_crypt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r dm_round_robin
++ CHECK_RESULT 0 0 0 'Failed to delete dm_round_robin'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete dm_round_robin'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_round_robin
++ CHECK_RESULT 1 1 0 'Failed to delete dm_round_robin'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete dm_round_robin'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe dm_round_robin
++ CHECK_RESULT 0 0 0 'Failed to load dm_round_robin'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_round_robin'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_round_robin
+dm_round_robin         16384  0
+dm_multipath           45056  3 dm_round_robin,dm_service_time
++ CHECK_RESULT 0 0 0 'Failed to load dm_round_robin'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_round_robin'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r dm_snapshot
++ CHECK_RESULT 0 0 0 'Failed to delete dm_snapshot'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete dm_snapshot'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_snapshot
++ CHECK_RESULT 1 1 0 'Failed to delete dm_snapshot'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete dm_snapshot'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe dm_snapshot
++ CHECK_RESULT 0 0 0 'Failed to load dm_snapshot'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_snapshot'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_snapshot
+dm_snapshot            53248  0
+dm_bufio               45056  1 dm_snapshot
+dm_mod                188416  8 dm_crypt,dm_zero,dm_multipath,dm_log,dm_snapshot,dm_mirror,dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_snapshot'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_snapshot'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r dm_mirror
++ CHECK_RESULT 0 0 0 'Failed to delete dm_mirror'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete dm_mirror'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_mirror
++ CHECK_RESULT 1 1 0 'Failed to delete dm_mirror'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete dm_mirror'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe dm_mirror
++ CHECK_RESULT 0 0 0 'Failed to load dm_mirror'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_mirror'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_mirror
+dm_mirror              28672  0
+dm_region_hash         24576  1 dm_mirror
+dm_log                 20480  2 dm_region_hash,dm_mirror
+dm_mod                188416  8 dm_crypt,dm_zero,dm_multipath,dm_log,dm_snapshot,dm_mirror,dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_mirror'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_mirror'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r dm_zero
++ CHECK_RESULT 0 0 0 'Failed to delete dm_zero'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete dm_zero'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_zero
++ CHECK_RESULT 1 1 0 'Failed to delete dm_zero'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete dm_zero'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe dm_zero
++ CHECK_RESULT 0 0 0 'Failed to load dm_zero'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_zero'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_zero
+dm_zero                16384  0
+dm_mod                188416  8 dm_crypt,dm_zero,dm_multipath,dm_log,dm_snapshot,dm_mirror,dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_zero'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_zero'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r linear
++ CHECK_RESULT 0 0 0 'Failed to delete linear'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete linear'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w linear
++ CHECK_RESULT 1 1 0 'Failed to delete linear'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete linear'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe linear
++ CHECK_RESULT 0 0 0 'Failed to load linear'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load linear'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w linear
+linear                 20480  0
++ CHECK_RESULT 0 0 0 'Failed to load linear'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load linear'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r raid10
++ CHECK_RESULT 0 0 0 'Failed to delete raid10'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete raid10'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid10
++ CHECK_RESULT 1 1 0 'Failed to delete raid10'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete raid10'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe raid10
++ CHECK_RESULT 0 0 0 'Failed to load raid10'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid10'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid10
+raid10                 73728  0
++ CHECK_RESULT 0 0 0 'Failed to load raid10'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid10'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r raid456
++ CHECK_RESULT 0 0 0 'Failed to delete raid456'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete raid456'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid456
++ CHECK_RESULT 1 1 0 'Failed to delete raid456'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete raid456'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe raid456
++ CHECK_RESULT 0 0 0 'Failed to load raid456'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid456'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid456
+raid456               196608  0
+async_raid6_recov      24576  1 raid456
+async_memcpy           20480  2 raid456,async_raid6_recov
+async_pq               20480  2 raid456,async_raid6_recov
+async_xor              20480  3 async_pq,raid456,async_raid6_recov
+async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+raid6_pq              122880  4 async_pq,btrfs,raid456,async_raid6_recov
+libcrc32c              16384  5 nf_conntrack,nf_nat,btrfs,raid456,sctp
++ CHECK_RESULT 0 0 0 'Failed to load raid456'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid456'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r raid1
++ CHECK_RESULT 0 0 0 'Failed to delete raid1'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete raid1'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid1
++ CHECK_RESULT 1 1 0 'Failed to delete raid1'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete raid1'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe raid1
++ CHECK_RESULT 0 0 0 'Failed to load raid1'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid1'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid1
+raid1                  53248  0
++ CHECK_RESULT 0 0 0 'Failed to load raid1'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid1'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r raid0
++ CHECK_RESULT 0 0 0 'Failed to delete raid0'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete raid0'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid0
++ CHECK_RESULT 1 1 0 'Failed to delete raid0'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete raid0'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe raid0
++ CHECK_RESULT 0 0 0 'Failed to load raid0'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid0'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid0
+raid0                  24576  0
++ CHECK_RESULT 0 0 0 'Failed to load raid0'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid0'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r squashfs
++ CHECK_RESULT 0 0 0 'Failed to delete squashfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete squashfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w squashfs
++ CHECK_RESULT 1 1 0 'Failed to delete squashfs'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete squashfs'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe squashfs
++ CHECK_RESULT 0 0 0 'Failed to load squashfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load squashfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w squashfs
+squashfs               69632  0
++ CHECK_RESULT 0 0 0 'Failed to load squashfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load squashfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_list}
++ modprobe -r cramfs
++ CHECK_RESULT 0 0 0 'Failed to delete cramfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete cramfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w cramfs
++ CHECK_RESULT 1 1 0 'Failed to delete cramfs'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete cramfs'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ modprobe cramfs
++ CHECK_RESULT 0 0 0 'Failed to load cramfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load cramfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w cramfs
+cramfs                 57344  0
++ CHECK_RESULT 0 0 0 'Failed to load cramfs'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load cramfs'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe xt_MASQUERADE
++ CHECK_RESULT 0 0 0 'Failed to load xt_MASQUERADE'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xt_MASQUERADE'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w xt_MASQUERADE
+xt_MASQUERADE          20480  1
+nf_nat                 57344  2 iptable_nat,xt_MASQUERADE
+nf_conntrack          184320  4 xt_conntrack,nf_nat,nf_conntrack_netlink,xt_MASQUERADE
++ CHECK_RESULT 0 0 0 'Failed to load xt_MASQUERADE'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xt_MASQUERADE'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe nfnetlink
++ CHECK_RESULT 0 0 0 'Failed to load nfnetlink'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nfnetlink'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nfnetlink
+nfnetlink              20480  1 nf_conntrack_netlink
++ CHECK_RESULT 0 0 0 'Failed to load nfnetlink'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nfnetlink'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe iptable_nat
++ CHECK_RESULT 0 0 0 'Failed to load iptable_nat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iptable_nat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w iptable_nat
+iptable_nat            16384  1
+ip_tables              36864  2 iptable_filter,iptable_nat
+nf_nat                 57344  2 iptable_nat,xt_MASQUERADE
++ CHECK_RESULT 0 0 0 'Failed to load iptable_nat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iptable_nat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe xt_addrtype
++ CHECK_RESULT 0 0 0 'Failed to load xt_addrtype'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xt_addrtype'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w xt_addrtype
+xt_addrtype            16384  2
++ CHECK_RESULT 0 0 0 'Failed to load xt_addrtype'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xt_addrtype'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe iptable_filter
++ CHECK_RESULT 0 0 0 'Failed to load iptable_filter'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iptable_filter'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w iptable_filter
+iptable_filter         16384  1
+ip_tables              36864  2 iptable_filter,iptable_nat
++ CHECK_RESULT 0 0 0 'Failed to load iptable_filter'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iptable_filter'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe ip_tables
++ CHECK_RESULT 0 0 0 'Failed to load ip_tables'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ip_tables'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ip_tables
+ip_tables              36864  2 iptable_filter,iptable_nat
++ CHECK_RESULT 0 0 0 'Failed to load ip_tables'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ip_tables'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe xt_conntrack
++ CHECK_RESULT 0 0 0 'Failed to load xt_conntrack'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xt_conntrack'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w xt_conntrack
+xt_conntrack           16384  1
+nf_conntrack          184320  4 xt_conntrack,nf_nat,nf_conntrack_netlink,xt_MASQUERADE
++ CHECK_RESULT 0 0 0 'Failed to load xt_conntrack'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xt_conntrack'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe nf_nat
++ CHECK_RESULT 0 0 0 'Failed to load nf_nat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_nat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nf_nat
+nf_nat                 57344  2 iptable_nat,xt_MASQUERADE
+nf_conntrack          184320  4 xt_conntrack,nf_nat,nf_conntrack_netlink,xt_MASQUERADE
+libcrc32c              16384  5 nf_conntrack,nf_nat,btrfs,raid456,sctp
++ CHECK_RESULT 0 0 0 'Failed to load nf_nat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_nat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe nf_conntrack
++ CHECK_RESULT 0 0 0 'Failed to load nf_conntrack'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_conntrack'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nf_conntrack
+nf_conntrack          184320  4 xt_conntrack,nf_nat,nf_conntrack_netlink,xt_MASQUERADE
+nf_defrag_ipv6         24576  1 nf_conntrack
+nf_defrag_ipv4         16384  1 nf_conntrack
+libcrc32c              16384  5 nf_conntrack,nf_nat,btrfs,raid456,sctp
++ CHECK_RESULT 0 0 0 'Failed to load nf_conntrack'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_conntrack'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe nf_defrag_ipv6
++ CHECK_RESULT 0 0 0 'Failed to load nf_defrag_ipv6'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_defrag_ipv6'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nf_defrag_ipv6
+nf_defrag_ipv6         24576  1 nf_conntrack
++ CHECK_RESULT 0 0 0 'Failed to load nf_defrag_ipv6'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_defrag_ipv6'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe nf_defrag_ipv4
++ CHECK_RESULT 0 0 0 'Failed to load nf_defrag_ipv4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_defrag_ipv4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nf_defrag_ipv4
+nf_defrag_ipv4         16384  1 nf_conntrack
++ CHECK_RESULT 0 0 0 'Failed to load nf_defrag_ipv4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nf_defrag_ipv4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe rdma_cm
++ CHECK_RESULT 0 0 0 'Failed to load rdma_cm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load rdma_cm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w rdma_cm
+rdma_cm               147456  1 rpcrdma
+iw_cm                  61440  1 rdma_cm
+ib_cm                 143360  1 rdma_cm
+ib_core               462848  4 rdma_cm,rpcrdma,iw_cm,ib_cm
++ CHECK_RESULT 0 0 0 'Failed to load rdma_cm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load rdma_cm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe iw_cm
++ CHECK_RESULT 0 0 0 'Failed to load iw_cm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iw_cm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w iw_cm
+iw_cm                  61440  1 rdma_cm
+ib_core               462848  4 rdma_cm,rpcrdma,iw_cm,ib_cm
++ CHECK_RESULT 0 0 0 'Failed to load iw_cm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iw_cm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe ib_cm
++ CHECK_RESULT 0 0 0 'Failed to load ib_cm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ib_cm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ib_cm
+ib_cm                 143360  1 rdma_cm
+ib_core               462848  4 rdma_cm,rpcrdma,iw_cm,ib_cm
++ CHECK_RESULT 0 0 0 'Failed to load ib_cm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ib_cm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe ib_core
++ CHECK_RESULT 0 0 0 'Failed to load ib_core'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ib_core'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ib_core
+ib_core               462848  4 rdma_cm,rpcrdma,iw_cm,ib_cm
++ CHECK_RESULT 0 0 0 'Failed to load ib_core'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ib_core'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe nfsd
++ CHECK_RESULT 0 0 0 'Failed to load nfsd'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nfsd'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nfsd
+nfsd                  741376  1
+auth_rpcgss           159744  1 nfsd
+nfs_acl                16384  1 nfsd
+lockd                 135168  1 nfsd
+grace                  16384  2 nfsd,lockd
+sunrpc                704512  5 nfsd,rpcrdma,auth_rpcgss,lockd,nfs_acl
++ CHECK_RESULT 0 0 0 'Failed to load nfsd'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nfsd'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe auth_rpcgss
++ CHECK_RESULT 0 0 0 'Failed to load auth_rpcgss'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load auth_rpcgss'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w auth_rpcgss
+auth_rpcgss           159744  1 nfsd
+sunrpc                704512  5 nfsd,rpcrdma,auth_rpcgss,lockd,nfs_acl
++ CHECK_RESULT 0 0 0 'Failed to load auth_rpcgss'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load auth_rpcgss'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe nfs_acl
++ CHECK_RESULT 0 0 0 'Failed to load nfs_acl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nfs_acl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w nfs_acl
+nfs_acl                16384  1 nfsd
+sunrpc                704512  5 nfsd,rpcrdma,auth_rpcgss,lockd,nfs_acl
++ CHECK_RESULT 0 0 0 'Failed to load nfs_acl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load nfs_acl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe lockd
++ CHECK_RESULT 0 0 0 'Failed to load lockd'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load lockd'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w lockd
+lockd                 135168  1 nfsd
+grace                  16384  2 nfsd,lockd
+sunrpc                704512  5 nfsd,rpcrdma,auth_rpcgss,lockd,nfs_acl
++ CHECK_RESULT 0 0 0 'Failed to load lockd'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load lockd'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe grace
++ CHECK_RESULT 0 0 0 'Failed to load grace'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load grace'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w grace
+grace                  16384  2 nfsd,lockd
++ CHECK_RESULT 0 0 0 'Failed to load grace'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load grace'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe bridge
++ CHECK_RESULT 0 0 0 'Failed to load bridge'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load bridge'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w bridge
+bridge                331776  1 br_netfilter
+stp                    16384  1 bridge
+llc                    16384  2 bridge,stp
++ CHECK_RESULT 0 0 0 'Failed to load bridge'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load bridge'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe stp
++ CHECK_RESULT 0 0 0 'Failed to load stp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load stp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w stp
+stp                    16384  1 bridge
+llc                    16384  2 bridge,stp
++ CHECK_RESULT 0 0 0 'Failed to load stp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load stp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe llc
++ CHECK_RESULT 0 0 0 'Failed to load llc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load llc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w llc
+llc                    16384  2 bridge,stp
++ CHECK_RESULT 0 0 0 'Failed to load llc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load llc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe dm_service_time
++ CHECK_RESULT 0 0 0 'Failed to load dm_service_time'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_service_time'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_service_time
+dm_service_time        16384  1
+dm_multipath           45056  3 dm_round_robin,dm_service_time
++ CHECK_RESULT 0 0 0 'Failed to load dm_service_time'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_service_time'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe sd_mod
++ CHECK_RESULT 0 0 0 'Failed to load sd_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sd_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sd_mod
+sd_mod                 69632  1
+t10_pi                 16384  1 sd_mod
++ CHECK_RESULT 0 0 0 'Failed to load sd_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sd_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe t10_pi
++ CHECK_RESULT 0 0 0 'Failed to load t10_pi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load t10_pi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w t10_pi
+t10_pi                 16384  1 sd_mod
+crc64_rocksoft         20480  1 t10_pi
++ CHECK_RESULT 0 0 0 'Failed to load t10_pi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load t10_pi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe crc64_rocksoft_generic
++ CHECK_RESULT 0 0 0 'Failed to load crc64_rocksoft_generic'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load crc64_rocksoft_generic'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w crc64_rocksoft_generic
+crc64_rocksoft_generic    16384  1
+crc64                  20480  2 crc64_rocksoft,crc64_rocksoft_generic
++ CHECK_RESULT 0 0 0 'Failed to load crc64_rocksoft_generic'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load crc64_rocksoft_generic'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe crc64_rocksoft
++ CHECK_RESULT 0 0 0 'Failed to load crc64_rocksoft'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load crc64_rocksoft'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w crc64_rocksoft
+crc64_rocksoft         20480  1 t10_pi
+crc64                  20480  2 crc64_rocksoft,crc64_rocksoft_generic
++ CHECK_RESULT 0 0 0 'Failed to load crc64_rocksoft'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load crc64_rocksoft'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe crc64
++ CHECK_RESULT 0 0 0 'Failed to load crc64'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load crc64'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w crc64
+crc64                  20480  2 crc64_rocksoft,crc64_rocksoft_generic
++ CHECK_RESULT 0 0 0 'Failed to load crc64'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load crc64'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe iscsi_tcp
++ CHECK_RESULT 0 0 0 'Failed to load iscsi_tcp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iscsi_tcp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w iscsi_tcp
+iscsi_tcp              28672  1
+libiscsi_tcp           36864  1 iscsi_tcp
+libiscsi               81920  2 libiscsi_tcp,iscsi_tcp
+scsi_transport_iscsi   151552  3 libiscsi_tcp,iscsi_tcp,libiscsi
++ CHECK_RESULT 0 0 0 'Failed to load iscsi_tcp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iscsi_tcp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe libiscsi_tcp
++ CHECK_RESULT 0 0 0 'Failed to load libiscsi_tcp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load libiscsi_tcp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w libiscsi_tcp
+libiscsi_tcp           36864  1 iscsi_tcp
+libiscsi               81920  2 libiscsi_tcp,iscsi_tcp
+scsi_transport_iscsi   151552  3 libiscsi_tcp,iscsi_tcp,libiscsi
++ CHECK_RESULT 0 0 0 'Failed to load libiscsi_tcp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load libiscsi_tcp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe libiscsi
++ CHECK_RESULT 0 0 0 'Failed to load libiscsi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load libiscsi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w libiscsi
+libiscsi               81920  2 libiscsi_tcp,iscsi_tcp
+scsi_transport_iscsi   151552  3 libiscsi_tcp,iscsi_tcp,libiscsi
++ CHECK_RESULT 0 0 0 'Failed to load libiscsi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load libiscsi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe scsi_transport_iscsi
++ CHECK_RESULT 0 0 0 'Failed to load scsi_transport_iscsi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load scsi_transport_iscsi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w scsi_transport_iscsi
+scsi_transport_iscsi   151552  3 libiscsi_tcp,iscsi_tcp,libiscsi
++ CHECK_RESULT 0 0 0 'Failed to load scsi_transport_iscsi'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load scsi_transport_iscsi'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe uio
++ CHECK_RESULT 0 0 0 'Failed to load uio'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load uio'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w uio
+uio                    32768  1 target_core_user
++ CHECK_RESULT 0 0 0 'Failed to load uio'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load uio'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe iscsi_target_mod
++ CHECK_RESULT 0 0 0 'Failed to load iscsi_target_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iscsi_target_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w iscsi_target_mod
+iscsi_target_mod      389120  1
+target_core_mod       458752  6 target_core_file,target_core_iblock,iscsi_target_mod,target_core_pscsi,target_core_user
++ CHECK_RESULT 0 0 0 'Failed to load iscsi_target_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load iscsi_target_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe target_core_mod
++ CHECK_RESULT 0 0 0 'Failed to load target_core_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w target_core_mod
+target_core_mod       458752  6 target_core_file,target_core_iblock,iscsi_target_mod,target_core_pscsi,target_core_user
++ CHECK_RESULT 0 0 0 'Failed to load target_core_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load target_core_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe sctp
++ CHECK_RESULT 0 0 0 'Failed to load sctp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sctp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sctp
+sctp                  466944  2
+ip6_udp_tunnel         16384  1 sctp
+udp_tunnel             28672  1 sctp
+libcrc32c              16384  5 nf_conntrack,nf_nat,btrfs,raid456,sctp
++ CHECK_RESULT 0 0 0 'Failed to load sctp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sctp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe ip6_udp_tunnel
++ CHECK_RESULT 0 0 0 'Failed to load ip6_udp_tunnel'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ip6_udp_tunnel'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ip6_udp_tunnel
+ip6_udp_tunnel         16384  1 sctp
++ CHECK_RESULT 0 0 0 'Failed to load ip6_udp_tunnel'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ip6_udp_tunnel'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe udp_tunnel
++ CHECK_RESULT 0 0 0 'Failed to load udp_tunnel'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load udp_tunnel'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w udp_tunnel
+udp_tunnel             28672  1 sctp
++ CHECK_RESULT 0 0 0 'Failed to load udp_tunnel'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load udp_tunnel'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe binfmt_misc
++ CHECK_RESULT 0 0 0 'Failed to load binfmt_misc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load binfmt_misc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w binfmt_misc
+binfmt_misc            28672  1
++ CHECK_RESULT 0 0 0 'Failed to load binfmt_misc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load binfmt_misc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe arp_tables
++ CHECK_RESULT 0 0 0 'Failed to load arp_tables'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load arp_tables'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w arp_tables
+arp_tables             28672  1 arptable_filter
++ CHECK_RESULT 0 0 0 'Failed to load arp_tables'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load arp_tables'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe snd_timer
++ CHECK_RESULT 0 0 0 'Failed to load snd_timer'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load snd_timer'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w snd_timer
+snd_timer              49152  1 snd_pcm
+snd                   126976  2 snd_timer,snd_pcm
++ CHECK_RESULT 0 0 0 'Failed to load snd_timer'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load snd_timer'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe snd
++ CHECK_RESULT 0 0 0 'Failed to load snd'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load snd'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w snd
+snd                   126976  2 snd_timer,snd_pcm
+soundcore              16384  1 snd
++ CHECK_RESULT 0 0 0 'Failed to load snd'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load snd'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe soundcore
++ CHECK_RESULT 0 0 0 'Failed to load soundcore'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load soundcore'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w soundcore
+soundcore              16384  1 snd
++ CHECK_RESULT 0 0 0 'Failed to load soundcore'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load soundcore'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe parport
++ CHECK_RESULT 0 0 0 'Failed to load parport'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load parport'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w parport
+parport                77824  2 parport_pc,ppdev
++ CHECK_RESULT 0 0 0 'Failed to load parport'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load parport'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe vfat
++ CHECK_RESULT 0 0 0 'Failed to load vfat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load vfat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w vfat
+vfat                   24576  1
+fat                    94208  1 vfat
++ CHECK_RESULT 0 0 0 'Failed to load vfat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load vfat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe fat
++ CHECK_RESULT 0 0 0 'Failed to load fat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load fat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w fat
+fat                    94208  1 vfat
++ CHECK_RESULT 0 0 0 'Failed to load fat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load fat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe fuse
++ CHECK_RESULT 0 0 0 'Failed to load fuse'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load fuse'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w fuse
+fuse                  188416  1
++ CHECK_RESULT 0 0 0 'Failed to load fuse'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load fuse'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe ext4
++ CHECK_RESULT 0 0 0 'Failed to load ext4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ext4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w ext4
+ext4                  995328  1
+mbcache                16384  1 ext4
+jbd2                  172032  1 ext4
++ CHECK_RESULT 0 0 0 'Failed to load ext4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load ext4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe mbcache
++ CHECK_RESULT 0 0 0 'Failed to load mbcache'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load mbcache'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w mbcache
+mbcache                16384  1 ext4
++ CHECK_RESULT 0 0 0 'Failed to load mbcache'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load mbcache'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe jbd2
++ CHECK_RESULT 0 0 0 'Failed to load jbd2'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load jbd2'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w jbd2
+jbd2                  172032  1 ext4
++ CHECK_RESULT 0 0 0 'Failed to load jbd2'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load jbd2'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe cdrom
++ CHECK_RESULT 0 0 0 'Failed to load cdrom'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load cdrom'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w cdrom
+cdrom                  81920  1 sr_mod
++ CHECK_RESULT 0 0 0 'Failed to load cdrom'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load cdrom'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe drm_shmem_helper
++ CHECK_RESULT 0 0 0 'Failed to load drm_shmem_helper'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load drm_shmem_helper'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w drm_shmem_helper
+drm_shmem_helper       24576  1 virtio_gpu
+drm                   630784  4 drm_kms_helper,drm_shmem_helper,virtio_gpu
++ CHECK_RESULT 0 0 0 'Failed to load drm_shmem_helper'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load drm_shmem_helper'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe drm_kms_helper
++ CHECK_RESULT 0 0 0 'Failed to load drm_kms_helper'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load drm_kms_helper'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w drm_kms_helper
+drm_kms_helper        217088  3 virtio_gpu
+syscopyarea            16384  1 drm_kms_helper
+sysfillrect            16384  1 drm_kms_helper
+sysimgblt              16384  1 drm_kms_helper
+fb_sys_fops            16384  1 drm_kms_helper
+drm                   630784  4 drm_kms_helper,drm_shmem_helper,virtio_gpu
++ CHECK_RESULT 0 0 0 'Failed to load drm_kms_helper'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load drm_kms_helper'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe syscopyarea
++ CHECK_RESULT 0 0 0 'Failed to load syscopyarea'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load syscopyarea'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w syscopyarea
+syscopyarea            16384  1 drm_kms_helper
++ CHECK_RESULT 0 0 0 'Failed to load syscopyarea'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load syscopyarea'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe sysfillrect
++ CHECK_RESULT 0 0 0 'Failed to load sysfillrect'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sysfillrect'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sysfillrect
+sysfillrect            16384  1 drm_kms_helper
++ CHECK_RESULT 0 0 0 'Failed to load sysfillrect'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sysfillrect'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe sysimgblt
++ CHECK_RESULT 0 0 0 'Failed to load sysimgblt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sysimgblt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sysimgblt
+sysimgblt              16384  1 drm_kms_helper
++ CHECK_RESULT 0 0 0 'Failed to load sysimgblt'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sysimgblt'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe fb_sys_fops
++ CHECK_RESULT 0 0 0 'Failed to load fb_sys_fops'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load fb_sys_fops'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w fb_sys_fops
+fb_sys_fops            16384  1 drm_kms_helper
++ CHECK_RESULT 0 0 0 'Failed to load fb_sys_fops'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load fb_sys_fops'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe drm
++ CHECK_RESULT 0 0 0 'Failed to load drm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load drm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w drm
+drm                   630784  4 drm_kms_helper,drm_shmem_helper,virtio_gpu
++ CHECK_RESULT 0 0 0 'Failed to load drm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load drm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe failover
++ CHECK_RESULT 0 0 0 'Failed to load failover'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load failover'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w failover
+failover               16384  1 net_failover
++ CHECK_RESULT 0 0 0 'Failed to load failover'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load failover'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe libata
++ CHECK_RESULT 0 0 0 'Failed to load libata'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load libata'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w libata
+libata                409600  2 ata_piix,ata_generic
++ CHECK_RESULT 0 0 0 'Failed to load libata'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load libata'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe sunrpc
++ CHECK_RESULT 0 0 0 'Failed to load sunrpc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sunrpc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w sunrpc
+sunrpc                704512  5 nfsd,rpcrdma,auth_rpcgss,lockd,nfs_acl
++ CHECK_RESULT 0 0 0 'Failed to load sunrpc'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load sunrpc'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe dm_multipath
++ CHECK_RESULT 0 0 0 'Failed to load dm_multipath'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_multipath'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_multipath
+dm_multipath           45056  3 dm_round_robin,dm_service_time
+dm_mod                188416  8 dm_crypt,dm_zero,dm_multipath,dm_log,dm_snapshot,dm_mirror,dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_multipath'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_multipath'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_bufio'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_bufio'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_bufio
+dm_bufio               45056  1 dm_snapshot
+dm_mod                188416  8 dm_crypt,dm_zero,dm_multipath,dm_log,dm_snapshot,dm_mirror,dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_bufio'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_bufio'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe dm_region_hash
++ CHECK_RESULT 0 0 0 'Failed to load dm_region_hash'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_region_hash'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_region_hash
+dm_region_hash         24576  1 dm_mirror
+dm_log                 20480  2 dm_region_hash,dm_mirror
++ CHECK_RESULT 0 0 0 'Failed to load dm_region_hash'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_region_hash'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe dm_log
++ CHECK_RESULT 0 0 0 'Failed to load dm_log'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_log'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_log
+dm_log                 20480  2 dm_region_hash,dm_mirror
+dm_mod                188416  8 dm_crypt,dm_zero,dm_multipath,dm_log,dm_snapshot,dm_mirror,dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_log'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_log'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe dm_mod
++ CHECK_RESULT 0 0 0 'Failed to load dm_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w dm_mod
+dm_mod                188416  8 dm_crypt,dm_zero,dm_multipath,dm_log,dm_snapshot,dm_mirror,dm_bufio
++ CHECK_RESULT 0 0 0 'Failed to load dm_mod'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load dm_mod'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe async_raid6_recov
++ CHECK_RESULT 0 0 0 'Failed to load async_raid6_recov'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_raid6_recov'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w async_raid6_recov
+async_raid6_recov      24576  1 raid456
+async_memcpy           20480  2 raid456,async_raid6_recov
+async_pq               20480  2 raid456,async_raid6_recov
+async_xor              20480  3 async_pq,raid456,async_raid6_recov
+async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+raid6_pq              122880  4 async_pq,btrfs,raid456,async_raid6_recov
++ CHECK_RESULT 0 0 0 'Failed to load async_raid6_recov'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_raid6_recov'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe async_memcpy
++ CHECK_RESULT 0 0 0 'Failed to load async_memcpy'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_memcpy'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w async_memcpy
+async_memcpy           20480  2 raid456,async_raid6_recov
+async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
++ CHECK_RESULT 0 0 0 'Failed to load async_memcpy'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_memcpy'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe async_pq
++ CHECK_RESULT 0 0 0 'Failed to load async_pq'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_pq'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w async_pq
+async_pq               20480  2 raid456,async_raid6_recov
+async_xor              20480  3 async_pq,raid456,async_raid6_recov
+async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+raid6_pq              122880  4 async_pq,btrfs,raid456,async_raid6_recov
++ CHECK_RESULT 0 0 0 'Failed to load async_pq'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_pq'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe async_xor
++ CHECK_RESULT 0 0 0 'Failed to load async_xor'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_xor'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w async_xor
+async_xor              20480  3 async_pq,raid456,async_raid6_recov
+async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+xor                    24576  2 async_xor,btrfs
++ CHECK_RESULT 0 0 0 'Failed to load async_xor'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_xor'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe async_tx
++ CHECK_RESULT 0 0 0 'Failed to load async_tx'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_tx'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w async_tx
+async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
++ CHECK_RESULT 0 0 0 'Failed to load async_tx'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load async_tx'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe xor
++ CHECK_RESULT 0 0 0 'Failed to load xor'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xor'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w xor
+xor                    24576  2 async_xor,btrfs
++ CHECK_RESULT 0 0 0 'Failed to load xor'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load xor'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe raid6_pq
++ CHECK_RESULT 0 0 0 'Failed to load raid6_pq'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid6_pq'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w raid6_pq
+raid6_pq              122880  4 async_pq,btrfs,raid456,async_raid6_recov
++ CHECK_RESULT 0 0 0 'Failed to load raid6_pq'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load raid6_pq'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ for mod in ${module_used_list}
++ modprobe libcrc32c
++ CHECK_RESULT 0 0 0 'Failed to load libcrc32c'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load libcrc32c'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lsmod
++ grep -w libcrc32c
+libcrc32c              16384  5 nf_conntrack,nf_nat,btrfs,raid456,sctp
++ CHECK_RESULT 0 0 0 'Failed to load libcrc32c'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to load libcrc32c'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 08:42:32 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 08:42:32 2025 - ERROR - failed to execute the case.
++ exit 2
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_module.sh post_test'
++ message='oe_test_module.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_module.sh post_test'
+Mon May 26 08:42:32 2025 - INFO  - oe_test_module.sh post_test

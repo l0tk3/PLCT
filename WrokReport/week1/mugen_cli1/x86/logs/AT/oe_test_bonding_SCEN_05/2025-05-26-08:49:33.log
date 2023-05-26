@@ -1,0 +1,152 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 08:49:33 2025 - INFO  - Start to prepare the test environment.
+++ ip route show
+++ grep default
+++ awk '-F ' 'NR==1{print $3}'
++ gateway=10.0.2.2
++ cp /etc/sysconfig/network-scripts/ifcfg- /etc/sysconfig/network-scripts/ifcfg-.bak
+cp: cannot stat '/etc/sysconfig/network-scripts/ifcfg-': No such file or directory
++ sed -i s/BOOTPROTO=dhcp/BOOTPROTO=none/ /etc/sysconfig/network-scripts/ifcfg-
+sed: can't read /etc/sysconfig/network-scripts/ifcfg-: No such file or directory
++ echo -e 'MASTER=bond0 \nSLAVE=yes \nUSERCTL=no'
++ echo -e 'DEVICE=bond0 \nTYPE=Ethernet \nONBOOT=yes \nBOOTPROTO=static \nIPADDR=127.0.0.1 \nGATEWAY=10.0.2.2 \nNAME=bond0 \nBONDING_OPTS='\''miimon=100 mode=1 fail_over_mac=1'\'''
++ echo -e 'alias bond0 bonding \noptions bond0 miimon=100 mode=1 fail_over_mac=1'
++ cp /etc/rc.d/rc.local /etc/rc.d/rc.local.bak
++ echo -e 'ifenslave bond0 '
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 08:49:33 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 08:49:33 2025 - INFO  - Start to run test.
++ modprobe bonding
++ CHECK_RESULT 0 0 0 'Load bond module: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Load bond module: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nmcli c reload
++ CHECK_RESULT 0 0 0 'Restart net: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Restart net: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a
++ grep bond0
+6: bond0: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    inet 127.0.0.1/8 brd 127.255.255.255 scope global noprefixroute bond0
++ CHECK_RESULT 0 0 0 'Set bond0: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Set bond0: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip netns add name1
++ CHECK_RESULT 0 0 0 'Add the macvlan device name1: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Add the macvlan device name1: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip link add link bond0 name bond0_local type macvlan
++ CHECK_RESULT 0 0 0 'Add the macvlan device bond0_local: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Add the macvlan device bond0_local: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip link set bond0_local up
++ CHECK_RESULT 0 0 0 'Set bond0_local up : failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Set bond0_local up : failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip link set bond0_local netns name1
++ CHECK_RESULT 0 0 0 'Set bond0_local netns name1: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Set bond0_local netns name1: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 08:49:33 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 08:49:33 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 08:49:33 2025 - INFO  - Start to restore the test environment.
++ mv -f /etc/sysconfig/network-scripts/ifcfg-.bak /etc/sysconfig/network-scripts/ifcfg-
+mv: cannot stat '/etc/sysconfig/network-scripts/ifcfg-.bak': No such file or directory
++ mv -f /etc/rc.d/rc.local.bak /etc/rc.d/rc.local
++ rm -rf ifcfg-bond0 /etc/modprobe.d/modprobe.conf
++ ip netns delete name1
++ nmcli c reload
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 08:49:33 2025 - INFO  - End to restore the test environment.

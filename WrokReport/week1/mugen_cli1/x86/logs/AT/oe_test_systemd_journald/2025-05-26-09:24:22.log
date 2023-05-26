@@ -1,0 +1,751 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:24:23 2025 - INFO  - Start to run test.
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl -f'
++ actual_result=0
++ journalctl -f
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl -f'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep -E 'begins at|begin at' testlog
++ CHECK_RESULT 1 0 0 'Failed to find begin'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to find begin'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to find begin'
++ LOG_ERROR 'Failed to find begin'
++ message='Failed to find begin'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to find begin'
+Mon May 26 09:24:26 2025 - ERROR - Failed to find begin
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_systemd_journald.sh line 28'
++ message='oe_test_systemd_journald.sh line 28'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_systemd_journald.sh line 28'
+Mon May 26 09:24:26 2025 - ERROR - oe_test_systemd_journald.sh line 28
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep journalctl
++ kill -9 736450
++ journalctl --reverse --lines 10 --no-pager
++ grep -vE 'begins at|begin at'
++ wc -l
++ grep 10
+10
+oe_test_systemd_journald.sh: line 22: 736450 Killed                  journalctl -f > testlog
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl --lines'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl --lines'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --show-cursor
++ grep cursor
+-- cursor: s=b97dc8514c4f40dca4ebd5becd0713dd;i=ec141;b=2d0018f643684db89b60effce3f7bbec;m=27387bcb3;t=6360683ac4529;x=8da8175f28838b8c
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl -show-cursor'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl -show-cursor'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mkdir /tmp/log
++ cp /run/log/journal/37805f8cc6e049a585236d23819ea758/system.journal /run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8/system.journal /tmp/log
+cp: will not overwrite just-created '/tmp/log/system.journal' with '/run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8/system.journal'
++ journalctl --directory /tmp/log/ --rotate --vacuum-size=8M
+Vacuuming done, freed 0B of archived journals from /tmp/log/.
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl --directory'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl --directory'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl /usr/lib/systemd/systemd
+May 26 06:29:04 localhost systemd[1]: Finished Apply Kernel Variables.
+May 26 06:29:04 localhost systemd[1]: Finished Create Static Device Nodes in /dev.
+May 26 06:29:04 localhost systemd[1]: Finished Setup Virtual Console.
+May 26 06:29:04 localhost systemd[1]: Starting dracut ask for additional cmdline parameters...
+May 26 06:29:04 localhost systemd[1]: Finished dracut ask for additional cmdline parameters.
+May 26 06:29:04 localhost systemd[1]: Starting dracut cmdline hook...
+May 26 06:29:04 localhost systemd[1]: Finished dracut cmdline hook.
+May 26 06:29:04 localhost systemd[1]: Starting dracut pre-udev hook...
+May 26 06:29:05 localhost systemd[1]: Finished dracut pre-udev hook.
+May 26 06:29:05 localhost systemd[1]: Starting Rule-based Manager for Device Events and Files...
+May 26 06:29:05 localhost systemd[1]: Started Rule-based Manager for Device Events and Files.
+May 26 06:29:05 localhost systemd[1]: Starting dracut pre-trigger hook...
+May 26 06:29:05 localhost systemd[1]: Finished dracut pre-trigger hook.
+May 26 06:29:05 localhost systemd[1]: Starting Coldplug All udev Devices...
+May 26 06:29:05 localhost systemd[1]: Created slice Slice /system/modprobe.
+May 26 06:29:05 localhost systemd[1]: Starting Load Kernel Module configfs...
+May 26 06:29:05 localhost systemd[1]: Finished Coldplug All udev Devices.
+May 26 06:29:05 localhost systemd[1]: modprobe@configfs.service: Deactivated successfully.
+May 26 06:29:05 localhost systemd[1]: Finished Load Kernel Module configfs.
+May 26 06:29:05 localhost systemd[1]: Mounting Kernel Configuration File System...
+May 26 06:29:05 localhost systemd[1]: Starting dracut initqueue hook...
+May 26 06:29:05 localhost systemd[1]: Starting Show Plymouth Boot Screen...
+May 26 06:29:05 localhost systemd[1]: Starting Wait for udev To Complete Device Initialization...
+May 26 06:29:05 localhost systemd[1]: Mounted Kernel Configuration File System.
+May 26 06:29:05 localhost systemd[1]: Received SIGRTMIN+20 from PID 967 (plymouthd).
+May 26 06:29:05 localhost systemd[1]: Started Show Plymouth Boot Screen.
+May 26 06:29:05 localhost systemd[1]: Condition check resulted in Dispatch Password Requests to Console Directory Watch being skipped.
+May 26 06:29:05 localhost systemd[1]: Started Forward Password Requests to Plymouth Directory Watch.
+May 26 06:29:05 localhost systemd[1]: Reached target Path Units.
+May 26 06:29:06 localhost systemd[1]: Found device /dev/vda2.
+May 26 06:29:06 localhost systemd[1]: Reached target Initrd Root Device.
+May 26 06:29:06 localhost systemd[1]: Finished Wait for udev To Complete Device Initialization.
+May 26 06:29:06 localhost systemd[1]: Condition check resulted in Device-Mapper Multipath Default Configuration being skipped.
+May 26 06:29:06 localhost systemd[1]: Starting Device-Mapper Multipath Device Controller...
+May 26 06:29:06 localhost systemd[1]: Started Device-Mapper Multipath Device Controller.
+May 26 06:29:06 localhost systemd[1]: Reached target Preparation for Local File Systems.
+May 26 06:29:06 localhost systemd[1]: Reached target Local File Systems.
+May 26 06:29:06 localhost systemd[1]: Starting Create Volatile Files and Directories...
+May 26 06:29:06 localhost systemd[1]: Finished dracut initqueue hook.
+May 26 06:29:06 localhost systemd[1]: Reached target Preparation for Remote File Systems.
+May 26 06:29:06 localhost systemd[1]: Reached target Remote File Systems.
+May 26 06:29:06 localhost systemd[1]: Starting dracut pre-mount hook...
+May 26 06:29:06 localhost systemd[1]: Finished Create Volatile Files and Directories.
+May 26 06:29:06 localhost systemd[1]: Reached target System Initialization.
+May 26 06:29:06 localhost systemd[1]: Reached target Basic System.
+May 26 06:29:06 localhost systemd[1]: System is tainted: cgroupsv1
+May 26 06:29:06 localhost systemd[1]: Finished dracut pre-mount hook.
+May 26 06:29:06 localhost systemd[1]: Starting File System Check on /dev/vda2...
+May 26 06:29:06 localhost systemd[1]: Finished File System Check on /dev/vda2.
+May 26 06:29:06 localhost systemd[1]: Mounting /sysroot...
+May 26 06:29:06 localhost systemd[1]: Mounted /sysroot.
+May 26 06:29:06 localhost systemd[1]: Reached target Initrd Root File System.
+May 26 06:29:06 localhost systemd[1]: Starting Reload Configuration from the Real Root...
+May 26 06:29:06 localhost systemd[1]: Reloading.
+May 26 06:29:06 localhost systemd[1]: initrd-parse-etc.service: Deactivated successfully.
+May 26 06:29:06 localhost systemd[1]: Finished Reload Configuration from the Real Root.
+May 26 06:29:06 localhost systemd[1]: Reached target Initrd File Systems.
+May 26 06:29:06 localhost systemd[1]: Reached target Initrd Default Target.
+May 26 06:29:06 localhost systemd[1]: Starting dracut mount hook...
+May 26 06:29:06 localhost systemd[1]: Stopping Device-Mapper Multipath Device Controller...
+May 26 06:29:06 localhost systemd[1]: Finished dracut mount hook.
+May 26 06:29:06 localhost systemd[1]: Starting dracut pre-pivot and cleanup hook...
+May 26 06:29:07 localhost systemd[1]: multipathd.service: Deactivated successfully.
+May 26 06:29:07 localhost systemd[1]: Stopped Device-Mapper Multipath Device Controller.
+May 26 06:29:08 localhost systemd[1]: var-lib-nfs-rpc_pipefs.mount: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Finished dracut pre-pivot and cleanup hook.
+May 26 06:29:08 localhost systemd[1]: Starting Cleaning Up and Shutting Down Daemons...
+May 26 06:29:08 localhost systemd[1]: Stopped target Timer Units.
+May 26 06:29:08 localhost systemd[1]: dracut-pre-pivot.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped dracut pre-pivot and cleanup hook.
+May 26 06:29:08 localhost systemd[1]: Stopped target Initrd Default Target.
+May 26 06:29:08 localhost systemd[1]: Stopped target Basic System.
+May 26 06:29:08 localhost systemd[1]: Stopped target Initrd Root Device.
+May 26 06:29:08 localhost systemd[1]: Stopped target Path Units.
+May 26 06:29:08 localhost systemd[1]: Stopped target Remote File Systems.
+May 26 06:29:08 localhost systemd[1]: Stopped target Preparation for Remote File Systems.
+May 26 06:29:08 localhost systemd[1]: Stopped target Slice Units.
+May 26 06:29:08 localhost systemd[1]: Stopped target Socket Units.
+May 26 06:29:08 localhost systemd[1]: Stopped target System Initialization.
+May 26 06:29:08 localhost systemd[1]: Stopped target Swaps.
+May 26 06:29:08 localhost systemd[1]: dracut-mount.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped dracut mount hook.
+May 26 06:29:08 localhost systemd[1]: dracut-pre-mount.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped dracut pre-mount hook.
+May 26 06:29:08 localhost systemd[1]: dracut-initqueue.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped dracut initqueue hook.
+May 26 06:29:08 localhost systemd[1]: Starting Plymouth switch root service...
+May 26 06:29:08 localhost systemd[1]: systemd-sysctl.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Apply Kernel Variables.
+May 26 06:29:08 localhost systemd[1]: systemd-modules-load.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Load Kernel Modules.
+May 26 06:29:08 localhost systemd[1]: systemd-tmpfiles-setup.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Create Volatile Files and Directories.
+May 26 06:29:08 localhost systemd[1]: Stopped target Local File Systems.
+May 26 06:29:08 localhost systemd[1]: Stopped target Preparation for Local File Systems.
+May 26 06:29:08 localhost systemd[1]: systemd-udev-settle.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Wait for udev To Complete Device Initialization.
+May 26 06:29:08 localhost systemd[1]: systemd-udev-trigger.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Coldplug All udev Devices.
+May 26 06:29:08 localhost systemd[1]: dracut-pre-trigger.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped dracut pre-trigger hook.
+May 26 06:29:08 localhost systemd[1]: Stopping Rule-based Manager for Device Events and Files...
+May 26 06:29:08 localhost systemd[1]: systemd-udevd.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Rule-based Manager for Device Events and Files.
+May 26 06:29:08 localhost systemd[1]: Finished Plymouth switch root service.
+May 26 06:29:08 localhost systemd[1]: initrd-cleanup.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Finished Cleaning Up and Shutting Down Daemons.
+May 26 06:29:08 localhost systemd[1]: systemd-udevd-control.socket: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Closed udev Control Socket.
+May 26 06:29:08 localhost systemd[1]: systemd-udevd-kernel.socket: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Closed udev Kernel Socket.
+May 26 06:29:08 localhost systemd[1]: dracut-pre-udev.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped dracut pre-udev hook.
+May 26 06:29:08 localhost systemd[1]: dracut-cmdline.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped dracut cmdline hook.
+May 26 06:29:08 localhost systemd[1]: dracut-cmdline-ask.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped dracut ask for additional cmdline parameters.
+May 26 06:29:08 localhost systemd[1]: Starting Cleanup udev Database...
+May 26 06:29:08 localhost systemd[1]: Stopping Hardware RNG Entropy Gatherer Daemon...
+May 26 06:29:08 localhost systemd[1]: systemd-tmpfiles-setup-dev.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Create Static Device Nodes in /dev.
+May 26 06:29:08 localhost systemd[1]: kmod-static-nodes.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Create List of Static Device Nodes.
+May 26 06:29:08 localhost systemd[1]: initrd-udevadm-cleanup-db.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Finished Cleanup udev Database.
+May 26 06:29:08 localhost systemd[1]: Reached target Switch Root.
+May 26 06:29:08 localhost systemd[1]: Starting Switch Root...
+May 26 06:29:08 localhost systemd[1]: rngd.service: Deactivated successfully.
+May 26 06:29:08 localhost systemd[1]: Stopped Hardware RNG Entropy Gatherer Daemon.
+May 26 06:29:08 localhost systemd[1]: Switching root.
+May 26 09:19:50 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:19:50 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:19:50 Ymm1 systemd[1]: Reloading.
+May 26 09:19:50 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:19:50 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:19:50 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:19:50 Ymm1 systemd[1]: run-r3857428990474ad490e0c8ed98e8d9eb.service: Deactivated successfully.
+May 26 09:19:50 Ymm1 systemd[1]: Starting The Apache HTTP Server...
+May 26 09:19:50 Ymm1 systemd[1]: Started The Apache HTTP Server.
+May 26 09:19:50 Ymm1 systemd[1]: Stopping The Apache HTTP Server...
+May 26 09:19:51 Ymm1 systemd[1]: httpd.service: Deactivated successfully.
+May 26 09:19:51 Ymm1 systemd[1]: Stopped The Apache HTTP Server.
+May 26 09:19:52 Ymm1 systemd[1]: Reloading.
+May 26 09:19:52 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:19:52 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:19:52 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:19:52 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:19:52 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:19:52 Ymm1 systemd[1]: run-r2967366634d84bb7b1085f36fab16bc1.service: Deactivated successfully.
+May 26 09:20:00 Ymm1 systemd[1]: Stopping OpenSSH server daemon...
+May 26 09:20:00 Ymm1 systemd[1]: sshd.service: Deactivated successfully.
+May 26 09:20:00 Ymm1 systemd[1]: Stopped OpenSSH server daemon.
+May 26 09:20:00 Ymm1 systemd[1]: Stopped target sshd-keygen.target.
+May 26 09:20:00 Ymm1 systemd[1]: Stopping sshd-keygen.target...
+May 26 09:20:00 Ymm1 systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+May 26 09:20:00 Ymm1 systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+May 26 09:20:00 Ymm1 systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+May 26 09:20:00 Ymm1 systemd[1]: Reached target sshd-keygen.target.
+May 26 09:20:00 Ymm1 systemd[1]: Starting OpenSSH server daemon...
+May 26 09:20:00 Ymm1 systemd[1]: Started OpenSSH server daemon.
+May 26 09:20:14 Ymm1 systemd[1]: Reloading.
+May 26 09:20:14 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:14 Ymm1 systemd[1]: Reloading.
+May 26 09:20:14 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:14 Ymm1 systemd[1]: Reloading.
+May 26 09:20:14 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:14 Ymm1 systemd[1]: Reloading.
+May 26 09:20:15 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:15 Ymm1 systemd[1]: Reloading.
+May 26 09:20:15 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:15 Ymm1 systemd[1]: Reloading.
+May 26 09:20:15 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:15 Ymm1 systemd[1]: Started Run system activity accounting tool every 10 minutes.
+May 26 09:20:15 Ymm1 systemd[1]: Started Generate summary of yesterday's process accounting.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in First Boot Complete being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Reached target Graphical Interface.
+May 26 09:20:15 Ymm1 systemd[1]: Stopped target Host and Network Name Lookups.
+May 26 09:20:15 Ymm1 systemd[1]: Stopped target Preparation for Remote File Systems.
+May 26 09:20:15 Ymm1 systemd[1]: Stopped target RPC Port Mapper.
+May 26 09:20:15 Ymm1 systemd[1]: Starting Crash recovery kernel arming...
+May 26 09:20:15 Ymm1 systemd[1]: Starting Hardware Monitoring Sensors...
+May 26 09:20:15 Ymm1 systemd[1]: Starting Load Kernel Module configfs...
+May 26 09:20:15 Ymm1 systemd[1]: Starting Load Kernel Module drm...
+May 26 09:20:15 Ymm1 systemd[1]: Starting Load Kernel Module fuse...
+May 26 09:20:15 Ymm1 systemd[1]: openEuler-security.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Stopped openEuler Security Tool.
+May 26 09:20:15 Ymm1 systemd[1]: rpc-statd-notify.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Stopped rpc-statd-notify.service.
+May 26 09:20:15 Ymm1 systemd[1]: Stopping rpc-statd.service...
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Starting Resets System Activity Logs...
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in Commit a transient machine-id on disk being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in Load Kernel Modules being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: systemd-udev-settle.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Stopped Wait for udev To Complete Device Initialization.
+May 26 09:20:15 Ymm1 systemd[1]: Starting Record Runlevel Change in UTMP...
+May 26 09:20:15 Ymm1 systemd[1]: rpc-statd.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Stopped rpc-statd.service.
+May 26 09:20:15 Ymm1 systemd[1]: kdump.service: Main process exited, code=exited, status=1/FAILURE
+May 26 09:20:15 Ymm1 systemd[1]: kdump.service: Failed with result 'exit-code'.
+May 26 09:20:15 Ymm1 systemd[1]: Failed to start Crash recovery kernel arming.
+May 26 09:20:15 Ymm1 systemd[1]: modprobe@configfs.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Load Kernel Module configfs.
+May 26 09:20:15 Ymm1 systemd[1]: modprobe@drm.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Load Kernel Module drm.
+May 26 09:20:15 Ymm1 systemd[1]: modprobe@fuse.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Load Kernel Module fuse.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Resets System Activity Logs.
+May 26 09:20:15 Ymm1 systemd[1]: lm_sensors.service: Main process exited, code=exited, status=1/FAILURE
+May 26 09:20:15 Ymm1 systemd[1]: lm_sensors.service: Failed with result 'exit-code'.
+May 26 09:20:15 Ymm1 systemd[1]: Failed to start Hardware Monitoring Sensors.
+May 26 09:20:15 Ymm1 systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Record Runlevel Change in UTMP.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in First Boot Complete being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Stopped target Graphical Interface.
+May 26 09:20:15 Ymm1 systemd[1]: Starting Crash recovery kernel arming...
+May 26 09:20:15 Ymm1 systemd[1]: Starting Hardware Monitoring Sensors...
+May 26 09:20:15 Ymm1 systemd[1]: Starting Load Kernel Module configfs...
+May 26 09:20:15 Ymm1 systemd[1]: Starting Load Kernel Module drm...
+May 26 09:20:15 Ymm1 systemd[1]: Starting Load Kernel Module fuse...
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in Commit a transient machine-id on disk being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: Condition check resulted in Load Kernel Modules being skipped.
+May 26 09:20:15 Ymm1 systemd[1]: kdump.service: Main process exited, code=exited, status=1/FAILURE
+May 26 09:20:15 Ymm1 systemd[1]: kdump.service: Failed with result 'exit-code'.
+May 26 09:20:15 Ymm1 systemd[1]: Failed to start Crash recovery kernel arming.
+May 26 09:20:15 Ymm1 systemd[1]: modprobe@configfs.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Load Kernel Module configfs.
+May 26 09:20:15 Ymm1 systemd[1]: modprobe@drm.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Load Kernel Module drm.
+May 26 09:20:15 Ymm1 systemd[1]: modprobe@fuse.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Load Kernel Module fuse.
+May 26 09:20:15 Ymm1 systemd[1]: lm_sensors.service: Main process exited, code=exited, status=1/FAILURE
+May 26 09:20:15 Ymm1 systemd[1]: lm_sensors.service: Failed with result 'exit-code'.
+May 26 09:20:15 Ymm1 systemd[1]: Failed to start Hardware Monitoring Sensors.
+May 26 09:20:15 Ymm1 systemd[1]: Starting Record Runlevel Change in UTMP...
+May 26 09:20:15 Ymm1 systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+May 26 09:20:15 Ymm1 systemd[1]: Finished Record Runlevel Change in UTMP.
+May 26 09:20:44 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:20:44 Ymm1 systemd[1]: Reloading.
+May 26 09:20:44 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:44 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:20:44 Ymm1 systemd[1]: Starting iSulad Application Container Engine...
+May 26 09:20:44 Ymm1 systemd[1]: Started iSulad Application Container Engine.
+May 26 09:20:44 Ymm1 systemd[1]: Reloading.
+May 26 09:20:44 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:44 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:20:46 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:20:46 Ymm1 systemd[1]: Stopping iSulad Application Container Engine...
+May 26 09:20:46 Ymm1 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+May 26 09:20:46 Ymm1 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+May 26 09:20:46 Ymm1 systemd[1]: isulad.service: Deactivated successfully.
+May 26 09:20:46 Ymm1 systemd[1]: Stopped iSulad Application Container Engine.
+May 26 09:20:46 Ymm1 systemd[1]: Reloading.
+May 26 09:20:46 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:20:56 Ymm1 systemd[1]: Stopping OpenSSH server daemon...
+May 26 09:20:56 Ymm1 systemd[1]: sshd.service: Deactivated successfully.
+May 26 09:20:56 Ymm1 systemd[1]: Stopped OpenSSH server daemon.
+May 26 09:20:56 Ymm1 systemd[1]: Stopped target sshd-keygen.target.
+May 26 09:20:56 Ymm1 systemd[1]: Stopping sshd-keygen.target...
+May 26 09:20:56 Ymm1 systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+May 26 09:20:56 Ymm1 systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+May 26 09:20:56 Ymm1 systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+May 26 09:20:56 Ymm1 systemd[1]: Reached target sshd-keygen.target.
+May 26 09:20:56 Ymm1 systemd[1]: Starting OpenSSH server daemon...
+May 26 09:20:56 Ymm1 systemd[1]: Started OpenSSH server daemon.
+May 26 09:21:01 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:21:01 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:21:01 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:21:01 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:21:01 Ymm1 systemd[1]: run-r803e77af5c874062b3acd5021bd8ec1a.service: Deactivated successfully.
+May 26 09:21:07 Ymm1 systemd[1]: Reloading.
+May 26 09:21:07 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:08 Ymm1 systemd[1]: Started Test Service B.
+May 26 09:21:08 Ymm1 systemd[1]: Stopping Test Service B...
+May 26 09:21:08 Ymm1 systemd[1]: TestB.service: Deactivated successfully.
+May 26 09:21:08 Ymm1 systemd[1]: Stopped Test Service B.
+May 26 09:21:08 Ymm1 systemd[1]: Started Test Service B.
+May 26 09:21:08 Ymm1 systemd[1]: Stopping Test Service B...
+May 26 09:21:08 Ymm1 systemd[1]: TestB.service: Deactivated successfully.
+May 26 09:21:08 Ymm1 systemd[1]: Stopped Test Service B.
+May 26 09:21:09 Ymm1 systemd[1]: Reloading.
+May 26 09:21:09 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:09 Ymm1 systemd[1]: Started Test Service A.
+May 26 09:21:09 Ymm1 systemd[686313]: TestA.service: Failed to locate executable /usr/bin/slee: No such file or directory
+May 26 09:21:09 Ymm1 systemd[686313]: TestA.service: Failed at step EXEC spawning /usr/bin/slee: No such file or directory
+May 26 09:21:09 Ymm1 systemd[1]: Started Test Service B.
+May 26 09:21:09 Ymm1 systemd[1]: TestA.service: Main process exited, code=exited, status=203/EXEC
+May 26 09:21:09 Ymm1 systemd[1]: TestA.service: Failed with result 'exit-code'.
+May 26 09:21:09 Ymm1 systemd[1]: Stopping Test Service B...
+May 26 09:21:09 Ymm1 systemd[1]: TestB.service: Deactivated successfully.
+May 26 09:21:09 Ymm1 systemd[1]: Stopped Test Service B.
+May 26 09:21:09 Ymm1 systemd[1]: Started Test Service B.
+May 26 09:21:09 Ymm1 systemd[1]: Reloading.
+May 26 09:21:09 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:09 Ymm1 systemd[1]: Started Test Service A.
+May 26 09:21:09 Ymm1 systemd[1]: Stopping Test Service A...
+May 26 09:21:09 Ymm1 systemd[1]: TestA.service: Deactivated successfully.
+May 26 09:21:09 Ymm1 systemd[1]: Stopped Test Service A.
+May 26 09:21:09 Ymm1 systemd[1]: Stopping Test Service B...
+May 26 09:21:09 Ymm1 systemd[1]: TestB.service: Deactivated successfully.
+May 26 09:21:09 Ymm1 systemd[1]: Stopped Test Service B.
+May 26 09:21:18 Ymm1 systemd[1]: Stopping OpenSSH server daemon...
+May 26 09:21:18 Ymm1 systemd[1]: sshd.service: Deactivated successfully.
+May 26 09:21:18 Ymm1 systemd[1]: Stopped OpenSSH server daemon.
+May 26 09:21:18 Ymm1 systemd[1]: Stopped target sshd-keygen.target.
+May 26 09:21:18 Ymm1 systemd[1]: Stopping sshd-keygen.target...
+May 26 09:21:18 Ymm1 systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+May 26 09:21:18 Ymm1 systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+May 26 09:21:18 Ymm1 systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+May 26 09:21:18 Ymm1 systemd[1]: Reached target sshd-keygen.target.
+May 26 09:21:18 Ymm1 systemd[1]: Starting OpenSSH server daemon...
+May 26 09:21:18 Ymm1 systemd[1]: Started OpenSSH server daemon.
+May 26 09:21:50 Ymm1 systemd[1]: Stopping OpenSSH server daemon...
+May 26 09:21:50 Ymm1 systemd[1]: sshd.service: Deactivated successfully.
+May 26 09:21:50 Ymm1 systemd[1]: Stopped OpenSSH server daemon.
+May 26 09:21:50 Ymm1 systemd[1]: Stopped target sshd-keygen.target.
+May 26 09:21:50 Ymm1 systemd[1]: Stopping sshd-keygen.target...
+May 26 09:21:50 Ymm1 systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+May 26 09:21:50 Ymm1 systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+May 26 09:21:50 Ymm1 systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+May 26 09:21:50 Ymm1 systemd[1]: Reached target sshd-keygen.target.
+May 26 09:21:50 Ymm1 systemd[1]: Starting OpenSSH server daemon...
+May 26 09:21:50 Ymm1 systemd[1]: Started OpenSSH server daemon.
+May 26 09:21:57 Ymm1 systemd[1]: Reloading.
+May 26 09:21:57 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:57 Ymm1 systemd[1]: Listening on RPCbind Server Activation Socket.
+May 26 09:21:57 Ymm1 systemd[1]: Reached target RPC Port Mapper.
+May 26 09:21:57 Ymm1 systemd[1]: Reloading.
+May 26 09:21:57 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:57 Ymm1 systemd[1]: rpcbind.socket: Deactivated successfully.
+May 26 09:21:57 Ymm1 systemd[1]: Closed RPCbind Server Activation Socket.
+May 26 09:21:57 Ymm1 systemd[1]: Stopping RPCbind Server Activation Socket...
+May 26 09:21:57 Ymm1 systemd[1]: Listening on RPCbind Server Activation Socket.
+May 26 09:21:57 Ymm1 systemd[1]: Reloading.
+May 26 09:21:57 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:58 Ymm1 systemd[1]: Mounting RPC Pipe File System...
+May 26 09:21:58 Ymm1 systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+May 26 09:21:58 Ymm1 systemd[1]: Starting GSSAPI Proxy Daemon...
+May 26 09:21:58 Ymm1 systemd[1]: Starting Notify NFS peers of a restart...
+May 26 09:21:58 Ymm1 systemd[1]: Mounted RPC Pipe File System.
+May 26 09:21:58 Ymm1 systemd[1]: Started Notify NFS peers of a restart.
+May 26 09:21:58 Ymm1 systemd[1]: Reached target rpc_pipefs.target.
+May 26 09:21:58 Ymm1 systemd[1]: Started GSSAPI Proxy Daemon.
+May 26 09:21:58 Ymm1 systemd[1]: Condition check resulted in RPC security service for NFS client and server being skipped.
+May 26 09:21:58 Ymm1 systemd[1]: Reached target NFS client services.
+May 26 09:21:58 Ymm1 systemd[1]: Reached target Preparation for Remote File Systems.
+May 26 09:21:58 Ymm1 systemd[1]: Stopping GSSAPI Proxy Daemon...
+May 26 09:21:58 Ymm1 systemd[1]: gssproxy.service: Deactivated successfully.
+May 26 09:21:58 Ymm1 systemd[1]: Stopped GSSAPI Proxy Daemon.
+May 26 09:21:58 Ymm1 systemd[1]: Starting GSSAPI Proxy Daemon...
+May 26 09:21:58 Ymm1 systemd[1]: Started GSSAPI Proxy Daemon.
+May 26 09:21:58 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:21:58 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:21:58 Ymm1 systemd[1]: Reloading.
+May 26 09:21:58 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:58 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:21:58 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:21:58 Ymm1 systemd[1]: run-reabf2aed2a414944a57fa9b98c010056.service: Deactivated successfully.
+May 26 09:21:58 Ymm1 systemd[1]: Reached target Host and Network Name Lookups.
+May 26 09:21:58 Ymm1 systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+May 26 09:21:58 Ymm1 systemd[1]: Starting NFSv4 ID-name mapping service...
+May 26 09:21:58 Ymm1 systemd[1]: Starting NFS Mount Daemon...
+May 26 09:21:58 Ymm1 systemd[1]: Starting NFSv4 Client Tracking Daemon...
+May 26 09:21:58 Ymm1 systemd[1]: Condition check resulted in RPC security service for NFS client and server being skipped.
+May 26 09:21:58 Ymm1 systemd[1]: Starting NFS status monitor for NFSv2/3 locking....
+May 26 09:21:58 Ymm1 systemd[1]: Started NFSv4 ID-name mapping service.
+May 26 09:21:58 Ymm1 systemd[1]: Started NFSv4 Client Tracking Daemon.
+May 26 09:21:58 Ymm1 systemd[1]: Starting RPC Bind...
+May 26 09:21:58 Ymm1 systemd[1]: Started RPC Bind.
+May 26 09:21:58 Ymm1 systemd[1]: Started NFS status monitor for NFSv2/3 locking..
+May 26 09:21:58 Ymm1 systemd[1]: Started NFS Mount Daemon.
+May 26 09:21:58 Ymm1 systemd[1]: Starting NFS server and services...
+May 26 09:21:58 Ymm1 systemd[1]: Finished NFS server and services.
+May 26 09:21:59 Ymm1 systemd[1]: home-test.mount: Deactivated successfully.
+May 26 09:21:59 Ymm1 systemd[1]: Stopping NFS server and services...
+May 26 09:21:59 Ymm1 systemd[1]: nfs-server.service: Deactivated successfully.
+May 26 09:21:59 Ymm1 systemd[1]: Stopped NFS server and services.
+May 26 09:21:59 Ymm1 systemd[1]: Stopping NFSv4 ID-name mapping service...
+May 26 09:21:59 Ymm1 systemd[1]: Stopping NFS Mount Daemon...
+May 26 09:21:59 Ymm1 systemd[1]: nfs-idmapd.service: Deactivated successfully.
+May 26 09:21:59 Ymm1 systemd[1]: Stopped NFSv4 ID-name mapping service.
+May 26 09:21:59 Ymm1 systemd[1]: nfs-mountd.service: Deactivated successfully.
+May 26 09:21:59 Ymm1 systemd[1]: Stopped NFS Mount Daemon.
+May 26 09:21:59 Ymm1 systemd[1]: Stopped target NFS client services.
+May 26 09:21:59 Ymm1 systemd[1]: Stopping NFSv4 Client Tracking Daemon...
+May 26 09:21:59 Ymm1 systemd[1]: nfsdcld.service: Deactivated successfully.
+May 26 09:21:59 Ymm1 systemd[1]: Stopped NFSv4 Client Tracking Daemon.
+May 26 09:21:59 Ymm1 systemd[1]: Stopped target rpc_pipefs.target.
+May 26 09:21:59 Ymm1 systemd[1]: Unmounting RPC Pipe File System...
+May 26 09:21:59 Ymm1 systemd[1]: var-lib-nfs-rpc_pipefs.mount: Deactivated successfully.
+May 26 09:21:59 Ymm1 systemd[1]: Unmounted RPC Pipe File System.
+May 26 09:21:59 Ymm1 systemd[1]: Reloading.
+May 26 09:21:59 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:59 Ymm1 systemd[1]: Reloading.
+May 26 09:21:59 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:21:59 Ymm1 systemd[1]: Stopping GSSAPI Proxy Daemon...
+May 26 09:21:59 Ymm1 systemd[1]: gssproxy.service: Deactivated successfully.
+May 26 09:21:59 Ymm1 systemd[1]: Stopped GSSAPI Proxy Daemon.
+May 26 09:21:59 Ymm1 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+May 26 09:21:59 Ymm1 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+May 26 09:21:59 Ymm1 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+May 26 09:22:00 Ymm1 systemd[1]: Stopping RPC Bind...
+May 26 09:22:00 Ymm1 systemd[1]: rpcbind.service: Deactivated successfully.
+May 26 09:22:00 Ymm1 systemd[1]: Stopped RPC Bind.
+May 26 09:22:00 Ymm1 systemd[1]: rpcbind.socket: Deactivated successfully.
+May 26 09:22:00 Ymm1 systemd[1]: Closed RPCbind Server Activation Socket.
+May 26 09:22:00 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:22:00 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:22:00 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:22:00 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:22:00 Ymm1 systemd[1]: run-rcccb728f034e4b45bb9f07f04b546953.service: Deactivated successfully.
+May 26 09:22:02 Ymm1 systemd[1]: Reloading.
+May 26 09:22:02 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:22:03 Ymm1 systemd[1]: Reloading.
+May 26 09:22:03 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:22:12 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:22:12 Ymm1 systemd[1]: Reloading.
+May 26 09:22:12 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:22:12 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:22:12 Ymm1 systemd[1]: Starting iSulad Application Container Engine...
+May 26 09:22:12 Ymm1 systemd[1]: Started iSulad Application Container Engine.
+May 26 09:22:12 Ymm1 systemd[1]: Reloading.
+May 26 09:22:12 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:22:12 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:22:14 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:22:14 Ymm1 systemd[1]: Stopping iSulad Application Container Engine...
+May 26 09:22:14 Ymm1 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+May 26 09:22:14 Ymm1 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+May 26 09:22:14 Ymm1 systemd[1]: isulad.service: Deactivated successfully.
+May 26 09:22:14 Ymm1 systemd[1]: Stopped iSulad Application Container Engine.
+May 26 09:22:14 Ymm1 systemd[1]: Reloading.
+May 26 09:22:14 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:22:24 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:22:24 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:22:24 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:22:24 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:22:24 Ymm1 systemd[1]: run-re65e43550ac04189b7c17a5375fe23c1.service: Deactivated successfully.
+May 26 09:22:56 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:22:56 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:22:56 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:22:56 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:22:56 Ymm1 systemd[1]: run-rf531021621d24c0a81141fd8790de10b.service: Deactivated successfully.
+May 26 09:22:59 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:22:59 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:22:59 Ymm1 systemd[1]: Reloading.
+May 26 09:22:59 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:22:59 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:22:59 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:22:59 Ymm1 systemd[1]: run-r0b42597f5ecd4dc7ba26e9bfa271381a.service: Deactivated successfully.
+May 26 09:22:59 Ymm1 systemd[1]: Starting numad - The NUMA daemon that manages application locality....
+May 26 09:22:59 Ymm1 systemd[1]: numad.service: Deactivated successfully.
+May 26 09:22:59 Ymm1 systemd[1]: Started numad - The NUMA daemon that manages application locality..
+May 26 09:23:00 Ymm1 systemd[1]: Reloading.
+May 26 09:23:00 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:23:00 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:23:00 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:23:00 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:23:00 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:23:00 Ymm1 systemd[1]: run-r8fe79647e1a642b2bac4616b00e9bab4.service: Deactivated successfully.
+May 26 09:23:17 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:23:17 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:23:17 Ymm1 systemd[1]: Reloading.
+May 26 09:23:17 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:23:17 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:23:17 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:23:17 Ymm1 systemd[1]: run-r389dea3e4cae47bebe4ebb514a59a0bc.service: Deactivated successfully.
+May 26 09:23:17 Ymm1 systemd[1]: Starting One-time temporary TLS key generation for httpd.service...
+May 26 09:23:17 Ymm1 systemd[1]: httpd-init.service: Main process exited, code=exited, status=127/n/a
+May 26 09:23:17 Ymm1 systemd[1]: httpd-init.service: Failed with result 'exit-code'.
+May 26 09:23:17 Ymm1 systemd[1]: Failed to start One-time temporary TLS key generation for httpd.service.
+May 26 09:23:17 Ymm1 systemd[1]: Starting The Apache HTTP Server...
+May 26 09:23:17 Ymm1 systemd[1]: Started The Apache HTTP Server.
+May 26 09:23:23 Ymm1 systemd[1]: Reloading.
+May 26 09:23:23 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:23:23 Ymm1 systemd[1]: Stopping The Apache HTTP Server...
+May 26 09:23:24 Ymm1 systemd[1]: httpd.service: Deactivated successfully.
+May 26 09:23:24 Ymm1 systemd[1]: Stopped The Apache HTTP Server.
+May 26 09:23:25 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:23:25 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:23:25 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:23:25 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:23:25 Ymm1 systemd[1]: run-r1c187513030c413bb4a5c40386661aeb.service: Deactivated successfully.
+May 26 09:23:34 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:23:34 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:23:34 Ymm1 systemd[1]: Reloading.
+May 26 09:23:34 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:23:34 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:23:34 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:23:34 Ymm1 systemd[1]: run-rc491e358e42f4c6d9bb6f054a78ebee9.service: Deactivated successfully.
+May 26 09:23:34 Ymm1 systemd[1]: Starting DNS caching server....
+May 26 09:23:34 Ymm1 systemd[1]: Started DNS caching server..
+May 26 09:23:37 Ymm1 systemd[1]: Stopping DNS caching server....
+May 26 09:23:37 Ymm1 systemd[1]: dnsmasq.service: Deactivated successfully.
+May 26 09:23:37 Ymm1 systemd[1]: Stopped DNS caching server..
+May 26 09:23:37 Ymm1 systemd[1]: Reloading.
+May 26 09:23:37 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:23:37 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:23:37 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:23:37 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:23:37 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:23:37 Ymm1 systemd[1]: run-r3cd458ef45954d1d86c0050a84176b91.service: Deactivated successfully.
+May 26 09:23:44 Ymm1 systemd[1]: Reloading.
+May 26 09:23:44 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:23:44 Ymm1 systemd[1]: Starting Network Time Service...
+May 26 09:23:44 Ymm1 systemd[1]: Started Network Time Service.
+May 26 09:23:44 Ymm1 systemd[1]: Stopping Network Time Service...
+May 26 09:23:44 Ymm1 systemd[1]: ntpd.service: Deactivated successfully.
+May 26 09:23:44 Ymm1 systemd[1]: Stopped Network Time Service.
+May 26 09:23:44 Ymm1 systemd[1]: Starting Network Time Service...
+May 26 09:23:44 Ymm1 systemd[1]: Started Network Time Service.
+May 26 09:23:45 Ymm1 systemd[1]: Stopping Network Time Service...
+May 26 09:23:45 Ymm1 systemd[1]: ntpd.service: Deactivated successfully.
+May 26 09:23:45 Ymm1 systemd[1]: Stopped Network Time Service.
+May 26 09:23:45 Ymm1 systemd[1]: Reloading.
+May 26 09:23:45 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:24:09 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:24:09 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:24:09 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:24:09 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:24:09 Ymm1 systemd[1]: run-r18df491e69724211ae61fbc963af6a35.service: Deactivated successfully.
+May 26 09:24:11 Ymm1 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+May 26 09:24:11 Ymm1 systemd[1]: Starting man-db-cache-update.service...
+May 26 09:24:11 Ymm1 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+May 26 09:24:11 Ymm1 systemd[1]: Finished man-db-cache-update.service.
+May 26 09:24:11 Ymm1 systemd[1]: run-re0ee2a909947476ebd3e7962222f3554.service: Deactivated successfully.
+May 26 09:24:16 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:24:16 Ymm1 systemd[1]: Reloading.
+May 26 09:24:16 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:24:16 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:24:16 Ymm1 systemd[1]: Starting iSulad Application Container Engine...
+May 26 09:24:16 Ymm1 systemd[1]: Started iSulad Application Container Engine.
+May 26 09:24:17 Ymm1 systemd[1]: Reloading.
+May 26 09:24:17 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:24:17 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:24:18 Ymm1 systemd[1]: Configuration file /usr/lib/systemd/system/isulad.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+May 26 09:24:18 Ymm1 systemd[1]: Stopping iSulad Application Container Engine...
+May 26 09:24:18 Ymm1 systemd[1]: var-lib-isulad-storage-overlay.mount: Deactivated successfully.
+May 26 09:24:18 Ymm1 systemd[1]: var-lib-isulad-mnt.mount: Deactivated successfully.
+May 26 09:24:18 Ymm1 systemd[1]: isulad.service: Deactivated successfully.
+May 26 09:24:18 Ymm1 systemd[1]: Stopped iSulad Application Container Engine.
+May 26 09:24:18 Ymm1 systemd[1]: Reloading.
+May 26 09:24:19 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:24:19 Ymm1 systemd[1]: Reloading.
+May 26 09:24:19 Ymm1 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+May 26 09:24:20 Ymm1 systemd[1]: Started Test Service B.
+May 26 09:24:20 Ymm1 systemd[1]: Started Test Service A.
+May 26 09:24:20 Ymm1 systemd[1]: Stopping Test Service A...
+May 26 09:24:20 Ymm1 systemd[1]: TestA.service: Deactivated successfully.
+May 26 09:24:20 Ymm1 systemd[1]: Stopped Test Service A.
+May 26 09:24:20 Ymm1 systemd[1]: Stopping Test Service B...
+May 26 09:24:20 Ymm1 systemd[1]: TestB.service: Deactivated successfully.
+May 26 09:24:20 Ymm1 systemd[1]: Stopped Test Service B.
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl /usr/lib/systemd/systemd1
+Couldn't canonicalize path: No such file or directory
++ CHECK_RESULT 1 0 1 'Succeed to execute journalctl'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Succeed to execute journalctl'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
+++ lsblk
+++ grep disk
+++ grep da
+++ head -n 1
+++ awk '{print $1}'
++ local_disk=vda
++ journalctl /dev/vda
++ grep -E 'begins at|begin at'
++ CHECK_RESULT 1 0 0 'Failed to execute journalctl disk'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl disk'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute journalctl disk'
++ LOG_ERROR 'Failed to execute journalctl disk'
++ message='Failed to execute journalctl disk'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute journalctl disk'
+Mon May 26 09:24:27 2025 - ERROR - Failed to execute journalctl disk
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_systemd_journald.sh line 44'
++ message='oe_test_systemd_journald.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_systemd_journald.sh line 44'
+Mon May 26 09:24:27 2025 - ERROR - oe_test_systemd_journald.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ journalctl /dev/testdev
+Couldn't canonicalize path: No such file or directory
++ CHECK_RESULT 1 0 1 'Succeed to execute journalctl disk'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Succeed to execute journalctl disk'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:24:27 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 09:24:27 2025 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:24:27 2025 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/log testlog
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:24:27 2025 - INFO  - End to restore the test environment.

@@ -1,0 +1,96 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 08:05:30 2025 - INFO  - Start to run test.
++ expect
+spawn python3
+Python 3.10.9 (main, Mar 27 2023, 23:05:54) [GCC 10.3.1] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import subprocess
+>>> import os
+>>> subprocess.Popen('hostname', close_fds=True, preexec_fn=os.setsid)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib64/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib64/python3.10/subprocess.py", line 1847, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'hostname'
+>>> exit()
+++ hostname
+oe_test_python_subprocess_03.sh: line 33: hostname: command not found
++ grep ./testlog
+Mon May 26 08:35:30 2025 - ERROR - Timeout : Command 'bash -x oe_test_python_subprocess_03.sh' timed out after 1799.9999551839992 seconds
+grep: (standard input): Input/output error
+grep: (standard input): Input/output error
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 11:57:48 2025 - INFO  - Start to restore the test environment.
+++ rm -rf testlog
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 11:57:48 2025 - INFO  - End to restore the test environment.
++ CHECK_RESULT 2 0 0 'Failed to execute preexec_fn=os.setsid'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Failed to execute preexec_fn=os.setsid'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Failed to execute preexec_fn=os.setsid'
++ LOG_ERROR 'Failed to execute preexec_fn=os.setsid'
++ message='Failed to execute preexec_fn=os.setsid'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute preexec_fn=os.setsid'
+Mon May 26 11:57:48 2025 - ERROR - Failed to execute preexec_fn=os.setsid
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_subprocess_03.sh line 34'
++ message='oe_test_python_subprocess_03.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_subprocess_03.sh line 34'
+Mon May 26 11:57:48 2025 - ERROR - oe_test_python_subprocess_03.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 11:57:48 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 11:57:48 2025 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 11:57:48 2025 - INFO  - Start to restore the test environment.
++ rm -rf testlog
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 11:57:48 2025 - INFO  - End to restore the test environment.

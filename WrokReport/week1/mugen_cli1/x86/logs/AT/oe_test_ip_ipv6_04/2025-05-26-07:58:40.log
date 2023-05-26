@@ -1,0 +1,321 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 07:58:40 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL net-tools
++ pkgs=net-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs net-tools --node 1 --tempfile ''
+Mon May 26 07:58:40 2025 - INFO  - pkgs:(net-tools) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 07:58:40 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 07:58:40 2025 - INFO  - Start to run test.
++ ifconfig inet6 add 4::4/64
+SIOGIFINDEX: No such device
++ CHECK_RESULT 1 0 0 'Failed to add ipv6 4::4'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 4::4'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to add ipv6 4::4'
++ LOG_ERROR 'Failed to add ipv6 4::4'
++ message='Failed to add ipv6 4::4'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 4::4'
+Mon May 26 07:58:40 2025 - ERROR - Failed to add ipv6 4::4
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 31'
++ message='oe_test_ip_ipv6_04.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 31'
+Mon May 26 07:58:40 2025 - ERROR - oe_test_ip_ipv6_04.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig
++ grep 4::4
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 4::4'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 4::4'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 4::4'
++ LOG_ERROR 'Failed to show ipv6 4::4'
++ message='Failed to show ipv6 4::4'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 4::4'
+Mon May 26 07:58:40 2025 - ERROR - Failed to show ipv6 4::4
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 33'
++ message='oe_test_ip_ipv6_04.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 33'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig add 1111:1111:1111:1111:1111:1111:1111:1111/64
+1111:1111:1111:1111:1111:1111:1111:1111: Unknown host
+ifconfig: `--help' gives usage information.
++ CHECK_RESULT 1 0 0 'Failed to add ipv6 1111:'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 1111:'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to add ipv6 1111:'
++ LOG_ERROR 'Failed to add ipv6 1111:'
++ message='Failed to add ipv6 1111:'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 1111:'
+Mon May 26 07:58:41 2025 - ERROR - Failed to add ipv6 1111:
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 35'
++ message='oe_test_ip_ipv6_04.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 35'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig
++ grep 1111:1111:1111:1111:1111:1111:1111:1111
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 1111:'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 1111:'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 1111:'
++ LOG_ERROR 'Failed to show ipv6 1111:'
++ message='Failed to show ipv6 1111:'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 1111:'
+Mon May 26 07:58:41 2025 - ERROR - Failed to show ipv6 1111:
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 37'
++ message='oe_test_ip_ipv6_04.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 37'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig add 2001:da8:8000:d010:0:5efe:3.3.3.3/64
+2001:da8:8000:d010:0:5efe:3.3.3.3: Unknown host
+ifconfig: `--help' gives usage information.
++ CHECK_RESULT 1 0 0 'Failed to add ipv6 2001:'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 2001:'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to add ipv6 2001:'
++ LOG_ERROR 'Failed to add ipv6 2001:'
++ message='Failed to add ipv6 2001:'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 2001:'
+Mon May 26 07:58:41 2025 - ERROR - Failed to add ipv6 2001:
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 39'
++ message='oe_test_ip_ipv6_04.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 39'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig
++ grep 2001:da8:8000:d010:0:5efe:3.3.3.3
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 2001:'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 2001:'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 2001:'
++ LOG_ERROR 'Failed to show ipv6 2001:'
++ message='Failed to show ipv6 2001:'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 2001:'
+Mon May 26 07:58:41 2025 - ERROR - Failed to show ipv6 2001:
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 41'
++ message='oe_test_ip_ipv6_04.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 41'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig add 7::7/64
+7::7: Unknown host
+ifconfig: `--help' gives usage information.
++ CHECK_RESULT 1 0 0 'Failed to add ipv6 7::7'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 7::7'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to add ipv6 7::7'
++ LOG_ERROR 'Failed to add ipv6 7::7'
++ message='Failed to add ipv6 7::7'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 7::7'
+Mon May 26 07:58:41 2025 - ERROR - Failed to add ipv6 7::7
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 43'
++ message='oe_test_ip_ipv6_04.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 43'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig
++ grep 7::7
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 7::7'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 7::7'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 7::7'
++ LOG_ERROR 'Failed to show ipv6 7::7'
++ message='Failed to show ipv6 7::7'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 7::7'
+Mon May 26 07:58:41 2025 - ERROR - Failed to show ipv6 7::7
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 45'
++ message='oe_test_ip_ipv6_04.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 45'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig add 9000:0000:0000:0000:0000:0000:0000:0009/64
+9000:0000:0000:0000:0000:0000:0000:0009: Unknown host
+ifconfig: `--help' gives usage information.
++ CHECK_RESULT 1 0 0 'Failed to add ipv6 9000:'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 9000:'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to add ipv6 9000:'
++ LOG_ERROR 'Failed to add ipv6 9000:'
++ message='Failed to add ipv6 9000:'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to add ipv6 9000:'
+Mon May 26 07:58:41 2025 - ERROR - Failed to add ipv6 9000:
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 47'
++ message='oe_test_ip_ipv6_04.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 47'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ ifconfig
++ grep 9000::9
++ CHECK_RESULT 1 0 0 'Failed to show ipv6 9000:'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 9000:'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to show ipv6 9000:'
++ LOG_ERROR 'Failed to show ipv6 9000:'
++ message='Failed to show ipv6 9000:'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to show ipv6 9000:'
+Mon May 26 07:58:41 2025 - ERROR - Failed to show ipv6 9000:
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ip_ipv6_04.sh line 49'
++ message='oe_test_ip_ipv6_04.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ip_ipv6_04.sh line 49'
+Mon May 26 07:58:41 2025 - ERROR - oe_test_ip_ipv6_04.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 07:58:41 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 10
++ test 10 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 07:58:41 2025 - ERROR - failed to execute the case.
++ exit 10
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 07:58:41 2025 - INFO  - Start to restore the test environment.
++ ifconfig inet6 del 4::4/64
+SIOGIFINDEX: No such device
++ ifconfig del 1111:1111:1111:1111:1111:1111:1111:1111/64
+1111:1111:1111:1111:1111:1111:1111:1111: Unknown host
+ifconfig: `--help' gives usage information.
++ ifconfig del 2001:da8:8000:d010:0:5efe:3.3.3.3/64
+2001:da8:8000:d010:0:5efe:3.3.3.3: Unknown host
+ifconfig: `--help' gives usage information.
++ ifconfig del 7::7/64
+7::7: Unknown host
+ifconfig: `--help' gives usage information.
++ ifconfig del 9000:0000:0000:0000:0000:0000:0000:0009/64
+9000:0000:0000:0000:0000:0000:0000:0009: Unknown host
+ifconfig: `--help' gives usage information.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Mon May 26 07:58:41 2025 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 07:58:41 2025 - INFO  - End to restore the test environment.

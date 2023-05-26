@@ -1,0 +1,127 @@
+{
+    "path": "${OET_PATH}/testcases/system-test/fs-test/FS_File",
+    "add disk": [20],
+    "cases": [
+        {
+            "name": "oe_test_FSIO_act_alias"
+        },
+        {
+            "name": "oe_test_FSIO_act_file_lack_inode"
+        },
+        {
+            "name": "oe_test_FSIO_act_hardlink"
+        },
+        {
+            "name": "oe_test_FSIO_bzip2"
+        },
+        {
+            "name": "oe_test_FSIO_change_proc"
+        },
+        {
+            "name": "oe_test_FSIO_chattr"
+        },
+        {
+            "name": "oe_test_FSIO_check_alias"
+        },
+        {
+            "name": "oe_test_FSIO_check_block"
+        },
+        {
+            "name": "oe_test_FSIO_check_file_info"
+        },
+        {
+            "name": "oe_test_FSIO_chmod"
+        },
+        {
+            "name": "oe_test_FSIO_chown"
+        },
+        {
+            "name": "oe_test_FSIO_concurrency_read_file"
+        },
+        {
+            "name": "oe_test_FSIO_concurrency_write_file"
+        },
+        {
+            "name": "oe_test_FSIO_cp_file"
+        },
+        {
+            "name": "oe_test_FSIO_create_block"
+        },
+        {
+            "name": "oe_test_FSIO_create_character"
+        },
+        {
+            "name": "oe_test_FSIO_create_hardlink_fail"
+        },
+        {
+            "name": "oe_test_FSIO_create_mv_hardlink"
+        },
+        {
+            "name": "oe_test_FSIO_create_softlink"
+        },
+        {
+            "name": "oe_test_FSIO_create_softlink_diff_fs"
+        },
+        {
+            "name": "oe_test_FSIO_create_softlink_dir"
+        },
+        {
+            "name": "oe_test_FSIO_create_softlink_file"
+        },
+        {
+            "name": "oe_test_FSIO_dd_file"
+        },
+        {
+            "name": "oe_test_FSIO_filefrag"
+        },
+        {
+            "name": "oe_test_FSIO_gzip"
+        },
+        {
+            "name": "oe_test_FSIO_gzip_overfs"
+        },
+        {
+            "name": "oe_test_FSIO_modify_file"
+        },
+        {
+            "name": "oe_test_FSIO_modify_magicfile"
+        },
+        {
+            "name": "oe_test_FSIO_mv_file_1"
+        },
+        {
+            "name": "oe_test_FSIO_mv_file_2"
+        },
+        {
+            "name": "oe_test_FSIO_rename_file"
+        },
+        {
+            "name": "oe_test_FSIO_rename_file_fail"
+        },
+        {
+            "name": "oe_test_FSIO_rm_file"
+        },
+        {
+            "name": "oe_test_FSIO_rm_hardlink"
+        },
+        {
+            "name": "oe_test_FSIO_rm_softlink"
+        },
+        {
+            "name": "oe_test_FSIO_sys_fs_check"
+        },
+        {
+            "name": "oe_test_FSIO_tar"
+        },
+        {
+            "name": "oe_test_FSIO_touch_file"
+        },
+        {
+            "name": "oe_test_FSIO_zip_unzip"
+        },
+        {
+            "name": "oe_test_FSIO_zip_unzip_overfs"
+        }
+
+    ]
+}

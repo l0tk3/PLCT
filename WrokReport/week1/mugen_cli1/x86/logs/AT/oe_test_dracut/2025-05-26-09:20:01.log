@@ -1,0 +1,82 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ grep expect
++ rpm -qa
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 09:20:01 2025 - INFO  - Start to prepare the test environment.
+++ rpm -qa kernel
+++ sort
+++ tail -n 1
+++ awk -F - '{print $2"-"$3}'
++ kernel_ver=6.1.19-7.0.0.17.oe2303.x86_64
++ mv -f /boot/initramfs-6.1.19-7.0.0.17.oe2303.x86_64.img /boot/initramfs-6.1.19-7.0.0.17.oe2303.x86_64.img.bak
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 09:20:01 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:20:01 2025 - INFO  - Start to run test.
++ dracut
++ CHECK_RESULT 0 0 0 'Failed to execute dracut'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute dracut'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f /boot/initramfs-6.1.19-7.0.0.17.oe2303.x86_64.img
++ CHECK_RESULT 0 0 0 'Failed to check dracut'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to check dracut'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:20:14 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:20:14 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:20:14 2025 - INFO  - Start to restore the test environment.
++ mv -f /boot/initramfs-6.1.19-7.0.0.17.oe2303.x86_64.img.bak /boot/initramfs-6.1.19-7.0.0.17.oe2303.x86_64.img
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:20:14 2025 - INFO  - End to restore the test environment.

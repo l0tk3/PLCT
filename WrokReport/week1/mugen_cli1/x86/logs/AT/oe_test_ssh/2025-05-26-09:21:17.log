@@ -1,0 +1,138 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:21:17 2025 - INFO  - Start to run test.
++ systemctl restart sshd
++ CHECK_RESULT 0 0 0 'Failed to start sshd service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to start sshd service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status sshd
++ grep running
+     Active: active (running) since Mon 2025-05-26 09:21:18 UTC; 6ms ago
++ CHECK_RESULT 0 0 0 'Failed to start sshd service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to start sshd service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sshcmd 'uname -a'
++ cmd='uname -a'
++ rmt_ip=127.0.0.1
++ '[' -z 'uname -a' ']'
++ expect
+spawn ssh root@127.0.0.1 uname -a
+
+Authorized users only. All activities may be monitored and reported.
+root@127.0.0.1's password: 
+Linux Ymm1 6.1.19-7.0.0.17.oe2303.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Mar 28 00:01:02 CST 2023 x86_64 x86_64 x86_64 GNU/Linux
++ retcode=0
++ echo 'retcode of sshcmd is 0'
+retcode of sshcmd is 0
++ return 0
++ CHECK_RESULT 0 0 0 'uanme -a execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='uanme -a execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sshcmd 'ip a'
++ cmd='ip a'
++ rmt_ip=127.0.0.1
++ '[' -z 'ip a' ']'
++ expect
+spawn ssh root@127.0.0.1 ip a
+
+Authorized users only. All activities may be monitored and reported.
+root@127.0.0.1's password: 
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:12:34:56 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute ens5
+       valid_lft 84446sec preferred_lft 84446sec
+    inet6 fec0::704f:ae64:9663:6d34/64 scope site dynamic noprefixroute 
+       valid_lft 85985sec preferred_lft 13985sec
+    inet6 fe80::2020:84b2:3694:396d/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+5: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 02:42:f3:f7:54:3b brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+6: bond0: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 46:38:14:f2:83:90 brd ff:ff:ff:ff:ff:ff
+    inet 127.0.0.1/8 brd 127.255.255.255 scope global noprefixroute bond0
+       valid_lft forever preferred_lft forever
++ retcode=0
++ echo 'retcode of sshcmd is 0'
+retcode of sshcmd is 0
++ return 0
++ CHECK_RESULT 0 0 0 'ip a execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ip a execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:21:48 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:21:48 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:21:48 2025 - INFO  - Start to restore the test environment.
++ rm -rf /root/.ssh/known_hosts
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:21:48 2025 - INFO  - End to restore the test environment.

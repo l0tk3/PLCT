@@ -1,0 +1,123 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 09:20:48 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL lsof
++ pkgs=lsof
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs lsof --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpg86ghtjj
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpg86ghtjj
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 09:20:50 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:20:50 2025 - INFO  - Start to run test.
++ lsof /bin/bash
++ grep bash
+bash      4931 root txt    REG  252,2  1240928 1704011 /usr/bin/bash
+bash     52958 root txt    REG  252,2  1240928 1704011 /usr/bin/bash
+bash     61209 root txt    REG  252,2  1240928 1704011 /usr/bin/bash
+bash     69617 root txt    REG  252,2  1240928 1704011 /usr/bin/bash
+bash     76399 root txt    REG  252,2  1240928 1704011 /usr/bin/bash
+bash    680870 root txt    REG  252,2  1240928 1704011 /usr/bin/bash
++ CHECK_RESULT 0 0 0 'Failed to display bash'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display bash'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CHECK_RESULT 0 0 0 'Failed to execute lsof'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute lsof'
++ exit_mode=0
++ lsof -u root
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep -i pid testlog
+COMMAND      PID USER   FD      TYPE             DEVICE  SIZE/OFF       NODE NAME
+NetworkMa 181252 root   20u  a_inode               0,14         0      13025 [pidfd:181299]
+crond     585273 root    3uW     REG               0,23         7      81346 /run/crond.pid
++ CHECK_RESULT 0 0 0 'Failed to list pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to list pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:20:53 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:20:53 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:20:53 2025 - INFO  - Start to restore the test environment.
+++ pgrep lsof
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -rf testlog
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpg86ghtjj ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpg86ghtjj
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:20:54 2025 - INFO  - End to restore the test environment.

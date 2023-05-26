@@ -1,0 +1,158 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Mon May 26 08:42:29 2025 - INFO  - Start environment preparation.
++ DNF_INSTALL attr
++ pkgs=attr
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs attr --node 1 --tempfile ''
+Mon May 26 08:42:29 2025 - INFO  - pkgs:(attr) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ touch testfile
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Mon May 26 08:42:29 2025 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Mon May 26 08:42:29 2025 - INFO  - Start testing...
++ setfattr -n user.foo -v bar testfile
++ getfattr -n user.foo testfile
+# file: testfile
+user.foo="bar"
+
++ CHECK_RESULT 0 0 0 'Failed to set the EA extended properties'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set the EA extended properties'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ attr -lq testfile
++ grep foo
+foo
++ CHECK_RESULT 0 0 0 'The newly added property cannot be queried'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The newly added property cannot be queried'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfattr -d -m '.*' testfile
++ grep user.foo
+user.foo="bar"
++ CHECK_RESULT 0 0 0 'Unable to query user.foo add property'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Unable to query user.foo add property'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfattr -m. -e hex -d testfile
+# file: testfile
+user.foo=0x626172
+
++ CHECK_RESULT 0 0 0 'Unable to display EA properties in hexadecimal'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Unable to display EA properties in hexadecimal'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfattr -m. -e base64 -d testfile
+# file: testfile
+user.foo=0sYmFy
+
++ CHECK_RESULT 0 0 0 'Cannot display EA attributes in base64'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Cannot display EA attributes in base64'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfattr -x user.foo testfile
++ getfattr -n user.foo testfile
+testfile: user.foo: No such attribute
++ CHECK_RESULT 1 0 1 'Failed to delete attributes'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failed to delete attributes'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Mon May 26 08:42:29 2025 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 08:42:29 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Mon May 26 08:42:29 2025 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Mon May 26 08:42:29 2025 - WARN  - no thing to do.
++ return 0
++ rm -rf testfile
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Mon May 26 08:42:29 2025 - INFO  - Finish environment cleanup!

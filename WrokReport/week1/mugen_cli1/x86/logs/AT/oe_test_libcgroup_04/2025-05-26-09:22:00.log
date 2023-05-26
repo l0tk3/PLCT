@@ -1,0 +1,141 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 09:22:00 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libcgroup
++ pkgs=libcgroup
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libcgroup --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpm2eucofj
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpm2eucofj
++ cgcreate -g cpu:test
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 09:22:02 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:22:02 2025 - INFO  - Start to run test.
++ cgsnapshot
++ grep test
+WARNING: variable cpu.cfs_burst_us is neither blacklisted nor whitelisted
+WARNING: variable cpu.cfs_period_us is neither blacklisted nor whitelisted
+WARNING: variable cpu.shares is neither blacklisted nor whitelisted
+WARNING: variable cpu.idle is neither blacklisted nor whitelisted
+WARNING: variable cpu.cfs_quota_us is neither blacklisted nor whitelisted
+WARNING: variable cpu.rt_runtime_us is neither blacklisted nor whitelisted
+WARNING: variable cpu.rt_period_us is neither blacklisted nor whitelisted
+WARNING: variable cpuacct.usage is neither blacklisted nor whitelisted
+WARNING: variable rdma.current is neither blacklisted nor whitelisted
+WARNING: variable rdma.max is neither blacklisted nor whitelisted
+WARNING: variable pids.current is neither blacklisted nor whitelisted
+WARNING: variable pids.events is neither blacklisted nor whitelisted
+WARNING: variable pids.max is neither blacklisted nor whitelisted
+WARNING: variable pids.peak is neither blacklisted nor whitelisted
+WARNING: variable memory.use_hierarchy is neither blacklisted nor whitelisted
+WARNING: variable memory.soft_limit_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable memory.force_empty is neither blacklisted nor whitelisted
+WARNING: variable memory.move_charge_at_immigrate is neither blacklisted nor whitelisted
+WARNING: variable memory.memsw.failcnt is neither blacklisted nor whitelisted
+WARNING: variable memory.kmem.tcp.max_usage_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable memory.max_usage_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable memory.limit_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable memory.swappiness is neither blacklisted nor whitelisted
+WARNING: variable memory.memsw.max_usage_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable memory.kmem.failcnt is neither blacklisted nor whitelisted
+WARNING: variable memory.kmem.max_usage_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable memory.memsw.limit_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable memory.failcnt is neither blacklisted nor whitelisted
+WARNING: variable memory.kmem.tcp.failcnt is neither blacklisted nor whitelisted
+WARNING: variable memory.kmem.limit_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable memory.kmem.tcp.limit_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable hugetlb.2MB.limit_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable hugetlb.2MB.rsvd.failcnt is neither blacklisted nor whitelisted
+WARNING: variable hugetlb.2MB.max_usage_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable hugetlb.2MB.rsvd.limit_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable hugetlb.2MB.rsvd.max_usage_in_bytes is neither blacklisted nor whitelisted
+WARNING: variable hugetlb.2MB.failcnt is neither blacklisted nor whitelisted
+WARNING: variable net_cls.classid is neither blacklisted nor whitelisted
+WARNING: variable net_prio.ifpriomap is neither blacklisted nor whitelisted
+WARNING: variable devices.deny is neither blacklisted nor whitelisted
+WARNING: variable devices.list is neither blacklisted nor whitelisted
+WARNING: variable devices.allow is neither blacklisted nor whitelisted
+group test {
++ CHECK_RESULT 0 0 0 'Failed to execute cgsnapshot'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute cgsnapshot'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lscgroup
++ grep test
+cpu,cpuacct:/test
++ CHECK_RESULT 0 0 0 'Failed to execute lscgroup'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute lscgroup'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:22:02 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:22:03 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:22:03 2025 - INFO  - Start to restore the test environment.
++ cgdelete -g cpu:test
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpm2eucofj ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpm2eucofj
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:22:03 2025 - INFO  - End to restore the test environment.

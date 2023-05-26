@@ -1,0 +1,452 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 08:47:15 2025 - INFO  - Start to prepare the test environment.
++ OLD_LANG=en_US.UTF-8
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 08:47:15 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Mon May 26 08:47:15 2025 - INFO  - Start testing...
++ source --help
++ grep 'source: source filename'
+source: source filename [arguments]
++ CHECK_RESULT 0 0 0 'test fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ source /etc/profile
+++ '[' -x /usr/bin/id ']'
+++ '[' -z 0 ']'
++++ /usr/bin/id -un
+++ USER=root
+++ LOGNAME=root
+++ MAIL=/var/spool/mail/root
+++ '[' 0 = 0 ']'
+++ pathmunge /usr/sbin
+++ case ":${PATH}:" in
+++ pathmunge /usr/local/sbin
+++ case ":${PATH}:" in
++++ /usr/bin/hostnamectl --transient
+++ HOSTNAME=localhost
+++ HISTSIZE=1000
+++ '[' ignoredups = ignorespace ']'
+++ export HISTCONTROL=ignoredups
+++ HISTCONTROL=ignoredups
+++ export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/alias.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/alias.sh
++++ alias '..=cd ..'
++++ alias '...=cd ../..'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/color_grep.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/color_grep.sh
++++ /usr/libexec/grepconf.sh -c
++++ alias 'grep=grep --color=auto'
++++ alias 'egrep=egrep --color=auto'
++++ alias 'fgrep=fgrep --color=auto'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/colorls.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/colorls.sh
++++ '[' '!' -t 0 ']'
++++ '[' -z '' ']'
++++ alias 'll=ls -l'
++++ alias 'l.=ls -d .*'
++++ INCLUDE=
++++ COLORS=
++++ for colors in "$HOME/.dir_colors.$TERM" "$HOME/.dircolors.$TERM" "$HOME/.dir_colors" "$HOME/.dircolors"
++++ '[' -e /root/.dir_colors.vt220 ']'
++++ for colors in "$HOME/.dir_colors.$TERM" "$HOME/.dircolors.$TERM" "$HOME/.dir_colors" "$HOME/.dircolors"
++++ '[' -e /root/.dircolors.vt220 ']'
++++ for colors in "$HOME/.dir_colors.$TERM" "$HOME/.dircolors.$TERM" "$HOME/.dir_colors" "$HOME/.dircolors"
++++ '[' -e /root/.dir_colors ']'
++++ for colors in "$HOME/.dir_colors.$TERM" "$HOME/.dircolors.$TERM" "$HOME/.dir_colors" "$HOME/.dircolors"
++++ '[' -e /root/.dircolors ']'
++++ '[' -z '' ']'
++++ '[' -e /etc/DIR_COLORS.vt220 ']'
++++ '[' -z '' ']'
++++ '[' -e /etc/DIR_COLORS.256color ']'
+++++ /usr/bin/tty -s
+++++ /usr/bin/tput colors
++++ '[' x-1 = x256 ']'
++++ '[' -z '' ']'
++++ '[' -e /etc/DIR_COLORS ']'
++++ COLORS=/etc/DIR_COLORS
++++ '[' -n /etc/DIR_COLORS ']'
++++ '[' -e '' ']'
+++++ /usr/bin/dircolors --sh /etc/DIR_COLORS
++++ eval 'LS_COLORS='\'''\'';
+export LS_COLORS'
+++++ LS_COLORS=
+++++ export LS_COLORS
++++ '[' -z '' ']'
++++ return
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/colorxzgrep.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/colorxzgrep.sh
++++ /usr/libexec/grepconf.sh -c
++++ alias 'xzgrep=xzgrep --color=auto'
++++ alias 'xzegrep=xzegrep --color=auto'
++++ alias 'xzfgrep=xzfgrep --color=auto'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/colorzgrep.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/colorzgrep.sh
++++ '[' -f /usr/libexec/grepconf.sh ']'
++++ /usr/libexec/grepconf.sh -c
++++ alias 'zgrep=zgrep --color=auto'
++++ alias 'zfgrep=zfgrep --color=auto'
++++ alias 'zegrep=zegrep --color=auto'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/gawk.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/gawk.sh
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/lang.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/lang.sh
++++ unset LANG_backup
+++++ /usr/bin/locale
++++ '[' -n '' ']'
++++ LANG_backup=en_US.UTF-8
++++ for config in /etc/locale.conf "${HOME}/.i18n"
++++ '[' -f /etc/locale.conf ']'
++++ '[' -x /usr/bin/sed ']'
+++++ /usr/bin/sed -r -e 's/^[[:blank:]]*([[:upper:]_]+)=([[:print:][:digit:]\._-]+|"[[:print:][:digit:]\._-]+")/export \1=\2/;t;d' /etc/locale.conf
++++ eval export LANG=en_US.UTF-8
+++++ export LANG=en_US.UTF-8
+++++ LANG=en_US.UTF-8
++++ for config in /etc/locale.conf "${HOME}/.i18n"
++++ '[' -f /root/.i18n ']'
++++ '[' -n en_US.UTF-8 ']'
++++ LANG=en_US.UTF-8
++++ unset LANG_backup config
++++ '[' -n '' ']'
++++ '[' -n en_US.UTF-8 ']'
++++ '[' vt220 = linux ']'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/system-info.sh ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/system-info.sh
+++++ uname -r
++++ welcome=6.1.19-7.0.0.17.oe2303.x86_64
+++++ cat /proc/meminfo
+++++ awk '/^MemTotal:/ {printf($2)}'
++++ memory_total=8191428
+++++ cat /proc/meminfo
+++++ awk '/^MemFree:/ { printf($2)}'
++++ memory_free=3729264
+++++ cat /proc/meminfo
+++++ awk '/^Buffers:/ { printf($2)}'
++++ buffers=171652
+++++ cat /proc/meminfo
+++++ awk '/^Cached:/ { printf($2)}'
++++ cached=3880268
+++++ cat /proc/meminfo
+++++ awk '/^SReclaimable:/ { printf($2)}'
++++ sreclaimable=220360
+++++ cat /proc/meminfo
+++++ awk '/^SwapTotal:/ { printf($2)}'
++++ swap_total=0
+++++ cat /proc/meminfo
+++++ awk '/^SwapFree:/ { printf($2)}'
++++ swap_free=0
++++ [[ 8191428 -gt 0 ]]
+++++ echo 'scale=1; (8191428 - 3729264 - 171652 - 3880268 - 220360) * 100.0 / 8191428'
+++++ bc
++++ memory_usage=2.3
++++ memory_usage=2.3%
++++ [[ 0 -gt 0 ]]
++++ swap_mem=0.0%
+++++ df -h /
+++++ awk '/\// {print $(NF-1)}'
++++ usageof=11%
+++++ awk '{print $1}' /proc/loadavg
++++ load_average=2.32
+++++ whoami
++++ whoiam=root
+++++ date
++++ time_cur='Mon May 26 08:47:15 AM UTC 2025'
+++++ ps aux
+++++ wc -l
++++ processes=195
+++++ users
+++++ wc -w
++++ user_num=1
++++ ip_pre=
++++ '[' -x /sbin/ip ']'
+++++ /sbin/ip a
+++++ grep inet
+++++ grep -v 127.0.0.1
+++++ grep -v inet6
+++++ awk '{print $2}'
++++ ip_pre=10.0.2.15/24
++++ echo -e '\n'
++++ echo -e 'Welcome to 6.1.19-7.0.0.17.oe2303.x86_64\n'
++++ echo -e 'System information as of time: \tMon May 26 08:47:15 AM UTC 2025\n'
++++ echo -e 'System load: \t\033[0;33;40m2.32\033[0m'
++++ echo -e 'Processes: \t195'
++++ echo -e 'Memory used: \t2.3%'
++++ echo -e 'Swap used: \t0.0%'
++++ echo -e 'Usage On: \t11%'
++++ for line in $ip_pre
++++ ip_address=10.0.2.15
++++ echo -e 'IP address: \t10.0.2.15'
++++ echo -e 'Users online: \t1'
++++ '[' root = root ']'
++++ echo -e '\n'
+++ for i in /etc/profile.d/*.sh /etc/profile.d/sh.local
+++ '[' -r /etc/profile.d/sh.local ']'
+++ '[' hxB '!=' hxB ']'
+++ . /etc/profile.d/sh.local
+++ unset i
+++ unset -f pathmunge
+++ test /usr/bin/bash
+++ test -z ''
+++ test oe_test_source.sh '!=' sh
+++ test -r /etc/bashrc
+++ . /etc/bashrc
++++ '[' -z '' ']'
++++ BASHRCSOURCED=Y
++++ '[' '' ']'
++++ shopt -q login_shell
+++++ umask
++++ '[' 0022 -eq 0 ']'
++++ SHELL=/bin/bash
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/alias.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/alias.sh
+++++ alias '..=cd ..'
+++++ alias '...=cd ../..'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/color_grep.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/color_grep.sh
+++++ /usr/libexec/grepconf.sh -c
+++++ alias 'grep=grep --color=auto'
+++++ alias 'egrep=egrep --color=auto'
+++++ alias 'fgrep=fgrep --color=auto'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/colorls.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/colorls.sh
+++++ '[' '!' -t 0 ']'
+++++ '[' -z '' ']'
+++++ alias 'll=ls -l'
+++++ alias 'l.=ls -d .*'
+++++ INCLUDE=
+++++ COLORS=
+++++ for colors in "$HOME/.dir_colors.$TERM" "$HOME/.dircolors.$TERM" "$HOME/.dir_colors" "$HOME/.dircolors"
+++++ '[' -e /root/.dir_colors.vt220 ']'
+++++ for colors in "$HOME/.dir_colors.$TERM" "$HOME/.dircolors.$TERM" "$HOME/.dir_colors" "$HOME/.dircolors"
+++++ '[' -e /root/.dircolors.vt220 ']'
+++++ for colors in "$HOME/.dir_colors.$TERM" "$HOME/.dircolors.$TERM" "$HOME/.dir_colors" "$HOME/.dircolors"
+++++ '[' -e /root/.dir_colors ']'
+++++ for colors in "$HOME/.dir_colors.$TERM" "$HOME/.dircolors.$TERM" "$HOME/.dir_colors" "$HOME/.dircolors"
+++++ '[' -e /root/.dircolors ']'
+++++ '[' -z '' ']'
+++++ '[' -e /etc/DIR_COLORS.vt220 ']'
+++++ '[' -z '' ']'
+++++ '[' -e /etc/DIR_COLORS.256color ']'
++++++ /usr/bin/tty -s
++++++ /usr/bin/tput colors
+++++ '[' x-1 = x256 ']'
+++++ '[' -z '' ']'
+++++ '[' -e /etc/DIR_COLORS ']'
+++++ COLORS=/etc/DIR_COLORS
+++++ '[' -n /etc/DIR_COLORS ']'
+++++ '[' -e '' ']'
++++++ /usr/bin/dircolors --sh /etc/DIR_COLORS
+++++ eval 'LS_COLORS='\'''\'';
+export LS_COLORS'
++++++ LS_COLORS=
++++++ export LS_COLORS
+++++ '[' -z '' ']'
+++++ return
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/colorxzgrep.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/colorxzgrep.sh
+++++ /usr/libexec/grepconf.sh -c
+++++ alias 'xzgrep=xzgrep --color=auto'
+++++ alias 'xzegrep=xzegrep --color=auto'
+++++ alias 'xzfgrep=xzfgrep --color=auto'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/colorzgrep.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/colorzgrep.sh
+++++ '[' -f /usr/libexec/grepconf.sh ']'
+++++ /usr/libexec/grepconf.sh -c
+++++ alias 'zgrep=zgrep --color=auto'
+++++ alias 'zfgrep=zfgrep --color=auto'
+++++ alias 'zegrep=zegrep --color=auto'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/gawk.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/gawk.sh
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/lang.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/lang.sh
+++++ unset LANG_backup
++++++ /usr/bin/locale
+++++ '[' -n '' ']'
+++++ LANG_backup=en_US.UTF-8
+++++ for config in /etc/locale.conf "${HOME}/.i18n"
+++++ '[' -f /etc/locale.conf ']'
+++++ '[' -x /usr/bin/sed ']'
++++++ /usr/bin/sed -r -e 's/^[[:blank:]]*([[:upper:]_]+)=([[:print:][:digit:]\._-]+|"[[:print:][:digit:]\._-]+")/export \1=\2/;t;d' /etc/locale.conf
+++++ eval export LANG=en_US.UTF-8
++++++ export LANG=en_US.UTF-8
++++++ LANG=en_US.UTF-8
+++++ for config in /etc/locale.conf "${HOME}/.i18n"
+++++ '[' -f /root/.i18n ']'
+++++ '[' -n en_US.UTF-8 ']'
+++++ LANG=en_US.UTF-8
+++++ unset LANG_backup config
+++++ '[' -n '' ']'
+++++ '[' -n en_US.UTF-8 ']'
+++++ '[' vt220 = linux ']'
++++ for i in /etc/profile.d/*.sh
++++ '[' -r /etc/profile.d/system-info.sh ']'
++++ '[' '' ']'
++++ . /etc/profile.d/system-info.sh
++++++ uname -r
+++++ welcome=6.1.19-7.0.0.17.oe2303.x86_64
++++++ cat /proc/meminfo
++++++ awk '/^MemTotal:/ {printf($2)}'
+++++ memory_total=8191428
++++++ cat /proc/meminfo
++++++ awk '/^MemFree:/ { printf($2)}'
+++++ memory_free=3725484
++++++ cat /proc/meminfo
++++++ awk '/^Buffers:/ { printf($2)}'
+++++ buffers=171652
++++++ cat /proc/meminfo
++++++ awk '/^Cached:/ { printf($2)}'
+++++ cached=3880268
++++++ cat /proc/meminfo
++++++ awk '/^SReclaimable:/ { printf($2)}'
+++++ sreclaimable=220368
++++++ cat /proc/meminfo
++++++ awk '/^SwapTotal:/ { printf($2)}'
+++++ swap_total=0
++++++ cat /proc/meminfo
++++++ awk '/^SwapFree:/ { printf($2)}'
+++++ swap_free=0
+++++ [[ 8191428 -gt 0 ]]
++++++ echo 'scale=1; (8191428 - 3725484 - 171652 - 3880268 - 220368) * 100.0 / 8191428'
++++++ bc
+++++ memory_usage=2.3
+++++ memory_usage=2.3%
+++++ [[ 0 -gt 0 ]]
+++++ swap_mem=0.0%
++++++ df -h /
++++++ awk '/\// {print $(NF-1)}'
+++++ usageof=11%
++++++ awk '{print $1}' /proc/loadavg
+++++ load_average=2.32
++++++ whoami
+++++ whoiam=root
++++++ date
+++++ time_cur='Mon May 26 08:47:15 AM UTC 2025'
++++++ ps aux
++++++ wc -l
+++++ processes=195
++++++ users
++++++ wc -w
+++++ user_num=1
+++++ ip_pre=
+++++ '[' -x /sbin/ip ']'
++++++ /sbin/ip a
++++++ grep inet
++++++ grep -v 127.0.0.1
++++++ grep -v inet6
++++++ awk '{print $2}'
+++++ ip_pre=10.0.2.15/24
+++++ echo -e '\n'
+++++ echo -e 'Welcome to 6.1.19-7.0.0.17.oe2303.x86_64\n'
+++++ echo -e 'System information as of time: \tMon May 26 08:47:15 AM UTC 2025\n'
+++++ echo -e 'System load: \t\033[0;33;40m2.32\033[0m'
+++++ echo -e 'Processes: \t195'
+++++ echo -e 'Memory used: \t2.3%'
+++++ echo -e 'Swap used: \t0.0%'
+++++ echo -e 'Usage On: \t11%'
+++++ for line in $ip_pre
+++++ ip_address=10.0.2.15
+++++ echo -e 'IP address: \t10.0.2.15'
+++++ echo -e 'Users online: \t1'
+++++ '[' root = root ']'
+++++ echo -e '\n'
++++ unset i
++++ unset -f pathmunge
++ CHECK_RESULT 0 0 0 'source fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='source fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Mon May 26 08:47:15 2025 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 08:47:15 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to clean the test environment.'
++ message='Start to clean the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to clean the test environment.'
+Mon May 26 08:47:15 2025 - INFO  - Start to clean the test environment.
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to clean the test environment.'
++ message='End to clean the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to clean the test environment.'
+Mon May 26 08:47:15 2025 - INFO  - End to clean the test environment.

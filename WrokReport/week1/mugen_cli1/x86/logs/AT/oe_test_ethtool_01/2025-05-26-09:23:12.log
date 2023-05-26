@@ -1,0 +1,581 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 09:23:12 2025 - INFO  - Start to prepare the test environment.
+++ ethtool -k
+++ grep generic-segmentation-offload:
+++ awk '{print $NF}'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ GSO_init=
+++ ethtool -k
+++ grep generic-receive-offload:
+++ awk '{print $NF}'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ GRO_init=
+++ ethtool -k
+++ grep tcp-segmentation-offload:
+++ awk '{print $NF}'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ TSO_init=
+++ ethtool -k
+++ grep tx-checksumming:
+++ awk '{print $NF}'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ TX_init=
+++ ethtool -k
+++ grep scatter-gather:
+++ awk '{print $NF}'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ SG_init=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 09:23:12 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:23:12 2025 - INFO  - Start to run test.
++ ethtool -K sg on
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ ethtool -K gso on
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'GSO open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='GSO open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'GSO open failed'
++ LOG_ERROR 'GSO open failed'
++ message='GSO open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'GSO open failed'
+Mon May 26 09:23:12 2025 - ERROR - GSO open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 37'
++ message='oe_test_ethtool_01.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 37'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'generic-segmentation-offload: on'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check GSO open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check GSO open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check GSO open failed'
++ LOG_ERROR 'Check GSO open failed'
++ message='Check GSO open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check GSO open failed'
+Mon May 26 09:23:12 2025 - ERROR - Check GSO open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 39'
++ message='oe_test_ethtool_01.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 39'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K gso off
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'GSO shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='GSO shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'GSO shut off failed'
++ LOG_ERROR 'GSO shut off failed'
++ message='GSO shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'GSO shut off failed'
+Mon May 26 09:23:12 2025 - ERROR - GSO shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 41'
++ message='oe_test_ethtool_01.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 41'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'generic-segmentation-offload: off'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check GSO shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check GSO shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check GSO shut off failed'
++ LOG_ERROR 'Check GSO shut off failed'
++ message='Check GSO shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check GSO shut off failed'
+Mon May 26 09:23:12 2025 - ERROR - Check GSO shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 43'
++ message='oe_test_ethtool_01.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 43'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K gro on
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'GRO open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='GRO open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'GRO open failed'
++ LOG_ERROR 'GRO open failed'
++ message='GRO open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'GRO open failed'
+Mon May 26 09:23:12 2025 - ERROR - GRO open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 45'
++ message='oe_test_ethtool_01.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 45'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'generic-receive-offload: on'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check GRO open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check GRO open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check GRO open failed'
++ LOG_ERROR 'Check GRO open failed'
++ message='Check GRO open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check GRO open failed'
+Mon May 26 09:23:12 2025 - ERROR - Check GRO open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 47'
++ message='oe_test_ethtool_01.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 47'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K gro off
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'GRO shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='GRO shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'GRO shut off failed'
++ LOG_ERROR 'GRO shut off failed'
++ message='GRO shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'GRO shut off failed'
+Mon May 26 09:23:12 2025 - ERROR - GRO shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 49'
++ message='oe_test_ethtool_01.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 49'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'generic-receive-offload: off'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check GRO shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check GRO shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check GRO shut off failed'
++ LOG_ERROR 'Check GRO shut off failed'
++ message='Check GRO shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check GRO shut off failed'
+Mon May 26 09:23:12 2025 - ERROR - Check GRO shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 51'
++ message='oe_test_ethtool_01.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 51'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K tx on
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ ethtool -K tso on
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'TSO open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='TSO open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'TSO open failed'
++ LOG_ERROR 'TSO open failed'
++ message='TSO open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'TSO open failed'
+Mon May 26 09:23:12 2025 - ERROR - TSO open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 54'
++ message='oe_test_ethtool_01.sh line 54'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 54'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 54
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'tcp-segmentation-offload: on'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check TSO open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check TSO open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check TSO open failed'
++ LOG_ERROR 'Check TSO open failed'
++ message='Check TSO open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check TSO open failed'
+Mon May 26 09:23:12 2025 - ERROR - Check TSO open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 56'
++ message='oe_test_ethtool_01.sh line 56'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 56'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 56
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K tso off
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'TSO shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='TSO shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'TSO shut off failed'
++ LOG_ERROR 'TSO shut off failed'
++ message='TSO shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'TSO shut off failed'
+Mon May 26 09:23:12 2025 - ERROR - TSO shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 58'
++ message='oe_test_ethtool_01.sh line 58'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 58'
+Mon May 26 09:23:12 2025 - ERROR - oe_test_ethtool_01.sh line 58
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'tcp-segmentation-offload: off'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check TSO shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check TSO shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check TSO shut off failed'
++ LOG_ERROR 'Check TSO shut off failed'
++ message='Check TSO shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check TSO shut off failed'
+Mon May 26 09:23:13 2025 - ERROR - Check TSO shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 60'
++ message='oe_test_ethtool_01.sh line 60'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 60'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 60
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K tx on
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'TX open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='TX open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'TX open failed'
++ LOG_ERROR 'TX open failed'
++ message='TX open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'TX open failed'
+Mon May 26 09:23:13 2025 - ERROR - TX open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 62'
++ message='oe_test_ethtool_01.sh line 62'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 62'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 62
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'tx-checksumming: on'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check TX open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check TX open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check TX open failed'
++ LOG_ERROR 'Check TX open failed'
++ message='Check TX open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check TX open failed'
+Mon May 26 09:23:13 2025 - ERROR - Check TX open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 64'
++ message='oe_test_ethtool_01.sh line 64'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 64'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 64
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K tx off
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'TX shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='TX shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'TX shut off failed'
++ LOG_ERROR 'TX shut off failed'
++ message='TX shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'TX shut off failed'
+Mon May 26 09:23:13 2025 - ERROR - TX shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 66'
++ message='oe_test_ethtool_01.sh line 66'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 66'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 66
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'tx-checksumming: off'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check TX shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check TX shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check TX shut off failed'
++ LOG_ERROR 'Check TX shut off failed'
++ message='Check TX shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check TX shut off failed'
+Mon May 26 09:23:13 2025 - ERROR - Check TX shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 68'
++ message='oe_test_ethtool_01.sh line 68'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 68'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 68
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K sg on
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'SG open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='SG open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'SG open failed'
++ LOG_ERROR 'SG open failed'
++ message='SG open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'SG open failed'
+Mon May 26 09:23:13 2025 - ERROR - SG open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 70'
++ message='oe_test_ethtool_01.sh line 70'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 70'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 70
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'scatter-gather: on'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check SG open failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check SG open failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check SG open failed'
++ LOG_ERROR 'Check SG open failed'
++ message='Check SG open failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check SG open failed'
+Mon May 26 09:23:13 2025 - ERROR - Check SG open failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 72'
++ message='oe_test_ethtool_01.sh line 72'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 72'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 72
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -K sg off
+ethtool (-K): flag '(null)' for parameter '(null)' is not followed by 'on' or 'off'
++ CHECK_RESULT 1 0 0 'SG shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='SG shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'SG shut off failed'
++ LOG_ERROR 'SG shut off failed'
++ message='SG shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'SG shut off failed'
+Mon May 26 09:23:13 2025 - ERROR - SG shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 74'
++ message='oe_test_ethtool_01.sh line 74'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 74'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 74
++ '[' 0 -eq 1 ']'
++ return 0
++ ethtool -k
++ grep 'scatter-gather: off'
+ethtool: bad command line argument(s)
+For more information run ethtool -h
++ CHECK_RESULT 1 0 0 'Check SG shut off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check SG shut off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check SG shut off failed'
++ LOG_ERROR 'Check SG shut off failed'
++ message='Check SG shut off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check SG shut off failed'
+Mon May 26 09:23:13 2025 - ERROR - Check SG shut off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ethtool_01.sh line 76'
++ message='oe_test_ethtool_01.sh line 76'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ethtool_01.sh line 76'
+Mon May 26 09:23:13 2025 - ERROR - oe_test_ethtool_01.sh line 76
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:23:13 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 20
++ test 20 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 09:23:13 2025 - ERROR - failed to execute the case.
++ exit 20
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:23:13 2025 - INFO  - Start to restore the test environment.
++ ethtool -K gso
+netlink error: no device matches name (offset 24)
+netlink error: No such device
++ ethtool -K gro
+netlink error: no device matches name (offset 24)
+netlink error: No such device
++ ethtool -K tso
+netlink error: no device matches name (offset 24)
+netlink error: No such device
++ ethtool -K tx
+netlink error: no device matches name (offset 24)
+netlink error: No such device
++ ethtool -K sg
+netlink error: no device matches name (offset 24)
+netlink error: No such device
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:23:13 2025 - INFO  - End to restore the test environment.

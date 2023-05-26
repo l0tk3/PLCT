@@ -1,0 +1,78 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:23:28 2025 - INFO  - Start to run test.
++ CHECK_RESULT 0 0 0 'Failed to execute dbus-monitor'
++ dbus-monitor --system
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute dbus-monitor'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep signal testlog
++ grep sender=org.freedesktop.DBus
+signal time=1748251408.556580 sender=org.freedesktop.DBus -> destination=:1.41 serial=2 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameAcquired
+signal time=1748251408.556611 sender=org.freedesktop.DBus -> destination=:1.41 serial=4 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameLost
++ CHECK_RESULT 0 0 0 'Failed to check dbus-monitor'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to check dbus-monitor'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:23:31 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:23:31 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:23:31 2025 - INFO  - Start to restore the test environment.
+++ pgrep dbus-monitor
++ kill -9 722453
++ rm -rf testlog
+oe_test_dbus-monitor.sh: line 32: 722453 Killed                  dbus-monitor --system > testlog
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:23:31 2025 - INFO  - End to restore the test environment.

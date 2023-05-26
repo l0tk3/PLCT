@@ -1,0 +1,196 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Mon May 26 09:29:40 2025 - INFO  - Start testing...
++ vmstat -h
+
+Usage:
+ vmstat [options] [delay [count]]
+
+Options:
+ -a, --active           active/inactive memory
+ -f, --forks            number of forks since boot
+ -m, --slabs            slabinfo
+ -n, --one-header       do not redisplay header
+ -s, --stats            event counter statistics
+ -d, --disk             disk statistics
+ -D, --disk-sum         summarize disk statistics
+ -p, --partition <dev>  partition specific statistics
+ -S, --unit <char>      define display unit
+ -w, --wide             wide output
+ -t, --timestamp        show timestamp
+ -y, --no-first         skips first line of output
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see vmstat(8).
++ CHECK_RESULT 0 0 0 'vmstat -h fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='vmstat -h fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vmstat -V
+vmstat from procps-ng 4.0.2
++ CHECK_RESULT 0 0 0 'vmstat -V fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='vmstat -V fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 2  0      0 3363348 181968 4439884    0    0    14   416  331  239  3  3 93  0  0
++ CHECK_RESULT 0 0 0 'vmstat fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='vmstat fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vmstat -f
+       835505 forks
++ CHECK_RESULT 0 0 0 'vmstat -f fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='vmstat -f fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vmstat -w
+--procs-- -----------------------memory---------------------- ---swap-- -----io---- -system-- ----------cpu----------
+   r    b         swpd         free         buff        cache   si   so    bi    bo   in   cs  us  sy  id  wa  st  gu
+   2    0            0      3363096       181968      4439884    0    0    14   416  331  239   3   3  93   0   0   0
++ CHECK_RESULT 0 0 0 'vmstat -w fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='vmstat -w fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vmstat -t
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu----- -----timestamp-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st                 UTC
+ 2  0      0 3363096 181968 4439884    0    0    14   416  331  239  3  3 93  0  0 2025-05-26 09:29:40
++ CHECK_RESULT 0 0 0 'vmstat -t fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='vmstat -t fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vmstat -s
+      8191428 K total memory
+       729544 K used memory
+      3938148 K active memory
+       477992 K inactive memory
+      3362844 K free memory
+       181968 K buffer memory
+      4439884 K swap cache
+            0 K total swap
+            0 K used swap
+            0 K free swap
+       290482 non-nice user cpu ticks
+          308 nice user cpu ticks
+       231553 system cpu ticks
+      8078603 idle cpu ticks
+        22054 IO-wait cpu ticks
+        37628 IRQ cpu ticks
+         7080 softirq cpu ticks
+          287 stolen cpu ticks
+            0 non-nice guest cpu ticks
+            0 nice guest cpu ticks
+      1240978 K paged in
+     36078096 K paged out
+            0 pages swapped in
+            0 pages swapped out
+     28688026 interrupts
+     20715121 CPU context switches
+   1748240938 boot time
+       835510 forks
++ CHECK_RESULT 0 0 0 'vmstat -s fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='vmstat -s fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vmstat -d
+disk- ------------reads------------ ------------writes----------- -----IO------
+       total merged sectors      ms  total merged sectors      ms    cur    sec
+vda    44252   6685 2474722   11770 535452 855415 72897400  991417      0    344
+dm-1     126      0    2205     132     12     26    2424       6      0      0
+sr0        0      0       0       0      0      0       0       0      0      0
+loop0      0      0       0       0      0      0       0       0      0      0
+loop1      0      0       0       0      0      0       0       0      0      0
++ CHECK_RESULT 0 0 0 'vmstat -d fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='vmstat -d fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Mon May 26 09:29:40 2025 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 09:29:40 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_vmstat.sh post_test'
++ message='oe_test_vmstat.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_vmstat.sh post_test'
+Mon May 26 09:29:40 2025 - INFO  - oe_test_vmstat.sh post_test

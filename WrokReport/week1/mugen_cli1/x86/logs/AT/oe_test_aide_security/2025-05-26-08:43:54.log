@@ -1,0 +1,195 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Mon May 26 08:43:54 2025 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL aide
++ pkgs=aide
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs aide --node 1 --tempfile ''
++ tmpfile2=/tmp/tmptnu3ght6
++ '[' -z '' ']'
++ tmpfile=/tmp/tmptnu3ght6
++ sed -i '$a/home DATAONLY' /etc/aide.conf
++ aide --init
+Start timestamp: 2025-05-26 08:43:56 +0000 (AIDE 0.17.4)
+AIDE initialized database at /var/lib/aide/aide.db.new.gz
+
+Number of entries:	52442
+
+---------------------------------------------------
+The attributes of the (uncompressed) database(s):
+---------------------------------------------------
+
+/var/lib/aide/aide.db.new.gz
+ MD5       : Cxrwn07UKzXW3XY7j0HxmQ==
+ SHA1      : lgQ4EikHBQvoWOXtvLDh1TT98D8=
+ SHA256    : NrmIld8wq3ya8s3LfN4FJv3ZnXgWnotr
+             1giXWK0Dv0U=
+ SHA512    : gvQpWkfz7Wk7W5D3A1XA9mpSwxklgvht
+             Y3UrICkh5ebnOpivYxv23Wb53i+HjYdF
+             pXQPmjJiwXSO3HBCNQwAFA==
+ RMD160    : mDLohVwhyF1Ywpqvekd3+wYEaiQ=
+ TIGER     : iD1cJl/0lb33oHAXxi1S4Y0kePk1qqKz
+ CRC32     : IvVpsA==
+ WHIRLPOOL : ixaGZvgenHDXGMrN2IEgE0O7CqCdY1S+
+             q2Yy6DncO9CkEyqF6i4cATMFr/uWkQqq
+             NzksonAisFoaATwTXCmQcA==
+ GOST      : eYFHKaufoF3G6MFLzjK9FheAvNaohDIQ
+             ja2wr1sylSk=
+ STRIBOG256: C9F2dxgyaxV0V03esSm6FuH0eKfPFfTC
+             iNwH0qBCcIM=
+ STRIBOG512: uTr2ZVx9Yb2XepoXXSFkeIE0BWwyx4K3
+             QAqndFM9zi0E6oucjQ/7IdclcZEOKJkQ
+             UJil6p1zGp7+hWPHCmHzHQ==
+ SM3       : AX0A6kak2IUJuosoo5J7hpQnkT8ealyH
+             mPKZDZyuouE=
+
+
+End timestamp: 2025-05-26 08:44:24 +0000 (run time: 0m 28s)
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Mon May 26 08:44:24 2025 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 08:44:24 2025 - INFO  - Start to run test.
++ ls -l /etc/aide.conf
++ awk '{print $3}'
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check aide.conf file owner failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.conf file owner failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /etc/aide.conf
++ awk '{print $4}'
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check aide.conf file group failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.conf file group failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /etc/aide.conf
++ awk '{print $1}'
++ cut -b 2-10
++ grep rw-------
+rw-------
++ CHECK_RESULT 0 0 0 'Check aide.conf file permission failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.conf file permission failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /var/log/aide/aide.log
++ awk '{print $3}'
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check aide.log file owner failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.log file owner failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /var/log/aide/aide.log
++ awk '{print $4}'
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check aide.log file group failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.log file group failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /var/log/aide/aide.log
++ awk '{print $1}'
++ grep rw-------
++ cut -b 2-10
+rw-------
++ CHECK_RESULT 0 0 0 'Check aide.log file permission failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.log file permission failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 08:44:24 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Mon May 26 08:44:24 2025 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 08:44:24 2025 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmptnu3ght6 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmptnu3ght6
++ '[' 0 -ne 0 ']'
++ rm -rf /var/log/aide/
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 08:44:25 2025 - INFO  - End to restore the test environment.

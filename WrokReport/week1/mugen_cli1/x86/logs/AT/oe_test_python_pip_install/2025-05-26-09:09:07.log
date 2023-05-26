@@ -1,0 +1,425 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Mon May 26 09:09:07 2025 - INFO  - Start to run test.
++ pip3 install --user requests
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f3afc6235e0>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/requests/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+Could not fetch URL https://pypi.org/simple/requests/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/requests/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))) - skipping
+ERROR: Could not find a version that satisfies the requirement requests (from versions: none)
+ERROR: No matching distribution found for requests
+Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pip/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))) - skipping
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to execute pip3 install --user'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --user'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute pip3 install --user'
++ LOG_ERROR 'Failed to execute pip3 install --user'
++ message='Failed to execute pip3 install --user'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute pip3 install --user'
+Mon May 26 09:12:16 2025 - ERROR - Failed to execute pip3 install --user
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 25'
++ message='oe_test_python_pip_install.sh line 25'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 25'
+Mon May 26 09:12:16 2025 - ERROR - oe_test_python_pip_install.sh line 25
++ '[' 0 -eq 1 ']'
++ return 0
++ test -d '/root/.local/lib/python*/site-packages/requests'
++ CHECK_RESULT 1 0 0 'Failed to find site-packages/requests in /root'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to find site-packages/requests in /root'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to find site-packages/requests in /root'
++ LOG_ERROR 'Failed to find site-packages/requests in /root'
++ message='Failed to find site-packages/requests in /root'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to find site-packages/requests in /root'
+Mon May 26 09:12:16 2025 - ERROR - Failed to find site-packages/requests in /root
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 27'
++ message='oe_test_python_pip_install.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 27'
+Mon May 26 09:12:16 2025 - ERROR - oe_test_python_pip_install.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ pip3 uninstall requests -y
+WARNING: Skipping requests as it is not installed.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ pip3 install --root /tmp requests
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f52d8fa7610>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/requests/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f52d8fa7a60>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/requests/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+Could not fetch URL https://pypi.org/simple/requests/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/requests/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))) - skipping
+ERROR: Could not find a version that satisfies the requirement requests (from versions: none)
+ERROR: No matching distribution found for requests
+Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pip/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))) - skipping
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to execute pip3 install --root'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --root'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute pip3 install --root'
++ LOG_ERROR 'Failed to execute pip3 install --root'
++ message='Failed to execute pip3 install --root'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute pip3 install --root'
+Mon May 26 09:15:21 2025 - ERROR - Failed to execute pip3 install --root
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 30'
++ message='oe_test_python_pip_install.sh line 30'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 30'
+Mon May 26 09:15:21 2025 - ERROR - oe_test_python_pip_install.sh line 30
++ '[' 0 -eq 1 ']'
++ return 0
++ test -d '/tmp/usr/local/lib/python*/site-packages/requests'
++ CHECK_RESULT 1 0 0 'Failed to find site-packages/requests in /tmp'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to find site-packages/requests in /tmp'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to find site-packages/requests in /tmp'
++ LOG_ERROR 'Failed to find site-packages/requests in /tmp'
++ message='Failed to find site-packages/requests in /tmp'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to find site-packages/requests in /tmp'
+Mon May 26 09:15:21 2025 - ERROR - Failed to find site-packages/requests in /tmp
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 32'
++ message='oe_test_python_pip_install.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 32'
+Mon May 26 09:15:21 2025 - ERROR - oe_test_python_pip_install.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -rf /tmp/usr
++ pip3 install --prefix /tmp requests
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+Could not fetch URL https://pypi.org/simple/requests/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/requests/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))) - skipping
+ERROR: Could not find a version that satisfies the requirement requests (from versions: none)
+ERROR: No matching distribution found for requests
+Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pip/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))) - skipping
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to execute pip3 install --prefix'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --prefix'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute pip3 install --prefix'
++ LOG_ERROR 'Failed to execute pip3 install --prefix'
++ message='Failed to execute pip3 install --prefix'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute pip3 install --prefix'
+Mon May 26 09:15:45 2025 - ERROR - Failed to execute pip3 install --prefix
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 35'
++ message='oe_test_python_pip_install.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 35'
+Mon May 26 09:15:45 2025 - ERROR - oe_test_python_pip_install.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ ls -R /tmp
++ grep requests
++ CHECK_RESULT 1 0 0 'Failed to find requests in /tmp'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to find requests in /tmp'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to find requests in /tmp'
++ LOG_ERROR 'Failed to find requests in /tmp'
++ message='Failed to find requests in /tmp'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to find requests in /tmp'
+Mon May 26 09:15:45 2025 - ERROR - Failed to find requests in /tmp
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 37'
++ message='oe_test_python_pip_install.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 37'
+Mon May 26 09:15:45 2025 - ERROR - oe_test_python_pip_install.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ pip3 list
++ grep charset-normalizer
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to execute pip3 list'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 list'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute pip3 list'
++ LOG_ERROR 'Failed to execute pip3 list'
++ message='Failed to execute pip3 list'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute pip3 list'
+Mon May 26 09:15:46 2025 - ERROR - Failed to execute pip3 list
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 39'
++ message='oe_test_python_pip_install.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 39'
+Mon May 26 09:15:46 2025 - ERROR - oe_test_python_pip_install.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ pip3 uninstall -y requests charset-normalizer
+WARNING: Skipping requests as it is not installed.
+WARNING: Skipping charset-normalizer as it is not installed.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ pip3 install --no-deps requests
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+Could not fetch URL https://pypi.org/simple/requests/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/requests/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))) - skipping
+ERROR: Could not find a version that satisfies the requirement requests (from versions: none)
+ERROR: No matching distribution found for requests
+Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pip/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))) - skipping
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to execute pip3 install --no-deps'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --no-deps'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute pip3 install --no-deps'
++ LOG_ERROR 'Failed to execute pip3 install --no-deps'
++ message='Failed to execute pip3 install --no-deps'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute pip3 install --no-deps'
+Mon May 26 09:16:31 2025 - ERROR - Failed to execute pip3 install --no-deps
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 42'
++ message='oe_test_python_pip_install.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 42'
+Mon May 26 09:16:31 2025 - ERROR - oe_test_python_pip_install.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ pip3 list
++ grep charset-normalizer
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 1 'Succeed to execute pip3 list'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Succeed to execute pip3 list'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ pip3 install --force-reinstall requests
++ grep Successfully
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+ERROR: Could not find a version that satisfies the requirement requests (from versions: none)
+ERROR: No matching distribution found for requests
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to execute pip3 install --force-reinstall'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --force-reinstall'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute pip3 install --force-reinstall'
++ LOG_ERROR 'Failed to execute pip3 install --force-reinstall'
++ message='Failed to execute pip3 install --force-reinstall'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute pip3 install --force-reinstall'
+Mon May 26 09:18:04 2025 - ERROR - Failed to execute pip3 install --force-reinstall
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 46'
++ message='oe_test_python_pip_install.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 46'
+Mon May 26 09:18:04 2025 - ERROR - oe_test_python_pip_install.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ pip3 install --upgrade requests
++ grep already
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+ERROR: Could not find a version that satisfies the requirement requests (from versions: none)
+ERROR: No matching distribution found for requests
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to execute pip3 install --upgrade'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --upgrade'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute pip3 install --upgrade'
++ LOG_ERROR 'Failed to execute pip3 install --upgrade'
++ message='Failed to execute pip3 install --upgrade'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute pip3 install --upgrade'
+Mon May 26 09:18:54 2025 - ERROR - Failed to execute pip3 install --upgrade
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 48'
++ message='oe_test_python_pip_install.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 48'
+Mon May 26 09:18:54 2025 - ERROR - oe_test_python_pip_install.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ pip3 uninstall -y requests
+WARNING: Skipping requests as it is not installed.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ pip3 install --upgrade requests
++ grep Successfully
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+ERROR: Could not find a version that satisfies the requirement requests (from versions: none)
+ERROR: No matching distribution found for requests
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to repead execute pip3 install --upgrade'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to repead execute pip3 install --upgrade'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to repead execute pip3 install --upgrade'
++ LOG_ERROR 'Failed to repead execute pip3 install --upgrade'
++ message='Failed to repead execute pip3 install --upgrade'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to repead execute pip3 install --upgrade'
+Mon May 26 09:19:19 2025 - ERROR - Failed to repead execute pip3 install --upgrade
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 51'
++ message='oe_test_python_pip_install.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 51'
+Mon May 26 09:19:19 2025 - ERROR - oe_test_python_pip_install.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ pip3 install --ignore-installed requests
++ grep 'Installing collected packages'
++ grep certifi
++ grep idna
++ grep charset-normalizer
++ grep urllib3
++ grep requests
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)'))': /simple/requests/
+ERROR: Could not find a version that satisfies the requirement requests (from versions: none)
+ERROR: No matching distribution found for requests
+WARNING: There was an error checking the latest version of pip.
++ CHECK_RESULT 1 0 0 'Failed to execute pip3 install --ignore-installed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --ignore-installed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute pip3 install --ignore-installed'
++ LOG_ERROR 'Failed to execute pip3 install --ignore-installed'
++ message='Failed to execute pip3 install --ignore-installed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute pip3 install --ignore-installed'
+Mon May 26 09:19:44 2025 - ERROR - Failed to execute pip3 install --ignore-installed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_python_pip_install.sh line 53'
++ message='oe_test_python_pip_install.sh line 53'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_python_pip_install.sh line 53'
+Mon May 26 09:19:44 2025 - ERROR - oe_test_python_pip_install.sh line 53
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Mon May 26 09:19:44 2025 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 12
++ test 12 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Mon May 26 09:19:44 2025 - ERROR - failed to execute the case.
++ exit 12
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Mon May 26 09:19:44 2025 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/lib /tmp/local
++ pip3 uninstall -y requests urllib3 idna charset-normalizer certifi
+WARNING: Skipping requests as it is not installed.
+WARNING: Skipping urllib3 as it is not installed.
+Found existing installation: idna 3.3
+Uninstalling idna-3.3:
+  Successfully uninstalled idna-3.3
+WARNING: Skipping charset-normalizer as it is not installed.
+WARNING: Skipping certifi as it is not installed.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Mon May 26 09:19:44 2025 - INFO  - End to restore the test environment.
