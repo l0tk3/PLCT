@@ -1,0 +1,114 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jun  4 12:24:46 2023 - INFO  - Start to prepare the test environment.
++ useradd Jevons
+useradd: user 'Jevons' already exists
+++ id -u Jevons
++ uid=1001
++ LOG_INFO 'End to prepare the environment'
++ message='End to prepare the environment'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the environment'
+Sun Jun  4 12:24:47 2023 - INFO  - End to prepare the environment
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jun  4 12:24:47 2023 - INFO  - Start to run test.
++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
++ auditctl -D
+No rules
++ CHECK_RESULT 0 0 0 'clean failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='clean failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auditctl -a always,exit -S all -F uid=1001 -k syscall
+Error detecting machine type
++ CHECK_RESULT 255 0 0 'add rule failed'
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log='add rule failed'
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n 'add rule failed'
++ LOG_ERROR 'add rule failed'
++ message='add rule failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'add rule failed'
+Sun Jun  4 12:24:51 2023 - ERROR - add rule failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_monitor_system_use.sh line 35'
++ message='oe_test_audit_monitor_system_use.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_monitor_system_use.sh line 35'
+Sun Jun  4 12:24:52 2023 - ERROR - oe_test_audit_monitor_system_use.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -l
++ grep -e '-a always,exit -S all -F uid=1001'
++ CHECK_RESULT 1 0 0 'grep failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep failed'
++ LOG_ERROR 'grep failed'
++ message='grep failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'grep failed'
+Sun Jun  4 12:24:52 2023 - ERROR - grep failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_monitor_system_use.sh line 37'
++ message='oe_test_audit_monitor_system_use.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_monitor_system_use.sh line 37'
+Sun Jun  4 12:24:53 2023 - ERROR - oe_test_audit_monitor_system_use.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
+++ date +%T
++ starttime=12:24:53
++ su - Jevons -c pwd
+/home/Jevons
++ CHECK_RESULT 0 0 0 'login failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='login failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=12:24:55
++ ausearch -ts 12:24:53 -te 12:24:55 -k syscall
++ grep pwd
+Sun Jun  4 12:54:45 2023 - ERROR - Timeout : Command 'bash -x oe_test_audit_monitor_system_use.sh' timed out after 1799.9995059989992 seconds

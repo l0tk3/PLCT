@@ -1,0 +1,45 @@
+测试套/软件包名,测试用例名,日志文件,原因,Broken testcase,pkg not found,preinstall absent,kernel module absent,file missing,systemd unit restart failure,systemd unit runtime error,systemd unit enable failure,timeout
+audit,oe_test_audit_monitor_system_use,2023-06-04-12_24_44.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_monitor_network_visit,2023-06-04-13_55_05.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_ausearch,2023-06-04-19_42_39.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_show_event_list,2023-06-04-16_57_09.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_fetch_file_in_order,2023-06-04-15_56_10.log,,0,0,0,0,0,0,0,0,0
+audit,oe_test_audit_max_log_file_keep_logs,2023-06-04-18_33_16.log,,0,0,0,0,0,0,0,0,0
+audit,oe_test_audit_use_d_audit,2023-06-04-14_55_17.log,,0,0,0,0,0,0,0,0,0
+audit,oe_test_audit_count_number_of_event,2023-06-04-16_27_03.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_track_designated_access,2023-06-04-14_25_11.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_rule_conflict_strategy,2023-06-04-15_25_50.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_monitor_do_command,2023-06-04-12_54_51.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_monitor_dictionary_access,2023-06-04-11_54_38.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_max_log_file_syslog,2023-06-04-17_33_03.log,"preinstall absent
+timeout
+",0,0,1,0,0,0,0,0,1
+audit,oe_test_audit_user_build_connection,2023-06-04-17_27_15.log,"file missing
+",0,0,0,0,1,0,0,0,0
+audit,oe_test_service_auditd,2023-06-04-19_41_05.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_audit_available_disk_space,2023-06-04-18_40_53.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_monitor_file_access,2023-06-04-11_24_32.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_max_log_file_suspend,2023-06-04-18_03_10.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_count_time,2023-06-04-15_56_57.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_rule_contact_strategy,2023-06-04-14_55_44.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_monitor_security_event,2023-06-04-13_24_59.log,"timeout
+",0,0,0,0,0,0,0,0,1
+audit,oe_test_audit_event_log,2023-06-04-19_41_51.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+audit,oe_test_inject_time_fault,2023-06-04-19_10_59.log,"timeout
+",0,0,0,0,0,0,0,0,1

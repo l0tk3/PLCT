@@ -1,0 +1,170 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jun  4 12:54:54 2023 - INFO  - Start to prepare the test environment.
++ useradd Jevons
+useradd: user 'Jevons' already exists
+++ id -u Jevons
++ uid=1001
++ LOG_INFO 'End to prepare the environment'
++ message='End to prepare the environment'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the environment'
+Sun Jun  4 12:54:55 2023 - INFO  - End to prepare the environment
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jun  4 12:54:55 2023 - INFO  - Start to run test.
++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
++ auditctl -D
+No rules
++ CHECK_RESULT 0 0 0 'clean failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='clean failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auditctl -a always,exit -S execve -F uid=1001 -k command
+Error detecting machine type
++ CHECK_RESULT 255 0 0 'add rule failed'
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log='add rule failed'
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n 'add rule failed'
++ LOG_ERROR 'add rule failed'
++ message='add rule failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'add rule failed'
+Sun Jun  4 12:55:00 2023 - ERROR - add rule failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_monitor_do_command.sh line 35'
++ message='oe_test_audit_monitor_do_command.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_monitor_do_command.sh line 35'
+Sun Jun  4 12:55:00 2023 - ERROR - oe_test_audit_monitor_do_command.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -l
++ grep -e '-a always,exit -S execve -F uid=1001'
++ CHECK_RESULT 1 0 0 'grep failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep failed'
++ LOG_ERROR 'grep failed'
++ message='grep failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'grep failed'
+Sun Jun  4 12:55:01 2023 - ERROR - grep failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_monitor_do_command.sh line 37'
++ message='oe_test_audit_monitor_do_command.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_monitor_do_command.sh line 37'
+Sun Jun  4 12:55:02 2023 - ERROR - oe_test_audit_monitor_do_command.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
+++ date +%T
++ starttime=12:55:02
++ su - Jevons -c pwd
+/home/Jevons
++ CHECK_RESULT 0 0 0 'login failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='login failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=12:55:05
++ ausearch -ts 12:55:02 -te 12:55:05 -k command
++ grep pwd
+Sun Jun  4 13:24:52 2023 - ERROR - Timeout : Command 'bash -x oe_test_audit_monitor_do_command.sh' timed out after 1799.9993630030003 seconds
+<no matches>
+++ post_test
+++ fOG_INFO 'Start to restore the test environment.'
+oe_test_audit_monitor_do_command.sh: line 48: fOG_INFO: command not found
+++ userdel -rf Jevons
+++ auditctl -D
+No rules
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jun  4 20:13:12 2023 - INFO  - End to restore the test environment.
++ CHECK_RESULT 1 0 0 'ausearch failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ausearch failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ausearch failed'
++ LOG_ERROR 'ausearch failed'
++ message='ausearch failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ausearch failed'
+Sun Jun  4 20:13:15 2023 - ERROR - ausearch failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_monitor_do_command.sh line 43'
++ message='oe_test_audit_monitor_do_command.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_monitor_do_command.sh line 43'
+Sun Jun  4 20:13:18 2023 - ERROR - oe_test_audit_monitor_do_command.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sun Jun  4 20:13:20 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sun Jun  4 20:13:23 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ fOG_INFO 'Start to restore the test environment.'
+oe_test_audit_monitor_do_command.sh: line 48: fOG_INFO: command not found
++ userdel -rf Jevons
+userdel: user 'Jevons' does not exist
++ auditctl -D
+No rules
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jun  4 20:13:25 2023 - INFO  - End to restore the test environment.

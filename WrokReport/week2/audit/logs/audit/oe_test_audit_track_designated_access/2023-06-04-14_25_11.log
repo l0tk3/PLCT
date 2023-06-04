@@ -1,0 +1,117 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jun  4 14:25:13 2023 - INFO  - Start to run test.
++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
++ auditctl -D
+No rules
++ CHECK_RESULT 0 0 0 'delete failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='delete failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ autrace /usr/bin/ls
+++ grep ausearch
+++ awk -F \' '{print $2}'
++ record='ausearch -i -p 1469'
++ CHECK_RESULT 0 0 0 'grep failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ausearch -i -p 1469
++ aureport --summary -i
+Sun Jun  4 14:55:12 2023 - ERROR - Timeout : Command 'bash -x oe_test_audit_track_designated_access.sh' timed out after 1799.9995199780005 seconds
+<no matches>
+
+Summary Report
+======================
+Range of time in logs: 01/01/1970 08:00:00.000 - 01/01/1970 08:00:00.000
+Selected time for report: 01/01/1970 08:00:00 - 01/01/1970 08:00:00.000
+Number of changes in configuration: 0
+Number of changes to accounts, groups, or roles: 0
+Number of logins: 0
+Number of failed logins: 0
+Number of authentications: 0
+Number of failed authentications: 0
+Number of users: 0
+Number of terminals: 0
+Number of host names: 0
+Number of executables: 0
+Number of commands: 0
+Number of files: 0
+Number of AVC's: 0
+Number of MAC events: 0
+Number of failed syscalls: 0
+Number of anomaly events: 0
+Number of responses to anomaly events: 0
+Number of crypto events: 0
+Number of integrity events: 0
+Number of virt events: 0
+Number of keys: 0
+Number of process IDs: 0
+Number of events: 0
+
+++ POST_TEST_DEFAULT
+++ LOG_INFO 'oe_test_audit_track_designated_access.sh post_test'
+++ message='oe_test_audit_track_designated_access.sh post_test'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_audit_track_designated_access.sh post_test'
+Sun Jun  4 20:13:10 2023 - INFO  - oe_test_audit_track_designated_access.sh post_test
++ CHECK_RESULT 0 0 0 'aureport failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='aureport failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sun Jun  4 20:13:13 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Sun Jun  4 20:13:16 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_audit_track_designated_access.sh post_test'
++ message='oe_test_audit_track_designated_access.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_audit_track_designated_access.sh post_test'
+Sun Jun  4 20:13:18 2023 - INFO  - oe_test_audit_track_designated_access.sh post_test

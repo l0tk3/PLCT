@@ -1,0 +1,462 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jun  4 14:55:46 2023 - INFO  - Start to run test.
++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
++ service auditd status
++ grep running
+Redirecting to /bin/systemctl status auditd.service
+     Active: active (running) since Sun 2023-06-04 14:55:49 CST; 335ms ago
++ CHECK_RESULT 0 0 0 'grep failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auditctl -D
+No rules
++ CHECK_RESULT 0 0 0 'delete failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='delete failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auditctl -w /etc/passwd -p ra -k tail
++ auditctl -l
++ grep -e '-w /etc/passwd -p ra -k tail'
+-w /etc/passwd -p ra -k tail
++ auditctl -A always,exit -F path=/etc/passwd -F perm=ra -k head
++ CHECK_RESULT 0 0 0 'add rules failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='add rules failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auditctl -l
++ grep -e '-w /etc/passwd -p ra -k head'
+-w /etc/passwd -p ra -k head
++ CHECK_RESULT 0 0 0 'grep failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ (( i=0 ))
++ (( i<10 ))
+++ date +%T
++ starttime=14:55:50
++ cat /etc/passwd
+root:x:0:0:Super User:/root:/bin/bash
+bin:x:1:1:bin:/bin:/usr/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/usr/sbin/nologin
+adm:x:3:4:adm:/var/adm:/usr/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/usr/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/usr/sbin/nologin
+operator:x:11:0:operator:/root:/usr/sbin/nologin
+games:x:12:100:games:/usr/games:/usr/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/usr/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/usr/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+unbound:x:998:996:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+dbus:x:81:81:D-Bus:/var/run/dbus:/sbin/nologin
+polkitd:x:997:995:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+systemd-timesync:x:996:993:systemd Time Synchronization:/:/sbin/nologin
+systemd-network:x:991:991:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+openeuler:x:1000:1000::/home/openeuler:/bin/bash
+Jevons:x:1001:1001::/home/Jevons:/bin/bash
++ CHECK_RESULT 0 0 0 'cat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=14:55:50
++ ausearch -k head -ts 14:55:50 -te 14:55:50 -x cat
+Sun Jun  4 15:25:44 2023 - ERROR - Timeout : Command 'bash -x oe_test_audit_rule_contact_strategy.sh' timed out after 1799.9994769999994 seconds
+<no matches>
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sun Jun  4 20:13:10 2023 - INFO  - Start to restore the test environment.
+++ auditctl -D
+No rules
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jun  4 20:13:14 2023 - INFO  - End to restore the test environment.
++ head_ret=1
++ ausearch -k tail -ts 14:55:50 -te 14:55:50 -x cat
+<no matches>
++ tail_ret=1
++ '[' 1 -eq 0 ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
+++ date +%T
++ starttime=20:13:19
++ cat /etc/passwd
+root:x:0:0:Super User:/root:/bin/bash
+bin:x:1:1:bin:/bin:/usr/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/usr/sbin/nologin
+adm:x:3:4:adm:/var/adm:/usr/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/usr/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/usr/sbin/nologin
+operator:x:11:0:operator:/root:/usr/sbin/nologin
+games:x:12:100:games:/usr/games:/usr/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/usr/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/usr/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+unbound:x:998:996:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+dbus:x:81:81:D-Bus:/var/run/dbus:/sbin/nologin
+polkitd:x:997:995:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+systemd-timesync:x:996:993:systemd Time Synchronization:/:/sbin/nologin
+systemd-network:x:991:991:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+openeuler:x:1000:1000::/home/openeuler:/bin/bash
++ CHECK_RESULT 0 0 0 'cat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=20:13:19
++ ausearch -k head -ts 20:13:19 -te 20:13:19 -x cat
+<no matches>
++ head_ret=1
++ ausearch -k tail -ts 20:13:19 -te 20:13:19 -x cat
+<no matches>
++ tail_ret=1
++ '[' 1 -eq 0 ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
+++ date +%T
++ starttime=20:13:24
++ cat /etc/passwd
+root:x:0:0:Super User:/root:/bin/bash
+bin:x:1:1:bin:/bin:/usr/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/usr/sbin/nologin
+adm:x:3:4:adm:/var/adm:/usr/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/usr/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/usr/sbin/nologin
+operator:x:11:0:operator:/root:/usr/sbin/nologin
+games:x:12:100:games:/usr/games:/usr/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/usr/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/usr/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+unbound:x:998:996:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+dbus:x:81:81:D-Bus:/var/run/dbus:/sbin/nologin
+polkitd:x:997:995:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+systemd-timesync:x:996:993:systemd Time Synchronization:/:/sbin/nologin
+systemd-network:x:991:991:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+openeuler:x:1000:1000::/home/openeuler:/bin/bash
++ CHECK_RESULT 0 0 0 'cat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=20:13:24
++ ausearch -k head -ts 20:13:24 -te 20:13:24 -x cat
+<no matches>
++ head_ret=1
++ ausearch -k tail -ts 20:13:24 -te 20:13:24 -x cat
+<no matches>
++ tail_ret=1
++ '[' 1 -eq 0 ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
+++ date +%T
++ starttime=20:13:28
++ cat /etc/passwd
+root:x:0:0:Super User:/root:/bin/bash
+bin:x:1:1:bin:/bin:/usr/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/usr/sbin/nologin
+adm:x:3:4:adm:/var/adm:/usr/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/usr/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/usr/sbin/nologin
+operator:x:11:0:operator:/root:/usr/sbin/nologin
+games:x:12:100:games:/usr/games:/usr/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/usr/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/usr/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+unbound:x:998:996:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+dbus:x:81:81:D-Bus:/var/run/dbus:/sbin/nologin
+polkitd:x:997:995:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+systemd-timesync:x:996:993:systemd Time Synchronization:/:/sbin/nologin
+systemd-network:x:991:991:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+openeuler:x:1000:1000::/home/openeuler:/bin/bash
++ CHECK_RESULT 0 0 0 'cat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=20:13:28
++ ausearch -k head -ts 20:13:28 -te 20:13:28 -x cat
+<no matches>
++ head_ret=1
++ ausearch -k tail -ts 20:13:28 -te 20:13:28 -x cat
+<no matches>
++ tail_ret=1
++ '[' 1 -eq 0 ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
+++ date +%T
++ starttime=20:13:31
++ cat /etc/passwd
+root:x:0:0:Super User:/root:/bin/bash
+bin:x:1:1:bin:/bin:/usr/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/usr/sbin/nologin
+adm:x:3:4:adm:/var/adm:/usr/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/usr/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/usr/sbin/nologin
+operator:x:11:0:operator:/root:/usr/sbin/nologin
+games:x:12:100:games:/usr/games:/usr/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/usr/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/usr/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+unbound:x:998:996:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+dbus:x:81:81:D-Bus:/var/run/dbus:/sbin/nologin
+polkitd:x:997:995:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+systemd-timesync:x:996:993:systemd Time Synchronization:/:/sbin/nologin
+systemd-network:x:991:991:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+openeuler:x:1000:1000::/home/openeuler:/bin/bash
++ CHECK_RESULT 0 0 0 'cat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=20:13:31
++ ausearch -k head -ts 20:13:31 -te 20:13:31 -x cat
+<no matches>
++ head_ret=1
++ ausearch -k tail -ts 20:13:31 -te 20:13:31 -x cat
+<no matches>
++ tail_ret=1
++ '[' 1 -eq 0 ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
+++ date +%T
++ starttime=20:13:33
++ cat /etc/passwd
+root:x:0:0:Super User:/root:/bin/bash
+bin:x:1:1:bin:/bin:/usr/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/usr/sbin/nologin
+adm:x:3:4:adm:/var/adm:/usr/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/usr/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/usr/sbin/nologin
+operator:x:11:0:operator:/root:/usr/sbin/nologin
+games:x:12:100:games:/usr/games:/usr/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/usr/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/usr/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+unbound:x:998:996:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+dbus:x:81:81:D-Bus:/var/run/dbus:/sbin/nologin
+polkitd:x:997:995:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+systemd-timesync:x:996:993:systemd Time Synchronization:/:/sbin/nologin
+systemd-network:x:991:991:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+openeuler:x:1000:1000::/home/openeuler:/bin/bash
++ CHECK_RESULT 0 0 0 'cat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=20:13:33
++ ausearch -k head -ts 20:13:33 -te 20:13:33 -x cat
+<no matches>
++ head_ret=1
++ ausearch -k tail -ts 20:13:33 -te 20:13:33 -x cat
+<no matches>
++ tail_ret=1
++ '[' 1 -eq 0 ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
+++ date +%T
++ starttime=20:13:36
++ cat /etc/passwd
+root:x:0:0:Super User:/root:/bin/bash
+bin:x:1:1:bin:/bin:/usr/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/usr/sbin/nologin
+adm:x:3:4:adm:/var/adm:/usr/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/usr/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/usr/sbin/nologin
+operator:x:11:0:operator:/root:/usr/sbin/nologin
+games:x:12:100:games:/usr/games:/usr/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/usr/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/usr/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+unbound:x:998:996:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+dbus:x:81:81:D-Bus:/var/run/dbus:/sbin/nologin
+polkitd:x:997:995:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+systemd-timesync:x:996:993:systemd Time Synchronization:/:/sbin/nologin
+systemd-network:x:991:991:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+openeuler:x:1000:1000::/home/openeuler:/bin/bash
++ CHECK_RESULT 0 0 0 'cat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=20:13:37
++ ausearch -k head -ts 20:13:36 -te 20:13:37 -x cat
+<no matches>
++ head_ret=1
++ ausearch -k tail -ts 20:13:36 -te 20:13:37 -x cat
+<no matches>
++ tail_ret=1
++ '[' 1 -eq 0 ']'
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1

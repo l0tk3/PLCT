@@ -1,0 +1,161 @@
++ source ../common/comlib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++++ find /etc -name auditd.conf
+++ AUDIT_PATH=/etc/audit/auditd.conf
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jun  4 18:03:12 2023 - INFO  - Start to prepare the test environment.
++ sed -i 's/max_log_file = 8/max_log_file = 1/g' /etc/audit/auditd.conf
++ sed -i 's/max_log_file_action = ROTATE/max_log_file_action = SUSPEND/g' /etc/audit/auditd.conf
++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
++ LOG_INFO 'End to prepare the environment'
++ message='End to prepare the environment'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the environment'
+Sun Jun  4 18:03:16 2023 - INFO  - End to prepare the environment
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jun  4 18:03:17 2023 - INFO  - Start to run test.
+++ du -s /var/log/audit/audit.log
+++ awk '{print $1}'
++ logsize=1532
++ '[' 1532 -gt 1024 ']'
++ service auditd status
++ grep active
+Redirecting to /bin/systemctl status auditd.service
+     Active: active (running) since Sun 2023-06-04 18:03:16 CST; 1s ago
++ CHECK_RESULT 0 0 0 'grep first failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='grep first failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ search_log test
++ audit_key=test
++ auditctl -w /tmp/test -p rwxa -k test
++ CHECK_RESULT 0 0 0 ' add rules failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=' add rules failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ starttime=18:03:17
++ touch /tmp/test
++ rm -rf /tmp/test
+++ date +%T
++ endtime=18:03:17
++ auditctl -W /tmp/test -p rwxa -k test
++ CHECK_RESULT 0 0 0 'second failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='second failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ (( i=0 ))
++ (( i<10 ))
++ ausearch -k test -ts 18:03:17 -te 18:03:17
+Sun Jun  4 18:33:10 2023 - ERROR - Timeout : Command 'bash -x oe_test_audit_max_log_file_suspend.sh' timed out after 1799.9994500100001 seconds
+<no matches>
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sun Jun  4 20:13:10 2023 - INFO  - Start to restore the test environment.
+++ sed -i 's/max_log_file = 1/max_log_file = 8/g' /etc/audit/auditd.conf
+++ sed -i 's/max_log_file_action = SUSPEND/max_log_file_action = ROTATE/g' /etc/audit/auditd.conf
+++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jun  4 20:13:21 2023 - INFO  - End to restore the test environment.
++ [[ 1 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k test -ts 18:03:17 -te 18:03:17
+<no matches>
++ [[ 1 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k test -ts 18:03:17 -te 18:03:17
+<no matches>
++ [[ 1 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k test -ts 18:03:17 -te 18:03:17
+<no matches>
++ [[ 1 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k test -ts 18:03:17 -te 18:03:17
+<no matches>
++ [[ 1 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1
++ (( i++ ))
++ (( i<10 ))
++ ausearch -k test -ts 18:03:17 -te 18:03:17
+<no matches>
++ [[ 1 -ne 0 ]]
++ SLEEP_WAIT 1
++ wait_time=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 1 --cmd '' --mode 1

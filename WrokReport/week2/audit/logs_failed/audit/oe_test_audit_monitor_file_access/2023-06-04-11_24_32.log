@@ -1,0 +1,69 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jun  4 11:24:34 2023 - INFO  - Start to run test.
++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
++ auditctl -D
+No rules
++ CHECK_RESULT 0 0 0 'delete rules failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='delete rules failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ auditctl -w /etc/passwd -p wa -k passwd_changes
++ auditctl -l
++ grep -e '-w /etc/passwd -p wa -k passwd_changes'
+-w /etc/passwd -p wa -k passwd_changes
++ CHECK_RESULT 0 0 0 'catch failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='catch failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ starttime=11:24:38
++ useradd Jevons
++ CHECK_RESULT 0 0 0 'useradd failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='useradd failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=11:24:38
++ (( i=0 ))
++ (( i,10 ))
++ ausearch -ts 11:24:38 -te 11:24:38 -k passwd_changes
+Sun Jun  4 11:54:32 2023 - ERROR - Timeout : Command 'bash -x oe_test_audit_monitor_file_access.sh' timed out after 1799.999464 seconds

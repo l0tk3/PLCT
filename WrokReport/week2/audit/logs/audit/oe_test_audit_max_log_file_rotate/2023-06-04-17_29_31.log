@@ -1,0 +1,7627 @@
++ source ../common/comlib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++++ find /etc -name auditd.conf
+++ AUDIT_PATH=/etc/audit/auditd.conf
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Sun Jun  4 17:29:33 2023 - INFO  - Start to prepare the test environment.
++ sed -i 's/max_log_file = 8/max_log_file = 1/g' /etc/audit/auditd.conf
++ sed -i 's/num_logs = 5/num_logs = 2/g' /etc/audit/auditd.conf
++ rm -rf /var/log/audit/audit.log
++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
++ LOG_INFO 'End to prepare the environment'
++ message='End to prepare the environment'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the environment'
+Sun Jun  4 17:29:37 2023 - INFO  - End to prepare the environment
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Sun Jun  4 17:29:38 2023 - INFO  - Start to run test.
+++ du -ks /var/log/audit/
+++ awk '{print $1}'
++ old_size=8
+++ find /var/log/audit -name 'audit.log*'
+++ wc -l
++ old_num=1
++ (( i=0 ))
++ (( i<10 ))
++ create_logfile
++ auditctl -w /home/auditd_test -p rwxa
++ (( j=0 ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ auditctl -W /home/auditd_test -p rwxa
+++ du -ks /var/log/audit/
+++ awk '{print $1}'
++ new_size=1528
++ test 1520 -gt 1024
+++ find /var/log/audit -name 'audit.log*'
+++ wc -l
++ new_num=2
++ '[' 1 -ge 1 ']'
++ break
++ (( i=0 ))
++ (( i<10 ))
+++ ls -i /var/log/audit/audit.log
+++ awk '{print $1}'
++ old=524600
++ create_logfile
++ auditctl -w /home/auditd_test -p rwxa
++ (( j=0 ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ auditctl -W /home/auditd_test -p rwxa
+++ ls -i /var/log/audit/audit.log.1
+++ awk '{print $1}'
++ new=524600
+++ find /var/log/audit/ -maxdepth 1 -name 'audit.log*'
+++ wc -l
++ log_num=2
++ test 2 -eq 2
++ test 524600 -ne 524600
++ test 0 -eq 9
++ (( i++ ))
++ (( i<10 ))
+++ ls -i /var/log/audit/audit.log
+++ awk '{print $1}'
++ old=524431
++ create_logfile
++ auditctl -w /home/auditd_test -p rwxa
++ (( j=0 ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ touch /home/auditd_test
++ chmod 777 /home/auditd_test
++ rm -rf /home/auditd_test
++ (( j++ ))
++ (( j<500 ))
++ auditctl -W /home/auditd_test -p rwxa
+++ ls -i /var/log/audit/audit.log.1
+++ awk '{print $1}'
++ new=524600
+++ find /var/log/audit/ -maxdepth 1 -name 'audit.log*'
+++ wc -l
++ log_num=2
++ test 2 -eq 2
++ test 524431 -ne 524600
++ break
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Sun Jun  4 17:31:50 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Sun Jun  4 17:31:50 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Sun Jun  4 17:31:51 2023 - INFO  - Start to restore the test environment.
++ sed -i 's/max_log_file = 1/max_log_file = 8/g' /etc/audit/auditd.conf
++ sed -i 's/num_logs = 2/num_logs = 5/g' /etc/audit/auditd.conf
++ service auditd restart
+Stopping logging: 
+Redirecting start to /bin/systemctl start auditd.service
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Sun Jun  4 17:31:55 2023 - INFO  - End to restore the test environment.
