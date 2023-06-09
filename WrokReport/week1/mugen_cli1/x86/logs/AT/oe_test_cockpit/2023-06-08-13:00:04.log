@@ -1,0 +1,173 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun  8 13:00:04 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL cockpit
++ pkgs=cockpit
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs cockpit --node 1 --tempfile ''
++ tmpfile2=/tmp/tmph39kd79i
++ '[' -z '' ']'
++ tmpfile=/tmp/tmph39kd79i
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun  8 13:02:20 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun  8 13:02:20 2023 - INFO  - Start to run test.
++ systemctl stop cockpit
++ CHECK_RESULT 0 0 0 'Failed to stop cockpit service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to stop cockpit service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status cockpit
++ grep dead
+     Active: inactive (dead)
++ CHECK_RESULT 0 0 0 'Failed to stop cockpit service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to stop cockpit service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start cockpit
++ CHECK_RESULT 0 0 0 'Failed to start cockpit service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to start cockpit service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status cockpit
++ grep running
+     Active: active (running) since Thu 2023-06-08 13:02:21 UTC; 8ms ago
++ CHECK_RESULT 0 0 0 'Failed to start cockpit service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to start cockpit service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart cockpit
++ CHECK_RESULT 0 0 0 'Failed to restart cockpit service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to restart cockpit service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status cockpit
++ grep running
+     Active: active (running) since Thu 2023-06-08 13:02:21 UTC; 6ms ago
++ CHECK_RESULT 0 0 0 'Failed to restart cockpit service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to restart cockpit service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable cockpit
++ CHECK_RESULT 0 0 0 'Failed to disbale cockpit service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to disbale cockpit service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curl https://localhost:9090/cockpit/login --user 'root:openEuler12#$' -k
++ grep csrf-token
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    81  100    81    0     0    594      0 --:--:-- --:--:-- --:--:--   595
+{"csrf-token":"3656690ae2278ea7530a908a9faf19df724e975624799bf1f561425f61041b86"}
++ CHECK_RESULT 0 0 0 'Cockpit service function failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Cockpit service function failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun  8 13:02:22 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun  8 13:02:22 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun  8 13:02:22 2023 - INFO  - Start to restore the test environment.
++ systemctl stop cockpit
+Warning: Stopping cockpit.service, but it can still be activated by:
+  cockpit.socket
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmph39kd79i ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmph39kd79i
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun  8 13:02:26 2023 - INFO  - End to restore the test environment.

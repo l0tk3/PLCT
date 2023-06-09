@@ -1,0 +1,109 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Sun Jun  8 13:54:15 2025 - INFO  - Start environmental preparation.
++ rm -rf '/var/log/audit/audit.log*'
++ auditctl -D
+oe_test_audit_event_log.sh: line 24: auditctl: command not found
++ service auditd restart
+Redirecting to /bin/systemctl restart auditd.service
+Failed to restart auditd.service: Unit auditd.service not found.
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Sun Jun  8 13:54:15 2025 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Sun Jun  8 13:54:15 2025 - INFO  - Start executing testcase.
++ auditctl -w /etc/ssh/sshd_config -p warx -k sshd_config
+oe_test_audit_event_log.sh: line 31: auditctl: command not found
++ CHECK_RESULT 127 0 0 'For '\''/etc/ssh/sshd_config'\'' file setting auditctl rules failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='For '\''/etc/ssh/sshd_config'\'' file setting auditctl rules failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'For '\''/etc/ssh/sshd_config'\'' file setting auditctl rules failed'
++ LOG_ERROR 'For '\''/etc/ssh/sshd_config'\'' file setting auditctl rules failed'
++ message='For '\''/etc/ssh/sshd_config'\'' file setting auditctl rules failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'For '\''/etc/ssh/sshd_config'\'' file setting auditctl rules failed'
+Sun Jun  8 13:54:15 2025 - ERROR - For '/etc/ssh/sshd_config' file setting auditctl rules failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_event_log.sh line 32'
++ message='oe_test_audit_event_log.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_event_log.sh line 32'
+Sun Jun  8 13:54:15 2025 - ERROR - oe_test_audit_event_log.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ grep sshd_config /var/log/audit/audit.log
+grep: /var/log/audit/audit.log: No such file or directory
++ CHECK_RESULT 2 0 0 'Failed to find '\''sshd_config'\'' from '\''/var/log/audit/audit.log'\'' file'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Failed to find '\''sshd_config'\'' from '\''/var/log/audit/audit.log'\'' file'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Failed to find '\''sshd_config'\'' from '\''/var/log/audit/audit.log'\'' file'
++ LOG_ERROR 'Failed to find '\''sshd_config'\'' from '\''/var/log/audit/audit.log'\'' file'
++ message='Failed to find '\''sshd_config'\'' from '\''/var/log/audit/audit.log'\'' file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to find '\''sshd_config'\'' from '\''/var/log/audit/audit.log'\'' file'
+Sun Jun  8 13:54:15 2025 - ERROR - Failed to find 'sshd_config' from '/var/log/audit/audit.log' file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_event_log.sh line 34'
++ message='oe_test_audit_event_log.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_event_log.sh line 34'
+Sun Jun  8 13:54:15 2025 - ERROR - oe_test_audit_event_log.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Sun Jun  8 13:54:15 2025 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Sun Jun  8 13:54:15 2025 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Sun Jun  8 13:54:15 2025 - INFO  - start environment cleanup.
++ auditctl -D
+oe_test_audit_event_log.sh: line 40: auditctl: command not found
++ service auditd restart
+Redirecting to /bin/systemctl restart auditd.service
+Failed to restart auditd.service: Unit auditd.service not found.
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Sun Jun  8 13:54:15 2025 - INFO  - Finish environment cleanup!

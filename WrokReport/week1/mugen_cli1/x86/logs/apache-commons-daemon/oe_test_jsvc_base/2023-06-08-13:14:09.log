@@ -1,0 +1,1252 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun  8 13:14:09 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'apache-commons-daemon tar'
++ pkgs='apache-commons-daemon tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'apache-commons-daemon tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpq4465939
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpq4465939
++ mkdir tmp
++ cd tmp
+++ uname -i
++ test x86_64X == x86_64X
++ echo 'get x86 architecture apache-commons-daemon pkg'
+get x86 architecture apache-commons-daemon pkg
++ cp ../common/x86/apache-commons-daemon.tar.gz ./
++ tar -xvf apache-commons-daemon.tar.gz
+apache-commons-daemon/
+apache-commons-daemon/config/
+apache-commons-daemon/config/logs/
+apache-commons-daemon/config/logs/info.log
+apache-commons-daemon/config/logs/error.log
+apache-commons-daemon/config/application.properties
+apache-commons-daemon/springboot-demo.pid
+apache-commons-daemon/commons-daemon-1.0.15.jar
+apache-commons-daemon/jdk-8u351-linux-x64.tar.gz
+apache-commons-daemon/demo-1.0-SNAPSHOT.jar
++ cd apache-commons-daemon
++++ dirname oe_test_jsvc_base.sh
+++ cd .
+++ pwd
++ current_path=/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon
++ tar -xvf jdk-8u351-linux-x64.tar.gz
+jdk1.8.0_351/COPYRIGHT
+jdk1.8.0_351/LICENSE
+jdk1.8.0_351/README.html
+jdk1.8.0_351/THIRDPARTYLICENSEREADME.txt
+jdk1.8.0_351/bin/java-rmi.cgi
+jdk1.8.0_351/bin/appletviewer
+jdk1.8.0_351/bin/extcheck
+jdk1.8.0_351/bin/idlj
+jdk1.8.0_351/bin/jarsigner
+jdk1.8.0_351/bin/jar
+jdk1.8.0_351/bin/javac
+jdk1.8.0_351/bin/javadoc
+jdk1.8.0_351/bin/javah
+jdk1.8.0_351/bin/javap
+jdk1.8.0_351/bin/jdeps
+jdk1.8.0_351/bin/jconsole
+jdk1.8.0_351/bin/jdb
+jdk1.8.0_351/bin/jhat
+jdk1.8.0_351/bin/jinfo
+jdk1.8.0_351/bin/jmap
+jdk1.8.0_351/bin/jps
+jdk1.8.0_351/bin/jrunscript
+jdk1.8.0_351/bin/jjs
+jdk1.8.0_351/bin/jsadebugd
+jdk1.8.0_351/bin/jstack
+jdk1.8.0_351/bin/jstat
+jdk1.8.0_351/bin/jstatd
+jdk1.8.0_351/bin/keytool
+jdk1.8.0_351/bin/native2ascii
+jdk1.8.0_351/bin/policytool
+jdk1.8.0_351/bin/rmic
+jdk1.8.0_351/bin/xjc
+jdk1.8.0_351/bin/serialver
+jdk1.8.0_351/bin/schemagen
+jdk1.8.0_351/bin/wsgen
+jdk1.8.0_351/bin/wsimport
+jdk1.8.0_351/bin/orbd
+jdk1.8.0_351/bin/servertool
+jdk1.8.0_351/bin/tnameserv
+jdk1.8.0_351/bin/pack200
+jdk1.8.0_351/bin/rmid
+jdk1.8.0_351/bin/rmiregistry
+jdk1.8.0_351/bin/jcmd
+jdk1.8.0_351/bin/java
+jdk1.8.0_351/bin/unpack200
+jdk1.8.0_351/bin/javaws
+jdk1.8.0_351/bin/jcontrol
+jdk1.8.0_351/bin/ControlPanel
+jdk1.8.0_351/bin/jvisualvm
+jdk1.8.0_351/bin/javafxpackager
+jdk1.8.0_351/bin/javapackager
+jdk1.8.0_351/include/jdwpTransport.h
+jdk1.8.0_351/include/jni.h
+jdk1.8.0_351/include/jvmti.h
+jdk1.8.0_351/include/jvmticmlr.h
+jdk1.8.0_351/include/classfile_constants.h
+jdk1.8.0_351/include/linux/jni_md.h
+jdk1.8.0_351/include/linux/jawt_md.h
+jdk1.8.0_351/include/jawt.h
+jdk1.8.0_351/jre/bin/jjs
+jdk1.8.0_351/jre/bin/keytool
+jdk1.8.0_351/jre/bin/policytool
+jdk1.8.0_351/jre/bin/servertool
+jdk1.8.0_351/jre/bin/orbd
+jdk1.8.0_351/jre/bin/tnameserv
+jdk1.8.0_351/jre/bin/pack200
+jdk1.8.0_351/jre/bin/rmid
+jdk1.8.0_351/jre/bin/rmiregistry
+jdk1.8.0_351/jre/bin/java
+jdk1.8.0_351/jre/bin/unpack200
+jdk1.8.0_351/jre/bin/javaws
+jdk1.8.0_351/jre/bin/jcontrol
+jdk1.8.0_351/jre/bin/ControlPanel
+jdk1.8.0_351/jre/lib/amd64/server/libjvm.so
+jdk1.8.0_351/jre/lib/amd64/server/Xusage.txt
+jdk1.8.0_351/jre/lib/amd64/server/libjsig.so
+jdk1.8.0_351/jre/lib/amd64/libjsig.so
+jdk1.8.0_351/jre/lib/amd64/libsaproc.so
+jdk1.8.0_351/jre/lib/amd64/jli/libjli.so
+jdk1.8.0_351/jre/lib/amd64/jvm.cfg
+jdk1.8.0_351/jre/lib/amd64/libverify.so
+jdk1.8.0_351/jre/lib/amd64/libnpt.so
+jdk1.8.0_351/jre/lib/amd64/libj2pcsc.so
+jdk1.8.0_351/jre/lib/amd64/libj2gss.so
+jdk1.8.0_351/jre/lib/amd64/libj2pkcs11.so
+jdk1.8.0_351/jre/lib/amd64/libsunec.so
+jdk1.8.0_351/jre/lib/amd64/libhprof.so
+jdk1.8.0_351/jre/lib/amd64/libbci.so
+jdk1.8.0_351/jre/lib/amd64/libjava_crw_demo.so
+jdk1.8.0_351/jre/lib/amd64/libjfr.so
+jdk1.8.0_351/jre/lib/amd64/libsplashscreen.so
+jdk1.8.0_351/jre/lib/amd64/libjava.so
+jdk1.8.0_351/jre/lib/amd64/libunpack.so
+jdk1.8.0_351/jre/lib/amd64/libnet.so
+jdk1.8.0_351/jre/lib/amd64/libjaas_unix.so
+jdk1.8.0_351/jre/lib/amd64/libzip.so
+jdk1.8.0_351/jre/lib/amd64/libdt_socket.so
+jdk1.8.0_351/jre/lib/amd64/libattach.so
+jdk1.8.0_351/jre/lib/amd64/libjdwp.so
+jdk1.8.0_351/jre/lib/amd64/libjsdt.so
+jdk1.8.0_351/jre/lib/amd64/libinstrument.so
+jdk1.8.0_351/jre/lib/amd64/libmanagement.so
+jdk1.8.0_351/jre/lib/amd64/libmlib_image.so
+jdk1.8.0_351/jre/lib/amd64/libawt.so
+jdk1.8.0_351/jre/lib/amd64/libjpeg.so
+jdk1.8.0_351/jre/lib/amd64/libdcpr.so
+jdk1.8.0_351/jre/lib/amd64/libjsound.so
+jdk1.8.0_351/jre/lib/amd64/libjsoundalsa.so
+jdk1.8.0_351/jre/lib/amd64/libresource.so
+jdk1.8.0_351/jre/lib/amd64/libnio.so
+jdk1.8.0_351/jre/lib/amd64/liblcms.so
+jdk1.8.0_351/jre/lib/amd64/libawt_xawt.so
+jdk1.8.0_351/jre/lib/amd64/libawt_headless.so
+jdk1.8.0_351/jre/lib/amd64/libfontmanager.so
+jdk1.8.0_351/jre/lib/amd64/libsctp.so
+jdk1.8.0_351/jre/lib/amd64/libjawt.so
+jdk1.8.0_351/jre/lib/amd64/libt2k.so
+jdk1.8.0_351/jre/lib/amd64/libdeploy.so
+jdk1.8.0_351/jre/lib/amd64/libavplugin-53.so
+jdk1.8.0_351/jre/lib/amd64/libavplugin-54.so
+jdk1.8.0_351/jre/lib/amd64/libavplugin-55.so
+jdk1.8.0_351/jre/lib/amd64/libavplugin-56.so
+jdk1.8.0_351/jre/lib/amd64/libavplugin-57.so
+jdk1.8.0_351/jre/lib/amd64/libavplugin-ffmpeg-56.so
+jdk1.8.0_351/jre/lib/amd64/libavplugin-ffmpeg-57.so
+jdk1.8.0_351/jre/lib/amd64/libavplugin-ffmpeg-58.so
+jdk1.8.0_351/jre/lib/amd64/libdecora_sse.so
+jdk1.8.0_351/jre/lib/amd64/libfxplugins.so
+jdk1.8.0_351/jre/lib/amd64/libglass.so
+jdk1.8.0_351/jre/lib/amd64/libglassgtk2.so
+jdk1.8.0_351/jre/lib/amd64/libglassgtk3.so
+jdk1.8.0_351/jre/lib/amd64/libglib-lite.so
+jdk1.8.0_351/jre/lib/amd64/libgstreamer-lite.so
+jdk1.8.0_351/jre/lib/amd64/libjavafx_font.so
+jdk1.8.0_351/jre/lib/amd64/libjavafx_font_freetype.so
+jdk1.8.0_351/jre/lib/amd64/libjavafx_font_pango.so
+jdk1.8.0_351/jre/lib/amd64/libjavafx_iio.so
+jdk1.8.0_351/jre/lib/amd64/libjfxmedia.so
+jdk1.8.0_351/jre/lib/amd64/libjfxwebkit.so
+jdk1.8.0_351/jre/lib/amd64/libprism_common.so
+jdk1.8.0_351/jre/lib/amd64/libprism_es2.so
+jdk1.8.0_351/jre/lib/amd64/libprism_sw.so
+jdk1.8.0_351/jre/lib/fontconfig.properties.src
+jdk1.8.0_351/jre/lib/fontconfig.RedHat.5.properties.src
+jdk1.8.0_351/jre/lib/fontconfig.RedHat.6.properties.src
+jdk1.8.0_351/jre/lib/fontconfig.Turbo.properties.src
+jdk1.8.0_351/jre/lib/fontconfig.SuSE.10.properties.src
+jdk1.8.0_351/jre/lib/fontconfig.SuSE.11.properties.src
+jdk1.8.0_351/jre/lib/fontconfig.SuSE.11.bfc
+jdk1.8.0_351/jre/lib/fontconfig.RedHat.5.bfc
+jdk1.8.0_351/jre/lib/fontconfig.Turbo.bfc
+jdk1.8.0_351/jre/lib/fontconfig.bfc
+jdk1.8.0_351/jre/lib/fontconfig.SuSE.10.bfc
+jdk1.8.0_351/jre/lib/security/blacklisted.certs
+jdk1.8.0_351/jre/lib/security/java.policy
+jdk1.8.0_351/jre/lib/security/cacerts
+jdk1.8.0_351/jre/lib/security/blacklist
+jdk1.8.0_351/jre/lib/security/trusted.libraries
+jdk1.8.0_351/jre/lib/security/java.security
+jdk1.8.0_351/jre/lib/security/policy/limited/US_export_policy.jar
+jdk1.8.0_351/jre/lib/security/policy/limited/local_policy.jar
+jdk1.8.0_351/jre/lib/security/policy/unlimited/US_export_policy.jar
+jdk1.8.0_351/jre/lib/security/policy/unlimited/local_policy.jar
+jdk1.8.0_351/jre/lib/security/javaws.policy
+jdk1.8.0_351/jre/lib/security/public_suffix_list.dat
+jdk1.8.0_351/jre/lib/fontconfig.RedHat.6.bfc
+jdk1.8.0_351/jre/lib/currency.data
+jdk1.8.0_351/jre/lib/management/snmp.acl.template
+jdk1.8.0_351/jre/lib/management/management.properties
+jdk1.8.0_351/jre/lib/management/jmxremote.password.template
+jdk1.8.0_351/jre/lib/management/jmxremote.access
+jdk1.8.0_351/jre/lib/tzdb.dat
+jdk1.8.0_351/jre/lib/logging.properties
+jdk1.8.0_351/jre/lib/psfont.properties.ja
+jdk1.8.0_351/jre/lib/psfontj2d.properties
+jdk1.8.0_351/jre/lib/images/cursors/invalid32x32.gif
+jdk1.8.0_351/jre/lib/images/cursors/motif_MoveDrop32x32.gif
+jdk1.8.0_351/jre/lib/images/cursors/cursors.properties
+jdk1.8.0_351/jre/lib/images/cursors/motif_LinkDrop32x32.gif
+jdk1.8.0_351/jre/lib/images/cursors/motif_CopyDrop32x32.gif
+jdk1.8.0_351/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
+jdk1.8.0_351/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
+jdk1.8.0_351/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
+jdk1.8.0_351/jre/lib/images/icons/sun-java.png
+jdk1.8.0_351/jre/lib/images/icons/sun-java_HighContrast.png
+jdk1.8.0_351/jre/lib/images/icons/sun-java_HighContrastInverse.png
+jdk1.8.0_351/jre/lib/images/icons/sun-java_LowContrast.png
+jdk1.8.0_351/jre/lib/flavormap.properties
+jdk1.8.0_351/jre/lib/content-types.properties
+jdk1.8.0_351/jre/lib/calendars.properties
+jdk1.8.0_351/jre/lib/cmm/sRGB.pf
+jdk1.8.0_351/jre/lib/cmm/LINEAR_RGB.pf
+jdk1.8.0_351/jre/lib/cmm/PYCC.pf
+jdk1.8.0_351/jre/lib/cmm/GRAY.pf
+jdk1.8.0_351/jre/lib/cmm/CIEXYZ.pf
+jdk1.8.0_351/jre/lib/hijrah-config-umalqura.properties
+jdk1.8.0_351/jre/lib/fonts/LucidaTypewriterRegular.ttf
+jdk1.8.0_351/jre/lib/fonts/LucidaTypewriterBold.ttf
+jdk1.8.0_351/jre/lib/fonts/LucidaBrightRegular.ttf
+jdk1.8.0_351/jre/lib/fonts/LucidaBrightDemiBold.ttf
+jdk1.8.0_351/jre/lib/fonts/LucidaBrightItalic.ttf
+jdk1.8.0_351/jre/lib/fonts/LucidaBrightDemiItalic.ttf
+jdk1.8.0_351/jre/lib/fonts/LucidaSansRegular.ttf
+jdk1.8.0_351/jre/lib/fonts/LucidaSansDemiBold.ttf
+jdk1.8.0_351/jre/lib/fonts/fonts.dir
+jdk1.8.0_351/jre/lib/jvm.hprof.txt
+jdk1.8.0_351/jre/lib/oblique-fonts/LucidaTypewriterOblique.ttf
+jdk1.8.0_351/jre/lib/oblique-fonts/LucidaTypewriterBoldOblique.ttf
+jdk1.8.0_351/jre/lib/oblique-fonts/LucidaSansOblique.ttf
+jdk1.8.0_351/jre/lib/oblique-fonts/LucidaSansDemiOblique.ttf
+jdk1.8.0_351/jre/lib/oblique-fonts/fonts.dir
+jdk1.8.0_351/jre/lib/jfr/default.jfc
+jdk1.8.0_351/jre/lib/jfr/profile.jfc
+jdk1.8.0_351/jre/lib/sound.properties
+jdk1.8.0_351/jre/lib/net.properties
+jdk1.8.0_351/jre/lib/jexec
+jdk1.8.0_351/jre/lib/ext/nashorn.jar
+jdk1.8.0_351/jre/lib/ext/zipfs.jar
+jdk1.8.0_351/jre/lib/ext/sunec.jar
+jdk1.8.0_351/jre/lib/ext/sunjce_provider.jar
+jdk1.8.0_351/jre/lib/ext/sunpkcs11.jar
+jdk1.8.0_351/jre/lib/ext/dnsns.jar
+jdk1.8.0_351/jre/lib/ext/localedata.jar
+jdk1.8.0_351/jre/lib/ext/cldrdata.jar
+jdk1.8.0_351/jre/lib/ext/jaccess.jar
+jdk1.8.0_351/jre/lib/ext/meta-index
+jdk1.8.0_351/jre/lib/ext/jfxrt.jar
+jdk1.8.0_351/jre/lib/jce.jar
+jdk1.8.0_351/jre/lib/management-agent.jar
+jdk1.8.0_351/jre/lib/classlist
+jdk1.8.0_351/jre/lib/jfr.jar
+jdk1.8.0_351/jre/lib/charsets.jar
+jdk1.8.0_351/jre/lib/jsse.jar
+jdk1.8.0_351/jre/lib/resources.jar
+jdk1.8.0_351/jre/lib/rt.jar
+jdk1.8.0_351/jre/lib/meta-index
+jdk1.8.0_351/jre/lib/deploy.jar
+jdk1.8.0_351/jre/lib/deploy/MixedCodeMainDialog.ui
+jdk1.8.0_351/jre/lib/deploy/MixedCodeMainDialogJs.ui
+jdk1.8.0_351/jre/lib/deploy/cautionshield.icns
+jdk1.8.0_351/jre/lib/deploy/java-icon.ico
+jdk1.8.0_351/jre/lib/deploy/messages.properties
+jdk1.8.0_351/jre/lib/deploy/messages_de.properties
+jdk1.8.0_351/jre/lib/deploy/messages_es.properties
+jdk1.8.0_351/jre/lib/deploy/messages_fr.properties
+jdk1.8.0_351/jre/lib/deploy/messages_it.properties
+jdk1.8.0_351/jre/lib/deploy/messages_ja.properties
+jdk1.8.0_351/jre/lib/deploy/messages_ko.properties
+jdk1.8.0_351/jre/lib/deploy/messages_pt_BR.properties
+jdk1.8.0_351/jre/lib/deploy/messages_sv.properties
+jdk1.8.0_351/jre/lib/deploy/messages_zh_CN.properties
+jdk1.8.0_351/jre/lib/deploy/messages_zh_HK.properties
+jdk1.8.0_351/jre/lib/deploy/messages_zh_TW.properties
+jdk1.8.0_351/jre/lib/deploy/mixcode_s.png
+jdk1.8.0_351/jre/lib/deploy/splash.gif
+jdk1.8.0_351/jre/lib/deploy/splash@2x.gif
+jdk1.8.0_351/jre/lib/deploy/splash_11-lic.gif
+jdk1.8.0_351/jre/lib/deploy/splash_11@2x-lic.gif
+jdk1.8.0_351/jre/lib/desktop/applications/sun-java.desktop
+jdk1.8.0_351/jre/lib/desktop/applications/sun-javaws.desktop
+jdk1.8.0_351/jre/lib/desktop/applications/sun_java.desktop
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-javaws.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-jcontrol.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-text-x-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-javaws.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-jcontrol.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-text-x-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-javaws.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-jcontrol.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-text-x-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-javaws.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-jcontrol.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+jdk1.8.0_351/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-text-x-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-javaws.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-jcontrol.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-text-x-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-javaws.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-jcontrol.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+jdk1.8.0_351/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-text-x-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/16x16/apps/sun-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/16x16/apps/sun-javaws.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/16x16/apps/sun-jcontrol.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-text-x-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/48x48/apps/sun-javaws.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/48x48/apps/sun-jcontrol.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+jdk1.8.0_351/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-text-x-java.png
+jdk1.8.0_351/jre/lib/desktop/mime/packages/x-java-archive.xml
+jdk1.8.0_351/jre/lib/desktop/mime/packages/x-java-jnlp-file.xml
+jdk1.8.0_351/jre/lib/javaws.jar
+jdk1.8.0_351/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/pt_BR/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/zh_HK.BIG5HK/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.8.0_351/jre/lib/plugin.jar
+jdk1.8.0_351/jre/lib/javafx.properties
+jdk1.8.0_351/jre/lib/jfxswt.jar
+jdk1.8.0_351/jre/COPYRIGHT
+jdk1.8.0_351/jre/Welcome.html
+jdk1.8.0_351/jre/LICENSE
+jdk1.8.0_351/jre/THIRDPARTYLICENSEREADME.txt
+jdk1.8.0_351/jre/README
+jdk1.8.0_351/jre/legal/jdk/xalan.md
+jdk1.8.0_351/jre/legal/jdk/jopt-simple.md
+jdk1.8.0_351/jre/legal/jdk/ecc.md
+jdk1.8.0_351/jre/legal/jdk/pkcs11cryptotoken.md
+jdk1.8.0_351/jre/legal/jdk/unicode.md
+jdk1.8.0_351/jre/legal/jdk/santuario.md
+jdk1.8.0_351/jre/legal/jdk/xerces.md
+jdk1.8.0_351/jre/legal/jdk/icu.md
+jdk1.8.0_351/jre/legal/jdk/jcup.md
+jdk1.8.0_351/jre/legal/jdk/zlib.md
+jdk1.8.0_351/jre/legal/jdk/relaxngom.md
+jdk1.8.0_351/jre/legal/jdk/colorimaging.md
+jdk1.8.0_351/jre/legal/jdk/dom.md
+jdk1.8.0_351/jre/legal/jdk/freebxml.md
+jdk1.8.0_351/jre/legal/jdk/asm.md
+jdk1.8.0_351/jre/legal/jdk/libpng.md
+jdk1.8.0_351/jre/legal/jdk/cryptix.md
+jdk1.8.0_351/jre/legal/jdk/lcms.md
+jdk1.8.0_351/jre/legal/jdk/joni.md
+jdk1.8.0_351/jre/legal/jdk/bcel.md
+jdk1.8.0_351/jre/legal/jdk/xmlresolver.md
+jdk1.8.0_351/jre/legal/jdk/jpeg.md
+jdk1.8.0_351/jre/legal/jdk/mesa3d.md
+jdk1.8.0_351/jre/legal/jdk/relaxngcc.md
+jdk1.8.0_351/jre/legal/jdk/giflib.md
+jdk1.8.0_351/jre/legal/jdk/pkcs11wrapper.md
+jdk1.8.0_351/jre/legal/jdk/dynalink.md
+jdk1.8.0_351/jre/legal/jdk/thaidict.md
+jdk1.8.0_351/jre/legal/jdk/relaxngdatatype.md
+jdk1.8.0_351/jre/legal/jdk/cldr.md
+jdk1.8.0_351/jre/legal/jdk/pcsclite.md
+jdk1.8.0_351/jre/legal/jdk/xwd.md
+jdk1.8.0_351/jre/legal/jdk/libxrandr.md
+jdk1.8.0_351/jre/legal/jdk/xorgproto.md
+jdk1.8.0_351/jre/legal/javafx/directshow.md
+jdk1.8.0_351/jre/legal/javafx/glib.md
+jdk1.8.0_351/jre/legal/javafx/gstreamer.md
+jdk1.8.0_351/jre/legal/javafx/icu_web.md
+jdk1.8.0_351/jre/legal/javafx/jpeg_fx.md
+jdk1.8.0_351/jre/legal/javafx/libffi.md
+jdk1.8.0_351/jre/legal/javafx/libxml2.md
+jdk1.8.0_351/jre/legal/javafx/libxslt.md
+jdk1.8.0_351/jre/legal/javafx/mesa3d.md
+jdk1.8.0_351/jre/legal/javafx/public_suffix.md
+jdk1.8.0_351/jre/legal/javafx/webkit.md
+jdk1.8.0_351/jre/plugin/desktop/sun_java.desktop
+jdk1.8.0_351/jre/plugin/desktop/sun_java.png
+jdk1.8.0_351/jre/THIRDPARTYLICENSEREADME-JAVAFX.txt
+jdk1.8.0_351/legal/jdk/jopt-simple.md
+jdk1.8.0_351/legal/jdk/xalan.md
+jdk1.8.0_351/legal/jdk/ecc.md
+jdk1.8.0_351/legal/jdk/pkcs11cryptotoken.md
+jdk1.8.0_351/legal/jdk/unicode.md
+jdk1.8.0_351/legal/jdk/santuario.md
+jdk1.8.0_351/legal/jdk/xerces.md
+jdk1.8.0_351/legal/jdk/icu.md
+jdk1.8.0_351/legal/jdk/jcup.md
+jdk1.8.0_351/legal/jdk/relaxngom.md
+jdk1.8.0_351/legal/jdk/zlib.md
+jdk1.8.0_351/legal/jdk/colorimaging.md
+jdk1.8.0_351/legal/jdk/dom.md
+jdk1.8.0_351/legal/jdk/freebxml.md
+jdk1.8.0_351/legal/jdk/libpng.md
+jdk1.8.0_351/legal/jdk/asm.md
+jdk1.8.0_351/legal/jdk/cryptix.md
+jdk1.8.0_351/legal/jdk/lcms.md
+jdk1.8.0_351/legal/jdk/joni.md
+jdk1.8.0_351/legal/jdk/bcel.md
+jdk1.8.0_351/legal/jdk/xmlresolver.md
+jdk1.8.0_351/legal/jdk/jpeg.md
+jdk1.8.0_351/legal/jdk/relaxngcc.md
+jdk1.8.0_351/legal/jdk/mesa3d.md
+jdk1.8.0_351/legal/jdk/giflib.md
+jdk1.8.0_351/legal/jdk/pkcs11wrapper.md
+jdk1.8.0_351/legal/jdk/dynalink.md
+jdk1.8.0_351/legal/jdk/thaidict.md
+jdk1.8.0_351/legal/jdk/relaxngdatatype.md
+jdk1.8.0_351/legal/jdk/cldr.md
+jdk1.8.0_351/legal/jdk/pcsclite.md
+jdk1.8.0_351/legal/jdk/xwd.md
+jdk1.8.0_351/legal/jdk/libxrandr.md
+jdk1.8.0_351/legal/jdk/xorgproto.md
+jdk1.8.0_351/legal/javafx/directshow.md
+jdk1.8.0_351/legal/javafx/glib.md
+jdk1.8.0_351/legal/javafx/gstreamer.md
+jdk1.8.0_351/legal/javafx/icu_web.md
+jdk1.8.0_351/legal/javafx/jpeg_fx.md
+jdk1.8.0_351/legal/javafx/libffi.md
+jdk1.8.0_351/legal/javafx/libxml2.md
+jdk1.8.0_351/legal/javafx/libxslt.md
+jdk1.8.0_351/legal/javafx/mesa3d.md
+jdk1.8.0_351/legal/javafx/public_suffix.md
+jdk1.8.0_351/legal/javafx/webkit.md
+jdk1.8.0_351/lib/amd64/jli/libjli.so
+jdk1.8.0_351/lib/amd64/libjawt.so
+jdk1.8.0_351/lib/orb.idl
+jdk1.8.0_351/lib/ir.idl
+jdk1.8.0_351/lib/jexec
+jdk1.8.0_351/lib/jconsole.jar
+jdk1.8.0_351/lib/sa-jdi.jar
+jdk1.8.0_351/lib/dt.jar
+jdk1.8.0_351/lib/tools.jar
+jdk1.8.0_351/lib/ct.sym
+jdk1.8.0_351/lib/visualvm/profiler/.lastModified
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-oql.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-api.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-lib-profiler.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-lib-profiler-ui.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-snaptracer.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-utilities.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-heapwalker.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-selector-ui.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-lib-profiler-charts.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-attach.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-selector-api_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-heapwalker_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-snaptracer_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-lib-profiler-charts_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-selector-ui_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-lib-profiler-common_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-attach_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-attach_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-lib-profiler-ui_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-lib-profiler-common_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-lib-profiler-ui_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-oql_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-utilities_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-utilities_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-lib-profiler_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-api_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-lib-profiler_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-heapwalker_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-selector-ui_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-api_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-lib-profiler-charts_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-selector-api_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-oql_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-snaptracer_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-selector-api.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-lib-profiler-common.jar
+jdk1.8.0_351/lib/visualvm/profiler/modules/org-netbeans-modules-profiler.jar
+jdk1.8.0_351/lib/visualvm/profiler/VERSION.txt
+jdk1.8.0_351/lib/visualvm/profiler/lib/jfluid-server.jar
+jdk1.8.0_351/lib/visualvm/profiler/lib/deployed/jdk16/linux-amd64/libprofilerinterface.so
+jdk1.8.0_351/lib/visualvm/profiler/lib/deployed/jdk15/linux-amd64/libprofilerinterface.so
+jdk1.8.0_351/lib/visualvm/profiler/lib/locale/jfluid-server_ja.jar
+jdk1.8.0_351/lib/visualvm/profiler/lib/locale/jfluid-server_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/profiler/lib/jfluid-server-15.jar
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-lib-profiler-charts.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-snaptracer.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-lib-profiler.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-lib-profiler-common.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-attach.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-lib-profiler-ui.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-api.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-utilities.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-oql.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-selector-api.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-heapwalker.xml
+jdk1.8.0_351/lib/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-selector-ui.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-charts.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-snaptracer.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-lib-profiler.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-common.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-attach.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-ui.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-api.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-utilities.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-oql.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-selector-api.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-heapwalker.xml
+jdk1.8.0_351/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-selector-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/core/org-openide-filesystems.jar
+jdk1.8.0_351/lib/visualvm/platform/core/core.jar
+jdk1.8.0_351/lib/visualvm/platform/core/locale/core_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/core/locale/org-openide-filesystems_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/core/locale/core_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/core/locale/org-openide-filesystems_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/.lastModified
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-editor-mimelookup.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-awt.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-swing-plaf.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-uihandler.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-javahelp.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-core-multiview.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-core-execution.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-core-kit.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-core.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-compat.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-templates.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-api-search.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-masterfs.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-keyring-fallback.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-editor-mimelookup-impl.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-windows.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-sampler.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-io.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-masterfs-nio2.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-text.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-util-enumerations.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-lib-uihandler.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-autoupdate-cli.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-nodes.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-autoupdate-services.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/ext/updater.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/ext/locale/updater_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/ext/locale/updater_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/ext/jhall-2.0_05.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-favorites.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-explorer.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-applemenu.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-core-windows.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-settings.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-core-io-ui.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-core-ui.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-actions.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-api-visual.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-keyring-impl.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-keyring.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-autoupdate-ui.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-swing-tabcontrol.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-options.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-queries.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-api-progress.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-loaders.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-swing-outline.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-dialogs.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-options-keymap.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-print.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-swing-outline_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-javahelp_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-print_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-autoupdate-services_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-options_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-io-ui_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-output2_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-sampler_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-uihandler_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-options_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-autoupdate-ui_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-queries_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-api-annotations-common_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-editor-mimelookup_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-javahelp_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-queries_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-explorer_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-io_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-execution_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-editor-mimelookup-impl_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-swing-tabcontrol_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-compat_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-ui_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-ui_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-io-ui_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-masterfs-nio2_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-templates_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-templates_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-execution_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-api-search_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-swing-tabcontrol_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-lib-uihandler_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-autoupdate-cli_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-options-keymap_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-compat_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-api-annotations-common_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-loaders_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-dialogs_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-execution_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-progress-ui_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-lib-uihandler_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-swing-plaf_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-text_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-applemenu_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-autoupdate-services_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-windows_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-awt_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-loaders_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-api-progress_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-settings_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-masterfs_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-util-enumerations_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-windows_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-multiview_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-sendopts_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-sendopts_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-awt_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-options-keymap_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-keyring-fallback_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-spi-quicksearch_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-swing-plaf_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-nodes_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-spi-quicksearch_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-nodes_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-spi-actions_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-keyring-impl_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-options-api_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-keyring-impl_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-dialogs_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-multiview_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-spi-actions_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-actions_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-favorites_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-io_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-sampler_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-keyring_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-autoupdate-ui_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-windows_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-keyring-fallback_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-masterfs_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-autoupdate-cli_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-swing-outline_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-api-progress_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-multitabs_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-options-api_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-settings_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-api-visual_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-masterfs-nio2_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-execution_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-core-kit_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-favorites_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-uihandler_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-api-search_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-print_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-actions_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-applemenu_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-util-enumerations_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-multitabs_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-text_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-keyring_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-core-kit_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-openide-explorer_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-windows_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-api-visual_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-progress-ui_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-editor-mimelookup_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-core-output2_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/locale/org-netbeans-modules-editor-mimelookup-impl_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-openide-execution.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-core-output2.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-api-annotations-common.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-core-multitabs.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-options-api.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-spi-quicksearch.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-progress-ui.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-sendopts.jar
+jdk1.8.0_351/lib/visualvm/platform/modules/org-netbeans-modules-spi-actions.jar
+jdk1.8.0_351/lib/visualvm/platform/VERSION.txt
+jdk1.8.0_351/lib/visualvm/platform/lib/boot.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/org-openide-modules.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/org-openide-util.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/org-openide-util-lookup.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/locale/org-openide-modules_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/locale/boot_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/locale/org-openide-modules_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/locale/org-openide-util_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/locale/org-openide-util_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/locale/org-openide-util-lookup_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/locale/org-openide-util-lookup_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/locale/boot_ja.jar
+jdk1.8.0_351/lib/visualvm/platform/lib/nbexec
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-settings.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-dialogs.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-lib-uihandler.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-options-api.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-execution.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-autoupdate-cli.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-swing-plaf.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-api-progress.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-editor-mimelookup.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-spi-quicksearch.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-progress-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-keyring-impl.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-swing-tabcontrol.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-favorites.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-sampler.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core-output2.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-sendopts.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-autoupdate-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-api-visual.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-util-enumerations.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core-multiview.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-io.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-explorer.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-keyring.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-applemenu.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core-execution.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-compat.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core-io-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-options.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-javahelp.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-keyring-fallback.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-queries.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-print.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-awt.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-util.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-masterfs-nio2.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-templates.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-modules.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-bootstrap.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-autoupdate-services.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-text.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core-multitabs.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-nodes.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core-startup.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-masterfs.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-filesystems.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-spi-actions.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-api-search.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-core-windows.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-api-annotations-common.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-editor-mimelookup-impl.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-actions.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-util-lookup.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-core-kit.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-swing-outline.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-options-keymap.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-windows.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-netbeans-modules-uihandler.xml
+jdk1.8.0_351/lib/visualvm/platform/update_tracking/org-openide-loaders.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-settings.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-dialogs.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-lib-uihandler.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-options-api.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-execution.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-autoupdate-cli.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-swing-plaf.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-api-progress.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-editor-mimelookup.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-spi-quicksearch.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-progress-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-keyring-impl.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-swing-tabcontrol.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-favorites.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-sampler.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-core-output2.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-sendopts.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-autoupdate-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-api-visual.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-util-enumerations.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-core-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-core.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-core-multiview.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-io.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-explorer.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-keyring.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-applemenu.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-core-execution.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-compat.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-core-io-ui.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-options.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-javahelp.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-keyring-fallback.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-queries.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-print.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-awt.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-masterfs-nio2.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-templates.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-autoupdate-services.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-text.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-core-multitabs.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-nodes.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-masterfs.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-spi-actions.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-api-search.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-core-windows.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-api-annotations-common.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-editor-mimelookup-impl.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-actions.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-core-kit.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-swing-outline.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-options-keymap.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-windows.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-netbeans-modules-uihandler.xml
+jdk1.8.0_351/lib/visualvm/platform/config/Modules/org-openide-loaders.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-netbeans-modules-options-api.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-openide-execution.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-netbeans-core.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-openide-explorer.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-netbeans-modules-queries.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-openide-util.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-openide-modules.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-openide-text.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-openide-nodes.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-openide-filesystems.xml
+jdk1.8.0_351/lib/visualvm/platform/config/ModuleAutoDeps/org-openide-loaders.xml
+jdk1.8.0_351/lib/visualvm/etc/visualvm.conf
+jdk1.8.0_351/lib/visualvm/etc/visualvm.clusters
+jdk1.8.0_351/lib/visualvm/visualvm/core/com-sun-tools-visualvm-modules-startup.jar
+jdk1.8.0_351/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/core/locale/core_visualvm.jar
+jdk1.8.0_351/lib/visualvm/visualvm/.lastModified
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-profiling.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jvm.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sa.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-uisupport.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-attach.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-threaddump.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sampler.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jmx.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application-views.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-tools.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-host.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-host-views.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-profiler.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-core.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-coredump.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-modules-appui.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-charts.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-host-remote.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-attach_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-core_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-tools_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-jmx_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-jvm_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-uisupport_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-host-remote_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-host-views_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-jvm_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-attach_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-modules-appui_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-threaddump_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-coredump_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-host-remote_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-jvmstat_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-host_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sa_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-application_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-heapdump_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-tools_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-profiling_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-jmx_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-profiling_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-coredump_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-modules-appui_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-profiler_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-core_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-charts_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/org-netbeans-core_visualvm.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-host_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-host-views_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-jvmstat_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sampler_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-profiler_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-api-caching_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sampler_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-profiler_visualvm.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-application-views_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-threaddump_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-api-caching_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sa_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-application-views_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-application_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-heapdump_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-charts_zh_CN.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-uisupport_ja.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-heapdump.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jvmstat.jar
+jdk1.8.0_351/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-api-caching.jar
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-api-caching.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application-views.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-uisupport.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-sampler.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-profiler.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jvm.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-modules-startup.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-tools.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-core.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-profiling.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-host-views.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-host.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-attach.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-coredump.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-threaddump.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-sa.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jmx.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-host-remote.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-charts.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-heapdump.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-modules-appui.xml
+jdk1.8.0_351/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jvmstat.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-api-caching.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-print.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-spi-actions.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-application-views.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-templates.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-uisupport.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-openide-execution.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-core-execution.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sampler.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiler.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-api-visual.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jvm.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-tools.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-core.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-uihandler.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiling.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-core-kit.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-favorites.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-openide-options.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-lib-uihandler.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host-views.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-attach.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-openide-compat.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-coredump.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-threaddump.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sa.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-core-output2.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jmx.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-core-io-ui.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-openide-util-enumerations.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-options-keymap.xml_hidden
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host-remote.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-charts.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-application.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-heapdump.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-modules-appui.xml
+jdk1.8.0_351/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jvmstat.xml
+jdk1.8.0_351/lib/ant-javafx.jar
+jdk1.8.0_351/lib/javafx-mx.jar
+jdk1.8.0_351/lib/packager.jar
+jdk1.8.0_351/man/man1/java.1
+jdk1.8.0_351/man/man1/jjs.1
+jdk1.8.0_351/man/man1/keytool.1
+jdk1.8.0_351/man/man1/orbd.1
+jdk1.8.0_351/man/man1/pack200.1
+jdk1.8.0_351/man/man1/policytool.1
+jdk1.8.0_351/man/man1/rmid.1
+jdk1.8.0_351/man/man1/rmiregistry.1
+jdk1.8.0_351/man/man1/servertool.1
+jdk1.8.0_351/man/man1/tnameserv.1
+jdk1.8.0_351/man/man1/unpack200.1
+jdk1.8.0_351/man/man1/javaws.1
+jdk1.8.0_351/man/man1/appletviewer.1
+jdk1.8.0_351/man/man1/extcheck.1
+jdk1.8.0_351/man/man1/idlj.1
+jdk1.8.0_351/man/man1/jar.1
+jdk1.8.0_351/man/man1/jarsigner.1
+jdk1.8.0_351/man/man1/javac.1
+jdk1.8.0_351/man/man1/javadoc.1
+jdk1.8.0_351/man/man1/javah.1
+jdk1.8.0_351/man/man1/javap.1
+jdk1.8.0_351/man/man1/jconsole.1
+jdk1.8.0_351/man/man1/jcmd.1
+jdk1.8.0_351/man/man1/jdb.1
+jdk1.8.0_351/man/man1/jhat.1
+jdk1.8.0_351/man/man1/jdeps.1
+jdk1.8.0_351/man/man1/jmap.1
+jdk1.8.0_351/man/man1/jinfo.1
+jdk1.8.0_351/man/man1/jps.1
+jdk1.8.0_351/man/man1/jrunscript.1
+jdk1.8.0_351/man/man1/jsadebugd.1
+jdk1.8.0_351/man/man1/jstack.1
+jdk1.8.0_351/man/man1/jstat.1
+jdk1.8.0_351/man/man1/jstatd.1
+jdk1.8.0_351/man/man1/native2ascii.1
+jdk1.8.0_351/man/man1/rmic.1
+jdk1.8.0_351/man/man1/schemagen.1
+jdk1.8.0_351/man/man1/serialver.1
+jdk1.8.0_351/man/man1/wsgen.1
+jdk1.8.0_351/man/man1/wsimport.1
+jdk1.8.0_351/man/man1/xjc.1
+jdk1.8.0_351/man/man1/jvisualvm.1
+jdk1.8.0_351/man/man1/javafxpackager.1
+jdk1.8.0_351/man/man1/javapackager.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/java.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jjs.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/orbd.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/keytool.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/pack200.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/policytool.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/rmid.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/tnameserv.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/rmiregistry.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/servertool.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/unpack200.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/javaws.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/appletviewer.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/extcheck.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/idlj.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jar.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jarsigner.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/javadoc.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/javac.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/javah.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/javap.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jconsole.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jcmd.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jdb.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jdeps.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jhat.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jinfo.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jmap.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jps.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jrunscript.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jsadebugd.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jstack.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jstat.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jstatd.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/native2ascii.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/rmic.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/schemagen.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/serialver.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/wsgen.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/wsimport.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/xjc.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/jvisualvm.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/javafxpackager.1
+jdk1.8.0_351/man/ja_JP.UTF-8/man1/javapackager.1
+jdk1.8.0_351/man/ja
+jdk1.8.0_351/release
+jdk1.8.0_351/src.zip
+jdk1.8.0_351/THIRDPARTYLICENSEREADME-JAVAFX.txt
+jdk1.8.0_351/javafx-src.zip
+jdk1.8.0_351/jmc.txt
+jdk1.8.0_351/jre/lib/applet/
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun  8 13:16:28 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun  8 13:16:28 2023 - INFO  - Start to run test.
++ jsvc -help
++ grep 'Usage: jsvc'
+Usage: jsvc [-options] class [args...]
++ CHECK_RESULT 0 0 0 'Check jsvc -help  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check jsvc -help  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jsvc --help
++ grep 'Usage: jsvc'
+Usage: jsvc [-options] class [args...]
++ CHECK_RESULT 0 0 0 'Check jsvc --help  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check jsvc --help  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jsvc '-?'
++ grep 'Usage: jsvc'
+Usage: jsvc [-options] class [args...]
++ CHECK_RESULT 0 0 0 'Check jsvc -?  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check jsvc -?  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /usr/bin/jsvc -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -stop demo
++ /usr/bin/jsvc -jvm server -server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion
++ CHECK_RESULT 0 0 0 'Check  /usr/bin/jsvc -jvm server -server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check  /usr/bin/jsvc -jvm server -server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /usr/bin/jsvc -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -stop demo
++ /usr/bin/jsvc -jvm server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion
++ CHECK_RESULT 0 0 0 'Check  /usr/bin/jsvc -jvm server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check  /usr/bin/jsvc -jvm server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /usr/bin/jsvc -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -stop demo
++ /usr/bin/jsvc -jvm server -Xms1024m -Xmx1024m -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion
++ CHECK_RESULT 0 0 0 'Check  /usr/bin/jsvc -jvm server -Xms1024m -Xmx1024m -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check  /usr/bin/jsvc -jvm server -Xms1024m -Xmx1024m -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /usr/bin/jsvc -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -stop demo
++ /usr/bin/jsvc -jvm server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion -keepstdin
++ CHECK_RESULT 0 0 0 'Check  /usr/bin/jsvc -jvm server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion -keepstdin  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check  /usr/bin/jsvc -jvm server -home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -procname demo -Dserver.port=18888 -user daemon -cwd /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/config -java-home /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/jdk1.8.0_351 -wait 60 -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -outfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/out.log -errfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/logs/jsvc.log -cp /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/commons-daemon-1.0.15.jar:/root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/demo-1.0-SNAPSHOT.jar org.example.JsvcStart -debug -check -nodetach -verbose -version -showversion -keepstdin  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /usr/bin/jsvc -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -stop demo
++ CHECK_RESULT 0 0 0 'Check  /usr/bin/jsvc -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -stop demo  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check  /usr/bin/jsvc -pidfile /root/mugen/testcases/cli-test/apache-commons-daemon/tmp/apache-commons-daemon/springboot-demo.pid -stop demo  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun  8 13:16:36 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun  8 13:16:36 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpq4465939 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpq4465939
++ '[' 0 -ne 0 ']'
++ rm -rf ../../tmp
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Thu Jun  8 13:16:37 2023 - INFO  - Finish restoring the test environment.

@@ -1,0 +1,336 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start to config params of the case.'
++ message='Start to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to config params of the case.'
+Thu Jun  8 14:39:18 2023 - INFO  - Start to config params of the case.
++ lun1=/home/iscsi_lun1_20928
++ lun2=/home/iscsi_lun2_20928
++ local_addr=127.0.0.1
++ iscsi_name=iqn.2020-07.org.openeuler:iscsi20928
++ firewall_status=0
++ LOG_INFO 'End to config params of the case.'
++ message='End to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to config params of the case.'
+Thu Jun  8 14:39:18 2023 - INFO  - End to config params of the case.
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu Jun  8 14:39:18 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL 'open-iscsi multipath-tools target-restore targetcli'
++ pkgs='open-iscsi multipath-tools target-restore targetcli'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'open-iscsi multipath-tools target-restore targetcli' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmppkh7h54x
++ '[' -z '' ']'
++ tmpfile=/tmp/tmppkh7h54x
++ dd if=/dev/zero of=/home/iscsi_lun1_20928 count=10 bs=1M
+10+0 records in
+10+0 records out
+10485760 bytes (10 MB, 10 MiB) copied, 0.00525165 s, 2.0 GB/s
++ dd if=/dev/zero of=/home/iscsi_lun2_20928 count=10 bs=1M
+10+0 records in
+10+0 records out
+10485760 bytes (10 MB, 10 MiB) copied, 0.00521206 s, 2.0 GB/s
++ systemctl status --no-pager firewalld
+Unit firewalld.service could not be found.
++ systemctl stop firewalld
+Failed to stop firewalld.service: Unit firewalld.service not loaded.
++ mv /etc/iscsi/initiatorname.iscsi .
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun  8 14:39:21 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun  8 14:39:21 2023 - INFO  - Start testing...
++ echo -e 'cd /\n clearconfig confirm=true\n'
++ targetcli
+Warning: Could not load preferences file /root/.targetcli/prefs.bin.
+targetcli shell version 2.1.54
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/> /> All configuration cleared
+/> /> exit
+Global pref auto_save_on_exit=true
+Configuration saved to /etc/target/saveconfig.json
++ echo -e 'cd /backstores/fileio\n create name=disk1 file_or_dev=/home/iscsi_lun1_20928\n'
++ targetcli
+targetcli shell version 2.1.54
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/> /backstores/fileio> Created fileio disk1 with size 10485760
+/backstores/fileio> /backstores/fileio> exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/target/backup/.
+Configuration saved to /etc/target/saveconfig.json
++ echo -e 'cd /backstores/fileio\n create name=disk2 file_or_dev=/home/iscsi_lun2_20928\n'
++ targetcli
+targetcli shell version 2.1.54
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/backstores/fileio> /backstores/fileio> Created fileio disk2 with size 10485760
+/backstores/fileio> /backstores/fileio> exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/target/backup/.
+Configuration saved to /etc/target/saveconfig.json
++ echo -e 'cd /iscsi\n create iqn.2020-07.org.openeuler:iscsi20928\n'
++ targetcli
+targetcli shell version 2.1.54
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/backstores/fileio> /iscsi> Created target iqn.2020-07.org.openeuler:iscsi20928.
+Created TPG 1.
+Global pref auto_add_default_portal=true
+Created default portal listening on all IPs (0.0.0.0), port 3260.
+/iscsi> /iscsi> exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/target/backup/.
+Configuration saved to /etc/target/saveconfig.json
++ echo -e 'cd /iscsi/iqn.2020-07.org.openeuler:iscsi20928/tpg1/acls\n create iqn.2020-07.org.openeuler:iscsi20928:client\n'
++ targetcli
+targetcli shell version 2.1.54
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/iscsi> /iscsi/iqn.20...928/tpg1/acls> Created Node ACL for iqn.2020-07.org.openeuler:iscsi20928:client
+/iscsi/iqn.20...928/tpg1/acls> /iscsi/iqn.20...928/tpg1/acls> exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/target/backup/.
+Configuration saved to /etc/target/saveconfig.json
++ echo -e 'cd /iscsi/iqn.2020-07.org.openeuler:iscsi20928/tpg1/luns\n create /backstores/fileio/disk1 lun1\n'
++ targetcli
+targetcli shell version 2.1.54
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/iscsi/iqn.20...928/tpg1/acls> /iscsi/iqn.20...928/tpg1/luns> Created LUN 1.
+Created LUN 1->1 mapping in node ACL iqn.2020-07.org.openeuler:iscsi20928:client
+/iscsi/iqn.20...928/tpg1/luns> /iscsi/iqn.20...928/tpg1/luns> exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/target/backup/.
+Configuration saved to /etc/target/saveconfig.json
++ echo -e 'cd /iscsi/iqn.2020-07.org.openeuler:iscsi20928/tpg1/luns\n create /backstores/fileio/disk2 lun2\n'
++ targetcli
+targetcli shell version 2.1.54
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/iscsi/iqn.20...928/tpg1/luns> /iscsi/iqn.20...928/tpg1/luns> Created LUN 2.
+Created LUN 2->2 mapping in node ACL iqn.2020-07.org.openeuler:iscsi20928:client
+/iscsi/iqn.20...928/tpg1/luns> /iscsi/iqn.20...928/tpg1/luns> exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/target/backup/.
+Configuration saved to /etc/target/saveconfig.json
++ systemctl restart target
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo InitiatorName=iqn.2020-07.org.openeuler:iscsi20928:client
++ systemctl restart iscsid
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iscsiadm -m discovery -t st -p 127.0.0.1
+127.0.0.1:3260,1 iqn.2020-07.org.openeuler:iscsi20928
++ iscsiadm -m node -p 127.0.0.1 -l
+Logging in to [iface: default, target: iqn.2020-07.org.openeuler:iscsi20928, portal: 127.0.0.1,3260]
+Login to [iface: default, target: iqn.2020-07.org.openeuler:iscsi20928, portal: 127.0.0.1,3260] successful.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart multipathd
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ multipath -v2
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
+++ multipath -ll
+++ grep disk1
+++ awk '{print $1}'
++ path1=360014056ebe5e6c9ee04bdc800c96086
+++ multipath -ll
+++ grep disk2
+++ awk '{print $1}'
++ path2=360014052c9f65b2928f4259accc42b22
++ test -n 360014056ebe5e6c9ee04bdc800c96086
++ test -n 360014052c9f65b2928f4259accc42b22
++ sleep 1
++ mkfs.ext4 -F /dev/mapper/360014056ebe5e6c9ee04bdc800c96086
+mke2fs 1.46.5 (30-Dec-2021)
+Creating filesystem with 10240 1k blocks and 2560 inodes
+Filesystem UUID: 5eb332b4-f349-4da9-be88-f0b5a3eddf4f
+Superblock backups stored on blocks: 
+	8193
+
+Allocating group tables: 0/2   done                            
+Writing inode tables: 0/2   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/2   done
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mkfs.ext4 -F /dev/mapper/360014052c9f65b2928f4259accc42b22
+mke2fs 1.46.5 (30-Dec-2021)
+Creating filesystem with 10240 1k blocks and 2560 inodes
+Filesystem UUID: 06d6c237-0eab-42e3-99e6-a8c1d1a8890c
+Superblock backups stored on blocks: 
+	8193
+
+Allocating group tables: 0/2   done                            
+Writing inode tables: 0/2   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/2   done
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iscsiadm -m node -p 127.0.0.1 -u
+Logging out of session [sid: 1, target: iqn.2020-07.org.openeuler:iscsi20928, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2020-07.org.openeuler:iscsi20928, portal: 127.0.0.1,3260] successful.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iscsiadm -m node -o delete -p 127.0.0.1
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun  8 14:39:27 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun  8 14:39:27 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun  8 14:39:27 2023 - INFO  - start environment cleanup.
++ iscsiadm -m node -p 127.0.0.1 -u
+iscsiadm: No matching sessions found
++ iscsiadm -m node -o delete -p 127.0.0.1
+iscsiadm: No records found
++ systemctl stop multipathd
++ systemctl stop iscsid
++ systemctl stop target
++ echo -e 'cd /\n clearconfig confirm=true\n'
++ targetcli
+targetcli shell version 2.1.54
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/> /> All configuration cleared
+/> /> exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/target/backup/.
+Configuration saved to /etc/target/saveconfig.json
++ test -f initiatorname.iscsi
++ mv initiatorname.iscsi /etc/iscsi/initiatorname.iscsi
++ rm -rf /home/iscsi_lun1_20928 /home/iscsi_lun2_20928
++ test 0 -eq 1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmppkh7h54x ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmppkh7h54x
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun  8 14:39:28 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,283 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun  8 13:00:03 2023 - INFO  - Start to prepare the test environment.
++ OLD_LANG=en_US.UTF-8
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun  8 13:00:03 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun  8 13:00:03 2023 - INFO  - Start to run test.
++ free
++ grep -i mem -A 1
++ grep -i swap
+Swap:              0           0           0
++ CHECK_RESULT 0 0 0 'Failed command: free'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: free'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lscpu
++ grep -iE 'Arch|cpu'
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+CPU(s):                          4
+On-line CPU(s) list:             0-3
+Model name:                      QEMU Virtual CPU version 2.5+
+CPU family:                      15
+Flags:                           fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm constant_tsc nopl xtopology cpuid tsc_known_freq pni cx16 x2apic hypervisor lahf_lm cpuid_fault pti
+NUMA node0 CPU(s):               0-3
+Vulnerability Mds:               Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
++ CHECK_RESULT 0 0 0 'Failed command: lscpu'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: lscpu'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ fdisk -l
++ grep -iE 'disk|dev'
+Disk /dev/vda: 40 GiB, 42949672960 bytes, 83886080 sectors
+Disklabel type: dos
+Disk identifier: 0xfd350e35
+Device     Boot   Start      End  Sectors Size Id Type
+/dev/vda1          2048  4194303  4192256   2G  e W95 FAT16 (LBA)
+/dev/vda2       4194304 83886079 79691776  38G 83 Linux
++ CHECK_RESULT 0 0 0 'Failed command: fdisk'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: fdisk'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -iE 'name|version' /etc/os-release
++ grep openEuler
+NAME="openEuler"
+PRETTY_NAME="openEuler 23.03"
++ CHECK_RESULT 0 0 0 '/etc/os-release file view failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='/etc/os-release file view failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ timedatectl
+++ grep 'Time zone'
+++ awk '{print $3}'
++ old_zone=UTC
++ timedatectl
+++ date
+++ awk '{print$1}'
++ grep Thu
+               Local time: Thu 2023-06-08 13:00:03 UTC
+           Universal time: Thu 2023-06-08 13:00:03 UTC
+                 RTC time: Thu 2023-06-08 13:00:04
++ CHECK_RESULT 0 0 0 'Failed command: timedatectl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed command: timedatectl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ timedatectl list-timezones
++ grep Tokyo
+Asia/Tokyo
++ CHECK_RESULT 0 0 0 'Time zone information display failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Time zone information display failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ timedatectl
++ grep Tokyo
++ CHECK_RESULT 1 1 0 'The time zone is Tokyo'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='The time zone is Tokyo'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ timedatectl set-timezone Asia/Tokyo
++ CHECK_RESULT 0 0 0 'Failed to set time zone'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set time zone'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ timedatectl
++ grep Tokyo
+                Time zone: Asia/Tokyo (JST, +0900)
++ CHECK_RESULT 0 0 0 'The time zone isn'\''t Tokyo'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The time zone isn'\''t Tokyo'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ timedatectl set-timezone UTC
++ CHECK_RESULT 0 0 0 'Failed to recover time zone'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to recover time zone'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ localectl status
++ grep -i us
+   System Locale: LANG=en_US.UTF-8
++ CHECK_RESULT 0 0 0 'The system language does not belong to us'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The system language does not belong to us'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ localectl list-locales
++ grep zh
+zh_CN.UTF-8
+zh_HK.UTF-8
+zh_SG.UTF-8
+zh_TW.UTF-8
++ CHECK_RESULT 0 0 0 'The system language does not contain Chinese'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The system language does not contain Chinese'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ localectl set-locale LANG=zh_CN.utf8
++ CHECK_RESULT 0 0 0 'Failed to set Chinese'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Chinese'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ localectl status
++ grep zh_CN.utf8
+   System Locale: LANG=zh_CN.utf8
++ CHECK_RESULT 0 0 0 'The system language isn'\''t Chinese'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The system language isn'\''t Chinese'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ localectl set-locale LANG=en_US.UTF-8
++ CHECK_RESULT 0 0 0 'Failed to set English'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set English'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ localectl status
++ grep en_US.UTF-8
+   System Locale: LANG=en_US.UTF-8
++ CHECK_RESULT 0 0 0 'The system language isn'\''t English'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='The system language isn'\''t English'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun  8 13:00:04 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun  8 13:00:04 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun  8 13:00:04 2023 - INFO  - Start to restore the test environment.
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun  8 13:00:04 2023 - INFO  - End to restore the test environment.

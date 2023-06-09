@@ -1,0 +1,186 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu Jun  8 14:39:29 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL krb5-server
++ pkgs=krb5-server
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs krb5-server --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp1d70a5e4
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp1d70a5e4
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun  8 14:39:31 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun  8 14:39:31 2023 - INFO  - Start testing...
++ systemctl status krb5kdc
++ grep inactive
+     Active: inactive (dead)
++ CHECK_RESULT 0 0 0 'krbekdc status abnormal'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='krbekdc status abnormal'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ cat /etc/krb5.conf
+++ grep default_ccache_name
+++ awk '{print $3}'
++ KCM='KEYRING:persistent:%{uid}'
++ sed -i 's/KCM/KEYRING:persistent:%{uid}/g' /etc/krb5.conf.d/kcm_default_ccache
+sed: can't read /etc/krb5.conf.d/kcm_default_ccache: No such file or directory
++ /usr/sbin/kdb5_util create -s -r EXAMPLE.COM
+Initializing database '/var/kerberos/krb5kdc/principal' for realm 'EXAMPLE.COM',
+master key name 'K/M@EXAMPLE.COM'
+You will be prompted for the database Master Password.
+It is important that you NOT FORGET this password.
+Enter KDC database master key: 
+Re-enter KDC database master key to verify: 
+++ ls /var/kerberos/krb5kdc/
+++ grep principal
+++ wc -l
++ re=4
++ CHECK_RESULT 4 4 0 'krb5kdc config fail'
++ actual_result=4
++ expect_result=4
++ mode=0
++ error_log='krb5kdc config fail'
++ exit_mode=0
++ '[' -z 4 ']'
++ '[' 0 -eq 0 ']'
++ test 4x '!=' 4x
++ return 0
++ systemctl start krb5kdc
++ systemctl status krb5kdc
++ grep running
+     Active: active (running) since Thu 2023-06-08 14:39:32 UTC; 10ms ago
++ CHECK_RESULT 0 0 0 'krb5kdc start success'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='krb5kdc start success'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start kadmin
++ systemctl status kadmin
++ grep running
+     Active: active (running) since Thu 2023-06-08 14:39:32 UTC; 7ms ago
++ CHECK_RESULT 0 0 0 'kadmin start success'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='kadmin start success'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ kadmin.local
+Authenticating as principal root/admin@EXAMPLE.COM with password.
+kadmin.local:  ?
+Available kadmin.local requests:
+
+add_principal, addprinc, ank
+                         Add principal
+delete_principal, delprinc
+                         Delete principal
+modify_principal, modprinc
+                         Modify principal
+rename_principal, renprinc
+                         Rename principal
+change_password, cpw     Change password
+get_principal, getprinc  Get principal
+list_principals, listprincs, get_principals, getprincs
+                         List principals
+add_policy, addpol       Add policy
+modify_policy, modpol    Modify policy
+delete_policy, delpol    Delete policy
+get_policy, getpol       Get policy
+list_policies, listpols, get_policies, getpols
+                         List policies
+get_privs, getprivs      Get privileges
+ktadd, xst               Add entry(s) to a keytab
+ktremove, ktrem          Remove entry(s) from a keytab
+lock                     Lock database exclusively (use with extreme caution!)
+unlock                   Release exclusive database lock
+purgekeys                Purge previously retained old keys from a principal
+get_strings, getstrs     Show string attributes on a principal
+set_string, setstr       Set a string attribute on a principal
+del_string, delstr       Delete a string attribute on a principal
+list_requests, lr, ?     List available requests.
+quit, exit, q            Exit program.
+kadmin.local:  exit
++ CHECK_RESULT 0 0 0 'kadmin config success'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='kadmin config success'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun  8 14:39:32 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun  8 14:39:32 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun  8 14:39:32 2023 - INFO  - start environment cleanup.
++ systemctl stop krb5kdc
++ systemctl stop kadmin
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp1d70a5e4 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp1d70a5e4
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun  8 14:39:33 2023 - INFO  - Finish environment cleanup!

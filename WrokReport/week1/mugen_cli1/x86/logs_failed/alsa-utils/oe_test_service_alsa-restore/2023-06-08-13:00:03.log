@@ -1,0 +1,50 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun  8 13:00:03 2023 - INFO  - Start environmental preparation.
++ lspci
++ grep -i audio
+oe_test_service_alsa-restore.sh: line 24: lspci: command not found
++ LOG_INFO 'The environment does not support testing'
++ message='The environment does not support testing'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'The environment does not support testing'
+Thu Jun  8 13:00:03 2023 - INFO  - The environment does not support testing
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun  8 13:00:03 2023 - INFO  - start environment cleanup.
++ mv /etc/alsa/state-daemon.conf_bak /etc/alsa/state-daemon.conf
+mv: cannot stat '/etc/alsa/state-daemon.conf_bak': No such file or directory
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun  8 13:00:03 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun  8 13:00:03 2023 - INFO  - Finish environment cleanup!

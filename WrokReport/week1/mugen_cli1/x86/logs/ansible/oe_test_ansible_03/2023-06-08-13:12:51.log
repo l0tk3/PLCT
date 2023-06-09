@@ -1,0 +1,298 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ main
++++ type -t post_test
+++ '[' -n '' ']'
+++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
+++ rpm -qa
+++ grep expect
++++ type -t config_params
+++ '[' -n '' ']'
++++ type -t pre_test
+++ '[' -n '' ']'
++++ type -t run_test
+++ '[' -n '' ']'
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun  8 13:12:51 2023 - INFO  - Start to prepare the test environment.
++ Pre_Test
++ DNF_INSTALL ansible
++ pkgs=ansible
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs ansible --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpto5b307l
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpto5b307l
++ sed -i '1i\${NODE2_IPV4}' /etc/ansible/hosts
++ expect
+spawn ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:8S5eBUBzPHabXttdxjlMgACbFw2goj3HJCQq4gtHUjE root@localhost.localdomain
+The key's randomart image is:
++---[RSA 3072]----+
+| .Eo   +*== ...  |
+|..o.  . o+=o.  . |
+|= .o o o.o.o oo..|
+|+oo =   .o .o .++|
+|.o.o o  S .... ++|
+|... o    . .. . o|
+| .      . o      |
+|       . o       |
+|        .        |
++----[SHA256]-----+
++ expect
+spawn ssh-copy-id root@
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: ERROR: ssh: Could not resolve hostname : Name or service not known
+
+send: spawn id exp3 not open
+    while executing
+"send "yes\n""
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun  8 13:13:27 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun  8 13:13:27 2023 - INFO  - Start to run test.
++ ansible-doc --help
++ grep -i Usage:
+usage: ansible-doc [-h] [--version] [-v] [-M MODULE_PATH]
++ CHECK_RESULT 0 0 0 'Check ansible-doc --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-doc --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-doc --version
++ grep ansible-doc
+ansible-doc 2.9.27
+  executable location = /usr/bin/ansible-doc
++ CHECK_RESULT 0 0 0 'Check ansible-doc --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-doc --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn ansible-doc -l
+WARNING: terminal is not fully functional
+Press RETURN to continue 
+a10_server                                                    Manage A10 Ne...[m
+a10_server_axapi3                                             Manage A10 Ne...[m
+a10_service_group                                             Manage A10 Ne...[m
+a10_virtual_server                                            Manage A10 Ne...[m
+aci_aaa_user                                                  Manage AAA us...[m
+aci_aaa_user_certificate                                      Manage AAA us...[m
+aci_access_port_block_to_access_port                          Manage port b...[m
+aci_access_port_to_interface_policy_leaf_profile              Manage Fabric...[m
+aci_access_sub_port_block_to_access_port                      Manage sub po...[m
+aci_aep                                                       Manage attach...[m
+aci_aep_to_domain                                             Bind AEPs to ...[m
+aci_ap                                                        Manage top le...[m
+aci_bd                                                        Manage Bridge...[m
+aci_bd_subnet                                                 Manage Subnet...[m
+aci_bd_to_l3out                                               Bind Bridge D...[m
+aci_config_rollback                                           Provides roll...[m
+aci_config_snapshot                                           Manage Config...[m
+aci_contract                                                  Manage contra...[m
+aci_contract_subject                                          Manage initia...[m
+aci_contract_subject_to_filter                                Bind Contract...[m
+aci_domain                                                    Manage physic...[m
+aci_domain_to_encap_pool                                      Bind Domain t...[m
+aci_domain_to_vlan_pool                                       Bind Domain t...[m
+:+ CHECK_RESULT 0 0 0 'Check ansible-doc -l failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-doc -l failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible-doc -s mysql_user|grep "mysql_user:"' 2
++ wait_time=5
++ cmd='ansible-doc -s mysql_user|grep "mysql_user:"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible-doc -s mysql_user|grep "mysql_user:"' --mode 2
+  mysql_user:
++ CHECK_RESULT 0 0 0 'Check ansible-doc -s failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-doc -s failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn ansible-doc -a
+usage: ansible-doc
+       [-h]
+       [--version]
+       [-v]
+       [-M MODULE_PATH]
+       [--playbook-dir BASEDIR]
+       [-t {become,cache,callback,cliconf,connection,httpapi,inventory,lookup,netconf,shell,module,strategy,vars}]
+       [-j]
+       [-F | -l | -s | --metadata-dump]
+       [plugin ...]
+ansible-doc: error: unrecognized arguments: -a
+wq+ CHECK_RESULT 0 0 0 'Check ansible-doc -a failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-doc -a failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-galaxy --help
++ grep -i Usage:
+usage: ansible-galaxy [-h] [--version] [-v] TYPE ...
++ CHECK_RESULT 0 0 0 'Check ansible-galaxy --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-galaxy --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-galaxy --version
++ grep ansible-galaxy
+ansible-galaxy 2.9.27
+  executable location = /usr/bin/ansible-galaxy
++ CHECK_RESULT 0 0 0 'Check ansible-galaxy --version failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-galaxy --version failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ansible-galaxy list
+# /usr/share/ansible/roles
+# /etc/ansible/roles
+[WARNING]: - the configured path /root/.ansible/roles does not exist.
++ CHECK_RESULT 0 0 0 'Check ansible-galaxy list failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-galaxy list failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible-galaxy search geerlingguy.nginx|grep "roles matching your search:"' 2
++ wait_time=5
++ cmd='ansible-galaxy search geerlingguy.nginx|grep "roles matching your search:"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible-galaxy search geerlingguy.nginx|grep "roles matching your search:"' --mode 2
+Found 88 roles matching your search:
++ CHECK_RESULT 0 0 0 'Check ansible-galaxy search failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-galaxy search failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5 'ansible-galaxy info geerlingguy.nginx|grep "description:"' 2
++ wait_time=5
++ cmd='ansible-galaxy info geerlingguy.nginx|grep "description:"'
++ mode=2
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd 'ansible-galaxy info geerlingguy.nginx|grep "description:"' --mode 2
+	description: Nginx installation for Linux, FreeBSD and OpenBSD.
++ CHECK_RESULT 0 0 0 'Check ansible-galaxy info failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ansible-galaxy info failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun  8 13:14:24 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun  8 13:14:25 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun  8 13:14:25 2023 - INFO  - Start to restore the test environment.
++ Post_Test
++ rm -rf /etc/ansible/hosts
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpto5b307l ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpto5b307l
++ '[' 0 -ne 0 ']'
++ rm -rf /root/.ssh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun  8 13:14:26 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,125 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun  8 13:50:04 2023 - INFO  - Start to run test.
++ service auditd restart
+Redirecting to /bin/systemctl restart auditd.service
+Failed to restart auditd.service: Unit auditd.service not found.
++ auditctl -w /home -p wa -k home_changes
+oe_test_audit_use_w_audit.sh: line 26: auditctl: command not found
++ CHECK_RESULT 127 0 0 'add failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='add failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'add failed'
++ LOG_ERROR 'add failed'
++ message='add failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'add failed'
+Thu Jun  8 13:50:04 2023 - ERROR - add failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_use_w_audit.sh line 27'
++ message='oe_test_audit_use_w_audit.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_use_w_audit.sh line 27'
+Thu Jun  8 13:50:04 2023 - ERROR - oe_test_audit_use_w_audit.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -l
+oe_test_audit_use_w_audit.sh: line 28: auditctl: command not found
++ grep -e '-w /home -p wa -k home_changes'
++ CHECK_RESULT 1 0 0 'grep failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep failed'
++ LOG_ERROR 'grep failed'
++ message='grep failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'grep failed'
+Thu Jun  8 13:50:04 2023 - ERROR - grep failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_use_w_audit.sh line 29'
++ message='oe_test_audit_use_w_audit.sh line 29'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_use_w_audit.sh line 29'
+Thu Jun  8 13:50:04 2023 - ERROR - oe_test_audit_use_w_audit.sh line 29
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -W /home -p wa -k home_changes
+oe_test_audit_use_w_audit.sh: line 30: auditctl: command not found
++ CHECK_RESULT 127 0 0 'delete failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='delete failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'delete failed'
++ LOG_ERROR 'delete failed'
++ message='delete failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'delete failed'
+Thu Jun  8 13:50:04 2023 - ERROR - delete failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_use_w_audit.sh line 31'
++ message='oe_test_audit_use_w_audit.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_use_w_audit.sh line 31'
+Thu Jun  8 13:50:04 2023 - ERROR - oe_test_audit_use_w_audit.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -l
+oe_test_audit_use_w_audit.sh: line 32: auditctl: command not found
++ grep -e '-w /home -p wa -k home_changes'
++ CHECK_RESULT 1 1 0 'grep failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun  8 13:50:04 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun  8 13:50:04 2023 - ERROR - failed to execute the case.
++ exit 3
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_audit_use_w_audit.sh post_test'
++ message='oe_test_audit_use_w_audit.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_audit_use_w_audit.sh post_test'
+Thu Jun  8 13:50:04 2023 - INFO  - oe_test_audit_use_w_audit.sh post_test

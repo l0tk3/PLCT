@@ -1,0 +1,217 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun  8 13:50:16 2023 - INFO  - Start to prepare the test environment.
++ useradd Jevons
+++ id -u Jevons
++ uid=1000
++ LOG_INFO 'End to prepare the environment'
++ message='End to prepare the environment'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the environment'
+Thu Jun  8 13:50:16 2023 - INFO  - End to prepare the environment
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun  8 13:50:16 2023 - INFO  - Start to run test.
++ service auditd restart
+Redirecting to /bin/systemctl restart auditd.service
+Failed to restart auditd.service: Unit auditd.service not found.
++ auditctl -D
+oe_test_audit_rule_conflict_strategy.sh: line 33: auditctl: command not found
++ CHECK_RESULT 127 0 0 'delete failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='delete failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'delete failed'
++ LOG_ERROR 'delete failed'
++ message='delete failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'delete failed'
+Thu Jun  8 13:50:16 2023 - ERROR - delete failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_rule_conflict_strategy.sh line 34'
++ message='oe_test_audit_rule_conflict_strategy.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_rule_conflict_strategy.sh line 34'
+Thu Jun  8 13:50:16 2023 - ERROR - oe_test_audit_rule_conflict_strategy.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -a always,exit -S all -F uid=1000 -k syscall
+oe_test_audit_rule_conflict_strategy.sh: line 35: auditctl: command not found
++ CHECK_RESULT 127 0 0 'add failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='add failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'add failed'
++ LOG_ERROR 'add failed'
++ message='add failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'add failed'
+Thu Jun  8 13:50:16 2023 - ERROR - add failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_rule_conflict_strategy.sh line 36'
++ message='oe_test_audit_rule_conflict_strategy.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_rule_conflict_strategy.sh line 36'
+Thu Jun  8 13:50:16 2023 - ERROR - oe_test_audit_rule_conflict_strategy.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -l
+oe_test_audit_rule_conflict_strategy.sh: line 37: auditctl: command not found
++ grep -e '-a always,exit -S all -F uid=1000'
++ CHECK_RESULT 1 0 0 'grep failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep failed'
++ LOG_ERROR 'grep failed'
++ message='grep failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'grep failed'
+Thu Jun  8 13:50:16 2023 - ERROR - grep failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_rule_conflict_strategy.sh line 38'
++ message='oe_test_audit_rule_conflict_strategy.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_rule_conflict_strategy.sh line 38'
+Thu Jun  8 13:50:16 2023 - ERROR - oe_test_audit_rule_conflict_strategy.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -A never,task
+oe_test_audit_rule_conflict_strategy.sh: line 39: auditctl: command not found
++ CHECK_RESULT 127 0 0 'add second failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='add second failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'add second failed'
++ LOG_ERROR 'add second failed'
++ message='add second failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'add second failed'
+Thu Jun  8 13:50:16 2023 - ERROR - add second failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_rule_conflict_strategy.sh line 40'
++ message='oe_test_audit_rule_conflict_strategy.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_rule_conflict_strategy.sh line 40'
+Thu Jun  8 13:50:16 2023 - ERROR - oe_test_audit_rule_conflict_strategy.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ auditctl -l
+oe_test_audit_rule_conflict_strategy.sh: line 41: auditctl: command not found
++ grep -e '-a never,task'
++ CHECK_RESULT 1 0 0 'grep second failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='grep second failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'grep second failed'
++ LOG_ERROR 'grep second failed'
++ message='grep second failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'grep second failed'
+Thu Jun  8 13:50:17 2023 - ERROR - grep second failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_rule_conflict_strategy.sh line 42'
++ message='oe_test_audit_rule_conflict_strategy.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_rule_conflict_strategy.sh line 42'
+Thu Jun  8 13:50:17 2023 - ERROR - oe_test_audit_rule_conflict_strategy.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
+++ date +%T
++ starttime=13:50:17
++ su - Jevons -c pwd
+/home/Jevons
++ CHECK_RESULT 0 0 0 failed
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=failed
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ date +%T
++ endtime=13:50:17
++ ausearch -k syscall -ts 13:50:17 -te 13:50:17 -x pwd
+oe_test_audit_rule_conflict_strategy.sh: line 47: ausearch: command not found
++ CHECK_RESULT 127 1 0 'ausearch failed'
++ actual_result=127
++ expect_result=1
++ mode=0
++ error_log='ausearch failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 1x
++ test -n 'ausearch failed'
++ LOG_ERROR 'ausearch failed'
++ message='ausearch failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ausearch failed'
+Thu Jun  8 13:50:17 2023 - ERROR - ausearch failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_audit_rule_conflict_strategy.sh line 48'
++ message='oe_test_audit_rule_conflict_strategy.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_audit_rule_conflict_strategy.sh line 48'
+Thu Jun  8 13:50:17 2023 - ERROR - oe_test_audit_rule_conflict_strategy.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun  8 13:50:17 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun  8 13:50:17 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun  8 13:50:17 2023 - INFO  - Start to restore the test environment.
++ userdel -rf Jevons
++ auditctl -D
+oe_test_audit_rule_conflict_strategy.sh: line 56: auditctl: command not found
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun  8 13:50:17 2023 - INFO  - End to restore the test environment.

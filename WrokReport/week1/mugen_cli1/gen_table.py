@@ -1,7 +1,7 @@
 import json
 import os
 
-x86_log_path="./x86/logs"
+x86_file_path="./x86"
 riscv_file_path="./risc-v"
 
 def isfailed(logpath):
@@ -11,11 +11,15 @@ def isfailed(logpath):
     if "LOG_ERROR" in log:
         return True
     return False
-logdir=riscv_file_path+"/logs"
-logfailedir=riscv_file_path+"/logs_failed"
-listsfile=open(riscv_file_path+"/lists/list_test","r")
-lists=listsfile.read()
-listsfile.close()
+
+log_dir=riscv_file_path+"/logs"
+log_fail_dir=riscv_file_path+"/logs_failed"
+x86_log_dir=x86_file_path+"/logs"
+x86_log_faile_dir=x86_file_path+"/logs_failed"
+
+lists_file=open(riscv_file_path+"/lists/list_test","r")
+lists=lists_file.read()
+lists_file.close()
 lists=lists.split("\n")
 # print(lists)
 table=open("table.md","w+")
@@ -30,22 +34,24 @@ for perlist in lists:
     # print(suite["cases"])
     suitename=perlist
     for case in suite["cases"]:
-        logfilelist=os.listdir(logfailedir)
+        fail_suite_list=os.listdir(log_fail_dir)
+        x86_fail_suite_list=os.listdir(x86_log_faile_dir)
         casename=case['name']
         status="success"
-        if perlist in logfilelist:
-            logfilelist=os.listdir(logfailedir+f"/{perlist}")
-            if casename in logfilelist:
+        if perlist in fail_suite_list:
+            fail_case_list=os.listdir(log_fail_dir+f"/{perlist}")
+            if casename in fail_case_list:
                 status="fail"
-                x86logdir=x86_log_path+f"/{perlist}/{casename}"
-                x86logfile=os.listdir(x86logdir)[0]
-                if isfailed(x86logdir+"/"+x86logfile):
-                    status="x86 fail"
-        suitelogdir=logdir+f"/{perlist}"
-        if casename not in os.listdir(suitelogdir):
+                if perlist in x86_fail_suite_list:
+                    x86_fail_case_list=os.listdir(x86_log_faile_dir+f"/{perlist}")
+                    if casename in x86_fail_case_list:
+                        status="x86 fail"
+
+        suite_log_dir=log_dir+f"/{perlist}"
+        if casename not in os.listdir(suite_log_dir):
             continue
-        thislogdir=logdir+f"/{perlist}/{casename}"
-        logfile=os.listdir(thislogdir)[0]
-        payload=f'| {suitename} | {casename} | {status} | {thislogdir+"/"+logfile} | None |\n'
+        this_log_dir=log_dir+f"/{perlist}/{casename}"
+        log_file=os.listdir(this_log_dir)[0]
+        payload=f'| {suitename} | {casename} | {status} | {this_log_dir+"/"+log_file} | None |\n'
         suitename=""
         table.write(payload)

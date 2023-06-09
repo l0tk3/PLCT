@@ -39,7 +39,7 @@
 |  | oe_test_acpid_01 | success | ./risc-v/logs/acpid/oe_test_acpid_01/2023-05-25-21_35_22.log | None |
 |  | oe_test_acpid_02 | success | ./risc-v/logs/acpid/oe_test_acpid_02/2023-05-25-21_36_22.log | None |
 |  | oe_test_acpid_03 | success | ./risc-v/logs/acpid/oe_test_acpid_03/2023-05-25-21_37_21.log | None |
-| alsa-utils | oe_test_service_alsa-restore | fail | ./risc-v/logs/alsa-utils/oe_test_service_alsa-restore/2023-05-25-21_35_07.log | None |
+| alsa-utils | oe_test_service_alsa-restore | x86 fail | ./risc-v/logs/alsa-utils/oe_test_service_alsa-restore/2023-05-25-21_35_07.log | None |
 |  | oe_test_service_alsa-state | success | ./risc-v/logs/alsa-utils/oe_test_service_alsa-state/2023-05-25-21_35_17.log | None |
 | amanda | oe_test_amanda_amcheck | fail | ./risc-v/logs/amanda/oe_test_amanda_amcheck/2023-05-25-21_37_19.log | None |
 |  | oe_test_amanda_ambackup | success | ./risc-v/logs/amanda/oe_test_amanda_ambackup/2023-05-25-21_39_11.log | None |
@@ -93,7 +93,7 @@
 |  | oe_test_docker_create_003 | fail | ./risc-v/logs/AT/oe_test_docker_create_003/2023-05-25-22_54_48.log | None |
 |  | oe_test_docker_create_001 | fail | ./risc-v/logs/AT/oe_test_docker_create_001/2023-05-25-22_56_46.log | None |
 |  | oe_test_docker_save_load_001 | fail | ./risc-v/logs/AT/oe_test_docker_save_load_001/2023-05-25-22_58_45.log | None |
-|  | oe_test_docker_custom_image | fail | ./risc-v/logs/AT/oe_test_docker_custom_image/2023-05-25-23_00_44.log | None |
+|  | oe_test_docker_custom_image | x86 fail | ./risc-v/logs/AT/oe_test_docker_custom_image/2023-05-25-23_00_44.log | None |
 |  | oe_test_runc | success | ./risc-v/logs/AT/oe_test_runc/2023-05-25-23_30_54.log | None |
 |  | oe_test_iSula_query_state_001 | fail | ./risc-v/logs/AT/oe_test_iSula_query_state_001/2023-05-25-23_32_02.log | None |
 |  | oe_test_iSula_attach_rename_001 | fail | ./risc-v/logs/AT/oe_test_iSula_attach_rename_001/2023-05-25-23_33_22.log | None |
@@ -180,7 +180,7 @@
 |  | oe_test_acpid | success | ./risc-v/logs/AT/oe_test_acpid/2023-05-26-00_54_14.log | None |
 |  | oe_test_aide_compare_database | success | ./risc-v/logs/AT/oe_test_aide_compare_database/2023-05-26-00_55_02.log | None |
 |  | oe_test_aide_update_database | success | ./risc-v/logs/AT/oe_test_aide_update_database/2023-05-26-01_02_54.log | None |
-|  | oe_test_arping | x86 fail | ./risc-v/logs/AT/oe_test_arping/2023-05-26-01_19_34.log | None |
+|  | oe_test_arping | fail | ./risc-v/logs/AT/oe_test_arping/2023-05-26-01_19_34.log | None |
 |  | oe_test_atd | success | ./risc-v/logs/AT/oe_test_atd/2023-05-26-01_19_48.log | None |
 |  | oe_test_augeas_augtool | success | ./risc-v/logs/AT/oe_test_augeas_augtool/2023-05-26-01_21_38.log | None |
 |  | oe_test_bc | success | ./risc-v/logs/AT/oe_test_bc/2023-05-26-01_22_13.log | None |
@@ -219,11 +219,11 @@
 |  | oe_test_audit_count_number_of_event | x86 fail | ./risc-v/logs/audit/oe_test_audit_count_number_of_event/2023-05-25-22_37_18.log | None |
 |  | oe_test_audit_show_event_list | x86 fail | ./risc-v/logs/audit/oe_test_audit_show_event_list/2023-05-25-22_37_30.log | None |
 |  | oe_test_audit_user_build_connection | x86 fail | ./risc-v/logs/audit/oe_test_audit_user_build_connection/2023-05-25-22_37_42.log | None |
-|  | oe_test_audit_max_log_file_rotate | fail | ./risc-v/logs/audit/oe_test_audit_max_log_file_rotate/2023-05-25-22_39_42.log | None |
+|  | oe_test_audit_max_log_file_rotate | x86 fail | ./risc-v/logs/audit/oe_test_audit_max_log_file_rotate/2023-05-25-22_39_42.log | None |
 |  | oe_test_audit_max_log_file_ignore | x86 fail | ./risc-v/logs/audit/oe_test_audit_max_log_file_ignore/2023-05-25-22_40_37.log | None |
 |  | oe_test_audit_max_log_file_syslog | x86 fail | ./risc-v/logs/audit/oe_test_audit_max_log_file_syslog/2023-05-25-22_48_03.log | None |
 |  | oe_test_audit_max_log_file_suspend | x86 fail | ./risc-v/logs/audit/oe_test_audit_max_log_file_suspend/2023-05-25-22_49_20.log | None |
-|  | oe_test_audit_max_log_file_keep_logs | fail | ./risc-v/logs/audit/oe_test_audit_max_log_file_keep_logs/2023-05-25-22_50_35.log | None |
+|  | oe_test_audit_max_log_file_keep_logs | x86 fail | ./risc-v/logs/audit/oe_test_audit_max_log_file_keep_logs/2023-05-25-22_50_35.log | None |
 |  | oe_test_audit_available_disk_space | x86 fail | ./risc-v/logs/audit/oe_test_audit_available_disk_space/2023-05-25-22_51_28.log | None |
 |  | oe_test_inject_time_fault | x86 fail | ./risc-v/logs/audit/oe_test_inject_time_fault/2023-05-25-22_55_53.log | None |
 |  | oe_test_service_auditd | x86 fail | ./risc-v/logs/audit/oe_test_service_auditd/2023-05-25-22_57_10.log | None |

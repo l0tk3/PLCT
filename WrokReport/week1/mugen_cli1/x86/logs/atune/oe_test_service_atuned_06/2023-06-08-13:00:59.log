@@ -1,0 +1,226 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ source ./common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ ARRAY_PROFILE=("arm-native-android-container-robox" "basic-test-suite-baseline-fio" "basic-test-suite-baseline-lmbench" "basic-test-suite-baseline-netperf" "basic-test-suite-baseline-stream" "basic-test-suite-baseline-unixbench" "basic-test-suite-speccpu-speccpu2006" "basic-test-suite-specjbb-specjbb2015" "big-data-hadoop-hdfs-dfsio-hdd" "big-data-hadoop-hdfs-dfsio-ssd" "big-data-hadoop-spark-bayesian" "big-data-hadoop-spark-kmeans" "big-data-hadoop-spark-sql1" "big-data-hadoop-spark-sql10" "big-data-hadoop-spark-sql2" "big-data-hadoop-spark-sql3" "big-data-hadoop-spark-sql4" "big-data-hadoop-spark-sql5" "big-data-hadoop-spark-sql6" "big-data-hadoop-spark-sql7" "big-data-hadoop-spark-sql8" "big-data-hadoop-spark-sql9" "big-data-hadoop-spark-tersort" "big-data-hadoop-spark-wordcount" "cloud-compute-kvm-host" "database-mariadb-2p-tpcc-c3" "database-mariadb-4p-tpcc-c3" "database-mongodb-2p-sysbench" "database-mysql-2p-sysbench-hdd" "database-mysql-2p-sysbench-ssd" "database-postgresql-2p-sysbench-hdd" "database-postgresql-2p-sysbench-ssd" "default-default" "docker-mariadb-2p-tpcc-c3" "docker-mariadb-4p-tpcc-c3" "hpc-gatk4-human-genome" "in-memory-database-redis-redis-benchmark" "middleware-dubbo-dubbo-benchmark" "storage-ceph-vdbench-hdd" "storage-ceph-vdbench-ssd" "virtualization-consumer-cloud-olc" "virtualization-mariadb-2p-tpcc-c3" "virtualization-mariadb-4p-tpcc-c3" "web-apache-traffic-server-spirent-pingpo" "web-nginx-http-long-connection" "web-nginx-https-short-connection")
+++ ARRAY_SERVICE=("arm-native" "basic-test-suite" "big-data" "cloud-compute" "database" "default" "docker" "hpc" "in-memory-database" "middleware" "storage" "virtualization" "web")
+++ SPECIAL_CHARACTERS='~\!@#%^*'
+++ ULTRA_LONG_CHARACTERS=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
++ file_name=atuneTest
++ min_interval=1
++ min_duration=10
+++ pwd
++ output_path=/root/mugen/testcases/cli-test/atune
+++ lsblk
+++ awk NR==2
+++ awk '{print $1}'
++ sys_disk=sr0
++ sys_network=
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Thu Jun  8 13:01:00 2023 - INFO  - Start environment preparation.
++ deploy_autund
++ DNF_INSTALL 'atune  atune-engine'
++ pkgs='atune  atune-engine'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'atune  atune-engine' --node 1 --tempfile ''
+Thu Jun  8 13:01:00 2023 - INFO  - pkgs:(atune  atune-engine) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
+++ lsblk
+++ grep disk
+++ awk 'NR==1{print $1}'
++ disk_name=vda
++ cp /etc/atuned/atuned.cnf /etc/atuned/atuned.cnf.bak
++ cp /etc/atuned/engine.cnf /etc/atuned/engine.cnf.bak
++ sed -i 's/^disk =.*/disk = vda/g' /etc/atuned/atuned.cnf
++ sed -i 's/^network =.*/network = /g' /etc/atuned/atuned.cnf
++ sed -i 's/rest_tls = true/rest_tls = false/g' /etc/atuned/atuned.cnf
++ sed -i 's/engine_tls = true/engine_tls = false/g' /etc/atuned/atuned.cnf
++ sed -i 's/engine_tls = true/engine_tls = false/g' /etc/atuned/engine.cnf
++ creat_ca
++ CERT_PATH=demo
++ mkdir demo
+mkdir: cannot create directory ‘demo’: File exists
++ openssl genrsa -out demo/ca.key 2048
++ openssl req -new -x509 -days 3650 -subj /CN=ca -key demo/ca.key -out demo/ca.crt
++ IP_ADDR=localhost
++ openssl genrsa -out demo/server.key 2048
++ cp /etc/pki/tls/openssl.cnf demo
++ test localhost == localhost
++ echo '[SAN]\nsubjectAltName=DNS:localhost'
++ echo subjectAltName=DNS:localhost
++ openssl req -new -subj /CN=localhost -config demo/openssl.cnf -key demo/server.key -out demo/server.csr
++ openssl x509 -req -sha256 -CA demo/ca.crt -CAkey demo/ca.key -CAcreateserial -days 3650 -extfile demo/extfile.cnf -in demo/server.csr -out demo/server.crt
+Certificate request self-signature ok
+subject=CN = localhost
++ rm -rf demo/ca.srl demo/server.csr demo/extfile.cnf demo/openssl.cnf
++ IP_ADDR=localhost
++ openssl genrsa -out demo/client.key 2048
++ cp /etc/pki/tls/openssl.cnf demo
++ test localhost == localhost
++ echo '[SAN]\nsubjectAltName=DNS:localhost'
++ echo subjectAltName=DNS:localhost
++ openssl req -new -subj /CN=localhost -config demo/openssl.cnf -key demo/client.key -out demo/client.csr
++ openssl x509 -req -sha256 -CA demo/ca.crt -CAkey demo/ca.key -CAcreateserial -days 3650 -extfile demo/extfile.cnf -in demo/client.csr -out demo/client.crt
+Certificate request self-signature ok
+subject=CN = localhost
++ rm -rf demo/ca.srl demo/client.csr demo/extfile.cnf demo/openssl.cnf
+++ pwd
++ cp -ar /root/mugen/testcases/cli-test/atune/demo/ca.crt demo/server.crt demo/server.key /etc/atuned/rest_certs/
+++ pwd
++ cp -ar /root/mugen/testcases/cli-test/atune/demo/ca.crt demo/client.crt demo/client.key /etc/atuned/engine_certs/
+++ pwd
++ cp -ar /root/mugen/testcases/cli-test/atune/demo/ca.crt demo/server.crt demo/server.key /etc/atuned/engine_certs/
++ systemctl start atuned
+Job for atuned.service failed because the control process exited with error code.
+See "systemctl status atuned.service" and "journalctl -xeu atuned.service" for details.
++ systemctl status atuned
++ grep running
++ CHECK_RESULT 1 0 0 'atuned service startup failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atuned service startup failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atuned service startup failure'
++ LOG_ERROR 'atuned service startup failure'
++ message='atuned service startup failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atuned service startup failure'
+Thu Jun  8 13:01:01 2023 - ERROR - atuned service startup failure
++ (( exec_result++ ))
++ LOG_ERROR './common/common_lib.sh line 40'
++ message='./common/common_lib.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message './common/common_lib.sh line 40'
+Thu Jun  8 13:01:01 2023 - ERROR - ./common/common_lib.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start atune-engine
++ systemctl status atune-engine
++ grep running
+     Active: active (running) since Thu 2023-06-08 13:01:01 UTC; 8ms ago
++ CHECK_RESULT 0 0 0 'atune-engine service startup failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='atune-engine service startup failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun  8 13:01:01 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ atune-adm collection -h
++ grep OPTIONS
+   atune-adm collection OPTIONS
+OPTIONS:
++ CHECK_RESULT 0 0 0 'atune-adm collection -h failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='atune-adm collection -h failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ atune-adm collection -f atuneTest -i 1 -d 10 -o /root/mugen/testcases/cli-test/atune -b sr0 -n -t default
+NAME:
+   atune-adm collection - collect the system data for training
+
+USAGE:
+   atune-adm collection OPTIONS
+
+DESCRIPTION:
+   
+   collect data for train machine learning model, you must set the command options
+   which has no default value, the output_path must be a absolute path.
+       example: atune-adm collection -f mysql -i 5 -d 1200 -o /home -b sda -n eth0 -t mysql
+
+OPTIONS:
+   --filename value, -f value     filename of the generated data file
+   --interval value, -i value     time interval for collecting data (default: 5)
+   --duration value, -d value     the duration for collecting data (default: 1200)
+   --output_path value, -o value  the output path of the collecting data
+   --disk value, -b value         the disk to be collected
+   --network value, -n value      the network to be collected
+   --app_type value, -t value     the app type of the collected data
+   
+error: app type must be specified
++ CHECK_RESULT 1 0 0 'atune-adm collection failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='atune-adm collection failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'atune-adm collection failure'
++ LOG_ERROR 'atune-adm collection failure'
++ message='atune-adm collection failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'atune-adm collection failure'
+Thu Jun  8 13:01:01 2023 - ERROR - atune-adm collection failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_atuned_06.sh line 39'
++ message='oe_test_service_atuned_06.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_atuned_06.sh line 39'
+Thu Jun  8 13:01:01 2023 - ERROR - oe_test_service_atuned_06.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun  8 13:01:01 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ clean_autund
++ systemctl stop atuned
++ systemctl stop atune-engine
++ rm -fr /etc/atuned/atuned.cnf /etc/atuned/atuned.cnf
++ mv /etc/atuned/atuned.cnf.bak /etc/atuned/atuned.cnf
++ mv /etc/atuned/engine.cnf.bak /etc/atuned/engine.cnf
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun  8 13:01:01 2023 - WARN  - no thing to do.
++ return 0

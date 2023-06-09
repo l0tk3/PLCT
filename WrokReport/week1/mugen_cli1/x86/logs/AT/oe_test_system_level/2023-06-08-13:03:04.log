@@ -1,0 +1,171 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun  8 13:03:04 2023 - INFO  - Start to prepare the test environment.
++ default_target='poweroff.target rescue.target multi-user.target graphical.target reboot.target'
+++ systemctl get-default
++ target=multi-user.target
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun  8 13:03:04 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun  8 13:03:04 2023 - INFO  - Start to run test.
++ case $target in
++ LOG_INFO 'default target is multi-user'
++ message='default target is multi-user'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'default target is multi-user'
+Thu Jun  8 13:03:04 2023 - INFO  - default target is multi-user
++ for i in $default_target
++ systemctl set-default poweroff.target
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/poweroff.target.
++ LOG_INFO 'set-default poweroff.target success'
++ message='set-default poweroff.target success'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'set-default poweroff.target success'
+Thu Jun  8 13:03:05 2023 - INFO  - set-default poweroff.target success
++ for i in $default_target
++ systemctl set-default rescue.target
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/rescue.target.
++ LOG_INFO 'set-default rescue.target success'
++ message='set-default rescue.target success'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'set-default rescue.target success'
+Thu Jun  8 13:03:05 2023 - INFO  - set-default rescue.target success
++ for i in $default_target
++ systemctl set-default multi-user.target
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/multi-user.target.
++ LOG_INFO 'set-default multi-user.target success'
++ message='set-default multi-user.target success'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'set-default multi-user.target success'
+Thu Jun  8 13:03:05 2023 - INFO  - set-default multi-user.target success
++ for i in $default_target
++ systemctl set-default graphical.target
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/graphical.target.
++ LOG_INFO 'set-default graphical.target success'
++ message='set-default graphical.target success'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'set-default graphical.target success'
+Thu Jun  8 13:03:05 2023 - INFO  - set-default graphical.target success
++ for i in $default_target
++ systemctl set-default reboot.target
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/reboot.target.
++ LOG_INFO 'set-default reboot.target success'
++ message='set-default reboot.target success'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'set-default reboot.target success'
+Thu Jun  8 13:03:05 2023 - INFO  - set-default reboot.target success
++ systemctl set-default multi-user.target
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/multi-user.target.
++ CHECK_RESULT 0 0 0 'set-default execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='set-default execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl list-units --type target
++ egrep 'multi-user.target|graphical.target'
+egrep: warning: egrep is obsolescent; using grep -E
+  multi-user.target     loaded active active Multi-User System
++ CHECK_RESULT 0 0 0 'list-units execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='list-units execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl isolate graphical.target
++ CHECK_RESULT 0 0 0 'isolate execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isolate execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl list-units --type target
++ grep graphical
+  graphical.target      loaded active active Graphical Interface
++ CHECK_RESULT 0 0 0 'list-units execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='list-units execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl isolate multi-user.target
++ CHECK_RESULT 0 0 0 'isolate execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='isolate execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep graphical
++ systemctl list-units --type target
++ CHECK_RESULT 1 1 0 'list-units execution failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='list-units execution failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun  8 13:03:05 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun  8 13:03:05 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_system_level.sh post_test'
++ message='oe_test_system_level.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_system_level.sh post_test'
+Thu Jun  8 13:03:05 2023 - INFO  - oe_test_system_level.sh post_test

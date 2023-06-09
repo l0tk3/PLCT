@@ -1,0 +1,216 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun  8 14:37:35 2023 - INFO  - Start testing...
++ df
++ grep /boot
+/dev/vda1        2092000   63300   2028700   4% /boot
++ CHECK_RESULT 0 0 0 'df display error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='df display error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ df
++ grep G
++ CHECK_RESULT 1 1 0 'df default display error'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='df default display error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ df -h
++ grep -E 'G|M|K'
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        4.0M     0  4.0M   0% /dev
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           796M   53M  743M   7% /run
+tmpfs           4.0M     0  4.0M   0% /sys/fs/cgroup
+/dev/vda2        38G  5.3G   30G  15% /
+tmpfs           2.0G  120K  2.0G   1% /tmp
+/dev/vda1       2.0G   62M  2.0G   4% /boot
++ CHECK_RESULT 0 0 0 'df -h didn'\''t find G|M|K'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='df -h didn'\''t find G|M|K'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ df --help
+Usage: df [OPTION]... [FILE]...
+Show information about the file system on which each FILE resides,
+or all file systems by default.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all             include pseudo, duplicate, inaccessible file systems
+  -B, --block-size=SIZE  scale sizes by SIZE before printing them; e.g.,
+                           '-BM' prints sizes in units of 1,048,576 bytes;
+                           see SIZE format below
+      --direct          show statistics for a file instead of mount point
+  -h, --human-readable  print sizes in powers of 1024 (e.g., 1023M)
+  -H, --si              print sizes in powers of 1000 (e.g., 1.1G)
+  -i, --inodes          list inode information instead of block usage
+  -k                    like --block-size=1K
+  -l, --local           limit listing to local file systems
+      --no-sync         do not invoke sync before getting usage info (default)
+      --output[=FIELD_LIST]  use the output format defined by FIELD_LIST,
+                               or print all fields if FIELD_LIST is omitted.
+  -P, --portability     use the POSIX output format
+      --sync            invoke sync before getting usage info
+      --total           elide all entries insignificant to available space,
+                          and produce a grand total
+  -t, --type=TYPE       limit listing to file systems of type TYPE
+  -T, --print-type      print file system type
+  -x, --exclude-type=TYPE   limit listing to file systems not of type TYPE
+  -v                    (ignored)
+      --help     display this help and exit
+      --version  output version information and exit
+
+Display values are in units of the first available SIZE from --block-size,
+and the DF_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables.
+Otherwise, units default to 1024 bytes (or 512 if POSIXLY_CORRECT is set).
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+FIELD_LIST is a comma-separated list of columns to be included.  Valid
+field names are: 'source', 'fstype', 'itotal', 'iused', 'iavail', 'ipcent',
+'size', 'used', 'avail', 'pcent', 'file' and 'target' (see info page).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/df>
+or available locally via: info '(coreutils) df invocation'
++ CHECK_RESULT 0 0 0 'df --help error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='df --help error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ df -i
+++ grep Inodes
+++ awk '{ print$2 }'
++ res1=Inodes
++ [[ Inodes == \I\n\o\d\e\s ]]
++ CHECK_RESULT 0 0 0 'df -i error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='df -i error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ df --total
+++ awk '{ print$1 }'
+++ tail -1
++ res2=total
++ [[ total == \t\o\t\a\l ]]
++ CHECK_RESULT 0 0 0 'df --total error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='df --total error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ df
+++ grep devtmpfs
+++ awk '{ print$2 }'
+++ awk '{a=$1/1024}{printf("%d\n",a~/./?int(a)+1:a)}'
++ res3=5
+++ df -m
+++ grep devtmpfs
+++ awk '{ print$2 }'
++ res4=4
++ [[ 5 == 4 ]]
++ CHECK_RESULT 1 0 0 'df -m error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='df -m error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'df -m error'
++ LOG_ERROR 'df -m error'
++ message='df -m error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'df -m error'
+Thu Jun  8 14:37:35 2023 - ERROR - df -m error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_df.sh line 40'
++ message='oe_test_df.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_df.sh line 40'
+Thu Jun  8 14:37:35 2023 - ERROR - oe_test_df.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
+++ df --type=tmpfs
+++ awk '{ print$1 }'
+++ head -2
+++ tail -1
++ res5=tmpfs
++ [[ tmpfs == \t\m\p\f\s ]]
++ CHECK_RESULT 0 0 0 'df --type error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='df --type error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun  8 14:37:35 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun  8 14:37:35 2023 - ERROR - failed to execute the case.
++ exit 1
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_df.sh post_test'
++ message='oe_test_df.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_df.sh post_test'
+Thu Jun  8 14:37:35 2023 - INFO  - oe_test_df.sh post_test

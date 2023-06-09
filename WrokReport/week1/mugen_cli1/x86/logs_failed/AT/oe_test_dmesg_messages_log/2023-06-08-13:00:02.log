@@ -1,0 +1,105 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun  8 13:00:02 2023 - INFO  - Start to run test.
++ dmesg
++ grep -iE 'error|fail|not support|no such'
++ grep -vE 'Failed to initialise from firmware|platform does not support|virgl 3d acceleration not supported| _OSC failed| fail to add MMCONFIG information|res=success|CPU model not supported|not support BPF/cgroup firewalling'
++ CHECK_RESULT 1 1 0 'Dmesg has false information.'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Dmesg has false information.'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ grep -iE 'error|fail|not support|no such' /var/log/messages
++ grep -vE 'Failed to initialise|platform does not support|Couldn'\''t write '\''fq_codel'\''|Failed to init entropy source|KD_FONT_OP_GET failed while|virgl 3d acceleration|ignorelockingfailure|not support BPF/cgroup firewalling| /etc/lvm/backup/openeuler: stat failed:|Failed to read VG openeuler |ovsdb: Could not connect:|secret-key: failure to generate|dbus-org.freedesktop.resolve1.service|imjournal: No statefile exists|net.ipv4.icmp_ignore_bogus_error_responses|pam_faillock|rasdaemon: wait_access() failed|wait_access\(\) failed|rasdaemon: Can'\''t get|lm_sensors.service|Failed to start Hardware Monitoring Sensors|unit=lm_sensors|/etc/lvm/backup/openeuler_openeuler|package at does not exist| _OSC failed| fail to add MMCONFIG information|failed to open file /etc/ndctl/keys/nvdimm-master|/etc/samba/secrets.tdb\) No such file or directory|Unable to watch \(/root/.ssh/*|ipv6: duplicate address check failed for|linklocal6: failed to generate an address|res=success|Can'\''t open PID file /run/restorecond.pid|CPU model not supported|\[hwrng \]: Initialization Failed|\[rndr  \]: Initialization Failed'
+grep: /var/log/messages: binary file matches
+May 26 02:06:09 localhost kernel: [    1.752638] jitterentropy: Initialization failed with host not compliant with requirements: 2
+May 26 02:06:09 localhost rngd[253]: [rdrand]: Initialization Failed
+May 26 02:06:14 localhost rngd[253]: [jitter]: Initialization Failed
+May 26 02:06:14 localhost rngd[253]: [pkcs11]: Initialization Failed
+May 26 02:06:24 localhost systemd-tmpfiles[1021]: /usr/lib/tmpfiles.d/systemd.conf:19: Failed to resolve user 'systemd-network': No such process
+May 26 02:06:24 localhost systemd-tmpfiles[1021]: /usr/lib/tmpfiles.d/systemd.conf:20: Failed to resolve user 'systemd-network': No such process
+May 26 02:06:24 localhost systemd-tmpfiles[1021]: /usr/lib/tmpfiles.d/systemd.conf:21: Failed to resolve user 'systemd-network': No such process
+May 26 02:06:24 localhost systemd-tmpfiles[1021]: /usr/lib/tmpfiles.d/systemd.conf:22: Failed to resolve user 'systemd-network': No such process
+May 26 02:06:45 localhost kernel: [   52.117456] Error: Driver 'pcspkr' is already registered, aborting...
+May 26 02:06:53 localhost kdumpctl[1594]: Starting kdump: [FAILED]
+May 26 02:06:53 localhost systemd[1]: kdump.service: Main process exited, code=exited, status=1/FAILURE
+May 26 02:06:53 localhost systemd[1]: kdump.service: Failed with result 'exit-code'.
+May 26 02:06:53 localhost systemd[1]: Failed to start Crash recovery kernel arming.
+May 26 02:06:54 localhost kernel: [   60.914046] powernow_k8: Power state transitions not supported
+May 26 02:06:54 localhost kernel: [   60.923272] powernow_k8: Power state transitions not supported
+May 26 02:06:54 localhost kernel: [   60.932507] powernow_k8: Power state transitions not supported
+May 26 02:06:54 localhost kernel: [   60.944536] powernow_k8: Power state transitions not supported
+May 26 02:06:54 localhost kernel: [   60.946294] powernow_k8: Power state transitions not supported
+May 26 02:06:54 localhost kernel: [   60.953691] powernow_k8: Power state transitions not supported
+May 26 02:06:54 localhost kernel: [   60.959211] powernow_k8: Power state transitions not supported
+May 26 02:06:54 localhost kernel: [   60.959245] powernow_k8: Power state transitions not supported
+May 26 02:11:15 localhost [RPM][5001]: install perl-Error-1:0.17029-3.oe2303.noarch: success
+May 26 02:11:18 localhost [RPM][5001]: install perl-Error-1:0.17029-3.oe2303.noarch: success
+May 26 03:10:49 localhost dnf[5582]: Failed determining last makecache time.
+May 26 03:50:39 localhost kernel: [    1.777871] jitterentropy: Initialization failed with host not compliant with requirements: 2
+May 26 03:50:39 localhost rngd[254]: [rdrand]: Initialization Failed
+May 26 03:50:44 localhost rngd[254]: [jitter]: Initialization Failed
+May 26 03:50:44 localhost rngd[254]: [pkcs11]: Initialization Failed
+May 26 03:50:54 localhost systemd-tmpfiles[1031]: /usr/lib/tmpfiles.d/systemd.conf:19: Failed to resolve user 'systemd-network': No such process
+May 26 03:50:54 localhost systemd-tmpfiles[1031]: /usr/lib/tmpfiles.d/systemd.conf:20: Failed to resolve user 'systemd-network': No such process
+May 26 03:50:54 localhost systemd-tmpfiles[1031]: /usr/lib/tmpfiles.d/systemd.conf:21: Failed to resolve user 'systemd-network': No such process
+May 26 03:50:54 localhost systemd-tmpfiles[1031]: /usr/lib/tmpfiles.d/systemd.conf:22: Failed to resolve user 'systemd-network': No such process
+May 26 03:51:02 localhost dracut-pre-pivot[1212]: ln: failed to create symbolic link '/sysroot/boot/initramfs-6.1.19-7.0.0.17.oe2303.x86_64.img': File exists
++ CHECK_RESULT 0 1 0 'Dmesg has false information.'
++ actual_result=0
++ expect_result=1
++ mode=0
++ error_log='Dmesg has false information.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 1x
++ test -n 'Dmesg has false information.'
++ LOG_ERROR 'Dmesg has false information.'
++ message='Dmesg has false information.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Dmesg has false information.'
+Thu Jun  8 13:00:02 2023 - ERROR - Dmesg has false information.
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_dmesg_messages_log.sh line 26'
++ message='oe_test_dmesg_messages_log.sh line 26'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_dmesg_messages_log.sh line 26'
+Thu Jun  8 13:00:02 2023 - ERROR - oe_test_dmesg_messages_log.sh line 26
++ '[' 0 -eq 1 ']'
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun  8 13:00:02 2023 - ERROR - failed to execute the case.
++ exit 1
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_dmesg_messages_log.sh post_test'
++ message='oe_test_dmesg_messages_log.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_dmesg_messages_log.sh post_test'
+Thu Jun  8 13:00:02 2023 - INFO  - oe_test_dmesg_messages_log.sh post_test

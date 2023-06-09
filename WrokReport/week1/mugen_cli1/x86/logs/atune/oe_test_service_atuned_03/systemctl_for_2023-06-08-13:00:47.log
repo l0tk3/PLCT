@@ -1,0 +1,16 @@
+× atuned.service - A-Tune Daemon
+     Loaded: loaded (/usr/lib/systemd/system/atuned.service; disabled; vendor preset: disabled)
+     Active: failed (Result: exit-code) since Thu 2023-06-08 13:00:48 UTC; 1s ago
+    Process: 3007 ExecStart=/usr/bin/atuned (code=exited, status=255/EXCEPTION)
+   Main PID: 3007 (code=exited, status=255/EXCEPTION)
+
+Jun 08 13:00:48 localhost.localdomain atuned[3007]: time="2023-06-08T13:00:48Z" level=info msg="valid network : ens6" file="config.go:321"
+Jun 08 13:00:48 localhost.localdomain atuned[3007]: time="2023-06-08T13:00:48Z" level=info msg="Connecting to DB: /var/lib/atuned/atuned.db" file="sqlstore.go:47"
+Jun 08 13:00:48 localhost.localdomain atuned[3007]: time="2023-06-08T13:00:48Z" level=info msg="initializing service: monitor" file="atuned.go:126"
+Jun 08 13:00:48 localhost.localdomain atuned[3007]: time="2023-06-08T13:00:48Z" level=info msg="initializing service: pyengine" file="atuned.go:126"
+Jun 08 13:00:48 localhost.localdomain atuned[3007]: time="2023-06-08T13:00:48Z" level=info msg="load profile service successfully\n" file="profile.go:111"
+Jun 08 13:00:48 localhost.localdomain atuned[3007]: time="2023-06-08T13:00:48Z" level=info msg="Create opt.profile service successfully\n" file="atuned.go:65"
+Jun 08 13:00:48 localhost.localdomain atuned[3007]: time="2023-06-08T13:00:48Z" level=error msg="cmd.Run() analysis failed with: exit status 1" file="pyservice.go:76"
+Jun 08 13:00:48 localhost.localdomain systemd[1]: atuned.service: Main process exited, code=exited, status=255/EXCEPTION
+Jun 08 13:00:48 localhost.localdomain systemd[1]: atuned.service: Failed with result 'exit-code'.
+Jun 08 13:00:48 localhost.localdomain systemd[1]: Failed to start A-Tune Daemon.
