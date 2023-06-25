@@ -18,6 +18,31 @@
 
 在低于7.0版本的qemu中使用参数```-device intel-hda -device hda-duplex```可以成功添加音频设备，此时在x86中测试成功，在risc-v中测试失败：用命令lspci可以找到音频设别，但是用命令aplay -l显示没有声卡。
 
+
+
+更新：
+
+ubuntu中安装pulseaudio```sudo apt install pulseaudio```，然后用命令```systemctl --user start pulseaudio```启动pulseaudio服务，再将启动脚本改为如下：
+
+```bash
+cmd="qemu-system-riscv64 \
+  -nographic -machine virt \
+  -smp "$vcpu" -m "$memory"G \
+  -bios "$fw" \
+  -drive file="$drive",format=qcow2,id=hd0 \
+  -object rng-random,filename=/dev/urandom,id=rng0 \
+  -device intel-hda -device hda-duplex \
+  -device virtio-vga \
+  -device virtio-rng-device,rng=rng0 \
+  -device virtio-blk-device,drive=hd0 \
+  -device virtio-net-device,netdev=usernet \
+  -netdev user,id=usernet,hostfwd=tcp::"$ssh_port"-:22 \
+  -device qemu-xhci -usb -device usb-kbd -device usb-tablet \
+  -audiodev pa,id=snd0 -device usb-audio,audiodev=snd0"
+```
+
+即可通过测试。
+
 ##  anaconda
 
 ###  oe_test_service_zram
