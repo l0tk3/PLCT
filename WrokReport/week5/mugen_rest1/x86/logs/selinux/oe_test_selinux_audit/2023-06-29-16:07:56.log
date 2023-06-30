@@ -1,0 +1,95 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 16:07:56 2023 - INFO  - Start executing testcase.
++ ausearch -m AVC,USER_AVC,SELINUX_ERR,USER_SELINUX_ERR
+Thu Jun 29 16:37:56 2023 - ERROR - Timeout : Command 'bash -x oe_test_selinux_audit.sh' timed out after 1799.9999857369999 seconds
+<no matches>
+++ post_test
+++ LOG_INFO 'start environment cleanup.'
+++ message='start environment cleanup.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 16:37:56 2023 - INFO  - start environment cleanup.
+++ rm -rf selinux_log
+++ LOG_INFO 'Finish environment cleanup!'
+++ message='Finish environment cleanup!'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 16:37:56 2023 - INFO  - Finish environment cleanup!
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_audit.sh line 27'
++ message='oe_test_selinux_audit.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_audit.sh line 27'
+Thu Jun 29 16:37:56 2023 - ERROR - oe_test_selinux_audit.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
+++ grep -c AVC selinux_log
+grep: selinux_log: No such file or directory
++ test -gt 0
+oe_test_selinux_audit.sh: line 28: test: -gt: unary operator expected
++ CHECK_RESULT 2
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_audit.sh line 29'
++ message='oe_test_selinux_audit.sh line 29'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_audit.sh line 29'
+Thu Jun 29 16:37:56 2023 - ERROR - oe_test_selinux_audit.sh line 29
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 29 16:37:56 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 16:37:56 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 16:37:56 2023 - INFO  - start environment cleanup.
++ rm -rf selinux_log
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 16:37:56 2023 - INFO  - Finish environment cleanup!

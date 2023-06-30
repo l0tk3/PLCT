@@ -1,0 +1,329 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:20:44 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL aspell
++ pkgs=aspell
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs aspell --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpivxo3pk_
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpivxo3pk_
++ unzip common/aspell6-en-2020.12.07-0.zip
+oe_test_aspell_02.sh: line 25: unzip: command not found
++ cp -R './aspell6-en-2020.12.07-0/*' /usr/lib64/aspell-0.60
+cp: cannot stat './aspell6-en-2020.12.07-0/*': No such file or directory
++ OLD_LANG=en_US.UTF-8
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:22:16 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:22:16 2023 - INFO  - Start to run test.
++ echo namee
++ aspell pipe
++ grep '& namee 34 0:'
+Error: No word lists can be found for the language "en_US".
++ CHECK_RESULT 1 0 0 'Check aspell pipe failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check aspell pipe failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check aspell pipe failed'
++ LOG_ERROR 'Check aspell pipe failed'
++ message='Check aspell pipe failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check aspell pipe failed'
+Thu Jun 29 14:22:16 2023 - ERROR - Check aspell pipe failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 36'
++ message='oe_test_aspell_02.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 36'
+Thu Jun 29 14:22:16 2023 - ERROR - oe_test_aspell_02.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ echo name
++ aspell soundslike
++ grep NM
+Error: The language "en_US" is not known. This is probably because: the file "/usr/lib64/aspell-0.60/en_US.dat" can not be opened for reading.
++ CHECK_RESULT 1 0 0 'Check aspell soundslike failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check aspell soundslike failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check aspell soundslike failed'
++ LOG_ERROR 'Check aspell soundslike failed'
++ message='Check aspell soundslike failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check aspell soundslike failed'
+Thu Jun 29 14:22:16 2023 - ERROR - Check aspell soundslike failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 39'
++ message='oe_test_aspell_02.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 39'
+Thu Jun 29 14:22:16 2023 - ERROR - oe_test_aspell_02.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ echo name
++ aspell expand 1
++ grep name
+Error: The language "en_US" is not known. This is probably because: the file "/usr/lib64/aspell-0.60/en_US.dat" can not be opened for reading.
++ CHECK_RESULT 1 0 0 'Check aspell expand failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check aspell expand failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check aspell expand failed'
++ LOG_ERROR 'Check aspell expand failed'
++ message='Check aspell expand failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check aspell expand failed'
+Thu Jun 29 14:22:16 2023 - ERROR - Check aspell expand failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 42'
++ message='oe_test_aspell_02.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 42'
+Thu Jun 29 14:22:16 2023 - ERROR - oe_test_aspell_02.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ echo and
++ aspell clean
++ grep and
+Error: The language "en_US" is not known. This is probably because: the file "/usr/lib64/aspell-0.60/en_US.dat" can not be opened for reading.
++ CHECK_RESULT 1 0 0 'Check aspell clean failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check aspell clean failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check aspell clean failed'
++ LOG_ERROR 'Check aspell clean failed'
++ message='Check aspell clean failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check aspell clean failed'
+Thu Jun 29 14:22:16 2023 - ERROR - Check aspell clean failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 45'
++ message='oe_test_aspell_02.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 45'
+Thu Jun 29 14:22:16 2023 - ERROR - oe_test_aspell_02.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ echo 'and name'
++ aspell munch-list
++ grep 'and name'
+Error: The language "en_US" is not known. This is probably because: the file "/usr/lib64/aspell-0.60/en_US.dat" can not be opened for reading.
++ CHECK_RESULT 1 0 0 'Check aspell munch-list failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check aspell munch-list failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check aspell munch-list failed'
++ LOG_ERROR 'Check aspell munch-list failed'
++ message='Check aspell munch-list failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check aspell munch-list failed'
+Thu Jun 29 14:22:16 2023 - ERROR - Check aspell munch-list failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 48'
++ message='oe_test_aspell_02.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 48'
+Thu Jun 29 14:22:16 2023 - ERROR - oe_test_aspell_02.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ aspell dicts
++ grep en_US-variant_0
++ CHECK_RESULT 1 0 0 'Check aspell dicts failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check aspell dicts failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check aspell dicts failed'
++ LOG_ERROR 'Check aspell dicts failed'
++ message='Check aspell dicts failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check aspell dicts failed'
+Thu Jun 29 14:22:16 2023 - ERROR - Check aspell dicts failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 51'
++ message='oe_test_aspell_02.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 51'
+Thu Jun 29 14:22:16 2023 - ERROR - oe_test_aspell_02.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ aspell filters
++ grep 'filter to skip URL'
+url            filter to skip URL like constructs
++ CHECK_RESULT 0 0 0 'Check aspell filters failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell filters failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aspell modes
++ grep 'mode for checking generic SGML/XML'
+sgml           mode for checking generic SGML/XML documents
++ CHECK_RESULT 0 0 0 'Check aspell modes failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell modes failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo and
++ aspell munch --sug-mode=bad-spellers -l en conv from to either none
++ grep and
+Error: The language "en" is not known. This is probably because: the file "/usr/lib64/aspell-0.60/en.dat" can not be opened for reading.
++ CHECK_RESULT 1 0 0 'Check aspell munch --sug-mode=bad-spellers conv from to either none failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check aspell munch --sug-mode=bad-spellers conv from to either none failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check aspell munch --sug-mode=bad-spellers conv from to either none failed'
++ LOG_ERROR 'Check aspell munch --sug-mode=bad-spellers conv from to either none failed'
++ message='Check aspell munch --sug-mode=bad-spellers conv from to either none failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check aspell munch --sug-mode=bad-spellers conv from to either none failed'
+Thu Jun 29 14:22:16 2023 - ERROR - Check aspell munch --sug-mode=bad-spellers conv from to either none failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 60'
++ message='oe_test_aspell_02.sh line 60'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 60'
+Thu Jun 29 14:22:17 2023 - ERROR - oe_test_aspell_02.sh line 60
++ '[' 0 -eq 1 ']'
++ return 0
++ echo name
++ aspell munch --sug-mode=bad-spellers -l en norm-map
++ grep name
+Error: The language "en" is not known. This is probably because: the file "/usr/lib64/aspell-0.60/en.dat" can not be opened for reading.
++ CHECK_RESULT 1 0 0 'Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed'
++ LOG_ERROR 'Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed'
++ message='Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed'
+Thu Jun 29 14:22:17 2023 - ERROR - Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 63'
++ message='oe_test_aspell_02.sh line 63'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 63'
+Thu Jun 29 14:22:17 2023 - ERROR - oe_test_aspell_02.sh line 63
++ '[' 0 -eq 1 ']'
++ return 0
++ echo namee
++ spell 2.txt
++ grep namee
+Error: No word lists can be found for the language "en_US".
++ CHECK_RESULT 1 0 0 'Check spell failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check spell failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check spell failed'
++ LOG_ERROR 'Check spell failed'
++ message='Check spell failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check spell failed'
+Thu Jun 29 14:22:17 2023 - ERROR - Check spell failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_aspell_02.sh line 67'
++ message='oe_test_aspell_02.sh line 67'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_aspell_02.sh line 67'
+Thu Jun 29 14:22:17 2023 - ERROR - oe_test_aspell_02.sh line 67
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 14:22:17 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 9
++ test 9 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:22:17 2023 - ERROR - failed to execute the case.
++ exit 9
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:22:17 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpivxo3pk_ ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpivxo3pk_
++ '[' 0 -ne 0 ']'
++ rm -rf aspell6-en-2020.12.07-0 2.txt
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:22:17 2023 - INFO  - End to restore the test environment.

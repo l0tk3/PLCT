@@ -1,0 +1,133 @@
+{
+    "path": "${OET_PATH}/testcases/system-test/fs-test/FS_IO",
+    "add disk": [20],
+    "cases": [
+        {
+            "name": "oe_test_FSIO_aio_cancel"
+        },
+        {
+            "name": "oe_test_FSIO_aio_libaio"
+        },
+        {
+            "name": "oe_test_FSIO_aio_read"
+        },
+        {
+            "name": "oe_test_FSIO_aio_suspend"
+        },
+        {
+            "name": "oe_test_FSIO_aio_write"
+        },
+        {
+            "name": "oe_test_FSIO_cat_page_fault"
+        },
+        {
+            "name": "oe_test_FSIO_delay_write_sync"
+        },
+        {
+            "name": "oe_test_FSIO_dirty_page_more_than_bg_ratio"
+        },
+        {
+            "name": "oe_test_FSIO_dirty_page_more_than_ratio"
+        },
+        {
+            "name": "oe_test_FSIO_dirty_page_writeback_centisecs"
+        },
+        {
+            "name": "oe_test_FSIO_fopen_a"
+        },
+        {
+            "name": "oe_test_FSIO_fopen_a+"
+        },
+        {
+            "name": "oe_test_FSIO_fopen_r"
+        },
+        {
+            "name": "oe_test_FSIO_fopen_r+"
+        },
+        {
+            "name": "oe_test_FSIO_fopen_w"
+        },
+        {
+            "name": "oe_test_FSIO_fopen_w+"
+        },
+        {
+            "name": "oe_test_FSIO_fread_unlimit_count"
+        },
+        {
+            "name": "oe_test_FSIO_frw_fseek_cur"
+        },
+        {
+            "name": "oe_test_FSIO_frw_fseek_end"
+        },
+        {
+            "name": "oe_test_FSIO_frw_fseek_set"
+        },
+        {
+            "name": "oe_test_FSIO_fs_IO"
+        },
+        {
+            "name": "oe_test_FSIO_fwrite_unlimit_count"
+        },
+        {
+            "name": "oe_test_FSIO_hdparm"
+        },
+        {
+            "name": "oe_test_FSIO_lio_listio"
+        },
+        {
+            "name": "oe_test_FSIO_loop_fopen_fclose"
+        },
+        {
+            "name": "oe_test_FSIO_loop_open_close_file"
+        },
+        {
+            "name": "oe_test_FSIO_open_direct_file"
+        },
+        {
+            "name": "oe_test_FSIO_open_excel_file"
+        },
+        {
+            "name": "oe_test_FSIO_open_noctty_trun_file"
+        },
+        {
+            "name": "oe_test_FSIO_open_ro_file"
+        },
+        {
+            "name": "oe_test_FSIO_open_rw_append_file"
+        },
+        {
+            "name": "oe_test_FSIO_open_wo_create_file"
+        },
+        {
+            "name": "oe_test_FSIO_page_cache"
+        },
+        {
+            "name": "oe_test_FSIO_prw_file"
+        },
+        {
+            "name": "oe_test_FSIO_read_larger_filesize"
+        },
+        {
+            "name": "oe_test_FSIO_readahead"
+        },
+        {
+            "name": "oe_test_FSIO_rw_file_lseek_cur"
+        },
+        {
+            "name": "oe_test_FSIO_rw_file_lseek_end"
+        },
+        {
+            "name": "oe_test_FSIO_rw_file_lseek_set"
+        },
+        {
+            "name": "oe_test_FSIO_splice"
+        },
+        {
+            "name": "oe_test_FSIO_sync_dirty_page"
+        },
+        {
+            "name": "oe_test_FSIO_truncate"
+        }
+    ]
+}
+

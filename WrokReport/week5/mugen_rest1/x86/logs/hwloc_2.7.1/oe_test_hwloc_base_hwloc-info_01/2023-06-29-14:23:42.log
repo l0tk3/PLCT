@@ -1,0 +1,221 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:23:42 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:24:44 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:24:44 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:24:44 2023 - INFO  - Start to run test.
++ hwloc-info -h
++ grep Usage
+Usage: hwloc-info [ options ] [ locations ]
++ CHECK_RESULT 0 0 0 'hwloc-info -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info --version
++ grep hwloc-info
+hwloc-info 2.7.1
++ CHECK_RESULT 0 0 0 'hwloc-info --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info --objects core:0
++ grep 'type = Core'
+ type = Core
+ full type = Core
++ CHECK_RESULT 0 0 0 'hwloc-info --object failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --object failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l ./test.xml
++ hwloc-info -i test.xml
++ grep depth
+depth 0:           1 Machine (type #0)
+ depth 1:          1 Package (type #1)
+  depth 2:         1 L3Cache (type #6)
+   depth 3:        4 L2Cache (type #5)
+    depth 4:       4 L1dCache (type #4)
+     depth 5:      4 L1iCache (type #9)
+      depth 6:     4 Core (type #2)
+       depth 7:    4 PU (type #3)
+Special depth -3:  1 NUMANode (type #13)
+Special depth -4:  1 Bridge (type #14)
+Special depth -5:  5 PCIDev (type #15)
+Special depth -6:  3 OSDev (type #16)
+Special depth -7:  1 Misc (type #17)
++ CHECK_RESULT 0 0 0 'hwloc-info -i <file> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info -i <file> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info -i / --verbose
++ grep /
+assuming `/' is a file-system root
++ CHECK_RESULT 0 0 0 'hwloc-info -i <directory> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info -i <directory> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info -s core:0
++ grep Core:0
+Core:0
++ CHECK_RESULT 0 0 0 'hwloc-info -s failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info -s failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info -v core:0
++ grep 'Core L#0'
+Core L#0
++ CHECK_RESULT 0 0 0 'hwloc-info -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info --ancestors -l package:0
++ grep 'Machine L#0'
+Machine L#0 = parent #1 of Package L#0
++ CHECK_RESULT 0 0 0 'hwloc-info --ancestors failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --ancestors failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info --ancestor core pu:0
++ grep 'type = Core'
+ type = Core
+ full type = Core
++ CHECK_RESULT 0 0 0 'hwloc-info --ancestor <type> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --ancestor <type> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -i 'node:2 8' ./old.xml
++ hwloc-info --thissystem -i old.xml pu:all
++ grep 'PU L#15'
+PU L#15
++ CHECK_RESULT 0 0 0 'hwloc-info --thissystem failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --thissystem failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 29 14:24:44 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:24:44 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:24:44 2023 - INFO  - Start to restore the test environment.
++ rm -rf old.xml test.xml
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:24:44 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:24:44 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,23 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 16:07:56 2023 - INFO  - Start executing testcase.
++ ausearch -m AVC,USER_AVC,SELINUX_ERR,USER_SELINUX_ERR
+Thu Jun 29 16:37:56 2023 - ERROR - Timeout : Command 'bash -x oe_test_selinux_audit.sh' timed out after 1799.9999857369999 seconds

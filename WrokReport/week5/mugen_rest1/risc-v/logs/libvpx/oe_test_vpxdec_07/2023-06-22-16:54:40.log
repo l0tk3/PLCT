@@ -1,0 +1,212 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:54:43 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'libvpx tar'
++ pkgs='libvpx tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libvpx tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpnc8rhrsh
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpnc8rhrsh
++ tar -xf common/libvpx.tar.gz
++ mkdir tmp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:55:11 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:55:11 2023 - INFO  - Start to run test.
++ vpxdec --help
++ grep Options:
+Options:
+VP8 Postprocessing Options:
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --help '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --help '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose --i420 -o tmp/1.vpx data/1.ivf
+WebM Project VP8 Decoder v1.7.0
++ ls tmp
++ grep 1.vpx
+1.vpx
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --codec'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --codec'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose -o tmp/1_flipuv.i420 data/1.ivf
+WebM Project VP8 Decoder v1.7.0
++ ls tmp
++ grep 1_flipuv.i420
+1_flipuv.i420
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec -o'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec -o'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose --noblit -o tmp/noblit.vpx data/1.ivf
++ grep 'WebM Project VP8 Decoder v1.7.0'
+WebM Project VP8 Decoder v1.7.0
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --noblit'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --noblit'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose --progress -o tmp/progress.vpx data/1.ivf
++ grep '74 decoded frames.*74 showed frames'
+1 decoded frames/1 showed frames in 54733 us (18.27 fps)2 decoded frames/2 showed frames in 80136 us (24.96 fps)3 decoded frames/3 showed frames in 100493 us (29.85 fps)4 decoded frames/4 showed frames in 110395 us (36.23 fps)5 decoded frames/5 showed frames in 120617 us (41.45 fps)6 decoded frames/6 showed frames in 131729 us (45.55 fps)7 decoded frames/7 showed frames in 142948 us (48.97 fps)8 decoded frames/8 showed frames in 154382 us (51.82 fps)9 decoded frames/9 showed frames in 166241 us (54.14 fps)10 decoded frames/10 showed frames in 178071 us (56.16 fps)11 decoded frames/11 showed frames in 188074 us (58.49 fps)12 decoded frames/12 showed frames in 197885 us (60.64 fps)13 decoded frames/13 showed frames in 207780 us (62.57 fps)14 decoded frames/14 showed frames in 218164 us (64.17 fps)15 decoded frames/15 showed frames in 227758 us (65.86 fps)16 decoded frames/16 showed frames in 237895 us (67.26 fps)17 decoded frames/17 showed frames in 247646 us (68.65 fps)18 decoded frames/18 showed frames in 257528 us (69.90 fps)19 decoded frames/19 showed frames in 267153 us (71.12 fps)20 decoded frames/20 showed frames in 277190 us (72.15 fps)21 decoded frames/21 showed frames in 287151 us (73.13 fps)22 decoded frames/22 showed frames in 297058 us (74.06 fps)23 decoded frames/23 showed frames in 306722 us (74.99 fps)24 decoded frames/24 showed frames in 316679 us (75.79 fps)25 decoded frames/25 showed frames in 326929 us (76.47 fps)26 decoded frames/26 showed frames in 336807 us (77.20 fps)27 decoded frames/27 showed frames in 346466 us (77.93 fps)28 decoded frames/28 showed frames in 356276 us (78.59 fps)29 decoded frames/29 showed frames in 365929 us (79.25 fps)30 decoded frames/30 showed frames in 375612 us (79.87 fps)31 decoded frames/31 showed frames in 385343 us (80.45 fps)32 decoded frames/32 showed frames in 395078 us (81.00 fps)33 decoded frames/33 showed frames in 405013 us (81.48 fps)34 decoded frames/34 showed frames in 414876 us (81.95 fps)35 decoded frames/35 showed frames in 424809 us (82.39 fps)36 decoded frames/36 showed frames in 434892 us (82.78 fps)37 decoded frames/37 showed frames in 444408 us (83.26 fps)38 decoded frames/38 showed frames in 453850 us (83.73 fps)39 decoded frames/39 showed frames in 463226 us (84.19 fps)40 decoded frames/40 showed frames in 473268 us (84.52 fps)41 decoded frames/41 showed frames in 483049 us (84.88 fps)42 decoded frames/42 showed frames in 493209 us (85.16 fps)43 decoded frames/43 showed frames in 503241 us (85.45 fps)44 decoded frames/44 showed frames in 512764 us (85.81 fps)45 decoded frames/45 showed frames in 522661 us (86.10 fps)46 decoded frames/46 showed frames in 532079 us (86.45 fps)47 decoded frames/47 showed frames in 541778 us (86.75 fps)48 decoded frames/48 showed frames in 551551 us (87.03 fps)49 decoded frames/49 showed frames in 561512 us (87.26 fps)50 decoded frames/50 showed frames in 571055 us (87.56 fps)51 decoded frames/51 showed frames in 580556 us (87.85 fps)52 decoded frames/52 showed frames in 589850 us (88.16 fps)53 decoded frames/53 showed frames in 599590 us (88.39 fps)54 decoded frames/54 showed frames in 609453 us (88.60 fps)55 decoded frames/55 showed frames in 619189 us (88.83 fps)56 decoded frames/56 showed frames in 628928 us (89.04 fps)57 decoded frames/57 showed frames in 638880 us (89.22 fps)58 decoded frames/58 showed frames in 648302 us (89.46 fps)59 decoded frames/59 showed frames in 657809 us (89.69 fps)60 decoded frames/60 showed frames in 667384 us (89.90 fps)61 decoded frames/61 showed frames in 677393 us (90.05 fps)62 decoded frames/62 showed frames in 687010 us (90.25 fps)63 decoded frames/63 showed frames in 696623 us (90.44 fps)64 decoded frames/64 showed frames in 706343 us (90.61 fps)65 decoded frames/65 showed frames in 715951 us (90.79 fps)66 decoded frames/66 showed frames in 725795 us (90.93 fps)67 decoded frames/67 showed frames in 735248 us (91.13 fps)68 decoded frames/68 showed frames in 744631 us (91.32 fps)69 decoded frames/69 showed frames in 766311 us (90.04 fps)70 decoded frames/70 showed frames in 772815 us (90.58 fps)71 decoded frames/71 showed frames in 794329 us (89.38 fps)72 decoded frames/72 showed frames in 805472 us (89.39 fps)73 decoded frames/73 showed frames in 815010 us (89.57 fps)74 decoded frames/74 showed frames in 825462 us (89.65 fps)74 decoded frames/74 showed frames in 825500 us (89.64 fps)74 decoded frames/74 showed frames in 825500 us (89.64 fps)
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --progress'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --progress'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose --progress --limit=10 -o tmp/limit.vpx data/1.ivf
++ grep '10 decoded frames'
+1 decoded frames/1 showed frames in 49142 us (20.35 fps)2 decoded frames/2 showed frames in 63958 us (31.27 fps)3 decoded frames/3 showed frames in 79517 us (37.73 fps)4 decoded frames/4 showed frames in 89370 us (44.76 fps)5 decoded frames/5 showed frames in 99452 us (50.28 fps)6 decoded frames/6 showed frames in 110450 us (54.32 fps)7 decoded frames/7 showed frames in 121472 us (57.63 fps)8 decoded frames/8 showed frames in 132524 us (60.37 fps)9 decoded frames/9 showed frames in 143952 us (62.52 fps)10 decoded frames/10 showed frames in 155570 us (64.28 fps)10 decoded frames/10 showed frames in 155578 us (64.28 fps)10 decoded frames/10 showed frames in 155578 us (64.28 fps)
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --limit'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --limit'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose --progress --skip=10 -o tmp/skip.vpx data/1.ivf
++ grep 'Skipping first'
+Skipping first 10 frames.
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --skip'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --skip'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose --summary -o tmp/postproc.vpx data/1.ivf
++ grep '74 decoded frames'
+74 decoded frames/74 showed frames in 791493 us (93.49 fps)
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --summary '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --summary '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose -o tmp/threads.vpx data/1.ivf
+WebM Project VP8 Decoder v1.7.0
++ ls tmp
++ grep threads.vpx
+threads.vpx
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --threads '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --threads '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxdec --codec=vp8 --threads=6 --verbose -o tmp/verbose.vpx data/1.ivf
++ grep 'WebM Project VP8 Decoder v1.7.0'
+WebM Project VP8 Decoder v1.7.0
++ CHECK_RESULT 0 0 0 'Failed option: vpxdec --verbose '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxdec --verbose '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 16:55:19 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:55:20 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:55:20 2023 - INFO  - Start to restore the test environment.
++ rm -rf tmp data
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpnc8rhrsh ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpnc8rhrsh
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:55:30 2023 - INFO  - End to restore the test environment.

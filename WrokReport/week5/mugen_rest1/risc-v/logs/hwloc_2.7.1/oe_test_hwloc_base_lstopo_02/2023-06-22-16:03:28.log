@@ -1,0 +1,247 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 16:03:30 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpnhkvbjjy
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpnhkvbjjy
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 16:04:03 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:04:04 2023 - INFO  - Start to run test.
++ lstopo -l --ignore PU
++ grep -v ' PU'
+Machine (3937MB total)
+  Package L#0
+    NUMANode L#0 (3937MB)
+    Core L#0
+    Core L#1
+    Core L#2
+    Core L#3
+  Block "vda"
+  Net "eth0"
++ CHECK_RESULT 0 0 0 'lstopo --ignore <type> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --ignore <type> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --no-caches
++ grep -v 'L2 L#0'
+Machine (3937MB total)
+  Package L#0
+    NUMANode L#0 (3937MB)
+    Core L#0 + PU L#0
+    Core L#1 + PU L#1
+    Core L#2 + PU L#2
+    Core L#3 + PU L#3
+  Block "vda"
+  Net "eth0"
++ CHECK_RESULT 0 0 0 'lstopo --no-caches failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --no-caches failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --no-useless-caches
++ grep -v 'L2 L#0'
+Machine (3937MB total)
+  Package L#0
+    NUMANode L#0 (3937MB)
+    Core L#0 + PU L#0
+    Core L#1 + PU L#1
+    Core L#2 + PU L#2
+    Core L#3 + PU L#3
+  Block "vda"
+  Net "eth0"
++ CHECK_RESULT 0 0 0 'lstopo --no-useless-caches failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --no-useless-caches failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --no-icaches
++ grep -v 'L1i L#0'
+Machine (3937MB total)
+  Package L#0
+    NUMANode L#0 (3937MB)
+    Core L#0 + PU L#0
+    Core L#1 + PU L#1
+    Core L#2 + PU L#2
+    Core L#3 + PU L#3
+  Block "vda"
+  Net "eth0"
++ CHECK_RESULT 0 0 0 'lstopo --no-icaches failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --no-icaches failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --merge
++ grep -v Package
+Machine (3937MB total)
+  NUMANode L#0 (3937MB)
+  PU L#0
+  PU L#1
+  PU L#2
+  PU L#3
+  Block "vda"
+  Net "eth0"
++ CHECK_RESULT 0 0 0 'lstopo --merge failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --merge failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --no-collapse
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo --no-collapse failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --no-collapse failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --restrict 1
++ grep L#0
+  Package L#0
+    NUMANode L#0 (3937MB)
+    Core L#0 + PU L#0
++ CHECK_RESULT 0 0 0 'lstopo --restrict <cpuset> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --restrict <cpuset> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --restrict binding
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo --restrict binding failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --restrict binding failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --restrict-flags 1
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo --restrict-flags <n> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --restrict-flags <n> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --no-io
++ grep -v HostBridge
+Machine (3937MB total) + Package L#0
+  NUMANode L#0 (3937MB)
+  Core L#0 + PU L#0
+  Core L#1 + PU L#1
+  Core L#2 + PU L#2
+  Core L#3 + PU L#3
++ CHECK_RESULT 0 0 0 'lstopo --no-io failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --no-io failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 16:04:05 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:04:06 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 16:04:07 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpnhkvbjjy ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpnhkvbjjy
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 16:04:18 2023 - INFO  - Finish environment cleanup!

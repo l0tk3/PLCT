@@ -1,0 +1,167 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:30:45 2023 - INFO  - Start environmental preparation.
++ useradd example
++ passwd example
+New password: Retype new password: Changing password for user example.
+passwd: all authentication tokens updated successfully.
++ useradd -Z staff_u test
+useradd: -Z requires SELinux enabled kernel
++ passwd test
+passwd: Unknown user name 'test'.
++ LOG_INFO 'End of environmental preparation.'
++ message='End of environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation.'
+Thu Jun 29 15:30:46 2023 - INFO  - End of environmental preparation.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 15:30:46 2023 - INFO  - Start executing testcase.
++ expect
+spawn ssh example@localhost
+The authenticity of host 'localhost (::1)' can't be established.
+ED25519 key fingerprint is SHA256:sgrj0sqHuv5Y7Cs/7ymCVVwltgcieWDHNF9DCknm5RI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'localhost' (ED25519) to the list of known hosts.
+
+Authorized users only. All activities may be monitored and reported.
+example@localhost's password: 
+
+Authorized users only. All activities may be monitored and reported.
+
+
+Welcome to 6.1.19-7.0.0.17.oe2303.x86_64
+
+System information as of time: 	Thu Jun 29 03:30:46 PM UTC 2023
+
+System load: 	[0;33;40m0.51[0m
+Processes: 	137
+Memory used: 	2.8%
+Swap used: 	0.0%
+Usage On: 	15%
+IP address: 	10.0.2.15
+Users online: 	1
+To run a command as administrator(user "root"),use "sudo <command>".
+[example@localhost ~]$ id -Z
+id: --context (-Z) works only on an SELinux-enabled kernel
+[example@localhost ~]$ + grep unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 testlog
++ CHECK_RESULT 1 0 0 'Check unconfined_u failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check unconfined_u failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check unconfined_u failed'
++ LOG_ERROR 'Check unconfined_u failed'
++ message='Check unconfined_u failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check unconfined_u failed'
+Thu Jun 29 15:30:56 2023 - ERROR - Check unconfined_u failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_adduser.sh line 60'
++ message='oe_test_selinux_adduser.sh line 60'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_adduser.sh line 60'
+Thu Jun 29 15:30:56 2023 - ERROR - oe_test_selinux_adduser.sh line 60
++ '[' 0 -eq 1 ']'
++ return 0
++ expect
+spawn ssh test@localhost
+
+Authorized users only. All activities may be monitored and reported.
+test@localhost's password: 
+Permission denied, please try again.
+test@localhost's password: + grep staff_u:staff_r:staff_t:s0 testlog
++ CHECK_RESULT 1 0 0 'Check staff_r failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check staff_r failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check staff_r failed'
++ LOG_ERROR 'Check staff_r failed'
++ message='Check staff_r failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check staff_r failed'
+Thu Jun 29 15:31:26 2023 - ERROR - Check staff_r failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_adduser.sh line 82'
++ message='oe_test_selinux_adduser.sh line 82'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_adduser.sh line 82'
+Thu Jun 29 15:31:26 2023 - ERROR - oe_test_selinux_adduser.sh line 82
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage login -l
++ grep test
+oe_test_selinux_adduser.sh: line 83: semanage: command not found
++ grep staff_u
++ CHECK_RESULT 1 0 0 'Check staff_u failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check staff_u failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check staff_u failed'
++ LOG_ERROR 'Check staff_u failed'
++ message='Check staff_u failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check staff_u failed'
+Thu Jun 29 15:31:26 2023 - ERROR - Check staff_u failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_adduser.sh line 84'
++ message='oe_test_selinux_adduser.sh line 84'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_adduser.sh line 84'
+Thu Jun 29 15:31:26 2023 - ERROR - oe_test_selinux_adduser.sh line 84
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 29 15:31:26 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:31:26 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:31:26 2023 - INFO  - start environment cleanup.
++ userdel -rf example
++ userdel -rfZ test
+userdel: -Z requires SELinux enabled kernel
++ rm -rf testlog
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:31:27 2023 - INFO  - Finish environment cleanup!

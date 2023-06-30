@@ -1,0 +1,168 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 17:53:10 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hfsplus-tools
++ pkgs=hfsplus-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hfsplus-tools --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp_grsw2ek
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp_grsw2ek
+++ lsblk
+++ awk -F ' ' '{print $1}'
+++ head -n 2
+++ tail -n 1
++ device=vda
++ disk_list=/dev/vda
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 17:53:36 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 17:53:36 2023 - INFO  - Start to run test.
++ fsck.hfsplus -d -p -f /dev/vda
++ grep starting
+/dev/vda: starting
++ CHECK_RESULT 0 0 0 'test fsck.hfsplus -f failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test fsck.hfsplus -f failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ fsck.hfsplus -d -p /dev/vda
++ grep starting
+/dev/vda: starting
++ CHECK_RESULT 0 0 0 'test fsck.hfsplus -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test fsck.hfsplus -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ fsck.hfsplus -d -l /dev/vda
++ grep 'run at'
+/dev/vda: fsck_hfs run at Thu Jun 22 17:53:36 2023
++ CHECK_RESULT 0 0 0 'test fsck.hfsplus -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test fsck.hfsplus -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ fsck.hfsplus -d -m 01777 /dev/vda
++ grep 'Executing fsck_hfs'
+   Executing fsck_hfs (version 540.1-Linux).
++ CHECK_RESULT 0 0 0 'test fsck.hfsplus -m failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test fsck.hfsplus -m failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ fsck.hfsplus -d -n /dev/vda
++ grep 'Executing fsck_hfs'
+   Executing fsck_hfs (version 540.1-Linux).
++ CHECK_RESULT 0 0 0 'test fsck.hfsplus -n failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test fsck.hfsplus -n failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ fsck.hfsplus -d -r /dev/vda
++ grep 'Executing fsck_hfs'
+   Executing fsck_hfs (version 540.1-Linux).
++ CHECK_RESULT 0 0 0 'test fsck.hfsplus -r failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test fsck.hfsplus -r failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ fsck.hfsplus -d -y /dev/vda
++ grep 'Executing fsck_hfs'
+   Executing fsck_hfs (version 540.1-Linux).
++ CHECK_RESULT 0 0 0 'test fsck.hfsplus -y failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test fsck.hfsplus -y failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 17:53:37 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 17:53:37 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 17:53:38 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp_grsw2ek ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp_grsw2ek
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 17:53:47 2023 - INFO  - End to restore the test environment.

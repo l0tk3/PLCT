@@ -1,0 +1,166 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:57:11 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'tar libvpx'
++ pkgs='tar libvpx'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'tar libvpx' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmph6x2dj6s
++ '[' -z '' ']'
++ tmpfile=/tmp/tmph6x2dj6s
++ tar -xf common/libvpx.tar.gz
++ mkdir tmp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:57:39 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:57:40 2023 - INFO  - Start to run test.
++ vp8_simple_encoder vp8 352 288 data/1.mp4 tmp/1.ivf 0 1 25
++ grep 'Processed 25 frames.'
+Processed 25 frames.
++ CHECK_RESULT 0 0 0 'Failed option: vp8_simple_encoder'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vp8_simple_encoder'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vp8_twopass_encoder vp8 352 288 data/1.mp4 tmp/1.ivf 20
++ grep 'Pass 1 complete. Processed 20 frames.'
+Pass 1 complete. Processed 20 frames.
++ CHECK_RESULT 0 0 0 'Failed option: vp8_twopass_encoder'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vp8_twopass_encoder'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vp8cx_set_ref 352 288 data/1.ivf tmp/1.ivf 25
++ grep 'Processed 1 frames.'
+Processed 1 frames.
++ CHECK_RESULT 0 0 0 'Failed option: vp8cx_set_ref'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vp8cx_set_ref'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vp9_lossless_encoder 352 288 data/1.ivf tmp/1.ivf
++ grep 'Processed 1 frames'
+Processed 1 frames.
++ CHECK_RESULT 0 0 0 'Failed option: vp9_lossless_encoder'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vp9_lossless_encoder'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vp9_spatial_svc_encoder -f 10 -w 352 -h 288 -s 0 -sl 2 -t 10/1 -b 20 -k 1 -r 1 -p 1 -tl 0 -tlm 0 -th 6 -aq 1 -d 8 -sp 5 -bl 1 data/1.mp4 tmp/1.ivf
++ grep 'Frame cnt and encoding time/FPS'
+Frame cnt and encoding time/FPS stats for encoding: 10 118.314701 8.452035 
++ CHECK_RESULT 0 0 0 'Failed option: vp8_simple_decoder'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vp8_simple_decoder'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vp9cx_set_ref 352 288 data/1.ivf tmp/1.ivf 25 30
++ grep 'Processed 1 frames.'
+Processed 1 frames.
++ CHECK_RESULT 0 0 0 'Failed option: vp9cx_set_ref'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vp9cx_set_ref'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpx_temporal_svc_encoder data/1.mp4 tmp/1.ivf vp8 352 288 1 1 2 2 1 4 1 0 1 8
++ grep 'Total number of processed frames'
+Total number of processed frames: 74
++ CHECK_RESULT 0 0 0 'Failed option: vpx_temporal_svc_encoder'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpx_temporal_svc_encoder'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 16:58:25 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:58:26 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:58:26 2023 - INFO  - Start to restore the test environment.
++ rm -rf tmp data
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmph6x2dj6s ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmph6x2dj6s
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:58:35 2023 - INFO  - End to restore the test environment.

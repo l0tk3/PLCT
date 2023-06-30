@@ -1,0 +1,282 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:34:22 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc'
++ pkgs='meson tar gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpc1qpwi31
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpc1qpwi31
++ tar -xvf common/0.54/test_1.tgz
+test_1/
+test_1/.git/
+test_1/.git/hooks/
+test_1/.git/hooks/post-update.sample
+test_1/.git/hooks/applypatch-msg.sample
+test_1/.git/hooks/commit-msg.sample
+test_1/.git/hooks/pre-push.sample
+test_1/.git/hooks/pre-rebase.sample
+test_1/.git/hooks/pre-merge-commit.sample
+test_1/.git/hooks/prepare-commit-msg.sample
+test_1/.git/hooks/fsmonitor-watchman.sample
+test_1/.git/hooks/update.sample
+test_1/.git/hooks/pre-applypatch.sample
+test_1/.git/hooks/pre-receive.sample
+test_1/.git/hooks/pre-commit.sample
+test_1/.git/branches/
+test_1/.git/refs/
+test_1/.git/refs/heads/
+test_1/.git/refs/tags/
+test_1/.git/HEAD
+test_1/.git/config
+test_1/.git/info/
+test_1/.git/info/exclude
+test_1/.git/description
+test_1/.git/objects/
+test_1/.git/objects/pack/
+test_1/.git/objects/info/
+test_1/test_1.c
+test_1/builddir/
+test_1/builddir/test_1
+test_1/builddir/test_1@exe/
+test_1/builddir/test_1@exe/test_1.c.o
+test_1/builddir/.ninja_deps
+test_1/builddir/devenv/
+test_1/builddir/compile_commands.json
+test_1/builddir/build.ninja
+test_1/builddir/meson-info/
+test_1/builddir/meson-info/intro-targets.json
+test_1/builddir/meson-info/intro-installed.json
+test_1/builddir/meson-info/intro-benchmarks.json
+test_1/builddir/meson-info/intro-tests.json
+test_1/builddir/meson-info/intro-buildsystem_files.json
+test_1/builddir/meson-info/intro-buildoptions.json
+test_1/builddir/meson-info/intro-dependencies.json
+test_1/builddir/meson-info/intro-projectinfo.json
+test_1/builddir/meson-info/meson-info.json
+test_1/builddir/.ninja_log
+test_1/builddir/meson-logs/
+test_1/builddir/meson-logs/testlog-valgrind.json
+test_1/builddir/meson-logs/testlog.txt
+test_1/builddir/meson-logs/testlog.json
+test_1/builddir/meson-logs/testlog-worksforall.json
+test_1/builddir/meson-logs/testlog-worksforall.txt
+test_1/builddir/meson-logs/meson-log.txt
+test_1/builddir/meson-logs/testlog-valgrind.txt
+test_1/builddir/meson.build
+test_1/builddir/meson-private/
+test_1/builddir/meson-private/build.dat
+test_1/builddir/meson-private/meson_test_setup.dat
+test_1/builddir/meson-private/coredata.dat.prev
+test_1/builddir/meson-private/install.dat
+test_1/builddir/meson-private/dist-install/
+test_1/builddir/meson-private/dist-build/
+test_1/builddir/meson-private/sanitycheckc.exe
+test_1/builddir/meson-private/coredata.dat
+test_1/builddir/meson-private/cmd_line.txt
+test_1/builddir/meson-private/dist-unpack/
+test_1/builddir/meson-private/dist-unpack/test_1-0.1/
+test_1/builddir/meson-private/meson_benchmark_setup.dat
+test_1/builddir/meson-private/sanitycheckc.c
+test_1/builddir/meson-private/meson.lock
+test_1/builddir/meson-dist/
+test_1/builddir/meson-dist/test_1-0.1.tar.xz
+test_1/meson.build
++ cd test_1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:34:25 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 29 14:34:25 2023 - INFO  - Start testing...
++ meson configure --layout mirror
++ grep layout
+  layout                         mirror                           [mirror, flat]                   Build directory layout
++ CHECK_RESULT 0 0 0 'meson-configure --layout failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --layout failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --optimization 0
++ grep optimization
+  optimization                   0                                [0, g, 1, 2, 3, s]               Optimization level
+  b_lto                          false                            [true, false]                    Use link time optimization
+  b_pgo                          off                              [off, generate, use]             Use profile guided optimization
++ CHECK_RESULT 0 0 0 'meson-configure --optimization failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --optimization failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --stdsplit
++ grep stdsplit
+  stdsplit                       true                             [true, false]                    Split stdout and stderr in test logs
++ CHECK_RESULT 0 0 0 'meson-configure --stdsplit failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --stdsplit failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --strip
++ grep strip
+  strip                          false                            [true, false]                    Strip targets on install
++ CHECK_RESULT 0 0 0 'meson-configure --strip failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --strip failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --unity off
++ grep unity
+  unity                          off                              [on, off, subprojects]           Unity build
+  unity_size                     4                                >=2                              Unity block size
++ CHECK_RESULT 0 0 0 'meson-configure --unity failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --unity failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --unity-size 4
++ grep unity_size
+  unity_size                     4                                >=2                              Unity block size
++ CHECK_RESULT 0 0 0 'meson-configure --unity-size UNITY_SIZE failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --unity-size UNITY_SIZE failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --warnlevel 3
++ grep warning_level
+  warning_level                  3                                [0, 1, 2, 3]                     Compiler warning level to use
++ CHECK_RESULT 0 0 0 'meson-configure --warnlevel failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --warnlevel failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --werror
++ grep werror
+  werror                         false                            [true, false]                    Treat warnings as errors
++ CHECK_RESULT 0 0 0 'meson-configure --werror failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --werror failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --wrap-mode default
++ grep wrap_mode
+  wrap_mode                      default                          [default, nofallback,            Wrap mode
++ CHECK_RESULT 0 0 0 'meson-configure --wrap-mode failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --wrap-mode failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --pkg-config-path /root
++ grep pkg_config_path
+  pkg_config_path                []                                                                List of additional paths for pkg-config to search
+  build.pkg_config_path          []                                                                List of additional paths for pkg-config to search
++ CHECK_RESULT 0 0 0 'meson-configure --pkg-config-path PKG_CONFIG_PATH  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --pkg-config-path PKG_CONFIG_PATH  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:34:28 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:34:28 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:34:28 2023 - INFO  - Start to restore the test environment.
++ rm -rf ../test_1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpc1qpwi31 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpc1qpwi31
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:34:29 2023 - INFO  - End to restore the test environment.

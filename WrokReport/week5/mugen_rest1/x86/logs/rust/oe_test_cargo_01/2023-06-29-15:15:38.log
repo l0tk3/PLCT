@@ -1,0 +1,206 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 29 15:15:38 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL cargo
++ pkgs=cargo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs cargo --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpg921y0uz
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpg921y0uz
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 29 15:16:55 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Thu Jun 29 15:16:55 2023 - INFO  - Start executing testcase!
++ cargo -h
++ grep USAGE
++ CHECK_RESULT 1 0 0 'Help information printing failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Help information printing failed'
++ LOG_ERROR 'Help information printing failed'
++ message='Help information printing failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Help information printing failed'
+Thu Jun 29 15:16:55 2023 - ERROR - Help information printing failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_01.sh line 31'
++ message='oe_test_cargo_01.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_01.sh line 31'
+Thu Jun 29 15:16:55 2023 - ERROR - oe_test_cargo_01.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo -V
++ grep -E '[0-9]'
+cargo 1.67.1-dev
++ CHECK_RESULT 0 0 0 'Failed to output the version information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo --list
++ grep 'Installed Commands'
+Installed Commands:
++ CHECK_RESULT 0 0 0 'Failed to list commands'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to list commands'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo --explain E0004
++ grep 'Erroneous code example'
+Erroneous code example:
++ CHECK_RESULT 0 0 0 'Failed to interpret code command'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to interpret code command'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -E 'release|[0-9]'
++ cargo -vV
+cargo 1.67.1-dev
+release: 1.67.1-dev
+host: x86_64-unknown-linux-gnu
+libgit2: 1.5.0 (sys:0.16.0 vendored)
+libcurl: 7.86.0 (sys:0.4.59+curl-7.86.0 system ssl:OpenSSL/3.0.8)
+os: Linux [64-bit]
++ CHECK_RESULT 0 0 0 'Failed to list details'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to list details'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo new hello -q
++ CHECK_RESULT 0 0 0 'Silent output failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Silent output failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd hello
++ cargo run --color always
+[0m[0m[1m[32m   Compiling[0m hello v0.1.0 (/root/mugen/testcases/cli-test/rust/oe_test_cargo_01/hello)
+[0m[0m[1m[32m    Finished[0m dev [unoptimized + debuginfo] target(s) in 0.20s
+[0m[0m[1m[32m     Running[0m `target/debug/hello`
+Hello, world!
++ CHECK_RESULT 0 0 0 'Color setting failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Color setting failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo run --offline
++ grep 'Hello, world!'
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target/debug/hello`
+Hello, world!
++ CHECK_RESULT 0 0 0 'Failed to run offline'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run offline'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo -Z help
++ grep 'Available unstable (nightly-only) flags'
+Available unstable (nightly-only) flags:
++ CHECK_RESULT 0 0 0 'Help printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help printing failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 15:16:56 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:16:56 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:16:56 2023 - INFO  - start environment cleanup.
++ rm -rf ../hello
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpg921y0uz ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpg921y0uz
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:16:57 2023 - INFO  - Finish environment cleanup!

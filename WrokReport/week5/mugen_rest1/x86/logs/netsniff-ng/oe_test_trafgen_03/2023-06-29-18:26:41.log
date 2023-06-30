@@ -1,0 +1,349 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 18:26:41 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 29 18:26:41 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 18:26:41 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 18:26:41 2023 - INFO  - Start to run test.
++ trafgen -p --dev lo --conf ./data/synflood.trafgen --gap 1000 -n 10
++ grep 'on CPU0'
+           0 sec, 16815 usec on CPU0 (10 packets)
++ CHECK_RESULT 0 0 0 'Check trafgen --gap failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --gap failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -p --dev lo --conf ./data/synflood.trafgen -t 1000 -n 10
++ grep 'on CPU0'
+           0 sec, 17896 usec on CPU0 (10 packets)
++ CHECK_RESULT 0 0 0 'Check trafgen -t failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -t failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -p --dev lo --conf ./data/synflood.trafgen -b 1kB -n 2
++ grep 'usec on CPU0'
+           0 sec, 10 usec on CPU0 (2 packets)
++ CHECK_RESULT 0 0 0 'Check trafgen -b failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -b failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -p --dev lo --conf ./data/synflood.trafgen --rate 1kB -n 2
++ grep 'usec on CPU0'
+           0 sec, 10 usec on CPU0 (2 packets)
++ CHECK_RESULT 0 0 0 'Check trafgen --rate failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --rate failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --cpp --dev lo --conf ./data/udp_example01.trafgen -E 2 -n 2
++ grep 'packets outgoing'
+           2 packets outgoing
++ CHECK_RESULT 0 0 0 'Check trafgen -E failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -E failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --cpp --dev lo --conf ./data/udp_example01.trafgen --seed 2 -n 2
++ grep 'packets outgoing'
+           2 packets outgoing
++ CHECK_RESULT 0 0 0 'Check trafgen --seed failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --seed failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'packets to schedule'
+++ id -u bob
+id: ‘bob’: no such user
+++ id -g bob
+id: ‘bob’: no such user
++ trafgen --dev lo '{ fill(0xff, 6), 0x00, 0x02, 0xb3, rnd(3), c16(0x0800), fill(0xca, 64) }' -u -g -n 2
+Uid cannot be the same as the current user!
+Uid cannot be the same as the current user!
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen -u failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -u failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'packets to schedule'
+++ id -u bob
+id: ‘bob’: no such user
+++ id -g bob
+id: ‘bob’: no such user
++ trafgen --dev lo '{ fill(0xff, 6), 0x00, 0x02, 0xb3, rnd(3), c16(0x0800), fill(0xca, 64) }' --user -g -n 2
+Uid cannot be the same as the current user!
+Uid cannot be the same as the current user!
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen -user failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -user failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'packets to schedule'
+++ id -u bob
+id: ‘bob’: no such user
+++ id -g bob
+id: ‘bob’: no such user
++ trafgen --dev lo '{ fill(0xff, 6), 0x00, 0x02, 0xb3, rnd(3), c16(0x0800), fill(0xca, 64) }' -u -g -n 2
+Uid cannot be the same as the current user!
+Uid cannot be the same as the current user!
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen -g failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -g failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'packets to schedule'
+++ id -u bob
+id: ‘bob’: no such user
+++ id -g bob
+id: ‘bob’: no such user
++ trafgen --dev lo '{ fill(0xff, 6), 0x00, 0x02, 0xb3, rnd(3), c16(0x0800), fill(0xca, 64) }' -u --group -n 2
+Uid cannot be the same as the current user!
+Uid cannot be the same as the current user!
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen --group failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --group failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --dev lo '{ rnd(64), 0b11001100, 0xaa }' --prio-high -n 2
++ grep 'packets to schedule'
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen --prio-high failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --prio-high failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --dev lo '{ rnd(64), 0b11001100, 0xaa }' -H -n 2
++ grep 'packets to schedule'
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen -H failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -H failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --cpp --dev lo --conf ./data/udp_example01.trafgen --no-sock-mem -n 2
++ grep 'packets to schedule'
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen --no-sock-mem failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --no-sock-mem failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -p --dev lo --conf ./data/synflood.trafgen --qdisc-path -n 2
++ grep 'packets to schedule'
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen --qdisc-path failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --qdisc-path failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -p --dev lo --conf ./data/synflood.trafgen -q -n 2
++ grep 'packets to schedule'
+     2 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen --qdisc-path failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --qdisc-path failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --cpp --dev lo --conf ./data/udp_example01.trafgen -n 2 --verbose
++ grep 'Enabled kernel qdisc bypass'
+Enabled kernel qdisc bypass
+Enabled kernel qdisc bypass
++ CHECK_RESULT 0 0 0 'Check trafgen --verbose failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --verbose failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --cpp --dev lo --conf ./data/udp_example01.trafgen -n 2 -V
++ grep 'Enabled kernel qdisc bypass'
+Enabled kernel qdisc bypass
+Enabled kernel qdisc bypass
++ CHECK_RESULT 0 0 0 'Check trafgen -V failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -V failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --cpp --dev lo --conf ./data/udp_example01.trafgen -n 2 --no-cpu-stats
++ grep 'packets outgoing'
+           2 packets outgoing
++ CHECK_RESULT 0 0 0 'Check trafgen --no-cpu-stats failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --no-cpu-stats failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --cpp --dev lo --conf ./data/udp_example01.trafgen -n 2 -C
++ grep 'packets outgoing'
+           2 packets outgoing
++ CHECK_RESULT 0 0 0 'Check trafgen -C failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -C failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 18:26:42 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 18:26:42 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 18:26:42 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 18:26:42 2023 - WARN  - no thing to do.
++ return 0
++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 18:26:42 2023 - INFO  - End to restore the test environment.

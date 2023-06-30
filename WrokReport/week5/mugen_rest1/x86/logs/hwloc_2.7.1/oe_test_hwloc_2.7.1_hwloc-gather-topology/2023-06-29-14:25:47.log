@@ -1,0 +1,214 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:25:47 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:25:48 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:25:48 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:25:48 2023 - INFO  - Start to run test.
++ hwloc-gather-topology --no-cpuid temp1
+I/O files won't be saved (--io not given).
+DMI files won't be saved (--dmi not given).
+
+*** Note that this tool may be slow on large nodes or when I/O is enabled. ***
+
+Gathering main files and directories...
+ file /proc/cmdline
+ file /proc/cpuinfo
+ file /proc/meminfo
+ file /proc/mounts
+ file /proc/stat
+ file /proc/version
+ file /proc/self/cpuset
+ file /proc/self/cgroup
+ file /proc/driver/nvidia
+ directory /sys/devices/system/cpu/
+ directory /sys/bus/cpu/devices/
+ directory /sys/devices/system/node/
+ directory /sys/bus/node/devices/
+ directory /sys/class/dmi/id/
+ directory /sys/devices/virtual/dmi/id/
+ directory /sys/kernel/mm/hugepages/
+grep: warning: stray \ before 0
+ directory /sys/fs/cgroup/cpuset/
+Exporting /proc/hwloc-nofile-info
+
+Topology files gathered in ./temp1.tar.bz2
+Expected topology output stored in ./temp1.output
+XML topology stored in ./temp1.xml
+
+WARNING: Do not post these files on a public list or website unless you
+WARNING: are sure that no information about this platform is sensitive.
++ ls
++ grep temp1
+temp1.output
+temp1.tar.bz2
+temp1.xml
++ CHECK_RESULT 0 0 0 'hwloc-gather-topology --no-cpuid failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-gather-topology --no-cpuid failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-gather-topology --keep temp2
+I/O files won't be saved (--io not given).
+DMI files won't be saved (--dmi not given).
+
+*** Note that this tool may be slow on large nodes or when I/O is enabled. ***
+
+Gathering main files and directories...
+ file /proc/cmdline
+ file /proc/cpuinfo
+ file /proc/meminfo
+ file /proc/mounts
+ file /proc/stat
+ file /proc/version
+ file /proc/self/cpuset
+ file /proc/self/cgroup
+ file /proc/driver/nvidia
+ directory /sys/devices/system/cpu/
+ directory /sys/bus/cpu/devices/
+ directory /sys/devices/system/node/
+ directory /sys/bus/node/devices/
+ directory /sys/class/dmi/id/
+ directory /sys/devices/virtual/dmi/id/
+ directory /sys/kernel/mm/hugepages/
+grep: warning: stray \ before 0
+ directory /sys/fs/cgroup/cpuset/
+Exporting /proc/hwloc-nofile-info
+
+Exporting x86 CPUID using hwloc-gather-cpuid
+
+Topology files gathered in ./temp2.tar.bz2 and kept in /tmp/hwloc-gather-topology.HCxGMfLL/temp2/
+Expected topology output stored in ./temp2.output
+XML topology stored in ./temp2.xml
+
+WARNING: Do not post these files on a public list or website unless you
+WARNING: are sure that no information about this platform is sensitive.
++ ls
++ grep temp2
+temp2.output
+temp2.tar.bz2
+temp2.xml
++ CHECK_RESULT 0 0 0 'hwloc-gather-topology --keep failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-gather-topology --keep failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-gather-topology --version
++ grep hwloc-gather-topology
+hwloc-gather-topology 2.7.1
++ CHECK_RESULT 0 0 0 'hwloc-gather-topology --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-gather-topology --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-gather-topology -h
++ grep hwloc-gather-topology
+hwloc-gather-topology [options] <savepath>
+  /usr/bin/hwloc-gather-topology /tmp/$(uname -n)
++ CHECK_RESULT 0 0 0 'hwloc-gather-topology -h failed '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-gather-topology -h failed '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-gather-topology --help
++ grep hwloc-gather-topology
+hwloc-gather-topology [options] <savepath>
+  /usr/bin/hwloc-gather-topology /tmp/$(uname -n)
++ CHECK_RESULT 0 0 0 'hwloc-gather-topology --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-gather-topology --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:25:51 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:25:51 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:25:51 2023 - INFO  - Start to restore the test environment.
++ rm -rf temp1.output temp1.tar.bz2 temp1.xml temp2.output temp2.tar.bz2 temp2.xml
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:25:51 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:25:51 2023 - INFO  - End to restore the test environment.

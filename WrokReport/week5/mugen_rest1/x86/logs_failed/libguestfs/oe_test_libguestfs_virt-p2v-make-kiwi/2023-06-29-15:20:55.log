@@ -1,0 +1,121 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:20:56 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'libguestfs virt-manager'
++ pkgs='libguestfs virt-manager'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager' --node 1 --tempfile ''
+Thu Jun 29 15:20:56 2023 - INFO  - pkgs:(libguestfs virt-manager) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 15:20:56 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:20:56 2023 - INFO  - Start to run test.
++ virt-p2v-make-kiwi --help
++ grep virt-p2v-make-kiwi
+oe_test_libguestfs_virt-p2v-make-kiwi.sh: line 29: virt-p2v-make-kiwi: command not found
++ CHECK_RESULT 1 0 0 'Check virt-p2v-make-kiwi --help failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check virt-p2v-make-kiwi --help failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check virt-p2v-make-kiwi --help failed'
++ LOG_ERROR 'Check virt-p2v-make-kiwi --help failed'
++ message='Check virt-p2v-make-kiwi --help failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-p2v-make-kiwi --help failed'
+Thu Jun 29 15:20:56 2023 - ERROR - Check virt-p2v-make-kiwi --help failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-p2v-make-kiwi.sh line 30'
++ message='oe_test_libguestfs_virt-p2v-make-kiwi.sh line 30'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-p2v-make-kiwi.sh line 30'
+Thu Jun 29 15:20:56 2023 - ERROR - oe_test_libguestfs_virt-p2v-make-kiwi.sh line 30
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-p2v-make-kiwi -V
+++ rpm -q libguestfs --queryformat '%{version}\n'
++ grep 1.49.5
++ CHECK_RESULT 1 0 0 'Check virt-p2v-make-kiwi -V failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check virt-p2v-make-kiwi -V failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check virt-p2v-make-kiwi -V failed'
++ LOG_ERROR 'Check virt-p2v-make-kiwi -V failed'
++ message='Check virt-p2v-make-kiwi -V failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-p2v-make-kiwi -V failed'
+Thu Jun 29 15:20:56 2023 - ERROR - Check virt-p2v-make-kiwi -V failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-p2v-make-kiwi.sh line 32'
++ message='oe_test_libguestfs_virt-p2v-make-kiwi.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-p2v-make-kiwi.sh line 32'
+Thu Jun 29 15:20:56 2023 - ERROR - oe_test_libguestfs_virt-p2v-make-kiwi.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 29 15:20:56 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:20:56 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 15:20:56 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 15:20:56 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 29 15:20:56 2023 - INFO  - Finish to restore the test environment.

@@ -1,0 +1,390 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 16:13:15 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:30:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:30:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+++ uname -i
++ test riscv64X == aarch64X
++ systemctl start libvirtd
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get riscv64 qcow2 libguestfs pkg'
++ message='get riscv64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get riscv64 qcow2 libguestfs pkg'
+Thu Jun 22 16:13:37 2023 - INFO  - get riscv64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 ']'
+++ arch
+++ arch
+++ arch
++ wget https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz --no-check-certificate -O ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+--2023-06-22 16:13:37--  https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+Resolving repo.huaweicloud.com (repo.huaweicloud.com)... 58.205.215.42, 121.194.10.211
+Connecting to repo.huaweicloud.com (repo.huaweicloud.com)|58.205.215.42|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2023-06-22 16:13:38 ERROR 404: Not Found.
+
+++ arch
++ xz -d ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+xz: ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz: File format not recognized
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+cp: cannot stat './common/openEuler-20.03-LTS-SP3-riscv64.qcow2': No such file or directory
++ virt-install --name openEuler-2003 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 23: virt-install: command not found
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ mkdir test
++ export LIBGUESTFS_BACKEND=direct
++ LIBGUESTFS_BACKEND=direct
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 16:13:39 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:13:40 2023 - INFO  - Start to run test.
++ virt-make-fs --floppy ./test/ output.img
+oe_test_libguestfs_virt-make-fs.sh: line 33: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs --floppy failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs --floppy failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs --floppy failed'
++ LOG_ERROR 'Check virt-make-fs --floppy failed'
++ message='Check virt-make-fs --floppy failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs --floppy failed'
+Thu Jun 22 16:13:40 2023 - ERROR - Check virt-make-fs --floppy failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 34'
++ message='oe_test_libguestfs_virt-make-fs.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 34'
+Thu Jun 22 16:13:41 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs --format=raw ./test/ output.img
+oe_test_libguestfs_virt-make-fs.sh: line 35: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs --format failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs --format failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs --format failed'
++ LOG_ERROR 'Check virt-make-fs --format failed'
++ message='Check virt-make-fs --format failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs --format failed'
+Thu Jun 22 16:13:41 2023 - ERROR - Check virt-make-fs --format failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 36'
++ message='oe_test_libguestfs_virt-make-fs.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 36'
+Thu Jun 22 16:13:42 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs --help
+oe_test_libguestfs_virt-make-fs.sh: line 37: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs --help failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs --help failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs --help failed'
++ LOG_ERROR 'Check virt-make-fs --help failed'
++ message='Check virt-make-fs --help failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs --help failed'
+Thu Jun 22 16:13:42 2023 - ERROR - Check virt-make-fs --help failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 38'
++ message='oe_test_libguestfs_virt-make-fs.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 38'
+Thu Jun 22 16:13:43 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs --label=label ./test/ output.img
+oe_test_libguestfs_virt-make-fs.sh: line 39: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs --label failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs --label failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs --label failed'
++ LOG_ERROR 'Check virt-make-fs --label failed'
++ message='Check virt-make-fs --label failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs --label failed'
+Thu Jun 22 16:13:43 2023 - ERROR - Check virt-make-fs --label failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 40'
++ message='oe_test_libguestfs_virt-make-fs.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 40'
+Thu Jun 22 16:13:44 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs --partition ./test/ output.img
+oe_test_libguestfs_virt-make-fs.sh: line 41: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs --partition failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs --partition failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs --partition failed'
++ LOG_ERROR 'Check virt-make-fs --partition failed'
++ message='Check virt-make-fs --partition failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs --partition failed'
+Thu Jun 22 16:13:44 2023 - ERROR - Check virt-make-fs --partition failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 42'
++ message='oe_test_libguestfs_virt-make-fs.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 42'
+Thu Jun 22 16:13:45 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs --format=qcow2 --size=+200M ./test/ output.img
+oe_test_libguestfs_virt-make-fs.sh: line 43: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs --size failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs --size failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs --size failed'
++ LOG_ERROR 'Check virt-make-fs --size failed'
++ message='Check virt-make-fs --size failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs --size failed'
+Thu Jun 22 16:13:45 2023 - ERROR - Check virt-make-fs --size failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 44'
++ message='oe_test_libguestfs_virt-make-fs.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 44'
+Thu Jun 22 16:13:46 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs --format=qcow2 --type=ext4 --size=+200M ./test/ output.img
+oe_test_libguestfs_virt-make-fs.sh: line 45: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs --type failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs --type failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs --type failed'
++ LOG_ERROR 'Check virt-make-fs --type failed'
++ message='Check virt-make-fs --type failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs --type failed'
+Thu Jun 22 16:13:46 2023 - ERROR - Check virt-make-fs --type failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 46'
++ message='oe_test_libguestfs_virt-make-fs.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 46'
+Thu Jun 22 16:13:47 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs -v --format=qcow2 --type=ext4 --size=+200M ./test/ output.img
+oe_test_libguestfs_virt-make-fs.sh: line 47: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs -v failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs -v failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs -v failed'
++ LOG_ERROR 'Check virt-make-fs -v failed'
++ message='Check virt-make-fs -v failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs -v failed'
+Thu Jun 22 16:13:47 2023 - ERROR - Check virt-make-fs -v failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 48'
++ message='oe_test_libguestfs_virt-make-fs.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 48'
+Thu Jun 22 16:13:48 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs -V
+++ rpm -q libguestfs --queryformat '%{version}\n'
++ grep 1.49.5
++ CHECK_RESULT 1 0 0 'Check virt-make-fs -V failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs -V failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check virt-make-fs -V failed'
++ LOG_ERROR 'Check virt-make-fs -V failed'
++ message='Check virt-make-fs -V failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs -V failed'
+Thu Jun 22 16:13:49 2023 - ERROR - Check virt-make-fs -V failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 50'
++ message='oe_test_libguestfs_virt-make-fs.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 50'
+Thu Jun 22 16:13:49 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-make-fs -x ./test/ output.img
+oe_test_libguestfs_virt-make-fs.sh: line 51: virt-make-fs: command not found
++ CHECK_RESULT 127 0 0 'Check virt-make-fs -x failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-make-fs -x failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-make-fs -x failed'
++ LOG_ERROR 'Check virt-make-fs -x failed'
++ message='Check virt-make-fs -x failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-make-fs -x failed'
+Thu Jun 22 16:13:50 2023 - ERROR - Check virt-make-fs -x failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-make-fs.sh line 52'
++ message='oe_test_libguestfs_virt-make-fs.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-make-fs.sh line 52'
+Thu Jun 22 16:13:50 2023 - ERROR - oe_test_libguestfs_virt-make-fs.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 16:13:51 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 10
++ test 10 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 16:13:51 2023 - ERROR - failed to execute the case.
++ exit 10
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:13:52 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test
++ virsh start openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh undefine openEuler-2003 --nvram
+error: failed to get domain 'openEuler-2003'
+
++ unset LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:30:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:30:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: 'Last metadata expiration check: 0:30:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.\nPackage libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.\nPackage virt-manager-4.1.0-1.oe2303.noarch is already installed.\nPackage qemu-10:6.2.0-68.oe2303.riscv64 is already installed.\nPackage libvirt-6.2.0-52.oe2303.riscv64 is already installed.\nPackage python3-paramiko-2.11.0-1.oe2303.noarch is already installed.\nNo match for argument: edk2-devel\nError: Unable to find a match: edk2-devel'
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*' 'file*'
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 22 16:13:55 2023 - INFO  - Finish to restore the test environment.

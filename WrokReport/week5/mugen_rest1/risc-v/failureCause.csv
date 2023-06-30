@@ -1,0 +1,220 @@
+测试套/软件包名,测试用例名,日志文件,原因,Broken testcase,pkg not found,preinstall absent,kernel module absent,file missing,systemd unit restart failure,systemd unit runtime error,systemd unit enable failure,timeout
+meson_0.54,oe_test_meson_0.54_meson_13,2023-06-22-15_57_52.log,,0,0,0,0,0,0,0,0,0
+meson_0.54,oe_test_meson_0.54_meson_12,2023-06-22-15_56_27.log,,0,0,0,0,0,0,0,0,0
+meson_0.54,oe_test_meson_0.54_meson_15,2023-06-22-16_00_19.log,,0,0,0,0,0,0,0,0,0
+meson_0.54,oe_test_meson_0.54_meson_06,2023-06-22-15_50_21.log,,0,0,0,0,0,0,0,0,0
+meson_0.54,oe_test_meson_0.54_meson_09,2023-06-22-15_53_52.log,"timeout
+",0,0,0,0,0,0,0,0,1
+meson_0.54,oe_test_meson_0.54_meson_10,2023-06-22-15_54_48.log,,0,0,0,0,0,0,0,0,0
+meson_0.54,oe_test_meson_0.54_meson_20,2023-06-22-16_07_18.log,"timeout
+",0,0,0,0,0,0,0,0,1
+meson_0.54,oe_test_meson_0.54_meson_05,2023-06-22-15_49_20.log,,0,0,0,0,0,0,0,0,0
+keepalived-issue,oe_test_vrrp_garp_keepalived,2023-06-22-17_56_13.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfish_guestunmount,2023-06-22-15_43_02.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-df_01,2023-06-22-15_59_35.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-sysprep_05,2023-06-22-16_24_38.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-sysprep_02,2023-06-22-16_18_32.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_guestmount_01,2023-06-22-15_46_18.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+libguestfs,oe_test_libguestfs_virt-builder,2023-06-22-15_51_35.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-win-reg,2023-06-22-16_28_54.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-sysprep_03,2023-06-22-16_22_52.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-sysprep_04,2023-06-22-16_23_45.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-log,2023-06-22-16_10_51.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-tar-in,2023-06-22-16_25_23.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-resize_01,2023-06-22-16_15_03.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-inspector_02,2023-06-22-16_10_03.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_guestfish_01,2023-06-22-15_43_57.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-tar-out,2023-06-22-16_26_50.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-diff_01,2023-06-22-16_01_35.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_libguestfs-boot-benchmark,2023-06-22-15_49_21.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-p2v-make-kiwi,2023-06-22-16_14_42.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-get-kernel_01,2023-06-22-16_07_31.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-filesystems_03,2023-06-22-16_05_54.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-ls_01,2023-06-22-16_11_41.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-alignment-scan,2023-06-22-15_50_46.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-customize,2023-06-22-15_59_11.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-filesystems_02,2023-06-22-16_04_57.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-sysprep_01,2023-06-22-16_17_44.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_guestmount_02,2023-06-22-15_47_04.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-df_02,2023-06-22-16_00_26.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_guestmount_03,2023-06-22-15_47_52.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-sparsify,2023-06-22-16_17_23.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-cat,2023-06-22-15_56_42.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-index-validate,2023-06-22-16_09_02.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-v2v-copy-to-local,2023-06-22-16_28_33.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-copy-in,2023-06-22-15_57_37.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-dib,2023-06-22-16_01_11.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-resize_02,2023-06-22-16_15_51.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_guestfish_03,2023-06-22-15_45_30.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_libguestfs-boot-analysis,2023-06-22-15_48_35.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+libguestfs,oe_test_libguestfs_libguestfs-test-tool,2023-06-22-15_50_04.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-resize_03,2023-06-22-16_16_43.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-v2v,2023-06-22-16_28_12.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_guestfish_02,2023-06-22-15_44_45.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-inspector_01,2023-06-22-16_09_22.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-diff_03,2023-06-22-16_03_17.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-format,2023-06-22-16_06_38.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-p2v-make-disk,2023-06-22-16_14_00.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-diff_02,2023-06-22-16_02_26.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-p2v-make-kickstart,2023-06-22-16_14_20.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-make-fs,2023-06-22-16_13_12.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-get-kernel_02,2023-06-22-16_08_17.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-filesystems_01,2023-06-22-16_04_05.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-ls_02,2023-06-22-16_12_26.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libguestfs,oe_test_libguestfs_virt-copy-out,2023-06-22-15_58_21.log,"file missing
+",0,0,0,0,1,0,0,0,0
+rust,oe_test_cargo_02,2023-06-22-17_47_45.log,"file missing
+",0,0,0,0,1,0,0,0,0
+rust,oe_test_clippy,2023-06-22-17_48_36.log,"file missing
+",0,0,0,0,1,0,0,0,0
+rust,oe_test_rustc_01,2023-06-22-17_43_34.log,"file missing
+",0,0,0,0,1,0,0,0,0
+rust,oe_test_rustdoc,2023-06-22-17_46_20.log,"file missing
+",0,0,0,0,1,0,0,0,0
+rust,oe_test_rustfmt,2023-06-22-17_49_10.log,"file missing
+",0,0,0,0,1,0,0,0,0
+rust,oe_test_cargo_01,2023-06-22-17_47_06.log,"file missing
+",0,0,0,0,1,0,0,0,0
+rust,oe_test_rustc_02,2023-06-22-17_44_42.log,"file missing
+",0,0,0,0,1,0,0,0,0
+rust,oe_test_rustc_03,2023-06-22-17_45_36.log,"file missing
+",0,0,0,0,1,0,0,0,0
+netsniff-ng,oe_test_astraceroute_01,2023-06-22-16_26_07.log,,0,0,0,0,0,0,0,0,0
+netsniff-ng,oe_test_trafgen_01,2023-06-22-19_19_42.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_netsniff_ng_02,2023-06-22-17_49_24.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_ifpps_01,2023-06-22-17_18_14.log,,0,0,0,0,0,0,0,0,0
+netsniff-ng,oe_test_netsniff_ng_03,2023-06-22-18_19_31.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_netsniff_ng_04,2023-06-22-18_49_37.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_astraceroute_04,2023-06-22-16_54_33.log,,0,0,0,0,0,0,0,0,0
+netsniff-ng,oe_test_astraceroute_03,2023-06-22-16_31_50.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_astraceroute_02,2023-06-22-16_29_09.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_astraceroute_05,2023-06-22-16_57_19.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_trafgen_02,2023-06-22-19_49_47.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_netsniff_ng_01,2023-06-22-17_19_18.log,"timeout
+",0,0,0,0,0,0,0,0,1
+netsniff-ng,oe_test_ifpps_02,2023-06-22-17_18_45.log,,0,0,0,0,0,0,0,0,0
+hwloc_2.7.1,oe_test_hwloc_base_hwloc-ls_02,2023-06-22-16_12_03.log,,0,0,0,0,0,0,0,0,0
+hwloc_2.7.1,oe_test_hwloc_base_hwloc-ls_03,2023-06-22-16_12_56.log,,0,0,0,0,0,0,0,0,0
+hwloc_2.7.1,oe_test_hwloc_base_hwloc-ls_04,2023-06-22-16_13_47.log,,0,0,0,0,0,0,0,0,0
+hwloc_2.7.1,oe_test_hwloc_base_hwloc-ls_01,2023-06-22-16_11_12.log,,0,0,0,0,0,0,0,0,0
+sassc,oe_test_sassc_01,2023-06-22-18_00_53.log,,0,0,0,0,0,0,0,0,0
+rubygem-sdoc,oe_test_rubygem-sdoc_sdoc_01,2023-06-22-17_12_34.log,,0,0,0,0,0,0,0,0,0
+rubygem-sdoc,oe_test_rubygem-sdoc_sdoc_06,2023-06-22-17_40_25.log,,0,0,0,0,0,0,0,0,0
+rubygem-sdoc,oe_test_rubygem-sdoc_sdoc-merge,2023-06-22-17_10_55.log,,0,0,0,0,0,0,0,0,0
+rubygem-sdoc,oe_test_rubygem-sdoc_sdoc_05,2023-06-22-17_34_45.log,,0,0,0,0,0,0,0,0,0
+rubygem-sdoc,oe_test_rubygem-sdoc_sdoc_02,2023-06-22-17_17_32.log,,0,0,0,0,0,0,0,0,0
+rubygem-sdoc,oe_test_rubygem-sdoc_sdoc_03,2023-06-22-17_23_16.log,,0,0,0,0,0,0,0,0,0
+rubygem-sdoc,oe_test_rubygem-sdoc_sdoc_04,2023-06-22-17_29_34.log,,0,0,0,0,0,0,0,0,0
+bird,oe_test_bird_01,2023-06-22-17_05_42.log,,0,0,0,0,0,0,0,0,0
+bird,oe_test_service_bird,systemctl_for_2023-06-22-17_07_50.log,"Broken testcase
+preinstall absent
+",1,0,1,0,0,0,0,0,0
+bird,oe_test_birdcl_03,2023-06-22-17_02_10.log,,0,0,0,0,0,0,0,0,0
+bird,oe_test_birdc_01,2023-06-22-17_03_03.log,"file missing
+",0,0,0,0,1,0,0,0,0
+bird,oe_test_bird_02,2023-06-22-17_06_50.log,"file missing
+",0,0,0,0,1,0,0,0,0
+bird,oe_test_birdcl_01,2023-06-22-17_00_13.log,,0,0,0,0,0,0,0,0,0
+bird,oe_test_birdc_03,2023-06-22-17_04_48.log,,0,0,0,0,0,0,0,0,0
+kmod-kvdo-issue,oe_test_kvdo_vdo_cpu,2023-06-22-18_15_25.log,"file missing
+",0,0,0,0,1,0,0,0,0
+kmod-kvdo-issue,oe_test_kvdo_vdo_iocopy,2023-06-22-18_16_42.log,"file missing
+",0,0,0,0,1,0,0,0,0
+aspell,oe_test_aspell_01,2023-06-22-15_43_01.log,,0,0,0,0,0,0,0,0,0
+baws-sdk-java,oe_test_baws-sdk-java_001,2023-06-22-18_12_41.log,"file missing
+",0,0,0,0,1,0,0,0,0
+Echarts,oe_test_Echarts,2023-06-22-18_11_39.log,"file missing
+",0,0,0,0,1,0,0,0,0
+selinux,oe_test_selinux_semanage_httpd,2023-06-22-17_14_09.log,"file missing
+",0,0,0,0,1,0,0,0,0
+selinux,oe_test_fix_selinux_reject_messages,2023-06-22-17_12_38.log,,0,0,0,0,0,0,0,0,0
+selinux,oe_test_selinux_listuser,2023-06-22-16_30_57.log,"file missing
+",0,0,0,0,1,0,0,0,0
+selinux,oe_test_selinux_booleands,2023-06-22-16_41_00.log,"timeout
+",0,0,0,0,0,0,0,0,1
+selinux,oe_test_selinux_change_enforcing,2023-06-22-16_39_58.log,"timeout
+",0,0,0,0,0,0,0,0,1
+selinux,oe_test_selinux_sec_sestatus,2023-06-22-16_39_25.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+selinux,oe_test_identify_selinux_rejects,2023-06-22-16_42_33.log,"timeout
+",0,0,0,0,0,0,0,0,1
+selinux,oe_test_selinux_change_permissive,2023-06-22-16_39_38.log,"timeout
+",0,0,0,0,0,0,0,0,1
+selinux,oe_test_selinux_confining_admin_using_role,2023-06-22-16_33_38.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+selinux,oe_test_selinux_http,2023-06-22-16_34_50.log,,0,0,0,0,0,0,0,0,0
+selinux,oe_test_selinux_confining_admin_to_sysadm_u,2023-06-22-16_34_14.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+selinux,oe_test_selinux_sec_status_mode,2023-06-22-16_38_03.log,,0,0,0,0,0,0,0,0,0
+selinux,oe_test_selinux_confining_regular_user,2023-06-22-16_33_03.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+selinux,oe_test_selinux_audit,2023-06-22-17_15_48.log,"timeout
+",0,0,0,0,0,0,0,0,1
+selinux,oe_test_selinux_adduser,2023-06-22-16_32_05.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+selinux,oe_test_selinux_disable,2023-06-22-16_40_31.log,,0,0,0,0,0,0,0,0,0
+selinux,oe_test_selinux_sharing_nfs_cifs_using_booleans,2023-06-22-16_36_37.log,,0,0,0,0,0,0,0,0,0
+systools,oe_test_systools,2023-06-22-18_25_24.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0

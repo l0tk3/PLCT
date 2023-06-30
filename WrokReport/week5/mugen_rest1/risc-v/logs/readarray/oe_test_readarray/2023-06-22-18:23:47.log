@@ -1,0 +1,105 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 18:23:49 2023 - INFO  - Start testing...
++ echo a b c d e f g h i j k l m n o p q r s t u v w x y z
++ tr ' ' '\n'
++ CHECK_RESULT 0 0 0 'echo fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='echo fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ readarray myarr
++ CHECK_RESULT 0 0 0 'readarray fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='readarray fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo a b c d e f g h i j k l m n o p q r s t u v w x y z
++ grep -E '[a-z]'
+a b c d e f g h i j k l m n o p q r s t u v w x y z
++ CHECK_RESULT 0 0 0 'Failure to Collect Information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failure to Collect Information'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ readarray -n 6 myarr
++ CHECK_RESULT 0 0 0 'readarray fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='readarray fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo a b c d e f
++ grep -E '[a-z]'
+a b c d e f
++ CHECK_RESULT 0 0 0 'failed to test readarray -n 6'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='failed to test readarray -n 6'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 18:23:50 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:23:51 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to clean the test environment.'
++ message='Start to clean the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to clean the test environment.'
+Thu Jun 22 18:23:51 2023 - INFO  - Start to clean the test environment.
++ rm -rf test.log
++ LOG_INFO 'End to clean the test environment.'
++ message='End to clean the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to clean the test environment.'
+Thu Jun 22 18:23:52 2023 - INFO  - End to clean the test environment.

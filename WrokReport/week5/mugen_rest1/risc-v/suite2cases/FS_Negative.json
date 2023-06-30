@@ -1,0 +1,52 @@
+{
+    "path": "${OET_PATH}/testcases/system-test/fs-test/FS_Negative",
+    "add disk": [20],
+    "machine num": 2,
+    "cases": [
+        {
+            "name": "oe_test_FSIO_boot_full_data"
+        },
+        {
+            "name": "oe_test_FSIO_cat_block_file"
+        },
+        {
+            "name": "oe_test_FSIO_cat_file_error_format"
+        },
+        {
+            "name": "oe_test_FSIO_cat_stack"
+        },
+        {
+            "name": "oe_test_FSIO_check_rootfs"
+        },
+        {
+            "name": "oe_test_FSIO_create_file_format"
+        },
+        {
+            "name": "oe_test_FSIO_create_file_noformat"
+        },
+        {
+            "name": "oe_test_FSIO_create_full_dir"
+        },
+        {
+            "name": "oe_test_FSIO_create_hard_link_rm"
+        },
+        {
+            "name": "oe_test_FSIO_create_same_name_dir_file"
+        },
+        {
+            "name": "oe_test_FSIO_destory_block"
+        },
+        {
+            "name": "oe_test_FSIO_e2fsck_datablock"
+        },
+        {
+            "name": "oe_test_FSIO_etc_full_data"
+        },
+        {
+            "name": "oe_test_FSIO_fopen_r+_fail"
+        },
+        {
+            "name": "oe_test_FSIO_fread_larger_memsize"
+        }
+    ]
+}

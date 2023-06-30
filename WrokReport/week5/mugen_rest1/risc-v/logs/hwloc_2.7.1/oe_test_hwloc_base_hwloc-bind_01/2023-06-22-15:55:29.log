@@ -1,0 +1,232 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 15:55:31 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpk51fsj33
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpk51fsj33
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 15:56:03 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 15:56:04 2023 - INFO  - Start testing...
++ hwloc-bind --mempolicy default echo hello
++ grep hello
+--mempolicy ignored unless memory binding is also requested with --membind.
+hello
++ CHECK_RESULT 0 0 0 'hwloc-bind --mempolicy failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --mempolicy failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --membind ps
++ grep PID
+    PID TTY          TIME CMD
++ CHECK_RESULT 0 0 0 'hwloc-bind --membind failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --membind failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --version
++ grep hwloc-bind
+hwloc-bind 2.7.1
++ CHECK_RESULT 0 0 0 'hwloc-bind --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --cpubind core:0 hwloc-info
++ grep Package
+ depth 1:          1 Package (type #1)
++ CHECK_RESULT 0 0 0 'hwloc-bind --cpubind failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --cpubind failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind -l core:0 hwloc-ps -a
++ grep hwloc-ps
+1658	Core:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-bind -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --logical core:0 hwloc-ps -a
++ grep hwloc-ps
+1660	Core:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-bind  --logical failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind  --logical failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind -p core:0 hwloc-ps -a
++ grep Machine
+1	Machine:0		/sbin/init
+194	Machine:0		/usr/lib/systemd/systemd-journald
+221	Machine:0		/usr/lib/systemd/systemd-udevd
+275	Machine:0		/usr/lib/systemd/systemd-logind
+277	Machine:0		/usr/sbin/NetworkManager
+282	Machine:0		sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+292	Machine:0		/usr/sbin/crond
+293	Machine:0		/sbin/agetty
+294	Machine:0		/sbin/agetty
+313	Machine:0		sshd: root [priv]
+316	Machine:0		sshd: root@notty
+317	Machine:0		python3
+1569	Machine:0		sh
+1570	Machine:0		sudo
+1571	Machine:0		tee
+1572	Machine:0		bash
+1616	Machine:0		python3
+1617	Machine:0		bash
+1663	Machine:0		grep
++ CHECK_RESULT 0 0 0 'hwloc-bind -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --single core:0 hwloc-info
++ grep depth
+depth 0:           1 Machine (type #0)
+ depth 1:          1 Package (type #1)
+  depth 2:         4 Core (type #2)
+   depth 3:        4 PU (type #3)
+Special depth -3:  1 NUMANode (type #13)
+Special depth -6:  2 OSDev (type #16)
++ CHECK_RESULT 0 0 0 'hwloc-bind --single failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --single failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --strict core:0 lstopo
++ grep L#
+  Package L#0
+    NUMANode L#0 (P#0 3937MB)
+    Core L#0 + PU L#0 (P#0)
+    Core L#1 + PU L#1 (P#1)
+    Core L#2 + PU L#2 (P#2)
+    Core L#3 + PU L#3 (P#3)
++ CHECK_RESULT 0 0 0 'hwloc-bind --strict failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --strict failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --get hwloc-info core:0
++ grep Core
+Core L#0
+ type = Core
+ full type = Core
++ CHECK_RESULT 0 0 0 'hwloc-bind --get failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --get failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 15:56:06 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:56:07 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:56:07 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpk51fsj33 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpk51fsj33
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 15:56:18 2023 - INFO  - End to restore the test environment.

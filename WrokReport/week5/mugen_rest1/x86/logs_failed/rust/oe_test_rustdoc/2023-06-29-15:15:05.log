@@ -1,0 +1,337 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 29 15:15:06 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL rust
++ pkgs=rust
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs rust --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpzetz05v3
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpzetz05v3
++ cp ../common/hello.rs ../common/lib.rs ../common/main.rs ../common/myhello.rs ../common/pub.rs ../common/test.rs ../common/war.rs ./
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 29 15:15:30 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:15:30 2023 - INFO  - Start to run test.
++ rustdoc -h
++ grep Options
+Options:
++ CHECK_RESULT 0 0 0 'Help information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc -V
++ grep -E '[0-9]'
+rustdoc 1.67.1-dev (d5a82bbd2 2023-02-07) (built from a source tarball)
++ CHECK_RESULT 0 0 0 'Failed to output the version information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc -v -V
++ grep -E 'release|version|[0-9]'
+rustdoc 1.67.1-dev (d5a82bbd2 2023-02-07) (built from a source tarball)
+host: x86_64-unknown-linux-gnu
+release: 1.67.1-dev
+LLVM version: 15.0.7
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs -o doc --crate-name mycrate
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -d doc/mycrate
++ CHECK_RESULT 0 0 0 'Failed to specify the output path'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to specify the output path'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs -L doc/
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc hello.rs --cfg hello
++ test -d doc/hello
++ CHECK_RESULT 0 0 0 'Failed to pass configuration parameters'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to pass configuration parameters'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs --extern doc/
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs -C target_feature=+avx
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc --document-private-items test.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs --test
++ grep -E 'running|tests'
+running 0 tests
++ CHECK_RESULT 0 0 0 'Failed to run the test code'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run the test code'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs --html-in-header doc/hello/all.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs --html-after-content doc/hello/all.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs --html-after-content doc/hello/all.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs --markdown-no-toc
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc test.rs -e doc/dark.css
+error: option --extend-css argument must be a file
+
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 63'
++ message='oe_test_rustdoc.sh line 63'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 63'
+Thu Jun 29 15:15:35 2023 - ERROR - oe_test_rustdoc.sh line 63
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc lib.rs --crate-type=lib -W missing-docs
++ grep warning
+warning: missing documentation for the crate
+warning: missing documentation for a function
+warning: 2 warnings emitted
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Warn'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Warn'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc lib.rs --crate-type=lib -A missing-docs -o hello_A
++ test -d hello_A
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Allow'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Allow'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc lib.rs --crate-type=lib -D missing-docs
++ grep error
+error: missing documentation for the crate
+error: missing documentation for a function
+error: aborting due to 2 previous errors
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Deny'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Deny'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc lib.rs --crate-type=lib -F missing-docs
++ grep error
+error: missing documentation for the crate
+error: missing documentation for a function
+error: aborting due to 2 previous errors
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Forbit'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Forbit'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustdoc war.rs --cap-lints warn
++ CHECK_RESULT 0 0 0 'Failed to set Linter level warning'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter level warning'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 15:15:37 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:15:37 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:15:37 2023 - INFO  - start environment cleanup.
++ rm -rf ./hello.rs ./lib.rs ./main.rs ./myhello.rs ./pub.rs ./test.rs ./war.rs doc hello_A hello.rs
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpzetz05v3 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpzetz05v3
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:15:38 2023 - INFO  - Finish environment cleanup!

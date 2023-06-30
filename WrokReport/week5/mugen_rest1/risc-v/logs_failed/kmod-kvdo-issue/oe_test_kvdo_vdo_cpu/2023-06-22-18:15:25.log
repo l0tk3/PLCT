@@ -1,0 +1,129 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 18:15:28 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'vdo kmod-kvdo'
++ pkgs='vdo kmod-kvdo'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'vdo kmod-kvdo' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 06:15:40 PM CST.
+No match for argument: kmod-kvdo
+Error: Unable to find a match: kmod-kvdo'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 06:15:40 PM CST.
+No match for argument: kmod-kvdo
+Error: Unable to find a match: kmod-kvdo'
+++ TEST_DISK 1
+++ id=1
+++ python3 /root/mugen/libs/locallibs/get_test_device.py --device disk --node 1
++ free_disks=
+++ echo ''
+++ awk -F ' ' '{for(i=1;i<=NF;i++) if ($i!~/[0-9]/)j=i;print $j}'
++ free_disk=/dev/
++ test -z /dev/
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 18:16:05 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 22 18:16:06 2023 - INFO  - Start executing testcase.
++ vdo create --name=vdo1 --device=/dev/ --vdoLogicalSize=1T --force
+oe_test_kvdo_vdo_cpu.sh: line 32: vdo: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_kvdo_vdo_cpu.sh line 33'
++ message='oe_test_kvdo_vdo_cpu.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_kvdo_vdo_cpu.sh line 33'
+Thu Jun 22 18:16:06 2023 - ERROR - oe_test_kvdo_vdo_cpu.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ top -n 10 -bw
++ grep indexW /tmp/top_result
++ awk '{print $9}'
++ awk '{if($1 > 1.0) print 1}'
++ grep 1
++ CHECK_RESULT 1 0 1
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 22 18:16:34 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 18:16:35 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 18:16:35 2023 - INFO  - start environment cleanup.
++ vdo remove --name=vdo1
+oe_test_kvdo_vdo_cpu.sh: line 41: vdo: command not found
++ DNF_REMOVE 1
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 06:15:40 PM CST.
+No match for argument: kmod-kvdo
+Error: Unable to find a match: kmod-kvdo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 06:15:40 PM CST.
+No match for argument: kmod-kvdo
+Error: Unable to find a match: kmod-kvdo'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 06:15:40 PM CST.\nNo match for argument: kmod-kvdo\nError: Unable to find a match: kmod-kvdo'
++ '[' 0 -ne 0 ']'
++ rm -rf /tmp/top_result
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 18:16:38 2023 - INFO  - Finish environment cleanup!

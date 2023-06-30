@@ -1,0 +1,263 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 29 15:19:48 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL clippy
++ pkgs=clippy
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs clippy --node 1 --tempfile ''
++ tmpfile2=/tmp/tmppuyk5dho
++ '[' -z '' ']'
++ tmpfile=/tmp/tmppuyk5dho
++ cp ../common/test.rs test.rs
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 29 15:20:06 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Thu Jun 29 15:20:07 2023 - INFO  - Start executing testcase!
++ cargo-clippy -h
++ grep Usage
+Usage:
++ CHECK_RESULT 0 0 0 'Help information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo-clippy -V
++ grep -E '[0-9]'
+clippy 0.1.67
++ CHECK_RESULT 0 0 0 'Failed to output the version information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo new hello_world
+     Created binary (application) `hello_world` package
++ cd hello_world
++ cargo check
++ grep Finished
+    Finished dev [unoptimized + debuginfo] target(s) in 0.17s
++ CHECK_RESULT 0 0 0 'Failure check'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failure check'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo-clippy -W
++ grep Finished
+    Finished dev [unoptimized + debuginfo] target(s) in 0.22s
++ CHECK_RESULT 0 0 0 'Failed setup warning'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed setup warning'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo-clippy -A
++ grep Finished
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
++ CHECK_RESULT 0 0 0 'Failed setup Allow'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed setup Allow'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo-clippy -D
++ grep Finished
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
++ CHECK_RESULT 0 0 0 'Failed setup Deny'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed setup Deny'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo-clippy -F
++ grep Finished
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
++ CHECK_RESULT 0 0 0 'Failed setup Forbit'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed setup Forbit'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clippy-driver -h
++ grep Usage
+Usage:
++ CHECK_RESULT 0 0 0 'Help information printing failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clippy-driver -V
++ grep -E '[0-9]'
+clippy 0.1.67
++ CHECK_RESULT 0 0 0 'Failed to output the version information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd ../
++ clippy-driver --rustc test.rs
++ ./test
+Hello, world!
++ CHECK_RESULT 0 0 0 'Failed to pass parameters'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to pass parameters'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clippy-driver test.rs -W missing-docs
++ grep warning
+warning: missing documentation for the crate
+warning: 1 warning emitted
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Allow'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Allow'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clippy-driver test.rs -A missing-docs -o hello_A
++ ./hello_A
++ grep 'Hello, world!'
+Hello, world!
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Allow'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Allow'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clippy-driver test.rs -D missing-docs
++ grep error
+error: missing documentation for the crate
+error: aborting due to previous error
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Deny'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Deny'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clippy-driver test.rs -F missing-docs
++ grep error
+error: missing documentation for the crate
+error: aborting due to previous error
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Forbit'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Forbit'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 15:20:08 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 15:20:08 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:20:08 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmppuyk5dho ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmppuyk5dho
++ '[' 0 -ne 0 ']'
++ rm -rf ./test ./test.rs hello_A hello_world
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:20:08 2023 - INFO  - Finish environment cleanup!

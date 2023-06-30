@@ -1,0 +1,245 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:46:16 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'libvpx tar'
++ pkgs='libvpx tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libvpx tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpf4wsdnn6
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpf4wsdnn6
++ tar -xf common/libvpx.tar.gz
++ mkdir tmp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:46:43 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:46:43 2023 - INFO  - Start to run test.
++ vpxenc --codec=vp8 -w 352 -h 288 --test-16bit-internal --threads=6 --verbose -o tmp/1_t16.ivf data/1.mp4
+Codec: WebM Project VP8 Encoder v1.7.0
+Source file: data/1.mp4 File Type: RAW Format: I420
+Destination file: tmp/1_t16.ivf
+Encoder parameters:
+    g_usage                      = 0
+    g_threads                    = 6
+    g_profile                    = 0
+    g_w                          = 352
+    g_h                          = 288
+    g_bit_depth                  = 8
+    g_input_bit_depth            = 8
+    g_timebase.num               = 1
+    g_timebase.den               = 30
+    g_error_resilient            = 0
+    g_pass                       = 0
+    g_lag_in_frames              = 0
+    rc_dropframe_thresh          = 0
+    rc_resize_allowed            = 0
+    rc_scaled_width              = 1
+    rc_scaled_height             = 1
+    rc_resize_up_thresh          = 60
+    rc_resize_down_thresh        = 30
+    rc_end_usage                 = 0
+    rc_target_bitrate            = 256
+    rc_min_quantizer             = 4
+    rc_max_quantizer             = 63
+    rc_undershoot_pct            = 100
+    rc_overshoot_pct             = 100
+    rc_buf_sz                    = 6000
+    rc_buf_initial_sz            = 4000
+    rc_buf_optimal_sz            = 5000
+    rc_2pass_vbr_bias_pct        = 50
+    rc_2pass_vbr_minsection_pct  = 0
+    rc_2pass_vbr_maxsection_pct  = 400
+    rc_2pass_vbr_corpus_complexity = 0
+    kf_mode                      = 1
+    kf_min_dist                  = 0
+    kf_max_dist                  = 128
+Pass 1/1 frame    1/0          0B       0 us 0.00 fpm [ETA  unknown]   53757F[KPass 1/1 frame    2/1      53757B  291761 us 6.85 fps [ETA  0:00:21]    1222F[KPass 1/1 frame    3/2      54979B  443605 us 6.76 fps [ETA  0:00:20]    1062F[KPass 1/1 frame    4/3      56041B  648424 us 6.17 fps [ETA  0:00:19]    1194F[KPass 1/1 frame    5/4      57235B  844183 us 5.92 fps [ETA  0:00:18]    1399F[KPass 1/1 frame    6/5      58634B 1043356 us 5.75 fps [ETA  0:00:17]    1607F[KPass 1/1 frame    7/6      60241B 1250551 us 5.60 fps [ETA  0:00:16]    1846F[KPass 1/1 frame    8/7      62087B 1468446 us 5.45 fps [ETA  0:00:16]    2054F[KPass 1/1 frame    9/8      64141B 1688294 us 5.33 fps [ETA  0:00:15]    2440F[KPass 1/1 frame   10/9      66581B 1920087 us 5.21 fps [ETA  0:00:15]    2580F[KPass 1/1 frame   11/10     69161B 2160556 us 5.09 fps [ETA  0:00:14]    2700F[KPass 1/1 frame   12/11     71861B 2396154 us 5.01 fps [ETA  0:00:14]    2561F[KPass 1/1 frame   13/12     74422B 2632489 us 4.94 fps [ETA  0:00:14]    2677F[KPass 1/1 frame   14/13     77099B 2874522 us 4.87 fps [ETA  0:00:13]    2918F[KPass 1/1 frame   15/14     80017B 3105965 us 4.83 fps [ETA  0:00:13]    2894F[KPass 1/1 frame   16/15     82911B 3339226 us 4.79 fps [ETA  0:00:13]    2895F[KPass 1/1 frame   17/16     85806B 3575352 us 4.75 fps [ETA  0:00:13]    2817F[KPass 1/1 frame   18/17     88623B 3806178 us 4.73 fps [ETA  0:00:12]   24164F[KPass 1/1 frame   19/18    112787B 4104342 us 4.63 fps [ETA  0:00:12]     988F[KPass 1/1 frame   20/19    113775B 4238681 us 4.72 fps [ETA  0:00:12]    1472F[KPass 1/1 frame   21/20    115247B 4433403 us 4.74 fps [ETA  0:00:12]    1878F[KPass 1/1 frame   22/21    117125B 4639723 us 4.74 fps [ETA  0:00:11]    2055F[KPass 1/1 frame   23/22    119180B 4854190 us 4.74 fps [ETA  0:00:11]    1893F[KPass 1/1 frame   24/23    121073B 5067214 us 4.74 fps [ETA  0:00:11]    2520F[KPass 1/1 frame   25/24    123593B 5302937 us 4.71 fps [ETA  0:00:11]    2945F[KPass 1/1 frame   26/25    126538B 5541644 us 4.69 fps [ETA  0:00:11]    3328F[KPass 1/1 frame   27/26    129866B 5790562 us 4.66 fps [ETA  0:00:10]    3541F[KPass 1/1 frame   28/27    133407B 6035511 us 4.64 fps [ETA  0:00:10]    3642F[KPass 1/1 frame   29/28    137049B 6282938 us 4.62 fps [ETA  0:00:10]    3758F[KPass 1/1 frame   30/29    140807B 6525368 us 4.60 fps [ETA  0:00:10]    3838F[KPass 1/1 frame   31/30    144645B 6772137 us 4.58 fps [ETA  0:00:09]   22896F[KPass 1/1 frame   32/31    167541B 7043021 us 4.54 fps [ETA  0:00:09]   11953F[KPass 1/1 frame   33/32    179494B 7304618 us 4.52 fps [ETA  0:00:09]    1092F[KPass 1/1 frame   34/33    180586B 7419195 us 4.58 fps [ETA  0:00:09]    1844F[KPass 1/1 frame   35/34    182430B 7622131 us 4.59 fps [ETA  0:00:09]    2373F[KPass 1/1 frame   36/35    184803B 7837605 us 4.59 fps [ETA  0:00:08]    2232F[KPass 1/1 frame   37/36    187035B 8050372 us 4.60 fps [ETA  0:00:08]    2554F[KPass 1/1 frame   38/37    189589B 8287483 us 4.59 fps [ETA  0:00:08]    2593F[KPass 1/1 frame   39/38    192182B 8512781 us 4.58 fps [ETA  0:00:08]   24204F[KPass 1/1 frame   40/39    216386B 8818351 us 4.54 fps [ETA  0:00:07]     504F[KPass 1/1 frame   41/40    216890B 8940794 us 4.59 fps [ETA  0:00:07]     810F[KPass 1/1 frame   42/41    217700B 9119639 us 4.61 fps [ETA  0:00:07]     968F[KPass 1/1 frame   43/42    218668B 9302401 us 4.62 fps [ETA  0:00:07]    1016F[KPass 1/1 frame   44/43    219684B 9486894 us 4.64 fps [ETA  0:00:07]    1079F[KPass 1/1 frame   45/44    220763B 9672041 us 4.65 fps [ETA  0:00:06]    1083F[KPass 1/1 frame   46/45    221846B 9857078 us 4.67 fps [ETA  0:00:06]    1014F[KPass 1/1 frame   47/46    222860B   10041 ms 4.68 fps [ETA  0:00:06]    1042F[KPass 1/1 frame   48/47    223902B   10228 ms 4.69 fps [ETA  0:00:06]    1032F[KPass 1/1 frame   49/48    224934B   10415 ms 4.70 fps [ETA  0:00:05]    1058F[KPass 1/1 frame   50/49    225992B   10601 ms 4.72 fps [ETA  0:00:05]    1050F[KPass 1/1 frame   51/50    227042B   10788 ms 4.73 fps [ETA  0:00:05]    1064F[KPass 1/1 frame   52/51    228106B   10977 ms 4.74 fps [ETA  0:00:05]    1045F[KPass 1/1 frame   53/52    229151B   11170 ms 4.74 fps [ETA  0:00:04]    1066F[KPass 1/1 frame   54/53    230217B   11358 ms 4.75 fps [ETA  0:00:04]    1074F[KPass 1/1 frame   55/54    231291B   11548 ms 4.76 fps [ETA  0:00:04]    1049F[KPass 1/1 frame   56/55    232340B   11735 ms 4.77 fps [ETA  0:00:04]    1045F[KPass 1/1 frame   57/56    233385B   11920 ms 4.78 fps [ETA  0:00:03]    1092F[KPass 1/1 frame   58/57    234477B   12112 ms 4.79 fps [ETA  0:00:03]    1078F[KPass 1/1 frame   59/58    235555B   12300 ms 4.80 fps [ETA  0:00:03]    1029F[KPass 1/1 frame   60/59    236584B   12490 ms 4.80 fps [ETA  0:00:03]    1038F[KPass 1/1 frame   61/60    237622B   12680 ms 4.81 fps [ETA  0:00:03]    1063F[KPass 1/1 frame   62/61    238685B   12873 ms 4.82 fps [ETA  0:00:02]    1039F[KPass 1/1 frame   63/62    239724B   13064 ms 4.82 fps [ETA  0:00:02]    1092F[KPass 1/1 frame   64/63    240816B   13257 ms 4.83 fps [ETA  0:00:02]    1099F[KPass 1/1 frame   65/64    241915B   13450 ms 4.83 fps [ETA  0:00:02]    1925F[KPass 1/1 frame   66/65    243840B   13680 ms 4.82 fps [ETA  0:00:01]    2073F[KPass 1/1 frame   67/66    245913B   13914 ms 4.82 fps [ETA  0:00:01]    2390F[KPass 1/1 frame   68/67    248303B   14166 ms 4.80 fps [ETA  0:00:01]    2814F[KPass 1/1 frame   69/68    251117B   14409 ms 4.79 fps [ETA  0:00:01]   23132F[KPass 1/1 frame   70/69    274249B   14693 ms 4.76 fps [ETA  0:00:01]   10068F[KPass 1/1 frame   71/70    284317B   14962 ms 4.75 fps [ETA  0:00:00]     955F[KPass 1/1 frame   72/71    285272B   15071 ms 4.78 fps [ETA  0:00:00]    1238F[KPass 1/1 frame   73/72    286510B   15244 ms 4.79 fps [ETA  0:00:00]    1203F[KPass 1/1 frame   74/73    287713B   15412 ms 4.80 fps [ETA  0:00:00]    1247F[KPass 1/1 frame   74/74    288960B   15586 ms 4.75 fps [ETA  0:00:00] [KPass 1/1 frame   74/74    288960B   31238b/f  937167b/s   15586 ms (4.75 fps)[K
++ ls tmp
++ grep 1_t16.ivf
+1_t16.ivf
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --test-16bit-internal '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --test-16bit-internal '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --lag-in-frames=2 --threads=6 --verbose -o tmp/1_lf.ivf data/1.mp4
++ grep 'g_lag_in_frames.*2'
+    g_lag_in_frames              = 2
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --lag-in-frames '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --lag-in-frames '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --drop-frame=2 --threads=6 --verbose -o tmp/1_df.ivf data/1.mp4
++ grep 'rc_dropframe_thresh.*2'
+    rc_dropframe_thresh          = 2
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --drop-frame '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --drop-frame '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --resize-allowed=1 --threads=6 --verbose -o tmp/1_ra.ivf data/1.mp4
++ grep 'rc_resize_allowed.*1'
+    rc_resize_allowed            = 1
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --resize-allowed '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --resize-allowed '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --resize-width=2 --threads=6 --verbose -o tmp/1_rw.ivf data/1.mp4
++ grep 'rc_scaled_width.*2'
+    rc_scaled_width              = 2
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --resize-width '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --resize-width '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --resize-height=2 --threads=6 --verbose -o tmp/1_rh.ivf data/1.mp4
++ grep 'rc_scaled_height.*2'
+    rc_scaled_height             = 2
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --resize-height '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --resize-height '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --resize-up=2 --threads=6 --verbose -o tmp/1_ru.ivf data/1.mp4
++ grep 'rc_resize_up_thresh.*2'
+    rc_resize_up_thresh          = 2
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --resize-up '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --resize-up '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --resize-down=2 --threads=6 --verbose -o tmp/1_rd.ivf data/1.mp4
++ grep 'rc_resize_down_thresh.*2'
+    rc_resize_down_thresh        = 2
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --resize-down '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --resize-down '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --end-usage=1 --threads=6 --verbose -o tmp/1_eu.ivf data/1.mp4
++ grep 'rc_end_usage.*1'
+    rc_end_usage                 = 1
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --end-usage '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --end-usage '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --min-q=3 --threads=6 --verbose -o tmp/1_minq.ivf data/1.mp4
++ grep 'rc_min_quantizer.*3'
+    rc_min_quantizer             = 3
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --min-q '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --min-q '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 16:49:31 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:49:32 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:49:32 2023 - INFO  - Start to restore the test environment.
++ rm -rf tmp data
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpf4wsdnn6 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpf4wsdnn6
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:49:42 2023 - INFO  - End to restore the test environment.

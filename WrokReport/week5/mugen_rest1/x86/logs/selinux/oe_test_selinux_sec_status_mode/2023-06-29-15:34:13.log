@@ -1,0 +1,176 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:34:13 2023 - INFO  - Start environmental preparation.
+++ getenforce
++ default_selinux_status=Disabled
++ setenforce 1
+setenforce: SELinux is disabled
++ DNF_INSTALL setroubleshoot-server
++ pkgs=setroubleshoot-server
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs setroubleshoot-server --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpo3eov2d9
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpo3eov2d9
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 15:35:16 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 15:35:16 2023 - INFO  - Start executing testcase.
++ getenforce
++ grep Enforcing
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sec_status_mode.sh line 33'
++ message='oe_test_selinux_sec_status_mode.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sec_status_mode.sh line 33'
+Thu Jun 29 15:35:16 2023 - ERROR - oe_test_selinux_sec_status_mode.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ setenforce 0
+setenforce: SELinux is disabled
++ getenforce
++ grep Permissive
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sec_status_mode.sh line 36'
++ message='oe_test_selinux_sec_status_mode.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sec_status_mode.sh line 36'
+Thu Jun 29 15:35:16 2023 - ERROR - oe_test_selinux_sec_status_mode.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ setenforce 1
+setenforce: SELinux is disabled
++ getenforce
++ grep Enforcing
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sec_status_mode.sh line 39'
++ message='oe_test_selinux_sec_status_mode.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sec_status_mode.sh line 39'
+Thu Jun 29 15:35:16 2023 - ERROR - oe_test_selinux_sec_status_mode.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage permissive -a httpd_t
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sec_status_mode.sh line 41'
++ message='oe_test_selinux_sec_status_mode.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sec_status_mode.sh line 41'
+Thu Jun 29 15:35:16 2023 - ERROR - oe_test_selinux_sec_status_mode.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage permissive -d httpd_t
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sec_status_mode.sh line 43'
++ message='oe_test_selinux_sec_status_mode.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sec_status_mode.sh line 43'
+Thu Jun 29 15:35:16 2023 - ERROR - oe_test_selinux_sec_status_mode.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 29 15:35:16 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 5
++ test 5 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:35:16 2023 - ERROR - failed to execute the case.
++ exit 5
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:35:16 2023 - INFO  - start environment cleanup.
++ '[' Disabled == Enforcing ']'
++ setenforce 0
+setenforce: SELinux is disabled
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpo3eov2d9 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpo3eov2d9
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:35:17 2023 - INFO  - Finish environment cleanup!

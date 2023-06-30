@@ -1,0 +1,151 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:23:37 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'npm httpd'
++ pkgs='npm httpd'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'npm httpd' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpvfkuus19
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpvfkuus19
++ systemctl stop firewalld
+Failed to stop firewalld.service: Unit firewalld.service not loaded.
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:25:50 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 29 14:25:50 2023 - INFO  - Start testing...
++ npm install echarts --save
+
+added 3 packages, and audited 4 packages in 6s
+
+found 0 vulnerabilities
+npm notice 
+npm notice New major version of npm available! 8.5.5 -> 9.7.2
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.7.2>
+npm notice Run `npm install -g npm@9.7.2` to update!
+npm notice 
++ CHECK_RESULT 0 0 0 'echarts Installation failure error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='echarts Installation failure error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ln -s node_modules/echarts/ echarts
++ CHECK_RESULT 0 0 0 'ln -s  node_modules/echarts/ echarts Soft connection making failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ln -s  node_modules/echarts/ echarts Soft connection making failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cp index.html /var/www/html/
++ CHECK_RESULT 0 0 0 'cp index.html /var/www/html/ Copy failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cp index.html /var/www/html/ Copy failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start httpd
++ CHECK_RESULT 0 0 0 'httpd Start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='httpd Start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curl http://localhost
++ grep 销售额
++ grep 季度销量
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1080  100  1080    0     0   116k      0 --:--:-- --:--:-- --:--:--  117k
+<body>    <div id="container"></div>    <script type="text/javascript">        var myChart = echarts.init(document.getElementById("container"));        var option = {            title: {                text: "销售额"            },            tooltip: {},            legend: {                data: ["销量"]            },            xAxis: {                data: ["1", "2", "3", "4"]            },            yAxis: {},            series: [{                name: 'mobile季度销量',                type: 'line',                data: [190, 220, 230, 250]            }]        };        myChart.setOption(option);
++ CHECK_RESULT 0 0 0 'curl http://localhost | grep "销售额" | grep "季度销量" Access failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='curl http://localhost | grep "销售额" | grep "季度销量" Access failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:25:56 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:25:56 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:25:56 2023 - INFO  - Start to restore the test environment.
++ systemctl start firewalld
+Failed to start firewalld.service: Unit firewalld.service not found.
++ npm uninstall echarts --save
+
+removed 3 packages, and audited 1 package in 408ms
+
+found 0 vulnerabilities
++ rm -rf node_modules/echarts/ echarts
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpvfkuus19 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpvfkuus19
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:25:59 2023 - INFO  - End to restore the test environment.

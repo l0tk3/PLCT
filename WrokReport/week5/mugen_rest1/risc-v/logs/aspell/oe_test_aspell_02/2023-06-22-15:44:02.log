@@ -1,0 +1,354 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 15:44:04 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL aspell
++ pkgs=aspell
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs aspell --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwttwz6j5
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwttwz6j5
++ unzip common/aspell6-en-2020.12.07-0.zip
+Archive:  common/aspell6-en-2020.12.07-0.zip
+   creating: aspell6-en-2020.12.07-0/
+  inflating: aspell6-en-2020.12.07-0/american-variant_0.alias  
+  inflating: aspell6-en-2020.12.07-0/american-variant_1.alias  
+  inflating: aspell6-en-2020.12.07-0/american-wo_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/american-w_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/american.alias  
+  inflating: aspell6-en-2020.12.07-0/australian-variant_0.alias  
+  inflating: aspell6-en-2020.12.07-0/australian-variant_1.alias  
+  inflating: aspell6-en-2020.12.07-0/australian-wo_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/australian-w_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/australian.alias  
+  inflating: aspell6-en-2020.12.07-0/british-ise-wo_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/british-ise-w_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/british-ise.alias  
+  inflating: aspell6-en-2020.12.07-0/british-ize-wo_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/british-ize-w_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/british-ize.alias  
+  inflating: aspell6-en-2020.12.07-0/british-variant_0.alias  
+  inflating: aspell6-en-2020.12.07-0/british-variant_1.alias  
+  inflating: aspell6-en-2020.12.07-0/british-wo_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/british-w_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/british.alias  
+  inflating: aspell6-en-2020.12.07-0/canadian-variant_0.alias  
+  inflating: aspell6-en-2020.12.07-0/canadian-variant_1.alias  
+  inflating: aspell6-en-2020.12.07-0/canadian-wo_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/canadian-w_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/canadian.alias  
+  inflating: aspell6-en-2020.12.07-0/configure  
+  inflating: aspell6-en-2020.12.07-0/Copyright  
+   creating: aspell6-en-2020.12.07-0/doc/
+  inflating: aspell6-en-2020.12.07-0/doc/ChangeLog  
+  inflating: aspell6-en-2020.12.07-0/doc/extra.txt  
+  inflating: aspell6-en-2020.12.07-0/doc/SCOWL-README  
+  inflating: aspell6-en-2020.12.07-0/en-common.cwl  
+  inflating: aspell6-en-2020.12.07-0/en-common.rws  
+  inflating: aspell6-en-2020.12.07-0/en-variant_0.cwl  
+  inflating: aspell6-en-2020.12.07-0/en-variant_0.multi  
+  inflating: aspell6-en-2020.12.07-0/en-variant_0.rws  
+  inflating: aspell6-en-2020.12.07-0/en-variant_1.cwl  
+  inflating: aspell6-en-2020.12.07-0/en-variant_1.multi  
+  inflating: aspell6-en-2020.12.07-0/en-variant_1.rws  
+  inflating: aspell6-en-2020.12.07-0/en-variant_2.cwl  
+  inflating: aspell6-en-2020.12.07-0/en-variant_2.multi  
+  inflating: aspell6-en-2020.12.07-0/en-variant_2.rws  
+  inflating: aspell6-en-2020.12.07-0/en-wo_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en-wo_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en-wo_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en-w_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en-w_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en-w_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en.dat  
+  inflating: aspell6-en-2020.12.07-0/en.multi  
+  inflating: aspell6-en-2020.12.07-0/english-variant_0.alias  
+  inflating: aspell6-en-2020.12.07-0/english-variant_1.alias  
+  inflating: aspell6-en-2020.12.07-0/english-variant_2.alias  
+  inflating: aspell6-en-2020.12.07-0/english-wo_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/english-w_accents.alias  
+  inflating: aspell6-en-2020.12.07-0/english.alias  
+  inflating: aspell6-en-2020.12.07-0/en_affix.dat  
+  inflating: aspell6-en-2020.12.07-0/en_AU-variant_0.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_AU-variant_0.multi  
+  inflating: aspell6-en-2020.12.07-0/en_AU-variant_0.rws  
+  inflating: aspell6-en-2020.12.07-0/en_AU-variant_1.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_AU-variant_1.multi  
+  inflating: aspell6-en-2020.12.07-0/en_AU-variant_1.rws  
+  inflating: aspell6-en-2020.12.07-0/en_AU-wo_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_AU-wo_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_AU-wo_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_AU-w_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_AU-w_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_AU-w_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_AU.multi  
+  inflating: aspell6-en-2020.12.07-0/en_CA-variant_0.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_CA-variant_0.multi  
+  inflating: aspell6-en-2020.12.07-0/en_CA-variant_0.rws  
+  inflating: aspell6-en-2020.12.07-0/en_CA-variant_1.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_CA-variant_1.multi  
+  inflating: aspell6-en-2020.12.07-0/en_CA-variant_1.rws  
+  inflating: aspell6-en-2020.12.07-0/en_CA-wo_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_CA-wo_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_CA-wo_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_CA-w_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_CA-w_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_CA-w_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_CA.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ise-wo_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ise-wo_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ise-wo_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ise-w_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ise-w_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ise-w_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ise.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ize-wo_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ize-wo_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ize-wo_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ize-w_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ize-w_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ize-w_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-ize.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-variant_0.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_GB-variant_0.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-variant_0.rws  
+  inflating: aspell6-en-2020.12.07-0/en_GB-variant_1.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_GB-variant_1.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-variant_1.rws  
+  inflating: aspell6-en-2020.12.07-0/en_GB-wo_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB-w_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_GB.multi  
+  inflating: aspell6-en-2020.12.07-0/en_phonet.dat  
+  inflating: aspell6-en-2020.12.07-0/en_US-variant_0.multi  
+  inflating: aspell6-en-2020.12.07-0/en_US-variant_1.multi  
+  inflating: aspell6-en-2020.12.07-0/en_US-wo_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_US-wo_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_US-wo_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_US-w_accents-only.cwl  
+  inflating: aspell6-en-2020.12.07-0/en_US-w_accents-only.rws  
+  inflating: aspell6-en-2020.12.07-0/en_US-w_accents.multi  
+  inflating: aspell6-en-2020.12.07-0/en_US.multi  
+  inflating: aspell6-en-2020.12.07-0/info  
+  inflating: aspell6-en-2020.12.07-0/Makefile  
+  inflating: aspell6-en-2020.12.07-0/Makefile.pre  
+  inflating: aspell6-en-2020.12.07-0/README  
+  inflating: aspell6-en-2020.12.07-0/README.iso  
++ cp -R ./aspell6-en-2020.12.07-0/american.alias ./aspell6-en-2020.12.07-0/american-variant_0.alias ./aspell6-en-2020.12.07-0/american-variant_1.alias ./aspell6-en-2020.12.07-0/american-w_accents.alias ./aspell6-en-2020.12.07-0/american-wo_accents.alias ./aspell6-en-2020.12.07-0/australian.alias ./aspell6-en-2020.12.07-0/australian-variant_0.alias ./aspell6-en-2020.12.07-0/australian-variant_1.alias ./aspell6-en-2020.12.07-0/australian-w_accents.alias ./aspell6-en-2020.12.07-0/australian-wo_accents.alias ./aspell6-en-2020.12.07-0/british.alias ./aspell6-en-2020.12.07-0/british-ise.alias ./aspell6-en-2020.12.07-0/british-ise-w_accents.alias ./aspell6-en-2020.12.07-0/british-ise-wo_accents.alias ./aspell6-en-2020.12.07-0/british-ize.alias ./aspell6-en-2020.12.07-0/british-ize-w_accents.alias ./aspell6-en-2020.12.07-0/british-ize-wo_accents.alias ./aspell6-en-2020.12.07-0/british-variant_0.alias ./aspell6-en-2020.12.07-0/british-variant_1.alias ./aspell6-en-2020.12.07-0/british-w_accents.alias ./aspell6-en-2020.12.07-0/british-wo_accents.alias ./aspell6-en-2020.12.07-0/canadian.alias ./aspell6-en-2020.12.07-0/canadian-variant_0.alias ./aspell6-en-2020.12.07-0/canadian-variant_1.alias ./aspell6-en-2020.12.07-0/canadian-w_accents.alias ./aspell6-en-2020.12.07-0/canadian-wo_accents.alias ./aspell6-en-2020.12.07-0/configure ./aspell6-en-2020.12.07-0/Copyright ./aspell6-en-2020.12.07-0/doc ./aspell6-en-2020.12.07-0/en_affix.dat ./aspell6-en-2020.12.07-0/en_AU.multi ./aspell6-en-2020.12.07-0/en_AU-variant_0.cwl ./aspell6-en-2020.12.07-0/en_AU-variant_0.multi ./aspell6-en-2020.12.07-0/en_AU-variant_0.rws ./aspell6-en-2020.12.07-0/en_AU-variant_1.cwl ./aspell6-en-2020.12.07-0/en_AU-variant_1.multi ./aspell6-en-2020.12.07-0/en_AU-variant_1.rws ./aspell6-en-2020.12.07-0/en_AU-w_accents.multi ./aspell6-en-2020.12.07-0/en_AU-w_accents-only.cwl ./aspell6-en-2020.12.07-0/en_AU-w_accents-only.rws ./aspell6-en-2020.12.07-0/en_AU-wo_accents.multi ./aspell6-en-2020.12.07-0/en_AU-wo_accents-only.cwl ./aspell6-en-2020.12.07-0/en_AU-wo_accents-only.rws ./aspell6-en-2020.12.07-0/en_CA.multi ./aspell6-en-2020.12.07-0/en_CA-variant_0.cwl ./aspell6-en-2020.12.07-0/en_CA-variant_0.multi ./aspell6-en-2020.12.07-0/en_CA-variant_0.rws ./aspell6-en-2020.12.07-0/en_CA-variant_1.cwl ./aspell6-en-2020.12.07-0/en_CA-variant_1.multi ./aspell6-en-2020.12.07-0/en_CA-variant_1.rws ./aspell6-en-2020.12.07-0/en_CA-w_accents.multi ./aspell6-en-2020.12.07-0/en_CA-w_accents-only.cwl ./aspell6-en-2020.12.07-0/en_CA-w_accents-only.rws ./aspell6-en-2020.12.07-0/en_CA-wo_accents.multi ./aspell6-en-2020.12.07-0/en_CA-wo_accents-only.cwl ./aspell6-en-2020.12.07-0/en_CA-wo_accents-only.rws ./aspell6-en-2020.12.07-0/en-common.cwl ./aspell6-en-2020.12.07-0/en-common.rws ./aspell6-en-2020.12.07-0/en.dat ./aspell6-en-2020.12.07-0/en_GB-ise.multi ./aspell6-en-2020.12.07-0/en_GB-ise-w_accents.multi ./aspell6-en-2020.12.07-0/en_GB-ise-w_accents-only.cwl ./aspell6-en-2020.12.07-0/en_GB-ise-w_accents-only.rws ./aspell6-en-2020.12.07-0/en_GB-ise-wo_accents.multi ./aspell6-en-2020.12.07-0/en_GB-ise-wo_accents-only.cwl ./aspell6-en-2020.12.07-0/en_GB-ise-wo_accents-only.rws ./aspell6-en-2020.12.07-0/en_GB-ize.multi ./aspell6-en-2020.12.07-0/en_GB-ize-w_accents.multi ./aspell6-en-2020.12.07-0/en_GB-ize-w_accents-only.cwl ./aspell6-en-2020.12.07-0/en_GB-ize-w_accents-only.rws ./aspell6-en-2020.12.07-0/en_GB-ize-wo_accents.multi ./aspell6-en-2020.12.07-0/en_GB-ize-wo_accents-only.cwl ./aspell6-en-2020.12.07-0/en_GB-ize-wo_accents-only.rws ./aspell6-en-2020.12.07-0/en_GB.multi ./aspell6-en-2020.12.07-0/en_GB-variant_0.cwl ./aspell6-en-2020.12.07-0/en_GB-variant_0.multi ./aspell6-en-2020.12.07-0/en_GB-variant_0.rws ./aspell6-en-2020.12.07-0/en_GB-variant_1.cwl ./aspell6-en-2020.12.07-0/en_GB-variant_1.multi ./aspell6-en-2020.12.07-0/en_GB-variant_1.rws ./aspell6-en-2020.12.07-0/en_GB-w_accents.multi ./aspell6-en-2020.12.07-0/en_GB-wo_accents.multi ./aspell6-en-2020.12.07-0/english.alias ./aspell6-en-2020.12.07-0/english-variant_0.alias ./aspell6-en-2020.12.07-0/english-variant_1.alias ./aspell6-en-2020.12.07-0/english-variant_2.alias ./aspell6-en-2020.12.07-0/english-w_accents.alias ./aspell6-en-2020.12.07-0/english-wo_accents.alias ./aspell6-en-2020.12.07-0/en.multi ./aspell6-en-2020.12.07-0/en_phonet.dat ./aspell6-en-2020.12.07-0/en_US.multi ./aspell6-en-2020.12.07-0/en_US-variant_0.multi ./aspell6-en-2020.12.07-0/en_US-variant_1.multi ./aspell6-en-2020.12.07-0/en_US-w_accents.multi ./aspell6-en-2020.12.07-0/en_US-w_accents-only.cwl ./aspell6-en-2020.12.07-0/en_US-w_accents-only.rws ./aspell6-en-2020.12.07-0/en_US-wo_accents.multi ./aspell6-en-2020.12.07-0/en_US-wo_accents-only.cwl ./aspell6-en-2020.12.07-0/en_US-wo_accents-only.rws ./aspell6-en-2020.12.07-0/en-variant_0.cwl ./aspell6-en-2020.12.07-0/en-variant_0.multi ./aspell6-en-2020.12.07-0/en-variant_0.rws ./aspell6-en-2020.12.07-0/en-variant_1.cwl ./aspell6-en-2020.12.07-0/en-variant_1.multi ./aspell6-en-2020.12.07-0/en-variant_1.rws ./aspell6-en-2020.12.07-0/en-variant_2.cwl ./aspell6-en-2020.12.07-0/en-variant_2.multi ./aspell6-en-2020.12.07-0/en-variant_2.rws ./aspell6-en-2020.12.07-0/en-w_accents.multi ./aspell6-en-2020.12.07-0/en-w_accents-only.cwl ./aspell6-en-2020.12.07-0/en-w_accents-only.rws ./aspell6-en-2020.12.07-0/en-wo_accents.multi ./aspell6-en-2020.12.07-0/en-wo_accents-only.cwl ./aspell6-en-2020.12.07-0/en-wo_accents-only.rws ./aspell6-en-2020.12.07-0/info ./aspell6-en-2020.12.07-0/Makefile ./aspell6-en-2020.12.07-0/Makefile.pre ./aspell6-en-2020.12.07-0/README ./aspell6-en-2020.12.07-0/README.iso /usr/lib64/aspell-0.60
++ OLD_LANG=en_US.UTF-8
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 15:44:34 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 15:44:34 2023 - INFO  - Start to run test.
++ echo namee
++ aspell pipe
++ grep '& namee 34 0:'
+& namee 34 0: name, named, names, Nam, Niamey, Nome, Aimee, Amer, NM, Naomi, nae, nee, name's, namely, Noemi, Noumea, Amie, Dame, Jame, Nate, came, dame, fame, game, gnome, lame, nape, nave, same, tame, numb, Nam's, Nampa, Nome's
++ CHECK_RESULT 0 0 0 'Check aspell pipe failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell pipe failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo name
++ aspell soundslike
++ grep NM
+name	NM
++ CHECK_RESULT 0 0 0 'Check aspell soundslike failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell soundslike failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo name
++ aspell expand 1
++ grep name
+name
++ CHECK_RESULT 0 0 0 'Check aspell expand failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell expand failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo and
++ aspell clean
++ grep and
+and
++ CHECK_RESULT 0 0 0 'Check aspell clean failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell clean failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo 'and name'
++ aspell munch-list
++ grep 'and name'
+and name
++ CHECK_RESULT 0 0 0 'Check aspell munch-list failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell munch-list failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aspell dicts
++ grep en_US-variant_0
+en_US-variant_0
++ CHECK_RESULT 0 0 0 'Check aspell dicts failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell dicts failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aspell filters
++ grep 'filter to skip URL'
+url            filter to skip URL like constructs
++ CHECK_RESULT 0 0 0 'Check aspell filters failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell filters failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aspell modes
++ grep 'mode for checking generic SGML/XML'
+sgml           mode for checking generic SGML/XML documents
++ CHECK_RESULT 0 0 0 'Check aspell modes failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell modes failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo and
++ aspell munch --sug-mode=bad-spellers -l en conv from to either none
++ grep and
+and
++ CHECK_RESULT 0 0 0 'Check aspell munch --sug-mode=bad-spellers conv from to either none failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell munch --sug-mode=bad-spellers conv from to either none failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo name
++ aspell munch --sug-mode=bad-spellers -l en norm-map
++ grep name
+name
++ CHECK_RESULT 0 0 0 'Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aspell munch --sug-mode=bad-spellers -l en norm-map 1.txt failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo namee
++ spell 2.txt
++ grep namee
+namee
++ CHECK_RESULT 0 0 0 'Check spell failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check spell failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 15:44:36 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:44:36 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:44:37 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpwttwz6j5 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwttwz6j5
++ '[' 0 -ne 0 ']'
++ rm -rf aspell6-en-2020.12.07-0 2.txt
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 15:44:47 2023 - INFO  - End to restore the test environment.

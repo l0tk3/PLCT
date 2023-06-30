@@ -1,0 +1,816 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 22 17:43:37 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL rust
++ pkgs=rust
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs rust --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rust
+Error: Unable to find a match: rust'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rust
+Error: Unable to find a match: rust'
++ cp ../common/hello.rs ../common/lib.rs ../common/main.rs ../common/myhello.rs ../common/pub.rs ../common/test.rs ../common/war.rs ./
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 22 17:44:08 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 17:44:08 2023 - INFO  - Start to run test.
++ rustc -h
++ grep Options
+oe_test_rustc_01.sh: line 31: rustc: command not found
++ CHECK_RESULT 1 0 0 'Help information printing failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Help information printing failed'
++ LOG_ERROR 'Help information printing failed'
++ message='Help information printing failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Help information printing failed'
+Thu Jun 22 17:44:09 2023 - ERROR - Help information printing failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 32'
++ message='oe_test_rustc_01.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 32'
+Thu Jun 22 17:44:09 2023 - ERROR - oe_test_rustc_01.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --cfg hello hello.rs
+oe_test_rustc_01.sh: line 33: rustc: command not found
++ ./hello
++ grep 'world!'
+oe_test_rustc_01.sh: line 34: ./hello: No such file or directory
++ CHECK_RESULT 1 0 0 'Failed to print world！'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to print world！'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to print world！'
++ LOG_ERROR 'Failed to print world！'
++ message='Failed to print world！'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to print world！'
+Thu Jun 22 17:44:10 2023 - ERROR - Failed to print world！
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 35'
++ message='oe_test_rustc_01.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 35'
+Thu Jun 22 17:44:10 2023 - ERROR - oe_test_rustc_01.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc -L . hello.rs --crate-name hello1
+oe_test_rustc_01.sh: line 36: rustc: command not found
++ test -f hello1
++ CHECK_RESULT 1 0 0 'Failed to output the hello1 file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello1 file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the hello1 file'
++ LOG_ERROR 'Failed to output the hello1 file'
++ message='Failed to output the hello1 file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the hello1 file'
+Thu Jun 22 17:44:11 2023 - ERROR - Failed to output the hello1 file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 38'
++ message='oe_test_rustc_01.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 38'
+Thu Jun 22 17:44:11 2023 - ERROR - oe_test_rustc_01.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --crate-type bin pub.rs
+oe_test_rustc_01.sh: line 39: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 40'
++ message='oe_test_rustc_01.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 40'
+Thu Jun 22 17:44:12 2023 - ERROR - oe_test_rustc_01.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f pub
++ CHECK_RESULT 1 0 0 'Failed to output the pub file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the pub file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the pub file'
++ LOG_ERROR 'Failed to output the pub file'
++ message='Failed to output the pub file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the pub file'
+Thu Jun 22 17:44:12 2023 - ERROR - Failed to output the pub file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 42'
++ message='oe_test_rustc_01.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 42'
+Thu Jun 22 17:44:13 2023 - ERROR - oe_test_rustc_01.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --crate-type lib pub.rs --crate-name _lib
+oe_test_rustc_01.sh: line 43: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 44'
++ message='oe_test_rustc_01.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 44'
+Thu Jun 22 17:44:13 2023 - ERROR - oe_test_rustc_01.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f lib_lib.rlib
++ CHECK_RESULT 1 0 0 'Failed to output the lib_lib.rlib file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the lib_lib.rlib file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the lib_lib.rlib file'
++ LOG_ERROR 'Failed to output the lib_lib.rlib file'
++ message='Failed to output the lib_lib.rlib file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the lib_lib.rlib file'
+Thu Jun 22 17:44:14 2023 - ERROR - Failed to output the lib_lib.rlib file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 46'
++ message='oe_test_rustc_01.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 46'
+Thu Jun 22 17:44:14 2023 - ERROR - oe_test_rustc_01.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --crate-type rlib pub.rs --crate-name _rlib
+oe_test_rustc_01.sh: line 47: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 48'
++ message='oe_test_rustc_01.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 48'
+Thu Jun 22 17:44:15 2023 - ERROR - oe_test_rustc_01.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f lib_rlib.rlib
++ CHECK_RESULT 1 0 0 'Failed to output the lib_rlib.rlib file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the lib_rlib.rlib file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the lib_rlib.rlib file'
++ LOG_ERROR 'Failed to output the lib_rlib.rlib file'
++ message='Failed to output the lib_rlib.rlib file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the lib_rlib.rlib file'
+Thu Jun 22 17:44:15 2023 - ERROR - Failed to output the lib_rlib.rlib file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 50'
++ message='oe_test_rustc_01.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 50'
+Thu Jun 22 17:44:15 2023 - ERROR - oe_test_rustc_01.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --crate-type dylib pub.rs --crate-name _dy
+oe_test_rustc_01.sh: line 51: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 52'
++ message='oe_test_rustc_01.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 52'
+Thu Jun 22 17:44:16 2023 - ERROR - oe_test_rustc_01.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f lib_dy.so
++ CHECK_RESULT 1 0 0 'Failed to output the lib_dy.so file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the lib_dy.so file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the lib_dy.so file'
++ LOG_ERROR 'Failed to output the lib_dy.so file'
++ message='Failed to output the lib_dy.so file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the lib_dy.so file'
+Thu Jun 22 17:44:16 2023 - ERROR - Failed to output the lib_dy.so file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 54'
++ message='oe_test_rustc_01.sh line 54'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 54'
+Thu Jun 22 17:44:17 2023 - ERROR - oe_test_rustc_01.sh line 54
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --crate-type cdylib pub.rs --crate-name _cdy
+oe_test_rustc_01.sh: line 55: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 56'
++ message='oe_test_rustc_01.sh line 56'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 56'
+Thu Jun 22 17:44:17 2023 - ERROR - oe_test_rustc_01.sh line 56
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f lib_cdy.so
++ CHECK_RESULT 1 0 0 'Failed to output the lib_cdy.so file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the lib_cdy.so file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the lib_cdy.so file'
++ LOG_ERROR 'Failed to output the lib_cdy.so file'
++ message='Failed to output the lib_cdy.so file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the lib_cdy.so file'
+Thu Jun 22 17:44:18 2023 - ERROR - Failed to output the lib_cdy.so file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 58'
++ message='oe_test_rustc_01.sh line 58'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 58'
+Thu Jun 22 17:44:18 2023 - ERROR - oe_test_rustc_01.sh line 58
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --crate-type staticlib pub.rs
+oe_test_rustc_01.sh: line 59: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 60'
++ message='oe_test_rustc_01.sh line 60'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 60'
+Thu Jun 22 17:44:19 2023 - ERROR - oe_test_rustc_01.sh line 60
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f libpub.a
++ CHECK_RESULT 1 0 0 'Failed to output the libpub.a file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the libpub.a file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the libpub.a file'
++ LOG_ERROR 'Failed to output the libpub.a file'
++ message='Failed to output the libpub.a file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the libpub.a file'
+Thu Jun 22 17:44:19 2023 - ERROR - Failed to output the libpub.a file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 62'
++ message='oe_test_rustc_01.sh line 62'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 62'
+Thu Jun 22 17:44:20 2023 - ERROR - oe_test_rustc_01.sh line 62
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc pub.rs --crate-name hello_crate
+oe_test_rustc_01.sh: line 63: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 64'
++ message='oe_test_rustc_01.sh line 64'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 64'
+Thu Jun 22 17:44:20 2023 - ERROR - oe_test_rustc_01.sh line 64
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello_crate
++ CHECK_RESULT 1 0 0 'Failed to output the craname file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the craname file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the craname file'
++ LOG_ERROR 'Failed to output the craname file'
++ message='Failed to output the craname file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the craname file'
+Thu Jun 22 17:44:21 2023 - ERROR - Failed to output the craname file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 66'
++ message='oe_test_rustc_01.sh line 66'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 66'
+Thu Jun 22 17:44:21 2023 - ERROR - oe_test_rustc_01.sh line 66
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --edition 2018 hello.rs --crate-name hello_edit
+oe_test_rustc_01.sh: line 67: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 68'
++ message='oe_test_rustc_01.sh line 68'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 68'
+Thu Jun 22 17:44:22 2023 - ERROR - oe_test_rustc_01.sh line 68
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello_edit
++ CHECK_RESULT 1 0 0 'Failed to output the editname file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the editname file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the editname file'
++ LOG_ERROR 'Failed to output the editname file'
++ message='Failed to output the editname file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the editname file'
+Thu Jun 22 17:44:22 2023 - ERROR - Failed to output the editname file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 70'
++ message='oe_test_rustc_01.sh line 70'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 70'
+Thu Jun 22 17:44:23 2023 - ERROR - oe_test_rustc_01.sh line 70
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --emit asm hello.rs
+oe_test_rustc_01.sh: line 71: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 72'
++ message='oe_test_rustc_01.sh line 72'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 72'
+Thu Jun 22 17:44:23 2023 - ERROR - oe_test_rustc_01.sh line 72
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello.s
++ CHECK_RESULT 1 0 0 'Failed to output the hello.s file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.s file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the hello.s file'
++ LOG_ERROR 'Failed to output the hello.s file'
++ message='Failed to output the hello.s file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the hello.s file'
+Thu Jun 22 17:44:23 2023 - ERROR - Failed to output the hello.s file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 74'
++ message='oe_test_rustc_01.sh line 74'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 74'
+Thu Jun 22 17:44:24 2023 - ERROR - oe_test_rustc_01.sh line 74
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --emit llvm-bc hello.rs
+oe_test_rustc_01.sh: line 75: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 76'
++ message='oe_test_rustc_01.sh line 76'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 76'
+Thu Jun 22 17:44:24 2023 - ERROR - oe_test_rustc_01.sh line 76
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello.bc
++ CHECK_RESULT 1 0 0 'Failed to output the hello.bc file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.bc file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the hello.bc file'
++ LOG_ERROR 'Failed to output the hello.bc file'
++ message='Failed to output the hello.bc file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the hello.bc file'
+Thu Jun 22 17:44:25 2023 - ERROR - Failed to output the hello.bc file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 78'
++ message='oe_test_rustc_01.sh line 78'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 78'
+Thu Jun 22 17:44:25 2023 - ERROR - oe_test_rustc_01.sh line 78
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --emit llvm-ir hello.rs
+oe_test_rustc_01.sh: line 79: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 80'
++ message='oe_test_rustc_01.sh line 80'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 80'
+Thu Jun 22 17:44:26 2023 - ERROR - oe_test_rustc_01.sh line 80
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello.ll
++ CHECK_RESULT 1 0 0 'Failed to output the hello.ll file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.ll file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the hello.ll file'
++ LOG_ERROR 'Failed to output the hello.ll file'
++ message='Failed to output the hello.ll file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the hello.ll file'
+Thu Jun 22 17:44:26 2023 - ERROR - Failed to output the hello.ll file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 82'
++ message='oe_test_rustc_01.sh line 82'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 82'
+Thu Jun 22 17:44:27 2023 - ERROR - oe_test_rustc_01.sh line 82
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --emit obj hello.rs
+oe_test_rustc_01.sh: line 83: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 84'
++ message='oe_test_rustc_01.sh line 84'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 84'
+Thu Jun 22 17:44:27 2023 - ERROR - oe_test_rustc_01.sh line 84
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello.o
++ CHECK_RESULT 1 0 0 'Failed to output the hello.o file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.o file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the hello.o file'
++ LOG_ERROR 'Failed to output the hello.o file'
++ message='Failed to output the hello.o file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the hello.o file'
+Thu Jun 22 17:44:28 2023 - ERROR - Failed to output the hello.o file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 86'
++ message='oe_test_rustc_01.sh line 86'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 86'
+Thu Jun 22 17:44:28 2023 - ERROR - oe_test_rustc_01.sh line 86
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --emit metadata hello.rs
+oe_test_rustc_01.sh: line 87: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 88'
++ message='oe_test_rustc_01.sh line 88'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 88'
+Thu Jun 22 17:44:29 2023 - ERROR - oe_test_rustc_01.sh line 88
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f libhello.rmeta
++ CHECK_RESULT 1 0 0 'Failed to output the libhello.rmeta file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the libhello.rmeta file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the libhello.rmeta file'
++ LOG_ERROR 'Failed to output the libhello.rmeta file'
++ message='Failed to output the libhello.rmeta file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the libhello.rmeta file'
+Thu Jun 22 17:44:29 2023 - ERROR - Failed to output the libhello.rmeta file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 90'
++ message='oe_test_rustc_01.sh line 90'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 90'
+Thu Jun 22 17:44:30 2023 - ERROR - oe_test_rustc_01.sh line 90
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --emit link hello.rs --crate-name hello_link
+oe_test_rustc_01.sh: line 91: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 92'
++ message='oe_test_rustc_01.sh line 92'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 92'
+Thu Jun 22 17:44:30 2023 - ERROR - oe_test_rustc_01.sh line 92
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello_link
++ CHECK_RESULT 1 0 0 'Failed to output the hello_link file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello_link file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the hello_link file'
++ LOG_ERROR 'Failed to output the hello_link file'
++ message='Failed to output the hello_link file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the hello_link file'
+Thu Jun 22 17:44:31 2023 - ERROR - Failed to output the hello_link file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 94'
++ message='oe_test_rustc_01.sh line 94'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 94'
+Thu Jun 22 17:44:31 2023 - ERROR - oe_test_rustc_01.sh line 94
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --emit dep-info hello.rs
+oe_test_rustc_01.sh: line 95: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 96'
++ message='oe_test_rustc_01.sh line 96'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 96'
+Thu Jun 22 17:44:31 2023 - ERROR - oe_test_rustc_01.sh line 96
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello.d
++ CHECK_RESULT 1 0 0 'Failed to output the hello.d file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.d file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the hello.d file'
++ LOG_ERROR 'Failed to output the hello.d file'
++ message='Failed to output the hello.d file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the hello.d file'
+Thu Jun 22 17:44:32 2023 - ERROR - Failed to output the hello.d file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 98'
++ message='oe_test_rustc_01.sh line 98'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 98'
+Thu Jun 22 17:44:32 2023 - ERROR - oe_test_rustc_01.sh line 98
++ '[' 0 -eq 1 ']'
++ return 0
++ rustc --emit mir hello.rs
+oe_test_rustc_01.sh: line 99: rustc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 100'
++ message='oe_test_rustc_01.sh line 100'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 100'
+Thu Jun 22 17:44:33 2023 - ERROR - oe_test_rustc_01.sh line 100
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f hello.mir
++ CHECK_RESULT 1 0 0 'Failed to output the hello.mir file'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello.mir file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the hello.mir file'
++ LOG_ERROR 'Failed to output the hello.mir file'
++ message='Failed to output the hello.mir file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the hello.mir file'
+Thu Jun 22 17:44:33 2023 - ERROR - Failed to output the hello.mir file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustc_01.sh line 102'
++ message='oe_test_rustc_01.sh line 102'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustc_01.sh line 102'
+Thu Jun 22 17:44:34 2023 - ERROR - oe_test_rustc_01.sh line 102
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 17:44:34 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 35
++ test 35 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 17:44:35 2023 - ERROR - failed to execute the case.
++ exit 35
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 17:44:35 2023 - INFO  - start environment cleanup.
++ rm -rf ./hello.rs ./lib.rs ./main.rs ./myhello.rs ./pub.rs ./test.rs ./war.rs hello.rs lib.rs pub
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rust
+Error: Unable to find a match: rust ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rust
+Error: Unable to find a match: rust'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:00:18 ago on Thu 22 Jun 2023 05:43:49 PM CST.\nNo match for argument: rust\nError: Unable to find a match: rust'
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 17:44:38 2023 - INFO  - Finish environment cleanup!

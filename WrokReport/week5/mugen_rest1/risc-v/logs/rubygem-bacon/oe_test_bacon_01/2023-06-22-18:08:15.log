@@ -1,0 +1,294 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:08:17 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'rubygem-bacon tar'
++ pkgs='rubygem-bacon tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'rubygem-bacon tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpxs8ebvda
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpxs8ebvda
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:09:04 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:09:04 2023 - INFO  - Start to run test.
++ bacon -h
++ grep 'Usage: bacon'
+Usage: bacon [options] [files | -a] [-- untouched arguments]
++ CHECK_RESULT 0 0 0 'Check bacon -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --help
++ grep 'Usage: bacon'
+Usage: bacon [options] [files | -a] [-- untouched arguments]
++ CHECK_RESULT 0 0 0 'Check bacon --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --version
++ grep '[0-9].[0-9]'
+bacon 1.2
++ CHECK_RESULT 0 0 0 'Check bacon --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon -s ./data/whirlwind.rb
++ grep '6 specifications (8 requirements), 2 failures'
+6 specifications (8 requirements), 2 failures, 0 errors
++ CHECK_RESULT 0 0 0 'Check bacon -s failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon -s failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --specdox ./data/whirlwind.rb
++ grep '6 specifications (8 requirements), 2 failures'
+6 specifications (8 requirements), 2 failures, 0 errors
++ CHECK_RESULT 0 0 0 'Check bacon --specdox failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --specdox failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon -q ./data/whirlwind.rb
++ grep ..F..F
+..F..F
++ CHECK_RESULT 0 0 0 'Check bacon -q failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon -q failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --quiet ./data/whirlwind.rb
++ grep ..F..F
+..F..F
++ CHECK_RESULT 0 0 0 'Check bacon --quite failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --quite failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon -p ./data/whirlwind.rb
++ grep 'ok 1   - should be empty'
+ok 1   - should be empty
++ CHECK_RESULT 0 0 0 'Check bacon -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --tap ./data/whirlwind.rb
++ grep 'ok 1   - should be empty'
+ok 1   - should be empty
++ CHECK_RESULT 0 0 0 'Check bacon --tap failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --tap failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon -k ./data/whirlwind.rb
++ grep 'not ok - should raise on trying fetch any index'
+not ok - should raise on trying fetch any index: FAILED
++ CHECK_RESULT 0 0 0 'Check bacon -k failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon -k failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --knock ./data/whirlwind.rb
++ grep 'not ok - should raise on trying fetch any index'
+not ok - should raise on trying fetch any index: FAILED
++ CHECK_RESULT 0 0 0 'Check bacon --knock failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --knock failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon -o TestUnit ./data/whirlwind.rb
++ grep ..F..F
+..F..F
++ CHECK_RESULT 0 0 0 'Check bacon -o failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon -o failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --output TestUnit ./data/whirlwind.rb
++ grep ..F..F
+..F..F
++ CHECK_RESULT 0 0 0 'Check bacon --output failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --output failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon -Q ./data/whirlwind.rb
++ grep -e '- should have super powers \[FAILED]'
+  - should have super powers [FAILED]
++ CHECK_RESULT 0 0 0 'Check bacon -Q failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon -Q failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --no-backtrace ./data/whirlwind.rb
++ grep -e '- should have super powers \[FAILED]'
+  - should have super powers [FAILED]
++ CHECK_RESULT 0 0 0 'Check bacon --no-backtrace failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --no-backtrace failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon -a
++ grep '88 specifications (800 requirements), 0 failures, 0 errors'
+88 specifications (800 requirements), 0 failures, 0 errors
++ CHECK_RESULT 0 0 0 'Check bacon -a failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon -a failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bacon --automatic
++ grep '88 specifications (800 requirements), 0 failures, 0 errors'
+88 specifications (800 requirements), 0 failures, 0 errors
++ CHECK_RESULT 0 0 0 'Check bacon --automatic failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check bacon --automatic failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 18:09:35 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:09:36 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:09:36 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpxs8ebvda ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpxs8ebvda
++ '[' 0 -ne 0 ']'
++ rm -rf ./data ./lib/ ./test/
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 18:09:47 2023 - INFO  - End to restore the test environment.

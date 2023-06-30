@@ -1,0 +1,342 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:35:35 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL setroubleshoot-server
++ pkgs=setroubleshoot-server
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs setroubleshoot-server --node 1 --tempfile ''
++ tmpfile2=/tmp/tmptang5gvf
++ '[' -z '' ']'
++ tmpfile=/tmp/tmptang5gvf
++ DNF_INSTALL setroubleshoot-server 2
++ pkgs=setroubleshoot-server
++ node=2
++ '[' -z /tmp/tmptang5gvf ']'
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs setroubleshoot-server --node 2 --tempfile /tmp/tmptang5gvf
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 168, in <module>
+    exitcode, output = rpm_install(args.pkgs, args.node, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 66, in rpm_install
+    conn = ssh_cmd.pssh_conn(
+  File "/root/mugen/libs/locallibs/ssh_cmd.py", line 53, in pssh_conn
+    conn.connect(ip, port, user, password, timeout=timeout)
+  File "/usr/lib/python3.10/site-packages/paramiko/client.py", line 340, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+  File "/usr/lib/python3.10/site-packages/paramiko/client.py", line 203, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+  File "/usr/lib64/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
++ tmpfile2=
++ '[' -z /tmp/tmptang5gvf ']'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 15:36:38 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 15:36:38 2023 - INFO  - Start executing testcase.
++ semanage boolean -l
++ grep httpd_use_nfs
++ grep off
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_booleands.sh line 32'
++ message='oe_test_selinux_booleands.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_booleands.sh line 32'
+Thu Jun 29 15:36:39 2023 - ERROR - oe_test_selinux_booleands.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage boolean -l
++ grep httpd_use_cifs
++ grep off
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_booleands.sh line 34'
++ message='oe_test_selinux_booleands.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_booleands.sh line 34'
+Thu Jun 29 15:36:39 2023 - ERROR - oe_test_selinux_booleands.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ getsebool -a
++ grep httpd_use_nfs
++ grep off
+getsebool:  SELinux is disabled
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_booleands.sh line 36'
++ message='oe_test_selinux_booleands.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_booleands.sh line 36'
+Thu Jun 29 15:36:39 2023 - ERROR - oe_test_selinux_booleands.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ getsebool -a
++ grep httpd_use_cifs
++ grep off
+getsebool:  SELinux is disabled
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_booleands.sh line 38'
++ message='oe_test_selinux_booleands.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_booleands.sh line 38'
+Thu Jun 29 15:36:39 2023 - ERROR - oe_test_selinux_booleands.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ setsebool httpd_use_nfs on
+Could not change active booleans: Invalid boolean
++ setsebool httpd_use_cifs on
+Could not change active booleans: Invalid boolean
++ semanage boolean -l
++ grep httpd_use_nfs
++ grep on
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_booleands.sh line 42'
++ message='oe_test_selinux_booleands.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_booleands.sh line 42'
+Thu Jun 29 15:36:39 2023 - ERROR - oe_test_selinux_booleands.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage boolean -l
++ grep httpd_use_cifs
++ grep on
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_booleands.sh line 44'
++ message='oe_test_selinux_booleands.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_booleands.sh line 44'
+Thu Jun 29 15:36:39 2023 - ERROR - oe_test_selinux_booleands.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ SSH_CMD 'setsebool -P httpd_use_nfs on;setsebool -P httpd_use_cifs on'
++ cmd='setsebool -P httpd_use_nfs on;setsebool -P httpd_use_cifs on'
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen/libs/locallibs/sshcmd.sh -c 'setsebool -P httpd_use_nfs on;setsebool -P httpd_use_cifs on' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Thu Jun 29 15:36:39 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ SSH_CMD 'semanage boolean -l | grep httpd_use_nfs | grep on'
++ cmd='semanage boolean -l | grep httpd_use_nfs | grep on'
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen/libs/locallibs/sshcmd.sh -c 'semanage boolean -l | grep httpd_use_nfs | grep on' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Thu Jun 29 15:36:39 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_booleands.sh line 47'
++ message='oe_test_selinux_booleands.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_booleands.sh line 47'
+Thu Jun 29 15:36:39 2023 - ERROR - oe_test_selinux_booleands.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ SSH_CMD 'semanage boolean -l | grep httpd_use_cifs| grep on'
++ cmd='semanage boolean -l | grep httpd_use_cifs| grep on'
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen/libs/locallibs/sshcmd.sh -c 'semanage boolean -l | grep httpd_use_cifs| grep on' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Thu Jun 29 15:36:39 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_booleands.sh line 49'
++ message='oe_test_selinux_booleands.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_booleands.sh line 49'
+Thu Jun 29 15:36:39 2023 - ERROR - oe_test_selinux_booleands.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 29 15:36:39 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:36:39 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:36:39 2023 - INFO  - start environment cleanup.
++ setsebool httpd_use_nfs off
+Could not change active booleans: Invalid boolean
++ setsebool httpd_use_cifs off
+Could not change active booleans: Invalid boolean
++ SSH_CMD 'setsebool -P httpd_use_nfs off;setsebool -P httpd_use_cifs off'
++ cmd='setsebool -P httpd_use_nfs off;setsebool -P httpd_use_cifs off'
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen/libs/locallibs/sshcmd.sh -c 'setsebool -P httpd_use_nfs off;setsebool -P httpd_use_cifs off' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Thu Jun 29 15:36:39 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmptang5gvf ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmptang5gvf
++ '[' 0 -ne 0 ']'
++ DNF_REMOVE 2 setroubleshoot-server
++ node=2
++ pkg_list=setroubleshoot-server
++ mode=0
++ [[ -z /tmp/tmptang5gvf ]]
++ '[' 0 -ne 0 ']'
++ '[' 2 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 2 --pkgs setroubleshoot-server --tempfile /tmp/tmptang5gvf
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 134, in rpm_remove
+    conn = ssh_cmd.pssh_conn(
+  File "/root/mugen/libs/locallibs/ssh_cmd.py", line 53, in pssh_conn
+    conn.connect(ip, port, user, password, timeout=timeout)
+  File "/usr/lib/python3.10/site-packages/paramiko/client.py", line 340, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+  File "/usr/lib/python3.10/site-packages/paramiko/client.py", line 203, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+  File "/usr/lib64/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:36:40 2023 - INFO  - Finish environment cleanup!

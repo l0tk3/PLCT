@@ -1,0 +1,146 @@
++ '﻿#!/usr/bin/bash'
+oe_test_baws-sdk-java_001.sh: line 1: ﻿#!/usr/bin/bash: No such file or directory
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:12:43 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL aws-sdk-java
++ pkgs=aws-sdk-java
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs aws-sdk-java --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:00:19 ago on Thu 22 Jun 2023 06:12:56 PM CST.
+Error: 
+ Problem: conflicting requests
+  - nothing provides mvn(com.fasterxml.jackson.core:jackson-databind) needed by aws-sdk-java-1.11.3-8.oe2303.noarch
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:00:19 ago on Thu 22 Jun 2023 06:12:56 PM CST.
+Error: 
+ Problem: conflicting requests
+  - nothing provides mvn(com.fasterxml.jackson.core:jackson-databind) needed by aws-sdk-java-1.11.3-8.oe2303.noarch
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
++ mkdir /tmp/test
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:13:17 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 18:13:17 2023 - INFO  - Start testing...
++ cp AwsSdkTest.java /tmp/test
++ cd /tmp/test
++ javac -cp .:/usr/share/java/aws-sdk-java/aws-java-sdk-core.jar:/usr/share/java/aws-sdk-java/aws-java-sdk-s3.jar:/usr/share/java/aws-sdk-java/aws-java-sdk-kms.jar AwsSdkTest.java
+oe_test_baws-sdk-java_001.sh: line 33: javac: command not found
++ test -e AwsSdkTest.class
++ CHECK_RESULT 1 0 0 'Compilation failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Compilation failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Compilation failure'
++ LOG_ERROR 'Compilation failure'
++ message='Compilation failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Compilation failure'
+Thu Jun 22 18:13:18 2023 - ERROR - Compilation failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_baws-sdk-java_001.sh line 35'
++ message='oe_test_baws-sdk-java_001.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_baws-sdk-java_001.sh line 35'
+Thu Jun 22 18:13:18 2023 - ERROR - oe_test_baws-sdk-java_001.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ java -cp .:/usr/share/java/aws-sdk-java/aws-java-sdk-core.jar:/usr/share/java/aws-sdk-java/aws-java-sdk-s3.jar:/usr/share/java/aws-sdk-java/aws-java-sdk-kms.jar:/usr/share/java/commons-logging.jar:/usr/share/java/jackson-core.jar:/usr/share/java/jackson-databind.jar:/usr/share/java/jackson-annotations.jar:/usr/share/java/httpcomponents/httpclient.jar:/usr/share/java/httpcomponents/httpcore.jar:/usr/share/java/joda-time.jar AwsSdkTest bucket1
+oe_test_baws-sdk-java_001.sh: line 36: java: command not found
++ grep 'Finish kms test!' result.txt
++ CHECK_RESULT 1 0 0 'Test failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Test failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Test failure'
++ LOG_ERROR 'Test failure'
++ message='Test failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Test failure'
+Thu Jun 22 18:13:19 2023 - ERROR - Test failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_baws-sdk-java_001.sh line 38'
++ message='oe_test_baws-sdk-java_001.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_baws-sdk-java_001.sh line 38'
+Thu Jun 22 18:13:19 2023 - ERROR - oe_test_baws-sdk-java_001.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 18:13:20 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 18:13:20 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:13:21 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:00:19 ago on Thu 22 Jun 2023 06:12:56 PM CST.
+Error: 
+ Problem: conflicting requests
+  - nothing provides mvn(com.fasterxml.jackson.core:jackson-databind) needed by aws-sdk-java-1.11.3-8.oe2303.noarch
+(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages) ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:00:19 ago on Thu 22 Jun 2023 06:12:56 PM CST.
+Error: 
+ Problem: conflicting requests
+  - nothing provides mvn(com.fasterxml.jackson.core:jackson-databind) needed by aws-sdk-java-1.11.3-8.oe2303.noarch
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 0:00:19 ago on Thu 22 Jun 2023 06:12:56 PM CST.\nError: \n Problem: conflicting requests\n  - nothing provides mvn(com.fasterxml.jackson.core:jackson-databind) needed by aws-sdk-java-1.11.3-8.oe2303.noarch\n(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)"
++ '[' 0 -ne 0 ']'
++ rm -rf /tmp/test
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 18:13:24 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,74 @@
+Thu Jun 29 15:29:09 2023 - INFO  - start to run testcase:oe_test_selinux_listuser.
+Thu Jun 29 15:30:45 2023 - ERROR - The case exit by code 3.
+Thu Jun 29 15:30:45 2023 - INFO  - End to run testcase:oe_test_selinux_listuser.
+Thu Jun 29 15:30:45 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:30:45 2023 - INFO  - start to run testcase:oe_test_selinux_adduser.
+Thu Jun 29 15:31:27 2023 - ERROR - The case exit by code 3.
+Thu Jun 29 15:31:27 2023 - INFO  - End to run testcase:oe_test_selinux_adduser.
+Thu Jun 29 15:31:27 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:31:27 2023 - INFO  - start to run testcase:oe_test_selinux_confining_regular_user.
+Thu Jun 29 15:31:48 2023 - ERROR - The case exit by code 2.
+Thu Jun 29 15:31:48 2023 - INFO  - End to run testcase:oe_test_selinux_confining_regular_user.
+Thu Jun 29 15:31:48 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:31:48 2023 - INFO  - start to run testcase:oe_test_selinux_confining_admin_using_role.
+Thu Jun 29 15:32:09 2023 - ERROR - The case exit by code 2.
+Thu Jun 29 15:32:09 2023 - INFO  - End to run testcase:oe_test_selinux_confining_admin_using_role.
+Thu Jun 29 15:32:09 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:32:09 2023 - INFO  - start to run testcase:oe_test_selinux_confining_admin_to_sysadm_u.
+Thu Jun 29 15:32:30 2023 - ERROR - The case exit by code 3.
+Thu Jun 29 15:32:30 2023 - INFO  - End to run testcase:oe_test_selinux_confining_admin_to_sysadm_u.
+Thu Jun 29 15:32:30 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:32:30 2023 - INFO  - start to run testcase:oe_test_selinux_http.
+Thu Jun 29 15:33:08 2023 - ERROR - The case exit by code 2.
+Thu Jun 29 15:33:08 2023 - INFO  - End to run testcase:oe_test_selinux_http.
+Thu Jun 29 15:33:08 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:33:08 2023 - INFO  - start to run testcase:oe_test_selinux_sharing_nfs_cifs_using_booleans.
+Thu Jun 29 15:34:13 2023 - ERROR - The case exit by code 6.
+Thu Jun 29 15:34:13 2023 - INFO  - End to run testcase:oe_test_selinux_sharing_nfs_cifs_using_booleans.
+Thu Jun 29 15:34:13 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:34:13 2023 - INFO  - start to run testcase:oe_test_selinux_sec_status_mode.
+Thu Jun 29 15:35:17 2023 - ERROR - The case exit by code 5.
+Thu Jun 29 15:35:17 2023 - INFO  - End to run testcase:oe_test_selinux_sec_status_mode.
+Thu Jun 29 15:35:17 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:35:18 2023 - INFO  - start to run testcase:oe_test_selinux_sec_sestatus.
+Thu Jun 29 15:35:18 2023 - ERROR - The case exit by code 10.
+Thu Jun 29 15:35:18 2023 - INFO  - End to run testcase:oe_test_selinux_sec_sestatus.
+Thu Jun 29 15:35:18 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:35:18 2023 - INFO  - start to run testcase:oe_test_selinux_change_permissive.
+Thu Jun 29 15:35:20 2023 - ERROR - The case exit by code 1.
+Thu Jun 29 15:35:20 2023 - INFO  - End to run testcase:oe_test_selinux_change_permissive.
+Thu Jun 29 15:35:20 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:35:20 2023 - INFO  - start to run testcase:oe_test_selinux_change_enforcing.
+Thu Jun 29 15:35:32 2023 - ERROR - The case exit by code 3.
+Thu Jun 29 15:35:32 2023 - INFO  - End to run testcase:oe_test_selinux_change_enforcing.
+Thu Jun 29 15:35:32 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:35:33 2023 - INFO  - start to run testcase:oe_test_selinux_disable.
+Thu Jun 29 15:35:35 2023 - ERROR - The case exit by code 1.
+Thu Jun 29 15:35:35 2023 - INFO  - End to run testcase:oe_test_selinux_disable.
+Thu Jun 29 15:35:35 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:35:35 2023 - INFO  - start to run testcase:oe_test_selinux_booleands.
+Thu Jun 29 15:36:41 2023 - ERROR - The case exit by code 8.
+Thu Jun 29 15:36:41 2023 - INFO  - End to run testcase:oe_test_selinux_booleands.
+Thu Jun 29 15:36:41 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 15:36:41 2023 - INFO  - start to run testcase:oe_test_identify_selinux_rejects.
+pgrep: pattern that searches for process name longer than 15 characters will result in zero matches
+Try `pgrep -f' option to match against the complete command line.
+Thu Jun 29 16:06:41 2023 - WARN  - The case execution timeout.
+Thu Jun 29 16:06:41 2023 - ERROR - The case exit by code 143.
+Thu Jun 29 16:06:41 2023 - INFO  - End to run testcase:oe_test_identify_selinux_rejects.
+Thu Jun 29 16:06:41 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 16:06:41 2023 - INFO  - start to run testcase:oe_test_fix_selinux_reject_messages.
+Thu Jun 29 16:07:19 2023 - ERROR - The case exit by code 1.
+Thu Jun 29 16:07:19 2023 - INFO  - End to run testcase:oe_test_fix_selinux_reject_messages.
+Thu Jun 29 16:07:19 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 16:07:19 2023 - INFO  - start to run testcase:oe_test_selinux_semanage_httpd.
+Thu Jun 29 16:07:56 2023 - ERROR - The case exit by code 6.
+Thu Jun 29 16:07:56 2023 - INFO  - End to run testcase:oe_test_selinux_semanage_httpd.
+Thu Jun 29 16:07:56 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.
+Thu Jun 29 16:07:56 2023 - INFO  - start to run testcase:oe_test_selinux_audit.
+pgrep: pattern that searches for process name longer than 15 characters will result in zero matches
+Try `pgrep -f' option to match against the complete command line.
+Thu Jun 29 16:37:56 2023 - WARN  - The case execution timeout.
+Thu Jun 29 16:37:56 2023 - ERROR - The case exit by code 143.
+Thu Jun 29 16:37:56 2023 - INFO  - End to run testcase:oe_test_selinux_audit.
+Thu Jun 29 16:37:56 2023 - INFO  - A total of 1 use cases were executed, with 0 successes and 1 failures.

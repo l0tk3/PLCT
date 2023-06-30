@@ -1,0 +1,374 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 17:26:40 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 29 17:26:41 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 17:26:41 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 17:26:41 2023 - INFO  - Start to run test.
++ trafgen -h
++ grep 'Usage: trafgen'
+Usage: trafgen [options] [packet]
++ CHECK_RESULT 0 0 0 'Check trafgen -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --help
++ grep 'Usage: trafgen'
+Usage: trafgen [options] [packet]
++ CHECK_RESULT 0 0 0 'Check trafgen --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -v
++ grep 'trafgen 0.6.8'
+trafgen 0.6.8 (Flutternozzle), Git id: (none)
++ CHECK_RESULT 0 0 0 'Check trafgen -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --version
++ grep 'trafgen 0.6.8'
+trafgen 0.6.8 (Flutternozzle), Git id: (none)
++ CHECK_RESULT 0 0 0 'Check trafgen --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -e
++ grep 'Data blob'
+  /* Data blob */
++ CHECK_RESULT 0 0 0 'Check trafgen -e failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -e failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --example
++ grep 'Data blob'
+  /* Data blob */
++ CHECK_RESULT 0 0 0 'Check trafgen --example failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --example failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in --out tcpsyn.pcap -n 2
+Thu Jun 29 17:56:40 2023 - ERROR - Timeout : Command 'bash -x oe_test_trafgen_01.sh' timed out after 1799.9999754990004 seconds
+Error reading pcap header!
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 18:26:43 2023 - INFO  - Start to restore the test environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 18:26:43 2023 - WARN  - no thing to do.
+++ return 0
+++ rm -rf ./data/ './common/*.sh'
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 18:26:43 2023 - INFO  - End to restore the test environment.
++ netsniff-ng --in tcpsyn.pcap --out tcpsyn.cfg -n 2
+Cannot open file tcpsyn.pcap! No such file or directory.
++ grep 'packets outgoing'
++ trafgen --in tcpsyn.cfg --out --num 1000 -n 2
+No networking device or pcap file: --num
+Failed to open output device
++ CHECK_RESULT 1 0 0 'Check trafgen --in failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --in failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check trafgen --in failed'
++ LOG_ERROR 'Check trafgen --in failed'
++ message='Check trafgen --in failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check trafgen --in failed'
+Thu Jun 29 18:26:43 2023 - ERROR - Check trafgen --in failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_trafgen_01.sh line 41'
++ message='oe_test_trafgen_01.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_trafgen_01.sh line 41'
+Thu Jun 29 18:26:43 2023 - ERROR - oe_test_trafgen_01.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f tcpsyn.pcap tcpsyn.cfg
++ netsniff-ng --in --out tcpsyn.pcap -n 2
+Error reading pcap header!
++ netsniff-ng --in tcpsyn.pcap --out tcpsyn.cfg -n 2
+Cannot open file tcpsyn.pcap! No such file or directory.
++ grep 'packets outgoing'
++ trafgen -i tcpsyn.cfg --out --num 1000 -n 2
+No networking device or pcap file: --num
+Failed to open output device
++ CHECK_RESULT 1 0 0 'Check trafgen -i failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -i failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check trafgen -i failed'
++ LOG_ERROR 'Check trafgen -i failed'
++ message='Check trafgen -i failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check trafgen -i failed'
+Thu Jun 29 18:26:43 2023 - ERROR - Check trafgen -i failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_trafgen_01.sh line 46'
++ message='oe_test_trafgen_01.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_trafgen_01.sh line 46'
+Thu Jun 29 18:26:43 2023 - ERROR - oe_test_trafgen_01.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f tcpsyn.pcap tcpsyn.cfg
++ netsniff-ng --in --out tcpsyn.pcap -n 2
+Error reading pcap header!
++ netsniff-ng --in tcpsyn.pcap --out tcpsyn.cfg -n 2
+Cannot open file tcpsyn.pcap! No such file or directory.
++ trafgen -c tcpsyn.cfg --out --num 1000 -n 2
++ grep 'packets outgoing'
+No networking device or pcap file: --num
+Failed to open output device
++ CHECK_RESULT 1 0 0 'Check trafgen -c failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -c failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check trafgen -c failed'
++ LOG_ERROR 'Check trafgen -c failed'
++ message='Check trafgen -c failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check trafgen -c failed'
+Thu Jun 29 18:26:43 2023 - ERROR - Check trafgen -c failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_trafgen_01.sh line 51'
++ message='oe_test_trafgen_01.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_trafgen_01.sh line 51'
+Thu Jun 29 18:26:43 2023 - ERROR - oe_test_trafgen_01.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f tcpsyn.pcap tcpsyn.cfg
++ netsniff-ng --in --out tcpsyn.pcap -n 2
+Error reading pcap header!
++ netsniff-ng --in tcpsyn.pcap --out tcpsyn.cfg -n 2
+Cannot open file tcpsyn.pcap! No such file or directory.
++ trafgen --conf tcpsyn.cfg --out --num 1000 -n 2
++ grep 'packets outgoing'
+No networking device or pcap file: --num
+Failed to open output device
++ CHECK_RESULT 1 0 0 'Check trafgen --conf failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --conf failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check trafgen --conf failed'
++ LOG_ERROR 'Check trafgen --conf failed'
++ message='Check trafgen --conf failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check trafgen --conf failed'
+Thu Jun 29 18:26:43 2023 - ERROR - Check trafgen --conf failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_trafgen_01.sh line 56'
++ message='oe_test_trafgen_01.sh line 56'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_trafgen_01.sh line 56'
+Thu Jun 29 18:26:43 2023 - ERROR - oe_test_trafgen_01.sh line 56
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f tcpsyn.pcap tcpsyn.cfg
++ trafgen -i - -o lo --cpp -n 1
++ trafgen -e
++ grep 'packets to schedule'
+     1 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen -o failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -o failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -e
++ trafgen -i - -d lo --cpp -n 1
++ grep 'packets to schedule'
+     1 packets to schedule
++ CHECK_RESULT 0 0 0 'Check trafgen -d failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -d failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -e
++ trafgen -i - --out lo --cpp -n 1
++ grep 'packets to schedule'
+Syntax error at line 9, char 'type': syntax error
++ CHECK_RESULT 1 0 0 'Check trafgen --out failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --out failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check trafgen --out failed'
++ LOG_ERROR 'Check trafgen --out failed'
++ message='Check trafgen --out failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check trafgen --out failed'
+Thu Jun 29 18:26:43 2023 - ERROR - Check trafgen --out failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_trafgen_01.sh line 63'
++ message='oe_test_trafgen_01.sh line 63'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_trafgen_01.sh line 63'
+Thu Jun 29 18:26:43 2023 - ERROR - oe_test_trafgen_01.sh line 63
++ '[' 0 -eq 1 ']'
++ return 0
++ trafgen -e
+oe_test_trafgen_01.sh: line 64: trafgen: command not found
++ trafgen -i - --dev lo --cpp -n 1
+oe_test_trafgen_01.sh: line 64: trafgen: command not found
++ grep 'packets to schedule'
++ CHECK_RESULT 1 0 0 'Check trafgen --dev failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --dev failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check trafgen --dev failed'
++ LOG_ERROR 'Check trafgen --dev failed'
++ message='Check trafgen --dev failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check trafgen --dev failed'
+Thu Jun 29 18:26:43 2023 - ERROR - Check trafgen --dev failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_trafgen_01.sh line 65'
++ message='oe_test_trafgen_01.sh line 65'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_trafgen_01.sh line 65'
+Thu Jun 29 18:26:43 2023 - ERROR - oe_test_trafgen_01.sh line 65
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 18:26:43 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 18:26:43 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 18:26:43 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 18:26:43 2023 - WARN  - no thing to do.
++ return 0
++ rm -rf ./data/ './common/*.sh'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 18:26:43 2023 - INFO  - End to restore the test environment.

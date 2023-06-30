@@ -1,0 +1,228 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:25:22 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:25:23 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:25:23 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:25:23 2023 - INFO  - Start to run test.
++ lstopo -l --input 'node:1 2' ./new.xml
++ lstopo -l --input 'node:1 2' ./old.xml
++ hwloc-diff old.xml new.xml
++ grep 'topologydiff refname="old.xml"'
+Found no difference, exporting empty topology diff to stdout
+<topologydiff refname="old.xml"/>
++ CHECK_RESULT 0 0 0 'hwloc-diff failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-diff failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-diff --refname testname old.xml new.xml
++ grep 'refname="testname"'
+Found no difference, exporting empty topology diff to stdout
+<topologydiff refname="testname"/>
++ CHECK_RESULT 0 0 0 'hwloc-diff --refname failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-diff --refname failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-diff --version
++ grep hwloc-diff
+hwloc-diff 2.7.1
++ CHECK_RESULT 0 0 0 'hwloc-diff --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-diff --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-gather-topology --io tep
+DMI files won't be saved (--dmi not given).
+
+*** Note that this tool may be slow on large nodes or when I/O is enabled. ***
+
+Gathering main files and directories...
+ file /proc/cmdline
+ file /proc/cpuinfo
+ file /proc/meminfo
+ file /proc/mounts
+ file /proc/stat
+ file /proc/version
+ file /proc/self/cpuset
+ file /proc/self/cgroup
+ file /proc/driver/nvidia
+ directory /sys/devices/system/cpu/
+ directory /sys/bus/cpu/devices/
+ directory /sys/devices/system/node/
+ directory /sys/bus/node/devices/
+ directory /sys/class/dmi/id/
+ directory /sys/devices/virtual/dmi/id/
+ directory /sys/kernel/mm/hugepages/
+grep: warning: stray \ before 0
+ directory /sys/fs/cgroup/cpuset/
+Gathering I/O files...
+ directory /sys/bus/pci/devices/
+ directory /sys/bus/pci/slots/
+ directory /sys/devices/pci0000:00
+ directory /sys/class/block/
+ directory /sys/bus/dax/devices/
+ directory /sys/class/dma/
+ directory /sys/class/drm/
+ directory /sys/class/net/
+ directory /sys/class/net/../../devices/virtual/net/lo
+ file /run/udev/data/b11:0
+ file /run/udev/data/b252:0
+ file /run/udev/data/b252:1
+ file /run/udev/data/b252:2
+Exporting /proc/hwloc-nofile-info
+
+Exporting x86 CPUID using hwloc-gather-cpuid
+
+Topology files gathered in ./tep.tar.bz2
+Expected topology output stored in ./tep.output
+XML topology stored in ./tep.xml
+
+WARNING: Do not post these files on a public list or website unless you
+WARNING: are sure that no information about this platform is sensitive.
++ ls
++ grep tep.xml
+tep.xml
++ CHECK_RESULT 0 0 0 'hwloc-gather-topology --io failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-gather-topology --io failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-gather-topology --dmi tep
+I/O files won't be saved (--io not given).
+
+*** Note that this tool may be slow on large nodes or when I/O is enabled. ***
+
+Gathering main files and directories...
+ file /proc/cmdline
+ file /proc/cpuinfo
+ file /proc/meminfo
+ file /proc/mounts
+ file /proc/stat
+ file /proc/version
+ file /proc/self/cpuset
+ file /proc/self/cgroup
+ file /proc/driver/nvidia
+ directory /sys/devices/system/cpu/
+ directory /sys/bus/cpu/devices/
+ directory /sys/devices/system/node/
+ directory /sys/bus/node/devices/
+ directory /sys/class/dmi/id/
+ directory /sys/devices/virtual/dmi/id/
+ directory /sys/kernel/mm/hugepages/
+grep: warning: stray \ before 0
+ directory /sys/fs/cgroup/cpuset/
+Gathering DMI files...
+ directory /sys/firmware/dmi/
+Exporting /proc/hwloc-nofile-info
+
+Exporting x86 CPUID using hwloc-gather-cpuid
+
+Topology files gathered in ./tep.tar.bz2
+Expected topology output stored in ./tep.output
+XML topology stored in ./tep.xml
+
+WARNING: Do not post these files on a public list or website unless you
+WARNING: are sure that no information about this platform is sensitive.
++ ls
++ grep tep.output
+tep.output
++ CHECK_RESULT 0 0 0 'hwloc-gather-topology --dmi failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-gather-topology --dmi failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:25:32 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:25:32 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:25:32 2023 - INFO  - Start to restore the test environment.
++ rm -rf new.xml old.xml tep.xml tep.output tep.tar.bz2 tep.xml
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:25:32 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:25:32 2023 - INFO  - End to restore the test environment.

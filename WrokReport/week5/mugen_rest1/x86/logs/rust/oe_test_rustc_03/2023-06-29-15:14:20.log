@@ -1,0 +1,227 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 29 15:14:20 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL rust
++ pkgs=rust
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs rust --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpb1jcbldf
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpb1jcbldf
++ cp ../common/hello.rs ../common/lib.rs ../common/main.rs ../common/myhello.rs ../common/pub.rs ../common/test.rs ../common/war.rs ./
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 29 15:15:04 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:15:04 2023 - INFO  - Start to run test.
++ rustc lib.rs --crate-type=lib -D missing-docs
++ grep error
+error: missing documentation for the crate
+error: missing documentation for a function
+error: aborting due to 2 previous errors
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Deny'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Deny'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc lib.rs --crate-type=lib -F missing-docs
++ grep error
+error: missing documentation for the crate
+error: missing documentation for a function
+error: aborting due to 2 previous errors
++ CHECK_RESULT 0 0 0 'Failed to set Linter option Forbit'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Forbit'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc war.rs --cap-lints warn
++ grep warning
+warning: unused bitwise operation that must be used
+warning: this arithmetic operation will overflow
+warning: 2 warnings emitted
++ CHECK_RESULT 0 0 0 'Failed to set Linter level warning'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter level warning'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc -C opt-level=2 hello.rs -o hello_C
++ test -f hello_C
++ CHECK_RESULT 0 0 0 'Failed to output the hello_C file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello_C file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc -V
++ grep -E '[0-9]'
+rustc 1.67.1-dev (d5a82bbd2 2023-02-07) (built from a source tarball)
++ CHECK_RESULT 0 0 0 'Failed to output the version information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc -v hello.rs -o hello_v
++ test -f hello_v
++ CHECK_RESULT 0 0 0 'Failed to output the hello_v file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output the hello_v file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc -C help
++ grep 'Available codegen options'
+Available codegen options:
++ CHECK_RESULT 0 0 0 '-C help printing fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='-C help printing fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc -W help
++ grep 'Available lint options'
+Available lint options:
++ CHECK_RESULT 0 0 0 '-W help printing fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='-W help printing fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --crate-type staticlib myhello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc --crate-type rlib myhello.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rustc -L. -l myhello main.rs
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ./main
++ grep 'Hello World!'
+Hello World!
++ CHECK_RESULT 0 0 0 'Link library failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Link library failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 15:15:05 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 15:15:05 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:15:05 2023 - INFO  - start environment cleanup.
++ rm -rf ./hello.rs ./lib.rs ./main.rs ./myhello.rs ./pub.rs ./test.rs ./war.rs hello_C hello.rs hello_v libmyhello.a libmyhello.rlib lib.rs main war
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpb1jcbldf ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpb1jcbldf
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:15:05 2023 - INFO  - Finish environment cleanup!

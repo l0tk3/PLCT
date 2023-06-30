@@ -1,0 +1,365 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:31:58 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'libvpx tar'
++ pkgs='libvpx tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libvpx tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpdwlp5gtl
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpdwlp5gtl
++ tar -xf common/libvpx.tar.gz
++ mkdir tmp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:32:37 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:32:38 2023 - INFO  - Start to run test.
++ vpxenc --help
++ grep 'Use --codec to switch to a non-default encoder.'
+        Use --codec to switch to a non-default encoder.
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --help '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --help '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --verbose --threads=6 -o tmp/akiyo1.vpx data/akiyo_qcif.yuv
+Codec: WebM Project VP8 Encoder v1.7.0
+Source file: data/akiyo_qcif.yuv File Type: RAW Format: I420
+Destination file: tmp/akiyo1.vpx
+Encoder parameters:
+    g_usage                      = 0
+    g_threads                    = 6
+    g_profile                    = 0
+    g_w                          = 352
+    g_h                          = 288
+    g_bit_depth                  = 8
+    g_input_bit_depth            = 8
+    g_timebase.num               = 1
+    g_timebase.den               = 30
+    g_error_resilient            = 0
+    g_pass                       = 0
+    g_lag_in_frames              = 0
+    rc_dropframe_thresh          = 0
+    rc_resize_allowed            = 0
+    rc_scaled_width              = 1
+    rc_scaled_height             = 1
+    rc_resize_up_thresh          = 60
+    rc_resize_down_thresh        = 30
+    rc_end_usage                 = 0
+    rc_target_bitrate            = 256
+    rc_min_quantizer             = 4
+    rc_max_quantizer             = 63
+    rc_undershoot_pct            = 100
+    rc_overshoot_pct             = 100
+    rc_buf_sz                    = 6000
+    rc_buf_initial_sz            = 4000
+    rc_buf_optimal_sz            = 5000
+    rc_2pass_vbr_bias_pct        = 50
+    rc_2pass_vbr_minsection_pct  = 0
+    rc_2pass_vbr_maxsection_pct  = 400
+    rc_2pass_vbr_corpus_complexity = 0
+    kf_mode                      = 1
+    kf_min_dist                  = 0
+    kf_max_dist                  = 128
+Pass 1/1 frame    1/0          0B       0 us 0.00 fpm [ETA  unknown]   34294F[KPass 1/1 frame    2/1      34294B  161045 us 12.42 fps [ETA  0:00:11]      36F[KPass 1/1 frame    3/2      34330B  219177 us 13.69 fps [ETA  0:00:11]     200F[KPass 1/1 frame    4/3      34530B  298281 us 13.41 fps [ETA  0:00:10]     324F[KPass 1/1 frame    5/4      34854B  355551 us 14.06 fps [ETA  0:00:09]     256F[KPass 1/1 frame    6/5      35110B  493491 us 12.16 fps [ETA  0:00:08]     324F[KPass 1/1 frame    7/6      35434B  587314 us 11.92 fps [ETA  0:00:08]     212F[KPass 1/1 frame    8/7      35646B  666642 us 12.00 fps [ETA  0:00:08]    1036F[KPass 1/1 frame    9/8      36682B  855360 us 10.52 fps [ETA  0:00:07]     213F[KPass 1/1 frame   10/9      36895B  929304 us 10.76 fps [ETA  0:00:07]     425F[KPass 1/1 frame   11/10     37320B 1055377 us 10.42 fps [ETA  0:00:07]     284F[KPass 1/1 frame   12/11     37604B 1157033 us 10.37 fps [ETA  0:00:07]     277F[KPass 1/1 frame   13/12     37881B 1244017 us 10.45 fps [ETA  0:00:07]     329F[KPass 1/1 frame   14/13     38210B 1343844 us 10.42 fps [ETA  0:00:06]     326F[KPass 1/1 frame   15/14     38536B 1570740 us 9.55 fps [ETA  0:00:06]     234F[KPass 1/1 frame   16/15     38770B 1878776 us 8.52 fps [ETA  0:00:06]     314F[KPass 1/1 frame   17/16     39084B 1973370 us 8.61 fps [ETA  0:00:06]    1505F[KPass 1/1 frame   18/17     40589B 2126324 us 8.47 fps [ETA  0:00:06]     509F[KPass 1/1 frame   19/18     41098B 2221816 us 8.55 fps [ETA  0:00:06]     577F[KPass 1/1 frame   20/19     41675B 2349921 us 8.51 fps [ETA  0:00:06]     382F[KPass 1/1 frame   21/20     42057B 2455685 us 8.55 fps [ETA  0:00:06]     541F[KPass 1/1 frame   22/21     42598B 2575736 us 8.54 fps [ETA  0:00:06]     608F[KPass 1/1 frame   23/22     43206B 2697794 us 8.53 fps [ETA  0:00:06]     502F[KPass 1/1 frame   24/23     43708B 2955356 us 8.12 fps [ETA  0:00:06]     382F[KPass 1/1 frame   25/24     44090B 3042396 us 8.22 fps [ETA  0:00:06]     389F[KPass 1/1 frame   26/25     44479B 3135816 us 8.29 fps [ETA  0:00:06]    1696F[KPass 1/1 frame   27/26     46175B 3393601 us 7.96 fps [ETA  0:00:05]     314F[KPass 1/1 frame   28/27     46489B 3493363 us 8.02 fps [ETA  0:00:05]     490F[KPass 1/1 frame   29/28     46979B 3606732 us 8.04 fps [ETA  0:00:05]     327F[KPass 1/1 frame   30/29     47306B 3703994 us 8.10 fps [ETA  0:00:05]     314F[KPass 1/1 frame   31/30     47620B 3806454 us 8.14 fps [ETA  0:00:05]     472F[KPass 1/1 frame   32/31     48092B 3908466 us 8.19 fps [ETA  0:00:05]     333F[KPass 1/1 frame   33/32     48425B 4142144 us 7.97 fps [ETA  0:00:05]     425F[KPass 1/1 frame   34/33     48850B 4241958 us 8.02 fps [ETA  0:00:05]     518F[KPass 1/1 frame   35/34     49368B 4345718 us 8.05 fps [ETA  0:00:05]    1659F[KPass 1/1 frame   36/35     51027B 4492581 us 8.01 fps [ETA  0:00:05]     555F[KPass 1/1 frame   37/36     51582B 4588751 us 8.06 fps [ETA  0:00:04]     392F[KPass 1/1 frame   38/37     51974B 4688539 us 8.10 fps [ETA  0:00:04]     422F[KPass 1/1 frame   39/38     52396B 4788054 us 8.15 fps [ETA  0:00:04]     600F[KPass 1/1 frame   40/39     52996B 4903820 us 8.16 fps [ETA  0:00:04]     563F[KPass 1/1 frame   41/40     53559B 4999666 us 8.20 fps [ETA  0:00:04]     429F[KPass 1/1 frame   42/41     53988B 5092548 us 8.25 fps [ETA  0:00:04]     438F[KPass 1/1 frame   43/42     54426B 5201689 us 8.27 fps [ETA  0:00:04]     427F[KPass 1/1 frame   44/43     54853B 5456621 us 8.06 fps [ETA  0:00:04]    1835F[KPass 1/1 frame   45/44     56688B 5806296 us 7.75 fps [ETA  0:00:03]     495F[KPass 1/1 frame   46/45     57183B 5921193 us 7.77 fps [ETA  0:00:03]     620F[KPass 1/1 frame   47/46     57803B 6024879 us 7.80 fps [ETA  0:00:03]     445F[KPass 1/1 frame   48/47     58248B 6124009 us 7.84 fps [ETA  0:00:03]     488F[KPass 1/1 frame   49/48     58736B 6222527 us 7.87 fps [ETA  0:00:03]     491F[KPass 1/1 frame   50/49     59227B 6458893 us 7.74 fps [ETA  0:00:03]     459F[KPass 1/1 frame   51/50     59686B 6562524 us 7.77 fps [ETA  0:00:03]     494F[KPass 1/1 frame   52/51     60180B 6663755 us 7.80 fps [ETA  0:00:03]     577F[KPass 1/1 frame   53/52     60757B 6771448 us 7.83 fps [ETA  0:00:02]     376F[KPass 1/1 frame   54/53     61133B 6865377 us 7.87 fps [ETA  0:00:02]    2121F[KPass 1/1 frame   55/54     63254B 7027072 us 7.83 fps [ETA  0:00:02]     404F[KPass 1/1 frame   56/55     63658B 7201931 us 7.78 fps [ETA  0:00:02]     510F[KPass 1/1 frame   57/56     64168B 7317406 us 7.79 fps [ETA  0:00:02]     396F[KPass 1/1 frame   58/57     64564B 7417364 us 7.82 fps [ETA  0:00:02]     460F[KPass 1/1 frame   59/58     65024B 7691523 us 7.67 fps [ETA  0:00:02]     356F[KPass 1/1 frame   60/59     65380B 7785411 us 7.71 fps [ETA  0:00:02]     607F[KPass 1/1 frame   61/60     65987B 7903461 us 7.72 fps [ETA  0:00:01]     369F[KPass 1/1 frame   62/61     66356B 7999761 us 7.75 fps [ETA  0:00:01]     478F[KPass 1/1 frame   63/62     66834B 8104402 us 7.77 fps [ETA  0:00:01]     741F[KPass 1/1 frame   64/63     67575B 8325418 us 7.69 fps [ETA  0:00:01]     736F[KPass 1/1 frame   65/64     68311B 8446789 us 7.70 fps [ETA  0:00:01]    3472F[KPass 1/1 frame   66/65     71783B 8994881 us 7.34 fps [ETA  0:00:01]     492F[KPass 1/1 frame   67/66     72275B 9088560 us 7.37 fps [ETA  0:00:01]     830F[KPass 1/1 frame   68/67     73105B 9292293 us 7.32 fps [ETA  0:00:01]     666F[KPass 1/1 frame   69/68     73771B 9559087 us 7.22 fps [ETA  0:00:00]     912F[KPass 1/1 frame   70/69     74683B 9666612 us 7.24 fps [ETA  0:00:00]     690F[KPass 1/1 frame   71/70     75373B 9867539 us 7.20 fps [ETA  0:00:00]    1048F[KPass 1/1 frame   72/71     76421B 9988125 us 7.21 fps [ETA  0:00:00]     608F[KPass 1/1 frame   73/72     77029B   10092 ms 7.23 fps [ETA  0:00:00]     640F[KPass 1/1 frame   74/73     77669B   10205 ms 7.25 fps [ETA  0:00:00]    1358F[KPass 1/1 frame   75/74     79027B   10335 ms 7.26 fps [ETA  0:00:00]    2584F[KPass 1/1 frame   75/75     81611B   10710 ms 7.00 fps [ETA  0:00:00] [KPass 1/1 frame   75/75     81611B    8705b/f  261155b/s   10710 ms (7.00 fps)[K
++ ls tmp
++ grep akiyo1.vpx
+akiyo1.vpx
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc -D '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc -D '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --verbose --threads=6 -o tmp/akiyo1_o.vpx data/1.mp4
+Codec: WebM Project VP8 Encoder v1.7.0
+Source file: data/1.mp4 File Type: RAW Format: I420
+Destination file: tmp/akiyo1_o.vpx
+Encoder parameters:
+    g_usage                      = 0
+    g_threads                    = 6
+    g_profile                    = 0
+    g_w                          = 352
+    g_h                          = 288
+    g_bit_depth                  = 8
+    g_input_bit_depth            = 8
+    g_timebase.num               = 1
+    g_timebase.den               = 30
+    g_error_resilient            = 0
+    g_pass                       = 0
+    g_lag_in_frames              = 0
+    rc_dropframe_thresh          = 0
+    rc_resize_allowed            = 0
+    rc_scaled_width              = 1
+    rc_scaled_height             = 1
+    rc_resize_up_thresh          = 60
+    rc_resize_down_thresh        = 30
+    rc_end_usage                 = 0
+    rc_target_bitrate            = 256
+    rc_min_quantizer             = 4
+    rc_max_quantizer             = 63
+    rc_undershoot_pct            = 100
+    rc_overshoot_pct             = 100
+    rc_buf_sz                    = 6000
+    rc_buf_initial_sz            = 4000
+    rc_buf_optimal_sz            = 5000
+    rc_2pass_vbr_bias_pct        = 50
+    rc_2pass_vbr_minsection_pct  = 0
+    rc_2pass_vbr_maxsection_pct  = 400
+    rc_2pass_vbr_corpus_complexity = 0
+    kf_mode                      = 1
+    kf_min_dist                  = 0
+    kf_max_dist                  = 128
+Pass 1/1 frame    1/0          0B       0 us 0.00 fpm [ETA  unknown]   53757F[KPass 1/1 frame    2/1      53757B  267414 us 7.48 fps [ETA  0:00:19]    1222F[KPass 1/1 frame    3/2      54979B  403778 us 7.43 fps [ETA  0:00:18]    1062F[KPass 1/1 frame    4/3      56041B  614424 us 6.51 fps [ETA  0:00:17]    1194F[KPass 1/1 frame    5/4      57235B  811337 us 6.16 fps [ETA  0:00:17]    1399F[KPass 1/1 frame    6/5      58634B 1015925 us 5.91 fps [ETA  0:00:16]    1607F[KPass 1/1 frame    7/6      60241B 1227322 us 5.70 fps [ETA  0:00:15]    1846F[KPass 1/1 frame    8/7      62087B 1451898 us 5.51 fps [ETA  0:00:15]    2054F[KPass 1/1 frame    9/8      64141B 1675462 us 5.37 fps [ETA  0:00:15]    2440F[KPass 1/1 frame   10/9      66581B 1913207 us 5.23 fps [ETA  0:00:14]    2580F[KPass 1/1 frame   11/10     69161B 2158092 us 5.10 fps [ETA  0:00:14]    2700F[KPass 1/1 frame   12/11     71861B 2396875 us 5.01 fps [ETA  0:00:14]    2561F[KPass 1/1 frame   13/12     74422B 2637790 us 4.93 fps [ETA  0:00:13]    2677F[KPass 1/1 frame   14/13     77099B 2883771 us 4.85 fps [ETA  0:00:13]    2918F[KPass 1/1 frame   15/14     80017B 3122072 us 4.80 fps [ETA  0:00:13]    2894F[KPass 1/1 frame   16/15     82911B 3372171 us 4.74 fps [ETA  0:00:13]    2895F[KPass 1/1 frame   17/16     85806B 3624600 us 4.69 fps [ETA  0:00:13]    2817F[KPass 1/1 frame   18/17     88623B 3861502 us 4.66 fps [ETA  0:00:12]   24164F[KPass 1/1 frame   19/18    112787B 4175082 us 4.55 fps [ETA  0:00:12]     988F[KPass 1/1 frame   20/19    113775B 4316337 us 4.63 fps [ETA  0:00:12]    1472F[KPass 1/1 frame   21/20    115247B 4520403 us 4.65 fps [ETA  0:00:12]    1878F[KPass 1/1 frame   22/21    117125B 4737158 us 4.64 fps [ETA  0:00:12]    2055F[KPass 1/1 frame   23/22    119180B 4959081 us 4.64 fps [ETA  0:00:11]    1893F[KPass 1/1 frame   24/23    121073B 5180441 us 4.63 fps [ETA  0:00:11]    2520F[KPass 1/1 frame   25/24    123593B 5434470 us 4.60 fps [ETA  0:00:11]    2945F[KPass 1/1 frame   26/25    126538B 5703822 us 4.56 fps [ETA  0:00:11]    3328F[KPass 1/1 frame   27/26    129866B 5975005 us 4.52 fps [ETA  0:00:10]    3541F[KPass 1/1 frame   28/27    133407B 6241677 us 4.49 fps [ETA  0:00:10]    3642F[KPass 1/1 frame   29/28    137049B 6510654 us 4.45 fps [ETA  0:00:10]    3758F[KPass 1/1 frame   30/29    140807B 6776208 us 4.43 fps [ETA  0:00:10]    3838F[KPass 1/1 frame   31/30    144645B 7036430 us 4.41 fps [ETA  0:00:10]   22896F[KPass 1/1 frame   32/31    167541B 7332055 us 4.36 fps [ETA  0:00:09]   11953F[KPass 1/1 frame   33/32    179494B 7615029 us 4.33 fps [ETA  0:00:09]    1092F[KPass 1/1 frame   34/33    180586B 7737326 us 4.39 fps [ETA  0:00:09]    1844F[KPass 1/1 frame   35/34    182430B 7956430 us 4.40 fps [ETA  0:00:09]    2373F[KPass 1/1 frame   36/35    184803B 8186668 us 4.40 fps [ETA  0:00:09]    2232F[KPass 1/1 frame   37/36    187035B 8413496 us 4.40 fps [ETA  0:00:08]    2554F[KPass 1/1 frame   38/37    189589B 8663250 us 4.39 fps [ETA  0:00:08]    2593F[KPass 1/1 frame   39/38    192182B 8906407 us 4.38 fps [ETA  0:00:08]   24204F[KPass 1/1 frame   40/39    216386B 9239066 us 4.33 fps [ETA  0:00:08]     504F[KPass 1/1 frame   41/40    216890B 9368853 us 4.38 fps [ETA  0:00:08]     810F[KPass 1/1 frame   42/41    217700B 9561753 us 4.39 fps [ETA  0:00:07]     968F[KPass 1/1 frame   43/42    218668B 9764486 us 4.40 fps [ETA  0:00:07]    1016F[KPass 1/1 frame   44/43    219684B 9965639 us 4.42 fps [ETA  0:00:07]    1079F[KPass 1/1 frame   45/44    220763B   10170 ms 4.42 fps [ETA  0:00:07]    1083F[KPass 1/1 frame   46/45    221846B   10372 ms 4.43 fps [ETA  0:00:06]    1014F[KPass 1/1 frame   47/46    222860B   10568 ms 4.45 fps [ETA  0:00:06]    1042F[KPass 1/1 frame   48/47    223902B   10762 ms 4.46 fps [ETA  0:00:06]    1032F[KPass 1/1 frame   49/48    224934B   10960 ms 4.47 fps [ETA  0:00:06]    1058F[KPass 1/1 frame   50/49    225992B   11157 ms 4.48 fps [ETA  0:00:05]    1050F[KPass 1/1 frame   51/50    227042B   11357 ms 4.49 fps [ETA  0:00:05]    1064F[KPass 1/1 frame   52/51    228106B   11556 ms 4.50 fps [ETA  0:00:05]    1045F[KPass 1/1 frame   53/52    229151B   11756 ms 4.51 fps [ETA  0:00:05]    1066F[KPass 1/1 frame   54/53    230217B   11958 ms 4.52 fps [ETA  0:00:04]    1074F[KPass 1/1 frame   55/54    231291B   12157 ms 4.52 fps [ETA  0:00:04]    1049F[KPass 1/1 frame   56/55    232340B   12352 ms 4.53 fps [ETA  0:00:04]    1045F[KPass 1/1 frame   57/56    233385B   12550 ms 4.54 fps [ETA  0:00:04]    1092F[KPass 1/1 frame   58/57    234477B   12750 ms 4.55 fps [ETA  0:00:03]    1078F[KPass 1/1 frame   59/58    235555B   12949 ms 4.56 fps [ETA  0:00:03]    1029F[KPass 1/1 frame   60/59    236584B   13150 ms 4.56 fps [ETA  0:00:03]    1038F[KPass 1/1 frame   61/60    237622B   13350 ms 4.57 fps [ETA  0:00:03]    1063F[KPass 1/1 frame   62/61    238685B   13550 ms 4.58 fps [ETA  0:00:03]    1039F[KPass 1/1 frame   63/62    239724B   13752 ms 4.58 fps [ETA  0:00:02]    1092F[KPass 1/1 frame   64/63    240816B   13952 ms 4.59 fps [ETA  0:00:02]    1099F[KPass 1/1 frame   65/64    241915B   14156 ms 4.59 fps [ETA  0:00:02]    1925F[KPass 1/1 frame   66/65    243840B   14397 ms 4.58 fps [ETA  0:00:02]    2073F[KPass 1/1 frame   67/66    245913B   14646 ms 4.57 fps [ETA  0:00:01]    2390F[KPass 1/1 frame   68/67    248303B   14912 ms 4.56 fps [ETA  0:00:01]    2814F[KPass 1/1 frame   69/68    251117B   15176 ms 4.55 fps [ETA  0:00:01]   23132F[KPass 1/1 frame   70/69    274249B   15476 ms 4.52 fps [ETA  0:00:01]   10068F[KPass 1/1 frame   71/70    284317B   15770 ms 4.50 fps [ETA  0:00:00]     955F[KPass 1/1 frame   72/71    285272B   15884 ms 4.53 fps [ETA  0:00:00]    1238F[KPass 1/1 frame   73/72    286510B   16064 ms 4.54 fps [ETA  0:00:00]    1203F[KPass 1/1 frame   74/73    287713B   16247 ms 4.55 fps [ETA  0:00:00]    1247F[KPass 1/1 frame   74/74    288960B   16424 ms 4.51 fps [ETA  0:00:00] [KPass 1/1 frame   74/74    288960B   31238b/f  937167b/s   16424 ms (4.51 fps)[K
++ ls tmp
++ grep akiyo1_o.vpx
+akiyo1_o.vpx
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc -o '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc -o '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --verbose --threads=6 -o tmp/akiyo1_w.vpx data/1.mp4
++ grep 'g_w.*352'
+    g_w                          = 352
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc -w '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc -w '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --verbose --threads=6 -o tmp/akiyo1_h.vpx data/1.mp4
++ grep 'g_h.*288'
+    g_h                          = 288
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc -h '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc -h '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --verbose --threads=6 -o tmp/akiyo1_t.vpx data/1.mp4
++ grep 'g_threads.*6'
+    g_threads                    = 6
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc -t '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc -t '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --verbose --threads=6 --usage=0 -o tmp/akiyo1_u.vpx data/1.mp4
++ grep 'g_usage.*0'
+    g_usage                      = 0
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc -u '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc -u '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --verbose --threads=6 -o tmp/akiyo1_i420.vpx data/1.mp4 --i420
++ grep 'Source file: data/1.mp4 File Type: RAW Format: I420'
+Source file: data/1.mp4 File Type: RAW Format: I420
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --i420 '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --i420 '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --verbose --threads=6 --stereo-mode=mono -o tmp/akiyo1_s.vpx data/1.mp4
+Codec: WebM Project VP8 Encoder v1.7.0
+Source file: data/1.mp4 File Type: RAW Format: I420
+Destination file: tmp/akiyo1_s.vpx
+Encoder parameters:
+    g_usage                      = 0
+    g_threads                    = 6
+    g_profile                    = 0
+    g_w                          = 352
+    g_h                          = 288
+    g_bit_depth                  = 8
+    g_input_bit_depth            = 8
+    g_timebase.num               = 1
+    g_timebase.den               = 30
+    g_error_resilient            = 0
+    g_pass                       = 0
+    g_lag_in_frames              = 0
+    rc_dropframe_thresh          = 0
+    rc_resize_allowed            = 0
+    rc_scaled_width              = 1
+    rc_scaled_height             = 1
+    rc_resize_up_thresh          = 60
+    rc_resize_down_thresh        = 30
+    rc_end_usage                 = 0
+    rc_target_bitrate            = 256
+    rc_min_quantizer             = 4
+    rc_max_quantizer             = 63
+    rc_undershoot_pct            = 100
+    rc_overshoot_pct             = 100
+    rc_buf_sz                    = 6000
+    rc_buf_initial_sz            = 4000
+    rc_buf_optimal_sz            = 5000
+    rc_2pass_vbr_bias_pct        = 50
+    rc_2pass_vbr_minsection_pct  = 0
+    rc_2pass_vbr_maxsection_pct  = 400
+    rc_2pass_vbr_corpus_complexity = 0
+    kf_mode                      = 1
+    kf_min_dist                  = 0
+    kf_max_dist                  = 128
+Pass 1/1 frame    1/0          0B       0 us 0.00 fpm [ETA  unknown]   53757F[KPass 1/1 frame    2/1      53757B  362412 us 5.52 fps [ETA  0:00:26]    1222F[KPass 1/1 frame    3/2      54979B  502893 us 5.97 fps [ETA  0:00:24]    1062F[KPass 1/1 frame    4/3      56041B  707413 us 5.65 fps [ETA  0:00:23]    1194F[KPass 1/1 frame    5/4      57235B  907445 us 5.51 fps [ETA  0:00:21]    1399F[KPass 1/1 frame    6/5      58634B 1111085 us 5.40 fps [ETA  0:00:20]    1607F[KPass 1/1 frame    7/6      60241B 1326708 us 5.28 fps [ETA  0:00:19]    1846F[KPass 1/1 frame    8/7      62087B 1552384 us 5.15 fps [ETA  0:00:18]    2054F[KPass 1/1 frame    9/8      64141B 1778888 us 5.06 fps [ETA  0:00:17]    2440F[KPass 1/1 frame   10/9      66581B 2016792 us 4.96 fps [ETA  0:00:16]    2580F[KPass 1/1 frame   11/10     69161B 2263242 us 4.86 fps [ETA  0:00:16]    2700F[KPass 1/1 frame   12/11     71861B 2508053 us 4.78 fps [ETA  0:00:15]    2561F[KPass 1/1 frame   13/12     74422B 2752244 us 4.72 fps [ETA  0:00:15]    2677F[KPass 1/1 frame   14/13     77099B 3007982 us 4.65 fps [ETA  0:00:15]    2918F[KPass 1/1 frame   15/14     80017B 3251678 us 4.61 fps [ETA  0:00:14]    2894F[KPass 1/1 frame   16/15     82911B 3499595 us 4.57 fps [ETA  0:00:14]    2895F[KPass 1/1 frame   17/16     85806B 3750667 us 4.53 fps [ETA  0:00:14]    2817F[KPass 1/1 frame   18/17     88623B 4002929 us 4.50 fps [ETA  0:00:13]   24164F[KPass 1/1 frame   19/18    112787B 4326512 us 4.39 fps [ETA  0:00:13]     988F[KPass 1/1 frame   20/19    113775B 4474805 us 4.47 fps [ETA  0:00:13]    1472F[KPass 1/1 frame   21/20    115247B 4693269 us 4.47 fps [ETA  0:00:13]    1878F[KPass 1/1 frame   22/21    117125B 4914173 us 4.48 fps [ETA  0:00:12]    2055F[KPass 1/1 frame   23/22    119180B 5139398 us 4.48 fps [ETA  0:00:12]    1893F[KPass 1/1 frame   24/23    121073B 5355820 us 4.48 fps [ETA  0:00:12]    2520F[KPass 1/1 frame   25/24    123593B 5595562 us 4.47 fps [ETA  0:00:11]    2945F[KPass 1/1 frame   26/25    126538B 5843397 us 4.45 fps [ETA  0:00:11]    3328F[KPass 1/1 frame   27/26    129866B 6095578 us 4.43 fps [ETA  0:00:11]    3541F[KPass 1/1 frame   28/27    133407B 6345072 us 4.41 fps [ETA  0:00:11]    3642F[KPass 1/1 frame   29/28    137049B 6600264 us 4.39 fps [ETA  0:00:10]    3758F[KPass 1/1 frame   30/29    140807B 6848446 us 4.38 fps [ETA  0:00:10]    3838F[KPass 1/1 frame   31/30    144645B 7100761 us 4.37 fps [ETA  0:00:10]   22896F[KPass 1/1 frame   32/31    167541B 7389928 us 4.33 fps [ETA  0:00:10]   11953F[KPass 1/1 frame   33/32    179494B 7669102 us 4.30 fps [ETA  0:00:10]    1092F[KPass 1/1 frame   34/33    180586B 7790412 us 4.36 fps [ETA  0:00:09]    1844F[KPass 1/1 frame   35/34    182430B 8001757 us 4.37 fps [ETA  0:00:09]    2373F[KPass 1/1 frame   36/35    184803B 8221193 us 4.38 fps [ETA  0:00:09]    2232F[KPass 1/1 frame   37/36    187035B 8440920 us 4.38 fps [ETA  0:00:09]    2554F[KPass 1/1 frame   38/37    189589B 8678607 us 4.38 fps [ETA  0:00:08]    2593F[KPass 1/1 frame   39/38    192182B 8910879 us 4.38 fps [ETA  0:00:08]   24204F[KPass 1/1 frame   40/39    216386B 9218614 us 4.34 fps [ETA  0:00:08]     504F[KPass 1/1 frame   41/40    216890B 9342948 us 4.39 fps [ETA  0:00:08]     810F[KPass 1/1 frame   42/41    217700B 9520724 us 4.41 fps [ETA  0:00:07]     968F[KPass 1/1 frame   43/42    218668B 9705885 us 4.43 fps [ETA  0:00:07]    1016F[KPass 1/1 frame   44/43    219684B 9902267 us 4.44 fps [ETA  0:00:07]    1079F[KPass 1/1 frame   45/44    220763B   10091 ms 4.46 fps [ETA  0:00:07]    1083F[KPass 1/1 frame   46/45    221846B   10281 ms 4.47 fps [ETA  0:00:06]    1014F[KPass 1/1 frame   47/46    222860B   10469 ms 4.49 fps [ETA  0:00:06]    1042F[KPass 1/1 frame   48/47    223902B   10655 ms 4.50 fps [ETA  0:00:06]    1032F[KPass 1/1 frame   49/48    224934B   10844 ms 4.52 fps [ETA  0:00:06]    1058F[KPass 1/1 frame   50/49    225992B   11033 ms 4.53 fps [ETA  0:00:05]    1050F[KPass 1/1 frame   51/50    227042B   11223 ms 4.54 fps [ETA  0:00:05]    1064F[KPass 1/1 frame   52/51    228106B   11411 ms 4.56 fps [ETA  0:00:05]    1045F[KPass 1/1 frame   53/52    229151B   11601 ms 4.57 fps [ETA  0:00:05]    1066F[KPass 1/1 frame   54/53    230217B   11792 ms 4.58 fps [ETA  0:00:04]    1074F[KPass 1/1 frame   55/54    231291B   11983 ms 4.59 fps [ETA  0:00:04]    1049F[KPass 1/1 frame   56/55    232340B   12171 ms 4.60 fps [ETA  0:00:04]    1045F[KPass 1/1 frame   57/56    233385B   12360 ms 4.61 fps [ETA  0:00:04]    1092F[KPass 1/1 frame   58/57    234477B   12548 ms 4.62 fps [ETA  0:00:03]    1078F[KPass 1/1 frame   59/58    235555B   12740 ms 4.63 fps [ETA  0:00:03]    1029F[KPass 1/1 frame   60/59    236584B   12936 ms 4.64 fps [ETA  0:00:03]    1038F[KPass 1/1 frame   61/60    237622B   13129 ms 4.65 fps [ETA  0:00:03]    1063F[KPass 1/1 frame   62/61    238685B   13322 ms 4.65 fps [ETA  0:00:02]    1039F[KPass 1/1 frame   63/62    239724B   13513 ms 4.66 fps [ETA  0:00:02]    1092F[KPass 1/1 frame   64/63    240816B   13701 ms 4.67 fps [ETA  0:00:02]    1099F[KPass 1/1 frame   65/64    241915B   13892 ms 4.68 fps [ETA  0:00:02]    1925F[KPass 1/1 frame   66/65    243840B   14125 ms 4.67 fps [ETA  0:00:02]    2073F[KPass 1/1 frame   67/66    245913B   14365 ms 4.66 fps [ETA  0:00:01]    2390F[KPass 1/1 frame   68/67    248303B   14618 ms 4.65 fps [ETA  0:00:01]    2814F[KPass 1/1 frame   69/68    251117B   14874 ms 4.64 fps [ETA  0:00:01]   23132F[KPass 1/1 frame   70/69    274249B   15175 ms 4.61 fps [ETA  0:00:01]   10068F[KPass 1/1 frame   71/70    284317B   15463 ms 4.59 fps [ETA  0:00:00]     955F[KPass 1/1 frame   72/71    285272B   15576 ms 4.62 fps [ETA  0:00:00]    1238F[KPass 1/1 frame   73/72    286510B   15758 ms 4.63 fps [ETA  0:00:00]    1203F[KPass 1/1 frame   74/73    287713B   15934 ms 4.64 fps [ETA  0:00:00]    1247F[KPass 1/1 frame   74/74    288960B   16115 ms 4.59 fps [ETA  0:00:00] [KPass 1/1 frame   74/74    288960B   31238b/f  937167b/s   16115 ms (4.59 fps)[K
++ ls tmp
++ grep akiyo1_s.vpx
+akiyo1_s.vpx
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --stereo-mode '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --stereo-mode '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ vpxenc --codec=vp8 -w 352 -h 288 --threads=6 --verbose --ivf -o tmp/1.ivf data/1.mp4
+Codec: WebM Project VP8 Encoder v1.7.0
+Source file: data/1.mp4 File Type: RAW Format: I420
+Destination file: tmp/1.ivf
+Encoder parameters:
+    g_usage                      = 0
+    g_threads                    = 6
+    g_profile                    = 0
+    g_w                          = 352
+    g_h                          = 288
+    g_bit_depth                  = 8
+    g_input_bit_depth            = 8
+    g_timebase.num               = 1
+    g_timebase.den               = 30
+    g_error_resilient            = 0
+    g_pass                       = 0
+    g_lag_in_frames              = 0
+    rc_dropframe_thresh          = 0
+    rc_resize_allowed            = 0
+    rc_scaled_width              = 1
+    rc_scaled_height             = 1
+    rc_resize_up_thresh          = 60
+    rc_resize_down_thresh        = 30
+    rc_end_usage                 = 0
+    rc_target_bitrate            = 256
+    rc_min_quantizer             = 4
+    rc_max_quantizer             = 63
+    rc_undershoot_pct            = 100
+    rc_overshoot_pct             = 100
+    rc_buf_sz                    = 6000
+    rc_buf_initial_sz            = 4000
+    rc_buf_optimal_sz            = 5000
+    rc_2pass_vbr_bias_pct        = 50
+    rc_2pass_vbr_minsection_pct  = 0
+    rc_2pass_vbr_maxsection_pct  = 400
+    rc_2pass_vbr_corpus_complexity = 0
+    kf_mode                      = 1
+    kf_min_dist                  = 0
+    kf_max_dist                  = 128
+Pass 1/1 frame    1/0          0B       0 us 0.00 fpm [ETA  unknown]   53757F[KPass 1/1 frame    2/1      53757B  357339 us 5.60 fps [ETA  0:00:26]    1222F[KPass 1/1 frame    3/2      54979B  504806 us 5.94 fps [ETA  0:00:24]    1062F[KPass 1/1 frame    4/3      56041B  722289 us 5.54 fps [ETA  0:00:23]    1194F[KPass 1/1 frame    5/4      57235B  931134 us 5.37 fps [ETA  0:00:21]    1399F[KPass 1/1 frame    6/5      58634B 1148388 us 5.22 fps [ETA  0:00:20]    1607F[KPass 1/1 frame    7/6      60241B 1373798 us 5.10 fps [ETA  0:00:19]    1846F[KPass 1/1 frame    8/7      62087B 1608408 us 4.97 fps [ETA  0:00:18]    2054F[KPass 1/1 frame    9/8      64141B 1851696 us 4.86 fps [ETA  0:00:17]    2440F[KPass 1/1 frame   10/9      66581B 2108597 us 4.74 fps [ETA  0:00:17]    2580F[KPass 1/1 frame   11/10     69161B 2375245 us 4.63 fps [ETA  0:00:16]    2700F[KPass 1/1 frame   12/11     71861B 2623456 us 4.57 fps [ETA  0:00:16]    2561F[KPass 1/1 frame   13/12     74422B 2879912 us 4.51 fps [ETA  0:00:15]    2677F[KPass 1/1 frame   14/13     77099B 3136228 us 4.46 fps [ETA  0:00:15]    2918F[KPass 1/1 frame   15/14     80017B 3389007 us 4.43 fps [ETA  0:00:15]    2894F[KPass 1/1 frame   16/15     82911B 3640107 us 4.40 fps [ETA  0:00:14]    2895F[KPass 1/1 frame   17/16     85806B 3897689 us 4.36 fps [ETA  0:00:14]    2817F[KPass 1/1 frame   18/17     88623B 4152508 us 4.33 fps [ETA  0:00:14]   24164F[KPass 1/1 frame   19/18    112787B 4493047 us 4.23 fps [ETA  0:00:14]     988F[KPass 1/1 frame   20/19    113775B 4639654 us 4.31 fps [ETA  0:00:13]    1472F[KPass 1/1 frame   21/20    115247B 4848627 us 4.33 fps [ETA  0:00:13]    1878F[KPass 1/1 frame   22/21    117125B 5071216 us 4.34 fps [ETA  0:00:13]    2055F[KPass 1/1 frame   23/22    119180B 5301799 us 4.34 fps [ETA  0:00:12]    1893F[KPass 1/1 frame   24/23    121073B 5525858 us 4.34 fps [ETA  0:00:12]    2520F[KPass 1/1 frame   25/24    123593B 5774717 us 4.33 fps [ETA  0:00:12]    2945F[KPass 1/1 frame   26/25    126538B 6029679 us 4.31 fps [ETA  0:00:12]    3328F[KPass 1/1 frame   27/26    129866B 6292157 us 4.29 fps [ETA  0:00:11]    3541F[KPass 1/1 frame   28/27    133407B 6558232 us 4.27 fps [ETA  0:00:11]    3642F[KPass 1/1 frame   29/28    137049B 6821811 us 4.25 fps [ETA  0:00:11]    3758F[KPass 1/1 frame   30/29    140807B 7089884 us 4.23 fps [ETA  0:00:11]    3838F[KPass 1/1 frame   31/30    144645B 7356070 us 4.21 fps [ETA  0:00:10]   22896F[KPass 1/1 frame   32/31    167541B 7652485 us 4.18 fps [ETA  0:00:10]   11953F[KPass 1/1 frame   33/32    179494B 7928914 us 4.16 fps [ETA  0:00:10]    1092F[KPass 1/1 frame   34/33    180586B 8050612 us 4.22 fps [ETA  0:00:10]    1844F[KPass 1/1 frame   35/34    182430B 8265753 us 4.23 fps [ETA  0:00:09]    2373F[KPass 1/1 frame   36/35    184803B 8497740 us 4.24 fps [ETA  0:00:09]    2232F[KPass 1/1 frame   37/36    187035B 8726013 us 4.24 fps [ETA  0:00:09]    2554F[KPass 1/1 frame   38/37    189589B 8982982 us 4.23 fps [ETA  0:00:09]    2593F[KPass 1/1 frame   39/38    192182B 9222558 us 4.23 fps [ETA  0:00:08]   24204F[KPass 1/1 frame   40/39    216386B 9546894 us 4.19 fps [ETA  0:00:08]     504F[KPass 1/1 frame   41/40    216890B 9677232 us 4.24 fps [ETA  0:00:08]     810F[KPass 1/1 frame   42/41    217700B 9864915 us 4.26 fps [ETA  0:00:08]     968F[KPass 1/1 frame   43/42    218668B   10060 ms 4.27 fps [ETA  0:00:07]    1016F[KPass 1/1 frame   44/43    219684B   10254 ms 4.29 fps [ETA  0:00:07]    1079F[KPass 1/1 frame   45/44    220763B   10449 ms 4.31 fps [ETA  0:00:07]    1083F[KPass 1/1 frame   46/45    221846B   10648 ms 4.32 fps [ETA  0:00:07]    1014F[KPass 1/1 frame   47/46    222860B   10844 ms 4.33 fps [ETA  0:00:06]    1042F[KPass 1/1 frame   48/47    223902B   11041 ms 4.35 fps [ETA  0:00:06]    1032F[KPass 1/1 frame   49/48    224934B   11238 ms 4.36 fps [ETA  0:00:06]    1058F[KPass 1/1 frame   50/49    225992B   11433 ms 4.37 fps [ETA  0:00:06]    1050F[KPass 1/1 frame   51/50    227042B   11630 ms 4.39 fps [ETA  0:00:05]    1064F[KPass 1/1 frame   52/51    228106B   11833 ms 4.39 fps [ETA  0:00:05]    1045F[KPass 1/1 frame   53/52    229151B   12032 ms 4.40 fps [ETA  0:00:05]    1066F[KPass 1/1 frame   54/53    230217B   12230 ms 4.42 fps [ETA  0:00:05]    1074F[KPass 1/1 frame   55/54    231291B   12441 ms 4.42 fps [ETA  0:00:04]    1049F[KPass 1/1 frame   56/55    232340B   12643 ms 4.43 fps [ETA  0:00:04]    1045F[KPass 1/1 frame   57/56    233385B   12846 ms 4.44 fps [ETA  0:00:04]    1092F[KPass 1/1 frame   58/57    234477B   13046 ms 4.45 fps [ETA  0:00:04]    1078F[KPass 1/1 frame   59/58    235555B   13245 ms 4.45 fps [ETA  0:00:03]    1029F[KPass 1/1 frame   60/59    236584B   13445 ms 4.46 fps [ETA  0:00:03]    1038F[KPass 1/1 frame   61/60    237622B   13645 ms 4.47 fps [ETA  0:00:03]    1063F[KPass 1/1 frame   62/61    238685B   13848 ms 4.48 fps [ETA  0:00:03]    1039F[KPass 1/1 frame   63/62    239724B   14046 ms 4.49 fps [ETA  0:00:02]    1092F[KPass 1/1 frame   64/63    240816B   14238 ms 4.49 fps [ETA  0:00:02]    1099F[KPass 1/1 frame   65/64    241915B   14435 ms 4.50 fps [ETA  0:00:02]    1925F[KPass 1/1 frame   66/65    243840B   14674 ms 4.50 fps [ETA  0:00:02]    2073F[KPass 1/1 frame   67/66    245913B   14918 ms 4.49 fps [ETA  0:00:01]    2390F[KPass 1/1 frame   68/67    248303B   15180 ms 4.48 fps [ETA  0:00:01]    2814F[KPass 1/1 frame   69/68    251117B   15446 ms 4.47 fps [ETA  0:00:01]   23132F[KPass 1/1 frame   70/69    274249B   15748 ms 4.44 fps [ETA  0:00:01]   10068F[KPass 1/1 frame   71/70    284317B   16030 ms 4.43 fps [ETA  0:00:01]     955F[KPass 1/1 frame   72/71    285272B   16141 ms 4.46 fps [ETA  0:00:00]    1238F[KPass 1/1 frame   73/72    286510B   16320 ms 4.47 fps [ETA  0:00:00]    1203F[KPass 1/1 frame   74/73    287713B   16496 ms 4.49 fps [ETA  0:00:00]    1247F[KPass 1/1 frame   74/74    288960B   16674 ms 4.44 fps [ETA  0:00:00] [KPass 1/1 frame   74/74    288960B   31238b/f  937167b/s   16674 ms (4.44 fps)[K
++ ls tmp
++ grep 1.ivf
+1.ivf
++ CHECK_RESULT 0 0 0 'Failed option: vpxenc --ivf '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: vpxenc --ivf '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 16:35:01 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:35:01 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:35:02 2023 - INFO  - Start to restore the test environment.
++ rm -rf tmp data
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpdwlp5gtl ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpdwlp5gtl
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:35:12 2023 - INFO  - End to restore the test environment.

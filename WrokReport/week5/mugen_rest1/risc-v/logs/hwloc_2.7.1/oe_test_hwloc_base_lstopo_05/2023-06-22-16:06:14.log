@@ -1,0 +1,138 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 16:06:16 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpupi2lsrl
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpupi2lsrl
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 16:06:50 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:06:50 2023 - INFO  - Start to run test.
++ lstopo -l common/test_fn.xml -f
++ lstopo -l --input common/test_fn.xml
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo --input-format <type> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --input-format <type> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --export-synthetic-flags 1
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo --export-synthetic-flags failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --export-synthetic-flags failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --ps
++ grep Package
+  Package L#0
++ CHECK_RESULT 0 0 0 'lstopo -l --ps failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -l --ps failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --top
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo -l --top failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -l --top failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --version
++ grep 'lstopo [[:digit:]]'
+lstopo 2.7.1
++ CHECK_RESULT 0 0 0 'lstopo -l --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -l --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 16:06:51 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:06:52 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 16:06:52 2023 - INFO  - start environment cleanup.
++ rm -f common/test_fn.xml
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpupi2lsrl ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpupi2lsrl
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 16:07:03 2023 - INFO  - Finish environment cleanup!

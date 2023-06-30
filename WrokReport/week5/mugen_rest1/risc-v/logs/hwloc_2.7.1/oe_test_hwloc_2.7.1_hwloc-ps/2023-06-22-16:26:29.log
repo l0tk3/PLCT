@@ -1,0 +1,313 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:26:32 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpv3d2rfd4
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpv3d2rfd4
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:27:05 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:27:05 2023 - INFO  - Start to run test.
++ hwloc-ps --version
++ grep 2.7.1
+hwloc-ps 2.7.1
++ CHECK_RESULT 0 0 0 'hwloc-ps --version falied'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --version falied'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -h
++ grep Usage:
+Usage: hwloc-ps [ options ] ...
+Options:
+  -a                 Show all processes, including those that are not bound
+  --pid <pid>        Only show process of pid number <pid>
+  --name <name>      Only show processes whose name contains <name>
+  --uid <uid>        Only show processes of the user with the given uid
+  --uid all          Show processes of all users
+  -l --logical       Use logical object indexes (default)
+  -p --physical      Use physical object indexes
+  -c --cpuset        Show cpuset instead of objects
+  --single-ancestor  Show a single ancestor containing the binding
+  -t --threads       Show threads
+  -e --get-last-cpu-location
+                     Retrieve the last processors where the tasks ran
+  --pid-cmd <cmd>    Append the output of <cmd> <pid> to each PID line
+  --short-name       Show only the process short name instead of the path
+  --disallowed       Include objects disallowed by administrative limitations
+  --json-server      Run as a JSON server
+  --json-port <n>    Use port <n> for JSON server (default is 8888)
+  -v --verbose       Increase verbosity
+  --version          Report version and exit
+  -h --help          Show this usage
++ CHECK_RESULT 1 1 0 'hwloc-ps -h falied'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='hwloc-ps -h falied'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ hwloc-ps --help
++ grep Usage:
+Usage: hwloc-ps [ options ] ...
+Options:
+  -a                 Show all processes, including those that are not bound
+  --pid <pid>        Only show process of pid number <pid>
+  --name <name>      Only show processes whose name contains <name>
+  --uid <uid>        Only show processes of the user with the given uid
+  --uid all          Show processes of all users
+  -l --logical       Use logical object indexes (default)
+  -p --physical      Use physical object indexes
+  -c --cpuset        Show cpuset instead of objects
+  --single-ancestor  Show a single ancestor containing the binding
+  -t --threads       Show threads
+  -e --get-last-cpu-location
+                     Retrieve the last processors where the tasks ran
+  --pid-cmd <cmd>    Append the output of <cmd> <pid> to each PID line
+  --short-name       Show only the process short name instead of the path
+  --disallowed       Include objects disallowed by administrative limitations
+  --json-server      Run as a JSON server
+  --json-port <n>    Use port <n> for JSON server (default is 8888)
+  -v --verbose       Increase verbosity
+  --version          Report version and exit
+  -h --help          Show this usage
++ CHECK_RESULT 1 1 0 'hwloc-ps --help falied'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='hwloc-ps --help falied'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ hwloc-ps --uid all -a
++ grep Machine
+1	Machine:0		/sbin/init
+194	Machine:0		/usr/lib/systemd/systemd-journald
+221	Machine:0		/usr/lib/systemd/systemd-udevd
+264	Machine:0		/usr/lib/systemd/systemd-timesyncd
+271	Machine:0		/usr/bin/dbus-daemon
+275	Machine:0		/usr/lib/systemd/systemd-logind
+277	Machine:0		/usr/sbin/NetworkManager
+282	Machine:0		sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+292	Machine:0		/usr/sbin/crond
+293	Machine:0		/sbin/agetty
+294	Machine:0		/sbin/agetty
+313	Machine:0		sshd: root [priv]
+316	Machine:0		sshd: root@notty
+317	Machine:0		python3
+2347	Machine:0		/usr/sbin/anacron
+9915	Machine:0		sh
+9916	Machine:0		sudo
+9917	Machine:0		tee
+9918	Machine:0		bash
+9962	Machine:0		python3
+9963	Machine:0		bash
+10002	Machine:0		hwloc-ps
+10003	Machine:0		grep
++ CHECK_RESULT 0 0 0 'hwloc-ps --uid all failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --uid all failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps --uid 0 -a
++ grep Machine
+1	Machine:0		/sbin/init
+194	Machine:0		/usr/lib/systemd/systemd-journald
+221	Machine:0		/usr/lib/systemd/systemd-udevd
+275	Machine:0		/usr/lib/systemd/systemd-logind
+277	Machine:0		/usr/sbin/NetworkManager
+282	Machine:0		sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+292	Machine:0		/usr/sbin/crond
+293	Machine:0		/sbin/agetty
+294	Machine:0		/sbin/agetty
+313	Machine:0		sshd: root [priv]
+316	Machine:0		sshd: root@notty
+317	Machine:0		python3
+2347	Machine:0		/usr/sbin/anacron
+9915	Machine:0		sh
+9916	Machine:0		sudo
+9917	Machine:0		tee
+9918	Machine:0		bash
+9962	Machine:0		python3
+9963	Machine:0		bash
+10004	Machine:0		hwloc-ps
+10005	Machine:0		grep
++ CHECK_RESULT 0 0 0 'hwloc-ps --uid <uid> falied'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --uid <uid> falied'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a --short-name
++ grep sshd
+282	Machine:0		sshd
+313	Machine:0		sshd
+316	Machine:0		sshd
++ CHECK_RESULT 0 0 0 'hwloc-ps --short-name  falied'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --short-name  falied'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a -v
++ grep hwloc-ps
+10008	Machine:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-ps -v falied'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps -v falied'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a --verbose
++ grep hwloc-ps
+10010	Machine:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-ps --verbose falied'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --verbose falied'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a --json-port 8080
++ grep hwloc-ps
+10012	Machine:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-ps --json-port falied'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --json-port falied'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a --single-ancestor
++ grep 1
+1	Machine:0		/sbin/init
+194	Machine:0		/usr/lib/systemd/systemd-journald
+221	Machine:0		/usr/lib/systemd/systemd-udevd
+282	Machine:0		sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+313	Machine:0		sshd: root [priv]
+316	Machine:0		sshd: root@notty
+317	Machine:0		python3
+9915	Machine:0		sh
+9916	Machine:0		sudo
+9917	Machine:0		tee
+9918	Machine:0		bash
+10014	Machine:0		hwloc-ps
+10015	Machine:0		grep
++ CHECK_RESULT 0 0 0 'hwloc-ps --single-ancestor falied'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --single-ancestor falied'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a --disallowed
++ grep bash
+9918	Machine:0		bash
+9963	Machine:0		bash
++ CHECK_RESULT 0 0 0 'hwloc-ps --disallowed falied'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --disallowed falied'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 16:27:06 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:27:07 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:27:07 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpv3d2rfd4 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpv3d2rfd4
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:27:17 2023 - INFO  - End to restore the test environment.

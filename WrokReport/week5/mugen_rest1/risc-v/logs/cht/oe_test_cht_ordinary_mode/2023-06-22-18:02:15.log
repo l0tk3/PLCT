@@ -1,0 +1,138 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:02:21 2023 - INFO  - Start to prepare the test environment.
++ mkdir /tmp/test
++ cd /tmp/test
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Thu Jun 22 18:02:21 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:02:22 2023 - INFO  - Start to run test.
++ curl cht.sh/pwd
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   591  100   591    0     0   1076      0 --:--:-- --:--:-- --:--:--  1078100   591  100   591    0     0   1072      0 --:--:-- --:--:-- --:--:--  1074
++ grep 'Show the absolute path of your current working directory' pwd.txt
+[38;5;246;03m# Show the absolute path of your current working directory:[39;00m
++ CHECK_RESULT 0 0 0 'Query pwd failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Query pwd failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curl cht.sh/~pwd
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0 18  117k   18 22832    0     0   8240      0  0:00:14  0:00:02  0:00:12  8245100  117k  100  117k    0     0  37866      0  0:00:03  0:00:03 --:--:-- 37894
++ grep tldr:pwdx pwd2.txt
+[48;5;8m[24m tldr:pwdx [24m[0m
++ CHECK_RESULT 0 0 0 'Query ~pwd failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Query ~pwd failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curl cht.sh/python/random+list+elements
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 87  2973   87  2594    0     0   6080      0 --:--:-- --:--:-- --:--:--  6103100  2973  100  2973    0     0   6934      0 --:--:-- --:--:-- --:--:--  6962
++ grep https://docs.python.org/library/random.htmlrandom.choice API.txt
+[38;5;252m  [39m[38;5;246;03m#  [1]: https://docs.python.org/library/random.htmlrandom.choice[39;00m
++ CHECK_RESULT 0 0 0 'Query API failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Query API failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curl 'cht.sh/python/random+list+elements?Q'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2000  100  2000    0     0   3560      0 --:--:-- --:--:-- --:--:--  3577
++ grep https://docs.python.org/library/random.htmlrandom.choice API-Q.txt
++ CHECK_RESULT 1 0 1 'Query \?Q failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Query \?Q failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ curl curl cht.sh/sql+select
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: curl
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3790  100  3790    0     0   9502      0 --:--:-- --:--:-- --:--:--  9498
++ grep 'The `CASE` statement is the closest to IF in SQL' sql.txt
+[38;5;246;03m--  The `CASE` statement is the closest to IF in SQL and is supported on[39;00m
++ CHECK_RESULT 0 0 0 'Query sql failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Query sql failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 18:02:29 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:02:30 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:02:30 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/test
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Thu Jun 22 18:02:31 2023 - INFO  - Finish restoring the test environment.

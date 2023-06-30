@@ -1,0 +1,2359 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 14:41:57 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpw1ebe923
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpw1ebe923
+++ uname -i
++ test x86_64X == aarch64X
++ systemctl start libvirtd
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get x86_64 qcow2 libguestfs pkg'
++ message='get x86_64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get x86_64 qcow2 libguestfs pkg'
+Thu Jun 29 14:42:57 2023 - INFO  - get x86_64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 ']'
++ LOG_INFO 'qcow2 file already exists'
++ message='qcow2 file already exists'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'qcow2 file already exists'
+Thu Jun 29 14:42:57 2023 - INFO  - qcow2 file already exists
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
++ virt-install --name openEuler-2003 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+WARNING  KVM acceleration not available, using 'qemu'
+ERROR    
+--os-variant/--osinfo OS name is required, but no value was
+set or detected.
+
+This is now a fatal error. Specifying an OS name is required
+for modern, performant, and secure virtual machine defaults.
+
+You can see a full list of possible OS name values with:
+
+   virt-install --osinfo list
+
+If your Linux distro is not listed, try one of generic values
+such as: linux2020, linux2018, linux2016
+
+If you just need to get the old behavior back, you can use:
+
+  --osinfo detect=on,require=off
+
+Or export VIRTINSTALL_OSINFO_DISABLE_REQUIRE=1
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 14:43:10 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:43:10 2023 - INFO  - Start to run test.
+++ fdisk -l
+++ grep Device -A 1
+++ grep -o '/dev/[a-z0-9]*'
++ device=/dev/vda1
++ guestmount -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -m /dev/vda1 --ro /mnt
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x5649a5a2f5c0, program = guestmount
+libguestfs: trace: set_recovery_proc false
+libguestfs: trace: set_recovery_proc = 0
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "readonly:true"
+libguestfs: creating COW overlay to protect original drive content
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: disk_create "/tmp/libguestfsUfRbxQ/overlay1.qcow2" "qcow2" -1 "backingfile:/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "backingformat:qcow2"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,backing_fmt=qcow2
+libguestfs: command: run: \ /tmp/libguestfsUfRbxQ/overlay1.qcow2
+Formatting '/tmp/libguestfsUfRbxQ/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 backing_fmt=qcow2 lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: add_drive = 0
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestmount
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsUfRbxQ
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-a47zpta5rppk10c1
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x5649a5a31ae0
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.vk9er5bs/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.vk9er5bs/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.vk9er5bs to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsUfRbxQ/overlay2.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsUfRbxQ/overlay2.qcow2
+Formatting '/tmp/libguestfsUfRbxQ/overlay2.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-a47zpta5rppk10c1</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=388d0f74-d905-4af6-83bd-ccd6ce7dc81f selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/tmp/libguestfsUfRbxQ/overlay1.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsUfRbxQ/overlay2.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfsOgjWn4/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfsOgjWn4/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 256
+libguestfs: drwxr-xr-x 3 root root ?   4096 Jun 29 14:43 .
+libguestfs: drwxrwxrwt 5 root root ?   4096 Jun 29 14:43 ..
+libguestfs: drwxr-xr-x 2 root root ?   4096 Jun 29 14:43 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?      0 Jun 29 14:33 lock
+libguestfs: -rw-r--r-- 1 root root ?  15576 Jun 29 14:37 qemu-14975616-1679901197.devices
+libguestfs: -rw-r--r-- 1 root root ?  30498 Jun 29 14:37 qemu-14975616-1679901197.help
+libguestfs: -rw-r--r-- 1 root root ? 189415 Jun 29 14:37 qemu-14975616-1679901197.qmp-schema
+libguestfs: -rw-r--r-- 1 root root ?     49 Jun 29 14:37 qemu-14975616-1679901197.query-kvm
+libguestfs: -rw-r--r-- 1 root root ?     40 Jun 29 14:37 qemu-14975616-1679901197.stat
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:43 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:43 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:43 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:43 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:43 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfsOgjWn4
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:43 .
+libguestfs: drwxrwxrwt 12 root root ? 340 Jun 29 14:43 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:43 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:43 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x5649a5a2f5c0 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsUfRbxQ
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsOgjWn4
++ CHECK_RESULT 1 0 0 'Check guestmount -a -m --ro failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestmount -a -m --ro failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestmount -a -m --ro failed'
++ LOG_ERROR 'Check guestmount -a -m --ro failed'
++ message='Check guestmount -a -m --ro failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestmount -a -m --ro failed'
+Thu Jun 29 14:43:14 2023 - ERROR - Check guestmount -a -m --ro failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestmount_01.sh line 33'
++ message='oe_test_libguestfs_guestmount_01.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestmount_01.sh line 33'
+Thu Jun 29 14:43:14 2023 - ERROR - oe_test_libguestfs_guestmount_01.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ guestunmount /mnt
+guestunmount: failed to unmount /mnt: fusermount: failed to unmount /mnt: Invalid argument
+                     USER        PID ACCESS COMMAND
+/mnt:                root     kernel mount /
+                     root          1 .rce. systemd
+                     root          2 .rc.. kthreadd
+                     root          3 .rc.. rcu_gp
+                     root          4 .rc.. rcu_par_gp
+                     root          5 .rc.. slub_flushwq
+                     root          6 .rc.. netns
+                     root          8 .rc.. kworker/0:0H-events_highpri
+                     root          9 .rc.. kworker/u8:0-events_unbound
+                     root         10 .rc.. mm_percpu_wq
+                     root         11 .rc.. rcu_tasks_kthread
+                     root         12 .rc.. rcu_tasks_rude_kthread
+                     root         13 .rc.. rcu_tasks_trace_kthread
+                     root         14 .rc.. ksoftirqd/0
+                     root         15 .rc.. rcu_preempt
+                     root         16 .rc.. migration/0
+                     root         18 .rc.. cpuhp/0
+                     root         19 .rc.. cpuhp/1
+                     root         20 .rc.. migration/1
+                     root         21 .rc.. ksoftirqd/1
+                     root         22 .rc.. kworker/1:0-cgroup_pidlist_destroy
+                     root         23 .rc.. kworker/1:0H-events_highpri
+                     root         24 .rc.. cpuhp/2
+                     root         25 .rc.. migration/2
+                     root         26 .rc.. ksoftirqd/2
+                     root         28 .rc.. kworker/2:0H-events_highpri
+                     root         29 .rc.. cpuhp/3
+                     root         30 .rc.. migration/3
+                     root         31 .rc.. ksoftirqd/3
+                     root         32 .rc.. kworker/3:0-events
+                     root         33 .rc.. kworker/3:0H-events_highpri
+                     root         35 .rc.. kworker/u8:1-events_unbound
+                     root         36 .rc.. kworker/u8:2-events_unbound
+                     root         37 .rc.. kworker/u8:3-events_unbound
+                     root         39 .rc.. inet_frag_wq
+                     root         40 .rc.. kauditd
+                     root         41 .rc.. khungtaskd
+                     root         42 .rc.. oom_reaper
+                     root         43 .rc.. writeback
+                     root         44 .rc.. kcompactd0
+                     root         45 .rc.. ksmd
+                     root         47 .rc.. khugepaged
+                     root         48 .rc.. cryptd
+                     root         49 .rc.. kintegrityd
+                     root         50 .rc.. kblockd
+                     root         51 .rc.. blkcg_punt_bio
+                     root         52 .rc.. tpm_dev_wq
+                     root         53 .rc.. md
+                     root         54 .rc.. edac-poller
+                     root         55 .rc.. watchdogd
+                     root         56 .rc.. kworker/3:1H-kblockd
+                     root         58 .rc.. kswapd0
+                     root         59 .rc.. kthrotld
+                     root         63 .rc.. kworker/2:2-cgroup_pidlist_destroy
+                     root         64 .rc.. acpi_thermal_pm
+                     root         65 .rc.. xenbus_probe
+                     root         66 .rc.. hwrng
+                     root         67 .rc.. kmpath_rdacd
+                     root         68 .rc.. kaluad
+                     root         69 .rc.. mld
+                     root         70 .rc.. ipv6_addrconf
+                     root         71 .rc.. kstrp
+                     root         77 .rc.. zswap-shrink
+                     root        144 .rc.. kworker/u9:0
+                     root        145 .rc.. kworker/2:1H-kblockd
+                     root        223 .rc.. kworker/0:1H-kblockd
+                     root        227 .rc.. kworker/1:1H-kblockd
+                     root        242 .rc.. kworker/1:2-events
+                     root        259 .rc.. kworker/1:4-mm_percpu_wq
+                     root        587 .rc.. raid5wq
+                     root        676 .rc.. dm_bufio_cache
+                     root        688 .rc.. kmpathd
+                     root        689 .rc.. kmpath_handlerd
+                     root        746 .rc.. kworker/0:2-events
+                     root        778 .rc.. rpciod
+                     root        779 .rc.. xprtiod
+                     root        937 .rc.. ata_sff
+                     root        938 .rc.. scsi_eh_0
+                     root        939 .rc.. scsi_tmf_0
+                     root        940 .rc.. scsi_eh_1
+                     root        941 .rc.. scsi_tmf_1
+                     root       1028 .rc.. kworker/2:3-events_freezable_power_
+                     root       1031 .rc.. kworker/2:4-cgroup_pidlist_destroy
+                     root       1032 .rc.. jbd2/vda2-8
+                     root       1033 .rc.. ext4-rsv-conver
+                     root       1237 .rce. systemd-journal
+                     root       1262 .rce. systemd-udevd
+                     root       1299 .rce. auditd
+                     dbus       1325 .rce. dbus-daemon
+                     root       1340 .rce. systemd-logind
+                     root       1350 .rce. NetworkManager
+                     chrony     1357 .rce. chronyd
+                     root       1416 .rce. sshd
+                     root       1428 .rce. crond
+                     root       1431 .rce. agetty
+                     root       1453 .rce. agetty
+                     root       1526 .rce. dhclient
+                     root       1607 .rce. rsyslogd
+                     root       1654 .rce. sshd
+                     root       1657 .rce. sshd
+                     root       1658 .rce. python3
+                     dnsmasq    2592 .rce. dnsmasq
+                     root       2593 .rce. dnsmasq
+                     root       3678 .rc.. kworker/0:3-cgroup_pidlist_destroy
+                     root       3746 .rc.. kworker/3:1-ata_sff
+                     root       4216 .rc.. kworker/1:1-events
+                     root       4217 .rc.. kworker/1:3-events
+                     root       4218 .rc.. kworker/1:5-cgroup_destroy
+                     root       5636 .rc.. kworker/3:3-cgroup_destroy
+                     root       5637 .rc.. kworker/3:5-events
+                     root       5638 .rc.. kworker/3:6-cgroup_pidlist_destroy
+                     root       6788 .rce. guestfish
+                     root       7352 .rce. systemd-machine
+                     root       7665 .rc.. kworker/2:0-ata_sff
+                     root       8406 .rc.. kworker/0:0-cgroup_destroy
+                     root       8407 .rc.. kworker/0:1-events
+                     root       8408 .rc.. kworker/0:4-events
+                     root       8409 .rc.. kworker/0:5-events
+                     root       8410 .rc.. kworker/0:6-cgroup_destroy
+                     root       8411 .rc.. kworker/0:7
+                     root       8612 .rc.. kworker/u8:4-flush-252:0
+                     root       9201 .rc.. kworker/u8:5-events_unbound
+                     root       9203 .rc.. kworker/u8:6
+                     root      10216 .rce. sh
+                     root      10217 .rce. sudo
+                     root      10218 .rce. tee
+                     root      10219 .rce. bash
+                     root      10263 .rce. python3
+                     root      10264 .rce. bash
+                     root      10738 Frce. gssproxy
+                     root      10863 .rce. libvirtd
+                     root      11157 .rce. guestunmount
++ guestmount -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 --fd=1 -m /dev/vda1 --ro /mnt
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x5599d79b45c0, program = guestmount
+libguestfs: trace: set_recovery_proc false
+libguestfs: trace: set_recovery_proc = 0
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "readonly:true"
+libguestfs: creating COW overlay to protect original drive content
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: disk_create "/tmp/libguestfsGeMflW/overlay1.qcow2" "qcow2" -1 "backingfile:/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "backingformat:qcow2"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,backing_fmt=qcow2
+libguestfs: command: run: \ /tmp/libguestfsGeMflW/overlay1.qcow2
+Formatting '/tmp/libguestfsGeMflW/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 backing_fmt=qcow2 lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: add_drive = 0
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestmount
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsGeMflW
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-sk0wy9t1340tyut2
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x5599d79b6e10
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.29qp72dy/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.29qp72dy/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.29qp72dy to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsGeMflW/overlay2.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsGeMflW/overlay2.qcow2
+Formatting '/tmp/libguestfsGeMflW/overlay2.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-sk0wy9t1340tyut2</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=11865195-5c7c-41ba-aec6-5d11fc31219b selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/tmp/libguestfsGeMflW/overlay1.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsGeMflW/overlay2.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfscmHS2u/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfscmHS2u/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 256
+libguestfs: drwxr-xr-x 3 root root ?   4096 Jun 29 14:43 .
+libguestfs: drwxrwxrwt 5 root root ?   4096 Jun 29 14:43 ..
+libguestfs: drwxr-xr-x 2 root root ?   4096 Jun 29 14:43 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?      0 Jun 29 14:33 lock
+libguestfs: -rw-r--r-- 1 root root ?  15576 Jun 29 14:37 qemu-14975616-1679901197.devices
+libguestfs: -rw-r--r-- 1 root root ?  30498 Jun 29 14:37 qemu-14975616-1679901197.help
+libguestfs: -rw-r--r-- 1 root root ? 189415 Jun 29 14:37 qemu-14975616-1679901197.qmp-schema
+libguestfs: -rw-r--r-- 1 root root ?     49 Jun 29 14:37 qemu-14975616-1679901197.query-kvm
+libguestfs: -rw-r--r-- 1 root root ?     40 Jun 29 14:37 qemu-14975616-1679901197.stat
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:43 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:43 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:43 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:43 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:43 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfscmHS2u
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:43 .
+libguestfs: drwxrwxrwt 12 root root ? 340 Jun 29 14:43 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:43 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:43 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x5599d79b45c0 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsGeMflW
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfscmHS2u
++ CHECK_RESULT 1 0 0 'Check guestmount --fd failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestmount --fd failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestmount --fd failed'
++ LOG_ERROR 'Check guestmount --fd failed'
++ message='Check guestmount --fd failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestmount --fd failed'
+Thu Jun 29 14:43:48 2023 - ERROR - Check guestmount --fd failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestmount_01.sh line 36'
++ message='oe_test_libguestfs_guestmount_01.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestmount_01.sh line 36'
+Thu Jun 29 14:43:48 2023 - ERROR - oe_test_libguestfs_guestmount_01.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ guestunmount /mnt
+guestunmount: failed to unmount /mnt: fusermount: failed to unmount /mnt: Invalid argument
+                     USER        PID ACCESS COMMAND
+/mnt:                root     kernel mount /
+                     root          1 .rce. systemd
+                     root          2 .rc.. kthreadd
+                     root          3 .rc.. rcu_gp
+                     root          4 .rc.. rcu_par_gp
+                     root          5 .rc.. slub_flushwq
+                     root          6 .rc.. netns
+                     root          8 .rc.. kworker/0:0H-events_highpri
+                     root          9 .rc.. kworker/u8:0-events_unbound
+                     root         10 .rc.. mm_percpu_wq
+                     root         11 .rc.. rcu_tasks_kthread
+                     root         12 .rc.. rcu_tasks_rude_kthread
+                     root         13 .rc.. rcu_tasks_trace_kthread
+                     root         14 .rc.. ksoftirqd/0
+                     root         15 .rc.. rcu_preempt
+                     root         16 .rc.. migration/0
+                     root         18 .rc.. cpuhp/0
+                     root         19 .rc.. cpuhp/1
+                     root         20 .rc.. migration/1
+                     root         21 .rc.. ksoftirqd/1
+                     root         22 .rc.. kworker/1:0-cgroup_pidlist_destroy
+                     root         23 .rc.. kworker/1:0H-events_highpri
+                     root         24 .rc.. cpuhp/2
+                     root         25 .rc.. migration/2
+                     root         26 .rc.. ksoftirqd/2
+                     root         28 .rc.. kworker/2:0H-events_highpri
+                     root         29 .rc.. cpuhp/3
+                     root         30 .rc.. migration/3
+                     root         31 .rc.. ksoftirqd/3
+                     root         32 .rc.. kworker/3:0-events
+                     root         33 .rc.. kworker/3:0H-events_highpri
+                     root         35 .rc.. kworker/u8:1-events_unbound
+                     root         36 .rc.. kworker/u8:2-events_unbound
+                     root         37 .rc.. kworker/u8:3-events_unbound
+                     root         39 .rc.. inet_frag_wq
+                     root         40 .rc.. kauditd
+                     root         41 .rc.. khungtaskd
+                     root         42 .rc.. oom_reaper
+                     root         43 .rc.. writeback
+                     root         44 .rc.. kcompactd0
+                     root         45 .rc.. ksmd
+                     root         47 .rc.. khugepaged
+                     root         48 .rc.. cryptd
+                     root         49 .rc.. kintegrityd
+                     root         50 .rc.. kblockd
+                     root         51 .rc.. blkcg_punt_bio
+                     root         52 .rc.. tpm_dev_wq
+                     root         53 .rc.. md
+                     root         54 .rc.. edac-poller
+                     root         55 .rc.. watchdogd
+                     root         56 .rc.. kworker/3:1H-kblockd
+                     root         58 .rc.. kswapd0
+                     root         59 .rc.. kthrotld
+                     root         63 .rc.. kworker/2:2-cgroup_pidlist_destroy
+                     root         64 .rc.. acpi_thermal_pm
+                     root         65 .rc.. xenbus_probe
+                     root         66 .rc.. hwrng
+                     root         67 .rc.. kmpath_rdacd
+                     root         68 .rc.. kaluad
+                     root         69 .rc.. mld
+                     root         70 .rc.. ipv6_addrconf
+                     root         71 .rc.. kstrp
+                     root         77 .rc.. zswap-shrink
+                     root        144 .rc.. kworker/u9:0
+                     root        145 .rc.. kworker/2:1H-kblockd
+                     root        223 .rc.. kworker/0:1H-kblockd
+                     root        227 .rc.. kworker/1:1H-kblockd
+                     root        242 .rc.. kworker/1:2-events
+                     root        259 .rc.. kworker/1:4-events
+                     root        587 .rc.. raid5wq
+                     root        676 .rc.. dm_bufio_cache
+                     root        688 .rc.. kmpathd
+                     root        689 .rc.. kmpath_handlerd
+                     root        746 .rc.. kworker/0:2-events
+                     root        778 .rc.. rpciod
+                     root        779 .rc.. xprtiod
+                     root        937 .rc.. ata_sff
+                     root        938 .rc.. scsi_eh_0
+                     root        939 .rc.. scsi_tmf_0
+                     root        940 .rc.. scsi_eh_1
+                     root        941 .rc.. scsi_tmf_1
+                     root       1028 .rc.. kworker/2:3-ata_sff
+                     root       1031 .rc.. kworker/2:4-cgroup_pidlist_destroy
+                     root       1032 .rc.. jbd2/vda2-8
+                     root       1033 .rc.. ext4-rsv-conver
+                     root       1237 .rce. systemd-journal
+                     root       1262 .rce. systemd-udevd
+                     root       1299 .rce. auditd
+                     dbus       1325 .rce. dbus-daemon
+                     root       1340 .rce. systemd-logind
+                     root       1350 .rce. NetworkManager
+                     chrony     1357 .rce. chronyd
+                     root       1416 .rce. sshd
+                     root       1428 .rce. crond
+                     root       1431 .rce. agetty
+                     root       1453 .rce. agetty
+                     root       1526 .rce. dhclient
+                     root       1607 .rce. rsyslogd
+                     root       1654 .rce. sshd
+                     root       1657 .rce. sshd
+                     root       1658 .rce. python3
+                     dnsmasq    2592 .rce. dnsmasq
+                     root       2593 .rce. dnsmasq
+                     root       3678 .rc.. kworker/0:3-cgroup_pidlist_destroy
+                     root       3746 .rc.. kworker/3:1-ata_sff
+                     root       4216 .rc.. kworker/1:1-events
+                     root       4217 .rc.. kworker/1:3-events
+                     root       4218 .rc.. kworker/1:5-cgroup_destroy
+                     root       5636 .rc.. kworker/3:3-cgroup_destroy
+                     root       5637 .rc.. kworker/3:5-events
+                     root       5638 .rc.. kworker/3:6-cgroup_pidlist_destroy
+                     root       6788 .rce. guestfish
+                     root       7352 .rce. systemd-machine
+                     root       7665 .rc.. kworker/2:0-events
+                     root       8406 .rc.. kworker/0:0-cgroup_destroy
+                     root       8407 .rc.. kworker/0:1-events
+                     root       8408 .rc.. kworker/0:4-events
+                     root       8409 .rc.. kworker/0:5-events
+                     root       8410 .rc.. kworker/0:6-cgroup_destroy
+                     root       8411 .rc.. kworker/0:7
+                     root       8612 .rc.. kworker/u8:4-ext4-rsv-conversion
+                     root       9201 .rc.. kworker/u8:5-events_unbound
+                     root       9203 .rc.. kworker/u8:6
+                     root      10216 .rce. sh
+                     root      10217 .rce. sudo
+                     root      10218 .rce. tee
+                     root      10219 .rce. bash
+                     root      10263 .rce. python3
+                     root      10264 .rce. bash
+                     root      10738 Frce. gssproxy
+                     root      10863 .rce. libvirtd
+                     root      11358 .rce. guestunmount
++ guestmount -c test:///default -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -m /dev/vda1 --ro /mnt
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x55af523c65c0, program = guestmount
+libguestfs: trace: set_recovery_proc false
+libguestfs: trace: set_recovery_proc = 0
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "readonly:true"
+libguestfs: creating COW overlay to protect original drive content
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: disk_create "/tmp/libguestfsgbEZBl/overlay1.qcow2" "qcow2" -1 "backingfile:/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "backingformat:qcow2"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,backing_fmt=qcow2
+libguestfs: command: run: \ /tmp/libguestfsgbEZBl/overlay1.qcow2
+Formatting '/tmp/libguestfsgbEZBl/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 backing_fmt=qcow2 lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: add_drive = 0
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestmount
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsgbEZBl
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-1xvj18ssisjf8nr0
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x55af523c8e10
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.bledvmcn/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.bledvmcn/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.bledvmcn to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsgbEZBl/overlay2.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsgbEZBl/overlay2.qcow2
+Formatting '/tmp/libguestfsgbEZBl/overlay2.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-1xvj18ssisjf8nr0</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=62efb84b-23f6-4f4e-8a76-aa572cca3435 selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/tmp/libguestfsgbEZBl/overlay1.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsgbEZBl/overlay2.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfskbTjot/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfskbTjot/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 256
+libguestfs: drwxr-xr-x 3 root root ?   4096 Jun 29 14:44 .
+libguestfs: drwxrwxrwt 5 root root ?   4096 Jun 29 14:44 ..
+libguestfs: drwxr-xr-x 2 root root ?   4096 Jun 29 14:44 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?      0 Jun 29 14:33 lock
+libguestfs: -rw-r--r-- 1 root root ?  15576 Jun 29 14:37 qemu-14975616-1679901197.devices
+libguestfs: -rw-r--r-- 1 root root ?  30498 Jun 29 14:37 qemu-14975616-1679901197.help
+libguestfs: -rw-r--r-- 1 root root ? 189415 Jun 29 14:37 qemu-14975616-1679901197.qmp-schema
+libguestfs: -rw-r--r-- 1 root root ?     49 Jun 29 14:37 qemu-14975616-1679901197.query-kvm
+libguestfs: -rw-r--r-- 1 root root ?     40 Jun 29 14:37 qemu-14975616-1679901197.stat
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:44 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:44 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:44 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:44 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:44 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfskbTjot
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:44 .
+libguestfs: drwxrwxrwt 12 root root ? 340 Jun 29 14:44 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:44 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:44 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x55af523c65c0 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsgbEZBl
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfskbTjot
++ CHECK_RESULT 1 0 0 'Check guestmount -c failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestmount -c failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestmount -c failed'
++ LOG_ERROR 'Check guestmount -c failed'
++ message='Check guestmount -c failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestmount -c failed'
+Thu Jun 29 14:44:22 2023 - ERROR - Check guestmount -c failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestmount_01.sh line 39'
++ message='oe_test_libguestfs_guestmount_01.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestmount_01.sh line 39'
+Thu Jun 29 14:44:22 2023 - ERROR - oe_test_libguestfs_guestmount_01.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ guestunmount /mnt
+guestunmount: failed to unmount /mnt: fusermount: failed to unmount /mnt: Invalid argument
+                     USER        PID ACCESS COMMAND
+/mnt:                root     kernel mount /
+                     root          1 .rce. systemd
+                     root          2 .rc.. kthreadd
+                     root          3 .rc.. rcu_gp
+                     root          4 .rc.. rcu_par_gp
+                     root          5 .rc.. slub_flushwq
+                     root          6 .rc.. netns
+                     root          8 .rc.. kworker/0:0H-events_highpri
+                     root          9 .rc.. kworker/u8:0-events_unbound
+                     root         10 .rc.. mm_percpu_wq
+                     root         11 .rc.. rcu_tasks_kthread
+                     root         12 .rc.. rcu_tasks_rude_kthread
+                     root         13 .rc.. rcu_tasks_trace_kthread
+                     root         14 .rc.. ksoftirqd/0
+                     root         15 .rc.. rcu_preempt
+                     root         16 .rc.. migration/0
+                     root         18 .rc.. cpuhp/0
+                     root         19 .rc.. cpuhp/1
+                     root         20 .rc.. migration/1
+                     root         21 .rc.. ksoftirqd/1
+                     root         22 .rc.. kworker/1:0-cgroup_pidlist_destroy
+                     root         23 .rc.. kworker/1:0H-events_highpri
+                     root         24 .rc.. cpuhp/2
+                     root         25 .rc.. migration/2
+                     root         26 .rc.. ksoftirqd/2
+                     root         28 .rc.. kworker/2:0H-events_highpri
+                     root         29 .rc.. cpuhp/3
+                     root         30 .rc.. migration/3
+                     root         31 .rc.. ksoftirqd/3
+                     root         32 .rc.. kworker/3:0-events
+                     root         33 .rc.. kworker/3:0H-events_highpri
+                     root         35 .rc.. kworker/u8:1-events_unbound
+                     root         36 .rc.. kworker/u8:2-writeback
+                     root         37 .rc.. kworker/u8:3-events_unbound
+                     root         39 .rc.. inet_frag_wq
+                     root         40 .rc.. kauditd
+                     root         41 .rc.. khungtaskd
+                     root         42 .rc.. oom_reaper
+                     root         43 .rc.. writeback
+                     root         44 .rc.. kcompactd0
+                     root         45 .rc.. ksmd
+                     root         47 .rc.. khugepaged
+                     root         48 .rc.. cryptd
+                     root         49 .rc.. kintegrityd
+                     root         50 .rc.. kblockd
+                     root         51 .rc.. blkcg_punt_bio
+                     root         52 .rc.. tpm_dev_wq
+                     root         53 .rc.. md
+                     root         54 .rc.. edac-poller
+                     root         55 .rc.. watchdogd
+                     root         56 .rc.. kworker/3:1H-kblockd
+                     root         58 .rc.. kswapd0
+                     root         59 .rc.. kthrotld
+                     root         63 .rc.. kworker/2:2-cgroup_pidlist_destroy
+                     root         64 .rc.. acpi_thermal_pm
+                     root         65 .rc.. xenbus_probe
+                     root         66 .rc.. hwrng
+                     root         67 .rc.. kmpath_rdacd
+                     root         68 .rc.. kaluad
+                     root         69 .rc.. mld
+                     root         70 .rc.. ipv6_addrconf
+                     root         71 .rc.. kstrp
+                     root         77 .rc.. zswap-shrink
+                     root        144 .rc.. kworker/u9:0
+                     root        145 .rc.. kworker/2:1H-kblockd
+                     root        223 .rc.. kworker/0:1H-kblockd
+                     root        227 .rc.. kworker/1:1H-kblockd
+                     root        242 .rc.. kworker/1:2-events
+                     root        259 .rc.. kworker/1:4-mm_percpu_wq
+                     root        587 .rc.. raid5wq
+                     root        676 .rc.. dm_bufio_cache
+                     root        688 .rc.. kmpathd
+                     root        689 .rc.. kmpath_handlerd
+                     root        746 .rc.. kworker/0:2-events
+                     root        778 .rc.. rpciod
+                     root        779 .rc.. xprtiod
+                     root        937 .rc.. ata_sff
+                     root        938 .rc.. scsi_eh_0
+                     root        939 .rc.. scsi_tmf_0
+                     root        940 .rc.. scsi_eh_1
+                     root        941 .rc.. scsi_tmf_1
+                     root       1028 .rc.. kworker/2:3-ata_sff
+                     root       1031 .rc.. kworker/2:4-cgroup_pidlist_destroy
+                     root       1032 .rc.. jbd2/vda2-8
+                     root       1033 .rc.. ext4-rsv-conver
+                     root       1237 .rce. systemd-journal
+                     root       1262 .rce. systemd-udevd
+                     root       1299 .rce. auditd
+                     dbus       1325 .rce. dbus-daemon
+                     root       1340 .rce. systemd-logind
+                     root       1350 .rce. NetworkManager
+                     chrony     1357 .rce. chronyd
+                     root       1416 .rce. sshd
+                     root       1428 .rce. crond
+                     root       1431 .rce. agetty
+                     root       1453 .rce. agetty
+                     root       1526 .rce. dhclient
+                     root       1607 .rce. rsyslogd
+                     root       1654 .rce. sshd
+                     root       1657 .rce. sshd
+                     root       1658 .rce. python3
+                     dnsmasq    2592 .rce. dnsmasq
+                     root       2593 .rce. dnsmasq
+                     root       3678 .rc.. kworker/0:3-cgroup_pidlist_destroy
+                     root       3746 .rc.. kworker/3:1-ata_sff
+                     root       4216 .rc.. kworker/1:1-events
+                     root       4217 .rc.. kworker/1:3-events
+                     root       4218 .rc.. kworker/1:5-cgroup_destroy
+                     root       5636 .rc.. kworker/3:3-cgroup_destroy
+                     root       5637 .rc.. kworker/3:5-events
+                     root       5638 .rc.. kworker/3:6-cgroup_pidlist_destroy
+                     root       6788 .rce. guestfish
+                     root       7352 .rce. systemd-machine
+                     root       7665 .rc.. kworker/2:0-events_freezable_power_
+                     root       8406 .rc.. kworker/0:0-cgroup_destroy
+                     root       8407 .rc.. kworker/0:1-events
+                     root       8408 .rc.. kworker/0:4-events
+                     root       8409 .rc.. kworker/0:5-events_power_efficient
+                     root       8410 .rc.. kworker/0:6-cgroup_destroy
+                     root       8411 .rc.. kworker/0:7
+                     root       8612 .rc.. kworker/u8:4-ext4-rsv-conversion
+                     root       9201 .rc.. kworker/u8:5-ext4-rsv-conversion
+                     root       9203 .rc.. kworker/u8:6
+                     root      10216 .rce. sh
+                     root      10217 .rce. sudo
+                     root      10218 .rce. tee
+                     root      10219 .rce. bash
+                     root      10263 .rce. python3
+                     root      10264 .rce. bash
+                     root      10738 Frce. gssproxy
+                     root      10863 .rce. libvirtd
+                     root      11559 .rce. guestunmount
++ guestmount -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 --dir-cache-timeout 5 -m /dev/vda1 --ro /mnt
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x5609446df5c0, program = guestmount
+libguestfs: trace: set_recovery_proc false
+libguestfs: trace: set_recovery_proc = 0
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "readonly:true"
+libguestfs: creating COW overlay to protect original drive content
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: disk_create "/tmp/libguestfsiHpAcq/overlay1.qcow2" "qcow2" -1 "backingfile:/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "backingformat:qcow2"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,backing_fmt=qcow2
+libguestfs: command: run: \ /tmp/libguestfsiHpAcq/overlay1.qcow2
+Formatting '/tmp/libguestfsiHpAcq/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 backing_fmt=qcow2 lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: add_drive = 0
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestmount
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsiHpAcq
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-oq44r9wss0axfe3f
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x5609446e1e10
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.h8julxk0/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.h8julxk0/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.h8julxk0 to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsiHpAcq/overlay2.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsiHpAcq/overlay2.qcow2
+Formatting '/tmp/libguestfsiHpAcq/overlay2.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-oq44r9wss0axfe3f</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=b38d56f6-eae2-424c-bf3a-fa5e3cf2bd83 selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/tmp/libguestfsiHpAcq/overlay1.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsiHpAcq/overlay2.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfs1rDr8V/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfs1rDr8V/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 256
+libguestfs: drwxr-xr-x 3 root root ?   4096 Jun 29 14:44 .
+libguestfs: drwxrwxrwt 5 root root ?   4096 Jun 29 14:44 ..
+libguestfs: drwxr-xr-x 2 root root ?   4096 Jun 29 14:44 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?      0 Jun 29 14:33 lock
+libguestfs: -rw-r--r-- 1 root root ?  15576 Jun 29 14:37 qemu-14975616-1679901197.devices
+libguestfs: -rw-r--r-- 1 root root ?  30498 Jun 29 14:37 qemu-14975616-1679901197.help
+libguestfs: -rw-r--r-- 1 root root ? 189415 Jun 29 14:37 qemu-14975616-1679901197.qmp-schema
+libguestfs: -rw-r--r-- 1 root root ?     49 Jun 29 14:37 qemu-14975616-1679901197.query-kvm
+libguestfs: -rw-r--r-- 1 root root ?     40 Jun 29 14:37 qemu-14975616-1679901197.stat
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:44 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:44 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:44 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:44 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:44 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfs1rDr8V
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:44 .
+libguestfs: drwxrwxrwt 12 root root ? 340 Jun 29 14:44 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:44 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:44 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x5609446df5c0 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsiHpAcq
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfs1rDr8V
++ CHECK_RESULT 1 0 0 'Check guestmount --dir-cache-timeout failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestmount --dir-cache-timeout failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestmount --dir-cache-timeout failed'
++ LOG_ERROR 'Check guestmount --dir-cache-timeout failed'
++ message='Check guestmount --dir-cache-timeout failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestmount --dir-cache-timeout failed'
+Thu Jun 29 14:44:55 2023 - ERROR - Check guestmount --dir-cache-timeout failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestmount_01.sh line 42'
++ message='oe_test_libguestfs_guestmount_01.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestmount_01.sh line 42'
+Thu Jun 29 14:44:55 2023 - ERROR - oe_test_libguestfs_guestmount_01.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ guestunmount /mnt
+guestunmount: failed to unmount /mnt: fusermount: failed to unmount /mnt: Invalid argument
+                     USER        PID ACCESS COMMAND
+/mnt:                root     kernel mount /
+                     root          1 .rce. systemd
+                     root          2 .rc.. kthreadd
+                     root          3 .rc.. rcu_gp
+                     root          4 .rc.. rcu_par_gp
+                     root          5 .rc.. slub_flushwq
+                     root          6 .rc.. netns
+                     root          8 .rc.. kworker/0:0H-events_highpri
+                     root          9 .rc.. kworker/u8:0-writeback
+                     root         10 .rc.. mm_percpu_wq
+                     root         11 .rc.. rcu_tasks_kthread
+                     root         12 .rc.. rcu_tasks_rude_kthread
+                     root         13 .rc.. rcu_tasks_trace_kthread
+                     root         14 .rc.. ksoftirqd/0
+                     root         15 .rc.. rcu_preempt
+                     root         16 .rc.. migration/0
+                     root         18 .rc.. cpuhp/0
+                     root         19 .rc.. cpuhp/1
+                     root         20 .rc.. migration/1
+                     root         21 .rc.. ksoftirqd/1
+                     root         22 .rc.. kworker/1:0-cgroup_pidlist_destroy
+                     root         23 .rc.. kworker/1:0H-events_highpri
+                     root         24 .rc.. cpuhp/2
+                     root         25 .rc.. migration/2
+                     root         26 .rc.. ksoftirqd/2
+                     root         28 .rc.. kworker/2:0H-events_highpri
+                     root         29 .rc.. cpuhp/3
+                     root         30 .rc.. migration/3
+                     root         31 .rc.. ksoftirqd/3
+                     root         32 .rc.. kworker/3:0-events
+                     root         33 .rc.. kworker/3:0H-events_highpri
+                     root         35 .rc.. kworker/u8:1-events_unbound
+                     root         36 .rc.. kworker/u8:2-events_unbound
+                     root         37 .rc.. kworker/u8:3-events_unbound
+                     root         39 .rc.. inet_frag_wq
+                     root         40 .rc.. kauditd
+                     root         41 .rc.. khungtaskd
+                     root         42 .rc.. oom_reaper
+                     root         43 .rc.. writeback
+                     root         44 .rc.. kcompactd0
+                     root         45 .rc.. ksmd
+                     root         47 .rc.. khugepaged
+                     root         48 .rc.. cryptd
+                     root         49 .rc.. kintegrityd
+                     root         50 .rc.. kblockd
+                     root         51 .rc.. blkcg_punt_bio
+                     root         52 .rc.. tpm_dev_wq
+                     root         53 .rc.. md
+                     root         54 .rc.. edac-poller
+                     root         55 .rc.. watchdogd
+                     root         56 .rc.. kworker/3:1H-kblockd
+                     root         58 .rc.. kswapd0
+                     root         59 .rc.. kthrotld
+                     root         64 .rc.. acpi_thermal_pm
+                     root         65 .rc.. xenbus_probe
+                     root         66 .rc.. hwrng
+                     root         67 .rc.. kmpath_rdacd
+                     root         68 .rc.. kaluad
+                     root         69 .rc.. mld
+                     root         70 .rc.. ipv6_addrconf
+                     root         71 .rc.. kstrp
+                     root         77 .rc.. zswap-shrink
+                     root        144 .rc.. kworker/u9:0
+                     root        145 .rc.. kworker/2:1H-kblockd
+                     root        223 .rc.. kworker/0:1H-kblockd
+                     root        227 .rc.. kworker/1:1H-kblockd
+                     root        242 .rc.. kworker/1:2-events
+                     root        259 .rc.. kworker/1:4-mm_percpu_wq
+                     root        587 .rc.. raid5wq
+                     root        676 .rc.. dm_bufio_cache
+                     root        688 .rc.. kmpathd
+                     root        689 .rc.. kmpath_handlerd
+                     root        746 .rc.. kworker/0:2-events
+                     root        778 .rc.. rpciod
+                     root        779 .rc.. xprtiod
+                     root        937 .rc.. ata_sff
+                     root        938 .rc.. scsi_eh_0
+                     root        939 .rc.. scsi_tmf_0
+                     root        940 .rc.. scsi_eh_1
+                     root        941 .rc.. scsi_tmf_1
+                     root       1028 .rc.. kworker/2:3-ata_sff
+                     root       1031 .rc.. kworker/2:4-cgroup_pidlist_destroy
+                     root       1032 .rc.. jbd2/vda2-8
+                     root       1033 .rc.. ext4-rsv-conver
+                     root       1237 .rce. systemd-journal
+                     root       1262 .rce. systemd-udevd
+                     root       1299 .rce. auditd
+                     dbus       1325 .rce. dbus-daemon
+                     root       1340 .rce. systemd-logind
+                     root       1350 .rce. NetworkManager
+                     chrony     1357 .rce. chronyd
+                     root       1416 .rce. sshd
+                     root       1428 .rce. crond
+                     root       1431 .rce. agetty
+                     root       1453 .rce. agetty
+                     root       1526 .rce. dhclient
+                     root       1607 .rce. rsyslogd
+                     root       1654 .rce. sshd
+                     root       1657 .rce. sshd
+                     root       1658 .rce. python3
+                     dnsmasq    2592 .rce. dnsmasq
+                     root       2593 .rce. dnsmasq
+                     root       3678 .rc.. kworker/0:3-cgroup_pidlist_destroy
+                     root       3746 .rc.. kworker/3:1-ata_sff
+                     root       4217 .rc.. kworker/1:3-events
+                     root       4218 .rc.. kworker/1:5-cgroup_destroy
+                     root       5636 .rc.. kworker/3:3-cgroup_destroy
+                     root       5637 .rc.. kworker/3:5-events
+                     root       5638 .rc.. kworker/3:6-cgroup_pidlist_destroy
+                     root       6788 .rce. guestfish
+                     root       7352 .rce. systemd-machine
+                     root       7665 .rc.. kworker/2:0-mm_percpu_wq
+                     root       8406 .rc.. kworker/0:0-cgroup_destroy
+                     root       8407 .rc.. kworker/0:1-events
+                     root       8408 .rc.. kworker/0:4-events
+                     root       8409 .rc.. kworker/0:5-mm_percpu_wq
+                     root       8410 .rc.. kworker/0:6-cgroup_destroy
+                     root       8411 .rc.. kworker/0:7
+                     root       8612 .rc.. kworker/u8:4-events_unbound
+                     root       9201 .rc.. kworker/u8:5-ext4-rsv-conversion
+                     root       9203 .rc.. kworker/u8:6
+                     root      10216 .rce. sh
+                     root      10217 .rce. sudo
+                     root      10218 .rce. tee
+                     root      10219 .rce. bash
+                     root      10263 .rce. python3
+                     root      10264 .rce. bash
+                     root      10738 Frce. gssproxy
+                     root      10863 .rce. libvirtd
+                     root      11760 .rce. guestunmount
++ guestmount -d openEuler-2003 -i --ro /mnt
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x55d41e5775c0, program = guestmount
+libguestfs: trace: set_recovery_proc false
+libguestfs: trace: set_recovery_proc = 0
+libguestfs: trace: add_domain "openEuler-2003" "readonly:true" "allowuuid:true" "readonlydisk:read"
+libguestfs: opening libvirt handle: URI = NULL, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x55d41e578110
+libguestfs: error: no libvirt domain called ‘openEuler-2003’: Domain not found: no domain with matching name 'openEuler-2003'
+libguestfs: trace: add_domain = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x55d41e5775c0 (state 0)
++ CHECK_RESULT 1 0 0 'Check guestmount -d failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestmount -d failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestmount -d failed'
++ LOG_ERROR 'Check guestmount -d failed'
++ message='Check guestmount -d failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestmount -d failed'
+Thu Jun 29 14:45:27 2023 - ERROR - Check guestmount -d failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestmount_01.sh line 45'
++ message='oe_test_libguestfs_guestmount_01.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestmount_01.sh line 45'
+Thu Jun 29 14:45:27 2023 - ERROR - oe_test_libguestfs_guestmount_01.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ guestunmount /mnt
+guestunmount: failed to unmount /mnt: fusermount: failed to unmount /mnt: Invalid argument
+                     USER        PID ACCESS COMMAND
+/mnt:                root     kernel mount /
+                     root          1 .rce. systemd
+                     root          2 .rc.. kthreadd
+                     root          3 .rc.. rcu_gp
+                     root          4 .rc.. rcu_par_gp
+                     root          5 .rc.. slub_flushwq
+                     root          6 .rc.. netns
+                     root          8 .rc.. kworker/0:0H-events_highpri
+                     root          9 .rc.. kworker/u8:0-events_unbound
+                     root         10 .rc.. mm_percpu_wq
+                     root         11 .rc.. rcu_tasks_kthread
+                     root         12 .rc.. rcu_tasks_rude_kthread
+                     root         13 .rc.. rcu_tasks_trace_kthread
+                     root         14 .rc.. ksoftirqd/0
+                     root         15 .rc.. rcu_preempt
+                     root         16 .rc.. migration/0
+                     root         18 .rc.. cpuhp/0
+                     root         19 .rc.. cpuhp/1
+                     root         20 .rc.. migration/1
+                     root         21 .rc.. ksoftirqd/1
+                     root         22 .rc.. kworker/1:0-cgroup_pidlist_destroy
+                     root         23 .rc.. kworker/1:0H-events_highpri
+                     root         24 .rc.. cpuhp/2
+                     root         25 .rc.. migration/2
+                     root         26 .rc.. ksoftirqd/2
+                     root         28 .rc.. kworker/2:0H-events_highpri
+                     root         29 .rc.. cpuhp/3
+                     root         30 .rc.. migration/3
+                     root         31 .rc.. ksoftirqd/3
+                     root         32 .rc.. kworker/3:0-events
+                     root         33 .rc.. kworker/3:0H-events_highpri
+                     root         35 .rc.. kworker/u8:1-events_unbound
+                     root         36 .rc.. kworker/u8:2-events_unbound
+                     root         37 .rc.. kworker/u8:3-events_unbound
+                     root         39 .rc.. inet_frag_wq
+                     root         40 .rc.. kauditd
+                     root         41 .rc.. khungtaskd
+                     root         42 .rc.. oom_reaper
+                     root         43 .rc.. writeback
+                     root         44 .rc.. kcompactd0
+                     root         45 .rc.. ksmd
+                     root         47 .rc.. khugepaged
+                     root         48 .rc.. cryptd
+                     root         49 .rc.. kintegrityd
+                     root         50 .rc.. kblockd
+                     root         51 .rc.. blkcg_punt_bio
+                     root         52 .rc.. tpm_dev_wq
+                     root         53 .rc.. md
+                     root         54 .rc.. edac-poller
+                     root         55 .rc.. watchdogd
+                     root         56 .rc.. kworker/3:1H-kblockd
+                     root         58 .rc.. kswapd0
+                     root         59 .rc.. kthrotld
+                     root         64 .rc.. acpi_thermal_pm
+                     root         65 .rc.. xenbus_probe
+                     root         66 .rc.. hwrng
+                     root         67 .rc.. kmpath_rdacd
+                     root         68 .rc.. kaluad
+                     root         69 .rc.. mld
+                     root         70 .rc.. ipv6_addrconf
+                     root         71 .rc.. kstrp
+                     root         77 .rc.. zswap-shrink
+                     root        144 .rc.. kworker/u9:0
+                     root        145 .rc.. kworker/2:1H-kblockd
+                     root        223 .rc.. kworker/0:1H-kblockd
+                     root        227 .rc.. kworker/1:1H-kblockd
+                     root        242 .rc.. kworker/1:2-events
+                     root        259 .rc.. kworker/1:4-mm_percpu_wq
+                     root        587 .rc.. raid5wq
+                     root        676 .rc.. dm_bufio_cache
+                     root        688 .rc.. kmpathd
+                     root        689 .rc.. kmpath_handlerd
+                     root        746 .rc.. kworker/0:2-events
+                     root        778 .rc.. rpciod
+                     root        779 .rc.. xprtiod
+                     root        937 .rc.. ata_sff
+                     root        938 .rc.. scsi_eh_0
+                     root        939 .rc.. scsi_tmf_0
+                     root        940 .rc.. scsi_eh_1
+                     root        941 .rc.. scsi_tmf_1
+                     root       1028 .rc.. kworker/2:3-ata_sff
+                     root       1031 .rc.. kworker/2:4-cgroup_pidlist_destroy
+                     root       1032 .rc.. jbd2/vda2-8
+                     root       1033 .rc.. ext4-rsv-conver
+                     root       1237 .rce. systemd-journal
+                     root       1262 .rce. systemd-udevd
+                     root       1299 .rce. auditd
+                     dbus       1325 .rce. dbus-daemon
+                     root       1340 .rce. systemd-logind
+                     root       1350 .rce. NetworkManager
+                     chrony     1357 .rce. chronyd
+                     root       1416 .rce. sshd
+                     root       1428 .rce. crond
+                     root       1431 .rce. agetty
+                     root       1453 .rce. agetty
+                     root       1526 .rce. dhclient
+                     root       1607 .rce. rsyslogd
+                     root       1654 .rce. sshd
+                     root       1657 .rce. sshd
+                     root       1658 .rce. python3
+                     dnsmasq    2592 .rce. dnsmasq
+                     root       2593 .rce. dnsmasq
+                     root       3678 .rc.. kworker/0:3-cgroup_pidlist_destroy
+                     root       3746 .rc.. kworker/3:1-ata_sff
+                     root       4217 .rc.. kworker/1:3-events
+                     root       4218 .rc.. kworker/1:5-cgroup_destroy
+                     root       5636 .rc.. kworker/3:3-cgroup_destroy
+                     root       5637 .rc.. kworker/3:5-mm_percpu_wq
+                     root       5638 .rc.. kworker/3:6-cgroup_pidlist_destroy
+                     root       6788 .rce. guestfish
+                     root       7352 .rce. systemd-machine
+                     root       7665 .rc.. kworker/2:0-mm_percpu_wq
+                     root       8406 .rc.. kworker/0:0-cgroup_destroy
+                     root       8407 .rc.. kworker/0:1-events
+                     root       8408 .rc.. kworker/0:4-events
+                     root       8409 .rc.. kworker/0:5-mm_percpu_wq
+                     root       8410 .rc.. kworker/0:6-cgroup_destroy
+                     root       8411 .rc.. kworker/0:7
+                     root       8612 .rc.. kworker/u8:4-events_unbound
+                     root       9201 .rc.. kworker/u8:5-ext4-rsv-conversion
+                     root       9203 .rc.. kworker/u8:6
+                     root      10216 .rce. sh
+                     root      10217 .rce. sudo
+                     root      10218 .rce. tee
+                     root      10219 .rce. bash
+                     root      10263 .rce. python3
+                     root      10264 .rce. bash
+                     root      10738 Frce. gssproxy
+                     root      10863 .rce. libvirtd
+                     root      11778 .rce. guestunmount
++ guestmount -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 --echo-keys -m /dev/vda1 --ro /mnt
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x55e2752be5c0, program = guestmount
+libguestfs: trace: set_recovery_proc false
+libguestfs: trace: set_recovery_proc = 0
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "readonly:true"
+libguestfs: creating COW overlay to protect original drive content
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: disk_create "/tmp/libguestfsLjXX6y/overlay1.qcow2" "qcow2" -1 "backingfile:/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "backingformat:qcow2"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,backing_fmt=qcow2
+libguestfs: command: run: \ /tmp/libguestfsLjXX6y/overlay1.qcow2
+Formatting '/tmp/libguestfsLjXX6y/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 backing_fmt=qcow2 lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: add_drive = 0
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestmount
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsLjXX6y
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-tfkrocc8923gq7j2
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x55e2752c0ae0
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.8uqcaw33/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.8uqcaw33/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.8uqcaw33 to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsLjXX6y/overlay2.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsLjXX6y/overlay2.qcow2
+Formatting '/tmp/libguestfsLjXX6y/overlay2.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-tfkrocc8923gq7j2</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=e966f2bf-0bd6-4258-b194-49f499eba056 selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/tmp/libguestfsLjXX6y/overlay1.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsLjXX6y/overlay2.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfssSdMXC/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfssSdMXC/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 256
+libguestfs: drwxr-xr-x 3 root root ?   4096 Jun 29 14:46 .
+libguestfs: drwxrwxrwt 5 root root ?   4096 Jun 29 14:46 ..
+libguestfs: drwxr-xr-x 2 root root ?   4096 Jun 29 14:46 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?      0 Jun 29 14:33 lock
+libguestfs: -rw-r--r-- 1 root root ?  15576 Jun 29 14:37 qemu-14975616-1679901197.devices
+libguestfs: -rw-r--r-- 1 root root ?  30498 Jun 29 14:37 qemu-14975616-1679901197.help
+libguestfs: -rw-r--r-- 1 root root ? 189415 Jun 29 14:37 qemu-14975616-1679901197.qmp-schema
+libguestfs: -rw-r--r-- 1 root root ?     49 Jun 29 14:37 qemu-14975616-1679901197.query-kvm
+libguestfs: -rw-r--r-- 1 root root ?     40 Jun 29 14:37 qemu-14975616-1679901197.stat
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:46 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:46 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:46 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:46 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:46 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfssSdMXC
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:46 .
+libguestfs: drwxrwxrwt 12 root root ? 340 Jun 29 14:46 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:46 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:46 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x55e2752be5c0 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsLjXX6y
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfssSdMXC
++ CHECK_RESULT 1 0 0 'Check guestmount --echo-keys failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestmount --echo-keys failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestmount --echo-keys failed'
++ LOG_ERROR 'Check guestmount --echo-keys failed'
++ message='Check guestmount --echo-keys failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestmount --echo-keys failed'
+Thu Jun 29 14:46:00 2023 - ERROR - Check guestmount --echo-keys failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestmount_01.sh line 48'
++ message='oe_test_libguestfs_guestmount_01.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestmount_01.sh line 48'
+Thu Jun 29 14:46:00 2023 - ERROR - oe_test_libguestfs_guestmount_01.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
++ guestunmount /mnt
+guestunmount: failed to unmount /mnt: fusermount: failed to unmount /mnt: Invalid argument
+                     USER        PID ACCESS COMMAND
+/mnt:                root     kernel mount /
+                     root          1 .rce. systemd
+                     root          2 .rc.. kthreadd
+                     root          3 .rc.. rcu_gp
+                     root          4 .rc.. rcu_par_gp
+                     root          5 .rc.. slub_flushwq
+                     root          6 .rc.. netns
+                     root          8 .rc.. kworker/0:0H-events_highpri
+                     root          9 .rc.. kworker/u8:0-events_unbound
+                     root         10 .rc.. mm_percpu_wq
+                     root         11 .rc.. rcu_tasks_kthread
+                     root         12 .rc.. rcu_tasks_rude_kthread
+                     root         13 .rc.. rcu_tasks_trace_kthread
+                     root         14 .rc.. ksoftirqd/0
+                     root         15 .rc.. rcu_preempt
+                     root         16 .rc.. migration/0
+                     root         18 .rc.. cpuhp/0
+                     root         19 .rc.. cpuhp/1
+                     root         20 .rc.. migration/1
+                     root         21 .rc.. ksoftirqd/1
+                     root         22 .rc.. kworker/1:0-cgroup_pidlist_destroy
+                     root         23 .rc.. kworker/1:0H-events_highpri
+                     root         24 .rc.. cpuhp/2
+                     root         25 .rc.. migration/2
+                     root         26 .rc.. ksoftirqd/2
+                     root         28 .rc.. kworker/2:0H-events_highpri
+                     root         29 .rc.. cpuhp/3
+                     root         30 .rc.. migration/3
+                     root         31 .rc.. ksoftirqd/3
+                     root         32 .rc.. kworker/3:0-events
+                     root         33 .rc.. kworker/3:0H-events_highpri
+                     root         35 .rc.. kworker/u8:1-ext4-rsv-conversion
+                     root         36 .rc.. kworker/u8:2-events_unbound
+                     root         37 .rc.. kworker/u8:3-flush-252:0
+                     root         39 .rc.. inet_frag_wq
+                     root         40 .rc.. kauditd
+                     root         41 .rc.. khungtaskd
+                     root         42 .rc.. oom_reaper
+                     root         43 .rc.. writeback
+                     root         44 .rc.. kcompactd0
+                     root         45 .rc.. ksmd
+                     root         47 .rc.. khugepaged
+                     root         48 .rc.. cryptd
+                     root         49 .rc.. kintegrityd
+                     root         50 .rc.. kblockd
+                     root         51 .rc.. blkcg_punt_bio
+                     root         52 .rc.. tpm_dev_wq
+                     root         53 .rc.. md
+                     root         54 .rc.. edac-poller
+                     root         55 .rc.. watchdogd
+                     root         56 .rc.. kworker/3:1H-kblockd
+                     root         58 .rc.. kswapd0
+                     root         59 .rc.. kthrotld
+                     root         64 .rc.. acpi_thermal_pm
+                     root         65 .rc.. xenbus_probe
+                     root         66 .rc.. hwrng
+                     root         67 .rc.. kmpath_rdacd
+                     root         68 .rc.. kaluad
+                     root         69 .rc.. mld
+                     root         70 .rc.. ipv6_addrconf
+                     root         71 .rc.. kstrp
+                     root         77 .rc.. zswap-shrink
+                     root        144 .rc.. kworker/u9:0
+                     root        145 .rc.. kworker/2:1H-kblockd
+                     root        223 .rc.. kworker/0:1H-kblockd
+                     root        227 .rc.. kworker/1:1H-kblockd
+                     root        242 .rc.. kworker/1:2-events
+                     root        259 .rc.. kworker/1:4-mm_percpu_wq
+                     root        587 .rc.. raid5wq
+                     root        676 .rc.. dm_bufio_cache
+                     root        688 .rc.. kmpathd
+                     root        689 .rc.. kmpath_handlerd
+                     root        746 .rc.. kworker/0:2-events
+                     root        778 .rc.. rpciod
+                     root        779 .rc.. xprtiod
+                     root        937 .rc.. ata_sff
+                     root        938 .rc.. scsi_eh_0
+                     root        939 .rc.. scsi_tmf_0
+                     root        940 .rc.. scsi_eh_1
+                     root        941 .rc.. scsi_tmf_1
+                     root       1028 .rc.. kworker/2:3-ata_sff
+                     root       1031 .rc.. kworker/2:4-cgroup_pidlist_destroy
+                     root       1032 .rc.. jbd2/vda2-8
+                     root       1033 .rc.. ext4-rsv-conver
+                     root       1237 .rce. systemd-journal
+                     root       1262 .rce. systemd-udevd
+                     root       1299 .rce. auditd
+                     dbus       1325 .rce. dbus-daemon
+                     root       1340 .rce. systemd-logind
+                     root       1350 .rce. NetworkManager
+                     chrony     1357 .rce. chronyd
+                     root       1416 .rce. sshd
+                     root       1428 .rce. crond
+                     root       1431 .rce. agetty
+                     root       1453 .rce. agetty
+                     root       1526 .rce. dhclient
+                     root       1607 .rce. rsyslogd
+                     root       1654 .rce. sshd
+                     root       1657 .rce. sshd
+                     root       1658 .rce. python3
+                     dnsmasq    2592 .rce. dnsmasq
+                     root       2593 .rce. dnsmasq
+                     root       3678 .rc.. kworker/0:3-cgroup_pidlist_destroy
+                     root       3746 .rc.. kworker/3:1-ata_sff
+                     root       4217 .rc.. kworker/1:3-events
+                     root       4218 .rc.. kworker/1:5-cgroup_destroy
+                     root       5636 .rc.. kworker/3:3-cgroup_destroy
+                     root       5637 .rc.. kworker/3:5-events
+                     root       5638 .rc.. kworker/3:6-cgroup_pidlist_destroy
+                     root       6788 .rce. guestfish
+                     root       7352 .rce. systemd-machine
+                     root       7665 .rc.. kworker/2:0-mm_percpu_wq
+                     root       8406 .rc.. kworker/0:0-cgroup_destroy
+                     root       8407 .rc.. kworker/0:1-events
+                     root       8408 .rc.. kworker/0:4-events
+                     root       8409 .rc.. kworker/0:5-mm_percpu_wq
+                     root       8410 .rc.. kworker/0:6-cgroup_destroy
+                     root       8411 .rc.. kworker/0:7
+                     root       8612 .rc.. kworker/u8:4-ext4-rsv-conversion
+                     root       9201 .rc.. kworker/u8:5-events_unbound
+                     root       9203 .rc.. kworker/u8:6
+                     root      10216 .rce. sh
+                     root      10217 .rce. sudo
+                     root      10218 .rce. tee
+                     root      10219 .rce. bash
+                     root      10263 .rce. python3
+                     root      10264 .rce. bash
+                     root      10738 Frce. gssproxy
+                     root      10863 .rce. libvirtd
+                     root      11979 .rce. guestunmount
++ guestmount --format=qcow2 -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -m /dev/vda1 --ro /mnt
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x560e38b935c0, program = guestmount
+libguestfs: trace: set_recovery_proc false
+libguestfs: trace: set_recovery_proc = 0
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "readonly:true" "format:qcow2"
+libguestfs: creating COW overlay to protect original drive content
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: disk_create "/tmp/libguestfsqmIQpm/overlay1.qcow2" "qcow2" -1 "backingfile:/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "backingformat:qcow2"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,backing_fmt=qcow2
+libguestfs: command: run: \ /tmp/libguestfsqmIQpm/overlay1.qcow2
+Formatting '/tmp/libguestfsqmIQpm/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 backing_file=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 backing_fmt=qcow2 lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: add_drive = 0
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestmount
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsqmIQpm
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-jmli2avdv3ygmrlm
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x560e38b94ab0
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.cqqr19vm/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.cqqr19vm/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.cqqr19vm to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsqmIQpm/overlay2.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsqmIQpm/overlay2.qcow2
+Formatting '/tmp/libguestfsqmIQpm/overlay2.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-jmli2avdv3ygmrlm</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=38eeddfe-7424-4935-aa9f-ba79df7c30d5 selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/tmp/libguestfsqmIQpm/overlay1.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsqmIQpm/overlay2.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfsMPeedE/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfsMPeedE/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 256
+libguestfs: drwxr-xr-x 3 root root ?   4096 Jun 29 14:46 .
+libguestfs: drwxrwxrwt 5 root root ?   4096 Jun 29 14:46 ..
+libguestfs: drwxr-xr-x 2 root root ?   4096 Jun 29 14:46 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?      0 Jun 29 14:33 lock
+libguestfs: -rw-r--r-- 1 root root ?  15576 Jun 29 14:37 qemu-14975616-1679901197.devices
+libguestfs: -rw-r--r-- 1 root root ?  30498 Jun 29 14:37 qemu-14975616-1679901197.help
+libguestfs: -rw-r--r-- 1 root root ? 189415 Jun 29 14:37 qemu-14975616-1679901197.qmp-schema
+libguestfs: -rw-r--r-- 1 root root ?     49 Jun 29 14:37 qemu-14975616-1679901197.query-kvm
+libguestfs: -rw-r--r-- 1 root root ?     40 Jun 29 14:37 qemu-14975616-1679901197.stat
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:46 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:46 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:46 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:46 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:46 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfsMPeedE
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:46 .
+libguestfs: drwxrwxrwt 12 root root ? 340 Jun 29 14:46 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:46 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:46 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x560e38b935c0 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsqmIQpm
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsMPeedE
++ CHECK_RESULT 1 0 0 'Check guestmount --format failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestmount --format failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestmount --format failed'
++ LOG_ERROR 'Check guestmount --format failed'
++ message='Check guestmount --format failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestmount --format failed'
+Thu Jun 29 14:46:34 2023 - ERROR - Check guestmount --format failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestmount_01.sh line 51'
++ message='oe_test_libguestfs_guestmount_01.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestmount_01.sh line 51'
+Thu Jun 29 14:46:34 2023 - ERROR - oe_test_libguestfs_guestmount_01.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ guestunmount /mnt
+guestunmount: failed to unmount /mnt: fusermount: failed to unmount /mnt: Invalid argument
+                     USER        PID ACCESS COMMAND
+/mnt:                root     kernel mount /
+                     root          1 .rce. systemd
+                     root          2 .rc.. kthreadd
+                     root          3 .rc.. rcu_gp
+                     root          4 .rc.. rcu_par_gp
+                     root          5 .rc.. slub_flushwq
+                     root          6 .rc.. netns
+                     root          8 .rc.. kworker/0:0H-events_highpri
+                     root          9 .rc.. kworker/u8:0-events_unbound
+                     root         10 .rc.. mm_percpu_wq
+                     root         11 .rc.. rcu_tasks_kthread
+                     root         12 .rc.. rcu_tasks_rude_kthread
+                     root         13 .rc.. rcu_tasks_trace_kthread
+                     root         14 .rc.. ksoftirqd/0
+                     root         15 .rc.. rcu_preempt
+                     root         16 .rc.. migration/0
+                     root         18 .rc.. cpuhp/0
+                     root         19 .rc.. cpuhp/1
+                     root         20 .rc.. migration/1
+                     root         21 .rc.. ksoftirqd/1
+                     root         22 .rc.. kworker/1:0-cgroup_pidlist_destroy
+                     root         23 .rc.. kworker/1:0H-events_highpri
+                     root         24 .rc.. cpuhp/2
+                     root         25 .rc.. migration/2
+                     root         26 .rc.. ksoftirqd/2
+                     root         28 .rc.. kworker/2:0H-events_highpri
+                     root         29 .rc.. cpuhp/3
+                     root         30 .rc.. migration/3
+                     root         31 .rc.. ksoftirqd/3
+                     root         33 .rc.. kworker/3:0H-events_highpri
+                     root         35 .rc.. kworker/u8:1-ext4-rsv-conversion
+                     root         36 .rc.. kworker/u8:2-events_unbound
+                     root         37 .rc.. kworker/u8:3-ext4-rsv-conversion
+                     root         39 .rc.. inet_frag_wq
+                     root         40 .rc.. kauditd
+                     root         41 .rc.. khungtaskd
+                     root         42 .rc.. oom_reaper
+                     root         43 .rc.. writeback
+                     root         44 .rc.. kcompactd0
+                     root         45 .rc.. ksmd
+                     root         47 .rc.. khugepaged
+                     root         48 .rc.. cryptd
+                     root         49 .rc.. kintegrityd
+                     root         50 .rc.. kblockd
+                     root         51 .rc.. blkcg_punt_bio
+                     root         52 .rc.. tpm_dev_wq
+                     root         53 .rc.. md
+                     root         54 .rc.. edac-poller
+                     root         55 .rc.. watchdogd
+                     root         56 .rc.. kworker/3:1H-kblockd
+                     root         58 .rc.. kswapd0
+                     root         59 .rc.. kthrotld
+                     root         64 .rc.. acpi_thermal_pm
+                     root         65 .rc.. xenbus_probe
+                     root         66 .rc.. hwrng
+                     root         67 .rc.. kmpath_rdacd
+                     root         68 .rc.. kaluad
+                     root         69 .rc.. mld
+                     root         70 .rc.. ipv6_addrconf
+                     root         71 .rc.. kstrp
+                     root         77 .rc.. zswap-shrink
+                     root        144 .rc.. kworker/u9:0
+                     root        145 .rc.. kworker/2:1H-kblockd
+                     root        223 .rc.. kworker/0:1H-kblockd
+                     root        227 .rc.. kworker/1:1H-kblockd
+                     root        242 .rc.. kworker/1:2-events
+                     root        259 .rc.. kworker/1:4-mm_percpu_wq
+                     root        587 .rc.. raid5wq
+                     root        676 .rc.. dm_bufio_cache
+                     root        688 .rc.. kmpathd
+                     root        689 .rc.. kmpath_handlerd
+                     root        778 .rc.. rpciod
+                     root        779 .rc.. xprtiod
+                     root        937 .rc.. ata_sff
+                     root        938 .rc.. scsi_eh_0
+                     root        939 .rc.. scsi_tmf_0
+                     root        940 .rc.. scsi_eh_1
+                     root        941 .rc.. scsi_tmf_1
+                     root       1028 .rc.. kworker/2:3-ata_sff
+                     root       1032 .rc.. jbd2/vda2-8
+                     root       1033 .rc.. ext4-rsv-conver
+                     root       1237 .rce. systemd-journal
+                     root       1262 .rce. systemd-udevd
+                     root       1299 .rce. auditd
+                     dbus       1325 .rce. dbus-daemon
+                     root       1340 .rce. systemd-logind
+                     root       1350 .rce. NetworkManager
+                     chrony     1357 .rce. chronyd
+                     root       1416 .rce. sshd
+                     root       1428 .rce. crond
+                     root       1431 .rce. agetty
+                     root       1453 .rce. agetty
+                     root       1526 .rce. dhclient
+                     root       1607 .rce. rsyslogd
+                     root       1654 .rce. sshd
+                     root       1657 .rce. sshd
+                     root       1658 .rce. python3
+                     dnsmasq    2592 .rce. dnsmasq
+                     root       2593 .rce. dnsmasq
+                     root       3678 .rc.. kworker/0:3-cgroup_pidlist_destroy
+                     root       3746 .rc.. kworker/3:1-ata_sff
+                     root       4217 .rc.. kworker/1:3-events
+                     root       4218 .rc.. kworker/1:5-cgroup_destroy
+                     root       5637 .rc.. kworker/3:5-events
+                     root       5638 .rc.. kworker/3:6-cgroup_pidlist_destroy
+                     root       6788 .rce. guestfish
+                     root       7352 .rce. systemd-machine
+                     root       7665 .rc.. kworker/2:0-events_freezable_power_
+                     root       8408 .rc.. kworker/0:4-events
+                     root       8409 .rc.. kworker/0:5-events
+                     root       8410 .rc.. kworker/0:6-cgroup_destroy
+                     root       8612 .rc.. kworker/u8:4-ext4-rsv-conversion
+                     root       9201 .rc.. kworker/u8:5-events_unbound
+                     root      10216 .rce. sh
+                     root      10217 .rce. sudo
+                     root      10218 .rce. tee
+                     root      10219 .rce. bash
+                     root      10263 .rce. python3
+                     root      10264 .rce. bash
+                     root      10738 Frce. gssproxy
+                     root      10863 .rce. libvirtd
+                     root      12072 .rc.. kworker/2:1-ata_sff
+                     root      12173 .rce. guestunmount
++ guestmount --fuse-help -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -m /dev/vda1 --ro /mnt
++ grep 'usage: guestmount'
+usage: guestmount mountpoint [options]
++ CHECK_RESULT 0 0 0 'Check guestmount --fuse-help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check guestmount --fuse-help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'guestmount: FUSE module for libguestfs'
++ guestmount --help
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x56403c9475c0, program = guestmount
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x56403c9475c0 (state 0)
+guestmount: FUSE module for libguestfs
++ CHECK_RESULT 0 0 0 'Check guestmount --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check guestmount --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 14:47:05 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 7
++ test 7 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:47:05 2023 - ERROR - failed to execute the case.
++ exit 7
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:47:05 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test
++ virsh start openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh undefine openEuler-2003 --nvram
+error: failed to get domain 'openEuler-2003'
+
++ unset LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpw1ebe923 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpw1ebe923
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*' 'file*'
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 29 14:47:12 2023 - INFO  - Finish to restore the test environment.

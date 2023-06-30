@@ -1,0 +1,365 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:49:39 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 22 18:49:46 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:49:47 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:49:47 2023 - INFO  - Start to run test.
++ cat /etc/passwd
++ grep bob
++ [[ 1 != 0 ]]
++ useradd bob
+++ id -u bob
+++ id -g bob
++ netsniff-ng --in any -u 1001 -g 1001 -n 1
++ grep 'packets incoming' tmp.txt
+           1  packets incoming (2 unread on exit)
++ grep 'set system socket memory in' tmp.txt
+Cannot set system socket memory in /proc/sys/net/core/rmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/rmem_default: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_default: Permission denied
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -u failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -u failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ id -u bob
+++ id -g bob
++ netsniff-ng --in any --user 1001 -g 1001 -n 1
++ grep 'packets incoming' tmp.txt
+           1  packets incoming (1 unread on exit)
++ grep 'set system socket memory in' tmp.txt
+Cannot set system socket memory in /proc/sys/net/core/rmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/rmem_default: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_default: Permission denied
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --user failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --user failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ id -u bob
+++ id -g bob
++ netsniff-ng --in any -u 1001 -g 1001 -n 1
++ grep 'packets incoming' tmp.txt
+           1  packets incoming (2 unread on exit)
++ grep 'set system socket memory in' tmp.txt
+Cannot set system socket memory in /proc/sys/net/core/rmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/rmem_default: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_default: Permission denied
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -g failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -g failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ id -u bob
+++ id -g bob
++ netsniff-ng --in any -u 1001 --group 1001 -n 1
++ grep 'packets incoming' tmp.txt
+           1  packets incoming (1 unread on exit)
++ grep 'set system socket memory in' tmp.txt
+Cannot set system socket memory in /proc/sys/net/core/rmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/rmem_default: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_default: Permission denied
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --group failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --group failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -H -n 1
++ grep 'packets incoming'
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -H failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -H failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'packets incoming'
++ netsniff-ng --in any --prio-high -n 1
+           1  packets incoming (3 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --prio-high failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --prio-high failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep Vendor
++ netsniff-ng --in any -n 1 -q
+Thu Jun 22 19:19:37 2023 - ERROR - Timeout : Command 'bash -x oe_test_netsniff_ng_04.sh' timed out after 1799.999684597 seconds
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 19:19:39 2023 - INFO  - Start to restore the test environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 19:19:39 2023 - WARN  - no thing to do.
+++ return 0
+++ userdel -r bob
+++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 19:19:40 2023 - INFO  - End to restore the test environment.
++ CHECK_RESULT 1 1 0 'Check netsniff-ng -q failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Check netsniff-ng -q failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ grep Vendor
++ netsniff-ng --in any -n 1 --less
++ CHECK_RESULT 1 1 0 'Check netsniff-ng --less failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Check netsniff-ng --less failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ netsniff-ng --in any -n 1 --notouch-irq
++ grep 'packets incoming'
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --notouch-irq failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --notouch-irq failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -n 1 -Q
++ grep 'packets incoming'
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -Q failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -Q failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -n 1 -s
++ grep 'packets incoming'
+           1  packets incoming (3 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -s failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -s failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -n 1 --silent
++ grep 'packets incoming'
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --silent failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --silent failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep Hex
++ netsniff-ng --in any -n 1 -X
+ [ Hex  33 33 00 00 00 01 52 56 00 00 00 02 86 dd 60 00 00 00 00 38 3a ff f
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -X failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -X failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -n 1 --hex
++ grep Hex
+ [ Hex  52 55 0a 00 02 02 52 54 00 11 45 03 08 00 45 20 01 08 f3 d0 40 00 4
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --hex failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --hex failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -n 1 -l
++ grep Chr
+ [ Chr RU....RT..E...E ....@.@..L............(.....F.P..`....J...dR.....+..
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -n 1 --ascii
++ grep Chr
+ [ Chr RU....RT..E...E ....@.@..J............(.....F.P..`\...i.....2.......
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --ascii failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --ascii failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep Vendor
++ netsniff-ng --in any -n 1 -V
+ [ Vendor (QLogic Corporation => QLogic Corporation) ]
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -V failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -V failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -n 1 --verbose
++ grep Vendor
+ [ Vendor (Locally Administered => Locally Administered) ]
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --verbose failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --verbose failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 19:50:55 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 19:50:55 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 19:50:56 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 19:50:56 2023 - WARN  - no thing to do.
++ return 0
++ userdel -r bob
+userdel: user 'bob' does not exist
++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 19:50:57 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,213 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:00:56 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'sassc tar'
++ pkgs='sassc tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'sassc tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmph8iy9on5
++ '[' -z '' ']'
++ tmpfile=/tmp/tmph8iy9on5
++ tar -zxvf common/test.tar.gz
+test/
+test/tmp.css
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:01:32 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:01:32 2023 - INFO  - Start to run test.
++ sassc --help
++ grep Usage:
+Usage: sassc [options] [INPUT] [OUTPUT]
++ CHECK_RESULT 0 0 0 'Failed option: help'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: help'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sassc -v
++ grep '[0-9]'
+libsass: 3.6.4
+sass2scss: 1.1.1
+sass: 3.5
++ CHECK_RESULT 0 0 0 'Failed option: -v'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -v'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat test/tmp.css
++ sassc -s
++ grep 'width: auto; }'
+  width: auto; }
++ CHECK_RESULT 0 0 0 'Failed option: -s'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -s'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat test/tmp.css
++ sassc -t compressed
++ grep 'body{width:auto}'
+body{width:auto}body h1{font-size:32.44 px}
++ CHECK_RESULT 0 0 0 'Failed option: -t'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -t'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat test/tmp.css
++ sassc -l
++ grep '\/\* line'
+grep: warning: stray \ before /
+/* line 1, stdin */
+  /* line 1, stdin */
++ CHECK_RESULT 0 0 0 'Failed option: -l'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -l'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat test/tmp.css
++ sassc -I test/
++ grep ' width: auto; }'
+  width: auto; }
++ CHECK_RESULT 0 0 0 'Failed option: -I'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -I'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat test/tmp.css
++ sassc -P test/
++ grep ' width: auto; }'
+  width: auto; }
++ CHECK_RESULT 0 0 0 'Failed option: -P'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -P'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat test/tmp.css
++ sassc -m inline
++ grep ' sourceMappingURL'
+Internal Error: File to read not found or unreadable: inline
++ CHECK_RESULT 1 0 0 'Failed option: -m'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed option: -m'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed option: -m'
++ LOG_ERROR 'Failed option: -m'
++ message='Failed option: -m'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed option: -m'
+Thu Jun 22 18:01:33 2023 - ERROR - Failed option: -m
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_sassc_01.sh line 46'
++ message='oe_test_sassc_01.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_sassc_01.sh line 46'
+Thu Jun 22 18:01:34 2023 - ERROR - oe_test_sassc_01.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ cat test/tmp.css
++ sassc -p 1
++ grep ' 32.4 px'
+    font-size: 32.4 px; }
++ CHECK_RESULT 0 0 0 'Failed option: precision'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: precision'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 18:01:34 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 18:01:35 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:01:35 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmph8iy9on5 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmph8iy9on5
++ '[' 0 -ne 0 ']'
++ rm -rf test/
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 18:01:45 2023 - INFO  - End to restore the test environment.

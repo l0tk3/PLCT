@@ -1,0 +1,234 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:33:09 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL policycoreutils-python-utils
++ pkgs=policycoreutils-python-utils
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs policycoreutils-python-utils --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp7u4_02ux
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp7u4_02ux
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 15:34:11 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 15:34:11 2023 - INFO  - Start executing testcase.
++ semanage boolean -l
++ grep nfs
++ grep httpd
++ grep off
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1 0 0 'Check semanage nfs off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check semanage nfs off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check semanage nfs off failed'
++ LOG_ERROR 'Check semanage nfs off failed'
++ message='Check semanage nfs off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check semanage nfs off failed'
+Thu Jun 29 15:34:11 2023 - ERROR - Check semanage nfs off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 32'
++ message='oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 32'
+Thu Jun 29 15:34:11 2023 - ERROR - oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage boolean -l
++ grep cifs
++ grep httpd
++ grep off
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1 0 0 'Check semanage cifs off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check semanage cifs off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check semanage cifs off failed'
++ LOG_ERROR 'Check semanage cifs off failed'
++ message='Check semanage cifs off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check semanage cifs off failed'
+Thu Jun 29 15:34:11 2023 - ERROR - Check semanage cifs off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 34'
++ message='oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 34'
+Thu Jun 29 15:34:11 2023 - ERROR - oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ getsebool -a
++ grep nfs
++ grep httpd
++ grep off
+getsebool:  SELinux is disabled
++ CHECK_RESULT 1 0 0 'Check getsebool nfs off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check getsebool nfs off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check getsebool nfs off failed'
++ LOG_ERROR 'Check getsebool nfs off failed'
++ message='Check getsebool nfs off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check getsebool nfs off failed'
+Thu Jun 29 15:34:11 2023 - ERROR - Check getsebool nfs off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 36'
++ message='oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 36'
+Thu Jun 29 15:34:11 2023 - ERROR - oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ getsebool -a
++ grep cifs
++ grep httpd
++ grep off
+getsebool:  SELinux is disabled
++ CHECK_RESULT 1 0 0 'Check getsebool cifs off failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check getsebool cifs off failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check getsebool cifs off failed'
++ LOG_ERROR 'Check getsebool cifs off failed'
++ message='Check getsebool cifs off failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check getsebool cifs off failed'
+Thu Jun 29 15:34:11 2023 - ERROR - Check getsebool cifs off failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 38'
++ message='oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 38'
+Thu Jun 29 15:34:11 2023 - ERROR - oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ setsebool httpd_use_nfs on
+Could not change active booleans: Invalid boolean
++ setsebool httpd_use_cifs on
+Could not change active booleans: Invalid boolean
++ semanage boolean -l
++ grep nfs
++ grep httpd
++ grep on
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1 0 0 'Check semanage nfs on failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check semanage nfs on failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check semanage nfs on failed'
++ LOG_ERROR 'Check semanage nfs on failed'
++ message='Check semanage nfs on failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check semanage nfs on failed'
+Thu Jun 29 15:34:12 2023 - ERROR - Check semanage nfs on failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 42'
++ message='oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 42'
+Thu Jun 29 15:34:12 2023 - ERROR - oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage boolean -l
++ grep cifs
++ grep httpd
++ grep on
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ CHECK_RESULT 1 0 0 'Check semanage cifs on failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check semanage cifs on failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check semanage cifs on failed'
++ LOG_ERROR 'Check semanage cifs on failed'
++ message='Check semanage cifs on failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check semanage cifs on failed'
+Thu Jun 29 15:34:12 2023 - ERROR - Check semanage cifs on failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 44'
++ message='oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 44'
+Thu Jun 29 15:34:12 2023 - ERROR - oe_test_selinux_sharing_nfs_cifs_using_booleans.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 29 15:34:12 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:34:12 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:34:12 2023 - INFO  - start environment cleanup.
++ setsebool httpd_use_nfs off
+Could not change active booleans: Invalid boolean
++ setsebool httpd_use_cifs off
+Could not change active booleans: Invalid boolean
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp7u4_02ux ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp7u4_02ux
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:34:13 2023 - INFO  - Finish environment cleanup!

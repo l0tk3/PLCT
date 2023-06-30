@@ -1,0 +1,270 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 17:17:39 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 22 17:17:46 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 17:17:47 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 17:17:47 2023 - INFO  - Start to run test.
++ curvetun -v
++ grep curvetun
+curvetun 0.6.8 (Flutternozzle), Git id: (none)
++ CHECK_RESULT 0 0 0 'Check curvetun -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curvetun --version
++ grep curvetun
+curvetun 0.6.8 (Flutternozzle), Git id: (none)
++ CHECK_RESULT 0 0 0 'Check curvetun --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curvetun -h
++ grep 'Usage: curvetun'
+Usage: curvetun [options]
++ CHECK_RESULT 0 0 0 'Check curvetun -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curvetun -h
++ grep 'Usage: curvetun'
+Usage: curvetun [options]
++ CHECK_RESULT 0 0 0 'Check curvetun -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn curvetun -k
+curvetun directory /root/.curvetun/ created!
+Empty client file written to /root/.curvetun/clients!
+Empty server file written to /root/.curvetun/servers!
+Username: [root] tunserver
+Username written to /root/.curvetun/username!
+Reading from /dev/random (this may take a while) ...
+Public key written to /root/.curvetun/pub.key!
+Private key written to /root/.curvetun/priv.key!
++ test -f /root/.curvetun/pub.key
++ CHECK_RESULT 0 0 0 'Check curvetun -k failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun -k failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /root/.curvetun/clients /root/.curvetun/priv.key /root/.curvetun/pub.key /root/.curvetun/servers /root/.curvetun/username
++ expect
+spawn curvetun --keygen
+curvetun directory /root/.curvetun/ created!
+Empty client file written to /root/.curvetun/clients!
+Empty server file written to /root/.curvetun/servers!
+Username: [root] tunserver
+Username written to /root/.curvetun/username!
+Reading from /dev/random (this may take a while) ...
+Public key written to /root/.curvetun/pub.key!
+Private key written to /root/.curvetun/priv.key!
++ test -f /root/.curvetun/pub.key
++ CHECK_RESULT 0 0 0 'Check curvetun --keygen failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun --keygen failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /root/.curvetun/clients /root/.curvetun/priv.key /root/.curvetun/pub.key /root/.curvetun/servers /root/.curvetun/username
++ expect
+spawn curvetun --keygen
+curvetun directory /root/.curvetun/ created!
+Empty client file written to /root/.curvetun/clients!
+Empty server file written to /root/.curvetun/servers!
+Username: [root] tunserver
+Username written to /root/.curvetun/username!
+Reading from /dev/random (this may take a while) ...
+Public key written to /root/.curvetun/pub.key!
+Private key written to /root/.curvetun/priv.key!
++ curvetun -x
++ grep 'Your exported public information'
+tunserverYour exported public information:
++ CHECK_RESULT 0 0 0 'Check curvetun -x failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun -x failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /root/.curvetun/clients /root/.curvetun/priv.key /root/.curvetun/pub.key /root/.curvetun/servers /root/.curvetun/username
++ expect
+spawn curvetun --keygen
+curvetun directory /root/.curvetun/ created!
+Empty client file written to /root/.curvetun/clients!
+Empty server file written to /root/.curvetun/servers!
+Username: [root] tunserver
+Username written to /root/.curvetun/username!
+Reading from /dev/random (this may take a while) ...
+Public key written to /root/.curvetun/pub.key!
+Private key written to /root/.curvetun/priv.key!
++ curvetun --export
++ grep 'Your exported public information'
+tunserverYour exported public information:
++ CHECK_RESULT 0 0 0 'Check curvetun --export failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun --export failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /root/.curvetun/clients /root/.curvetun/priv.key /root/.curvetun/pub.key /root/.curvetun/servers /root/.curvetun/username
++ expect
+spawn curvetun --keygen
+curvetun directory /root/.curvetun/ created!
+Empty client file written to /root/.curvetun/clients!
+Empty server file written to /root/.curvetun/servers!
+Username: [root] tunserver
+Username written to /root/.curvetun/username!
+Reading from /dev/random (this may take a while) ...
+Public key written to /root/.curvetun/pub.key!
+Private key written to /root/.curvetun/priv.key!
++ echo 'tunserver;89:56:84:0f:62:59:38:55:2b:c9:7f:93:c2:24:19:1f:49:e4:ea:d2:61:2b:b2:73:b0:2a:eb:7b:42:f0:0d:1d'
++ curvetun -C
++ grep 'tunserver -> 89:56'
+tunserver -> 89:56:84:0f:62:59:38:55:2b:c9:7f:93:c2:24:19:1f:49:e4:ea:d2:61:2b:b2:73:b0:2a:eb:7b:42:f0:0d:1d
++ CHECK_RESULT 0 0 0 'Check curvetun -C failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun -C failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /root/.curvetun/clients /root/.curvetun/priv.key /root/.curvetun/pub.key /root/.curvetun/servers /root/.curvetun/username
++ expect
+spawn curvetun --keygen
+curvetun directory /root/.curvetun/ created!
+Empty client file written to /root/.curvetun/clients!
+Empty server file written to /root/.curvetun/servers!
+Username: [root] tunserver
+Username written to /root/.curvetun/username!
+Reading from /dev/random (this may take a while) ...
+Public key written to /root/.curvetun/pub.key!
+Private key written to /root/.curvetun/priv.key!
++ echo 'tunserver;89:56:84:0f:62:59:38:55:2b:c9:7f:93:c2:24:19:1f:49:e4:ea:d2:61:2b:b2:73:b0:2a:eb:7b:42:f0:0d:1d'
++ curvetun --dumpc
++ grep 'tunserver -> 89:56'
+tunserver -> 89:56:84:0f:62:59:38:55:2b:c9:7f:93:c2:24:19:1f:49:e4:ea:d2:61:2b:b2:73:b0:2a:eb:7b:42:f0:0d:1d
++ CHECK_RESULT 0 0 0 'Check curvetun --dumpc failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check curvetun --dumpc failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f /root/.curvetun/clients /root/.curvetun/priv.key /root/.curvetun/pub.key /root/.curvetun/servers /root/.curvetun/username
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 17:17:49 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 17:17:50 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 17:17:50 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 17:17:51 2023 - WARN  - no thing to do.
++ return 0
++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 17:17:51 2023 - INFO  - End to restore the test environment.

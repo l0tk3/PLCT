@@ -1,0 +1,339 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:03:26 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc valgrind'
++ pkgs='meson tar gcc valgrind'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc valgrind' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp4u5338kk
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp4u5338kk
++ cd common/0.54/
++ tar -xvf test_5.tgz
+test_5/
+test_5/meson.build
+test_5/2 testsetups/
+test_5/2 testsetups/impl.c
+test_5/2 testsetups/meson.build
+test_5/2 testsetups/impl.h
+test_5/2 testsetups/builddir/
+test_5/2 testsetups/builddir/devenv/
+test_5/2 testsetups/builddir/.ninja_log
+test_5/2 testsetups/builddir/1
+test_5/2 testsetups/builddir/.ninja_deps
+test_5/2 testsetups/builddir/meson-private/
+test_5/2 testsetups/builddir/meson-private/dist-install/
+test_5/2 testsetups/builddir/meson-private/meson_benchmark_setup.dat
+test_5/2 testsetups/builddir/meson-private/dist-build/
+test_5/2 testsetups/builddir/meson-private/meson_test_setup.dat
+test_5/2 testsetups/builddir/meson-private/build.dat
+test_5/2 testsetups/builddir/meson-private/sanitycheckc.exe
+test_5/2 testsetups/builddir/meson-private/coredata.dat
+test_5/2 testsetups/builddir/meson-private/meson.lock
+test_5/2 testsetups/builddir/meson-private/sanitycheckc.c
+test_5/2 testsetups/builddir/meson-private/dist-unpack/
+test_5/2 testsetups/builddir/meson-private/dist-unpack/test_1-0.1/
+test_5/2 testsetups/builddir/meson-private/cmd_line.txt
+test_5/2 testsetups/builddir/meson-private/coredata.dat.prev
+test_5/2 testsetups/builddir/meson-private/install.dat
+test_5/2 testsetups/builddir/build.ninja
+test_5/2 testsetups/builddir/meson-info/
+test_5/2 testsetups/builddir/meson-info/intro-buildoptions.json
+test_5/2 testsetups/builddir/meson-info/meson-info.json
+test_5/2 testsetups/builddir/meson-info/intro-installed.json
+test_5/2 testsetups/builddir/meson-info/intro-dependencies.json
+test_5/2 testsetups/builddir/meson-info/intro-tests.json
+test_5/2 testsetups/builddir/meson-info/intro-projectinfo.json
+test_5/2 testsetups/builddir/meson-info/intro-benchmarks.json
+test_5/2 testsetups/builddir/meson-info/intro-targets.json
+test_5/2 testsetups/builddir/meson-info/intro-buildsystem_files.json
+test_5/2 testsetups/builddir/builddir/
+test_5/2 testsetups/builddir/compile_commands.json
+test_5/2 testsetups/builddir/buggy@exe/
+test_5/2 testsetups/builddir/buggy@exe/buggy.c.o
+test_5/2 testsetups/builddir/buggy
+test_5/2 testsetups/builddir/test_1/
+test_5/2 testsetups/builddir/meson-logs/
+test_5/2 testsetups/builddir/meson-logs/testlog-worksforall.txt
+test_5/2 testsetups/builddir/meson-logs/testlog-valgrind.txt
+test_5/2 testsetups/builddir/meson-logs/testlog-valgrind.json
+test_5/2 testsetups/builddir/meson-logs/meson-log.txt
+test_5/2 testsetups/builddir/meson-logs/testlog-worksforall.json
+test_5/2 testsetups/builddir/meson-logs/testlog.json
+test_5/2 testsetups/builddir/meson-logs/testlog.txt
+test_5/2 testsetups/builddir/test_1@exe/
+test_5/2 testsetups/builddir/test_1@exe/test_1.c.o
+test_5/2 testsetups/builddir/meson-dist/
+test_5/2 testsetups/builddir/meson-dist/test_1-0.1.tar.xz
+test_5/2 testsetups/.git/
+test_5/2 testsetups/.git/hooks/
+test_5/2 testsetups/.git/hooks/post-update.sample
+test_5/2 testsetups/.git/hooks/pre-rebase.sample
+test_5/2 testsetups/.git/hooks/pre-receive.sample
+test_5/2 testsetups/.git/hooks/applypatch-msg.sample
+test_5/2 testsetups/.git/hooks/commit-msg.sample
+test_5/2 testsetups/.git/hooks/prepare-commit-msg.sample
+test_5/2 testsetups/.git/hooks/pre-merge-commit.sample
+test_5/2 testsetups/.git/hooks/pre-applypatch.sample
+test_5/2 testsetups/.git/hooks/update.sample
+test_5/2 testsetups/.git/hooks/fsmonitor-watchman.sample
+test_5/2 testsetups/.git/hooks/pre-push.sample
+test_5/2 testsetups/.git/hooks/pre-commit.sample
+test_5/2 testsetups/.git/branches/
+test_5/2 testsetups/.git/info/
+test_5/2 testsetups/.git/info/exclude
+test_5/2 testsetups/.git/description
+test_5/2 testsetups/.git/config
+test_5/2 testsetups/.git/objects/
+test_5/2 testsetups/.git/objects/pack/
+test_5/2 testsetups/.git/objects/info/
+test_5/2 testsetups/.git/HEAD
+test_5/2 testsetups/.git/refs/
+test_5/2 testsetups/.git/refs/tags/
+test_5/2 testsetups/.git/refs/heads/
+test_5/2 testsetups/test_1.c
+test_5/2 testsetups/buggy.c
+test_5/2 testsetups/envcheck.py
+test_5/subprojects/
+test_5/subprojects/zstd.wrap
+test_5/subprojects/s1/
+test_5/subprojects/s1/meson.build
+test_5/subprojects/s1/s1.c
+test_5/subprojects/s1/subprojects/
+test_5/subprojects/s1/subprojects/scommon/
+test_5/subprojects/s1/subprojects/scommon/scommon_broken.c
+test_5/subprojects/s1/subprojects/scommon/meson.build
+test_5/subprojects/s1/subprojects/s3/
+test_5/subprojects/s1/subprojects/s3/meson.build
+test_5/subprojects/s1/subprojects/s3/s3.c
+test_5/subprojects/s2/
+test_5/subprojects/s2/meson.build
+test_5/subprojects/s2/s2.c
+test_5/subprojects/s2/subprojects/
+test_5/subprojects/s2/subprojects/scommon/
+test_5/subprojects/s2/subprojects/scommon/meson.build
+test_5/subprojects/s2/subprojects/scommon/scommon_ok.c
+test_5/subprojects/s2/subprojects/athing.wrap
++ cd 'test_5/2 testsetups/'
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:03:58 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 16:03:59 2023 - INFO  - Start testing...
++ meson setup --reconfigure builddir
+Regenerating configuration from scratch: Build directory has been generated with Meson version 0.54.3, which is incompatible with the current version 1.0.1.
+The Meson build system
+Version: 1.0.1
+Source dir: /root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups
+Build dir: /root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups/builddir
+Build type: native build
+Project name: testsetups
+Project version: undefined
+C compiler for the host machine: cc (gcc 10.3.1 "cc (GCC) 10.3.1")
+C linker for the host machine: cc ld.bfd 2.37
+Host machine cpu family: riscv64
+Host machine cpu: riscv64
+Program valgrind found: YES (/usr/bin/valgrind)
+Program envcheck.py found: YES (/root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups/envcheck.py)
+Build targets in project: 1
+
+Found ninja-1.11.1 at /usr/bin/ninja
++ cd ./builddir
++ meson test --help
++ grep 'usage: meson'
+usage: meson test [-h] [--maxfail MAXFAIL] [--repeat REPEAT] [--no-rebuild]
++ CHECK_RESULT 0 0 0 'meson test --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test -h
++ grep 'usage: meson'
+usage: meson test [-h] [--maxfail MAXFAIL] [--repeat REPEAT] [--no-rebuild]
++ CHECK_RESULT 0 0 0 'meson test -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test --repeat 2
++ grep ninja
+ninja: warning: bad deps log signature or version; starting over
+ninja: no work to do.
+ninja: Entering directory `/root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups/builddir'
++ CHECK_RESULT 0 0 0 'meson test --repeat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test --repeat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test '--wrap=valgrind --tool=helgrind'
++ grep ninja
+ninja: no work to do.
+ninja: Entering directory `/root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups/builddir'
+ninja: no work to do.
++ CHECK_RESULT 0 0 0 'meson test --wrap failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test --wrap failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test --gdb-path gdb
++ grep ninja
+ninja: no work to do.
+ninja: Entering directory `/root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups/builddir'
+ninja: no work to do.
++ CHECK_RESULT 0 0 0 'meson test --gdb-path failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test --gdb-path failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test --list
++ grep testsetups:
+testsetups:buggy / Test buggy
++ CHECK_RESULT 0 0 0 'meson test --list failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test --list failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test -C ./
++ grep ninja
+ninja: no work to do.
+ninja: Entering directory `/root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups/builddir'
+ninja: no work to do.
++ CHECK_RESULT 0 0 0 'meson test -C WD failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test -C WD failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test --suite foo
++ grep ninja
+ninja: no work to do.
++ CHECK_RESULT 0 0 0 'meson test --suite failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test --suite failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test --no-suite test1
++ grep ninja
+ninja: no work to do.
+ninja: Entering directory `/root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups/builddir'
+ninja: no work to do.
++ CHECK_RESULT 0 0 0 'meson test --no-suite failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test --no-suite failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson test --no-rebuild
++ grep test_5
+Full log written to /root/mugen/testcases/cli-test/meson/common/0.54/test_5/2 testsetups/builddir/meson-logs/testlog.txt
++ CHECK_RESULT 0 0 0 'meson test --no-rebuild failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson test --no-rebuild failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 16:05:00 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:05:01 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:05:01 2023 - INFO  - Start to restore the test environment.
++ cd ../../../
++ rm -rf test_5
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp4u5338kk ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp4u5338kk
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:05:11 2023 - INFO  - End to restore the test environment.

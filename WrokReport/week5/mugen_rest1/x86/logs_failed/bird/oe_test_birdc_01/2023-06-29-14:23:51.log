@@ -1,0 +1,258 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ source ./common/lib/util.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:23:51 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'bird tar'
++ pkgs='bird tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'bird tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpt9wlp4b_
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpt9wlp4b_
++ extract_data
++ [[ -f ./common/data.tar.gz ]]
++ tar -xvf ./common/data.tar.gz
+data/
+data/test.sh
+data/bird.conf
++ bird -c ./data/bird.conf
+bird: I found another BIRD running.
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:23:53 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:23:53 2023 - INFO  - Start to run test.
++ expect
++ grep 'bird> quit' tmp.txt
+bird> quit
++ CHECK_RESULT 0 0 0 'check birdc exit failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc exit failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ expect
++ grep 'bird> exit' tmp.txt
+bird> exit
++ CHECK_RESULT 0 0 0 'check birdc exit failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc exit failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ spawn birdc
+oe_test_birdc_01.sh: line 46: spawn: command not found
++ expect 'bird>' '{send' 'help\n}'
+couldn't read file "bird>": no such file or directory
++ send 'quit\n'
+oe_test_birdc_01.sh: line 48: send: command not found
++ expect eof
+couldn't read file "eof": no such file or directory
++ EOF
+oe_test_birdc_01.sh: line 50: EOF: command not found
++ grep 'for context sensitive help' tmp.txt
+grep: tmp.txt: No such file or directory
++ CHECK_RESULT 2 0 0 'check birdc help failed'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='check birdc help failed'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'check birdc help failed'
++ LOG_ERROR 'check birdc help failed'
++ message='check birdc help failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'check birdc help failed'
+Thu Jun 29 14:23:53 2023 - ERROR - check birdc help failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_birdc_01.sh line 52'
++ message='oe_test_birdc_01.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_birdc_01.sh line 52'
+Thu Jun 29 14:23:53 2023 - ERROR - oe_test_birdc_01.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f tmp.txt
++ expect
++ grep 'ospf1      OSPF' tmp.txt
+ospf1      OSPF       master4    up     14:23:50.472  Alone
++ CHECK_RESULT 0 0 0 'check birdc show failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc show failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+++ wc -l tmp.txt
++ num='4 tmp.txt'
++ [[ 4 tmp.txt == 4 ]]
++ echo aa
++ grep bb
++ CHECK_RESULT 1 0 0 'check birdc dump failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='check birdc dump failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'check birdc dump failed'
++ LOG_ERROR 'check birdc dump failed'
++ message='check birdc dump failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'check birdc dump failed'
+Thu Jun 29 14:23:54 2023 - ERROR - check birdc dump failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_birdc_01.sh line 74'
++ message='oe_test_birdc_01.sh line 74'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_birdc_01.sh line 74'
+Thu Jun 29 14:23:54 2023 - ERROR - oe_test_birdc_01.sh line 74
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f tmp.txt
++ expect
++ grep 35 tmp.txt
+bird>       35
++ CHECK_RESULT 0 0 0 'check birdc eval failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc eval failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ expect
++ grep 'ospf1: disabled' tmp.txt
+bird>       ospf1: disabled
++ CHECK_RESULT 0 0 0 'check birdc disable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc disable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 14:23:54 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:23:54 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:23:54 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpt9wlp4b_ ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpt9wlp4b_
++ '[' 0 -ne 0 ']'
+++ pgrep 'bird -c'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -rf './sim_*'
++ clean_dir
+++ ls
++ filelist='bird.md
+common
+data
+oe_test_bird_01.sh
+oe_test_bird_02.sh
+oe_test_birdc_01.sh
+oe_test_birdc_02.sh
+oe_test_birdc_03.sh
+oe_test_birdc_04.sh
+oe_test_birdcl_01.sh
+oe_test_birdcl_02.sh
+oe_test_birdcl_03.sh
+oe_test_service_bird.sh'
++ for filename in ${filelist[@]}
++ [[ -d bird.md ]]
++ for filename in ${filelist[@]}
++ [[ -d common ]]
++ [[ ! commonx == \c\o\m\m\o\n\x ]]
++ for filename in ${filelist[@]}
++ [[ -d data ]]
++ [[ ! datax == \c\o\m\m\o\n\x ]]
++ rm -rf data
++ for filename in ${filelist[@]}
++ [[ -d oe_test_bird_01.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_bird_02.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdc_01.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdc_02.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdc_03.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdc_04.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdcl_01.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdcl_02.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdcl_03.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_service_bird.sh ]]
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:23:54 2023 - INFO  - End to restore the test environment.

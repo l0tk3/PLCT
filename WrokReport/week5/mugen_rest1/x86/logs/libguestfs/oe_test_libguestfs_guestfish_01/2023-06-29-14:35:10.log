@@ -1,0 +1,1153 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 14:35:10 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpxumv6xlc
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpxumv6xlc
+++ uname -i
++ test x86_64X == aarch64X
++ systemctl start libvirtd
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get x86_64 qcow2 libguestfs pkg'
++ message='get x86_64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get x86_64 qcow2 libguestfs pkg'
+Thu Jun 29 14:35:38 2023 - INFO  - get x86_64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 ']'
++ LOG_INFO 'qcow2 file already exists'
++ message='qcow2 file already exists'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'qcow2 file already exists'
+Thu Jun 29 14:35:38 2023 - INFO  - qcow2 file already exists
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
++ virt-install --name openEuler-2003 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+WARNING  KVM acceleration not available, using 'qemu'
+ERROR    
+--os-variant/--osinfo OS name is required, but no value was
+set or detected.
+
+This is now a fatal error. Specifying an OS name is required
+for modern, performant, and secure virtual machine defaults.
+
+You can see a full list of possible OS name values with:
+
+   virt-install --osinfo list
+
+If your Linux distro is not listed, try one of generic values
+such as: linux2020, linux2018, linux2016
+
+If you just need to get the old behavior back, you can use:
+
+  --osinfo detect=on,require=off
+
+Or export VIRTINSTALL_OSINFO_DISABLE_REQUIRE=1
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 14:35:44 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:35:44 2023 - INFO  - Start to run test.
++ guestfish -h
++ grep help
+help                 display a list of commands or help on a command
+    Use -h <cmd> / help <cmd> to show detailed help for a command.
++ CHECK_RESULT 0 0 0 'Check guestfish -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ guestfish -h cat
++ grep cat
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x55b9b621ea40, program = guestfish
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x55b9b621ea40 (state 0)
+    cat - list the contents of a file
+     cat path
++ CHECK_RESULT 0 0 0 'Check guestfish -h cat failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -h cat failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ guestfish --csh -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x562c70241a40, program = guestfish
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: trace: add_drive = 0
+libguestfs: trace: is_config
+libguestfs: trace: is_config = 1
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestfish
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsRsg0re
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-ycuylzceefp08w3y
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x562c70242880
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.m8i2atax/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.m8i2atax/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.m8i2atax to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsRsg0re/overlay1.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsRsg0re/overlay1.qcow2
+Formatting '/tmp/libguestfsRsg0re/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-ycuylzceefp08w3y</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=02be6b6e-6aaa-4e96-991e-c01a656dd327 selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="writeback"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsRsg0re/overlay1.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfsKWuKMD/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfsKWuKMD/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 12
+libguestfs: drwxr-xr-x 3 root root ? 4096 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 5 root root ? 4096 Jun 29 14:35 ..
+libguestfs: drwxr-xr-x 2 root root ? 4096 Jun 29 14:35 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?    0 Jun 29 14:33 lock
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:35 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:35 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:35 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:35 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:35 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfsKWuKMD
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 11 root root ? 260 Jun 29 14:35 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x562c70241a40 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsRsg0re
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsKWuKMD
++ CHECK_RESULT 1 0 0 'Check guestfish --csh failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish --csh failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish --csh failed'
++ LOG_ERROR 'Check guestfish --csh failed'
++ message='Check guestfish --csh failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish --csh failed'
+Thu Jun 29 14:35:48 2023 - ERROR - Check guestfish --csh failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 36'
++ message='oe_test_libguestfs_guestfish_01.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 36'
+Thu Jun 29 14:35:48 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish -c test:///default -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x55ffb9d41a40, program = guestfish
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: trace: add_drive = 0
+libguestfs: trace: is_config
+libguestfs: trace: is_config = 1
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestfish
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsNpPzly
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-stfu1i1xnuzde07n
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x55ffb9d42880
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.8h766cu0/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.8h766cu0/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.8h766cu0 to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsNpPzly/overlay1.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsNpPzly/overlay1.qcow2
+Formatting '/tmp/libguestfsNpPzly/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-stfu1i1xnuzde07n</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=6efc0dba-53c2-476c-88bf-43b0612199df selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="writeback"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsNpPzly/overlay1.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfs9bNa4X/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfs9bNa4X/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 12
+libguestfs: drwxr-xr-x 3 root root ? 4096 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 5 root root ? 4096 Jun 29 14:35 ..
+libguestfs: drwxr-xr-x 2 root root ? 4096 Jun 29 14:35 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?    0 Jun 29 14:33 lock
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:35 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:35 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:35 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:35 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:35 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfs9bNa4X
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 11 root root ? 260 Jun 29 14:35 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x55ffb9d41a40 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsNpPzly
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfs9bNa4X
++ CHECK_RESULT 1 0 0 'Check guestfish -c failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -c failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish -c failed'
++ LOG_ERROR 'Check guestfish -c failed'
++ message='Check guestfish -c failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish -c failed'
+Thu Jun 29 14:35:50 2023 - ERROR - Check guestfish -c failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 38'
++ message='oe_test_libguestfs_guestfish_01.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 38'
+Thu Jun 29 14:35:50 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish -d openEuler-2003 -i cat /etc/group
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x558cd8c8ea40, program = guestfish
+libguestfs: trace: add_domain "openEuler-2003" "allowuuid:true" "readonlydisk:read"
+libguestfs: opening libvirt handle: URI = NULL, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x558cd8c8f5c0
+libguestfs: error: no libvirt domain called ‘openEuler-2003’: Domain not found: no domain with matching name 'openEuler-2003'
+libguestfs: trace: add_domain = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x558cd8c8ea40 (state 0)
++ CHECK_RESULT 1 0 0 'Check guestfish -d failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -d failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish -d failed'
++ LOG_ERROR 'Check guestfish -d failed'
++ message='Check guestfish -d failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish -d failed'
+Thu Jun 29 14:35:50 2023 - ERROR - Check guestfish -d failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 40'
++ message='oe_test_libguestfs_guestfish_01.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 40'
+Thu Jun 29 14:35:51 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish --echo-keys -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x556a61a73a40, program = guestfish
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: trace: add_drive = 0
+libguestfs: trace: is_config
+libguestfs: trace: is_config = 1
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestfish
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsES6qBL
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-4qdpxdf6d1gjoc6m
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x556a61a74880
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.i5n8ey13/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.i5n8ey13/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.i5n8ey13 to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsES6qBL/overlay1.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsES6qBL/overlay1.qcow2
+Formatting '/tmp/libguestfsES6qBL/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-4qdpxdf6d1gjoc6m</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=22065355-bcbb-4a24-be93-dd2aa5a931a8 selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="writeback"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsES6qBL/overlay1.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfs8ZNQu0/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfs8ZNQu0/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 12
+libguestfs: drwxr-xr-x 3 root root ? 4096 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 5 root root ? 4096 Jun 29 14:35 ..
+libguestfs: drwxr-xr-x 2 root root ? 4096 Jun 29 14:35 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?    0 Jun 29 14:33 lock
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:35 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:35 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:35 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:35 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:35 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfs8ZNQu0
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 11 root root ? 260 Jun 29 14:35 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x556a61a73a40 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsES6qBL
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfs8ZNQu0
++ CHECK_RESULT 1 0 0 'Check guestfish --echo-keys failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish --echo-keys failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish --echo-keys failed'
++ LOG_ERROR 'Check guestfish --echo-keys failed'
++ message='Check guestfish --echo-keys failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish --echo-keys failed'
+Thu Jun 29 14:35:53 2023 - ERROR - Check guestfish --echo-keys failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 42'
++ message='oe_test_libguestfs_guestfish_01.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 42'
+Thu Jun 29 14:35:53 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ echo --help
++ guestfish -f file.txt -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x55803906da40, program = guestfish
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: trace: add_drive = 0
+libguestfs: trace: is_config
+libguestfs: trace: is_config = 1
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestfish
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfsA8c4pw
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-k511v7pk6d5yw2b9
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x55803906e880
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.lt8tu6q6/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.lt8tu6q6/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.lt8tu6q6 to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfsA8c4pw/overlay1.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfsA8c4pw/overlay1.qcow2
+Formatting '/tmp/libguestfsA8c4pw/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: disk_format "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"
+libguestfs: command: run: qemu-img --help | grep -sqE -- '\binfo\b.*-U\b'
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ info
+libguestfs: command: run: \ -U
+libguestfs: command: run: \ --output json
+libguestfs: command: run: \ /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+libguestfs: parse_json: qemu-img info JSON output:\n{\n    "virtual-size": 42949672960,\n    "filename": "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2",\n    "cluster-size": 65536,\n    "format": "qcow2",\n    "actual-size": 1867218944,\n    "format-specific": {\n        "type": "qcow2",\n        "data": {\n            "compat": "1.1",\n            "compression-type": "zlib",\n            "lazy-refcounts": false,\n            "refcount-bits": 16,\n            "corrupt": false,\n            "extended-l2": false\n        }\n    },\n    "dirty-flag": false\n}\n\n
+libguestfs: trace: disk_format = "qcow2"
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-k511v7pk6d5yw2b9</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=cecc301b-31c5-40fa-8f94-01a97c92b562 selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="writeback"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfsA8c4pw/overlay1.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfssWrHp9/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfssWrHp9/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 12
+libguestfs: drwxr-xr-x 3 root root ? 4096 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 5 root root ? 4096 Jun 29 14:35 ..
+libguestfs: drwxr-xr-x 2 root root ? 4096 Jun 29 14:35 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?    0 Jun 29 14:33 lock
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:35 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:35 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:35 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:35 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:35 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfssWrHp9
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 11 root root ? 260 Jun 29 14:35 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x55803906da40 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsA8c4pw
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfssWrHp9
++ CHECK_RESULT 1 0 0 'Check guestfish -f failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -f failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish -f failed'
++ LOG_ERROR 'Check guestfish -f failed'
++ message='Check guestfish -f failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish -f failed'
+Thu Jun 29 14:35:56 2023 - ERROR - Check guestfish -f failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 45'
++ message='oe_test_libguestfs_guestfish_01.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 45'
+Thu Jun 29 14:35:56 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish --format=qcow2 -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0x555b99322a40, program = guestfish
+libguestfs: trace: add_drive "/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2" "format:qcow2"
+libguestfs: trace: add_drive = 0
+libguestfs: trace: is_config
+libguestfs: trace: is_config = 1
+libguestfs: trace: launch
+libguestfs: trace: max_disks
+libguestfs: trace: max_disks = 255
+libguestfs: trace: get_tmpdir
+libguestfs: trace: get_tmpdir = "/tmp"
+libguestfs: trace: version
+libguestfs: trace: version = <struct guestfs_version = major: 1, minor: 49, release: 5, extra: libvirt, >
+libguestfs: trace: get_backend
+libguestfs: trace: get_backend = "libvirt"
+libguestfs: launch: program=guestfish
+libguestfs: launch: version=1.49.5libvirt
+libguestfs: launch: backend registered: libvirt
+libguestfs: launch: backend registered: direct
+libguestfs: launch: backend=libvirt
+libguestfs: launch: tmpdir=/tmp/libguestfschnpWd
+libguestfs: launch: umask=0022
+libguestfs: launch: euid=0
+libguestfs: libvirt version = 6002000 (6.2.0)
+libguestfs: guest random name = guestfs-djkw6bzjqnmu00q0
+libguestfs: connect to libvirt
+libguestfs: opening libvirt handle: URI = qemu:///system, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0x555b993238c0
+libguestfs: qemu version (reported by libvirt) = 6002000 (6.2.0)
+libguestfs: get libvirt capabilities
+libguestfs: parsing capabilities XML
+libguestfs: trace: get_backend_setting "force_kvm"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "force_tcg"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: parsing domcapabilities XML
+libguestfs: trace: get_backend_setting "internal_libvirt_label"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_imagelabel"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: trace: get_backend_setting "internal_libvirt_norelabel_disks"
+libguestfs: trace: get_backend_setting = NULL (error)
+libguestfs: build appliance
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: begin building supermin appliance
+libguestfs: run supermin
+libguestfs: command: run: /usr/bin/supermin
+libguestfs: command: run: \ --build
+libguestfs: command: run: \ --verbose
+libguestfs: command: run: \ --if-newer
+libguestfs: command: run: \ --lock /var/tmp/.guestfs-0/lock
+libguestfs: command: run: \ --copy-kernel
+libguestfs: command: run: \ -f ext2
+libguestfs: command: run: \ --host-cpu x86_64
+libguestfs: command: run: \ /usr/lib64/guestfs/supermin.d
+libguestfs: command: run: \ -o /var/tmp/.guestfs-0/appliance.d
+supermin: version: 5.3.2
+supermin: rpm: detected RPM version 4.18
+supermin: rpm: detected RPM architecture x86_64
+supermin: package handler: fedora/rpm
+supermin: acquiring lock on /var/tmp/.guestfs-0/lock
+supermin: build: /usr/lib64/guestfs/supermin.d
+supermin: reading the supermin appliance
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/base.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/daemon.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/excludefiles type uncompressed excludefiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/hostfiles type uncompressed hostfiles
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/init.tar.gz type gzip base image (tar)
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/packages type uncompressed packages
+supermin: build: visiting /usr/lib64/guestfs/supermin.d/udev-rules.tar.gz type gzip base image (tar)
+supermin: mapping package names to installed packages
+supermin: resolving full list of package dependencies
+supermin: build: 298 packages, including dependencies
+supermin: build: 34554 files
+supermin: build: 14457 files, after matching excludefiles
+supermin: build: 14472 files, after adding hostfiles
+supermin: build: 14458 files, after removing unreadable files
+supermin: build: 14523 files, after munging
+supermin: kernel: looking for kernel using environment variables ...
+supermin: kernel: looking for kernels in /lib/modules/*/vmlinuz ...
+supermin: kernel: looking for kernels in /boot ...
+supermin: kernel: kernel version of /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64 = 6.1.19-7.0.0.17.oe2303.x86_64 (from content)
+supermin: kernel: picked modules path /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: picked vmlinuz /boot/vmlinuz-6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: kernel_version 6.1.19-7.0.0.17.oe2303.x86_64
+supermin: kernel: modpath /lib/modules/6.1.19-7.0.0.17.oe2303.x86_64
+supermin: ext2: creating empty ext2 filesystem '/var/tmp/.guestfs-0/appliance.d.1f7tmlj2/root'
+supermin: ext2: populating from base image
+supermin: ext2: copying files from host filesystem
+supermin: ext2: copying kernel modules
+supermin: ext2: creating minimal initrd '/var/tmp/.guestfs-0/appliance.d.1f7tmlj2/initrd'
+supermin: ext2: wrote 34 modules to minimal initrd
+supermin: renaming /var/tmp/.guestfs-0/appliance.d.1f7tmlj2 to /var/tmp/.guestfs-0/appliance.d
+libguestfs: finished building supermin appliance
+libguestfs: trace: disk_create "/tmp/libguestfschnpWd/overlay1.qcow2" "qcow2" -1 "backingfile:/var/tmp/.guestfs-0/appliance.d/root" "backingformat:raw"
+libguestfs: command: run: qemu-img
+libguestfs: command: run: \ create
+libguestfs: command: run: \ -f qcow2
+libguestfs: command: run: \ -o backing_file=/var/tmp/.guestfs-0/appliance.d/root,backing_fmt=raw
+libguestfs: command: run: \ /tmp/libguestfschnpWd/overlay1.qcow2
+Formatting '/tmp/libguestfschnpWd/overlay1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/var/tmp/.guestfs-0/appliance.d/root backing_fmt=raw lazy_refcounts=off refcount_bits=16 cache=writeback
+libguestfs: trace: disk_create = 0
+libguestfs: trace: get_sockdir
+libguestfs: trace: get_sockdir = "/tmp"
+libguestfs: set_socket_create_context: context_new failed: unconfined\n: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: create libvirt XML
+libguestfs: command: run: dmesg | grep -Eoh 'lpj=[[:digit:]]+'
+libguestfs: read_lpj_from_dmesg: calculated lpj=2304004
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: libvirt XML:\n<?xml version="1.0"?>\n<domain type="qemu" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">\n  <name>guestfs-djkw6bzjqnmu00q0</name>\n  <memory unit="MiB">1280</memory>\n  <currentMemory unit="MiB">1280</currentMemory>\n  <cpu mode="maximum">\n    <feature policy="disable" name="la57"/>\n  </cpu>\n  <vcpu>1</vcpu>\n  <clock offset="utc">\n    <timer name="rtc" tickpolicy="catchup"/>\n    <timer name="pit" tickpolicy="delay"/>\n    <timer name="hpet" present="no"/>\n  </clock>\n  <os>\n    <type>hvm</type>\n    <kernel>/var/tmp/.guestfs-0/appliance.d/kernel</kernel>\n    <initrd>/var/tmp/.guestfs-0/appliance.d/initrd</initrd>\n    <cmdline>panic=1 console=ttyS0 edd=off udevtimeout=6000 udev.event-timeout=6000 no_timer_check lpj=2304004 printk.time=1 cgroup_disable=memory usbcore.nousb cryptomgr.notests tsc=reliable 8250.nr_uarts=1 root=UUID=c8a22acf-cb79-40b3-a030-54e2f08ac869 selinux=0 guestfs_verbose=1 TERM=unknown</cmdline>\n    <bios useserial="yes"/>\n  </os>\n  <seclabel type="none"/>\n  <on_reboot>destroy</on_reboot>\n  <devices>\n    <emulator>/usr/bin/qemu-kvm</emulator>\n    <rng model="virtio">\n      <backend model="random">/dev/urandom</backend>\n    </rng>\n    <controller type="scsi" index="0" model="virtio-scsi"/>\n    <disk device="disk" type="file">\n      <source file="/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2"/>\n      <target dev="sda" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="writeback"/>\n      <address type="drive" controller="0" bus="0" target="0" unit="0"/>\n    </disk>\n    <disk type="file" device="disk">\n      <source file="/tmp/libguestfschnpWd/overlay1.qcow2"/>\n      <target dev="sdb" bus="scsi"/>\n      <driver name="qemu" type="qcow2" cache="unsafe"/>\n      <address type="drive" controller="0" bus="0" target="1" unit="0"/>\n    </disk>\n    <serial type="unix">\n      <source mode="connect" path="/tmp/libguestfsHAgtOa/console.sock"/>\n      <target port="0"/>\n    </serial>\n    <channel type="unix">\n      <source mode="connect" path="/tmp/libguestfsHAgtOa/guestfsd.sock"/>\n      <target type="virtio" name="org.libguestfs.channel.0"/>\n    </channel>\n    <controller type="usb" model="none"/>\n    <memballoon model="none"/>\n  </devices>\n  <qemu:commandline>\n    <qemu:env name="TMPDIR" value="/var/tmp"/>\n  </qemu:commandline>\n</domain>\n
+libguestfs: trace: get_cachedir
+libguestfs: trace: get_cachedir = "/var/tmp"
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -R
+libguestfs: command: run: \ -Z /var/tmp/.guestfs-0
+libguestfs: /var/tmp/.guestfs-0:
+libguestfs: total 12
+libguestfs: drwxr-xr-x 3 root root ? 4096 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 5 root root ? 4096 Jun 29 14:35 ..
+libguestfs: drwxr-xr-x 2 root root ? 4096 Jun 29 14:35 appliance.d
+libguestfs: -rw-r--r-- 1 root root ?    0 Jun 29 14:33 lock
+libguestfs: 
+libguestfs: /var/tmp/.guestfs-0/appliance.d:
+libguestfs: total 520264
+libguestfs: drwxr-xr-x 2 root root ?       4096 Jun 29 14:35 .
+libguestfs: drwxr-xr-x 3 root root ?       4096 Jun 29 14:35 ..
+libguestfs: -rw-r--r-- 1 root root ?    5304320 Jun 29 14:35 initrd
+libguestfs: -rwxr-xr-x 1 root root ?   11566048 Jun 29 14:35 kernel
+libguestfs: -rw-r--r-- 1 root root ? 4294967296 Jun 29 14:35 root
+libguestfs: command: run: ls
+libguestfs: command: run: \ -a
+libguestfs: command: run: \ -l
+libguestfs: command: run: \ -Z /tmp/libguestfsHAgtOa
+libguestfs: total 0
+libguestfs: drwxr-xr-x  2 root root ?  80 Jun 29 14:35 .
+libguestfs: drwxrwxrwt 11 root root ? 260 Jun 29 14:35 ..
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 console.sock
+libguestfs: srw-rw----  1 root qemu ?   0 Jun 29 14:35 guestfsd.sock
+libguestfs: launch libvirt guest
+libguestfs: error: could not create appliance through libvirt.
+
+Try running qemu directly without libvirt using this environment variable:
+export LIBGUESTFS_BACKEND=direct
+
+Original error from libvirt: unsupported configuration: Invalid mode attribute 'maximum' [code=67 int1=-1]
+libguestfs: clear_socket_create_context: setsockcreatecon failed: NULL: Invalid argument [you can ignore this message if you are not using SELinux + sVirt]
+libguestfs: trace: launch = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0x555b99322a40 (state 0)
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfschnpWd
+libguestfs: command: run: rm
+libguestfs: command: run: \ -rf /tmp/libguestfsHAgtOa
++ CHECK_RESULT 1 0 0 'Check guestfish --format failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish --format failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish --format failed'
++ LOG_ERROR 'Check guestfish --format failed'
++ message='Check guestfish --format failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish --format failed'
+Thu Jun 29 14:35:58 2023 - ERROR - Check guestfish --format failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 47'
++ message='oe_test_libguestfs_guestfish_01.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 47'
+Thu Jun 29 14:35:58 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish --help
++ grep 'guest filesystem shell'
+guestfish: guest filesystem shell
++ CHECK_RESULT 0 0 0 'Check guestfish --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check guestfish --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 29 14:35:58 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:35:58 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:35:58 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test
++ virsh start openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh undefine openEuler-2003 --nvram
+error: failed to get domain 'openEuler-2003'
+
++ unset LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpxumv6xlc ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpxumv6xlc
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*' file.txt
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 29 14:36:06 2023 - INFO  - Finish to restore the test environment.

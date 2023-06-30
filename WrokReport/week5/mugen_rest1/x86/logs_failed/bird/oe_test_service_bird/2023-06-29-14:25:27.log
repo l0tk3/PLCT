@@ -1,0 +1,324 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:25:28 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL bird
++ pkgs=bird
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs bird --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpopdlwd1_
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpopdlwd1_
++ service=bird.service
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:26:30 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:26:30 2023 - INFO  - Start to run test.
++ test_execution bird.service
++ service=bird.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-06-29 14:26:30'
++ test_restart bird.service
++ service=bird.service
++ systemctl restart bird.service
++ CHECK_RESULT 0 0 0 'bird.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='bird.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status bird.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'bird.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='bird.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'bird.service restart failed'
++ LOG_ERROR 'bird.service restart failed'
++ message='bird.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'bird.service restart failed'
+Thu Jun 29 14:26:35 2023 - ERROR - bird.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Thu Jun 29 14:26:35 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop bird.service
++ CHECK_RESULT 0 0 0 'bird.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='bird.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status bird.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'bird.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='bird.service stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'bird.service stop failed'
++ LOG_ERROR 'bird.service stop failed'
++ message='bird.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'bird.service stop failed'
+Thu Jun 29 14:26:40 2023 - ERROR - bird.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Thu Jun 29 14:26:40 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start bird.service
++ CHECK_RESULT 0 0 0 'bird.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='bird.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status bird.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'bird.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='bird.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'bird.service start failed'
++ LOG_ERROR 'bird.service start failed'
++ message='bird.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'bird.service start failed'
+Thu Jun 29 14:26:45 2023 - ERROR - bird.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Thu Jun 29 14:26:45 2023 - ERROR - ../common/common_lib.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ test_enabled bird.service
++ service=bird.service
+++ systemctl is-enabled bird.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable bird.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/bird.service
++ find /etc/systemd/system/multi-user.target.wants/bird.service
+/etc/systemd/system/multi-user.target.wants/bird.service
++ CHECK_RESULT 0 0 0 'bird.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='bird.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable bird.service
+Removed /etc/systemd/system/multi-user.target.wants/bird.service.
++ find /etc/systemd/system/multi-user.target.wants/bird.service
+find: ‘/etc/systemd/system/multi-user.target.wants/bird.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'bird.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='bird.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-06-29 14:26:30' -u bird.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: Failed to start BIRD Internet Routing Daemon.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: Failed to start BIRD Internet Routing Daemon.
++ CHECK_RESULT 0 0 1 'There is an error message for the log of bird.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of bird.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of bird.service'
++ LOG_ERROR 'There is an error message for the log of bird.service'
++ message='There is an error message for the log of bird.service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of bird.service'
+Thu Jun 29 14:26:45 2023 - ERROR - There is an error message for the log of bird.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Thu Jun 29 14:26:45 2023 - ERROR - ../common/common_lib.sh line 28
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start bird.service
++ sed -i 's\ExecStart=/usr/sbin/bird -f -u bird -g bird\ExecStart=/usr/sbin/bird -d\g' /usr/lib/systemd/system/bird.service
++ systemctl daemon-reload
++ systemctl reload bird.service
+bird.service is not active, cannot reload.
++ CHECK_RESULT 1 0 0 'bird.service reload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='bird.service reload failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'bird.service reload failed'
++ LOG_ERROR 'bird.service reload failed'
++ message='bird.service reload failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'bird.service reload failed'
+Thu Jun 29 14:26:46 2023 - ERROR - bird.service reload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_service_bird.sh line 36'
++ message='oe_test_service_bird.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_service_bird.sh line 36'
+Thu Jun 29 14:26:46 2023 - ERROR - oe_test_service_bird.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl status bird.service
++ grep 'Active: active'
+     Active: active (running) since Thu 2023-06-29 14:26:46 UTC; 2ms ago
++ CHECK_RESULT 0 0 0 'bird.service reload causes the service status to change'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='bird.service reload causes the service status to change'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 14:26:46 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 5
++ test 5 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:26:46 2023 - ERROR - failed to execute the case.
++ exit 5
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:26:46 2023 - INFO  - Start to restore the test environment.
++ sed -i 's\ExecStart=/usr/sbin/bird -d\ExecStart=/usr/sbin/bird -f -u bird -g bird\g' /usr/lib/systemd/system/bird.service
++ systemctl daemon-reload
++ systemctl reload bird.service
+Job for bird.service failed because the control process exited with error code.
+See "systemctl status bird.service" and "journalctl -xeu bird.service" for details.
++ systemctl stop bird.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpopdlwd1_ ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpopdlwd1_
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:26:46 2023 - INFO  - End to restore the test environment.

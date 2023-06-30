@@ -1,0 +1,282 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 15:52:52 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc'
++ pkgs='meson tar gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc' --node 1 --tempfile ''
+Thu Jun 22 15:53:00 2023 - INFO  - pkgs:(meson tar gcc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf common/0.54/test_1.tgz
+test_1/
+test_1/.git/
+test_1/.git/hooks/
+test_1/.git/hooks/post-update.sample
+test_1/.git/hooks/applypatch-msg.sample
+test_1/.git/hooks/commit-msg.sample
+test_1/.git/hooks/pre-push.sample
+test_1/.git/hooks/pre-rebase.sample
+test_1/.git/hooks/pre-merge-commit.sample
+test_1/.git/hooks/prepare-commit-msg.sample
+test_1/.git/hooks/fsmonitor-watchman.sample
+test_1/.git/hooks/update.sample
+test_1/.git/hooks/pre-applypatch.sample
+test_1/.git/hooks/pre-receive.sample
+test_1/.git/hooks/pre-commit.sample
+test_1/.git/branches/
+test_1/.git/refs/
+test_1/.git/refs/heads/
+test_1/.git/refs/tags/
+test_1/.git/HEAD
+test_1/.git/config
+test_1/.git/info/
+test_1/.git/info/exclude
+test_1/.git/description
+test_1/.git/objects/
+test_1/.git/objects/pack/
+test_1/.git/objects/info/
+test_1/test_1.c
+test_1/builddir/
+test_1/builddir/test_1
+test_1/builddir/test_1@exe/
+test_1/builddir/test_1@exe/test_1.c.o
+test_1/builddir/.ninja_deps
+test_1/builddir/devenv/
+test_1/builddir/compile_commands.json
+test_1/builddir/build.ninja
+test_1/builddir/meson-info/
+test_1/builddir/meson-info/intro-targets.json
+test_1/builddir/meson-info/intro-installed.json
+test_1/builddir/meson-info/intro-benchmarks.json
+test_1/builddir/meson-info/intro-tests.json
+test_1/builddir/meson-info/intro-buildsystem_files.json
+test_1/builddir/meson-info/intro-buildoptions.json
+test_1/builddir/meson-info/intro-dependencies.json
+test_1/builddir/meson-info/intro-projectinfo.json
+test_1/builddir/meson-info/meson-info.json
+test_1/builddir/.ninja_log
+test_1/builddir/meson-logs/
+test_1/builddir/meson-logs/testlog-valgrind.json
+test_1/builddir/meson-logs/testlog.txt
+test_1/builddir/meson-logs/testlog.json
+test_1/builddir/meson-logs/testlog-worksforall.json
+test_1/builddir/meson-logs/testlog-worksforall.txt
+test_1/builddir/meson-logs/meson-log.txt
+test_1/builddir/meson-logs/testlog-valgrind.txt
+test_1/builddir/meson.build
+test_1/builddir/meson-private/
+test_1/builddir/meson-private/build.dat
+test_1/builddir/meson-private/meson_test_setup.dat
+test_1/builddir/meson-private/coredata.dat.prev
+test_1/builddir/meson-private/install.dat
+test_1/builddir/meson-private/dist-install/
+test_1/builddir/meson-private/dist-build/
+test_1/builddir/meson-private/sanitycheckc.exe
+test_1/builddir/meson-private/coredata.dat
+test_1/builddir/meson-private/cmd_line.txt
+test_1/builddir/meson-private/dist-unpack/
+test_1/builddir/meson-private/dist-unpack/test_1-0.1/
+test_1/builddir/meson-private/meson_benchmark_setup.dat
+test_1/builddir/meson-private/sanitycheckc.c
+test_1/builddir/meson-private/meson.lock
+test_1/builddir/meson-dist/
+test_1/builddir/meson-dist/test_1-0.1.tar.xz
+test_1/meson.build
++ cd test_1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 15:53:01 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 15:53:02 2023 - INFO  - Start testing...
++ meson introspect --help
++ grep 'usage: meson'
+usage: meson introspect [-h] [--ast] [--benchmarks] [--buildoptions]
++ CHECK_RESULT 0 0 0 'meson-introspect --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect -h
++ grep 'usage: meson'
+usage: meson introspect [-h] [--ast] [--benchmarks] [--buildoptions]
++ CHECK_RESULT 0 0 0 'meson-introspect -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd ./builddir
++ meson introspect --benchmark
++ grep '\[]'
+[]
++ CHECK_RESULT 0 0 0 'meson-introspect --benchmarks failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --benchmarks failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --buildoptions
++ grep name
+[{"name": "auto_features", "value": "auto", "section": "core", "machine": "any", "choices": ["enabled", "disabled", "auto"], "type": "combo", "description": "Override value of all 'auto' features"}, {"name": "backend", "value": "ninja", "section": "core", "machine": "any", "choices": ["ninja", "vs", "vs2010", "vs2015", "vs2017", "vs2019", "xcode"], "type": "combo", "description": "Backend to use"}, {"name": "buildtype", "value": "debug", "section": "core", "machine": "any", "choices": ["plain", "debug", "debugoptimized", "release", "minsize", "custom"], "type": "combo", "description": "Build type to use"}, {"name": "debug", "value": true, "section": "core", "machine": "any", "type": "boolean", "description": "Debug"}, {"name": "default_library", "value": "shared", "section": "core", "machine": "any", "choices": ["shared", "static", "both"], "type": "combo", "description": "Default library type"}, {"name": "install_umask", "value": 18, "section": "core", "machine": "any", "type": "integer", "description": "Default umask to apply on permissions of installed files"}, {"name": "layout", "value": "mirror", "section": "core", "machine": "any", "choices": ["mirror", "flat"], "type": "combo", "description": "Build directory layout"}, {"name": "optimization", "value": "0", "section": "core", "machine": "any", "choices": ["0", "g", "1", "2", "3", "s"], "type": "combo", "description": "Optimization level"}, {"name": "strip", "value": false, "section": "core", "machine": "any", "type": "boolean", "description": "Strip targets on install"}, {"name": "unity", "value": "off", "section": "core", "machine": "any", "choices": ["on", "off", "subprojects"], "type": "combo", "description": "Unity build"}, {"name": "unity_size", "value": 4, "section": "core", "machine": "any", "type": "integer", "description": "Unity block size"}, {"name": "warning_level", "value": "3", "section": "core", "machine": "any", "choices": ["0", "1", "2", "3"], "type": "combo", "description": "Compiler warning level to use"}, {"name": "werror", "value": false, "section": "core", "machine": "any", "type": "boolean", "description": "Treat warnings as errors"}, {"name": "wrap_mode", "value": "default", "section": "core", "machine": "any", "choices": ["default", "nofallback", "nodownload", "forcefallback"], "type": "combo", "description": "Wrap mode"}, {"name": "cmake_prefix_path", "value": [], "section": "core", "machine": "host", "type": "array", "description": "List of additional prefixes for cmake to search"}, {"name": "pkg_config_path", "value": [], "section": "core", "machine": "host", "type": "array", "description": "List of additional paths for pkg-config to search"}, {"name": "build.cmake_prefix_path", "value": [], "section": "core", "machine": "build", "type": "array", "description": "List of additional prefixes for cmake to search"}, {"name": "build.pkg_config_path", "value": [], "section": "core", "machine": "build", "type": "array", "description": "List of additional paths for pkg-config to search"}, {"name": "backend_max_links", "value": 0, "section": "backend", "machine": "any", "type": "integer", "description": "Maximum number of linker processes to run or 0 for no limit"}, {"name": "b_asneeded", "value": true, "section": "base", "machine": "any", "type": "boolean", "description": "Use -Wl,--as-needed when linking"}, {"name": "b_colorout", "value": "always", "section": "base", "machine": "any", "choices": ["auto", "always", "never"], "type": "combo", "description": "Use colored output"}, {"name": "b_coverage", "value": false, "section": "base", "machine": "any", "type": "boolean", "description": "Enable coverage tracking."}, {"name": "b_lto", "value": false, "section": "base", "machine": "any", "type": "boolean", "description": "Use link time optimization"}, {"name": "b_lundef", "value": true, "section": "base", "machine": "any", "type": "boolean", "description": "Use -Wl,--no-undefined when linking"}, {"name": "b_ndebug", "value": "false", "section": "base", "machine": "any", "choices": ["true", "false", "if-release"], "type": "combo", "description": "Disable asserts"}, {"name": "b_pch", "value": true, "section": "base", "machine": "any", "type": "boolean", "description": "Use precompiled headers"}, {"name": "b_pgo", "value": "off", "section": "base", "machine": "any", "choices": ["off", "generate", "use"], "type": "combo", "description": "Use profile guided optimization"}, {"name": "b_pie", "value": false, "section": "base", "machine": "any", "type": "boolean", "description": "Build executables as position independent"}, {"name": "b_sanitize", "value": "none", "section": "base", "machine": "any", "choices": ["none", "address", "thread", "undefined", "memory", "address,undefined"], "type": "combo", "description": "Code sanitizer to use"}, {"name": "b_staticpic", "value": true, "section": "base", "machine": "any", "type": "boolean", "description": "Build static libraries as position independent"}, {"name": "c_args", "value": [], "section": "compiler", "machine": "host", "type": "array", "description": "Extra arguments passed to the c compiler"}, {"name": "c_link_args", "value": [], "section": "compiler", "machine": "host", "type": "array", "description": "Extra arguments passed to the c linker"}, {"name": "c_std", "value": "none", "section": "compiler", "machine": "host", "choices": ["none", "c89", "c99", "c11", "gnu89", "gnu99", "gnu11"], "type": "combo", "description": "C language standard to use"}, {"name": "build.c_args", "value": [], "section": "compiler", "machine": "build", "type": "array", "description": "Extra arguments passed to the c compiler"}, {"name": "build.c_link_args", "value": [], "section": "compiler", "machine": "build", "type": "array", "description": "Extra arguments passed to the c linker"}, {"name": "build.c_std", "value": "none", "section": "compiler", "machine": "build", "choices": ["none", "c89", "c99", "c11", "gnu89", "gnu99", "gnu11"], "type": "combo", "description": "C language standard to use"}, {"name": "bindir", "value": "bin", "section": "directory", "machine": "any", "type": "string", "description": "Executable directory"}, {"name": "datadir", "value": "share", "section": "directory", "machine": "any", "type": "string", "description": "Data file directory"}, {"name": "includedir", "value": "include", "section": "directory", "machine": "any", "type": "string", "description": "Header file directory"}, {"name": "infodir", "value": "share/info", "section": "directory", "machine": "any", "type": "string", "description": "Info page directory"}, {"name": "libdir", "value": "lib64", "section": "directory", "machine": "any", "type": "string", "description": "Library directory"}, {"name": "libexecdir", "value": "libexec", "section": "directory", "machine": "any", "type": "string", "description": "Library executable directory"}, {"name": "localedir", "value": "share/locale", "section": "directory", "machine": "any", "type": "string", "description": "Locale data directory"}, {"name": "localstatedir", "value": "/var/local", "section": "directory", "machine": "any", "type": "string", "description": "Localstate data directory"}, {"name": "mandir", "value": "share/man", "section": "directory", "machine": "any", "type": "string", "description": "Manual page directory"}, {"name": "prefix", "value": "/usr/local", "section": "directory", "machine": "any", "type": "string", "description": "Installation prefix"}, {"name": "sbindir", "value": "sbin", "section": "directory", "machine": "any", "type": "string", "description": "System executable directory"}, {"name": "sharedstatedir", "value": "/var/local/lib", "section": "directory", "machine": "any", "type": "string", "description": "Architecture-independent data directory"}, {"name": "sysconfdir", "value": "etc", "section": "directory", "machine": "any", "type": "string", "description": "Sysconf data directory"}, {"name": "errorlogs", "value": true, "section": "test", "machine": "any", "type": "boolean", "description": "Whether to print the logs from failing tests"}, {"name": "stdsplit", "value": true, "section": "test", "machine": "any", "type": "boolean", "description": "Split stdout and stderr in test logs"}]
++ CHECK_RESULT 0 0 0 'meson-introspect --buildoptions failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --buildoptions failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --buildsystem-files
++ grep root
+["/root/mugen/testcases/cli-test/meson/common/test_1/meson.build"]
++ CHECK_RESULT 0 0 0 'meson-introspect  --buildsystem-files failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect  --buildsystem-files failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --dependencies
++ grep '\[]'
+[]
++ CHECK_RESULT 0 0 0 'meson-introspect  --dependencies failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect  --dependencies failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --scan-dependencies
++ grep 'No command specified'
+No command specified
++ CHECK_RESULT 0 0 0 'meson-introspect --scan-dependencies failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --scan-dependencies failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --installed
++ grep test_1
+{"/root/mugen/testcases/cli-test/meson/common/test_1/builddir/test_1": "/usr/local/bin/test_1"}
++ CHECK_RESULT 0 0 0 'meson-introspect --installed BUILDDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --installed BUILDDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --projectinfo
++ grep version
+{"version": "0.1", "descriptive_name": "test_1", "subproject_dir": "subprojects", "subprojects": []}
++ CHECK_RESULT 0 0 0 'meson-introspect --projectinfo failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --projectinfo failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --targets
++ grep subproject
+[{"name": "test_1", "id": "test_1@exe", "type": "executable", "defined_in": "/root/mugen/testcases/cli-test/meson/common/test_1/meson.build", "filename": ["/root/mugen/testcases/cli-test/meson/common/test_1/builddir/test_1"], "build_by_default": true, "target_sources": [{"language": "c", "compiler": ["cc"], "parameters": ["-I/root/mugen/testcases/cli-test/meson/common/test_1/builddir/test_1@exe", "-I/root/mugen/testcases/cli-test/meson/common/test_1/builddir", "-I/root/mugen/testcases/cli-test/meson/common/test_1", "-fdiagnostics-color=always", "-pipe", "-D_FILE_OFFSET_BITS=64", "-Wall", "-Winvalid-pch", "-Wextra", "-Wpedantic", "-g"], "sources": ["/root/mugen/testcases/cli-test/meson/common/test_1/test_1.c"], "generated_sources": []}], "subproject": null, "installed": true, "install_filename": ["/usr/local/bin/test_1"]}]
++ CHECK_RESULT 0 0 0 'meson-introspect --targets failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --targets failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 15:53:45 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:53:46 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:53:46 2023 - INFO  - Start to restore the test environment.
++ rm -rf ../../test_1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 15:53:47 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 15:53:47 2023 - INFO  - End to restore the test environment.

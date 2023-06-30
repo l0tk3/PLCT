@@ -1,0 +1,131 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:01:58 2023 - INFO  - Start to prepare the test environment.
++ mkdir /tmp/test
++ cd /tmp/test
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Thu Jun 22 18:01:59 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:01:59 2023 - INFO  - Start to run test.
++ curl https://cht.sh/:cht.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100 22888  100 22888    0     0  10385      0  0:00:02  0:00:02 --:--:-- 10417
++ test -e cht.sh
++ CHECK_RESULT 0 0 0 'Download failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Download failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chmod +x /tmp/test/cht.sh
++ /tmp/test/cht.sh pwd
++ grep 'Show the absolute path of your current working directory' pwd.txt
+[38;5;246;03m# Show the absolute path of your current working directory:[39;00m
++ CHECK_RESULT 0 0 0 'Query pwd failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Query pwd failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /tmp/test/cht.sh python string contain
++ grep https://docs.python.org/reference/expressions string.txt
+[38;5;252m  [39m[38;5;246;03m#  [1]: https://docs.python.org/reference/expressions.htmlmembership-[39;00m
++ CHECK_RESULT 0 0 0 'Query string failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Query string failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /tmp/test/cht.sh python reverse list
++ grep https://www.python.org/dev/peps/pep-0322 reverse.txt
+[38;5;252m  [39m[38;5;246;03m#  [1]: https://www.python.org/dev/peps/pep-0322/[39;00m
++ CHECK_RESULT 0 0 0 'Query reverse failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Query reverse failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ curl cht.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 25502  100 25502    0     0  41532      0 --:--:-- --:--:-- --:--:-- 41669
+
+real	0m0.701s
+user	0m0.023s
+sys	0m0.084s
++ grep real time.txt
+[38;2;136;136;136m|[0m for usage information  [38;2;136;136;136m|[0m [38;2;136;136;136m|[0m zip lists _            [38;2;136;136;136m|[0m [38;2;136;136;136m|[0m real    [38;2;34;170;34m0[0m[38;2;34;170;34mm[0m[38;2;34;170;34m0[0m[38;2;34;170;34m.[0m[38;2;34;170;34m0[0m[38;2;34;170;34m7[0m[38;2;34;170;34m5[0m[38;2;34;170;34ms[0m       [38;2;136;136;136m|[0m
++ CHECK_RESULT 0 0 0 'Query time failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Query time failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 18:02:09 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:02:09 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:02:10 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/test
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Thu Jun 22 18:02:10 2023 - INFO  - Finish restoring the test environment.

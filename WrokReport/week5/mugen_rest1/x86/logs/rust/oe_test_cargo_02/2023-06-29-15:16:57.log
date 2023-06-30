@@ -1,0 +1,245 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 29 15:16:57 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL cargo
++ pkgs=cargo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs cargo --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpk58ota0z
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpk58ota0z
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 29 15:17:42 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Thu Jun 29 15:17:42 2023 - INFO  - Start executing testcase!
++ cargo new hello_world
+     Created binary (application) `hello_world` package
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -d hello_world
++ CHECK_RESULT 0 0 0 'Failed to create a new package'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to create a new package'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd hello_world
++ cargo build
+   Compiling hello_world v0.1.0 (/root/mugen/testcases/cli-test/rust/oe_test_cargo_02/hello_world)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.22s
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ./target/debug/hello_world
++ grep 'Hello, world!'
+Hello, world!
++ CHECK_RESULT 0 0 0 'Failed to compile package'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to compile package'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo run
++ grep 'Hello, world!'
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target/debug/hello_world`
+Hello, world!
++ CHECK_RESULT 0 0 0 'Failed to run package'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to run package'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo test
++ grep -E 'running|test result'
+   Compiling hello_world v0.1.0 (/root/mugen/testcases/cli-test/rust/oe_test_cargo_02/hello_world)
+    Finished test [unoptimized + debuginfo] target(s) in 0.16s
+     Running unittests src/main.rs (target/debug/deps/hello_world-63ae2274dd0db996)
+running 0 tests
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
++ CHECK_RESULT 0 0 0 'Failed to execute tests'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute tests'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo bench
++ grep -E 'running|test result'
+   Compiling hello_world v0.1.0 (/root/mugen/testcases/cli-test/rust/oe_test_cargo_02/hello_world)
+    Finished bench [optimized] target(s) in 0.16s
+     Running unittests src/main.rs (target/release/deps/hello_world-5455a2b3b0ff74fd)
+running 0 tests
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
++ CHECK_RESULT 0 0 0 'Failed to execute the benchmark'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute the benchmark'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo check
+    Checking hello_world v0.1.0 (/root/mugen/testcases/cli-test/rust/oe_test_cargo_02/hello_world)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.05s
++ CHECK_RESULT 0 0 0 'Failure check kit'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failure check kit'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo doc
+ Documenting hello_world v0.1.0 (/root/mugen/testcases/cli-test/rust/oe_test_cargo_02/hello_world)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.38s
++ test -d target/doc
++ CHECK_RESULT 0 0 0 'Failed to build the package document'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to build the package document'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo clean
++ test -d target
++ CHECK_RESULT 1 1 0 'Failed to delete a file'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Failed to delete a file'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ mkdir INI
++ cd INI
++ cargo init
+     Created binary (application) package
++ test -d src
++ CHECK_RESULT 0 0 0 'Failed to create a new package'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to create a new package'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cargo update
++ test -f Cargo.lock
++ CHECK_RESULT 0 0 0 'Failed to update file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to update file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ curl -s -w '%{http_code}' https://github.com/rust-lang/crates.io-index -o /dev/null
++ https_code=000
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ '[' 000 == 200 ']'
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 15:19:47 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 15:19:47 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:19:47 2023 - INFO  - start environment cleanup.
++ rm -rf ../../hello_world
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpk58ota0z ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpk58ota0z
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:19:47 2023 - INFO  - Finish environment cleanup!

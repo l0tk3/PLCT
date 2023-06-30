@@ -1,0 +1,310 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 15:43:05 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc'
++ pkgs='meson tar gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmppzi3j_84
++ '[' -z '' ']'
++ tmpfile=/tmp/tmppzi3j_84
++ tar -xvf common/0.54/test_1.tgz
+test_1/
+test_1/.git/
+test_1/.git/hooks/
+test_1/.git/hooks/post-update.sample
+test_1/.git/hooks/applypatch-msg.sample
+test_1/.git/hooks/commit-msg.sample
+test_1/.git/hooks/pre-push.sample
+test_1/.git/hooks/pre-rebase.sample
+test_1/.git/hooks/pre-merge-commit.sample
+test_1/.git/hooks/prepare-commit-msg.sample
+test_1/.git/hooks/fsmonitor-watchman.sample
+test_1/.git/hooks/update.sample
+test_1/.git/hooks/pre-applypatch.sample
+test_1/.git/hooks/pre-receive.sample
+test_1/.git/hooks/pre-commit.sample
+test_1/.git/branches/
+test_1/.git/refs/
+test_1/.git/refs/heads/
+test_1/.git/refs/tags/
+test_1/.git/HEAD
+test_1/.git/config
+test_1/.git/info/
+test_1/.git/info/exclude
+test_1/.git/description
+test_1/.git/objects/
+test_1/.git/objects/pack/
+test_1/.git/objects/info/
+test_1/test_1.c
+test_1/builddir/
+test_1/builddir/test_1
+test_1/builddir/test_1@exe/
+test_1/builddir/test_1@exe/test_1.c.o
+test_1/builddir/.ninja_deps
+test_1/builddir/devenv/
+test_1/builddir/compile_commands.json
+test_1/builddir/build.ninja
+test_1/builddir/meson-info/
+test_1/builddir/meson-info/intro-targets.json
+test_1/builddir/meson-info/intro-installed.json
+test_1/builddir/meson-info/intro-benchmarks.json
+test_1/builddir/meson-info/intro-tests.json
+test_1/builddir/meson-info/intro-buildsystem_files.json
+test_1/builddir/meson-info/intro-buildoptions.json
+test_1/builddir/meson-info/intro-dependencies.json
+test_1/builddir/meson-info/intro-projectinfo.json
+test_1/builddir/meson-info/meson-info.json
+test_1/builddir/.ninja_log
+test_1/builddir/meson-logs/
+test_1/builddir/meson-logs/testlog-valgrind.json
+test_1/builddir/meson-logs/testlog.txt
+test_1/builddir/meson-logs/testlog.json
+test_1/builddir/meson-logs/testlog-worksforall.json
+test_1/builddir/meson-logs/testlog-worksforall.txt
+test_1/builddir/meson-logs/meson-log.txt
+test_1/builddir/meson-logs/testlog-valgrind.txt
+test_1/builddir/meson.build
+test_1/builddir/meson-private/
+test_1/builddir/meson-private/build.dat
+test_1/builddir/meson-private/meson_test_setup.dat
+test_1/builddir/meson-private/coredata.dat.prev
+test_1/builddir/meson-private/install.dat
+test_1/builddir/meson-private/dist-install/
+test_1/builddir/meson-private/dist-build/
+test_1/builddir/meson-private/sanitycheckc.exe
+test_1/builddir/meson-private/coredata.dat
+test_1/builddir/meson-private/cmd_line.txt
+test_1/builddir/meson-private/dist-unpack/
+test_1/builddir/meson-private/dist-unpack/test_1-0.1/
+test_1/builddir/meson-private/meson_benchmark_setup.dat
+test_1/builddir/meson-private/sanitycheckc.c
+test_1/builddir/meson-private/meson.lock
+test_1/builddir/meson-dist/
+test_1/builddir/meson-dist/test_1-0.1.tar.xz
+test_1/meson.build
++ cd test_1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 15:44:32 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 15:44:33 2023 - INFO  - Start testing...
++ meson configure --help
++ grep 'usage: meson'
+usage: meson configure [-h] [--prefix PREFIX] [--bindir BINDIR]
++ CHECK_RESULT 0 0 0 'meson-configure--help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure--help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure -h
++ grep 'usage: meson'
+usage: meson configure [-h] [--prefix PREFIX] [--bindir BINDIR]
++ CHECK_RESULT 0 0 0 'meson-configure -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --prefix /usr/local
++ grep prefix
+  cmake_prefix_path              []                               []                               List of additional prefixes for cmake to search              
+  build.cmake_prefix_path        []                               []                               List of additional prefixes for cmake to search              
+  python.install_env             prefix                           [auto, prefix, system, venv]     Which python environment to install to                       
+  prefix                         /usr/local                                                        Installation prefix                                          
++ CHECK_RESULT 0 0 0 'meson-configure -prefix failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure -prefix failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --bindir bin
++ grep bindir
+  bindir                         bin                                                               Executable directory                                         
+  sbindir                        sbin                                                              System executable directory                                  
++ CHECK_RESULT 0 0 0 'meson-configure --bindir BINDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --bindir BINDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --datadir share
++ grep datadir
+  datadir                        share                                                             Data file directory                                          
++ CHECK_RESULT 0 0 0 'meson-configure --datadir DATADIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --datadir DATADIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --includedir include
++ grep includedir
+  includedir                     include                                                           Header file directory                                        
++ CHECK_RESULT 0 0 0 'meson-configure --includedir INCLUDEDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --includedir INCLUDEDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --infodir share/info
++ grep infodir
+  infodir                        share/info                                                        Info page directory                                          
++ CHECK_RESULT 0 0 0 'meson-configure --infodir INFODIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --infodir INFODIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --libdir lib64
++ grep libdir
+  python.platlibdir                                                                                Directory for site-specific, platform-specific files.        
+  python.purelibdir                                                                                Directory for site-specific, non-platform-specific files.    
+  libdir                         lib64                                                             Library directory                                            
++ CHECK_RESULT 0 0 0 'meson-configure --libdir LIBDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --libdir LIBDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --libexecdir libexec
++ grep libexecdir
+  libexecdir                     libexec                                                           Library executable directory                                 
++ CHECK_RESULT 0 0 0 'meson-configure --libexecdir LIBEXECDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --libexecdir LIBEXECDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --localedir share/locale
++ grep localedir
+  localedir                      share/locale                                                      Locale data directory                                        
++ CHECK_RESULT 0 0 0 'meson-configure --localedir LOCALDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --localedir LOCALDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --localstatedir var
++ grep localstatedir
+  localstatedir                  /var/local                                                        Localstate data directory                                    
++ CHECK_RESULT 0 0 0 'meson-configure --localstatedir LOCALSTATDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --localstatedir LOCALSTATDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --mandir share/man
++ grep mandir
+  mandir                         share/man                                                         Manual page directory                                        
++ CHECK_RESULT 0 0 0 'meson-configure --mandir MANDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --mandir MANDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 15:45:37 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:45:37 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:45:38 2023 - INFO  - Start to restore the test environment.
++ rm -rf ../test_1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmppzi3j_84 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmppzi3j_84
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 15:45:46 2023 - INFO  - End to restore the test environment.

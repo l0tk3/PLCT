@@ -1,0 +1,218 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 22 17:47:08 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL cargo
++ pkgs=cargo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs cargo --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:03:40 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: cargo
+Error: Unable to find a match: cargo'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:03:40 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: cargo
+Error: Unable to find a match: cargo'
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 22 17:47:31 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Thu Jun 22 17:47:31 2023 - INFO  - Start executing testcase!
++ cargo -h
++ grep USAGE
+oe_test_cargo_01.sh: line 30: cargo: command not found
++ CHECK_RESULT 1 0 0 'Help information printing failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Help information printing failed'
++ LOG_ERROR 'Help information printing failed'
++ message='Help information printing failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Help information printing failed'
+Thu Jun 22 17:47:32 2023 - ERROR - Help information printing failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_01.sh line 31'
++ message='oe_test_cargo_01.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_01.sh line 31'
+Thu Jun 22 17:47:32 2023 - ERROR - oe_test_cargo_01.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo -V
+oe_test_cargo_01.sh: line 32: cargo: command not found
++ grep -E '[0-9]'
++ CHECK_RESULT 1 0 0 'Failed to output the version information'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the version information'
++ LOG_ERROR 'Failed to output the version information'
++ message='Failed to output the version information'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the version information'
+Thu Jun 22 17:47:33 2023 - ERROR - Failed to output the version information
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_01.sh line 33'
++ message='oe_test_cargo_01.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_01.sh line 33'
+Thu Jun 22 17:47:33 2023 - ERROR - oe_test_cargo_01.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo --list
++ grep 'Installed Commands'
+oe_test_cargo_01.sh: line 34: cargo: command not found
++ CHECK_RESULT 1 0 0 'Failed to list commands'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to list commands'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to list commands'
++ LOG_ERROR 'Failed to list commands'
++ message='Failed to list commands'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to list commands'
+Thu Jun 22 17:47:34 2023 - ERROR - Failed to list commands
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_01.sh line 35'
++ message='oe_test_cargo_01.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_01.sh line 35'
+Thu Jun 22 17:47:34 2023 - ERROR - oe_test_cargo_01.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo --explain E0004
++ grep 'Erroneous code example'
+oe_test_cargo_01.sh: line 36: cargo: command not found
++ CHECK_RESULT 1 0 0 'Failed to interpret code command'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to interpret code command'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to interpret code command'
++ LOG_ERROR 'Failed to interpret code command'
++ message='Failed to interpret code command'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to interpret code command'
+Thu Jun 22 17:47:35 2023 - ERROR - Failed to interpret code command
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_01.sh line 37'
++ message='oe_test_cargo_01.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_01.sh line 37'
+Thu Jun 22 17:47:35 2023 - ERROR - oe_test_cargo_01.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo -vV
+oe_test_cargo_01.sh: line 38: cargo: command not found
++ grep -E 'release|[0-9]'
++ CHECK_RESULT 1 0 0 'Failed to list details'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to list details'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to list details'
++ LOG_ERROR 'Failed to list details'
++ message='Failed to list details'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to list details'
+Thu Jun 22 17:47:36 2023 - ERROR - Failed to list details
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_01.sh line 39'
++ message='oe_test_cargo_01.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_01.sh line 39'
+Thu Jun 22 17:47:36 2023 - ERROR - oe_test_cargo_01.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo new hello -q
+oe_test_cargo_01.sh: line 40: cargo: command not found
++ CHECK_RESULT 127 0 0 'Silent output failure'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Silent output failure'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Silent output failure'
++ LOG_ERROR 'Silent output failure'
++ message='Silent output failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Silent output failure'
+Thu Jun 22 17:47:37 2023 - ERROR - Silent output failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_01.sh line 41'
++ message='oe_test_cargo_01.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_01.sh line 41'
+Thu Jun 22 17:47:38 2023 - ERROR - oe_test_cargo_01.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ cd hello
+oe_test_cargo_01.sh: line 42: cd: hello: No such file or directory
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 17:47:38 2023 - INFO  - start environment cleanup.
++ rm -rf '../hello*'
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:03:40 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: cargo
+Error: Unable to find a match: cargo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:03:40 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: cargo
+Error: Unable to find a match: cargo'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:03:40 ago on Thu 22 Jun 2023 05:43:49 PM CST.\nNo match for argument: cargo\nError: Unable to find a match: cargo'
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 17:47:41 2023 - INFO  - Finish environment cleanup!

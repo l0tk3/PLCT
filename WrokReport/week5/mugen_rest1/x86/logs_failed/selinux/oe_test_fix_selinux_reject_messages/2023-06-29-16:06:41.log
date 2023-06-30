@@ -1,0 +1,134 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 16:06:41 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'httpd setroubleshoot-server'
++ pkgs='httpd setroubleshoot-server'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'httpd setroubleshoot-server' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp371h1b1v
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp371h1b1v
+++ getenforce
++ default_selinux_status=Disabled
++ '[' Disabled == Enforcing ']'
++ setenforce 1
+setenforce: SELinux is disabled
++ cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf-bak
++ sed -i 's/Listen 80/Listen 3131/g' /etc/httpd/conf/httpd.conf
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 16:07:15 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 16:07:15 2023 - INFO  - Start executing testcase.
++ systemctl restart httpd
++ sealert -a /var/log/audit/audit.log
++ grep '[a-z]'
++ grep 'SELinux is preventing httpd from name_bind access on the tcp_socket port 3131' /tmp/prevent_info.txt
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_fix_selinux_reject_messages.sh line 37'
++ message='oe_test_fix_selinux_reject_messages.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_fix_selinux_reject_messages.sh line 37'
+Thu Jun 29 16:07:15 2023 - ERROR - oe_test_fix_selinux_reject_messages.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
+++ grep 'ausearch -c' /tmp/prevent_info.txt
++ suggest_infoc=
+++ grep 'semodule -X' /tmp/prevent_info.txt
++ suggest_infox=
++ '[' -z '' ']'
++ RULE_FLAG=1
++ auditctl -w /usr/bin/systemctl -p r -k httpd-start
++ rm -f /var/lib/setroubleshoot/setroubleshoot.xml
++ systemctl restart httpd
++ sealert -a /var/log/audit/audit.log
++ grep '[a-z]'
+++ grep 'ausearch -c' /tmp/prevent_info.txt
++ suggest_infoc=
+++ grep 'semodule -X' /tmp/prevent_info.txt
++ suggest_infox=
++ test -n '{suggest_infoc}'
++ test -n '{suggest_infox}'
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 29 16:07:16 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 16:07:16 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 16:07:16 2023 - INFO  - start environment cleanup.
++ mv -f /etc/httpd/conf/httpd.conf-bak /etc/httpd/conf/httpd.conf
++ systemctl stop httpd
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp371h1b1v ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp371h1b1v
++ '[' 0 -ne 0 ']'
++ '[' Disabled == Enforcing ']'
++ setenforce 0
+setenforce: SELinux is disabled
++ rm -rf /tmp/prevent_info.txt
++ '[' 1 -eq 1 ']'
++ auditctl -w /usr/bin/systemctl -p r -k httpd-start
+Error sending add rule data request (Rule exists)
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 16:07:19 2023 - INFO  - Finish environment cleanup!

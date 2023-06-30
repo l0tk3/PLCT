@@ -1,0 +1,337 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:35:12 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc git'
++ pkgs='meson tar gcc git'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc git' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp5wefu6hx
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp5wefu6hx
++ cd common/0.54
++ tar -xvf soname.tgz
+1 soname/
+1 soname/.git/
+1 soname/.git/COMMIT_EDITMSG
+1 soname/.git/hooks/
+1 soname/.git/hooks/post-update.sample
+1 soname/.git/hooks/applypatch-msg.sample
+1 soname/.git/hooks/commit-msg.sample
+1 soname/.git/hooks/pre-push.sample
+1 soname/.git/hooks/pre-rebase.sample
+1 soname/.git/hooks/pre-merge-commit.sample
+1 soname/.git/hooks/prepare-commit-msg.sample
+1 soname/.git/hooks/fsmonitor-watchman.sample
+1 soname/.git/hooks/update.sample
+1 soname/.git/hooks/pre-applypatch.sample
+1 soname/.git/hooks/pre-receive.sample
+1 soname/.git/hooks/pre-commit.sample
+1 soname/.git/branches/
+1 soname/.git/refs/
+1 soname/.git/refs/heads/
+1 soname/.git/refs/heads/master
+1 soname/.git/refs/tags/
+1 soname/.git/logs/
+1 soname/.git/logs/refs/
+1 soname/.git/logs/refs/heads/
+1 soname/.git/logs/refs/heads/master
+1 soname/.git/logs/HEAD
+1 soname/.git/HEAD
+1 soname/.git/config
+1 soname/.git/info/
+1 soname/.git/info/exclude
+1 soname/.git/description
+1 soname/.git/objects/
+1 soname/.git/objects/pack/
+1 soname/.git/objects/05/
+1 soname/.git/objects/05/a46f841f9305e99c27b974b7fe80d527d5b12a
+1 soname/.git/objects/06/
+1 soname/.git/objects/06/37a088a01e8ddab3bf3fa98dbe804cbde1a0dc
+1 soname/.git/objects/c4/
+1 soname/.git/objects/c4/f2e3eb93d8c11bcf90714c99b3fe7970d8d26f
+1 soname/.git/objects/a5/
+1 soname/.git/objects/a5/993ceca9380264e2c9f7343ba98968254b2ff7
+1 soname/.git/objects/9f/
+1 soname/.git/objects/9f/8c45aba1462f8a6d18fb4e6bb751f42b4e7ab6
+1 soname/.git/objects/00/
+1 soname/.git/objects/00/45861f6ea6af0b8f48c85fe8d37a3258dcbf3a
+1 soname/.git/objects/42/
+1 soname/.git/objects/42/935531e417ef43f1ef0f32821414528abfa808
+1 soname/.git/objects/a2/
+1 soname/.git/objects/a2/7020ebda7c75c70af41b7c8844e3a516a3df69
+1 soname/.git/objects/89/
+1 soname/.git/objects/89/3a56e862c18af030256fea94ff8b84abc07d72
+1 soname/.git/objects/6e/
+1 soname/.git/objects/6e/10fbcb0228d8b406910f357d33527dee68d2ed
+1 soname/.git/objects/6e/871cd80bbdbfe753f7adbe92ca5dc1ff126924
+1 soname/.git/objects/b2/
+1 soname/.git/objects/b2/8b47fba668b203b143a0da5d56d2259174fd8b
+1 soname/.git/objects/82/
+1 soname/.git/objects/82/8eb2f890da21ed8b2b5fd3b1644275bd54805d
+1 soname/.git/objects/9c/
+1 soname/.git/objects/9c/ebfc3c50b5c9f073b90f711153bae2834e9769
+1 soname/.git/objects/36/
+1 soname/.git/objects/36/de21dd45287904b203c46d5d0b5072d1a1fe23
+1 soname/.git/objects/50/
+1 soname/.git/objects/50/91ebf5ab69c23a0eb596e96dc0a2ec2f9ed4ea
+1 soname/.git/objects/a8/
+1 soname/.git/objects/a8/b4079064f64561a19cf2d77bd2f858a7681ea8
+1 soname/.git/objects/bd/
+1 soname/.git/objects/bd/4308d3119c71fb644562b656cedd3b2244f44e
+1 soname/.git/objects/info/
+1 soname/.git/objects/b3/
+1 soname/.git/objects/b3/217803478f65a56d87db70010655908d06da89
+1 soname/.git/objects/44/
+1 soname/.git/objects/44/b003a6d7ebdf9911d033d819e111e868421710
+1 soname/.git/objects/b5/
+1 soname/.git/objects/b5/c392ce6185aaeff99e8b56a8b055c353575d56
+1 soname/.git/objects/d0/
+1 soname/.git/objects/d0/8cf3001e7c51216e0f06b71d564bfd09bec917
+1 soname/.git/objects/48/
+1 soname/.git/objects/48/2c0e338367d0aeb4ddc43602ac727276f77052
+1 soname/.git/objects/d4/
+1 soname/.git/objects/d4/62c804b2e94347d50c7f979d102992f43fa31a
+1 soname/.git/objects/4e/
+1 soname/.git/objects/4e/9223d43b0dd27f02bbbdea9300eaef084e19f2
+1 soname/.git/objects/ff/
+1 soname/.git/objects/ff/4de6088dd6617340397efd6b7af6681726cad8
+1 soname/.git/objects/f3/
+1 soname/.git/objects/f3/a734330d4cb3b602459f6759c28e592e13863d
+1 soname/.git/objects/f2/
+1 soname/.git/objects/f2/04adb11dc996e75e5541d8a31bae334e9f60a4
+1 soname/.git/objects/e6/
+1 soname/.git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+1 soname/.git/objects/f5/
+1 soname/.git/objects/f5/ccbb93615ddad3de1580104cc7bcad1b4021d6
+1 soname/.git/objects/55/
+1 soname/.git/objects/55/b5b98fab99caa6b5d7e116286273a1dc52b1d2
+1 soname/.git/objects/8b/
+1 soname/.git/objects/8b/3cb20a280bc9ed47e6098cac0ecb1567a580d1
+1 soname/.git/objects/1f/
+1 soname/.git/objects/1f/e7a07e1aaeb74dd51bdfe7d1c8a4fdcf6afc3a
+1 soname/.git/objects/f4/
+1 soname/.git/objects/f4/8d2b0b8870a8ce578ac8f3ad22880f219a02e6
+1 soname/.git/objects/69/
+1 soname/.git/objects/69/182592ac61a844abbe2ff82521fa1969f10cd5
+1 soname/.git/objects/8e/
+1 soname/.git/objects/8e/8541dfab0da67e6af5f26aa4a0c61a98b886e9
+1 soname/.git/index
+1 soname/builddir/
+1 soname/builddir/libbothset.so
+1 soname/builddir/libverset.so
+1 soname/builddir/libbothset.so.1.2.3
+1 soname/builddir/libsoverset.so
+1 soname/builddir/compile_commands.json
+1 soname/builddir/libverset.so.4
+1 soname/builddir/build.ninja
+1 soname/builddir/meson-info/
+1 soname/builddir/meson-info/intro-targets.json
+1 soname/builddir/meson-info/intro-installed.json
+1 soname/builddir/meson-info/intro-benchmarks.json
+1 soname/builddir/meson-info/intro-tests.json
+1 soname/builddir/meson-info/intro-buildsystem_files.json
+1 soname/builddir/meson-info/intro-buildoptions.json
+1 soname/builddir/meson-info/intro-dependencies.json
+1 soname/builddir/meson-info/intro-projectinfo.json
+1 soname/builddir/meson-info/meson-info.json
+1 soname/builddir/libsettosame.so
+1 soname/builddir/meson-logs/
+1 soname/builddir/meson-logs/meson-log.txt
+1 soname/builddir/meson-private/
+1 soname/builddir/meson-private/build.dat
+1 soname/builddir/meson-private/meson_test_setup.dat
+1 soname/builddir/meson-private/install.dat
+1 soname/builddir/meson-private/sanitycheckc.exe
+1 soname/builddir/meson-private/coredata.dat
+1 soname/builddir/meson-private/cmd_line.txt
+1 soname/builddir/meson-private/meson_benchmark_setup.dat
+1 soname/builddir/meson-private/sanitycheckc.c
+1 soname/builddir/meson-private/meson.lock
+1 soname/builddir/meson-dist/
+1 soname/builddir/meson-dist/vertest-undefined.tar.xz.sha256sum
+1 soname/builddir/meson-dist/vertest-undefined.tar.xz
+1 soname/versioned.c
+1 soname/meson.build
+1 soname/main.c
+1 soname/CMakeLists.txt
++ cd '1 soname'
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:35:44 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 29 14:35:44 2023 - INFO  - Start testing...
++ meson setup --reconfigure builddir
+Regenerating configuration from scratch: Build directory has been generated with Meson version 0.54.3, which is incompatible with the current version 0.63.2.
+The Meson build system
+Version: 0.63.2
+Source dir: /root/mugen/testcases/cli-test/meson/common/0.54/1 soname
+Build dir: /root/mugen/testcases/cli-test/meson/common/0.54/1 soname/builddir
+Build type: native build
+Project name: vertest
+Project version: undefined
+C compiler for the host machine: cc (gcc 10.3.1 "cc (GCC) 10.3.1")
+C linker for the host machine: cc ld.bfd 2.37
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+DEPRECATION: target main1 links against shared module linked_module1, which is incorrect.
+             This will be an error in the future, so please use shared_library() for linked_module1 instead.
+             If shared_module() was used for linked_module1 because it has references to undefined symbols,
+             use shared_libary() with `override_options: ['b_lundef=false']` instead.
+DEPRECATION: target main2 links against shared module linked_module2, which is incorrect.
+             This will be an error in the future, so please use shared_library() for linked_module2 instead.
+             If shared_module() was used for linked_module2 because it has references to undefined symbols,
+             use shared_libary() with `override_options: ['b_lundef=false']` instead.
+Build targets in project: 10
+
+Found ninja-1.11.1 at /usr/bin/ninja
++ meson dist --help
++ grep 'usage: meson'
+usage: meson dist [-h] [-C WD] [--allow-dirty] [--formats FORMATS]
++ CHECK_RESULT 0 0 0 'meson-dist --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-dist --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson dist -h
++ grep 'usage: meson'
+usage: meson dist [-h] [-C WD] [--allow-dirty] [--formats FORMATS]
++ CHECK_RESULT 0 0 0 'meson-dist -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-dist -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson dist -C builddir
++ grep 'Build targets in project'
++ CHECK_RESULT 1 0 0 'meson-dist --C failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='meson-dist --C failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'meson-dist --C failed'
++ LOG_ERROR 'meson-dist --C failed'
++ message='meson-dist --C failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'meson-dist --C failed'
+Thu Jun 29 14:35:45 2023 - ERROR - meson-dist --C failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_meson_0.54_meson_06.sh line 38'
++ message='oe_test_meson_0.54_meson_06.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_meson_0.54_meson_06.sh line 38'
+Thu Jun 29 14:35:45 2023 - ERROR - oe_test_meson_0.54_meson_06.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ meson dist -C builddir --formats xztar
++ grep 'Build targets in project'
++ CHECK_RESULT 1 0 0 'meson-dist --formats FORMATS failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='meson-dist --formats FORMATS failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'meson-dist --formats FORMATS failed'
++ LOG_ERROR 'meson-dist --formats FORMATS failed'
++ message='meson-dist --formats FORMATS failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'meson-dist --formats FORMATS failed'
+Thu Jun 29 14:35:45 2023 - ERROR - meson-dist --formats FORMATS failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_meson_0.54_meson_06.sh line 40'
++ message='oe_test_meson_0.54_meson_06.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_meson_0.54_meson_06.sh line 40'
+Thu Jun 29 14:35:45 2023 - ERROR - oe_test_meson_0.54_meson_06.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ meson dist -C builddir --include-subprojects
++ grep 'Testing distribution package'
++ CHECK_RESULT 1 0 0 'meson-dist --include-subprojects failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='meson-dist --include-subprojects failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'meson-dist --include-subprojects failed'
++ LOG_ERROR 'meson-dist --include-subprojects failed'
++ message='meson-dist --include-subprojects failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'meson-dist --include-subprojects failed'
+Thu Jun 29 14:35:46 2023 - ERROR - meson-dist --include-subprojects failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_meson_0.54_meson_06.sh line 42'
++ message='oe_test_meson_0.54_meson_06.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_meson_0.54_meson_06.sh line 42'
+Thu Jun 29 14:35:46 2023 - ERROR - oe_test_meson_0.54_meson_06.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:35:46 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:35:46 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:35:46 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp5wefu6hx ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp5wefu6hx
++ '[' 0 -ne 0 ']'
++ rm -rf '../1 soname'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:35:47 2023 - INFO  - End to restore the test environment.

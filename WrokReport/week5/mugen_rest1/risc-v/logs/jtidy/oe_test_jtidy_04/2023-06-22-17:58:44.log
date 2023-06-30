@@ -1,0 +1,132 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 17:58:46 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'tar jtidy'
++ pkgs='tar jtidy'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'tar jtidy' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpu4wf7gu4
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpu4wf7gu4
++ tar -zxvf common/test.tar.gz
+test/
+test/config
+test/demo.html
+test/demo.xhtml
+test/demo.xml
+test/demo_error.html
+test/demo_m.html
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 17:59:50 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 17:59:51 2023 - INFO  - Start to run test.
++ jtidy -win1252 test/demo.html
++ grep '&mdash;'
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -win1252 '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -win1252 '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -big5 test/demo.html
++ grep '&mdash;'
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -big5 '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -big5 '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -shiftjis test/demo.html
++ grep '&mdash;'
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -shiftjis '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -shiftjis '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -language en test/demo.html
++ grep 'lang=\"en\"'
+grep: warning: stray \ before "
+grep: warning: stray \ before "
+<html lang="en">
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -language '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -language '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 18:00:01 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:00:02 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 18:00:02 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpu4wf7gu4 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpu4wf7gu4
++ '[' 0 -ne 0 ']'
++ rm -rf test/
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 18:00:15 2023 - INFO  - Finish environment cleanup!

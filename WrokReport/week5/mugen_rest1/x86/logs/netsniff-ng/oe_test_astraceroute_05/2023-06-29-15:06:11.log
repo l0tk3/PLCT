@@ -1,0 +1,2315 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 15:06:11 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp8_6v3xbd
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp8_6v3xbd
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 15:06:47 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:06:47 2023 - INFO  - Start to run test.
++ local index=1
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ astraceroute -i -H netsniff-ng.org -L
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 2 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 3 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 4 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 5 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 6 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 7 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 8 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 9 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 10 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 11 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 12 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 13 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 14 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 15 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 16 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 17 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 18 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 19 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 20 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 21 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 22 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 23 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 24 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 25 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 26 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 27 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 28 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 29 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 30 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 31 -gt 30 ]]
++ LOG_ERROR 'astraceroute test -L timeout'
++ message='astraceroute test -L timeout'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'astraceroute test -L timeout'
+Thu Jun 29 15:09:18 2023 - ERROR - astraceroute test -L timeout
++ break
++ grep -E 'Using flags SYN:0,ACK:0,ECN:0,FIN:0,PSH:0,RST:0,URG:0' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -L failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -L failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -L failed'
++ LOG_ERROR 'Check astraceroute -L failed'
++ message='Check astraceroute -L failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -L failed'
+Thu Jun 29 15:09:18 2023 - ERROR - Check astraceroute -L failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_05.sh line 43'
++ message='oe_test_astraceroute_05.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_05.sh line 43'
+Thu Jun 29 15:09:18 2023 - ERROR - oe_test_astraceroute_05.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ local index=1
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ astraceroute -i -H netsniff-ng.org --latitude
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 2 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 3 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 4 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 5 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 6 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 7 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 8 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 9 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 10 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 11 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 12 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 13 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 14 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 15 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 16 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 17 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 18 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 19 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 20 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 21 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 22 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 23 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 24 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 25 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 26 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 27 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 28 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 29 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 30 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 31 -gt 30 ]]
++ LOG_ERROR 'astraceroute test --latitude timeout'
++ message='astraceroute test --latitude timeout'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'astraceroute test --latitude timeout'
+Thu Jun 29 15:11:51 2023 - ERROR - astraceroute test --latitude timeout
++ break
++ grep -E 'Using flags SYN:0,ACK:0,ECN:0,FIN:0,PSH:0,RST:0,URG:0' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --latitude failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --latitude failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --latitude failed'
++ LOG_ERROR 'Check astraceroute --latitude failed'
++ message='Check astraceroute --latitude failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --latitude failed'
+Thu Jun 29 15:11:51 2023 - ERROR - Check astraceroute --latitude failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_05.sh line 63'
++ message='oe_test_astraceroute_05.sh line 63'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_05.sh line 63'
+Thu Jun 29 15:11:51 2023 - ERROR - oe_test_astraceroute_05.sh line 63
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ astraceroute --dev -H netsniff-ng.org -t 4
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'AS path IPv4 TCP trace from' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -t failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -t failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -t failed'
++ LOG_ERROR 'Check astraceroute -t failed'
++ message='Check astraceroute -t failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -t failed'
+Thu Jun 29 15:11:56 2023 - ERROR - Check astraceroute -t failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_05.sh line 70'
++ message='oe_test_astraceroute_05.sh line 70'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_05.sh line 70'
+Thu Jun 29 15:11:56 2023 - ERROR - oe_test_astraceroute_05.sh line 70
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute --dev'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ astraceroute --dev -H netsniff-ng.org --tos 4
++ grep 'AS path IPv4 TCP trace from' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --tos failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --tos failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --tos failed'
++ LOG_ERROR 'Check astraceroute --tos failed'
++ message='Check astraceroute --tos failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --tos failed'
+Thu Jun 29 15:12:01 2023 - ERROR - Check astraceroute --tos failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_05.sh line 77'
++ message='oe_test_astraceroute_05.sh line 77'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_05.sh line 77'
+Thu Jun 29 15:12:01 2023 - ERROR - oe_test_astraceroute_05.sh line 77
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute --dev'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ local index=1
++ astraceroute -i -H netsniff-ng.org -G
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 2 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 3 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 4 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 5 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 6 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 7 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 8 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 9 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 10 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 11 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 12 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 13 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 14 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 15 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 16 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 17 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 18 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 19 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 20 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 21 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 22 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 23 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 24 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 25 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 26 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 27 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 28 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 29 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 30 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 31 -gt 30 ]]
++ LOG_ERROR 'astraceroute test -G timeout'
++ message='astraceroute test -G timeout'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'astraceroute test -G timeout'
+Thu Jun 29 15:14:33 2023 - ERROR - astraceroute test -G timeout
++ break
++ grep 'Using flags SYN:0,ACK:0,ECN:0,FIN:0,PSH:0,RST:0,URG:0' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -G failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -G failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -G failed'
++ LOG_ERROR 'Check astraceroute -G failed'
++ message='Check astraceroute -G failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -G failed'
+Thu Jun 29 15:14:33 2023 - ERROR - Check astraceroute -G failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_05.sh line 97'
++ message='oe_test_astraceroute_05.sh line 97'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_05.sh line 97'
+Thu Jun 29 15:14:33 2023 - ERROR - oe_test_astraceroute_05.sh line 97
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ local index=1
++ astraceroute -i -H netsniff-ng.org --nofrag
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 2 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 3 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 4 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 5 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 6 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 7 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 8 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 9 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 10 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 11 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 12 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 13 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 14 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 15 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 16 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 17 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 18 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 19 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 20 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 21 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 22 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 23 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 24 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 25 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 26 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 27 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 28 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 29 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 30 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '1: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 31 -gt 30 ]]
++ LOG_ERROR 'astraceroute test --nofrag timeout'
++ message='astraceroute test --nofrag timeout'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'astraceroute test --nofrag timeout'
+Thu Jun 29 15:17:04 2023 - ERROR - astraceroute test --nofrag timeout
++ break
++ grep 'Using flags SYN:0,ACK:0,ECN:0,FIN:0,PSH:0,RST:0,URG:0' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --nofrag failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --nofrag failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --nofrag failed'
++ LOG_ERROR 'Check astraceroute --nofrag failed'
++ message='Check astraceroute --nofrag failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --nofrag failed'
+Thu Jun 29 15:17:04 2023 - ERROR - Check astraceroute --nofrag failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_05.sh line 117'
++ message='oe_test_astraceroute_05.sh line 117'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_05.sh line 117'
+Thu Jun 29 15:17:04 2023 - ERROR - oe_test_astraceroute_05.sh line 117
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ local index=1
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ astraceroute -i -H netsniff-ng.org -Z
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 2 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 3 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 4 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 5 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 6 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 7 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 8 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 9 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 10 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 11 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 12 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 13 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 14 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 15 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 16 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 17 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 18 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 19 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 20 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 21 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 22 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 23 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 24 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 25 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 26 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 27 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 28 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 29 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 30 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 31 -gt 30 ]]
++ LOG_ERROR 'astraceroute test -Z timeout'
++ message='astraceroute test -Z timeout'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'astraceroute test -Z timeout'
+Thu Jun 29 15:19:36 2023 - ERROR - astraceroute test -Z timeout
++ break
++ grep 'Chr ..' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -Z failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -Z failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -Z failed'
++ LOG_ERROR 'Check astraceroute -Z failed'
++ message='Check astraceroute -Z failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -Z failed'
+Thu Jun 29 15:19:36 2023 - ERROR - Check astraceroute -Z failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_05.sh line 137'
++ message='oe_test_astraceroute_05.sh line 137'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_05.sh line 137'
+Thu Jun 29 15:19:36 2023 - ERROR - oe_test_astraceroute_05.sh line 137
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ local index=1
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ astraceroute -i -H netsniff-ng.org --show-packet
+grep: tmp.txt: No such file or directory
++ result=2
++ [[ 2 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 2 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 3 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 4 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 5 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 6 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 7 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 8 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 9 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 10 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 11 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 12 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 13 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 14 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 15 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 16 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 17 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 18 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 19 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 20 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 21 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 22 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 23 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 24 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 25 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 26 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 27 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 28 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 29 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 30 -gt 30 ]]
++ true
++ (( index++ ))
++ grep '6: ' tmp.txt
++ result=1
++ [[ 1 == 0 ]]
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ [[ 31 -gt 30 ]]
++ LOG_ERROR 'astraceroute test --show-packet timeout'
++ message='astraceroute test --show-packet timeout'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'astraceroute test --show-packet timeout'
+Thu Jun 29 15:22:07 2023 - ERROR - astraceroute test --show-packet timeout
++ break
++ grep 'Chr ..' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --show-packet failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --show-packet failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --show-packet failed'
++ LOG_ERROR 'Check astraceroute --show-packet failed'
++ message='Check astraceroute --show-packet failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --show-packet failed'
+Thu Jun 29 15:22:07 2023 - ERROR - Check astraceroute --show-packet failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_05.sh line 157'
++ message='oe_test_astraceroute_05.sh line 157'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_05.sh line 157'
+Thu Jun 29 15:22:07 2023 - ERROR - oe_test_astraceroute_05.sh line 157
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 15:22:07 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:22:07 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 15:22:08 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp8_6v3xbd ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp8_6v3xbd
++ '[' 0 -ne 0 ']'
++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 15:22:10 2023 - INFO  - End to restore the test environment.

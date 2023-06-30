@@ -1,0 +1,295 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 15:48:16 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc'
++ pkgs='meson tar gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc' --node 1 --tempfile ''
+Thu Jun 22 15:48:24 2023 - INFO  - pkgs:(meson tar gcc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf common/0.54/test_1.tgz
+test_1/
+test_1/.git/
+test_1/.git/hooks/
+test_1/.git/hooks/post-update.sample
+test_1/.git/hooks/applypatch-msg.sample
+test_1/.git/hooks/commit-msg.sample
+test_1/.git/hooks/pre-push.sample
+test_1/.git/hooks/pre-rebase.sample
+test_1/.git/hooks/pre-merge-commit.sample
+test_1/.git/hooks/prepare-commit-msg.sample
+test_1/.git/hooks/fsmonitor-watchman.sample
+test_1/.git/hooks/update.sample
+test_1/.git/hooks/pre-applypatch.sample
+test_1/.git/hooks/pre-receive.sample
+test_1/.git/hooks/pre-commit.sample
+test_1/.git/branches/
+test_1/.git/refs/
+test_1/.git/refs/heads/
+test_1/.git/refs/tags/
+test_1/.git/HEAD
+test_1/.git/config
+test_1/.git/info/
+test_1/.git/info/exclude
+test_1/.git/description
+test_1/.git/objects/
+test_1/.git/objects/pack/
+test_1/.git/objects/info/
+test_1/test_1.c
+test_1/builddir/
+test_1/builddir/test_1
+test_1/builddir/test_1@exe/
+test_1/builddir/test_1@exe/test_1.c.o
+test_1/builddir/.ninja_deps
+test_1/builddir/devenv/
+test_1/builddir/compile_commands.json
+test_1/builddir/build.ninja
+test_1/builddir/meson-info/
+test_1/builddir/meson-info/intro-targets.json
+test_1/builddir/meson-info/intro-installed.json
+test_1/builddir/meson-info/intro-benchmarks.json
+test_1/builddir/meson-info/intro-tests.json
+test_1/builddir/meson-info/intro-buildsystem_files.json
+test_1/builddir/meson-info/intro-buildoptions.json
+test_1/builddir/meson-info/intro-dependencies.json
+test_1/builddir/meson-info/intro-projectinfo.json
+test_1/builddir/meson-info/meson-info.json
+test_1/builddir/.ninja_log
+test_1/builddir/meson-logs/
+test_1/builddir/meson-logs/testlog-valgrind.json
+test_1/builddir/meson-logs/testlog.txt
+test_1/builddir/meson-logs/testlog.json
+test_1/builddir/meson-logs/testlog-worksforall.json
+test_1/builddir/meson-logs/testlog-worksforall.txt
+test_1/builddir/meson-logs/meson-log.txt
+test_1/builddir/meson-logs/testlog-valgrind.txt
+test_1/builddir/meson.build
+test_1/builddir/meson-private/
+test_1/builddir/meson-private/build.dat
+test_1/builddir/meson-private/meson_test_setup.dat
+test_1/builddir/meson-private/coredata.dat.prev
+test_1/builddir/meson-private/install.dat
+test_1/builddir/meson-private/dist-install/
+test_1/builddir/meson-private/dist-build/
+test_1/builddir/meson-private/sanitycheckc.exe
+test_1/builddir/meson-private/coredata.dat
+test_1/builddir/meson-private/cmd_line.txt
+test_1/builddir/meson-private/dist-unpack/
+test_1/builddir/meson-private/dist-unpack/test_1-0.1/
+test_1/builddir/meson-private/meson_benchmark_setup.dat
+test_1/builddir/meson-private/sanitycheckc.c
+test_1/builddir/meson-private/meson.lock
+test_1/builddir/meson-dist/
+test_1/builddir/meson-dist/test_1-0.1.tar.xz
+test_1/meson.build
++ cd test_1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 15:48:25 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 15:48:25 2023 - INFO  - Start testing...
++ meson configure --cmake-prefix-path /root
++ grep cmake_prefix_path
+  cmake_prefix_path              []                               []                               List of additional prefixes for cmake to search              
+  build.cmake_prefix_path        []                               []                               List of additional prefixes for cmake to search              
++ CHECK_RESULT 0 0 0 'meson-configure --cmake-prefix-path failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --cmake-prefix-path failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --build.cmake-prefix-path /root
++ grep build.cmake_prefix_path
+  build.cmake_prefix_path        []                               []                               List of additional prefixes for cmake to search              
++ CHECK_RESULT 0 0 0 'meson-configure --build.cmake-prefix-path BUILD.CMAKE_PREFIX_PATH  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --build.cmake-prefix-path BUILD.CMAKE_PREFIX_PATH  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure -D =1
++ grep D
+  Core options                   Default Value                    Possible Values                  Description                                                  
+  default_library                shared                           [shared, static, both]           Default library type                                         
+  install_umask                  0022                             [preserve, 0000-0777]            Default umask to apply on permissions of installed files     
+  Backend options                Default Value                    Possible Values                  Description                                                  
+  Base options                   Default Value                    Possible Values                  Description                                                  
+  b_ndebug                       false                            [true, false, if-release]        Disable asserts                                              
+  Compiler options               Default Value                    Possible Values                  Description                                                  
+  pkgconfig module options       Default Value                    Possible Values                  Description                                                  
+  python module options          Default Value                    Possible Values                  Description                                                  
+  python.platlibdir                                                                                Directory for site-specific, platform-specific files.        
+  python.purelibdir                                                                                Directory for site-specific, non-platform-specific files.    
+  Directories                    Default Value                    Possible Values                  Description                                                  
+  datadir                        share                                                             Data file directory                                          
+  Testing options                Default Value                    Possible Values                  Description                                                  
++ CHECK_RESULT 0 0 0 'meson-configure -D option failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure -D option failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --clearcache
++ grep 'Main project options:'
+Main project options:
++ CHECK_RESULT 0 0 0 'meson-configure --clearcache failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --clearcache failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson configure --build.pkg-config-path /root
++ grep build.pkg_config_path
+  build.pkg_config_path          []                               []                               List of additional paths for pkg-config to search            
++ CHECK_RESULT 0 0 0 'meson-configure --build.pkg-config-path BUILD.PKG_CONFIG_PATH failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-configure --build.pkg-config-path BUILD.PKG_CONFIG_PATH failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson --help
++ grep 'usage: meson'
+usage: meson [-h]
++ CHECK_RESULT 0 0 0 'meson -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson -h
++ grep 'usage: meson'
+usage: meson [-h]
++ CHECK_RESULT 0 0 0 'meson --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson help --help
++ grep 'usage: meson help'
+usage: meson help [-h]
++ CHECK_RESULT 0 0 0 'meson help --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson help --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson help -h
++ grep 'usage: meson help'
+usage: meson help [-h]
++ CHECK_RESULT 0 0 0 'meson help -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson help -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson help setup
++ grep 'usage: meson setup'
+usage: meson setup [-h] [--prefix PREFIX] [--bindir BINDIR] [--datadir DATADIR]
++ CHECK_RESULT 0 0 0 'meson help command failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson help command failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 15:49:14 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:49:14 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:49:15 2023 - INFO  - Start to restore the test environment.
++ rm -rf ../test_1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 15:49:15 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 15:49:16 2023 - INFO  - End to restore the test environment.

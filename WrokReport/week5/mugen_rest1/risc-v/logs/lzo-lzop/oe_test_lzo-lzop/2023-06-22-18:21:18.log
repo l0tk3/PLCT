@@ -1,0 +1,155 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:21:21 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'lzo lzop'
++ pkgs='lzo lzop'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'lzo lzop' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp6a3h9wh7
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp6a3h9wh7
++ touch lzop_file
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:21:55 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 18:21:56 2023 - INFO  - Start testing...
++ lzop -v lzop_file
+compressing lzop_file into lzop_file.lzo
++ CHECK_RESULT 0 0 0 'Failed to compress the file and output details'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to compress the file and output details'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lzop -t lzop_file.lzo
+testing lzop_file.lzo OK
++ CHECK_RESULT 0 0 0 'Compressed file integrity test failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Compressed file integrity test failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lzop --ls lzop_file.lzo
+-rw-r--r--   1 0        0               0 Jun 22 18:21 lzop_file
++ CHECK_RESULT 0 0 0 'Failed to list the contents of the compressed file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to list the contents of the compressed file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo 'hello world'
++ CHECK_RESULT 0 0 0 'fail to write to file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='fail to write to file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat lzop_file
++ lzop
++ CHECK_RESULT 0 0 0 'View file error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='View file error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -e lzop_file2.lzo
++ CHECK_RESULT 0 0 0 'lzop_ File2.lzo compressed file creation failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lzop_ File2.lzo compressed file creation failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lzop -dv lzop_file2.lzo
+decompressing lzop_file2.lzo into lzop_file2
++ CHECK_RESULT 0 0 0 'Failed to extract the file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to extract the file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 18:21:56 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:21:57 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:21:57 2023 - INFO  - Start to restore the test environment.
++ rm -rf lzop_file2 lzop_file2.lzo lzop_file.lzo lzop_file
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp6a3h9wh7 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp6a3h9wh7
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 18:22:07 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,341 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 15:24:33 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpyu_frioi
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpyu_frioi
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 15:25:09 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:25:09 2023 - INFO  - Start to run test.
++ ifpps -v
++ grep ifpps
+ifpps 0.6.8 (Flutternozzle), Git id: (none)
++ CHECK_RESULT 0 0 0 'Check ifpps -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ifpps -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ifpps --version
++ grep ifpps
+ifpps 0.6.8 (Flutternozzle), Git id: (none)
++ CHECK_RESULT 0 0 0 'Check ifpps --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ifpps --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ifpps -h
++ grep 'Usage: ifpps'
+Usage: ifpps [options] || ifpps <netdev>
++ CHECK_RESULT 0 0 0 'Check ifpps -g failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ifpps -g failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ifpps --help
++ grep 'Usage: ifpps'
+Usage: ifpps [options] || ifpps <netdev>
++ CHECK_RESULT 0 0 0 'Check ifpps --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check ifpps --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ifpps -c -d
++ grep 'networking interface: '
+ifpps: option requires an argument -- 'd'
+Option -d requires an argument!
++ CHECK_RESULT 1 0 0 'Check ifpps -d failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ifpps -d failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ifpps -d failed'
++ LOG_ERROR 'Check ifpps -d failed'
++ message='Check ifpps -d failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ifpps -d failed'
+Thu Jun 29 15:25:09 2023 - ERROR - Check ifpps -d failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ifpps_01.sh line 40'
++ message='oe_test_ifpps_01.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ifpps_01.sh line 40'
+Thu Jun 29 15:25:09 2023 - ERROR - oe_test_ifpps_01.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ ifpps -c --dev
++ grep 'networking interface: '
+ifpps: option '--dev' requires an argument
+Option -d requires an argument!
++ CHECK_RESULT 1 0 0 'Check ifpps --dev failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ifpps --dev failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ifpps --dev failed'
++ LOG_ERROR 'Check ifpps --dev failed'
++ message='Check ifpps --dev failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ifpps --dev failed'
+Thu Jun 29 15:25:09 2023 - ERROR - Check ifpps --dev failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ifpps_01.sh line 43'
++ message='oe_test_ifpps_01.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ifpps_01.sh line 43'
+Thu Jun 29 15:25:09 2023 - ERROR - oe_test_ifpps_01.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ ifpps -c --dev -t 500
++ grep 'sampling interval (t): 500 ms'
+This is no networking device!
++ CHECK_RESULT 1 0 0 'Check ifpps -t failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ifpps -t failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ifpps -t failed'
++ LOG_ERROR 'Check ifpps -t failed'
++ message='Check ifpps -t failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ifpps -t failed'
+Thu Jun 29 15:25:09 2023 - ERROR - Check ifpps -t failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ifpps_01.sh line 46'
++ message='oe_test_ifpps_01.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ifpps_01.sh line 46'
+Thu Jun 29 15:25:09 2023 - ERROR - oe_test_ifpps_01.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ ifpps -c --dev --interval 500
++ grep 'sampling interval (t): 500 ms'
+This is no networking device!
++ CHECK_RESULT 1 0 0 'Check ifpps --interval failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ifpps --interval failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ifpps --interval failed'
++ LOG_ERROR 'Check ifpps --interval failed'
++ message='Check ifpps --interval failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ifpps --interval failed'
+Thu Jun 29 15:25:09 2023 - ERROR - Check ifpps --interval failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ifpps_01.sh line 49'
++ message='oe_test_ifpps_01.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ifpps_01.sh line 49'
+Thu Jun 29 15:25:09 2023 - ERROR - oe_test_ifpps_01.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ ifpps -pcd
+ifpps: option requires an argument -- 'd'
+Option -d requires an argument!
++ grep 'gnuplot dump' tmp.data
++ CHECK_RESULT 1 0 0 'Check ifpps -c failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ifpps -c failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ifpps -c failed'
++ LOG_ERROR 'Check ifpps -c failed'
++ message='Check ifpps -c failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ifpps -c failed'
+Thu Jun 29 15:25:09 2023 - ERROR - Check ifpps -c failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ifpps_01.sh line 53'
++ message='oe_test_ifpps_01.sh line 53'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ifpps_01.sh line 53'
+Thu Jun 29 15:25:09 2023 - ERROR - oe_test_ifpps_01.sh line 53
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f tmp.data
++ ifpps -pd --csv
+This is no networking device!
++ grep 'gnuplot dump' tmp.data
++ CHECK_RESULT 1 0 0 'Check ifpps --csv failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ifpps --csv failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ifpps --csv failed'
++ LOG_ERROR 'Check ifpps --csv failed'
++ message='Check ifpps --csv failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ifpps --csv failed'
+Thu Jun 29 15:25:10 2023 - ERROR - Check ifpps --csv failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ifpps_01.sh line 58'
++ message='oe_test_ifpps_01.sh line 58'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ifpps_01.sh line 58'
+Thu Jun 29 15:25:10 2023 - ERROR - oe_test_ifpps_01.sh line 58
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f tmp.data
++ SLEEP_WAIT 2
++ wait_time=2
++ cmd=
++ mode=1
++ ifpps -lpcd
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+ifpps: option requires an argument -- 'd'
+Option -d requires an argument!
+++ pgrep -f 'ifpps -lpcd'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ grep 'networking interface: ' plot.dat
++ CHECK_RESULT 1 0 0 'Check ifpps -l failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ifpps -l failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ifpps -l failed'
++ LOG_ERROR 'Check ifpps -l failed'
++ message='Check ifpps -l failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ifpps -l failed'
+Thu Jun 29 15:25:12 2023 - ERROR - Check ifpps -l failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ifpps_01.sh line 65'
++ message='oe_test_ifpps_01.sh line 65'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ifpps_01.sh line 65'
+Thu Jun 29 15:25:12 2023 - ERROR - oe_test_ifpps_01.sh line 65
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f plot.dat
++ SLEEP_WAIT 2
++ wait_time=2
++ ifpps --loop -pcd
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 2 --cmd '' --mode 1
+ifpps: option requires an argument -- 'd'
+Option -d requires an argument!
+++ pgrep -f 'ifpps --loop -pcd'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ grep 'networking interface: ' plot.dat
++ CHECK_RESULT 1 0 0 'Check ifpps --loop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check ifpps --loop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check ifpps --loop failed'
++ LOG_ERROR 'Check ifpps --loop failed'
++ message='Check ifpps --loop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check ifpps --loop failed'
+Thu Jun 29 15:25:14 2023 - ERROR - Check ifpps --loop failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ifpps_01.sh line 72'
++ message='oe_test_ifpps_01.sh line 72'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ifpps_01.sh line 72'
+Thu Jun 29 15:25:14 2023 - ERROR - oe_test_ifpps_01.sh line 72
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f plot.dat
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 15:25:14 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:25:14 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 15:25:14 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpyu_frioi ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpyu_frioi
++ '[' 0 -ne 0 ']'
++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 15:25:38 2023 - INFO  - End to restore the test environment.

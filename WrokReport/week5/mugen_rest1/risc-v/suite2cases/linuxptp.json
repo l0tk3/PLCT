@@ -1,0 +1,28 @@
+{
+    "path": "$OET_PATH/testcases/cli-test/linuxptp",
+    "cases": [
+        {
+            "name": "oe_test_service_phc2sys",
+            "machine type": "physical"
+        },
+        {
+            "name": "oe_test_service_ptp4l",
+            "machine type": "physical"
+        },
+        {
+            "name": "oe_test_nsm"
+        },
+        {
+            "name": "oe_test_pmc"
+        },
+        {
+            "name": "oe_test_ptp4l_01"
+        },
+        {
+            "name": "oe_test_ptp4l_02"
+        },
+        {
+            "name": "oe_test_timemaster"
+        }
+    ]
+}

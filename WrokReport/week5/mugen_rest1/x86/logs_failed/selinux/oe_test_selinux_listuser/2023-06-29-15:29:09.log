@@ -1,0 +1,141 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:29:10 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL setools-console
++ pkgs=setools-console
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs setools-console --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpmiaj7p9w
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpmiaj7p9w
++ LOG_INFO 'End of environmental preparation.'
++ message='End of environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation.'
+Thu Jun 29 15:30:44 2023 - INFO  - End of environmental preparation.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 15:30:44 2023 - INFO  - Start executing testcase.
++ semanage login -l
+oe_test_selinux_listuser.sh: line 30: semanage: command not found
++ grep __default__
++ grep unconfined_u
++ CHECK_RESULT 1 0 0 'Check user mapping failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check user mapping failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check user mapping failed'
++ LOG_ERROR 'Check user mapping failed'
++ message='Check user mapping failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check user mapping failed'
+Thu Jun 29 15:30:44 2023 - ERROR - Check user mapping failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_listuser.sh line 31'
++ message='oe_test_selinux_listuser.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_listuser.sh line 31'
+Thu Jun 29 15:30:44 2023 - ERROR - oe_test_selinux_listuser.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ seinfo -u
++ grep -e guest_u -e root -e staff_u -e sysadm_u -e system_u -e unconfined_u -e user_u -e xguest_u
++ CHECK_RESULT 1 0 0 'Check selinux users failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check selinux users failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check selinux users failed'
++ LOG_ERROR 'Check selinux users failed'
++ message='Check selinux users failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check selinux users failed'
+Thu Jun 29 15:30:44 2023 - ERROR - Check selinux users failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_listuser.sh line 33'
++ message='oe_test_selinux_listuser.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_listuser.sh line 33'
+Thu Jun 29 15:30:44 2023 - ERROR - oe_test_selinux_listuser.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ seinfo -r
++ grep 'Roles: 14'
++ CHECK_RESULT 1 0 0 'Check selinux roles failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check selinux roles failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check selinux roles failed'
++ LOG_ERROR 'Check selinux roles failed'
++ message='Check selinux roles failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check selinux roles failed'
+Thu Jun 29 15:30:44 2023 - ERROR - Check selinux roles failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_listuser.sh line 35'
++ message='oe_test_selinux_listuser.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_listuser.sh line 35'
+Thu Jun 29 15:30:44 2023 - ERROR - oe_test_selinux_listuser.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 29 15:30:44 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:30:44 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 15:30:44 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpmiaj7p9w ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpmiaj7p9w
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 15:30:45 2023 - INFO  - Finish environment cleanup!

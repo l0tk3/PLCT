@@ -1,0 +1,255 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 15:58:12 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpmaxlg7gn
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpmaxlg7gn
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 15:58:44 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 15:58:45 2023 - INFO  - Start to run test.
++ lstopo-no-graphics -l
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l common/test_fn.console
++ cat common/test_fn.console
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -p
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l --of console
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --of failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --of failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l common/test_fn.console -f
++ cat common/test_fn.console
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -f failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -f failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l --only PU
++ grep PU
+PU L#0
+PU L#1
+PU L#2
+PU L#3
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -only <type> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -only <type> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l -v
++ grep local
+    NUMANode L#0 (local=4031428KB total=4031428KB)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l -s
++ grep depth
+depth 0:           1 Machine (type #0)
+ depth 1:          1 Package (type #1)
+  depth 2:         4 Core (type #2)
+   depth 3:        4 PU (type #3)
+Special depth -3:  1 NUMANode (type #13)
+Special depth -6:  2 OSDev (type #16)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -s failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -s failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l -c
++ grep cpuset
+Machine (3937MB total) cpuset=0x0000000f
+  Package L#0 cpuset=0x0000000f
+    NUMANode L#0 (3937MB) cpuset=0x0000000f
+    Core L#0 cpuset=0x00000001
+      PU L#0 cpuset=0x00000001
+    Core L#1 cpuset=0x00000002
+      PU L#1 cpuset=0x00000002
+    Core L#2 cpuset=0x00000004
+      PU L#2 cpuset=0x00000004
+    Core L#3 cpuset=0x00000008
+      PU L#3 cpuset=0x00000008
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -c failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -c failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l -C
++ grep 0x
+0x0000000f
+  0x0000000f
+    0x0000000f
+    0x00000001
+      0x00000001
+    0x00000002
+      0x00000002
+    0x00000004
+      0x00000004
+    0x00000008
+      0x00000008
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -C failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -C failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l --taskset
++ grep cpuset
+Machine (3937MB total) cpuset=0xf
+  Package L#0 cpuset=0xf
+    NUMANode L#0 (3937MB) cpuset=0xf
+    Core L#0 cpuset=0x1
+      PU L#0 cpuset=0x1
+    Core L#1 cpuset=0x2
+      PU L#1 cpuset=0x2
+    Core L#2 cpuset=0x4
+      PU L#2 cpuset=0x4
+    Core L#3 cpuset=0x8
+      PU L#3 cpuset=0x8
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --taskset failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --taskset failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 15:58:47 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:58:47 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 15:58:48 2023 - INFO  - start environment cleanup.
++ rm -f common/test_fn.console
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpmaxlg7gn ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpmaxlg7gn
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 15:58:58 2023 - INFO  - Finish environment cleanup!

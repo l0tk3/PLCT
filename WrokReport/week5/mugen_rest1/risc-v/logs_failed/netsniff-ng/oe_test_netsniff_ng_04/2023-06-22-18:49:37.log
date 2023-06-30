@@ -1,0 +1,175 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:49:39 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 22 18:49:46 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:49:47 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:49:47 2023 - INFO  - Start to run test.
++ cat /etc/passwd
++ grep bob
++ [[ 1 != 0 ]]
++ useradd bob
+++ id -u bob
+++ id -g bob
++ netsniff-ng --in any -u 1001 -g 1001 -n 1
++ grep 'packets incoming' tmp.txt
+           1  packets incoming (2 unread on exit)
++ grep 'set system socket memory in' tmp.txt
+Cannot set system socket memory in /proc/sys/net/core/rmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/rmem_default: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_default: Permission denied
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -u failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -u failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ id -u bob
+++ id -g bob
++ netsniff-ng --in any --user 1001 -g 1001 -n 1
++ grep 'packets incoming' tmp.txt
+           1  packets incoming (1 unread on exit)
++ grep 'set system socket memory in' tmp.txt
+Cannot set system socket memory in /proc/sys/net/core/rmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/rmem_default: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_default: Permission denied
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --user failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --user failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ id -u bob
+++ id -g bob
++ netsniff-ng --in any -u 1001 -g 1001 -n 1
++ grep 'packets incoming' tmp.txt
+           1  packets incoming (2 unread on exit)
++ grep 'set system socket memory in' tmp.txt
+Cannot set system socket memory in /proc/sys/net/core/rmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/rmem_default: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_default: Permission denied
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -g failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -g failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ id -u bob
+++ id -g bob
++ netsniff-ng --in any -u 1001 --group 1001 -n 1
++ grep 'packets incoming' tmp.txt
+           1  packets incoming (1 unread on exit)
++ grep 'set system socket memory in' tmp.txt
+Cannot set system socket memory in /proc/sys/net/core/rmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/rmem_default: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_max: Permission denied
+Cannot set system socket memory in /proc/sys/net/core/wmem_default: Permission denied
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --group failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --group failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -H -n 1
++ grep 'packets incoming'
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -H failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -H failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'packets incoming'
++ netsniff-ng --in any --prio-high -n 1
+           1  packets incoming (3 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --prio-high failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --prio-high failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep Vendor
++ netsniff-ng --in any -n 1 -q
+Thu Jun 22 19:19:37 2023 - ERROR - Timeout : Command 'bash -x oe_test_netsniff_ng_04.sh' timed out after 1799.999684597 seconds
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 19:19:39 2023 - INFO  - Start to restore the test environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 19:19:39 2023 - WARN  - no thing to do.
+++ return 0
+++ userdel -r bob
+++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'

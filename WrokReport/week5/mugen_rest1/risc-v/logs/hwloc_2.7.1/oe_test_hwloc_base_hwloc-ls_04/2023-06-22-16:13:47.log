@@ -1,0 +1,238 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:13:49 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpx7grqa0j
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpx7grqa0j
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:14:19 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 16:14:20 2023 - INFO  - Start testing...
++ hwloc-ls --force out.xml
++ ls
++ grep out.xml
+out.xml
++ CHECK_RESULT 0 0 0 'hwloc-ls -f failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls -f failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --logical
++ grep L#0
+  Package L#0
+    NUMANode L#0 (3937MB)
+    Core L#0 + PU L#0
++ CHECK_RESULT 0 0 0 'hwloc-ls --logical failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --logical failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --physical
++ grep P#0
+  Package P#0
+    NUMANode P#0 (3937MB)
+    Core P#1 + PU P#0
+    Core P#0 + PU P#1
++ CHECK_RESULT 0 0 0 'hwloc-ls --physical failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --physical failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --output-format fig
++ grep FIG
+#FIG 3.2  Produced by hwloc's lstopo
++ CHECK_RESULT 0 0 0 'hwloc-ls --output-format failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --output-format failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --verbose
++ grep PCI
++ CHECK_RESULT 1 0 0 'hwloc-ls --verbose failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --verbose failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'hwloc-ls --verbose failed'
++ LOG_ERROR 'hwloc-ls --verbose failed'
++ message='hwloc-ls --verbose failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'hwloc-ls --verbose failed'
+Thu Jun 22 16:14:21 2023 - ERROR - hwloc-ls --verbose failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_hwloc_base_hwloc-ls_04.sh line 40'
++ message='oe_test_hwloc_base_hwloc-ls_04.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_hwloc_base_hwloc-ls_04.sh line 40'
+Thu Jun 22 16:14:21 2023 - ERROR - oe_test_hwloc_base_hwloc-ls_04.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ hwloc-ls --cpuset
++ grep Machine
+Machine (3937MB total) cpuset=0x0000000f
++ CHECK_RESULT 0 0 0 'hwloc-ls --cpuset failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --cpuset failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --silent
++ grep 'depth 0'
+depth 0:           1 Machine (type #0)
++ CHECK_RESULT 0 0 0 'hwloc-ls --silent failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --silent failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --cpuset-only
++ grep 0x00000
+0x0000000f
+  0x0000000f
+    0x0000000f
+    0x00000001
+      0x00000001
+    0x00000002
+      0x00000002
+    0x00000004
+      0x00000004
+    0x00000008
+      0x00000008
++ CHECK_RESULT 0 0 0 'hwloc-ls --cpuset-only failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --cpuset-only failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo ./test_1.xml
++ hwloc-ls --input ./test_1.xml
++ grep PCI
++ CHECK_RESULT 1 0 0 'hwloc-ls --input failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --input failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'hwloc-ls --input failed'
++ LOG_ERROR 'hwloc-ls --input failed'
++ message='hwloc-ls --input failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'hwloc-ls --input failed'
+Thu Jun 22 16:14:22 2023 - ERROR - hwloc-ls --input failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_hwloc_base_hwloc-ls_04.sh line 49'
++ message='oe_test_hwloc_base_hwloc-ls_04.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_hwloc_base_hwloc-ls_04.sh line 49'
+Thu Jun 22 16:14:23 2023 - ERROR - oe_test_hwloc_base_hwloc-ls_04.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ hwloc-ls --input /
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --input failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --input failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 16:14:23 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 16:14:24 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:14:24 2023 - INFO  - Start to restore the test environment.
++ rm -f out.xml test_1.xml
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpx7grqa0j ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpx7grqa0j
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:14:34 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,142 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 16:34:52 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'httpd setroubleshoot-server'
++ pkgs='httpd setroubleshoot-server'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'httpd setroubleshoot-server' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpco592h_p
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpco592h_p
+++ GET_FREE_PORT 127.0.0.1
+++ ip=127.0.0.1
+++ start_port=1000
+++ end_port=10000
+++ python3 /root/mugen/libs/locallibs/free_port.py get --ip 127.0.0.1 --start 1000 --end 10000
++ rdport=8884
++ cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf-bak
++ sed -i 's/Listen 80/Listen 8884/g' /etc/httpd/conf/httpd.conf
++ sed -i /DocumentRoot/s/www/test_www/g /etc/httpd/conf/httpd.conf
++ sed -i /Directory/s/www/test_www/g /etc/httpd/conf/httpd.conf
++ cp /var/www /var/test_www -rf
++ cp /usr/share/httpd/noindex/index.html /var/test_www/html
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 16:35:43 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 22 16:35:43 2023 - INFO  - Start executing testcase.
++ systemctl restart httpd
++ systemctl status httpd
++ grep 'Failed to start The Apache HTTP Server'
++ CHECK_RESULT 1 0 0 'Check httpd status failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check httpd status failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check httpd status failed'
++ LOG_ERROR 'Check httpd status failed'
++ message='Check httpd status failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check httpd status failed'
+Thu Jun 22 16:35:47 2023 - ERROR - Check httpd status failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_http.sh line 40'
++ message='oe_test_selinux_http.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_http.sh line 40'
+Thu Jun 22 16:35:47 2023 - ERROR - oe_test_selinux_http.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage port -a -t http_port_t -p tcp 8884
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ semanage fcontext -a -e /var/www /var/test_www
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ restorecon -Rv /var/
++ chmod 777 -R /var/test_www
++ systemctl restart httpd
++ wget localhost:8884/index.html
+--2023-06-22 16:36:00--  http://localhost:8884/index.html
+Resolving localhost (localhost)... ::1, 127.0.0.1
+Connecting to localhost (localhost)|::1|:8884... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3929 (3.8K) [text/html]
+Saving to: ‘index.html’
+
+     0K ...                                                   100% 27.1M=0s
+
+2023-06-22 16:36:02 (27.1 MB/s) - ‘index.html’ saved [3929/3929]
+
++ CHECK_RESULT 0 0 0 'Check wget failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wget failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 22 16:36:02 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 16:36:03 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 16:36:03 2023 - INFO  - start environment cleanup.
++ mv -f /etc/httpd/conf/httpd.conf-bak /etc/httpd/conf/httpd.conf
++ semanage fcontext -d -e /var/www /var/test_www
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ semanage port --delete -t ssh_port_t -p tcp 8884
+ValueError: SELinux policy is not managed or store cannot be accessed.
++ systemctl stop httpd
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpco592h_p ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpco592h_p
++ '[' 0 -ne 0 ']'
++ rm -rf /var/test_www index.html /home/http_status.txt
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 16:36:33 2023 - INFO  - Finish environment cleanup!

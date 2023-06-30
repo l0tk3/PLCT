@@ -1,0 +1,201 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:07:10 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpikv8bbih
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpikv8bbih
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:07:42 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 16:07:42 2023 - INFO  - Start testing...
++ hwloc-calc -i 'node:1 2' pu:0-1
++ grep 0x00000003
+0x00000003
++ CHECK_RESULT 0 0 0 'hwloc-calc [default] failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc [default] failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc -i 'node:1 2' -N pu Machine:0
++ grep 2
+2
++ CHECK_RESULT 0 0 0 'hwloc-calc -N failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc -N failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc -i 'node:1 2' -I pu Machine:0
++ grep 0,1
+0,1
++ CHECK_RESULT 0 0 0 'hwloc-calc -I failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc -I failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc -i 'node:2 2' -H pu node:0-1
++ grep PU:0
+PU:0 PU:1 PU:2 PU:3
++ CHECK_RESULT 0 0 0 'hwloc-calc -H failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc -H failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc -i 'node:1 2' --largest 0x00000002
++ grep PU:1
+PU:1
++ CHECK_RESULT 0 0 0 'hwloc-calc --largest failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc --largest failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc -l pu:0
++ grep 0x00000001
+0x00000001
++ CHECK_RESULT 0 0 0 'hwloc-calc -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc -p pu:0
++ grep 0x00000001
+0x00000001
++ CHECK_RESULT 0 0 0 'hwloc-calc -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc --li pu:0
++ grep 0x00000001
+0x00000001
++ CHECK_RESULT 0 0 0 'hwloc-calc --li failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc --li failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc -i 'node:1 2' --lo -I pu Machine:0
++ grep 0,1
+0,1
++ CHECK_RESULT 0 0 0 'hwloc-calc --lo failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc --lo failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-calc --pi pu:0
++ grep 0x00000001
+0x00000001
++ CHECK_RESULT 0 0 0 'hwloc-calc --pi failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-calc --pi failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 16:07:43 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:07:44 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:07:44 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpikv8bbih ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpikv8bbih
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:07:54 2023 - INFO  - End to restore the test environment.

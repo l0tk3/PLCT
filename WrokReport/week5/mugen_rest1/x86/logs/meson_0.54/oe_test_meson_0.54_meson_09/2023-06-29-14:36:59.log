@@ -1,0 +1,271 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:37:00 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc'
++ pkgs='meson tar gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwyb3pt8f
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwyb3pt8f
++ tar -xvf common/0.54/test_1.tgz
+test_1/
+test_1/.git/
+test_1/.git/hooks/
+test_1/.git/hooks/post-update.sample
+test_1/.git/hooks/applypatch-msg.sample
+test_1/.git/hooks/commit-msg.sample
+test_1/.git/hooks/pre-push.sample
+test_1/.git/hooks/pre-rebase.sample
+test_1/.git/hooks/pre-merge-commit.sample
+test_1/.git/hooks/prepare-commit-msg.sample
+test_1/.git/hooks/fsmonitor-watchman.sample
+test_1/.git/hooks/update.sample
+test_1/.git/hooks/pre-applypatch.sample
+test_1/.git/hooks/pre-receive.sample
+test_1/.git/hooks/pre-commit.sample
+test_1/.git/branches/
+test_1/.git/refs/
+test_1/.git/refs/heads/
+test_1/.git/refs/tags/
+test_1/.git/HEAD
+test_1/.git/config
+test_1/.git/info/
+test_1/.git/info/exclude
+test_1/.git/description
+test_1/.git/objects/
+test_1/.git/objects/pack/
+test_1/.git/objects/info/
+test_1/test_1.c
+test_1/builddir/
+test_1/builddir/test_1
+test_1/builddir/test_1@exe/
+test_1/builddir/test_1@exe/test_1.c.o
+test_1/builddir/.ninja_deps
+test_1/builddir/devenv/
+test_1/builddir/compile_commands.json
+test_1/builddir/build.ninja
+test_1/builddir/meson-info/
+test_1/builddir/meson-info/intro-targets.json
+test_1/builddir/meson-info/intro-installed.json
+test_1/builddir/meson-info/intro-benchmarks.json
+test_1/builddir/meson-info/intro-tests.json
+test_1/builddir/meson-info/intro-buildsystem_files.json
+test_1/builddir/meson-info/intro-buildoptions.json
+test_1/builddir/meson-info/intro-dependencies.json
+test_1/builddir/meson-info/intro-projectinfo.json
+test_1/builddir/meson-info/meson-info.json
+test_1/builddir/.ninja_log
+test_1/builddir/meson-logs/
+test_1/builddir/meson-logs/testlog-valgrind.json
+test_1/builddir/meson-logs/testlog.txt
+test_1/builddir/meson-logs/testlog.json
+test_1/builddir/meson-logs/testlog-worksforall.json
+test_1/builddir/meson-logs/testlog-worksforall.txt
+test_1/builddir/meson-logs/meson-log.txt
+test_1/builddir/meson-logs/testlog-valgrind.txt
+test_1/builddir/meson.build
+test_1/builddir/meson-private/
+test_1/builddir/meson-private/build.dat
+test_1/builddir/meson-private/meson_test_setup.dat
+test_1/builddir/meson-private/coredata.dat.prev
+test_1/builddir/meson-private/install.dat
+test_1/builddir/meson-private/dist-install/
+test_1/builddir/meson-private/dist-build/
+test_1/builddir/meson-private/sanitycheckc.exe
+test_1/builddir/meson-private/coredata.dat
+test_1/builddir/meson-private/cmd_line.txt
+test_1/builddir/meson-private/dist-unpack/
+test_1/builddir/meson-private/dist-unpack/test_1-0.1/
+test_1/builddir/meson-private/meson_benchmark_setup.dat
+test_1/builddir/meson-private/sanitycheckc.c
+test_1/builddir/meson-private/meson.lock
+test_1/builddir/meson-dist/
+test_1/builddir/meson-dist/test_1-0.1.tar.xz
+test_1/meson.build
++ cd test_1/builddir
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:37:18 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 29 14:37:18 2023 - INFO  - Start testing...
++ meson introspect --test
++ grep ']'
+[{"cmd": ["/root/mugen/testcases/cli-test/meson/common/test_1/builddir/test_1"], "env": {}, "name": "basic", "workdir": null, "timeout": 30, "suite": ["test_1"], "is_parallel": true, "priority": 0, "protocol": "exitcode"}]
++ CHECK_RESULT 0 0 0 'meson-introspect --test failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --test failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --backend ninja
++ grep 'No command specified'
+No command specified
++ CHECK_RESULT 0 0 0 'meson-introspect --backend failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --backend failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect -a
++ grep protocol
++ CHECK_RESULT 1 0 0 'meson-introspect -a failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='meson-introspect -a failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'meson-introspect -a failed'
++ LOG_ERROR 'meson-introspect -a failed'
++ message='meson-introspect -a failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'meson-introspect -a failed'
+Thu Jun 29 14:37:19 2023 - ERROR - meson-introspect -a failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_meson_0.54_meson_09.sh line 36'
++ message='oe_test_meson_0.54_meson_09.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_meson_0.54_meson_09.sh line 36'
+Thu Jun 29 14:37:19 2023 - ERROR - oe_test_meson_0.54_meson_09.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ meson introspect --all
++ grep protocol
++ CHECK_RESULT 1 0 0 'meson-introspect --all failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --all failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'meson-introspect --all failed'
++ LOG_ERROR 'meson-introspect --all failed'
++ message='meson-introspect --all failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'meson-introspect --all failed'
+Thu Jun 29 14:37:19 2023 - ERROR - meson-introspect --all failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_meson_0.54_meson_09.sh line 38'
++ message='oe_test_meson_0.54_meson_09.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_meson_0.54_meson_09.sh line 38'
+Thu Jun 29 14:37:19 2023 - ERROR - oe_test_meson_0.54_meson_09.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ meson introspect -i
++ grep 'No command specified'
+No command specified
++ CHECK_RESULT 0 0 0 'meson-introspect -i failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect -i failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --indent
++ grep 'No command specified'
+No command specified
++ CHECK_RESULT 0 0 0 'meson-introspect --indent failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --indent failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect --force-object-output
++ grep '{}'
+{}
++ CHECK_RESULT 0 0 0 'meson-introspect --force-object-output failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect --force-object-output failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson introspect -f
++ grep '{}'
+{}
++ CHECK_RESULT 0 0 0 'meson-introspect -f failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-introspect -f failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:37:20 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:37:20 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:37:20 2023 - INFO  - Start to restore the test environment.
++ rm -rf ../../test_1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpwyb3pt8f ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwyb3pt8f
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:37:21 2023 - INFO  - End to restore the test environment.

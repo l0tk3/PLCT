@@ -1,0 +1,121 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 19:19:44 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 22 19:19:52 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 19:19:52 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 19:19:53 2023 - INFO  - Start to run test.
++ trafgen -h
++ grep 'Usage: trafgen'
+Usage: trafgen [options] [packet]
++ CHECK_RESULT 0 0 0 'Check trafgen -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --help
++ grep 'Usage: trafgen'
+Usage: trafgen [options] [packet]
++ CHECK_RESULT 0 0 0 'Check trafgen --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -v
++ grep 'trafgen 0.6.8'
+trafgen 0.6.8 (Flutternozzle), Git id: (none)
++ CHECK_RESULT 0 0 0 'Check trafgen -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --version
++ grep 'trafgen 0.6.8'
+trafgen 0.6.8 (Flutternozzle), Git id: (none)
++ CHECK_RESULT 0 0 0 'Check trafgen --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen -e
++ grep 'Data blob'
+  /* Data blob */
++ CHECK_RESULT 0 0 0 'Check trafgen -e failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen -e failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ trafgen --example
++ grep 'Data blob'
+  /* Data blob */
++ CHECK_RESULT 0 0 0 'Check trafgen --example failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check trafgen --example failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in --out tcpsyn.pcap -n 2
+Thu Jun 22 19:49:43 2023 - ERROR - Timeout : Command 'bash -x oe_test_trafgen_01.sh' timed out after 1799.9997020989995 seconds

@@ -1,0 +1,352 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:10:43 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpk4f3w6e1
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpk4f3w6e1
+++ uname -i
++ test x86_64X == aarch64X
++ systemctl start libvirtd
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get x86_64 qcow2 libguestfs pkg'
++ message='get x86_64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get x86_64 qcow2 libguestfs pkg'
+Thu Jun 29 15:11:18 2023 - INFO  - get x86_64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 ']'
++ LOG_INFO 'qcow2 file already exists'
++ message='qcow2 file already exists'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'qcow2 file already exists'
+Thu Jun 29 15:11:18 2023 - INFO  - qcow2 file already exists
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
++ virt-install --name openEuler-2003 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+WARNING  KVM acceleration not available, using 'qemu'
+ERROR    
+--os-variant/--osinfo OS name is required, but no value was
+set or detected.
+
+This is now a fatal error. Specifying an OS name is required
+for modern, performant, and secure virtual machine defaults.
+
+You can see a full list of possible OS name values with:
+
+   virt-install --osinfo list
+
+If your Linux distro is not listed, try one of generic values
+such as: linux2020, linux2018, linux2016
+
+If you just need to get the old behavior back, you can use:
+
+  --osinfo detect=on,require=off
+
+Or export VIRTINSTALL_OSINFO_DISABLE_REQUIRE=1
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ cp /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
++ virt-install --name openEuler-2003-1 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+WARNING  KVM acceleration not available, using 'qemu'
+ERROR    
+--os-variant/--osinfo OS name is required, but no value was
+set or detected.
+
+This is now a fatal error. Specifying an OS name is required
+for modern, performant, and secure virtual machine defaults.
+
+You can see a full list of possible OS name values with:
+
+   virt-install --osinfo list
+
+If your Linux distro is not listed, try one of generic values
+such as: linux2020, linux2018, linux2016
+
+If you just need to get the old behavior back, you can use:
+
+  --osinfo detect=on,require=off
+
+Or export VIRTINSTALL_OSINFO_DISABLE_REQUIRE=1
+
++ virsh destroy openEuler-2003-1
+error: failed to get domain 'openEuler-2003-1'
+
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 15:11:42 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:11:42 2023 - INFO  - Start to run test.
++ virt-diff -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -A /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-diff_01.sh: line 34: virt-diff: command not found
++ CHECK_RESULT 127 0 0 'Check virt-diff -a -A failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-diff -a -A failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-diff -a -A failed'
++ LOG_ERROR 'Check virt-diff -a -A failed'
++ message='Check virt-diff -a -A failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-diff -a -A failed'
+Thu Jun 29 15:11:42 2023 - ERROR - Check virt-diff -a -A failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-diff_01.sh line 35'
++ message='oe_test_libguestfs_virt-diff_01.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-diff_01.sh line 35'
+Thu Jun 29 15:11:42 2023 - ERROR - oe_test_libguestfs_virt-diff_01.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-diff --all -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -A /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-diff_01.sh: line 36: virt-diff: command not found
++ CHECK_RESULT 127 0 0 'Check virt-diff -d -D failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-diff -d -D failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-diff -d -D failed'
++ LOG_ERROR 'Check virt-diff -d -D failed'
++ message='Check virt-diff -d -D failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-diff -d -D failed'
+Thu Jun 29 15:11:42 2023 - ERROR - Check virt-diff -d -D failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-diff_01.sh line 37'
++ message='oe_test_libguestfs_virt-diff_01.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-diff_01.sh line 37'
+Thu Jun 29 15:11:42 2023 - ERROR - oe_test_libguestfs_virt-diff_01.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-diff --atime -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -A /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-diff_01.sh: line 38: virt-diff: command not found
++ CHECK_RESULT 127 0 0 'Check virt-diff --atime failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-diff --atime failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-diff --atime failed'
++ LOG_ERROR 'Check virt-diff --atime failed'
++ message='Check virt-diff --atime failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-diff --atime failed'
+Thu Jun 29 15:11:42 2023 - ERROR - Check virt-diff --atime failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-diff_01.sh line 39'
++ message='oe_test_libguestfs_virt-diff_01.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-diff_01.sh line 39'
+Thu Jun 29 15:11:42 2023 - ERROR - oe_test_libguestfs_virt-diff_01.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-diff --checksum=crc -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -A /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-diff_01.sh: line 40: virt-diff: command not found
++ CHECK_RESULT 127 0 0 'Check virt-diff --checksum failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-diff --checksum failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-diff --checksum failed'
++ LOG_ERROR 'Check virt-diff --checksum failed'
++ message='Check virt-diff --checksum failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-diff --checksum failed'
+Thu Jun 29 15:11:42 2023 - ERROR - Check virt-diff --checksum failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-diff_01.sh line 41'
++ message='oe_test_libguestfs_virt-diff_01.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-diff_01.sh line 41'
+Thu Jun 29 15:11:43 2023 - ERROR - oe_test_libguestfs_virt-diff_01.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-diff -c test:///default -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -A /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-diff_01.sh: line 42: virt-diff: command not found
++ CHECK_RESULT 127 0 0 'Check virt-diff -c failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-diff -c failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-diff -c failed'
++ LOG_ERROR 'Check virt-diff -c failed'
++ message='Check virt-diff -c failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-diff -c failed'
+Thu Jun 29 15:11:43 2023 - ERROR - Check virt-diff -c failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-diff_01.sh line 43'
++ message='oe_test_libguestfs_virt-diff_01.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-diff_01.sh line 43'
+Thu Jun 29 15:11:43 2023 - ERROR - oe_test_libguestfs_virt-diff_01.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-diff --csv -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -A /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-diff_01.sh: line 44: virt-diff: command not found
++ CHECK_RESULT 127 0 0 'Check virt-diff --csv failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-diff --csv failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-diff --csv failed'
++ LOG_ERROR 'Check virt-diff --csv failed'
++ message='Check virt-diff --csv failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-diff --csv failed'
+Thu Jun 29 15:11:43 2023 - ERROR - Check virt-diff --csv failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-diff_01.sh line 45'
++ message='oe_test_libguestfs_virt-diff_01.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-diff_01.sh line 45'
+Thu Jun 29 15:11:43 2023 - ERROR - oe_test_libguestfs_virt-diff_01.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-diff --dir-links -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -A /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-diff_01.sh: line 46: virt-diff: command not found
++ CHECK_RESULT 127 0 0 'Check virt-diff --dir-links failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-diff --dir-links failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-diff --dir-links failed'
++ LOG_ERROR 'Check virt-diff --dir-links failed'
++ message='Check virt-diff --dir-links failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-diff --dir-links failed'
+Thu Jun 29 15:11:43 2023 - ERROR - Check virt-diff --dir-links failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-diff_01.sh line 47'
++ message='oe_test_libguestfs_virt-diff_01.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-diff_01.sh line 47'
+Thu Jun 29 15:11:43 2023 - ERROR - oe_test_libguestfs_virt-diff_01.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-diff --dir-times -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -A /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-diff_01.sh: line 48: virt-diff: command not found
++ CHECK_RESULT 127 0 0 'Check virt-diff --dir-times failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-diff --dir-times failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-diff --dir-times failed'
++ LOG_ERROR 'Check virt-diff --dir-times failed'
++ message='Check virt-diff --dir-times failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-diff --dir-times failed'
+Thu Jun 29 15:11:43 2023 - ERROR - Check virt-diff --dir-times failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-diff_01.sh line 49'
++ message='oe_test_libguestfs_virt-diff_01.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-diff_01.sh line 49'
+Thu Jun 29 15:11:43 2023 - ERROR - oe_test_libguestfs_virt-diff_01.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 29 15:11:43 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 8
++ test 8 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:11:43 2023 - ERROR - failed to execute the case.
++ exit 8
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 15:11:43 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test_diff
++ virsh start openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh start openEuler-2003-1
+error: failed to get domain 'openEuler-2003-1'
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh undefine openEuler-2003 --nvram
+error: failed to get domain 'openEuler-2003'
+
++ virsh destroy openEuler-2003-1
+error: failed to get domain 'openEuler-2003-1'
+
++ virsh undefine openEuler-2003-1 --nvram
+error: failed to get domain 'openEuler-2003-1'
+
++ unset LIBGUESTFS_BACKEND LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpk4f3w6e1 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpk4f3w6e1
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*'
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 29 15:11:46 2023 - INFO  - Finish to restore the test environment.

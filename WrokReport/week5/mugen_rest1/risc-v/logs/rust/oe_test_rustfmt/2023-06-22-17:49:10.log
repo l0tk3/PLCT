@@ -1,0 +1,326 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 22 17:49:13 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL 'rustfmt rls'
++ pkgs='rustfmt rls'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'rustfmt rls' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:05:45 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rustfmt
+No match for argument: rls
+Error: Unable to find a match: rustfmt rls'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:05:45 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rustfmt
+No match for argument: rls
+Error: Unable to find a match: rustfmt rls'
++ cp ../common/hello.rs ../common/lib.rs ../common/main.rs ../common/myhello.rs ../common/pub.rs ../common/test.rs ../common/war.rs ./
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 22 17:49:36 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Thu Jun 22 17:49:36 2023 - INFO  - Start executing testcase!
++ cargo-fmt -h
++ grep USAGE
+oe_test_rustfmt.sh: line 31: cargo-fmt: command not found
++ CHECK_RESULT 1 0 0 'cargo-fmt Help information printing failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='cargo-fmt Help information printing failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'cargo-fmt Help information printing failed'
++ LOG_ERROR 'cargo-fmt Help information printing failed'
++ message='cargo-fmt Help information printing failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'cargo-fmt Help information printing failed'
+Thu Jun 22 17:49:37 2023 - ERROR - cargo-fmt Help information printing failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 32'
++ message='oe_test_rustfmt.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 32'
+Thu Jun 22 17:49:38 2023 - ERROR - oe_test_rustfmt.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ rustfmt --check hello.rs
++ grep 'Diff in'
+oe_test_rustfmt.sh: line 33: rustfmt: command not found
++ CHECK_RESULT 1 0 0 'Check the failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check the failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check the failure'
++ LOG_ERROR 'Check the failure'
++ message='Check the failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check the failure'
+Thu Jun 22 17:49:38 2023 - ERROR - Check the failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 34'
++ message='oe_test_rustfmt.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 34'
+Thu Jun 22 17:49:39 2023 - ERROR - oe_test_rustfmt.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ rustfmt --backup test.rs
+oe_test_rustfmt.sh: line 35: rustfmt: command not found
++ CHECK_RESULT 127 0 0 'Check the failure'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check the failure'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check the failure'
++ LOG_ERROR 'Check the failure'
++ message='Check the failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check the failure'
+Thu Jun 22 17:49:39 2023 - ERROR - Check the failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 36'
++ message='oe_test_rustfmt.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 36'
+Thu Jun 22 17:49:40 2023 - ERROR - oe_test_rustfmt.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ rustfmt --edition 2018 hello.rs
+oe_test_rustfmt.sh: line 37: rustfmt: command not found
++ CHECK_RESULT 127 0 0 'Failed to set the 2018 version'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to set the 2018 version'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to set the 2018 version'
++ LOG_ERROR 'Failed to set the 2018 version'
++ message='Failed to set the 2018 version'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to set the 2018 version'
+Thu Jun 22 17:49:40 2023 - ERROR - Failed to set the 2018 version
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 38'
++ message='oe_test_rustfmt.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 38'
+Thu Jun 22 17:49:41 2023 - ERROR - oe_test_rustfmt.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ rustfmt -h
++ grep usage
+oe_test_rustfmt.sh: line 39: rustfmt: command not found
++ CHECK_RESULT 1 0 0 'rustfmt Help information printing failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='rustfmt Help information printing failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'rustfmt Help information printing failed'
++ LOG_ERROR 'rustfmt Help information printing failed'
++ message='rustfmt Help information printing failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'rustfmt Help information printing failed'
+Thu Jun 22 17:49:41 2023 - ERROR - rustfmt Help information printing failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 40'
++ message='oe_test_rustfmt.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 40'
+Thu Jun 22 17:49:42 2023 - ERROR - oe_test_rustfmt.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ rustfmt --print-config default testDir
+oe_test_rustfmt.sh: line 41: rustfmt: command not found
++ CHECK_RESULT 127 0 0 'Default configuration failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Default configuration failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Default configuration failed'
++ LOG_ERROR 'Default configuration failed'
++ message='Default configuration failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Default configuration failed'
+Thu Jun 22 17:49:42 2023 - ERROR - Default configuration failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 42'
++ message='oe_test_rustfmt.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 42'
+Thu Jun 22 17:49:43 2023 - ERROR - oe_test_rustfmt.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ rustfmt --color auto hello.rs
+oe_test_rustfmt.sh: line 43: rustfmt: command not found
++ CHECK_RESULT 127 0 0 'Color setting failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Color setting failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Color setting failed'
++ LOG_ERROR 'Color setting failed'
++ message='Color setting failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Color setting failed'
+Thu Jun 22 17:49:43 2023 - ERROR - Color setting failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 44'
++ message='oe_test_rustfmt.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 44'
+Thu Jun 22 17:49:44 2023 - ERROR - oe_test_rustfmt.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ rustfmt -V
+oe_test_rustfmt.sh: line 45: rustfmt: command not found
++ grep -E '[0-9]'
++ CHECK_RESULT 1 0 0 'Failed to output the version information of rustfmt'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information of rustfmt'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the version information of rustfmt'
++ LOG_ERROR 'Failed to output the version information of rustfmt'
++ message='Failed to output the version information of rustfmt'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the version information of rustfmt'
+Thu Jun 22 17:49:44 2023 - ERROR - Failed to output the version information of rustfmt
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 46'
++ message='oe_test_rustfmt.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 46'
+Thu Jun 22 17:49:45 2023 - ERROR - oe_test_rustfmt.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ rls -h
++ grep help
+oe_test_rustfmt.sh: line 48: rls: command not found
++ CHECK_RESULT 1 0 0 'Help information printing failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Help information printing failed'
++ LOG_ERROR 'Help information printing failed'
++ message='Help information printing failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Help information printing failed'
+Thu Jun 22 17:49:45 2023 - ERROR - Help information printing failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 49'
++ message='oe_test_rustfmt.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 49'
+Thu Jun 22 17:49:46 2023 - ERROR - oe_test_rustfmt.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ rls -V
++ grep -E '[0-9]'
+oe_test_rustfmt.sh: line 50: rls: command not found
++ CHECK_RESULT 1 0 0 'Failed to output the version information'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the version information'
++ LOG_ERROR 'Failed to output the version information'
++ message='Failed to output the version information'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the version information'
+Thu Jun 22 17:49:46 2023 - ERROR - Failed to output the version information
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustfmt.sh line 51'
++ message='oe_test_rustfmt.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustfmt.sh line 51'
+Thu Jun 22 17:49:47 2023 - ERROR - oe_test_rustfmt.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 17:49:47 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 10
++ test 10 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 17:49:48 2023 - ERROR - failed to execute the case.
++ exit 10
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 17:49:48 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:05:45 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rustfmt
+No match for argument: rls
+Error: Unable to find a match: rustfmt rls ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:05:45 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rustfmt
+No match for argument: rls
+Error: Unable to find a match: rustfmt rls'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:05:45 ago on Thu 22 Jun 2023 05:43:49 PM CST.\nNo match for argument: rustfmt\nNo match for argument: rls\nError: Unable to find a match: rustfmt rls'
++ '[' 0 -ne 0 ']'
++ rm -rf ./hello.rs ./lib.rs ./main.rs ./myhello.rs ./pub.rs ./test.rs ./war.rs test.rs
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 17:49:51 2023 - INFO  - Finish environment cleanup!

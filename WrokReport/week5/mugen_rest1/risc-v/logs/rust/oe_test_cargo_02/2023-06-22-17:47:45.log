@@ -1,0 +1,389 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 22 17:47:48 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL cargo
++ pkgs=cargo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs cargo --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:04:19 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: cargo
+Error: Unable to find a match: cargo'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:04:19 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: cargo
+Error: Unable to find a match: cargo'
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 22 17:48:09 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Thu Jun 22 17:48:10 2023 - INFO  - Start executing testcase!
++ cargo new hello_world
+oe_test_cargo_02.sh: line 30: cargo: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 31'
++ message='oe_test_cargo_02.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 31'
+Thu Jun 22 17:48:10 2023 - ERROR - oe_test_cargo_02.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ test -d hello_world
++ CHECK_RESULT 1 0 0 'Failed to create a new package'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to create a new package'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to create a new package'
++ LOG_ERROR 'Failed to create a new package'
++ message='Failed to create a new package'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to create a new package'
+Thu Jun 22 17:48:11 2023 - ERROR - Failed to create a new package
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 33'
++ message='oe_test_cargo_02.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 33'
+Thu Jun 22 17:48:11 2023 - ERROR - oe_test_cargo_02.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ cd hello_world
+oe_test_cargo_02.sh: line 34: cd: hello_world: No such file or directory
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 35'
++ message='oe_test_cargo_02.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 35'
+Thu Jun 22 17:48:12 2023 - ERROR - oe_test_cargo_02.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ ./target/debug/hello_world
+oe_test_cargo_02.sh: line 36: ./target/debug/hello_world: No such file or directory
++ grep 'Hello, world!'
++ CHECK_RESULT 1 0 0 'Failed to compile package'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to compile package'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to compile package'
++ LOG_ERROR 'Failed to compile package'
++ message='Failed to compile package'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to compile package'
+Thu Jun 22 17:48:12 2023 - ERROR - Failed to compile package
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 37'
++ message='oe_test_cargo_02.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 37'
+Thu Jun 22 17:48:13 2023 - ERROR - oe_test_cargo_02.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo run
+oe_test_cargo_02.sh: line 38: cargo: command not found
++ grep 'Hello, world!'
++ CHECK_RESULT 1 0 0 'Failed to run package'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to run package'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to run package'
++ LOG_ERROR 'Failed to run package'
++ message='Failed to run package'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to run package'
+Thu Jun 22 17:48:13 2023 - ERROR - Failed to run package
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 39'
++ message='oe_test_cargo_02.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 39'
+Thu Jun 22 17:48:14 2023 - ERROR - oe_test_cargo_02.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo test
+oe_test_cargo_02.sh: line 40: cargo: command not found
++ grep -E 'running|test result'
++ CHECK_RESULT 1 0 0 'Failed to execute tests'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute tests'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute tests'
++ LOG_ERROR 'Failed to execute tests'
++ message='Failed to execute tests'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute tests'
+Thu Jun 22 17:48:14 2023 - ERROR - Failed to execute tests
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 41'
++ message='oe_test_cargo_02.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 41'
+Thu Jun 22 17:48:15 2023 - ERROR - oe_test_cargo_02.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo bench
+oe_test_cargo_02.sh: line 42: cargo: command not found
++ grep -E 'running|test result'
++ CHECK_RESULT 1 0 0 'Failed to execute the benchmark'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute the benchmark'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute the benchmark'
++ LOG_ERROR 'Failed to execute the benchmark'
++ message='Failed to execute the benchmark'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute the benchmark'
+Thu Jun 22 17:48:15 2023 - ERROR - Failed to execute the benchmark
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 43'
++ message='oe_test_cargo_02.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 43'
+Thu Jun 22 17:48:16 2023 - ERROR - oe_test_cargo_02.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo check
+oe_test_cargo_02.sh: line 44: cargo: command not found
++ CHECK_RESULT 127 0 0 'Failure check kit'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failure check kit'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failure check kit'
++ LOG_ERROR 'Failure check kit'
++ message='Failure check kit'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failure check kit'
+Thu Jun 22 17:48:16 2023 - ERROR - Failure check kit
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 45'
++ message='oe_test_cargo_02.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 45'
+Thu Jun 22 17:48:17 2023 - ERROR - oe_test_cargo_02.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo doc
+oe_test_cargo_02.sh: line 46: cargo: command not found
++ CHECK_RESULT 127 0 0 'Failed to build the package document'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to build the package document'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to build the package document'
++ LOG_ERROR 'Failed to build the package document'
++ message='Failed to build the package document'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to build the package document'
+Thu Jun 22 17:48:17 2023 - ERROR - Failed to build the package document
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 47'
++ message='oe_test_cargo_02.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 47'
+Thu Jun 22 17:48:18 2023 - ERROR - oe_test_cargo_02.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo clean
+oe_test_cargo_02.sh: line 48: cargo: command not found
++ CHECK_RESULT 127 1 0 'Failed to delete a file'
++ actual_result=127
++ expect_result=1
++ mode=0
++ error_log='Failed to delete a file'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 1x
++ test -n 'Failed to delete a file'
++ LOG_ERROR 'Failed to delete a file'
++ message='Failed to delete a file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to delete a file'
+Thu Jun 22 17:48:18 2023 - ERROR - Failed to delete a file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 49'
++ message='oe_test_cargo_02.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 49'
+Thu Jun 22 17:48:19 2023 - ERROR - oe_test_cargo_02.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ mkdir INI
++ cd INI
++ cargo init
+oe_test_cargo_02.sh: line 51: cargo: command not found
++ CHECK_RESULT 127 0 0 'Failed to create a new package'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to create a new package'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to create a new package'
++ LOG_ERROR 'Failed to create a new package'
++ message='Failed to create a new package'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to create a new package'
+Thu Jun 22 17:48:19 2023 - ERROR - Failed to create a new package
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 52'
++ message='oe_test_cargo_02.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 52'
+Thu Jun 22 17:48:20 2023 - ERROR - oe_test_cargo_02.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo update
+oe_test_cargo_02.sh: line 53: cargo: command not found
++ CHECK_RESULT 127 0 0 'Failed to update file'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to update file'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to update file'
++ LOG_ERROR 'Failed to update file'
++ message='Failed to update file'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to update file'
+Thu Jun 22 17:48:20 2023 - ERROR - Failed to update file
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 54'
++ message='oe_test_cargo_02.sh line 54'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 54'
+Thu Jun 22 17:48:21 2023 - ERROR - oe_test_cargo_02.sh line 54
++ '[' 0 -eq 1 ']'
++ return 0
+++ curl -s -w '%{http_code}' https://github.com/rust-lang/crates.io-index -o /dev/null
++ https_code=200
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ '[' 200 == 200 ']'
++ cargo search
+oe_test_cargo_02.sh: line 58: cargo: command not found
++ CHECK_RESULT 127 0 0 'Failed to search for serde package'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to search for serde package'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to search for serde package'
++ LOG_ERROR 'Failed to search for serde package'
++ message='Failed to search for serde package'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to search for serde package'
+Thu Jun 22 17:48:27 2023 - ERROR - Failed to search for serde package
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_cargo_02.sh line 59'
++ message='oe_test_cargo_02.sh line 59'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_cargo_02.sh line 59'
+Thu Jun 22 17:48:28 2023 - ERROR - oe_test_cargo_02.sh line 59
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 17:48:28 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 13
++ test 13 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 17:48:29 2023 - ERROR - failed to execute the case.
++ exit 13
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 17:48:29 2023 - INFO  - start environment cleanup.
++ rm -rf '../../hello_world*'
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:04:19 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: cargo
+Error: Unable to find a match: cargo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:04:19 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: cargo
+Error: Unable to find a match: cargo'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:04:19 ago on Thu 22 Jun 2023 05:43:49 PM CST.\nNo match for argument: cargo\nError: Unable to find a match: cargo'
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 17:48:32 2023 - INFO  - Finish environment cleanup!

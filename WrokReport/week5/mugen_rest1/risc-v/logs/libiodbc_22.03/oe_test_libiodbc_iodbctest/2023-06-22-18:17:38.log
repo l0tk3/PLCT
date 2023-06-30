@@ -1,0 +1,144 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 22 18:17:41 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL 'libiodbc mariadb mariadb-server mariadb-connector-odbc'
++ pkgs='libiodbc mariadb mariadb-server mariadb-connector-odbc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libiodbc mariadb mariadb-server mariadb-connector-odbc' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpayunnzib
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpayunnzib
++ systemctl start mariadb
++ /usr/bin/expect
+spawn mysql -u root -p
+Enter password: invalid command name "(none)"
+    while executing
+"(none)"
+    invoked from within
+"expect "MariaDB [(none)]>""
+++ cat ../../../conf/env.json
+++ grep IPV4
+++ awk -F '"' '{print $4}'
++ A=127.0.0.1
++ echo '[MariaDB-server]
+Description=MariaDB server
+Driver=/usr/lib64/libmaodbc.so
+SERVER=127.0.0.1
+USER=tim
+PASSWORD=openEuler@123
+DATABASE=tim
+PORT=5432'
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 22 18:19:20 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Thu Jun 22 18:19:20 2023 - INFO  - Start executing testcase!
++ iodbctest 'DSN=MariaDB-server;UID=tim;PWD=openEuler@123'
++ grep SQLDriverConnect
+1: SQLDriverConnect = ø››ø‹¡ø‹ €³ (0) SQLSTATE=
++ CHECK_RESULT 0 0 0 'Driver connection failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Driver connection failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iodbctestw 'DSN=MariaDB-server;UID=tim;PWD=openEuler@123'
++ grep SQLDriverConnect
+1: SQLDriverConnectW = ø››ø‹¡ø‹ €³ø‹ €±øŒ€±ø‘øœ ²øœ ¯ø°€ øš¨ø™¬øœ€€ øœ ¡øš³ø™°®ø‘€€ ø“ “ (0) SQLSTATE=ø–ˆøŒ€€°0
++ CHECK_RESULT 0 0 0 'Driver connection failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Driver connection failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iodbctest -h
++ grep Usage:
+Usage:
++ CHECK_RESULT 0 0 0 'iodbctest help message is misprinted'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='iodbctest help message is misprinted'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ iodbctestw -h
++ grep Usage:
+Usage:
++ CHECK_RESULT 0 0 0 'iodbctestw help message is misprinted'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='iodbctestw help message is misprinted'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of testcase execution!'
++ message='End of testcase execution!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of testcase execution!'
+Thu Jun 22 18:19:21 2023 - INFO  - End of testcase execution!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:19:21 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start environment cleanup.'
++ message='Start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment cleanup.'
+Thu Jun 22 18:19:22 2023 - INFO  - Start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpayunnzib ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpayunnzib
++ '[' 0 -ne 0 ']'
++ rm -rf /etc/odbc.ini
++ LOG_INFO 'Finish environment cleanup.'
++ message='Finish environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup.'
+Thu Jun 22 18:19:39 2023 - INFO  - Finish environment cleanup.

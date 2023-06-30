@@ -1,0 +1,216 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 17:53:05 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'tar jtidy'
++ pkgs='tar jtidy'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'tar jtidy' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpccyj38uc
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpccyj38uc
++ tar -zxvf common/test.tar.gz
+test/
+test/config
+test/demo.html
+test/demo.xhtml
+test/demo.xml
+test/demo_error.html
+test/demo_m.html
++ mkdir tmp
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 17:54:23 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 17:54:24 2023 - INFO  - Start to run test.
++ jtidy -v
++ grep 'JTidy released'
+JTidy released on 2009-12-01
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -v'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -v'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -h
++ grep 'unrecognized option'
++ jtidy -h
++ grep 'Tidy.*option.*file'
+Tidy [option...] [file...]
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -h '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -h '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -i test/demo.html
++ grep '  <head>'
+  <head>
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -i '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -i '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -o test/demo.html
++ grep '</p>'
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -o '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -o '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -wrap 4 test/demo.html
++ grep '<html lang="en">'
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -wrap '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -wrap '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -config test/config test/demo.html
++ grep '  <head>'
+test/demo.html: Doctype given is ""
+test/demo.html: Document content looks like HTML 4.01 Transitional
+no warnings or errors were found
+  <head>
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -config '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -config '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -i -show-config test/demo.html
++ grep 'indent.*Indent.*true'
+indent                      Indent     true
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -show-config '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -show-config '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -u test/demo.html
++ grep '<HEAD>'
+<HEAD>
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -u '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -u '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -c test/demo.html
++ grep text/css
+<style type="text/css">
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -c '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -c '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -b test/demo.html
++ grep '\-\-'
+grep: warning: stray \ before -
+-- 
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -b '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -b '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 17:54:49 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 17:54:50 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 17:54:50 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpccyj38uc ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpccyj38uc
++ '[' 0 -ne 0 ']'
++ rm -rf tmp test/
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 17:55:04 2023 - INFO  - Finish environment cleanup!

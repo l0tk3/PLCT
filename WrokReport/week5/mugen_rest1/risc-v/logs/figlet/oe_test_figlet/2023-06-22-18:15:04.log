@@ -1,0 +1,346 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:15:07 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL figlet
++ pkgs=figlet
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs figlet --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp4vxxl29a
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp4vxxl29a
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:15:46 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 18:15:46 2023 - INFO  - Start testing...
++ showfigfonts
+banner :
+                                          
+#####    ##   #    # #    # ###### #####  
+#    #  #  #  ##   # ##   # #      #    # 
+#####  #    # # #  # # #  # #####  #    # 
+#    # ###### #  # # #  # # #      #####  
+#    # #    # #   ## #   ## #      #   #  
+#####  #    # #    # #    # ###### #    # 
+                                          
+
+
+big :
+ _     _       
+| |   (_)      
+| |__  _  __ _ 
+| '_ \| |/ _` |
+| |_) | | (_| |
+|_.__/|_|\__, |
+          __/ |
+         |___/ 
+
+
+block :
+                                            
+_|        _|                      _|        
+_|_|_|    _|    _|_|      _|_|_|  _|  _|    
+_|    _|  _|  _|    _|  _|        _|_|      
+_|    _|  _|  _|    _|  _|        _|  _|    
+_|_|_|    _|    _|_|      _|_|_|  _|    _|  
+                                            
+                                            
+
+
+bubble :
+  _   _   _   _   _   _  
+ / \ / \ / \ / \ / \ / \ 
+( b | u | b | b | l | e )
+ \_/ \_/ \_/ \_/ \_/ \_/ 
+
+
+digital :
++-+-+-+-+-+-+-+
+|d|i|g|i|t|a|l|
++-+-+-+-+-+-+-+
+
+
+ivrit :
+                                                            _   _            _ 
+                                                           | |_(_)_ ____   _(_)
+                                                           | __| | '__\ \ / / |
+                                                           | |_| | |   \ V /| |
+                                                            \__|_|_|    \_/ |_|
+                                                                               
+
+
+lean :
+                                     
+    _/                               
+   _/    _/_/      _/_/_/  _/_/_/    
+  _/  _/_/_/_/  _/    _/  _/    _/   
+ _/  _/        _/    _/  _/    _/    
+_/    _/_/_/    _/_/_/  _/    _/     
+                                     
+                                     
+
+
+mini :
+           
+._ _ o._ o 
+| | ||| || 
+           
+
+
+mnemonic :
+mnemonic
+
+
+script :
+                          
+               o          
+ ,   __   ,_        _ _|_ 
+/ \_/    /  |  |  |/ \_|  
+ \/ \___/   |_/|_/|__/ |_/
+                 /|       
+                 \|       
+
+
+shadow :
+      |               |                
+  __| __ \   _` |  _` |  _ \\ \  \   / 
+\__ \ | | | (   | (   | (   |\ \  \ /  
+____/_| |_|\__,_|\__,_|\___/  \_/\_/   
+                                       
+
+
+slant :
+         __            __ 
+   _____/ /___ _____  / /_
+  / ___/ / __ `/ __ \/ __/
+ (__  ) / /_/ / / / / /_  
+/____/_/\__,_/_/ /_/\__/  
+                          
+
+
+small :
+               _ _ 
+ ____ __  __ _| | |
+(_-< '  \/ _` | | |
+/__/_|_|_\__,_|_|_|
+                   
+
+
+smscript :
+                                  
+ ,           ,   _   ,_  o    _|_ 
+/ \_/|/|/|  / \_/   /  | | |/\_|  
+ \/  | | |_/ \/ \__/   |/|/|_/ |_/
+                          (|      
+
+
+smshadow :
+               |              |              
+(_-<  ` \ (_-<   \   _` |  _` |  _ \\ \  \ / 
+___/_|_|_|___/_| _|\__,_|\__,_|\___/ \_/\_/  
+                                             
+
+
+smslant :
+                 __          __ 
+  ___ __ _  ___ / /__ ____  / /_
+ (_-</  ' \(_-</ / _ `/ _ \/ __/
+/___/_/_/_/___/_/\_,_/_//_/\__/ 
+                                
+
+
+standard :
+     _                  _               _ 
+ ___| |_ __ _ _ __   __| | __ _ _ __ __| |
+/ __| __/ _` | '_ \ / _` |/ _` | '__/ _` |
+\__ \ || (_| | | | | (_| | (_| | | | (_| |
+|___/\__\__,_|_| |_|\__,_|\__,_|_|  \__,_|
+                                          
+
+
+term :
+term
+
+
++ CHECK_RESULT 0 0 0 'Unable to output detailed information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Unable to output detailed information'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chkfont /usr/share/figlet/smscript.flf
+/usr/share/figlet/smscript.flf: Errors: 0, Warnings: 0
+-------------------------------------------------------------------------------
++ CHECK_RESULT 0 0 0 'Failed to check flf file'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to check flf file'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ figlist
+Default font: standard
+Font directory: /usr/share/figlet
+Figlet fonts in this directory:
+banner
+big
+block
+bubble
+digital
+ivrit
+lean
+mini
+mnemonic
+script
+shadow
+slant
+small
+smscript
+smshadow
+smslant
+standard
+term
+Figlet control files in this directory:
+646-ca2
+646-ca
+646-cn
+646-cu
+646-de
+646-dk
+646-es2
+646-es
+646-fr
+646-gb
+646-hu
+646-irv
+646-it
+646-jp
+646-kr
+646-no2
+646-no
+646-pt2
+646-pt
+646-se2
+646-se
+646-yu
+8859-2
+8859-3
+8859-4
+8859-5
+8859-7
+8859-8
+8859-9
+frango
+hz
+ilhebrew
+jis0201
+koi8r
+moscow
+upper
+ushebrew
+uskata
+utf8
++ CHECK_RESULT 0 0 0 'Unable to list figlet fonts and control files'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Unable to list figlet fonts and control files'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ figlet -f smscript 'hello, world!'
+                                               
+|)    _ |\ |\  _              _   ,_  |\  _|  |
+|/\  |/ |/ |/ / \_   |  |  |_/ \_/  | |/ / |  |
+|  |/|_/|_/|_/\_/o    \/ \/  \_/    |/|_/\/|_/o
+                 /                             
++ CHECK_RESULT 0 0 0 'Unable to display large letters based on original text'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Unable to display large letters based on original text'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ figlet -f bubble 'hello, world!'
+  _   _   _   _   _   _     _   _   _   _   _   _  
+ / \ / \ / \ / \ / \ / \   / \ / \ / \ / \ / \ / \ 
+( h | e | l | l | o | , ) ( w | o | r | l | d | ! )
+ \_/ \_/ \_/ \_/ \_/ \_/   \_/ \_/ \_/ \_/ \_/ \_/ 
++ CHECK_RESULT 0 0 0 'Failed to output information'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to output information'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 18:15:48 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:15:48 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:15:49 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp4vxxl29a ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp4vxxl29a
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 18:15:58 2023 - INFO  - End to restore the test environment.

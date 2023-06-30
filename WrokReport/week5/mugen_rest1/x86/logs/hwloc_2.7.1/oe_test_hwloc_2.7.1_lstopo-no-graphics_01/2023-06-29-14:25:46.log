@@ -1,0 +1,230 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:25:46 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:25:46 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:25:46 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:25:47 2023 - INFO  - Start to run test.
++ lstopo-no-graphics --cpukinds
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --cpukinds failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --cpukinds failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics --memattrs
++ grep 'Memory attribute '
+Memory attribute #0 name `Capacity' flags 1
+Memory attribute #1 name `Locality' flags 2
+Memory attribute #2 name `Bandwidth' flags 5
+Memory attribute #3 name `Latency' flags 6
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --memattrs failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --memattrs failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics --no-smt
++ grep PU
++ CHECK_RESULT 1 1 0 'lstopo-no-graphics --no-smt failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='lstopo-no-graphics --no-smt failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ lstopo-no-graphics --filter Core:all
++ grep Core
+      L2 L#0 (4096KB) + L1d L#0 (32KB) + L1i L#0 (32KB) + Core L#0 + PU L#0 (P#0)
+      L2 L#1 (4096KB) + L1d L#1 (32KB) + L1i L#1 (32KB) + Core L#1 + PU L#1 (P#1)
+      L2 L#2 (4096KB) + L1d L#2 (32KB) + L1i L#2 (32KB) + Core L#2 + PU L#2 (P#2)
+      L2 L#3 (4096KB) + L1d L#3 (32KB) + L1i L#3 (32KB) + Core L#3 + PU L#3 (P#3)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --filter failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --filter failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics --filter Core:none
++ grep Core
++ CHECK_RESULT 1 1 0 'lstopo-no-graphics --filter failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='lstopo-no-graphics --filter failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ lstopo-no-graphics --disallowed
++ grep Package
+  Package L#0
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --disallowed failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --disallowed failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics --allow local
++ grep PU
+      L2 L#0 (4096KB) + L1d L#0 (32KB) + L1i L#0 (32KB) + Core L#0 + PU L#0 (P#0)
+      L2 L#1 (4096KB) + L1d L#1 (32KB) + L1i L#1 (32KB) + Core L#1 + PU L#1 (P#1)
+      L2 L#2 (4096KB) + L1d L#2 (32KB) + L1i L#2 (32KB) + Core L#2 + PU L#2 (P#2)
+      L2 L#3 (4096KB) + L1d L#3 (32KB) + L1i L#3 (32KB) + Core L#3 + PU L#3 (P#3)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --allow failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --allow failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -p --flags 2
++ grep Core
+      L2 P#0 (4096KB) + L1d P#0 (32KB) + L1i P#0 (32KB) + Core P#0 + PU P#0
+      L2 P#1 (4096KB) + L1d P#1 (32KB) + L1i P#1 (32KB) + Core P#1 + PU P#1
+      L2 P#2 (4096KB) + L1d P#2 (32KB) + L1i P#2 (32KB) + Core P#2 + PU P#2
+      L2 P#3 (4096KB) + L1d P#3 (32KB) + L1i P#3 (32KB) + Core P#3 + PU P#3
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --flags <n> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --flags <n> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics out.xml --distances
++ ls
++ grep out.xml
+out.xml
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --distances failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --distances failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l --distances-transform links
++ grep PU
+      L2 L#0 (4096KB) + L1d L#0 (32KB) + L1i L#0 (32KB) + Core L#0 + PU L#0
+      L2 L#1 (4096KB) + L1d L#1 (32KB) + L1i L#1 (32KB) + Core L#1 + PU L#1
+      L2 L#2 (4096KB) + L1d L#2 (32KB) + L1i L#2 (32KB) + Core L#2 + PU L#2
+      L2 L#3 (4096KB) + L1d L#3 (32KB) + L1i L#3 (32KB) + Core L#3 + PU L#3
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --distances-transform failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --distances-transform failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -h
++ grep 'Usage: lstopo-no-graphics'
+Usage: lstopo-no-graphics [ options ] ... [ filename.format ]
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics -h failed '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics -h failed '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:25:47 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:25:47 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:25:47 2023 - INFO  - Start to restore the test environment.
++ rm -rf out.xml
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:25:47 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:25:47 2023 - INFO  - End to restore the test environment.

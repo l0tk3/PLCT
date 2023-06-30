@@ -1,0 +1,205 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 14:27:12 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL keepalived
++ pkgs=keepalived
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs keepalived --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp36cvjh1f
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp36cvjh1f
++ which firewalld
+which: no firewalld in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin)
++ getenforce
++ grep Enforcing
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 14:27:17 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 29 14:27:17 2023 - INFO  - Start executing testcase.
++ echo 'global_defs {
+       router_id fw-1
+       vrrp_garp_master_delay 5
+       vrrp_garp_master_repeat 5
+       vrrp_garp_lower_prio_delay 5
+       vrrp_garp_lower_prio_repeat 5
+       vrrp_garp_master_refresh 120
+       vrrp_garp_master_refresh_repeat 2
+       vrrp_garp_interval 0.2
+       vrrp_gna_interval 0.2
+}
+vrrp_instance VI_11 {
+       priority 100
+       state MASTER
+       interface 
+       virtual_router_id 11
+       advert_int 1
+       virtual_ipaddress {
+        192.168.111.111 dev  label :1
+        192.168.111.112 dev  label :2
+        192.168.111.113 dev  label :3
+        192.168.111.114 dev  label :4
+        }
+       smtp_alert
+}'
++ systemctl start keepalived
++ tail -f /var/log/messages
+Job for keepalived.service failed because a timeout was exceeded.
+See "systemctl status keepalived.service" and "journalctl -xeu keepalived.service" for details.
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_vrrp_garp_keepalived.sh line 59'
++ message='oe_test_vrrp_garp_keepalived.sh line 59'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_vrrp_garp_keepalived.sh line 59'
+Thu Jun 29 14:37:17 2023 - ERROR - oe_test_vrrp_garp_keepalived.sh line 59
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 115
++ wait_time=115
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 115 --cmd '' --mode 1
+++ pgrep -f 'tail -f /var/log/messages'
++ kill -9 1836
+++ grep -c 'Sending gratuitous ARP on  for 192.168.111.111' /tmp/tmp_mesg
++ test 0 -eq 5
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_vrrp_garp_keepalived.sh line 63'
++ message='oe_test_vrrp_garp_keepalived.sh line 63'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_vrrp_garp_keepalived.sh line 63'
+Thu Jun 29 14:39:13 2023 - ERROR - oe_test_vrrp_garp_keepalived.sh line 63
+/root/mugen/libs/locallibs/common_lib_python.sh: line 34:  1836 Killed                  tail -f /var/log/messages > /tmp/tmp_mesg
++ '[' 0 -eq 1 ']'
++ return 0
+++ grep -c 'Sending gratuitous ARP on  for 192.168.111.112' /tmp/tmp_mesg
++ test 0 -eq 5
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_vrrp_garp_keepalived.sh line 65'
++ message='oe_test_vrrp_garp_keepalived.sh line 65'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_vrrp_garp_keepalived.sh line 65'
+Thu Jun 29 14:39:13 2023 - ERROR - oe_test_vrrp_garp_keepalived.sh line 65
++ '[' 0 -eq 1 ']'
++ return 0
+++ grep -c 'Sending gratuitous ARP on  for 192.168.111.113' /tmp/tmp_mesg
++ test 0 -eq 5
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_vrrp_garp_keepalived.sh line 67'
++ message='oe_test_vrrp_garp_keepalived.sh line 67'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_vrrp_garp_keepalived.sh line 67'
+Thu Jun 29 14:39:13 2023 - ERROR - oe_test_vrrp_garp_keepalived.sh line 67
++ '[' 0 -eq 1 ']'
++ return 0
+++ grep -c 'Sending gratuitous ARP on  for 192.168.111.114' /tmp/tmp_mesg
++ test 0 -eq 5
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_vrrp_garp_keepalived.sh line 69'
++ message='oe_test_vrrp_garp_keepalived.sh line 69'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_vrrp_garp_keepalived.sh line 69'
+Thu Jun 29 14:39:13 2023 - ERROR - oe_test_vrrp_garp_keepalived.sh line 69
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 29 14:39:13 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 5
++ test 5 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:39:13 2023 - ERROR - failed to execute the case.
++ exit 5
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 14:39:13 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE 1
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp36cvjh1f ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp36cvjh1f
++ '[' 0 -ne 0 ']'
++ rm -rf /etc/keepalived/ /tmp/tmp_mesg
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 14:39:16 2023 - INFO  - Finish environment cleanup!

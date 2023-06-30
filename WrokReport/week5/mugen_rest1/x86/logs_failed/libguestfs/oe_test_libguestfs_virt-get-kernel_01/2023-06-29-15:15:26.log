@@ -1,0 +1,320 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:15:26 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmphozspacw
++ '[' -z '' ']'
++ tmpfile=/tmp/tmphozspacw
+++ uname -i
++ test x86_64X == aarch64X
++ systemctl start libvirtd
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get x86_64 qcow2 libguestfs pkg'
++ message='get x86_64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get x86_64 qcow2 libguestfs pkg'
+Thu Jun 29 15:15:31 2023 - INFO  - get x86_64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 ']'
++ LOG_INFO 'qcow2 file already exists'
++ message='qcow2 file already exists'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'qcow2 file already exists'
+Thu Jun 29 15:15:31 2023 - INFO  - qcow2 file already exists
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
++ virt-install --name openEuler-2003 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+WARNING  KVM acceleration not available, using 'qemu'
+ERROR    
+--os-variant/--osinfo OS name is required, but no value was
+set or detected.
+
+This is now a fatal error. Specifying an OS name is required
+for modern, performant, and secure virtual machine defaults.
+
+You can see a full list of possible OS name values with:
+
+   virt-install --osinfo list
+
+If your Linux distro is not listed, try one of generic values
+such as: linux2020, linux2018, linux2016
+
+If you just need to get the old behavior back, you can use:
+
+  --osinfo detect=on,require=off
+
+Or export VIRTINSTALL_OSINFO_DISABLE_REQUIRE=1
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 15:15:35 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:15:35 2023 - INFO  - Start to run test.
++ virt-get-kernel -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+oe_test_libguestfs_virt-get-kernel_01.sh: line 31: virt-get-kernel: command not found
++ CHECK_RESULT 127 0 0 'Check virt-get-kernel -a failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel -a failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-get-kernel -a failed'
++ LOG_ERROR 'Check virt-get-kernel -a failed'
++ message='Check virt-get-kernel -a failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-get-kernel -a failed'
+Thu Jun 29 15:15:35 2023 - ERROR - Check virt-get-kernel -a failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-get-kernel_01.sh line 32'
++ message='oe_test_libguestfs_virt-get-kernel_01.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-get-kernel_01.sh line 32'
+Thu Jun 29 15:15:35 2023 - ERROR - oe_test_libguestfs_virt-get-kernel_01.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-get-kernel -c test:///default -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+oe_test_libguestfs_virt-get-kernel_01.sh: line 33: virt-get-kernel: command not found
++ CHECK_RESULT 127 0 0 'Check virt-get-kernel -c failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel -c failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-get-kernel -c failed'
++ LOG_ERROR 'Check virt-get-kernel -c failed'
++ message='Check virt-get-kernel -c failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-get-kernel -c failed'
+Thu Jun 29 15:15:35 2023 - ERROR - Check virt-get-kernel -c failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-get-kernel_01.sh line 34'
++ message='oe_test_libguestfs_virt-get-kernel_01.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-get-kernel_01.sh line 34'
+Thu Jun 29 15:15:35 2023 - ERROR - oe_test_libguestfs_virt-get-kernel_01.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-get-kernel -d openEuler-2003
+oe_test_libguestfs_virt-get-kernel_01.sh: line 35: virt-get-kernel: command not found
++ CHECK_RESULT 127 0 0 'Check virt-get-kernel -d failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel -d failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-get-kernel -d failed'
++ LOG_ERROR 'Check virt-get-kernel -d failed'
++ message='Check virt-get-kernel -d failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-get-kernel -d failed'
+Thu Jun 29 15:15:35 2023 - ERROR - Check virt-get-kernel -d failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-get-kernel_01.sh line 36'
++ message='oe_test_libguestfs_virt-get-kernel_01.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-get-kernel_01.sh line 36'
+Thu Jun 29 15:15:35 2023 - ERROR - oe_test_libguestfs_virt-get-kernel_01.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-get-kernel --echo-keys -d openEuler-2003
+oe_test_libguestfs_virt-get-kernel_01.sh: line 37: virt-get-kernel: command not found
++ CHECK_RESULT 127 0 0 'Check virt-get-kernel --echo-keys failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel --echo-keys failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-get-kernel --echo-keys failed'
++ LOG_ERROR 'Check virt-get-kernel --echo-keys failed'
++ message='Check virt-get-kernel --echo-keys failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-get-kernel --echo-keys failed'
+Thu Jun 29 15:15:35 2023 - ERROR - Check virt-get-kernel --echo-keys failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-get-kernel_01.sh line 38'
++ message='oe_test_libguestfs_virt-get-kernel_01.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-get-kernel_01.sh line 38'
+Thu Jun 29 15:15:35 2023 - ERROR - oe_test_libguestfs_virt-get-kernel_01.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-get-kernel --format=qcow2 -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+oe_test_libguestfs_virt-get-kernel_01.sh: line 39: virt-get-kernel: command not found
++ CHECK_RESULT 127 0 0 'Check virt-get-kernel --format failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel --format failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-get-kernel --format failed'
++ LOG_ERROR 'Check virt-get-kernel --format failed'
++ message='Check virt-get-kernel --format failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-get-kernel --format failed'
+Thu Jun 29 15:15:35 2023 - ERROR - Check virt-get-kernel --format failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-get-kernel_01.sh line 40'
++ message='oe_test_libguestfs_virt-get-kernel_01.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-get-kernel_01.sh line 40'
+Thu Jun 29 15:15:35 2023 - ERROR - oe_test_libguestfs_virt-get-kernel_01.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-get-kernel --help
++ grep virt-get-kernel
+oe_test_libguestfs_virt-get-kernel_01.sh: line 41: virt-get-kernel: command not found
++ CHECK_RESULT 0 0 0 'Check virt-get-kernel --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ virt-get-kernel --key ID:key:KEY_STRING -d openEuler-2003
+oe_test_libguestfs_virt-get-kernel_01.sh: line 43: virt-get-kernel: command not found
++ CHECK_RESULT 127 0 0 'Check virt-get-kernel --key failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel --key failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-get-kernel --key failed'
++ LOG_ERROR 'Check virt-get-kernel --key failed'
++ message='Check virt-get-kernel --key failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-get-kernel --key failed'
+Thu Jun 29 15:15:35 2023 - ERROR - Check virt-get-kernel --key failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-get-kernel_01.sh line 44'
++ message='oe_test_libguestfs_virt-get-kernel_01.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-get-kernel_01.sh line 44'
+Thu Jun 29 15:15:35 2023 - ERROR - oe_test_libguestfs_virt-get-kernel_01.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-get-kernel --keys-from-stdin -d openEuler-2003
+oe_test_libguestfs_virt-get-kernel_01.sh: line 45: virt-get-kernel: command not found
++ CHECK_RESULT 127 0 0 'Check virt-get-kernel --keys-from-stdin failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel --keys-from-stdin failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-get-kernel --keys-from-stdin failed'
++ LOG_ERROR 'Check virt-get-kernel --keys-from-stdin failed'
++ message='Check virt-get-kernel --keys-from-stdin failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-get-kernel --keys-from-stdin failed'
+Thu Jun 29 15:15:35 2023 - ERROR - Check virt-get-kernel --keys-from-stdin failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-get-kernel_01.sh line 46'
++ message='oe_test_libguestfs_virt-get-kernel_01.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-get-kernel_01.sh line 46'
+Thu Jun 29 15:15:35 2023 - ERROR - oe_test_libguestfs_virt-get-kernel_01.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-get-kernel --machine-readable
++ grep virt
+oe_test_libguestfs_virt-get-kernel_01.sh: line 47: virt-get-kernel: command not found
++ CHECK_RESULT 0 0 0 'Check virt-get-kernel --machine-readable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check virt-get-kernel --machine-readable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 29 15:15:35 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 7
++ test 7 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:15:35 2023 - ERROR - failed to execute the case.
++ exit 7
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 15:15:35 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test
++ virsh start openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh undefine openEuler-2003 --nvram
+error: failed to get domain 'openEuler-2003'
+
++ unset LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmphozspacw ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmphozspacw
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*' 'file*'
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 29 15:15:38 2023 - INFO  - Finish to restore the test environment.

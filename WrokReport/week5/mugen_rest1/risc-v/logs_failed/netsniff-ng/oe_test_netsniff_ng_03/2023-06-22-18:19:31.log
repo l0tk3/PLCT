@@ -1,0 +1,105 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:19:34 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 22 18:19:45 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:19:46 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:19:46 2023 - INFO  - Start to run test.
++ netsniff-ng --in -T 0xa1e2cb12 -D -n 1
++ grep 'netsniff-ng pcap'
+netsniff-ng pcap:
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -D failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -D failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in -T 0xa1e2cb12 --dump-pcap-types -n 1
++ grep 'netsniff-ng pcap'
+netsniff-ng pcap:
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --dump-pcap-types failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --dump-pcap-types failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bpfc ./data/faa
++ netsniff-ng --in any --filter tmp.bpf -B -n 2
++ grep 'packets incoming'
+Thu Jun 22 18:49:32 2023 - ERROR - Timeout : Command 'bash -x oe_test_netsniff_ng_03.sh' timed out after 1799.999627497 seconds
+           2  packets incoming (2 unread on exit)
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:49:33 2023 - INFO  - Start to restore the test environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 18:49:34 2023 - WARN  - no thing to do.
+++ return 0
+++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 18:49:34 2023 - INFO  - End to restore the test environment.
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -B failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -B failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --filter tmp.bpf --dump-bpf -n 1
++ grep 'packets incoming'

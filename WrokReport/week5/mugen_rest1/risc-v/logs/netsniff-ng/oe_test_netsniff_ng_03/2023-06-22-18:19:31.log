@@ -1,0 +1,493 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:19:34 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 22 18:19:45 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 18:19:46 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:19:46 2023 - INFO  - Start to run test.
++ netsniff-ng --in -T 0xa1e2cb12 -D -n 1
++ grep 'netsniff-ng pcap'
+netsniff-ng pcap:
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -D failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -D failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in -T 0xa1e2cb12 --dump-pcap-types -n 1
++ grep 'netsniff-ng pcap'
+netsniff-ng pcap:
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --dump-pcap-types failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --dump-pcap-types failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ bpfc ./data/faa
++ netsniff-ng --in any --filter tmp.bpf -B -n 2
++ grep 'packets incoming'
+Thu Jun 22 18:49:32 2023 - ERROR - Timeout : Command 'bash -x oe_test_netsniff_ng_03.sh' timed out after 1799.999627497 seconds
+           2  packets incoming (2 unread on exit)
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:49:33 2023 - INFO  - Start to restore the test environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 18:49:34 2023 - WARN  - no thing to do.
+++ return 0
+++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 18:49:34 2023 - INFO  - End to restore the test environment.
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -B failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -B failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --filter tmp.bpf --dump-bpf -n 1
++ grep 'packets incoming'
+           1  packets incoming (3 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --dump-bpf failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --dump-bpf failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.bpf
++ netsniff-ng --in any --out lo -r -n 1
++ grep 'packets incoming'
+           4  packets incoming (0 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -r failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -r failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --out lo --rand -n 1
++ grep 'packets incoming'
+           4  packets incoming (0 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --rand failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --rand failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -M -n 1
++ grep 'packets incoming'
+           1  packets incoming (3 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -M failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -M failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --no-promisc -n 1
++ grep 'packets incoming'
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --no-promisc failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --no-promisc failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep '1  packets incoming'
++ netsniff-ng --in any -A -n 1
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -A failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -A failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --no-sock-mem -n 1
++ grep 'packets incoming'
+           1  packets incoming (3 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --no-sock-mem failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --no-sock-mem failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --no-hwtimestamp -n 1
++ grep 'packets incoming'
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --no-hwtimestamp failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --no-hwtimestamp failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -N -n 1
++ grep 'packets incoming'
+           1  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -N failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -N failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --out dump.pcap --silent --bind-cpu 0 -n 2
+Running! Hang up with ^C!
+
+           2  packets incoming (2 unread on exit)
+           4  packets passed filter
+           0  packets failed filter (out of space)
+      0.0000% packet droprate
+         201  sec, 618995 usec in total
++ netsniff-ng --in dump.pcap --mmap
++ grep 'packets outgoing'
+           2 packets outgoing
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --mmap failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --mmap failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f dump.pcap
++ netsniff-ng --in any --out dump.pcap --silent --bind-cpu 0 -n 2
+Running! Hang up with ^C!
+
+           2  packets incoming (2 unread on exit)
+           4  packets passed filter
+           0  packets failed filter (out of space)
+      0.0000% packet droprate
+           1  sec, 802230 usec in total
++ netsniff-ng --in dump.pcap -m
++ grep 'packets outgoing'
+           2 packets outgoing
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -m failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -m failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f dump.pcap
++ netsniff-ng --in any --out dump.pcap --silent --bind-cpu 0 -n 2
+Running! Hang up with ^C!
+
+           2  packets incoming (4 unread on exit)
+           6  packets passed filter
+           0  packets failed filter (out of space)
+      0.0000% packet droprate
+           9  sec, 3339 usec in total
++ grep 'packets outgoing'
++ netsniff-ng --in dump.pcap -G
+           2 packets outgoing
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -G failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -G failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f dump.pcap
++ netsniff-ng --in any --out dump.pcap --silent --bind-cpu 0 -n 2
+Running! Hang up with ^C!
+
+           2  packets incoming (2 unread on exit)
+           4  packets passed filter
+           0  packets failed filter (out of space)
+      0.0000% packet droprate
+          52  sec, 304921 usec in total
++ netsniff-ng --in dump.pcap --sg
++ grep 'packets outgoing'
+           2 packets outgoing
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --sg failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --sg failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f dump.pcap
++ netsniff-ng --in any --out dump.pcap --silent --bind-cpu 0 -n 2
+Running! Hang up with ^C!
+
+           2  packets incoming (1 unread on exit)
+           3  packets passed filter
+           0  packets failed filter (out of space)
+      0.0000% packet droprate
+          32  sec, 21801 usec in total
++ netsniff-ng --in any --out dump.pcap -c -n 2
++ grep 'packets incoming'
+           2  packets incoming (3 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -c failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -c failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f dump.pcap
++ netsniff-ng --in any --out dump.pcap --silent --bind-cpu 0 -n 2
+Running! Hang up with ^C!
+
+           2  packets incoming (1 unread on exit)
+           3  packets passed filter
+           0  packets failed filter (out of space)
+      0.0000% packet droprate
+         376  sec, 481274 usec in total
++ netsniff-ng --in any --out dump.pcap --clrw -n 2
++ grep 'packets incoming'
+           2  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --clrw failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --clrw failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f dump.pcap
++ netsniff-ng --in any --ring-size 1MiB -n 2
++ grep 'packets incoming'
+           2  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --ring-size failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --ring-size failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -S 1MiB -n 2
++ grep 'packets incoming'
+           2  packets incoming (1 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -S failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -S failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -k1000 -n 2
++ grep 'packets incoming'
+           2  packets incoming (8 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -k failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -k failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --kernel-pull 1000 -n 2
++ grep 'packets incoming'
+           2  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --kernel-pull failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --kernel-pull failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any -J -n 1
++ grep '1  packets incoming'
+           1  packets incoming (3 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -J failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -J failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --jumbo-support -n 1
++ grep 'packets incoming'
+           2  packets incoming (6 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -J failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -J failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --out dump.cfg --silent --bind-cpu 0 -n 2
++ grep 'packets incoming'
+           2  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --bind-cpu failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --bind-cpu failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ netsniff-ng --in any --out dump.cfg --silent -b 0 -n 2
++ grep 'packets incoming'
+           2  packets incoming (2 unread on exit)
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -b failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -b failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f dump.cfg
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 20:20:13 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 20:20:14 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 20:20:14 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 20:20:15 2023 - WARN  - no thing to do.
++ return 0
++ rm -rf ./data/ './common/*.sh'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 20:20:16 2023 - INFO  - End to restore the test environment.

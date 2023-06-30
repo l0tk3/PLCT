@@ -1,0 +1,172 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:24:50 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:24:51 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:24:51 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:24:51 2023 - INFO  - Start to run test.
++ mkdir ./raw ./compress ./uncompress
++ lstopo -l --input 'node:1 2' ./raw/test1.xml
++ lstopo -l --input 'node:1 2' ./raw/test2.xml
++ lstopo -l --input 'node:2 2' ./raw/test3.xml
++ hwloc-compress-dir --verbose ./raw/ ./compress/
+Could not compress test1, keeping non-compressed
+Compressed test2 on top of test1
+Could not compress test3, keeping non-compressed
+Compressed 1 new topologies (0 were already compressed)
+Kept 2 new topologies non-compressed (0 were already non-compressed)
++ cd compress/
++ ls
++ wc -w
++ grep 3
+3
++ cd ../
++ CHECK_RESULT 0 0 0 'hwloc-compress-dir --verbose failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-compress-dir --verbose failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-compress-dir -v ./raw/ ./compress/
++ grep 'already non-compressed'
+test1 already non-compressed, skipping
+test3 already non-compressed, skipping
+Kept 0 new topologies non-compressed (2 were already non-compressed)
++ CHECK_RESULT 0 0 0 'hwloc-compress-dir -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-compress-dir -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd compress/
++ ls
++ grep diff.xml
+test2.diff.xml
++ CHECK_RESULT 0 0 0 'hwloc-compress-dir -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-compress-dir -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd ../
++ hwloc-compress-dir -R ./compress/ ./uncompress/
++ grep Uncompressed
+Uncompressed test2
+Uncompressed 1 new topologies, copied 2 non-compressed topologies (0 were already uncompressed)
++ CHECK_RESULT 0 0 0 'hwloc-compress-dir -R failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-compress-dir -R failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-compress-dir --reverse ./compress/ ./uncompress/
++ grep 'Uncompressed 0'
+Uncompressed 0 new topologies, copied 0 non-compressed topologies (3 were already uncompressed)
++ CHECK_RESULT 0 0 0 'hwloc-compress-dir --reverse failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-compress-dir --reverse failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd uncompress/
++ ls
++ grep test2.xml
+test2.xml
++ CHECK_RESULT 0 0 0 'hwloc-compress-dir --reverse failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-compress-dir --reverse failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:24:51 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:24:51 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:24:51 2023 - INFO  - Start to restore the test environment.
++ rm -rf ../raw ../compress ../uncompress
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:24:51 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:24:51 2023 - INFO  - End to restore the test environment.

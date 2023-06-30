@@ -1,0 +1,2131 @@
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci-host-generic 30000000.pci:      MEM 0x0400000000..0x07ffffffff -> 0x0400000000
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci-host-generic 30000000.pci: Memory resource size exceeds max for 32 bits
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci-host-generic 30000000.pci: ECAM at [mem 0x30000000-0x3fffffff] for [bus 00-ff]
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci-host-generic 30000000.pci: PCI host bridge to bus 0000:00
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci_bus 0000:00: root bus resource [mem 0x40000000-0x7fffffff]
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci_bus 0000:00: root bus resource [mem 0x400000000-0x7ffffffff]
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci 0000:00:01.0: [1b36:000d] type 00 class 0x0c0330
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci 0000:00:01.0: reg 0x10: [mem 0x40000000-0x40003fff 64bit]
+Jun 22 16:59:59 openeuler-riscv64 kernel: pci 0000:00:01.0: BAR 0: assigned [mem 0x400000000-0x400003fff 64bit]
+Jun 22 16:59:59 openeuler-riscv64 kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+Jun 22 16:59:59 openeuler-riscv64 kernel: printk: console [ttyS0] disabled
+Jun 22 16:59:59 openeuler-riscv64 kernel: 10000000.serial: ttyS0 at MMIO 0x10000000 (irq = 1, base_baud = 230400) is a 16550A
+Jun 22 16:59:59 openeuler-riscv64 kernel: printk: console [ttyS0] enabled
+Jun 22 16:59:59 openeuler-riscv64 kernel: printk: bootconsole [ns16550a0] disabled
+Jun 22 16:59:59 openeuler-riscv64 kernel: loop: module loaded
+Jun 22 16:59:59 openeuler-riscv64 kernel: virtio_blk virtio1: 1/0/0 default/read/poll queues
+Jun 22 16:59:59 openeuler-riscv64 kernel: virtio_blk virtio1: [vda] 41943040 512-byte logical blocks (21.5 GB/20.0 GiB)
+Jun 22 16:59:59 openeuler-riscv64 kernel:  vda: vda1 vda2
+Jun 22 16:59:59 openeuler-riscv64 kernel: e1000e: Intel(R) PRO/1000 Network Driver
+Jun 22 16:59:59 openeuler-riscv64 kernel: e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+Jun 22 16:59:59 openeuler-riscv64 kernel: xhci_hcd 0000:00:01.0: xHCI Host Controller
+Jun 22 16:59:59 openeuler-riscv64 kernel: xhci_hcd 0000:00:01.0: new USB bus registered, assigned bus number 1
+Jun 22 16:59:59 openeuler-riscv64 kernel: xhci_hcd 0000:00:01.0: hcc params 0x00087001 hci version 0x100 quirks 0x0000000000000010
+Jun 22 16:59:59 openeuler-riscv64 kernel: xhci_hcd 0000:00:01.0: xHCI Host Controller
+Jun 22 16:59:59 openeuler-riscv64 kernel: xhci_hcd 0000:00:01.0: new USB bus registered, assigned bus number 2
+Jun 22 16:59:59 openeuler-riscv64 kernel: xhci_hcd 0000:00:01.0: Host supports USB 3.0 SuperSpeed
+Jun 22 16:59:59 openeuler-riscv64 kernel: hub 1-0:1.0: USB hub found
+Jun 22 16:59:59 openeuler-riscv64 kernel: hub 1-0:1.0: 4 ports detected
+Jun 22 16:59:59 openeuler-riscv64 kernel: usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+Jun 22 16:59:59 openeuler-riscv64 kernel: hub 2-0:1.0: USB hub found
+Jun 22 16:59:59 openeuler-riscv64 kernel: hub 2-0:1.0: 4 ports detected
+Jun 22 16:59:59 openeuler-riscv64 kernel: usbcore: registered new interface driver uas
+Jun 22 16:59:59 openeuler-riscv64 kernel: usbcore: registered new interface driver usb-storage
+Jun 22 16:59:59 openeuler-riscv64 kernel: mousedev: PS/2 mouse device common for all mice
+Jun 22 16:59:59 openeuler-riscv64 kernel: goldfish_rtc 101000.rtc: registered as rtc0
+Jun 22 16:59:59 openeuler-riscv64 kernel: goldfish_rtc 101000.rtc: setting system clock to 2023-06-22T08:59:56 UTC (1687424396)
+Jun 22 16:59:59 openeuler-riscv64 kernel: syscon-poweroff poweroff: pm_power_off already claimed for sbi_srst_power_off
+Jun 22 16:59:59 openeuler-riscv64 kernel: syscon-poweroff: probe of poweroff failed with error -16
+Jun 22 16:59:59 openeuler-riscv64 kernel: sdhci: Secure Digital Host Controller Interface driver
+Jun 22 16:59:59 openeuler-riscv64 kernel: sdhci: Copyright(c) Pierre Ossman
+Jun 22 16:59:59 openeuler-riscv64 kernel: sdhci-pltfm: SDHCI platform and OF driver helper
+Jun 22 16:59:59 openeuler-riscv64 kernel: usbcore: registered new interface driver usbhid
+Jun 22 16:59:59 openeuler-riscv64 kernel: usbhid: USB HID core driver
+Jun 22 16:59:59 openeuler-riscv64 kernel: riscv-pmu-sbi: SBI PMU extension is available
+Jun 22 16:59:59 openeuler-riscv64 kernel: riscv-pmu-sbi: 16 firmware and 18 hardware counters
+Jun 22 16:59:59 openeuler-riscv64 kernel: riscv-pmu-sbi: Perf sampling/filtering is not supported as sscof extension is not available
+Jun 22 16:59:59 openeuler-riscv64 kernel: NET: Registered PF_INET6 protocol family
+Jun 22 16:59:59 openeuler-riscv64 kernel: Segment Routing with IPv6
+Jun 22 16:59:59 openeuler-riscv64 kernel: In-situ OAM (IOAM) with IPv6
+Jun 22 16:59:59 openeuler-riscv64 kernel: sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+Jun 22 16:59:59 openeuler-riscv64 kernel: NET: Registered PF_PACKET protocol family
+Jun 22 16:59:59 openeuler-riscv64 kernel: 9pnet: Installing 9P2000 support
+Jun 22 16:59:59 openeuler-riscv64 kernel: Key type dns_resolver registered
+Jun 22 16:59:59 openeuler-riscv64 kernel: start plist test
+Jun 22 16:59:59 openeuler-riscv64 kernel: end plist test
+Jun 22 16:59:59 openeuler-riscv64 kernel: debug_vm_pgtable: [debug_vm_pgtable         ]: Validating architecture page table helpers
+Jun 22 16:59:59 openeuler-riscv64 kernel: EXT4-fs (vda2): recovery complete
+Jun 22 16:59:59 openeuler-riscv64 kernel: EXT4-fs (vda2): mounted filesystem with ordered data mode. Quota mode: disabled.
+Jun 22 16:59:59 openeuler-riscv64 kernel: VFS: Mounted root (ext4 filesystem) on device 254:2.
+Jun 22 16:59:59 openeuler-riscv64 kernel: devtmpfs: mounted
+Jun 22 16:59:59 openeuler-riscv64 kernel: Freeing unused kernel image (initmem) memory: 2248K
+Jun 22 16:59:59 openeuler-riscv64 kernel: Run /sbin/init as init process
+Jun 22 16:59:59 openeuler-riscv64 kernel:   with arguments:
+Jun 22 16:59:59 openeuler-riscv64 kernel:     /sbin/init
+Jun 22 16:59:59 openeuler-riscv64 kernel:   with environment:
+Jun 22 16:59:59 openeuler-riscv64 kernel:     HOME=/
+Jun 22 16:59:59 openeuler-riscv64 kernel:     TERM=linux
+Jun 22 16:59:59 openeuler-riscv64 kernel:     selinux=0
+Jun 22 16:59:59 openeuler-riscv64 kernel: usb 1-1: new high-speed USB device number 2 using xhci_hcd
+Jun 22 16:59:59 openeuler-riscv64 kernel: input: QEMU QEMU USB Keyboard as /devices/platform/soc/30000000.pci/pci0000:00/0000:00:01.0/usb1/1-1/1-1:1.0/0003:0627:0001.0001/input/input0
+Jun 22 16:59:59 openeuler-riscv64 kernel: hid-generic 0003:0627:0001.0001: input: USB HID v1.11 Keyboard [QEMU QEMU USB Keyboard] on usb-0000:00:01.0-1/input0
+Jun 22 16:59:59 openeuler-riscv64 kernel: usb 1-2: new high-speed USB device number 3 using xhci_hcd
+Jun 22 16:59:59 openeuler-riscv64 kernel: input: QEMU QEMU USB Tablet as /devices/platform/soc/30000000.pci/pci0000:00/0000:00:01.0/usb1/1-2/1-2:1.0/0003:0627:0001.0002/input/input1
+Jun 22 16:59:59 openeuler-riscv64 kernel: hid-generic 0003:0627:0001.0002: input: USB HID v0.01 Mouse [QEMU QEMU USB Tablet] on usb-0000:00:01.0-2/input0
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: systemd v249-47.oe2303 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA -SMACK +SECCOMP +GCRYPT +GNUTLS -OPENSSL +ACL +BLKID -CURL -ELFUTILS -FIDO2 +IDN2 -IDN -IPTC +KMOD -LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB -ZSTD +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=legacy)
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Detected architecture riscv64.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Hostname set to <openeuler-riscv64>.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Queued start job for default target Graphical Interface.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Created slice Slice /system/getty.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Created slice Slice /system/modprobe.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Created slice Slice /system/serial-getty.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Created slice Slice /system/sshd-keygen.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Created slice Slice /system/systemd-fsck.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Created slice User and Session Slice.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Reached target Path Units.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Reached target Remote File Systems.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Reached target Slice Units.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Reached target Swaps.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Listening on Device-mapper event daemon FIFOs.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Listening on LVM2 poll daemon socket.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Listening on Process Core Dump Socket.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Listening on initctl Compatibility Named Pipe.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Listening on Journal Socket (/dev/log).
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Listening on Journal Socket.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Listening on udev Control Socket.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Listening on udev Kernel Socket.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounting Huge Pages File System...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounting POSIX Message Queue File System...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounting Kernel Debug File System...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounting Kernel Trace File System...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounting Temporary Directory /tmp...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Create List of Static Device Nodes...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Load Kernel Module configfs...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Load Kernel Module drm...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Load Kernel Module fuse...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: systemd-journald.service: unit configures an IP firewall, but the local system does not support BPF/cgroup firewalling.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: (This warning is only shown for the first unit using IP firewalling.)
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Journal Service...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Condition check resulted in Load Kernel Modules being skipped.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Remount Root and Kernel File Systems...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Apply Kernel Variables...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Coldplug All udev Devices...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounted Huge Pages File System.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounted POSIX Message Queue File System.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounted Kernel Debug File System.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounted Kernel Trace File System.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Mounted Temporary Directory /tmp.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Create List of Static Device Nodes.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: modprobe@configfs.service: Deactivated successfully.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Load Kernel Module configfs.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: modprobe@drm.service: Deactivated successfully.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Load Kernel Module drm.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: modprobe@fuse.service: Deactivated successfully.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Load Kernel Module fuse.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Condition check resulted in FUSE Control File System being skipped.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Condition check resulted in Kernel Configuration File System being skipped.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Apply Kernel Variables.
+Jun 22 16:59:59 openeuler-riscv64 kernel: EXT4-fs (vda2): re-mounted. Quota mode: disabled.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Remount Root and Kernel File Systems.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Condition check resulted in Rebuild Hardware Database being skipped.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Load/Save Random Seed...
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Condition check resulted in Create System Users being skipped.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Create Static Device Nodes in /dev...
+Jun 22 16:59:59 openeuler-riscv64 systemd-journald[196]: Journal started
+░░ Subject: The journal has been started
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The system journal process has started up, opened the journal
+░░ files for writing and is now ready to process requests.
+Jun 22 16:59:59 openeuler-riscv64 systemd-journald[196]: Runtime Journal (/run/log/journal/7102c13a6be44f418d1f09210bcfbfd9) is 8.0M, max 78.7M, 70.7M free.
+░░ Subject: Disk space used by the journal
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Runtime Journal (/run/log/journal/7102c13a6be44f418d1f09210bcfbfd9) is currently using 8.0M.
+░░ Maximum allowed usage is set to 78.7M.
+░░ Leaving at least 39.3M free (of currently available 779.3M of disk space).
+░░ Enforced usage limit is thus 78.7M, of which 70.7M are still available.
+░░ 
+░░ The limits controlling how much disk space is used by the journal may
+░░ be configured with SystemMaxUse=, SystemKeepFree=, SystemMaxFileSize=,
+░░ RuntimeMaxUse=, RuntimeKeepFree=, RuntimeMaxFileSize= settings in
+░░ /etc/systemd/journald.conf. See journald.conf(5) for details.
+Jun 22 16:59:59 openeuler-riscv64 systemd-sysctl[198]: Couldn't write '0' to 'kernel/yama/ptrace_scope', ignoring: No such file or directory
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Load/Save Random Seed.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Started Journal Service.
+Jun 22 16:59:59 openeuler-riscv64 systemd-tmpfiles[211]: /usr/lib/tmpfiles.d/dbus.conf:13: Line references path below legacy directory /var/run/, updating /var/run/dbus/containers → /run/dbus/containers; please update the tmpfiles.d/ drop-in file accordingly.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Condition check resulted in First Boot Complete being skipped.
+░░ Subject: A start job for unit first-boot-complete.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit first-boot-complete.target has finished successfully.
+░░ 
+░░ The job identifier is 33.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Flush Journal to Persistent Storage...
+░░ Subject: A start job for unit systemd-journal-flush.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-journal-flush.service has begun execution.
+░░ 
+░░ The job identifier is 13.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Create Static Device Nodes in /dev.
+░░ Subject: A start job for unit systemd-tmpfiles-setup-dev.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-setup-dev.service has finished successfully.
+░░ 
+░░ The job identifier is 17.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Reached target Preparation for Local File Systems.
+░░ Subject: A start job for unit local-fs-pre.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit local-fs-pre.target has finished successfully.
+░░ 
+░░ The job identifier is 52.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Starting Rule-based Manager for Device Events and Files...
+░░ Subject: A start job for unit systemd-udevd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-udevd.service has begun execution.
+░░ 
+░░ The job identifier is 19.
+Jun 22 16:59:59 openeuler-riscv64 systemd-journald[196]: Time spent on flushing to /var/log/journal/7102c13a6be44f418d1f09210bcfbfd9 is 48.396ms for 285 entries.
+Jun 22 16:59:59 openeuler-riscv64 systemd-journald[196]: System Journal (/var/log/journal/7102c13a6be44f418d1f09210bcfbfd9) is 8.0M, max 1.9G, 1.8G free.
+░░ Subject: Disk space used by the journal
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ System Journal (/var/log/journal/7102c13a6be44f418d1f09210bcfbfd9) is currently using 8.0M.
+░░ Maximum allowed usage is set to 1.9G.
+░░ Leaving at least 974.0M free (of currently available 12.9G of disk space).
+░░ Enforced usage limit is thus 1.9G, of which 1.8G are still available.
+░░ 
+░░ The limits controlling how much disk space is used by the journal may
+░░ be configured with SystemMaxUse=, SystemKeepFree=, SystemMaxFileSize=,
+░░ RuntimeMaxUse=, RuntimeKeepFree=, RuntimeMaxFileSize= settings in
+░░ /etc/systemd/journald.conf. See journald.conf(5) for details.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Finished Flush Journal to Persistent Storage.
+░░ Subject: A start job for unit systemd-journal-flush.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-journal-flush.service has finished successfully.
+░░ 
+░░ The job identifier is 13.
+Jun 22 16:59:59 openeuler-riscv64 systemd[1]: Started Rule-based Manager for Device Events and Files.
+░░ Subject: A start job for unit systemd-udevd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-udevd.service has finished successfully.
+░░ 
+░░ The job identifier is 19.
+Jun 22 17:00:00 openeuler-riscv64 systemd[1]: Found device /dev/ttyS0.
+░░ Subject: A start job for unit dev-ttyS0.device has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dev-ttyS0.device has finished successfully.
+░░ 
+░░ The job identifier is 95.
+Jun 22 17:00:00 openeuler-riscv64 systemd-udevd[223]: Using default interface naming scheme 'v249'.
+Jun 22 17:00:00 openeuler-riscv64 systemd[1]: Finished Coldplug All udev Devices.
+░░ Subject: A start job for unit systemd-udev-trigger.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-udev-trigger.service has finished successfully.
+░░ 
+░░ The job identifier is 18.
+Jun 22 17:00:00 openeuler-riscv64 systemd-udevd[224]: Using default interface naming scheme 'v249'.
+Jun 22 17:00:00 openeuler-riscv64 systemd[1]: Found device /dev/disk/by-uuid/3f323731-a06b-4cd1-aa6c-f0647a95f6e6.
+░░ Subject: A start job for unit dev-disk-by\x2duuid-3f323731\x2da06b\x2d4cd1\x2daa6c\x2df0647a95f6e6.device has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dev-disk-by\x2duuid-3f323731\x2da06b\x2d4cd1\x2daa6c\x2df0647a95f6e6.device has finished successfully.
+░░ 
+░░ The job identifier is 46.
+Jun 22 17:00:00 openeuler-riscv64 systemd[1]: Starting File System Check on /dev/disk/by-uuid/3f323731-a06b-4cd1-aa6c-f0647a95f6e6...
+░░ Subject: A start job for unit systemd-fsck@dev-disk-by\x2duuid-3f323731\x2da06b\x2d4cd1\x2daa6c\x2df0647a95f6e6.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-fsck@dev-disk-by\x2duuid-3f323731\x2da06b\x2d4cd1\x2daa6c\x2df0647a95f6e6.service has begun execution.
+░░ 
+░░ The job identifier is 45.
+Jun 22 17:00:01 openeuler-riscv64 systemd-fsck[248]: /dev/vda1 was not cleanly unmounted, check forced.
+Jun 22 17:00:01 openeuler-riscv64 systemd-fsck[248]: /dev/vda1: 29/32768 files (17.2% non-contiguous), 11654/131072 blocks
+Jun 22 17:00:01 openeuler-riscv64 systemd[1]: Finished File System Check on /dev/disk/by-uuid/3f323731-a06b-4cd1-aa6c-f0647a95f6e6.
+░░ Subject: A start job for unit systemd-fsck@dev-disk-by\x2duuid-3f323731\x2da06b\x2d4cd1\x2daa6c\x2df0647a95f6e6.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-fsck@dev-disk-by\x2duuid-3f323731\x2da06b\x2d4cd1\x2daa6c\x2df0647a95f6e6.service has finished successfully.
+░░ 
+░░ The job identifier is 45.
+Jun 22 17:00:01 openeuler-riscv64 systemd[1]: Mounting /boot...
+░░ Subject: A start job for unit boot.mount has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit boot.mount has begun execution.
+░░ 
+░░ The job identifier is 44.
+Jun 22 17:00:01 openeuler-riscv64 kernel: EXT4-fs (vda1): mounting ext2 file system using the ext4 subsystem
+Jun 22 17:00:01 openeuler-riscv64 kernel: EXT4-fs (vda1): mounted filesystem without journal. Quota mode: disabled.
+Jun 22 17:00:01 openeuler-riscv64 systemd[1]: Mounted /boot.
+░░ Subject: A start job for unit boot.mount has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit boot.mount has finished successfully.
+░░ 
+░░ The job identifier is 44.
+Jun 22 17:00:01 openeuler-riscv64 systemd[1]: Reached target Local File Systems.
+░░ Subject: A start job for unit local-fs.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit local-fs.target has finished successfully.
+░░ 
+░░ The job identifier is 43.
+Jun 22 17:00:01 openeuler-riscv64 systemd[1]: Condition check resulted in Rebuild Dynamic Linker Cache being skipped.
+░░ Subject: A start job for unit ldconfig.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit ldconfig.service has finished successfully.
+░░ 
+░░ The job identifier is 31.
+Jun 22 17:00:01 openeuler-riscv64 systemd[1]: Condition check resulted in Commit a transient machine-id on disk being skipped.
+░░ Subject: A start job for unit systemd-machine-id-commit.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-machine-id-commit.service has finished successfully.
+░░ 
+░░ The job identifier is 35.
+Jun 22 17:00:02 openeuler-riscv64 systemd[1]: Starting Create Volatile Files and Directories...
+░░ Subject: A start job for unit systemd-tmpfiles-setup.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-setup.service has begun execution.
+░░ 
+░░ The job identifier is 38.
+Jun 22 17:00:02 openeuler-riscv64 systemd-tmpfiles[262]: /usr/lib/tmpfiles.d/dbus.conf:13: Line references path below legacy directory /var/run/, updating /var/run/dbus/containers → /run/dbus/containers; please update the tmpfiles.d/ drop-in file accordingly.
+Jun 22 17:00:02 openeuler-riscv64 systemd[1]: Finished Create Volatile Files and Directories.
+░░ Subject: A start job for unit systemd-tmpfiles-setup.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-setup.service has finished successfully.
+░░ 
+░░ The job identifier is 38.
+Jun 22 17:00:02 openeuler-riscv64 systemd[1]: Condition check resulted in Rebuild Journal Catalog being skipped.
+░░ Subject: A start job for unit systemd-journal-catalog-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-journal-catalog-update.service has finished successfully.
+░░ 
+░░ The job identifier is 59.
+Jun 22 17:00:02 openeuler-riscv64 systemd[1]: Starting Network Time Synchronization...
+░░ Subject: A start job for unit systemd-timesyncd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-timesyncd.service has begun execution.
+░░ 
+░░ The job identifier is 39.
+Jun 22 17:00:02 openeuler-riscv64 systemd[1]: Condition check resulted in Update is Completed being skipped.
+░░ Subject: A start job for unit systemd-update-done.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-done.service has finished successfully.
+░░ 
+░░ The job identifier is 56.
+Jun 22 17:00:02 openeuler-riscv64 systemd[1]: Starting Record System Boot/Shutdown in UTMP...
+░░ Subject: A start job for unit systemd-update-utmp.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-utmp.service has begun execution.
+░░ 
+░░ The job identifier is 98.
+Jun 22 17:00:02 openeuler-riscv64 systemd[1]: Finished Record System Boot/Shutdown in UTMP.
+░░ Subject: A start job for unit systemd-update-utmp.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-utmp.service has finished successfully.
+░░ 
+░░ The job identifier is 98.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Started Network Time Synchronization.
+░░ Subject: A start job for unit systemd-timesyncd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-timesyncd.service has finished successfully.
+░░ 
+░░ The job identifier is 39.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Reached target System Initialization.
+░░ Subject: A start job for unit sysinit.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sysinit.target has finished successfully.
+░░ 
+░░ The job identifier is 6.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Started dnf makecache --timer.
+░░ Subject: A start job for unit dnf-makecache.timer has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dnf-makecache.timer has finished successfully.
+░░ 
+░░ The job identifier is 70.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Started Daily Cleanup of Temporary Directories.
+░░ Subject: A start job for unit systemd-tmpfiles-clean.timer has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-clean.timer has finished successfully.
+░░ 
+░░ The job identifier is 75.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Reached target System Time Set.
+░░ Subject: A start job for unit time-set.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit time-set.target has finished successfully.
+░░ 
+░░ The job identifier is 40.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Reached target Timer Units.
+░░ Subject: A start job for unit timers.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit timers.target has finished successfully.
+░░ 
+░░ The job identifier is 69.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Listening on D-Bus System Message Bus Socket.
+░░ Subject: A start job for unit dbus.socket has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dbus.socket has finished successfully.
+░░ 
+░░ The job identifier is 66.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Reached target Socket Units.
+░░ Subject: A start job for unit sockets.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sockets.target has finished successfully.
+░░ 
+░░ The job identifier is 63.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Reached target Basic System.
+░░ Subject: A start job for unit basic.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit basic.target has finished successfully.
+░░ 
+░░ The job identifier is 3.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: System is tainted: cgroupsv1
+░░ Subject: The system is configured in a way that might cause problems
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The following "tags" are possible:
+░░ - "split-usr" — /usr is a separate file system and was not mounted when systemd
+░░   was booted
+░░ - "cgroups-missing" — the kernel was compiled without cgroup support or access
+░░   to expected interface files is restricted
+░░ - "var-run-bad" — /var/run is not a symlink to /run
+░░ - "overflowuid-not-65534" — the kernel user ID used for "unknown" users (with
+░░   NFS or user namespaces) is not 65534
+░░ - "overflowgid-not-65534" — the kernel group ID used for "unknown" users (with
+░░   NFS or user namespaces) is not 65534
+░░ Current system is tagged as cgroupsv1.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Starting D-Bus System Message Bus...
+░░ Subject: A start job for unit dbus.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dbus.service has begun execution.
+░░ 
+░░ The job identifier is 78.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Starting Update RTC With System Clock...
+░░ Subject: A start job for unit hwclock-save.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit hwclock-save.service has begun execution.
+░░ 
+░░ The job identifier is 29.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Started resize rootfs.
+░░ Subject: A start job for unit resize-rootfs.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit resize-rootfs.service has finished successfully.
+░░ 
+░░ The job identifier is 87.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+░░ Subject: A start job for unit sshd-keygen@ecdsa.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd-keygen@ecdsa.service has finished successfully.
+░░ 
+░░ The job identifier is 84.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+░░ Subject: A start job for unit sshd-keygen@ed25519.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd-keygen@ed25519.service has finished successfully.
+░░ 
+░░ The job identifier is 82.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+░░ Subject: A start job for unit sshd-keygen@rsa.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd-keygen@rsa.service has finished successfully.
+░░ 
+░░ The job identifier is 85.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Reached target sshd-keygen.target.
+░░ Subject: A start job for unit sshd-keygen.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd-keygen.target has finished successfully.
+░░ 
+░░ The job identifier is 81.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Starting User Login Management...
+░░ Subject: A start job for unit systemd-logind.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-logind.service has begun execution.
+░░ 
+░░ The job identifier is 99.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Finished Update RTC With System Clock.
+░░ Subject: A start job for unit hwclock-save.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit hwclock-save.service has finished successfully.
+░░ 
+░░ The job identifier is 29.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Started D-Bus System Message Bus.
+░░ Subject: A start job for unit dbus.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dbus.service has finished successfully.
+░░ 
+░░ The job identifier is 78.
+Jun 22 17:00:03 openeuler-riscv64 systemd[1]: Starting Network Manager...
+░░ Subject: A start job for unit NetworkManager.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager.service has begun execution.
+░░ 
+░░ The job identifier is 73.
+Jun 22 17:00:04 openeuler-riscv64 systemd-logind[275]: Watching system buttons on /dev/input/event0 (QEMU QEMU USB Keyboard)
+Jun 22 17:00:04 openeuler-riscv64 systemd-logind[275]: New seat seat0.
+░░ Subject: A new seat seat0 is now available
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ Documentation: sd-login(3)
+░░ 
+░░ A new seat seat0 has been configured and is now available.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Started User Login Management.
+░░ Subject: A start job for unit systemd-logind.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-logind.service has finished successfully.
+░░ 
+░░ The job identifier is 99.
+Jun 22 17:00:04 openeuler-riscv64 NetworkManager[277]: <info>  [1687424404.3465] NetworkManager (version 1.32.12-16.oe2303) is starting... (for the first time)
+Jun 22 17:00:04 openeuler-riscv64 NetworkManager[277]: <info>  [1687424404.3541] Read config: /etc/NetworkManager/NetworkManager.conf
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Started Network Manager.
+░░ Subject: A start job for unit NetworkManager.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager.service has finished successfully.
+░░ 
+░░ The job identifier is 73.
+Jun 22 17:00:04 openeuler-riscv64 NetworkManager[277]: <info>  [1687424404.4258] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Reached target Network.
+░░ Subject: A start job for unit network.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit network.target has finished successfully.
+░░ 
+░░ The job identifier is 74.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Starting Network Manager Wait Online...
+░░ Subject: A start job for unit NetworkManager-wait-online.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager-wait-online.service has begun execution.
+░░ 
+░░ The job identifier is 72.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Starting /etc/rc.d/rc.local Compatibility...
+░░ Subject: A start job for unit rc-local.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit rc-local.service has begun execution.
+░░ 
+░░ The job identifier is 77.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Starting OpenSSH server daemon...
+░░ Subject: A start job for unit sshd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd.service has begun execution.
+░░ 
+░░ The job identifier is 80.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Starting Permit User Sessions...
+░░ Subject: A start job for unit systemd-user-sessions.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-user-sessions.service has begun execution.
+░░ 
+░░ The job identifier is 79.
+Jun 22 17:00:04 openeuler-riscv64 NetworkManager[277]: <info>  [1687424404.5475] manager[0xaaaaaacc7f3000]: monitoring kernel firmware directory '/lib/firmware'.
+Jun 22 17:00:04 openeuler-riscv64 dbus-daemon[271]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.3' (uid=0 pid=277 comm="/usr/sbin/NetworkManager --no-daemon")
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Started /etc/rc.d/rc.local Compatibility.
+░░ Subject: A start job for unit rc-local.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit rc-local.service has finished successfully.
+░░ 
+░░ The job identifier is 77.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Starting Hostname Service...
+░░ Subject: A start job for unit systemd-hostnamed.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-hostnamed.service has begun execution.
+░░ 
+░░ The job identifier is 108.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Finished Permit User Sessions.
+░░ Subject: A start job for unit systemd-user-sessions.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-user-sessions.service has finished successfully.
+░░ 
+░░ The job identifier is 79.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Started Command Scheduler.
+░░ Subject: A start job for unit crond.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit crond.service has finished successfully.
+░░ 
+░░ The job identifier is 86.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Started Getty on tty1.
+░░ Subject: A start job for unit getty@tty1.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit getty@tty1.service has finished successfully.
+░░ 
+░░ The job identifier is 89.
+Jun 22 17:00:04 openeuler-riscv64 crond[293]: (CRON) STARTUP (1.6.1)
+Jun 22 17:00:04 openeuler-riscv64 crond[293]: (CRON) INFO (Syslog will be used instead of sendmail.)
+Jun 22 17:00:04 openeuler-riscv64 crond[293]: (CRON) INFO (RANDOM_DELAY will be scaled with factor 82% if used.)
+Jun 22 17:00:04 openeuler-riscv64 crond[293]: (CRON) INFO (running with inotify support)
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Started Serial Getty on ttyS0.
+░░ Subject: A start job for unit serial-getty@ttyS0.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit serial-getty@ttyS0.service has finished successfully.
+░░ 
+░░ The job identifier is 93.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Reached target Login Prompts.
+░░ Subject: A start job for unit getty.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit getty.target has finished successfully.
+░░ 
+░░ The job identifier is 88.
+Jun 22 17:00:04 openeuler-riscv64 sshd[282]: Server listening on 0.0.0.0 port 22.
+Jun 22 17:00:04 openeuler-riscv64 sshd[282]: Server listening on :: port 22.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Started OpenSSH server daemon.
+░░ Subject: A start job for unit sshd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd.service has finished successfully.
+░░ 
+░░ The job identifier is 80.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Reached target Multi-User System.
+░░ Subject: A start job for unit multi-user.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit multi-user.target has finished successfully.
+░░ 
+░░ The job identifier is 2.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Reached target Graphical Interface.
+░░ Subject: A start job for unit graphical.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit graphical.target has finished successfully.
+░░ 
+░░ The job identifier is 1.
+Jun 22 17:00:04 openeuler-riscv64 systemd[1]: Starting Record Runlevel Change in UTMP...
+░░ Subject: A start job for unit systemd-update-utmp-runlevel.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-utmp-runlevel.service has begun execution.
+░░ 
+░░ The job identifier is 97.
+Jun 22 17:00:05 openeuler-riscv64 systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-update-utmp-runlevel.service has successfully entered the 'dead' state.
+Jun 22 17:00:05 openeuler-riscv64 systemd[1]: Finished Record Runlevel Change in UTMP.
+░░ Subject: A start job for unit systemd-update-utmp-runlevel.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-utmp-runlevel.service has finished successfully.
+░░ 
+░░ The job identifier is 97.
+Jun 22 17:00:05 openeuler-riscv64 dbus-daemon[271]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jun 22 17:00:05 openeuler-riscv64 systemd[1]: Started Hostname Service.
+░░ Subject: A start job for unit systemd-hostnamed.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-hostnamed.service has finished successfully.
+░░ 
+░░ The job identifier is 108.
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.5604] hostname: hostname: using hostnamed
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.5620] hostname: hostname changed from (none) to "openeuler-riscv64"
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.5734] dns-mgr[0xaaaaaacc7d6250]: init: dns=default rc-manager=symlink
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.6630] Loaded device plugin: NMAtmManager (/usr/lib64/NetworkManager/1.32.12-16.oe2303/libnm-device-plugin-adsl.so)
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.6854] Loaded device plugin: NMTeamFactory (/usr/lib64/NetworkManager/1.32.12-16.oe2303/libnm-device-plugin-team.so)
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.6953] Loaded device plugin: NMWifiFactory (/usr/lib64/NetworkManager/1.32.12-16.oe2303/libnm-device-plugin-wifi.so)
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.6967] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.6988] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.6995] manager: Networking is enabled by state file
+Jun 22 17:00:05 openeuler-riscv64 dbus-daemon[271]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.3' (uid=0 pid=277 comm="/usr/sbin/NetworkManager --no-daemon")
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.7049] dhcp-init: default DHCP client 'dhclient' is not available
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.7053] dhcp-init: Using DHCP client 'internal'
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.7274] settings: Loaded settings plugin: ifcfg-rh ("/usr/lib64/NetworkManager/1.32.12-16.oe2303/libnm-settings-plugin-ifcfg-rh.so")
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.7298] settings: Loaded settings plugin: keyfile (internal)
+Jun 22 17:00:05 openeuler-riscv64 systemd[1]: Starting Network Manager Script Dispatcher Service...
+░░ Subject: A start job for unit NetworkManager-dispatcher.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager-dispatcher.service has begun execution.
+░░ 
+░░ The job identifier is 174.
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.7615] device (lo): carrier: link connected
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.7688] manager: (lo): new Generic device (/org/freedesktop/NetworkManager/Devices/1)
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.7883] manager: (eth0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/2)
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.8548] settings: (eth0): created default wired connection 'Wired connection 1'
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.8667] device (eth0): state change: unmanaged -> unavailable (reason 'managed', sys-iface-state: 'external')
+Jun 22 17:00:05 openeuler-riscv64 dbus-daemon[271]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.8836] device (eth0): carrier: link connected
+Jun 22 17:00:05 openeuler-riscv64 systemd[1]: Started Network Manager Script Dispatcher Service.
+░░ Subject: A start job for unit NetworkManager-dispatcher.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager-dispatcher.service has finished successfully.
+░░ 
+░░ The job identifier is 174.
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.9105] manager: (sit0): new IPTunnel device (/org/freedesktop/NetworkManager/Devices/3)
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.9558] device (eth0): state change: unavailable -> disconnected (reason 'none', sys-iface-state: 'managed')
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.9672] policy: auto-activating connection 'Wired connection 1' (5315db38-9102-3975-b9ad-fa717ea7d2f1)
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.9785] device (eth0): Activation: starting connection 'Wired connection 1' (5315db38-9102-3975-b9ad-fa717ea7d2f1)
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.9799] device (eth0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.9837] manager: NetworkManager state is now CONNECTING
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.9881] device (eth0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jun 22 17:00:05 openeuler-riscv64 NetworkManager[277]: <info>  [1687424405.9971] device (eth0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.0055] dhcp4 (eth0): activation: beginning transaction (timeout in 45 seconds)
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.0694] dhcp4 (eth0): state changed unknown -> bound, address=10.0.2.15
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.0886] device (eth0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.1567] device (eth0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.1591] device (eth0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.1640] manager: NetworkManager state is now CONNECTED_LOCAL
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.1683] manager: NetworkManager state is now CONNECTED_SITE
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.1692] policy: set 'Wired connection 1' (eth0) as default for IPv4 routing and DNS
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.2024] device (eth0): Activation: successful, device activated.
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.2146] manager: NetworkManager state is now CONNECTED_GLOBAL
+Jun 22 17:00:06 openeuler-riscv64 NetworkManager[277]: <info>  [1687424406.2255] manager: startup complete
+Jun 22 17:00:06 openeuler-riscv64 systemd[1]: Finished Network Manager Wait Online.
+░░ Subject: A start job for unit NetworkManager-wait-online.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager-wait-online.service has finished successfully.
+░░ 
+░░ The job identifier is 72.
+Jun 22 17:00:06 openeuler-riscv64 systemd[1]: Reached target Network is Online.
+░░ Subject: A start job for unit network-online.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit network-online.target has finished successfully.
+░░ 
+░░ The job identifier is 71.
+Jun 22 17:00:06 openeuler-riscv64 systemd[1]: Startup finished in 1.676s (kernel) + 9.198s (userspace) = 10.874s.
+░░ Subject: System start-up is now complete
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ All system services necessary queued for starting at boot have been
+░░ started. Note that this does not mean that the machine is now idle as services
+░░ might still be busy with completing start-up.
+░░ 
+░░ Kernel start-up required 1676382 microseconds.
+░░ 
+░░ Initial RAM disk start-up required INITRD_USEC microseconds.
+░░ 
+░░ Userspace start-up required 9198487 microseconds.
+Jun 22 17:00:07 openeuler-riscv64 NetworkManager[277]: <info>  [1687424407.3047] policy: set 'Wired connection 1' (eth0) as default for IPv6 routing and DNS
+Jun 22 17:00:08 openeuler-riscv64 sshd[313]: Accepted password for root from 10.0.2.2 port 59640 ssh2
+Jun 22 17:00:08 openeuler-riscv64 sshd[313]: pam_unix(sshd:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:00:08 openeuler-riscv64 sshd[313]: pam_unix(sshd:session): session closed for user root
+Jun 22 17:00:08 openeuler-riscv64 sshd[315]: Accepted password for root from 10.0.2.2 port 59652 ssh2
+Jun 22 17:00:08 openeuler-riscv64 sshd[315]: pam_unix(sshd:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:00:11 openeuler-riscv64 sudo[377]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdcl_01 -x
+Jun 22 17:00:11 openeuler-riscv64 sudo[377]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:00:15 openeuler-riscv64 sshd[429]: Connection closed by 10.0.2.2 port 53002 [preauth]
+Jun 22 17:00:16 openeuler-riscv64 systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit NetworkManager-dispatcher.service has successfully entered the 'dead' state.
+Jun 22 17:00:37 openeuler-riscv64 systemd[1]: Time has been changed
+░░ Subject: Time change
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The system clock has been changed to REALTIME microseconds after January 1st, 1970.
+Jun 22 17:00:37 openeuler-riscv64 systemd-timesyncd[264]: Initial synchronization to time server 203.107.6.88:123 (ntp.aliyun.com).
+Jun 22 17:00:39 openeuler-riscv64 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-hostnamed.service has successfully entered the 'dead' state.
+Jun 22 17:00:50 openeuler-riscv64 [RPM][459]: Transaction ID 64940dc2 started
+Jun 22 17:00:50 openeuler-riscv64 groupadd[463]: group added to /etc/group: name=bird, GID=989
+Jun 22 17:00:50 openeuler-riscv64 groupadd[463]: group added to /etc/gshadow: name=bird
+Jun 22 17:00:50 openeuler-riscv64 groupadd[463]: new group: name=bird, GID=989
+Jun 22 17:00:51 openeuler-riscv64 useradd[470]: new user: name=bird, UID=989, GID=989, home=/var/lib/bird, shell=/sbin/nologin, from=none
+Jun 22 17:00:51 openeuler-riscv64 systemctl[478]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 477 (/bin/sh /var/tmp/rpm-tmp.lrdXkZ 1)
+Jun 22 17:00:51 openeuler-riscv64 [RPM][459]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:00:52 openeuler-riscv64 systemctl[482]: [/usr/bin/systemctl daemon-reload] called by PID 481 (/bin/sh /var/tmp/rpm-tmp.edWKHj 0)
+Jun 22 17:00:52 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:00:54 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:00:55 openeuler-riscv64 [RPM][459]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:00:55 openeuler-riscv64 [RPM][459]: Transaction ID 64940dc2 finished: 0
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: device1: Initializing
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel1: Initializing
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel2: Initializing
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: static1: Initializing
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Initializing
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: device1: Starting
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: device1: Scanning interfaces
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: device1: State changed to up
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel1: Starting
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel1: State changed to up
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel2: Starting
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel2: State changed to up
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: static1: Starting
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: static1: State changed to up
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Starting
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Adding area 0.0.0.0
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: State changed to up
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: Started
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel1: Scanning routing table
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel1: Pruning table master4
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: kernel2: Pruning table master6
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Scheduling routing table calculation
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:00:57 openeuler-riscv64 bird[497]: ospf1: Starting routing table synchronization
+Jun 22 17:00:59 openeuler-riscv64 bird[497]: ospf1: Area number: 1
+Jun 22 17:01:01 openeuler-riscv64 bird[497]: Disabling protocol ospf1
+Jun 22 17:01:01 openeuler-riscv64 bird[497]: ospf1: Shutting down
+Jun 22 17:01:01 openeuler-riscv64 bird[497]: ospf1: Shutdown requested
+Jun 22 17:01:01 openeuler-riscv64 bird[497]: ospf1: State changed to flush
+Jun 22 17:01:01 openeuler-riscv64 bird[497]: ospf1: State changed to down
+Jun 22 17:01:05 openeuler-riscv64 CROND[559]: (root) CMD (run-parts /etc/cron.hourly)
+Jun 22 17:01:05 openeuler-riscv64 run-parts[562]: (/etc/cron.hourly) starting 0anacron
+Jun 22 17:01:05 openeuler-riscv64 anacron[570]: Anacron started on 2023-06-22
+Jun 22 17:01:05 openeuler-riscv64 anacron[570]: Will run job `cron.daily' in 12 min.
+Jun 22 17:01:05 openeuler-riscv64 anacron[570]: Will run job `cron.weekly' in 32 min.
+Jun 22 17:01:05 openeuler-riscv64 anacron[570]: Will run job `cron.monthly' in 52 min.
+Jun 22 17:01:05 openeuler-riscv64 anacron[570]: Jobs will be executed sequentially
+Jun 22 17:01:05 openeuler-riscv64 run-parts[572]: (/etc/cron.hourly) finished 0anacron
+Jun 22 17:01:05 openeuler-riscv64 CROND[558]: (root) CMDEND (run-parts /etc/cron.hourly)
+Jun 22 17:01:09 openeuler-riscv64 [RPM][557]: Transaction ID 64940dd5 started
+Jun 22 17:01:09 openeuler-riscv64 [RPM][557]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:01:09 openeuler-riscv64 systemctl[577]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 576 (/bin/sh /var/tmp/rpm-tmp.Kt6QSu 0)
+Jun 22 17:01:09 openeuler-riscv64 systemctl[580]: [/usr/bin/systemctl daemon-reload] called by PID 578 (/bin/sh /var/tmp/rpm-tmp.UT1Jz5 0)
+Jun 22 17:01:09 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:01:12 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:01:13 openeuler-riscv64 [RPM][557]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:01:13 openeuler-riscv64 [RPM][557]: Transaction ID 64940dd5 finished: 0
+Jun 22 17:01:17 openeuler-riscv64 sudo[377]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:01:17 openeuler-riscv64 sudo[612]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdcl_02 -x
+Jun 22 17:01:17 openeuler-riscv64 sudo[612]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:01:43 openeuler-riscv64 [RPM][682]: Transaction ID 64940df7 started
+Jun 22 17:01:44 openeuler-riscv64 systemctl[688]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 687 (/bin/sh /var/tmp/rpm-tmp.XjbJoW 1)
+Jun 22 17:01:44 openeuler-riscv64 [RPM][682]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:01:44 openeuler-riscv64 systemctl[692]: [/usr/bin/systemctl daemon-reload] called by PID 691 (/bin/sh /var/tmp/rpm-tmp.adKKy5 0)
+Jun 22 17:01:44 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:01:47 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:01:48 openeuler-riscv64 [RPM][682]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:01:48 openeuler-riscv64 [RPM][682]: Transaction ID 64940df7 finished: 0
+Jun 22 17:01:50 openeuler-riscv64 bird[706]: I found another BIRD running.
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: Enabling protocol ospf1
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Adding area 0.0.0.0
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: State changed to up
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Scheduling routing table calculation
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table synchronization
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: Restarting protocol ospf1
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Shutting down
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Shutdown requested
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: State changed to flush
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: State changed to down
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Adding area 0.0.0.0
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: State changed to up
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Scheduling routing table calculation
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table synchronization
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: Reloading protocol ospf1
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Scheduling routing table calculation with route reload
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: Reconfiguring
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: device1: Reconfigured
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: kernel1: Reconfigured
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: kernel2: Reconfigured
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: static1: Reconfigured
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Reconfigured
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: Reconfigured
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:01:51 openeuler-riscv64 bird[497]: ospf1: Starting routing table synchronization
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: Shutting down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: device1: Shutting down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: device1: State changed to flush
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: kernel1: Shutting down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: kernel1: Flushing kernel routes
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: kernel1: State changed to flush
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: kernel2: Shutting down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: kernel2: Flushing kernel routes
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: kernel2: State changed to flush
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: static1: Shutting down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: static1: State changed to flush
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: ospf1: Shutting down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: ospf1: Shutdown requested
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: ospf1: State changed to flush
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: device1: Flushing interfaces
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: device1: State changed to down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: kernel1: State changed to down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: static1: State changed to down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: ospf1: State changed to down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: kernel2: State changed to down
+Jun 22 17:01:52 openeuler-riscv64 bird[497]: Shutdown completed
+Jun 22 17:01:59 openeuler-riscv64 [RPM][756]: Transaction ID 64940e07 started
+Jun 22 17:02:00 openeuler-riscv64 [RPM][756]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:02:00 openeuler-riscv64 systemctl[761]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 760 (/bin/sh /var/tmp/rpm-tmp.ygQEIh 0)
+Jun 22 17:02:00 openeuler-riscv64 systemctl[764]: [/usr/bin/systemctl daemon-reload] called by PID 762 (/bin/sh /var/tmp/rpm-tmp.emZLtC 0)
+Jun 22 17:02:00 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:02:02 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:02:03 openeuler-riscv64 [RPM][756]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:02:03 openeuler-riscv64 [RPM][756]: Transaction ID 64940e07 finished: 0
+Jun 22 17:02:07 openeuler-riscv64 sudo[612]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:02:07 openeuler-riscv64 sudo[792]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdcl_03 -x
+Jun 22 17:02:07 openeuler-riscv64 sudo[792]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:02:34 openeuler-riscv64 [RPM][862]: Transaction ID 64940e2a started
+Jun 22 17:02:35 openeuler-riscv64 systemctl[868]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 867 (/bin/sh /var/tmp/rpm-tmp.QBzHmb 1)
+Jun 22 17:02:35 openeuler-riscv64 [RPM][862]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:02:36 openeuler-riscv64 systemctl[872]: [/usr/bin/systemctl daemon-reload] called by PID 871 (/bin/sh /var/tmp/rpm-tmp.LHkoMX 0)
+Jun 22 17:02:36 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:02:38 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:02:39 openeuler-riscv64 [RPM][862]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:02:39 openeuler-riscv64 [RPM][862]: Transaction ID 64940e2a finished: 0
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: device1: Initializing
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel1: Initializing
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel2: Initializing
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: static1: Initializing
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Initializing
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: device1: Starting
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: device1: Scanning interfaces
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: device1: State changed to up
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel1: Starting
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel1: State changed to up
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel2: Starting
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel2: State changed to up
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: static1: Starting
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: static1: State changed to up
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Starting
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Adding area 0.0.0.0
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: State changed to up
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: Started
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel1: Scanning routing table
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel1: Pruning table master4
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: kernel2: Pruning table master6
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Scheduling routing table calculation
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Starting routing table calculation
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:02:41 openeuler-riscv64 bird[887]: ospf1: Starting routing table synchronization
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: Shutting down for graceful restart
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: device1: Shutting down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: device1: State changed to flush
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: kernel1: Shutting down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: kernel1: State changed to flush
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: kernel2: Shutting down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: kernel2: State changed to flush
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: static1: Shutting down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: static1: State changed to flush
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: ospf1: Shutting down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: ospf1: Shutdown requested
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: ospf1: State changed to flush
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: device1: Flushing interfaces
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: device1: State changed to down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: kernel1: State changed to down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: static1: State changed to down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: ospf1: State changed to down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: kernel2: State changed to down
+Jun 22 17:02:42 openeuler-riscv64 bird[887]: Shutdown completed
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: device1: Initializing
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel1: Initializing
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel2: Initializing
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: static1: Initializing
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Initializing
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: device1: Starting
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: device1: Scanning interfaces
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: device1: State changed to up
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel1: Starting
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel1: State changed to up
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel2: Starting
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel2: State changed to up
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: static1: Starting
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: static1: State changed to up
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Starting
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Adding area 0.0.0.0
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: State changed to up
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: Started
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel1: Scanning routing table
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel1: Pruning table master4
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: kernel2: Pruning table master6
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Scheduling routing table calculation
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Starting routing table calculation
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:02:42 openeuler-riscv64 bird[899]: ospf1: Starting routing table synchronization
+Jun 22 17:02:53 openeuler-riscv64 [RPM][937]: Transaction ID 64940e3d started
+Jun 22 17:02:54 openeuler-riscv64 [RPM][937]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:02:54 openeuler-riscv64 systemctl[942]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 941 (/bin/sh /var/tmp/rpm-tmp.Q0dr6t 0)
+Jun 22 17:02:54 openeuler-riscv64 systemctl[945]: [/usr/bin/systemctl daemon-reload] called by PID 943 (/bin/sh /var/tmp/rpm-tmp.X69WBL 0)
+Jun 22 17:02:54 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:02:56 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:02:57 openeuler-riscv64 [RPM][937]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:02:57 openeuler-riscv64 [RPM][937]: Transaction ID 64940e3d finished: 0
+Jun 22 17:03:01 openeuler-riscv64 sudo[792]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:03:01 openeuler-riscv64 sudo[975]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdc_01 -x
+Jun 22 17:03:01 openeuler-riscv64 sudo[975]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:03:28 openeuler-riscv64 [RPM][1045]: Transaction ID 64940e60 started
+Jun 22 17:03:29 openeuler-riscv64 systemctl[1051]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 1050 (/bin/sh /var/tmp/rpm-tmp.iHdyUD 1)
+Jun 22 17:03:29 openeuler-riscv64 [RPM][1045]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:03:29 openeuler-riscv64 systemctl[1055]: [/usr/bin/systemctl daemon-reload] called by PID 1054 (/bin/sh /var/tmp/rpm-tmp.CDJuhk 0)
+Jun 22 17:03:29 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:03:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:03:33 openeuler-riscv64 [RPM][1045]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:03:33 openeuler-riscv64 [RPM][1045]: Transaction ID 64940e60 finished: 0
+Jun 22 17:03:34 openeuler-riscv64 bird[1069]: I found another BIRD running.
+Jun 22 17:03:39 openeuler-riscv64 bird[899]: Disabling protocol ospf1
+Jun 22 17:03:39 openeuler-riscv64 bird[899]: ospf1: Shutting down
+Jun 22 17:03:39 openeuler-riscv64 bird[899]: ospf1: State changed to flush
+Jun 22 17:03:39 openeuler-riscv64 bird[899]: ospf1: State changed to down
+Jun 22 17:03:46 openeuler-riscv64 [RPM][1131]: Transaction ID 64940e72 started
+Jun 22 17:03:46 openeuler-riscv64 [RPM][1131]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:03:47 openeuler-riscv64 systemctl[1136]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 1135 (/bin/sh /var/tmp/rpm-tmp.onF78I 0)
+Jun 22 17:03:47 openeuler-riscv64 systemctl[1139]: [/usr/bin/systemctl daemon-reload] called by PID 1137 (/bin/sh /var/tmp/rpm-tmp.uVgujK 0)
+Jun 22 17:03:47 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:03:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:03:50 openeuler-riscv64 [RPM][1131]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:03:50 openeuler-riscv64 [RPM][1131]: Transaction ID 64940e72 finished: 0
+Jun 22 17:03:54 openeuler-riscv64 sudo[975]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:03:54 openeuler-riscv64 sudo[1170]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdc_02 -x
+Jun 22 17:03:54 openeuler-riscv64 sudo[1170]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:04:21 openeuler-riscv64 [RPM][1240]: Transaction ID 64940e95 started
+Jun 22 17:04:22 openeuler-riscv64 systemctl[1246]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 1245 (/bin/sh /var/tmp/rpm-tmp.gnbjYP 1)
+Jun 22 17:04:22 openeuler-riscv64 [RPM][1240]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:04:22 openeuler-riscv64 systemctl[1250]: [/usr/bin/systemctl daemon-reload] called by PID 1249 (/bin/sh /var/tmp/rpm-tmp.W5KY3a 0)
+Jun 22 17:04:23 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:04:25 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:04:26 openeuler-riscv64 [RPM][1240]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:04:26 openeuler-riscv64 [RPM][1240]: Transaction ID 64940e95 finished: 0
+Jun 22 17:04:28 openeuler-riscv64 bird[1264]: I found another BIRD running.
+Jun 22 17:04:29 openeuler-riscv64 bird[899]: Enabling protocol ospf1
+Jun 22 17:04:29 openeuler-riscv64 bird[899]: ospf1: Starting
+Jun 22 17:04:29 openeuler-riscv64 bird[899]: ospf1: State changed to up
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: Restarting protocol ospf1
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Shutting down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: State changed to flush
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: State changed to down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Starting
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: State changed to up
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: Reloading protocol ospf1
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: Reconfiguring
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: device1: Reconfigured
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel1: Reconfigured
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel2: Reconfigured
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: static1: Reconfigured
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Reconfigured
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: Reconfigured
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Starting routing table calculation
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Starting routing table synchronization
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: Shutting down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: device1: Shutting down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: device1: State changed to flush
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel1: Shutting down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel1: Flushing kernel routes
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel1: State changed to flush
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel2: Shutting down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel2: Flushing kernel routes
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel2: State changed to flush
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: static1: Shutting down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: static1: State changed to flush
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Shutting down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: Shutdown requested
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: State changed to flush
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: device1: Flushing interfaces
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: device1: State changed to down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel1: State changed to down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: static1: State changed to down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: ospf1: State changed to down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: kernel2: State changed to down
+Jun 22 17:04:30 openeuler-riscv64 bird[899]: Shutdown completed
+Jun 22 17:04:38 openeuler-riscv64 [RPM][1314]: Transaction ID 64940ea6 started
+Jun 22 17:04:38 openeuler-riscv64 [RPM][1314]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:04:39 openeuler-riscv64 systemctl[1319]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 1318 (/bin/sh /var/tmp/rpm-tmp.lGmG8S 0)
+Jun 22 17:04:39 openeuler-riscv64 systemctl[1322]: [/usr/bin/systemctl daemon-reload] called by PID 1320 (/bin/sh /var/tmp/rpm-tmp.s08jwO 0)
+Jun 22 17:04:39 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:04:41 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:04:42 openeuler-riscv64 [RPM][1314]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:04:42 openeuler-riscv64 [RPM][1314]: Transaction ID 64940ea6 finished: 0
+Jun 22 17:04:46 openeuler-riscv64 sudo[1170]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:04:46 openeuler-riscv64 sudo[1350]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdc_03 -x
+Jun 22 17:04:46 openeuler-riscv64 sudo[1350]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:05:13 openeuler-riscv64 [RPM][1421]: Transaction ID 64940ec9 started
+Jun 22 17:05:13 openeuler-riscv64 systemctl[1427]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 1426 (/bin/sh /var/tmp/rpm-tmp.BG2jjk 1)
+Jun 22 17:05:14 openeuler-riscv64 [RPM][1421]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:05:14 openeuler-riscv64 systemctl[1431]: [/usr/bin/systemctl daemon-reload] called by PID 1430 (/bin/sh /var/tmp/rpm-tmp.cLGUrw 0)
+Jun 22 17:05:14 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:05:16 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:05:17 openeuler-riscv64 [RPM][1421]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:05:17 openeuler-riscv64 [RPM][1421]: Transaction ID 64940ec9 finished: 0
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: device1: Initializing
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel1: Initializing
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel2: Initializing
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: static1: Initializing
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Initializing
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: device1: Starting
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: device1: Scanning interfaces
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: device1: State changed to up
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel1: Starting
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel1: State changed to up
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel2: Starting
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel2: State changed to up
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: static1: Starting
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: static1: State changed to up
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Starting
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Adding area 0.0.0.0
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: State changed to up
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: Started
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel1: Scanning routing table
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel1: Pruning table master4
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: kernel2: Pruning table master6
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Scheduling routing table calculation
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Starting routing table calculation
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:05:19 openeuler-riscv64 bird[1446]: ospf1: Starting routing table synchronization
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: Shutting down for graceful restart
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: device1: Shutting down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: device1: State changed to flush
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: kernel1: Shutting down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: kernel1: State changed to flush
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: kernel2: Shutting down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: kernel2: State changed to flush
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: static1: Shutting down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: static1: State changed to flush
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: ospf1: Shutting down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: ospf1: Shutdown requested
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: ospf1: State changed to flush
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: device1: Flushing interfaces
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: device1: State changed to down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: kernel1: State changed to down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: static1: State changed to down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: ospf1: State changed to down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: kernel2: State changed to down
+Jun 22 17:05:20 openeuler-riscv64 bird[1446]: Shutdown completed
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: device1: Initializing
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel1: Initializing
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel2: Initializing
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: static1: Initializing
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Initializing
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: device1: Starting
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: device1: Scanning interfaces
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: device1: State changed to up
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel1: Starting
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel1: State changed to up
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel2: Starting
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel2: State changed to up
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: static1: Starting
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: static1: State changed to up
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Starting
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Adding area 0.0.0.0
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: State changed to up
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: Started
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel1: Scanning routing table
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel1: Pruning table master4
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: kernel2: Pruning table master6
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Scheduling routing table calculation
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Starting routing table calculation
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:05:20 openeuler-riscv64 bird[1458]: ospf1: Starting routing table synchronization
+Jun 22 17:05:31 openeuler-riscv64 [RPM][1496]: Transaction ID 64940edb started
+Jun 22 17:05:32 openeuler-riscv64 [RPM][1496]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:05:32 openeuler-riscv64 systemctl[1501]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 1500 (/bin/sh /var/tmp/rpm-tmp.e9Ehu3 0)
+Jun 22 17:05:32 openeuler-riscv64 systemctl[1504]: [/usr/bin/systemctl daemon-reload] called by PID 1502 (/bin/sh /var/tmp/rpm-tmp.y7mUeb 0)
+Jun 22 17:05:32 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:05:34 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:05:35 openeuler-riscv64 [RPM][1496]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:05:35 openeuler-riscv64 [RPM][1496]: Transaction ID 64940edb finished: 0
+Jun 22 17:05:39 openeuler-riscv64 sudo[1350]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:05:39 openeuler-riscv64 sudo[1534]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_bird_01 -x
+Jun 22 17:05:39 openeuler-riscv64 sudo[1534]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:06:06 openeuler-riscv64 [RPM][1604]: Transaction ID 64940efe started
+Jun 22 17:06:07 openeuler-riscv64 systemctl[1610]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 1609 (/bin/sh /var/tmp/rpm-tmp.dKDZ4f 1)
+Jun 22 17:06:07 openeuler-riscv64 [RPM][1604]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:06:07 openeuler-riscv64 systemctl[1614]: [/usr/bin/systemctl daemon-reload] called by PID 1613 (/bin/sh /var/tmp/rpm-tmp.JKD4rT 0)
+Jun 22 17:06:07 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:06:10 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:06:10 openeuler-riscv64 [RPM][1604]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:06:10 openeuler-riscv64 [RPM][1604]: Transaction ID 64940efe finished: 0
+Jun 22 17:06:13 openeuler-riscv64 bird[1637]: I found another BIRD running.
+Jun 22 17:06:22 openeuler-riscv64 bird[1651]: I found another BIRD running.
+Jun 22 17:06:24 openeuler-riscv64 useradd[1656]: new group: name=testdemo, GID=1001
+Jun 22 17:06:24 openeuler-riscv64 useradd[1656]: new user: name=testdemo, UID=1001, GID=1001, home=/home/testdemo, shell=/bin/bash, from=none
+Jun 22 17:06:25 openeuler-riscv64 bird[1663]: I found another BIRD running.
+Jun 22 17:06:28 openeuler-riscv64 bird[1674]: I found another BIRD running.
+Jun 22 17:06:40 openeuler-riscv64 [RPM][1689]: Transaction ID 64940f20 started
+Jun 22 17:06:40 openeuler-riscv64 [RPM][1689]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:06:40 openeuler-riscv64 systemctl[1694]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 1693 (/bin/sh /var/tmp/rpm-tmp.Ubk1Gy 0)
+Jun 22 17:06:40 openeuler-riscv64 systemctl[1697]: [/usr/bin/systemctl daemon-reload] called by PID 1695 (/bin/sh /var/tmp/rpm-tmp.YA7xnH 0)
+Jun 22 17:06:40 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:06:43 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:06:44 openeuler-riscv64 [RPM][1689]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:06:44 openeuler-riscv64 [RPM][1689]: Transaction ID 64940f20 finished: 0
+Jun 22 17:06:45 openeuler-riscv64 userdel[1709]: delete user 'testdemo'
+Jun 22 17:06:46 openeuler-riscv64 userdel[1709]: removed group 'testdemo' owned by 'testdemo'
+Jun 22 17:06:46 openeuler-riscv64 userdel[1709]: removed shadow group 'testdemo' owned by 'testdemo'
+Jun 22 17:06:48 openeuler-riscv64 sudo[1534]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:06:48 openeuler-riscv64 sudo[1732]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_bird_02 -x
+Jun 22 17:06:48 openeuler-riscv64 sudo[1732]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:07:15 openeuler-riscv64 [RPM][1802]: Transaction ID 64940f43 started
+Jun 22 17:07:15 openeuler-riscv64 systemctl[1808]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 1807 (/bin/sh /var/tmp/rpm-tmp.DMDNoF 1)
+Jun 22 17:07:16 openeuler-riscv64 [RPM][1802]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:07:16 openeuler-riscv64 systemctl[1812]: [/usr/bin/systemctl daemon-reload] called by PID 1811 (/bin/sh /var/tmp/rpm-tmp.gODssm 0)
+Jun 22 17:07:16 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:07:18 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:07:19 openeuler-riscv64 [RPM][1802]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:07:19 openeuler-riscv64 [RPM][1802]: Transaction ID 64940f43 finished: 0
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: device1: Initializing
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel1: Initializing
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel2: Initializing
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: static1: Initializing
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Initializing
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: device1: Starting
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: device1: Scanning interfaces
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: device1: State changed to up
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel1: Starting
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel1: State changed to up
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel2: Starting
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel2: State changed to up
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: static1: Starting
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: static1: State changed to up
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Starting
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Adding area 0.0.0.0
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: State changed to up
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: Started
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel1: Scanning routing table
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel1: Pruning table master4
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: kernel2: Pruning table master6
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Scheduling routing table calculation
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Starting routing table calculation
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:07:22 openeuler-riscv64 bird[1830]: ospf1: Starting routing table synchronization
+Jun 22 17:07:25 openeuler-riscv64 bird[1837]: I found another BIRD running.
+Jun 22 17:07:29 openeuler-riscv64 bird[1844]: I found another BIRD running.
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: device1: Initializing
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel1: Initializing
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel2: Initializing
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: static1: Initializing
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Initializing
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: device1: Starting
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: device1: Scanning interfaces
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: device1: State changed to up
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel1: Starting
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel1: State changed to up
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel2: Starting
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel2: State changed to up
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: static1: Starting
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: static1: State changed to up
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Starting
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Adding area 0.0.0.0
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: State changed to up
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: Started
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel1: Scanning routing table
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel1: Pruning table master4
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: kernel2: Pruning table master6
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Updating router state for area 0.0.0.0
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Scheduling routing table calculation
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Starting routing table calculation
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Starting routing table calculation for ext routes
+Jun 22 17:07:29 openeuler-riscv64 bird[1849]: ospf1: Starting routing table synchronization
+Jun 22 17:07:39 openeuler-riscv64 [RPM][1859]: Transaction ID 64940f5b started
+Jun 22 17:07:40 openeuler-riscv64 [RPM][1859]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:07:40 openeuler-riscv64 systemctl[1864]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 1863 (/bin/sh /var/tmp/rpm-tmp.a4JpZX 0)
+Jun 22 17:07:40 openeuler-riscv64 systemctl[1867]: [/usr/bin/systemctl daemon-reload] called by PID 1865 (/bin/sh /var/tmp/rpm-tmp.Vsm7yM 0)
+Jun 22 17:07:40 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:07:42 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:07:43 openeuler-riscv64 [RPM][1859]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:07:43 openeuler-riscv64 [RPM][1859]: Transaction ID 64940f5b finished: 0
+Jun 22 17:07:47 openeuler-riscv64 sudo[1732]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:07:47 openeuler-riscv64 sudo[1896]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_service_bird -x
+Jun 22 17:07:47 openeuler-riscv64 sudo[1896]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 17:08:14 openeuler-riscv64 [RPM][1966]: Transaction ID 64940f7e started
+Jun 22 17:08:15 openeuler-riscv64 systemctl[1972]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 1971 (/bin/sh /var/tmp/rpm-tmp.kbkSad 1)
+Jun 22 17:08:15 openeuler-riscv64 [RPM][1966]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:08:15 openeuler-riscv64 systemctl[1976]: [/usr/bin/systemctl daemon-reload] called by PID 1975 (/bin/sh /var/tmp/rpm-tmp.IpkraZ 0)
+Jun 22 17:08:15 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:08:17 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:08:18 openeuler-riscv64 [RPM][1966]: install bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:08:18 openeuler-riscv64 [RPM][1966]: Transaction ID 64940f7e finished: 0
+Jun 22 17:08:21 openeuler-riscv64 systemctl[1993]: [systemctl restart bird.service] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:21 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 248.
+Jun 22 17:08:21 openeuler-riscv64 bird[1994]: I found another BIRD running.
+Jun 22 17:08:21 openeuler-riscv64 bird[1994]: bird: I found another BIRD running.
+Jun 22 17:08:21 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:21 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:21 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 1.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:21 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 314 and the job result is done.
+Jun 22 17:08:21 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 314.
+Jun 22 17:08:22 openeuler-riscv64 bird[1999]: I found another BIRD running.
+Jun 22 17:08:22 openeuler-riscv64 bird[1999]: bird: I found another BIRD running.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 2.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 380 and the job result is done.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 380.
+Jun 22 17:08:22 openeuler-riscv64 bird[2001]: I found another BIRD running.
+Jun 22 17:08:22 openeuler-riscv64 bird[2001]: bird: I found another BIRD running.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 3.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 446 and the job result is done.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 446.
+Jun 22 17:08:22 openeuler-riscv64 bird[2003]: I found another BIRD running.
+Jun 22 17:08:22 openeuler-riscv64 bird[2003]: bird: I found another BIRD running.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:22 openeuler-riscv64 bird[1830]: device1: Scanning interfaces
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 4.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 512 and the job result is done.
+Jun 22 17:08:22 openeuler-riscv64 bird[1830]: kernel1: Scanning routing table
+Jun 22 17:08:22 openeuler-riscv64 bird[1830]: kernel1: Pruning table master4
+Jun 22 17:08:22 openeuler-riscv64 bird[1830]: kernel2: Pruning table master6
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 512.
+Jun 22 17:08:22 openeuler-riscv64 bird[2005]: I found another BIRD running.
+Jun 22 17:08:22 openeuler-riscv64 bird[2005]: bird: I found another BIRD running.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 5.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 578 and the job result is done.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Start request repeated too quickly.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:22 openeuler-riscv64 systemd[1]: Failed to start BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished with a failure.
+░░ 
+░░ The job identifier is 578 and the job result is failed.
+Jun 22 17:08:28 openeuler-riscv64 systemctl[2013]: [systemctl stop bird.service] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:29 openeuler-riscv64 bird[1849]: device1: Scanning interfaces
+Jun 22 17:08:29 openeuler-riscv64 bird[1849]: kernel1: Scanning routing table
+Jun 22 17:08:29 openeuler-riscv64 bird[1849]: kernel1: Pruning table master4
+Jun 22 17:08:29 openeuler-riscv64 bird[1849]: kernel2: Pruning table master6
+Jun 22 17:08:35 openeuler-riscv64 systemctl[2019]: [systemctl start bird.service] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 645.
+Jun 22 17:08:35 openeuler-riscv64 bird[2020]: I found another BIRD running.
+Jun 22 17:08:35 openeuler-riscv64 bird[2020]: bird: I found another BIRD running.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 1.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 711 and the job result is done.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 711.
+Jun 22 17:08:35 openeuler-riscv64 bird[2023]: I found another BIRD running.
+Jun 22 17:08:35 openeuler-riscv64 bird[2023]: bird: I found another BIRD running.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 2.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 777 and the job result is done.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 777.
+Jun 22 17:08:35 openeuler-riscv64 bird[2025]: I found another BIRD running.
+Jun 22 17:08:35 openeuler-riscv64 bird[2025]: bird: I found another BIRD running.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 3.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 843 and the job result is done.
+Jun 22 17:08:35 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 843.
+Jun 22 17:08:36 openeuler-riscv64 bird[2027]: I found another BIRD running.
+Jun 22 17:08:36 openeuler-riscv64 bird[2027]: bird: I found another BIRD running.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 4.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 909 and the job result is done.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 909.
+Jun 22 17:08:36 openeuler-riscv64 bird[2031]: I found another BIRD running.
+Jun 22 17:08:36 openeuler-riscv64 bird[2031]: bird: I found another BIRD running.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 5.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 975 and the job result is done.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: bird.service: Start request repeated too quickly.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:36 openeuler-riscv64 systemd[1]: Failed to start BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished with a failure.
+░░ 
+░░ The job identifier is 975 and the job result is failed.
+Jun 22 17:08:42 openeuler-riscv64 systemctl[2039]: [systemctl enable bird.service] called by PID 2038 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:42 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:08:44 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:08:45 openeuler-riscv64 systemctl[2053]: [systemctl disable bird.service] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:45 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:08:47 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:08:49 openeuler-riscv64 systemctl[2070]: [systemctl start bird.service] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:49 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1041.
+Jun 22 17:08:49 openeuler-riscv64 bird[2071]: I found another BIRD running.
+Jun 22 17:08:49 openeuler-riscv64 bird[2071]: bird: I found another BIRD running.
+Jun 22 17:08:49 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:49 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:49 openeuler-riscv64 systemctl[2073]: [systemctl daemon-reload] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:49 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 1.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1107 and the job result is done.
+Jun 22 17:08:52 openeuler-riscv64 systemctl[2087]: [systemctl reload bird.service] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1107.
+Jun 22 17:08:52 openeuler-riscv64 bird[2088]: bird: I found another BIRD running.
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: Reloading BIRD Internet Routing Daemon...
+░░ Subject: A reload job for unit bird.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A reload job for unit bird.service has begun execution.
+░░ 
+░░ The job identifier is 1173.
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:52 openeuler-riscv64 kill[2089]: kill: sending signal to 2088 failed: No such process
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: bird.service: Control process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecReload= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:52 openeuler-riscv64 systemd[1]: Reload failed for BIRD Internet Routing Daemon.
+░░ Subject: A reload job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A reload job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1173 and the job result is failed.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 2.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1174 and the job result is done.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1174.
+Jun 22 17:08:53 openeuler-riscv64 bird[2093]: bird: I found another BIRD running.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 3.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1240 and the job result is done.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1240.
+Jun 22 17:08:53 openeuler-riscv64 bird[2095]: bird: I found another BIRD running.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 4.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1306 and the job result is done.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1306.
+Jun 22 17:08:53 openeuler-riscv64 bird[2098]: bird: I found another BIRD running.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 5.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1372 and the job result is done.
+Jun 22 17:08:53 openeuler-riscv64 systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1372.
+Jun 22 17:08:54 openeuler-riscv64 bird[2100]: bird: I found another BIRD running.
+Jun 22 17:08:54 openeuler-riscv64 systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 22 17:08:54 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:54 openeuler-riscv64 systemd[1]: bird.service: Scheduled restart job, restart counter is at 6.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 22 17:08:54 openeuler-riscv64 systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1438 and the job result is done.
+Jun 22 17:08:54 openeuler-riscv64 systemd[1]: bird.service: Start request repeated too quickly.
+Jun 22 17:08:54 openeuler-riscv64 systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 22 17:08:54 openeuler-riscv64 systemd[1]: Failed to start BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished with a failure.
+░░ 
+░░ The job identifier is 1438 and the job result is failed.
+Jun 22 17:08:56 openeuler-riscv64 systemctl[2110]: [systemctl daemon-reload] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:56 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:08:59 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:08:59 openeuler-riscv64 systemctl[2121]: [systemctl reload bird.service] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:08:59 openeuler-riscv64 systemd[1]: bird.service: Unit cannot be reloaded because it is inactive.
+Jun 22 17:08:59 openeuler-riscv64 systemctl[2122]: [systemctl stop bird.service] called by PID 1943 (bash -x oe_test_service_bird.sh)
+Jun 22 17:09:06 openeuler-riscv64 [RPM][2124]: Transaction ID 64940fb2 started
+Jun 22 17:09:06 openeuler-riscv64 [RPM][2124]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:09:06 openeuler-riscv64 systemctl[2129]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 2128 (/bin/sh /var/tmp/rpm-tmp.n3RQew 0)
+Jun 22 17:09:06 openeuler-riscv64 systemctl[2132]: [/usr/bin/systemctl daemon-reload] called by PID 2130 (/bin/sh /var/tmp/rpm-tmp.mZS0Wt 0)
+Jun 22 17:09:06 openeuler-riscv64 systemd[1]: Reloading.
+Jun 22 17:09:09 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 22 17:09:10 openeuler-riscv64 [RPM][2124]: erase bird-2.0.9-1.oe2303.riscv64: success
+Jun 22 17:09:10 openeuler-riscv64 [RPM][2124]: Transaction ID 64940fb2 finished: 0
+Jun 22 17:09:13 openeuler-riscv64 sudo[1896]: pam_unix(sudo:session): session closed for user root
+Jun 22 17:09:13 openeuler-riscv64 sudo[2151]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/journalctl -xe --no-pager
+Jun 22 17:09:13 openeuler-riscv64 sudo[2151]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)

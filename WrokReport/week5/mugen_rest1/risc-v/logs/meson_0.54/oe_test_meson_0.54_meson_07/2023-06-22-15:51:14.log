@@ -1,0 +1,398 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 15:51:17 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc'
++ pkgs='meson tar gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc' --node 1 --tempfile ''
+Thu Jun 22 15:51:25 2023 - INFO  - pkgs:(meson tar gcc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf common/0.54/test_1.tgz
+test_1/
+test_1/.git/
+test_1/.git/hooks/
+test_1/.git/hooks/post-update.sample
+test_1/.git/hooks/applypatch-msg.sample
+test_1/.git/hooks/commit-msg.sample
+test_1/.git/hooks/pre-push.sample
+test_1/.git/hooks/pre-rebase.sample
+test_1/.git/hooks/pre-merge-commit.sample
+test_1/.git/hooks/prepare-commit-msg.sample
+test_1/.git/hooks/fsmonitor-watchman.sample
+test_1/.git/hooks/update.sample
+test_1/.git/hooks/pre-applypatch.sample
+test_1/.git/hooks/pre-receive.sample
+test_1/.git/hooks/pre-commit.sample
+test_1/.git/branches/
+test_1/.git/refs/
+test_1/.git/refs/heads/
+test_1/.git/refs/tags/
+test_1/.git/HEAD
+test_1/.git/config
+test_1/.git/info/
+test_1/.git/info/exclude
+test_1/.git/description
+test_1/.git/objects/
+test_1/.git/objects/pack/
+test_1/.git/objects/info/
+test_1/test_1.c
+test_1/builddir/
+test_1/builddir/test_1
+test_1/builddir/test_1@exe/
+test_1/builddir/test_1@exe/test_1.c.o
+test_1/builddir/.ninja_deps
+test_1/builddir/devenv/
+test_1/builddir/compile_commands.json
+test_1/builddir/build.ninja
+test_1/builddir/meson-info/
+test_1/builddir/meson-info/intro-targets.json
+test_1/builddir/meson-info/intro-installed.json
+test_1/builddir/meson-info/intro-benchmarks.json
+test_1/builddir/meson-info/intro-tests.json
+test_1/builddir/meson-info/intro-buildsystem_files.json
+test_1/builddir/meson-info/intro-buildoptions.json
+test_1/builddir/meson-info/intro-dependencies.json
+test_1/builddir/meson-info/intro-projectinfo.json
+test_1/builddir/meson-info/meson-info.json
+test_1/builddir/.ninja_log
+test_1/builddir/meson-logs/
+test_1/builddir/meson-logs/testlog-valgrind.json
+test_1/builddir/meson-logs/testlog.txt
+test_1/builddir/meson-logs/testlog.json
+test_1/builddir/meson-logs/testlog-worksforall.json
+test_1/builddir/meson-logs/testlog-worksforall.txt
+test_1/builddir/meson-logs/meson-log.txt
+test_1/builddir/meson-logs/testlog-valgrind.txt
+test_1/builddir/meson.build
+test_1/builddir/meson-private/
+test_1/builddir/meson-private/build.dat
+test_1/builddir/meson-private/meson_test_setup.dat
+test_1/builddir/meson-private/coredata.dat.prev
+test_1/builddir/meson-private/install.dat
+test_1/builddir/meson-private/dist-install/
+test_1/builddir/meson-private/dist-build/
+test_1/builddir/meson-private/sanitycheckc.exe
+test_1/builddir/meson-private/coredata.dat
+test_1/builddir/meson-private/cmd_line.txt
+test_1/builddir/meson-private/dist-unpack/
+test_1/builddir/meson-private/dist-unpack/test_1-0.1/
+test_1/builddir/meson-private/meson_benchmark_setup.dat
+test_1/builddir/meson-private/sanitycheckc.c
+test_1/builddir/meson-private/meson.lock
+test_1/builddir/meson-dist/
+test_1/builddir/meson-dist/test_1-0.1.tar.xz
+test_1/meson.build
++ cd test_1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 15:51:25 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 15:51:26 2023 - INFO  - Start testing...
++ meson init --help
++ grep 'usage: meson'
+usage: meson init [-h] [-C WD] [-n NAME] [-e EXECUTABLE] [-d DEPS]
++ CHECK_RESULT 0 0 0 'meson-init --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init -h
++ grep 'usage: meson'
+usage: meson init [-h] [-C WD] [-n NAME] [-e EXECUTABLE] [-d DEPS]
++ CHECK_RESULT 0 0 0 'meson-init -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init -C ./
++ grep test_1
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
+Detected source files: test_1.c
++ CHECK_RESULT 0 0 0 'meson-init -C'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init -C'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init -n testproject
++ grep testproject
+Using "testproject" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init -n NAME failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init -n NAME failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --name testproject
++ grep testproject
+Using "testproject" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init --name NAME failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --name NAME failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init -e testproject
++ grep Using
+Using "test_1" (name of current directory) as project name.
++ CHECK_RESULT 0 0 0 'meson-init -e EXECUTABLE EXECUTABLE failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init -e EXECUTABLE EXECUTABLE failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --executable testproject
++ grep Using
+Using "test_1" (name of current directory) as project name.
++ CHECK_RESULT 0 0 0 'meson-init --executable EXECUTABLE failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --executable EXECUTABLE failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init -d deps
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init  -d DEPS failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init  -d DEPS failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --deps deps
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init --deps DEPS failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --deps DEPS failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init -l c
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init  -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init  -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --language c
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init --language failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --language failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init -b c
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init -b failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init -b failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --build c
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init --build failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --build failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --builddir builddir
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init --builddir BUILDDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --builddir BUILDDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init -f
++ grep executable
+Using "test_1" (project name) as name of executable to build.
+executable('test_1',
++ CHECK_RESULT 0 0 0 'meson-init -f failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init -f failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --force
++ grep executable
+Using "test_1" (project name) as name of executable to build.
+executable('test_1',
++ CHECK_RESULT 0 0 0 'meson-init --force failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --force failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --type executable
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init --type failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --type failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson init --version 0.1
++ grep Using
+Using "test_1" (name of current directory) as project name.
+Using "test_1" (project name) as name of executable to build.
++ CHECK_RESULT 0 0 0 'meson-init --version VERSION failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-init --version VERSION failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 15:52:43 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:52:43 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:52:44 2023 - INFO  - Start to restore the test environment.
++ rm -rf ../test_1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 15:52:44 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 15:52:45 2023 - INFO  - End to restore the test environment.

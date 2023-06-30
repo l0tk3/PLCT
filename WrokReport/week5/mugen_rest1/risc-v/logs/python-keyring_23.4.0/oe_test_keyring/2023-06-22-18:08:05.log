@@ -1,0 +1,199 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 18:08:08 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL python3-keyring
++ pkgs=python3-keyring
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs python3-keyring --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpu8ch5yte
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpu8ch5yte
++ pip3 install keyrings.alt
+Collecting keyrings.alt
+  Downloading keyrings.alt-4.2.0-py3-none-any.whl (20 kB)
+Collecting jaraco.classes
+  Downloading jaraco.classes-3.2.3-py3-none-any.whl (6.0 kB)
+Collecting more-itertools
+  Downloading more_itertools-9.1.0-py3-none-any.whl (54 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.2/54.2 kB 508.9 kB/s eta 0:00:00
+Installing collected packages: more-itertools, jaraco.classes, keyrings.alt
+Successfully installed jaraco.classes-3.2.3 keyrings.alt-4.2.0 more-itertools-9.1.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Thu Jun 22 18:09:19 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:09:19 2023 - INFO  - Start to run test.
++ mkdir demo
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ keyring --help
++ grep -E 'Usage: keyring|-'
+usage: keyring [-h] [-p KEYRING_PATH] [-b KEYRING_BACKEND] [--list-backends]
+               [--disable]
+  -h, --help            show this help message and exit
+  -p KEYRING_PATH, --keyring-path KEYRING_PATH
+  -b KEYRING_BACKEND, --keyring-backend KEYRING_BACKEND
+  --list-backends       List keyring backends and exit
+  --disable             Disable keyring and exit
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ keyring --list-backend
++ grep keyring
+keyring.backends.fail.Keyring (priority: 0)
+keyring.backends.chainer.ChainerBackend (priority: -1)
+keyrings.alt.file.PlaintextKeyring (priority: 0.5)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ keyring --list-backend
+++ grep -E 'keyrings.alt.*priority: 0.5'
+++ awk '{print $1}'
++ KEYRING_BACKEND=keyrings.alt.file.PlaintextKeyring
++ expect
+spawn keyring set system username -b keyrings.alt.file.PlaintextKeyring
+Password for 'username' in 'system': 
++ keyring get system username -b keyrings.alt.file.PlaintextKeyring
+test1
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn keyring del system username -b keyrings.alt.file.PlaintextKeyring
+expect: spawn id exp3 not open
+    while executing
+"expect eof"
++ keyring get system username -b keyrings.alt.file.PlaintextKeyring
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ expect
+spawn keyring set system username -b keyrings.alt.file.PlaintextKeyring -p demo
+Password for 'username' in 'system': 
++ keyring get system username -b keyrings.alt.file.PlaintextKeyring -p demo
+apple1
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn keyring del system username -b keyrings.alt.file.PlaintextKeyring -p demo
+expect: spawn id exp3 not open
+    while executing
+"expect eof"
++ keyring get system username -b keyrings.alt.file.PlaintextKeyring -p demo
++ CHECK_RESULT 1 1
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 18:09:40 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:09:41 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 18:09:41 2023 - INFO  - Start to restore the test environment.
++ rm -rf demo
++ pip3 uninstall keyrings.alt -y
+Found existing installation: keyrings.alt 4.2.0
+Uninstalling keyrings.alt-4.2.0:
+  Successfully uninstalled keyrings.alt-4.2.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpu8ch5yte ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpu8ch5yte
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Thu Jun 22 18:09:57 2023 - INFO  - Finish restoring the test environment.

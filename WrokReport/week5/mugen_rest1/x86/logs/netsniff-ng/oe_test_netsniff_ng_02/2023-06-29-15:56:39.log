@@ -1,0 +1,216 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 15:56:39 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
+Thu Jun 29 15:56:40 2023 - INFO  - pkgs:(netsniff-ng tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 15:56:40 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:56:40 2023 - INFO  - Start to run test.
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ netsniff-ng --in --out ./data/ -s -m --interval 100MiB
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
+Error reading pcap header!
++ ls ./data
++ grep pcap
++ CHECK_RESULT 1 0 0 'Check netsniff-ng --interval failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --interval failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check netsniff-ng --interval failed'
++ LOG_ERROR 'Check netsniff-ng --interval failed'
++ message='Check netsniff-ng --interval failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check netsniff-ng --interval failed'
+Thu Jun 29 15:56:45 2023 - ERROR - Check netsniff-ng --interval failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_netsniff_ng_02.sh line 29'
++ message='oe_test_netsniff_ng_02.sh line 29'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_netsniff_ng_02.sh line 29'
+Thu Jun 29 15:56:45 2023 - ERROR - oe_test_netsniff_ng_02.sh line 29
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'netsniff-ng --in'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f './data/*.pcap'
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ netsniff-ng --in --out ./data/ -s -m -F 100MiB
+Error reading pcap header!
++ ls ./data
++ grep pcap
++ CHECK_RESULT 1 0 0 'Check netsniff-ng -F failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -F failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check netsniff-ng -F failed'
++ LOG_ERROR 'Check netsniff-ng -F failed'
++ message='Check netsniff-ng -F failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check netsniff-ng -F failed'
+Thu Jun 29 15:56:50 2023 - ERROR - Check netsniff-ng -F failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_netsniff_ng_02.sh line 35'
++ message='oe_test_netsniff_ng_02.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_netsniff_ng_02.sh line 35'
+Thu Jun 29 15:56:50 2023 - ERROR - oe_test_netsniff_ng_02.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'netsniff-ng --in'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f './data/*.pcap'
++ netsniff-ng --in lo -R --out tmp.cfg -s
++ grep 'It'\''s probably not a mac80211' tmp.txt
+It's probably not a mac80211 device!
++ CHECK_RESULT 0 0 0 'Check netsniff-ng -R failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -R failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ netsniff-ng --in lo --rfraw --out tmp.cfg -s
++ grep 'It'\''s probably not a mac80211' tmp.txt
+It's probably not a mac80211 device!
++ CHECK_RESULT 0 0 0 'Check netsniff-ng --rfraw failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --rfraw failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ netsniff-ng -s --in --out dump.cfg -n 1
++ grep '1  packets incoming'
+Thu Jun 29 16:26:39 2023 - ERROR - Timeout : Command 'bash -x oe_test_netsniff_ng_02.sh' timed out after 1799.9999855240003 seconds
+Error reading pcap header!
+++ post_test
+++ LOG_INFO 'Start to restore the test environment.'
+++ message='Start to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 18:26:43 2023 - INFO  - Start to restore the test environment.
+++ DNF_REMOVE
+++ node=1
+++ pkg_list=
+++ mode=0
+++ [[ -z '' ]]
+++ [[ -z '' ]]
+++ LOG_WARN 'no thing to do.'
+++ message='no thing to do.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 18:26:43 2023 - WARN  - no thing to do.
+++ return 0
+++ rm -rf ./data/ './common/*.sh'
+++ LOG_INFO 'End to restore the test environment.'
+++ message='End to restore the test environment.'
+++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 18:26:43 2023 - INFO  - End to restore the test environment.
++ CHECK_RESULT 1 0 0 'Check netsniff-ng -n failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng -n failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check netsniff-ng -n failed'
++ LOG_ERROR 'Check netsniff-ng -n failed'
++ message='Check netsniff-ng -n failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check netsniff-ng -n failed'
+Thu Jun 29 18:26:43 2023 - ERROR - Check netsniff-ng -n failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_netsniff_ng_02.sh line 47'
++ message='oe_test_netsniff_ng_02.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_netsniff_ng_02.sh line 47'
+Thu Jun 29 18:26:43 2023 - ERROR - oe_test_netsniff_ng_02.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f dump.cfg
++ netsniff-ng -s --in --out dump.cfg --num 1
++ grep '1  packets incoming'
+Error reading pcap header!
++ CHECK_RESULT 1 0 0 'Check netsniff-ng --num failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check netsniff-ng --num failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check netsniff-ng --num failed'
++ LOG_ERROR 'Check netsniff-ng --num failed'
++ message='Check netsniff-ng --num failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check netsniff-ng --num failed'
+Thu Jun 29 18:26:43 2023 - ERROR - Check netsniff-ng --num failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_netsniff_ng_02.sh line 50'
++ message='oe_test_netsniff_ng_02.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_netsniff_ng_02.sh line 50'
+Thu Jun 29 18:26:43 2023 - ERROR - oe_test_netsniff_ng_02.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -f dump.cfg
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ netsniff-ng --in --prefix netsniff-dump --out ./data/ -s -m --interval 100MiB
+Error reading pcap header!

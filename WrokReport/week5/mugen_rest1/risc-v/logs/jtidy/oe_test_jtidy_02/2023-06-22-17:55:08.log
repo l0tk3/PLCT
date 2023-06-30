@@ -1,0 +1,216 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 17:55:10 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'tar jtidy'
++ pkgs='tar jtidy'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'tar jtidy' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpfxxcdaud
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpfxxcdaud
++ tar -zxvf common/test.tar.gz
+test/
+test/config
+test/demo.html
+test/demo.xhtml
+test/demo.xml
+test/demo_error.html
+test/demo_m.html
++ mkdir tmp
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 17:56:14 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 17:56:14 2023 - INFO  - Start to run test.
++ jtidy -help-config
++ grep 'Name.*Typ.*Allowable values'
+Name                        Type       Allowable values
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -help-config '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -help-config '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -n test/demo.html
++ grep '\&\#189\;'
+grep: warning: stray \ before &
+grep: warning: stray \ before #
+grep: warning: stray \ before ;
+&#189;
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -n '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -n '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -e test/demo.html
++ grep 'Hello world'
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -e '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -e '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -q test/demo.html
++ grep 'no warnings or errors were found'
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -q '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -q '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -asxml test/demo.html
++ grep xhtml
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -asxml '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -asxml '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -asxhtml test/demo.html
++ grep xhtml
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -asxhtml '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -asxhtml '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -xml test/demo.xml
++ grep xhtml
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -xml '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -xml '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -ashtml test/demo.xhtml
++ grep '  <head>'
+  <head>
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -ashtml '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -ashtml '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -slides test/demo.html
++ grep '2 Slides found'
+2 Slides found
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -slides '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -slides '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ jtidy -m test/demo_m.html
++ grep 'missing .*title'
+line 1 column 1 - Warning: inserting missing 'title' element
++ CHECK_RESULT 0 0 0 'Failed option: jtidy -slides '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: jtidy -slides '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 17:56:37 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 17:56:38 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 17:56:38 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpfxxcdaud ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpfxxcdaud
++ '[' 0 -ne 0 ']'
++ rm -rf tmp slide001.html slide002.html test/
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 17:56:52 2023 - INFO  - Finish environment cleanup!

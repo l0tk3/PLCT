@@ -1,0 +1,456 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:41:59 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'netsniff-ng tar'
++ pkgs='netsniff-ng tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'netsniff-ng tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpyt_k8t4a
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpyt_k8t4a
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:42:33 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:42:33 2023 - INFO  - Start to run test.
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ astraceroute -i -H netsniff-ng.org -m 50 -f 49
++ grep 49: tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -m failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -m failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -m failed'
++ LOG_ERROR 'Check astraceroute -m failed'
++ message='Check astraceroute -m failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -m failed'
+Thu Jun 29 14:42:39 2023 - ERROR - Check astraceroute -m failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 29'
++ message='oe_test_astraceroute_02.sh line 29'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 29'
+Thu Jun 29 14:42:39 2023 - ERROR - oe_test_astraceroute_02.sh line 29
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ astraceroute -i -H netsniff-ng.org --max-ttl 50 -f 49
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 49: tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --max-ttl failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --max-ttl failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --max-ttl failed'
++ LOG_ERROR 'Check astraceroute --max-ttl failed'
++ message='Check astraceroute --max-ttl failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --max-ttl failed'
+Thu Jun 29 14:42:44 2023 - ERROR - Check astraceroute --max-ttl failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 36'
++ message='oe_test_astraceroute_02.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 36'
+Thu Jun 29 14:42:44 2023 - ERROR - oe_test_astraceroute_02.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ astraceroute -i -H netsniff-ng.org -q 1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'AS path IPv4 TCP trace from' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -q failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -q failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -q failed'
++ LOG_ERROR 'Check astraceroute -q failed'
++ message='Check astraceroute -q failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -q failed'
+Thu Jun 29 14:42:49 2023 - ERROR - Check astraceroute -q failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 43'
++ message='oe_test_astraceroute_02.sh line 43'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 43'
+Thu Jun 29 14:42:49 2023 - ERROR - oe_test_astraceroute_02.sh line 43
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ astraceroute -i -H netsniff-ng.org --num-probes 1
++ grep 'AS path IPv4 TCP trace from' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --num-probes failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --num-probes failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --num-probes failed'
++ LOG_ERROR 'Check astraceroute --num-probes failed'
++ message='Check astraceroute --num-probes failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --num-probes failed'
+Thu Jun 29 14:42:54 2023 - ERROR - Check astraceroute --num-probes failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 50'
++ message='oe_test_astraceroute_02.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 50'
+Thu Jun 29 14:42:54 2023 - ERROR - oe_test_astraceroute_02.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ astraceroute -i -H netsniff-ng.org -x 2
++ grep 'AS path IPv4 TCP trace from' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -x failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -x failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -x failed'
++ LOG_ERROR 'Check astraceroute -x failed'
++ message='Check astraceroute -x failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -x failed'
+Thu Jun 29 14:42:59 2023 - ERROR - Check astraceroute -x failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 57'
++ message='oe_test_astraceroute_02.sh line 57'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 57'
+Thu Jun 29 14:42:59 2023 - ERROR - oe_test_astraceroute_02.sh line 57
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ astraceroute -i -H netsniff-ng.org --timeout 1
++ grep 'AS path IPv4 TCP trace from' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --timeout failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --timeout failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --timeout failed'
++ LOG_ERROR 'Check astraceroute --timeout failed'
++ message='Check astraceroute --timeout failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --timeout failed'
+Thu Jun 29 14:43:04 2023 - ERROR - Check astraceroute --timeout failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 63'
++ message='oe_test_astraceroute_02.sh line 63'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 63'
+Thu Jun 29 14:43:04 2023 - ERROR - oe_test_astraceroute_02.sh line 63
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ astraceroute -i -H netsniff-ng.org -X 'censor me'
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'censor me' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -X failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -X failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -X failed'
++ LOG_ERROR 'Check astraceroute -X failed'
++ message='Check astraceroute -X failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -X failed'
+Thu Jun 29 14:43:09 2023 - ERROR - Check astraceroute -X failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 70'
++ message='oe_test_astraceroute_02.sh line 70'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 70'
+Thu Jun 29 14:43:09 2023 - ERROR - oe_test_astraceroute_02.sh line 70
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ astraceroute -i -H netsniff-ng.org --payload 'censor me'
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'censor me' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --payload failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --payload failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --payload failed'
++ LOG_ERROR 'Check astraceroute --payload failed'
++ message='Check astraceroute --payload failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --payload failed'
+Thu Jun 29 14:43:14 2023 - ERROR - Check astraceroute --payload failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 77'
++ message='oe_test_astraceroute_02.sh line 77'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 77'
+Thu Jun 29 14:43:14 2023 - ERROR - oe_test_astraceroute_02.sh line 77
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ astraceroute -i -H netsniff-ng.org -X sdakh -Z -p 1 -l 20
++ grep sdakh tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -l failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -l failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -l failed'
++ LOG_ERROR 'Check astraceroute -l failed'
++ message='Check astraceroute -l failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -l failed'
+Thu Jun 29 14:43:19 2023 - ERROR - Check astraceroute -l failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 84'
++ message='oe_test_astraceroute_02.sh line 84'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 84'
+Thu Jun 29 14:43:19 2023 - ERROR - oe_test_astraceroute_02.sh line 84
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ astraceroute -i -H netsniff-ng.org -X sdakh -Z -p 1 --totlen 20
++ grep sdakh tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --totlen failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --totlen failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --totlen failed'
++ LOG_ERROR 'Check astraceroute --totlen failed'
++ message='Check astraceroute --totlen failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --totlen failed'
+Thu Jun 29 14:43:25 2023 - ERROR - Check astraceroute --totlen failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 91'
++ message='oe_test_astraceroute_02.sh line 91'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 91'
+Thu Jun 29 14:43:25 2023 - ERROR - oe_test_astraceroute_02.sh line 91
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ astraceroute -i -H netsniff-ng.org -4
++ grep 'AS path IPv4 TCP trace from' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute -4 failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute -4 failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute -4 failed'
++ LOG_ERROR 'Check astraceroute -4 failed'
++ message='Check astraceroute -4 failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute -4 failed'
+Thu Jun 29 14:43:30 2023 - ERROR - Check astraceroute -4 failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 98'
++ message='oe_test_astraceroute_02.sh line 98'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 98'
+Thu Jun 29 14:43:30 2023 - ERROR - oe_test_astraceroute_02.sh line 98
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ SLEEP_WAIT 5
++ astraceroute -i -H netsniff-ng.org --ipv4
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep 'AS path IPv4 TCP trace from' tmp.txt
++ CHECK_RESULT 1 0 0 'Check astraceroute --ipv4 failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check astraceroute --ipv4 failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check astraceroute --ipv4 failed'
++ LOG_ERROR 'Check astraceroute --ipv4 failed'
++ message='Check astraceroute --ipv4 failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check astraceroute --ipv4 failed'
+Thu Jun 29 14:43:35 2023 - ERROR - Check astraceroute --ipv4 failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_astraceroute_02.sh line 105'
++ message='oe_test_astraceroute_02.sh line 105'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_astraceroute_02.sh line 105'
+Thu Jun 29 14:43:35 2023 - ERROR - oe_test_astraceroute_02.sh line 105
++ '[' 0 -eq 1 ']'
++ return 0
+++ pgrep -f 'astraceroute -i'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ rm -f tmp.txt
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 14:43:35 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 12
++ test 12 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:43:35 2023 - ERROR - failed to execute the case.
++ exit 12
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:43:35 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpyt_k8t4a ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpyt_k8t4a
++ '[' 0 -ne 0 ']'
++ rm -rf ./data/ ./common/curvetunClient.sh ./common/curvetunDepoly.sh ./common/curvetunInfo.sh ./common/curvetunServer.sh ./common/curvetunStartServer.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:43:36 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,211 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ source ./common/lib/util.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:23:55 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'bird tar'
++ pkgs='bird tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'bird tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwzfye5gu
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwzfye5gu
++ extract_data
++ [[ -f ./common/data.tar.gz ]]
++ tar -xvf ./common/data.tar.gz
+data/
+data/test.sh
+data/bird.conf
++ bird -c ./data/bird.conf
+bird: I found another BIRD running.
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:23:57 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:23:57 2023 - INFO  - Start to run test.
++ expect
++ grep 'ospf1: enabled' tmp.txt
+bird>       ospf1: enabled
++ CHECK_RESULT 0 0 0 'check birdc enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ expect
++ grep 'ospf1: restarted' tmp.txt
+bird>       ospf1: restarted
++ CHECK_RESULT 0 0 0 'check birdc restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ expect
++ grep 'ospf1: reloading' tmp.txt
+bird>       ospf1: reloading
++ CHECK_RESULT 0 0 0 'check birdc reload failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc reload failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ expect
++ grep 'Access restricted' tmp.txt
+bird>       Access restricted
++ CHECK_RESULT 0 0 0 'check birdc restrict failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc restrict failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ expect
++ grep Reconfigured tmp.txt
+Reconfigured
++ CHECK_RESULT 0 0 0 'check birdc configure failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc configure failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ expect
++ grep 'Shutdown requested' tmp.txt
+bird>       Shutdown requested
++ CHECK_RESULT 0 0 0 'check birdc down failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='check birdc down failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -f tmp.txt
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 29 14:23:57 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:23:57 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:23:57 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpwzfye5gu ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpwzfye5gu
++ '[' 0 -ne 0 ']'
+++ pgrep 'bird -c'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ clean_dir
+++ ls
++ filelist='bird.md
+common
+data
+oe_test_bird_01.sh
+oe_test_bird_02.sh
+oe_test_birdc_01.sh
+oe_test_birdc_02.sh
+oe_test_birdc_03.sh
+oe_test_birdc_04.sh
+oe_test_birdcl_01.sh
+oe_test_birdcl_02.sh
+oe_test_birdcl_03.sh
+oe_test_service_bird.sh'
++ for filename in ${filelist[@]}
++ [[ -d bird.md ]]
++ for filename in ${filelist[@]}
++ [[ -d common ]]
++ [[ ! commonx == \c\o\m\m\o\n\x ]]
++ for filename in ${filelist[@]}
++ [[ -d data ]]
++ [[ ! datax == \c\o\m\m\o\n\x ]]
++ rm -rf data
++ for filename in ${filelist[@]}
++ [[ -d oe_test_bird_01.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_bird_02.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdc_01.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdc_02.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdc_03.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdc_04.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdcl_01.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdcl_02.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_birdcl_03.sh ]]
++ for filename in ${filelist[@]}
++ [[ -d oe_test_service_bird.sh ]]
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:23:58 2023 - INFO  - End to restore the test environment.

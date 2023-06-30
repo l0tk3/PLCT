@@ -1,0 +1,260 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 18:22:22 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'perl-Module-ScanDeps tar'
++ pkgs='perl-Module-ScanDeps tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'perl-Module-ScanDeps tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpoznz0lzt
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpoznz0lzt
++ tar -xvf common/data.tar.gz
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 18:22:57 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:22:57 2023 - INFO  - Start to run test.
++ scandeps.pl -B ./data/Html.pm
++ grep Encode::Alias
+'Encode::Alias'               => '2.24',
++ CHECK_RESULT 0 0 0 'Check scandeps.pl -B failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl -B failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scandeps.pl -V ./data/Html.pm
++ grep Pod::Simple::SimpleTree
+# Could not find source file 'PerlIO/utf8.pm' in @INC or @IncludeLibs. Skipping it.
+'Carp'                        => '0', #    ? # Pod::Html locale Pod::Simple::Search warnings re File::Basename Pod::Simple::SimpleTree strict Pod::Simple Term::Cap Scalar::Util constant Pod::Text Errno Text::ParseWords Pod::Usage XSLoader Exporter::Heavy vars Encode Pod::Simple::TiedOutFH Pod::Simple::BlackBox DynaLoader Storable Encode::Alias Encode::Encoding bytes feature IO::File SelectSaver IO::Seekable IO::Handle IO::Pipe IO IO::Socket IO::Socket::UNIX IO::Dir Tie::Hash File::stat IO::Socket::INET Socket Class::Struct
+'Pod::Simple'                 => '0', #    ? # Pod::Simple::SimpleTree Pod::Text Pod::Simple::Methody Pod::Simple::BlackBox Pod::Simple::TranscodeSmart
+'Pod::Simple::SimpleTree'     => '0', #    ? # Pod::Html
++ CHECK_RESULT 0 0 0 'Check scandeps.pl -V failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl -V failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scandeps.pl -T ./data/Html.pm
++ grep Encode::Config
+'Encode::Config'              => '2.05',
++ CHECK_RESULT 0 0 0 'Check scandeps.pl -T failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl -T failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scandeps.pl -x data/Html.pm
++ grep Socket
+'Socket'                      => '2.032',
++ CHECK_RESULT 0 0 0 'Check scandeps.pl -x failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl -x failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scandeps.pl --xargs=data ./data/Html.pm
+'Carp'                        => '1.50',
+'Cwd'                         => '3.80',
+'Encode'                      => '3.16',
+'Encode::Alias'               => '2.24',
+'Encode::Config'              => '2.05',
+'Encode::Encoding'            => '2.08',
+'Encode::MIME::Name'          => '1.03',
+'Exporter'                    => '5.74',
+'Exporter::Heavy'             => '5.74',
+'File::Spec'                  => '3.80',
+'File::Spec::Unix'            => '3.80',
+'Getopt::Long'                => '2.52',
+'List::Util'                  => '1.60',
+'Pod::Escapes'                => '1.07_01',
+'Pod::Simple'                 => '3.43',
+'Pod::Simple::BlackBox'       => '3.43',
+'Pod::Simple::LinkSection'    => '3.43',
+'Pod::Simple::Methody'        => '3.43',
+'Pod::Simple::Search'         => '3.43',
+'Pod::Simple::SimpleTree'     => '3.43',
+'Pod::Simple::TiedOutFH'      => '3.43',
+'Pod::Simple::Transcode'      => '3.43',
+'Pod::Simple::TranscodeDumb'  => '3.43',
+'Pod::Simple::TranscodeSmart' => '3.43',
+'Pod::Simple::XHTML'          => '3.43',
+'Pod::Text'                   => '4.14',
+'Pod::Usage'                  => '2.03',
+'Scalar::Util'                => '1.60',
+'Socket'                      => '2.032',
+'Storable'                    => '3.25',
+'Term::Cap'                   => '1.17',
+'Text::ParseWords'            => '3.30',
+'Text::Tabs'                  => '2021.0814',
+'constant'                    => '1.33',
+'parent'                      => '0.238',
++ CHECK_RESULT 0 0 0 'Check scandeps.pl --xargs failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl --xargs failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scandeps.pl -c ./data/Html.pm
++ grep 'syntax OK'
+/tmp/6o2O6d3vC9 syntax OK
++ CHECK_RESULT 0 0 0 'Check scandeps.pl -c failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl -c failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scandeps.pl -R ./data/Html.pm
++ grep parent
+'parent'                  => '0.238',
++ CHECK_RESULT 0 0 0 'Check scandeps.pl -R failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl -R failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scandeps.pl -e 'use utf8'
+No modules found!
++ CHECK_RESULT 0 0 0 'Check scandeps.pl -e failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl -e failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scandeps.pl -C tmpa.txt ./data/Html.pm
+Couldn't retrieve data from file tmpa.txt. Building new cache.
+'Carp'                        => '1.50',
+'Cwd'                         => '3.80',
+'Encode'                      => '3.16',
+'Encode::Alias'               => '2.24',
+'Encode::Config'              => '2.05',
+'Encode::Encoding'            => '2.08',
+'Encode::MIME::Name'          => '1.03',
+'Exporter'                    => '5.74',
+'Exporter::Heavy'             => '5.74',
+'File::Spec'                  => '3.80',
+'File::Spec::Unix'            => '3.80',
+'Getopt::Long'                => '2.52',
+'List::Util'                  => '1.60',
+'Pod::Escapes'                => '1.07_01',
+'Pod::Simple'                 => '3.43',
+'Pod::Simple::BlackBox'       => '3.43',
+'Pod::Simple::LinkSection'    => '3.43',
+'Pod::Simple::Methody'        => '3.43',
+'Pod::Simple::Search'         => '3.43',
+'Pod::Simple::SimpleTree'     => '3.43',
+'Pod::Simple::TiedOutFH'      => '3.43',
+'Pod::Simple::Transcode'      => '3.43',
+'Pod::Simple::TranscodeDumb'  => '3.43',
+'Pod::Simple::TranscodeSmart' => '3.43',
+'Pod::Simple::XHTML'          => '3.43',
+'Pod::Text'                   => '4.14',
+'Pod::Usage'                  => '2.03',
+'Scalar::Util'                => '1.60',
+'Socket'                      => '2.032',
+'Storable'                    => '3.25',
+'Term::Cap'                   => '1.17',
+'Text::ParseWords'            => '3.30',
+'Text::Tabs'                  => '2021.0814',
+'constant'                    => '1.33',
+'parent'                      => '0.238',
++ test -f tmpa.txt
++ CHECK_RESULT 0 0 0 'Check scandeps.pl -C failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check scandeps.pl -C failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 18:23:31 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:23:31 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 18:23:32 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpoznz0lzt ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpoznz0lzt
++ '[' 0 -ne 0 ']'
++ rm -rf ./data tmp.txt tmpa.txt
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 18:23:41 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,186 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 18:25:37 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL createrepo_c
++ pkgs=createrepo_c
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs createrepo_c --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpagi1lnab
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpagi1lnab
++ test_path=/tmp/test
++ repo_path=/etc/yum.repos.d
++ mkdir /tmp/test /etc/yum.repos.d/bak
++ cd /tmp/test
++ yum download git git-core perl-Error perl-Git perl-TermReadKey
+Last metadata expiration check: 0:00:27 ago on Thu 22 Jun 2023 06:25:50 PM CST.
+(1/5): perl-Error-0.17029-3.oe2303.noarch.rpm    20 kB/s |  31 kB     00:01    
+(2/5): git-core-2.39.1-3.oe2303.riscv64.rpm     2.9 MB/s | 8.1 MB     00:02    
+(3/5): perl-Git-2.39.1-3.oe2303.noarch.rpm       23 kB/s |  28 kB     00:01    
+(4/5): git-2.39.1-3.oe2303.riscv64.rpm          3.0 MB/s | 9.9 MB     00:03    
+(5/5): perl-TermReadKey-2.38-2.oe2303.riscv64.r  52 kB/s |  24 kB     00:00    
++ mv /etc/yum.repos.d/openEuler.repo /etc/yum.repos.d/bak
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 18:26:22 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 18:26:22 2023 - INFO  - Start testing...
++ createrepo_c .
+Directory walk started
+Directory walk done - 5 packages
+Temporary output repo path: ./.repodata/
+Preparing sqlite DBs
+Pool started (with 5 workers)
+Pool finished
++ test -e repodata
++ CHECK_RESULT 0 0 0 'Generation failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Generation failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat
++ yum '--disablerepo=*' --enablerepo=local list available
+local repo                                      161 kB/s | 5.2 kB     00:00    
++ CHECK_RESULT 0 0 0 'Repo error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Repo error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ yum clean all
+53 files removed
++ yum install git -y
+local repo                                      158 kB/s | 5.2 kB     00:00    
+Package git-2.39.1-3.oe2303.riscv64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
++ CHECK_RESULT 0 0 0 'Package install fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Package install fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ yum remove git -y
+Dependencies resolved.
+================================================================================
+ Package              Arch        Version                   Repository     Size
+================================================================================
+Removing:
+ git                  riscv64     2.39.1-3.oe2303           @mainline      31 M
+Removing unused dependencies:
+ git-core             riscv64     2.39.1-3.oe2303           @mainline      21 M
+ perl-Error           noarch      1:0.17029-3.oe2303        @mainline      68 k
+ perl-Git             noarch      2.39.1-3.oe2303           @mainline      55 k
+ perl-TermReadKey     riscv64     2.38-2.oe2303             @mainline      43 k
+
+Transaction Summary
+================================================================================
+Remove  5 Packages
+
+Freed space: 52 M
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Erasing          : git-2.39.1-3.oe2303.riscv64                            1/5 
+  Erasing          : perl-Git-2.39.1-3.oe2303.noarch                        2/5 
+  Erasing          : perl-Error-1:0.17029-3.oe2303.noarch                   3/5 
+  Erasing          : git-core-2.39.1-3.oe2303.riscv64                       4/5 
+  Erasing          : perl-TermReadKey-2.38-2.oe2303.riscv64                 5/5 
+  Verifying        : git-2.39.1-3.oe2303.riscv64                            1/5 
+  Verifying        : git-core-2.39.1-3.oe2303.riscv64                       2/5 
+  Verifying        : perl-Error-1:0.17029-3.oe2303.noarch                   3/5 
+  Verifying        : perl-Git-2.39.1-3.oe2303.noarch                        4/5 
+  Verifying        : perl-TermReadKey-2.38-2.oe2303.riscv64                 5/5 
+
+Removed:
+  git-2.39.1-3.oe2303.riscv64               git-core-2.39.1-3.oe2303.riscv64   
+  perl-Error-1:0.17029-3.oe2303.noarch      perl-Git-2.39.1-3.oe2303.noarch    
+  perl-TermReadKey-2.38-2.oe2303.riscv64   
+
+Complete!
++ CHECK_RESULT 0 0 0 'Package remove fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Package remove fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 18:26:42 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 18:26:42 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 18:26:42 2023 - INFO  - start environment cleanup.
++ mv /etc/yum.repos.d/bak/openEuler.repo /etc/yum.repos.d
++ rm -rf /tmp/test /etc/yum.repos.d/local.repo /etc/yum.repos.d/bak
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpagi1lnab ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpagi1lnab
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 18:26:51 2023 - INFO  - Finish environment cleanup!

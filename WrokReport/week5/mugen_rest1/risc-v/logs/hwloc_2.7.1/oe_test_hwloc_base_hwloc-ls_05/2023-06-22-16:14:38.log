@@ -1,0 +1,140 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:14:41 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpz3z6pinf
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpz3z6pinf
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:15:12 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 16:15:12 2023 - INFO  - Start testing...
+++ ps -fC bash
+++ sed 1d
+++ awk 'NR==1 {print $2}'
++ pid=4195
++ hwloc-ls --pid 4195
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --pid failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --pid failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --whole-system
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --whole-system  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --whole-system  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --input 'node:2 2'
++ grep 'NUMANode L#1'
+    NUMANode L#1 (P#1 1024MB)
++ CHECK_RESULT 0 0 0 'hwloc-ls --input '\''node:2 2'\'' failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --input '\''node:2 2'\'' failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --input-format fsroot
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --input-format failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --input-format failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --top
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --top failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --top failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 16:15:13 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:15:14 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:15:14 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpz3z6pinf ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpz3z6pinf
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:15:24 2023 - INFO  - End to restore the test environment.

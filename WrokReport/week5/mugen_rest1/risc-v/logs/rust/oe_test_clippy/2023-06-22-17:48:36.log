@@ -1,0 +1,124 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 22 17:48:39 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL clippy
++ pkgs=clippy
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs clippy --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:05:10 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: clippy
+Error: Unable to find a match: clippy'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:05:10 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: clippy
+Error: Unable to find a match: clippy'
++ cp ../common/test.rs test.rs
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 22 17:49:00 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase!'
++ message='Start executing testcase!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase!'
+Thu Jun 22 17:49:01 2023 - INFO  - Start executing testcase!
++ cargo-clippy -h
++ grep Usage
+oe_test_clippy.sh: line 31: cargo-clippy: command not found
++ CHECK_RESULT 1 0 0 'Help information printing failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Help information printing failed'
++ LOG_ERROR 'Help information printing failed'
++ message='Help information printing failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Help information printing failed'
+Thu Jun 22 17:49:01 2023 - ERROR - Help information printing failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clippy.sh line 32'
++ message='oe_test_clippy.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_clippy.sh line 32'
+Thu Jun 22 17:49:02 2023 - ERROR - oe_test_clippy.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo-clippy -V
++ grep -E '[0-9]'
+oe_test_clippy.sh: line 33: cargo-clippy: command not found
++ CHECK_RESULT 1 0 0 'Failed to output the version information'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the version information'
++ LOG_ERROR 'Failed to output the version information'
++ message='Failed to output the version information'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the version information'
+Thu Jun 22 17:49:02 2023 - ERROR - Failed to output the version information
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_clippy.sh line 34'
++ message='oe_test_clippy.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_clippy.sh line 34'
+Thu Jun 22 17:49:03 2023 - ERROR - oe_test_clippy.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ cargo new hello_world
+oe_test_clippy.sh: line 35: cargo: command not found
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 17:49:03 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:05:10 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: clippy
+Error: Unable to find a match: clippy ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:05:10 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: clippy
+Error: Unable to find a match: clippy'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:05:10 ago on Thu 22 Jun 2023 05:43:49 PM CST.\nNo match for argument: clippy\nError: Unable to find a match: clippy'
++ '[' 0 -ne 0 ']'
++ rm -rf ./test.rs 'hello*'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 17:49:06 2023 - INFO  - Finish environment cleanup!

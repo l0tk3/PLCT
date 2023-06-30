@@ -1,0 +1,231 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 17:10:57 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'rubygem-sdoc tar'
++ pkgs='rubygem-sdoc tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'rubygem-sdoc tar' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp396ktm43
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp396ktm43
++ tar -xvf ./common/data.tar.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 17:11:41 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 17:11:41 2023 - INFO  - Start to run test.
++ sdoc-merge -h
++ grep 'Usage: sdoc-merge'
+Usage: sdoc-merge [options] directories
++ CHECK_RESULT 0 0 0 'Check sdoc-merge -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pushd ./mergedata
+~/mugen/testcases/cli-test/rubygem-sdoc/mergedata ~/mugen/testcases/cli-test/rubygem-sdoc
++ sdoc-merge -o tmp1 --title 'Ruby v1.9, Rails v2.3.2.1' rubydemo rails
++ grep -risn 'Ruby v1.9, Rails v2.3.2.1' ./tmp1/index.html
++ CHECK_RESULT 1 0 0 'Check sdoc-merge --title failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge --title failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check sdoc-merge --title failed'
++ LOG_ERROR 'Check sdoc-merge --title failed'
++ message='Check sdoc-merge --title failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check sdoc-merge --title failed'
+Thu Jun 22 17:11:49 2023 - ERROR - Check sdoc-merge --title failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rubygem-sdoc_sdoc-merge.sh line 36'
++ message='oe_test_rubygem-sdoc_sdoc-merge.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rubygem-sdoc_sdoc-merge.sh line 36'
+Thu Jun 22 17:11:49 2023 - ERROR - oe_test_rubygem-sdoc_sdoc-merge.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ sdoc-merge -o tmp2 -t 'Ruby v1.9, Rails v2.3.2.1' rubydemo rails
++ grep -risn 'Ruby v1.9, Rails v2.3.2.1' ./tmp2/index.html
++ CHECK_RESULT 1 0 0 'Check sdoc-merge -t failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge -t failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check sdoc-merge -t failed'
++ LOG_ERROR 'Check sdoc-merge -t failed'
++ message='Check sdoc-merge -t failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check sdoc-merge -t failed'
+Thu Jun 22 17:11:53 2023 - ERROR - Check sdoc-merge -t failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rubygem-sdoc_sdoc-merge.sh line 39'
++ message='oe_test_rubygem-sdoc_sdoc-merge.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rubygem-sdoc_sdoc-merge.sh line 39'
+Thu Jun 22 17:11:53 2023 - ERROR - oe_test_rubygem-sdoc_sdoc-merge.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ sdoc-merge -o tmp3 -u 'testurldemo xxxx' rails rubydemo
++ grep testurldemo/files ./tmp3/index.html
++ CHECK_RESULT 1 0 0 'Check sdoc-merge -u failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge -u failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check sdoc-merge -u failed'
++ LOG_ERROR 'Check sdoc-merge -u failed'
++ message='Check sdoc-merge -u failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check sdoc-merge -u failed'
+Thu Jun 22 17:11:57 2023 - ERROR - Check sdoc-merge -u failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rubygem-sdoc_sdoc-merge.sh line 42'
++ message='oe_test_rubygem-sdoc_sdoc-merge.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rubygem-sdoc_sdoc-merge.sh line 42'
+Thu Jun 22 17:11:58 2023 - ERROR - oe_test_rubygem-sdoc_sdoc-merge.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ sdoc-merge -o tmp4 --urls 'testurldemo xxxx' rails rubydemo
++ grep testurldemo/files ./tmp4/index.html
++ CHECK_RESULT 1 0 0 'Check sdoc-merge --urls failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge --urls failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check sdoc-merge --urls failed'
++ LOG_ERROR 'Check sdoc-merge --urls failed'
++ message='Check sdoc-merge --urls failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check sdoc-merge --urls failed'
+Thu Jun 22 17:12:01 2023 - ERROR - Check sdoc-merge --urls failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rubygem-sdoc_sdoc-merge.sh line 45'
++ message='oe_test_rubygem-sdoc_sdoc-merge.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rubygem-sdoc_sdoc-merge.sh line 45'
+Thu Jun 22 17:12:02 2023 - ERROR - oe_test_rubygem-sdoc_sdoc-merge.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ sdoc-merge --op tmpdemo1 rubydemo rails
++ test -d tmpdemo1
++ CHECK_RESULT 0 0 0 'Check sdoc-merge --op failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge --op failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sdoc-merge -o tmpdemo2 rubydemo rails
++ test -d tmpdemo2
++ CHECK_RESULT 0 0 0 'Check sdoc-merge -o failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge -o failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sdoc-merge -o tmp5 --names Rubyxxx,Railsxxx rubydemo rails
++ test -d ./tmp5/Rubyxxx
++ test -d ./tmp5/Railsxxx
++ CHECK_RESULT 0 0 0 'Check sdoc-merge --names failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge --names failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sdoc-merge -o tmp6 -n Rubyxxx,Railsxxx rubydemo rails
++ test -d ./tmp6/Rubyxxx
++ test -d ./tmp6/Railsxxx
++ CHECK_RESULT 0 0 0 'Check sdoc-merge -n failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sdoc-merge -n failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ popd
+~/mugen/testcases/cli-test/rubygem-sdoc
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 17:12:16 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 17:12:17 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 17:12:17 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp396ktm43 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp396ktm43
++ '[' 0 -ne 0 ']'
++ rm -rf ./data/ ./mergedata/ ./common/hello.rb ./common/main.rb ./common/test.rb ./common/common_ruby.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 17:12:30 2023 - INFO  - End to restore the test environment.

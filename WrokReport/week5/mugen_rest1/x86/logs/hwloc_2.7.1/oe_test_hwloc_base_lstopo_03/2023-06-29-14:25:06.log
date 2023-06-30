@@ -1,0 +1,208 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 14:25:06 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:25:07 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 14:25:07 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:25:07 2023 - INFO  - Start to run test.
++ lstopo -l --input 'node:2 2'
++ grep NUMANode
+    NUMANode L#0 (1024MB)
+    NUMANode L#1 (1024MB)
++ CHECK_RESULT 0 0 0 'lstopo --input '\''node:2 2'\'' failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --input '\''node:2 2'\'' failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --no-bridges
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo --no-bridges failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --no-bridges failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --whole-io
++ grep Package
+  Package L#0
++ CHECK_RESULT 0 0 0 'lstopo --whole-io failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --whole-io failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l common/test_fn.xml -f
++ lstopo -l -i common/test_fn.xml
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo -i <XML file> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -i <XML file> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l -i /
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo -i <directory> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -i <directory> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l -i 'node:2 2'
++ grep NUMANode
+    NUMANode L#0 (1024MB)
+    NUMANode L#1 (1024MB)
++ CHECK_RESULT 0 0 0 'lstopo -i '\''node:2 2'\'' failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -i '\''node:2 2'\'' failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l -i common/test_fn.xml --if xml
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo --if <format> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --if <format> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --thissystem
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo --thissystem failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --thissystem failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --pid 1
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo --pid <pid> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --pid <pid> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --whole-system
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo --whole-system failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --whole-system failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 29 14:25:07 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:25:07 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 14:25:07 2023 - INFO  - start environment cleanup.
++ rm -f common/test_fn.xml
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:25:07 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 14:25:07 2023 - INFO  - Finish environment cleanup!

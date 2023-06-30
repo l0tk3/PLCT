@@ -1,0 +1,254 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 15:58:24 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:15:27 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:15:27 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+++ uname -i
++ test riscv64X == aarch64X
++ systemctl start libvirtd
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get riscv64 qcow2 libguestfs pkg'
++ message='get riscv64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get riscv64 qcow2 libguestfs pkg'
+Thu Jun 22 15:58:49 2023 - INFO  - get riscv64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 ']'
+++ arch
+++ arch
+++ arch
++ wget https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz --no-check-certificate -O ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+--2023-06-22 15:58:50--  https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+Resolving repo.huaweicloud.com (repo.huaweicloud.com)... 119.167.243.56, 119.167.243.51, 119.167.243.54, ...
+Connecting to repo.huaweicloud.com (repo.huaweicloud.com)|119.167.243.56|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2023-06-22 15:58:56 ERROR 404: Not Found.
+
+++ arch
++ xz -d ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+xz: ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz: File format not recognized
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+cp: cannot stat './common/openEuler-20.03-LTS-SP3-riscv64.qcow2': No such file or directory
++ virt-install --name openEuler-2003 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 23: virt-install: command not found
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ echo hello
++ virt-copy-in -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 a.txt /etc
+/usr/bin/virt-copy-in: access: /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2: No such file or directory
++ virt-copy-in -d openEuler-2003 a.txt /etc
+libguestfs: error: no libvirt domain called ‘openEuler-2003’: Domain not found: no domain with matching name 'openEuler-2003'
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 15:58:57 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 15:58:58 2023 - INFO  - Start to run test.
++ virt-copy-out -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /etc/a.txt ./
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0xaaaaaae1857f60, program = virt-copy-out
+/usr/bin/virt-copy-out: access: /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2: No such file or directory
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0xaaaaaae1857f60 (state 0)
++ CHECK_RESULT 1 0 0 'Check virt-copy-out -a failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check virt-copy-out -a failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check virt-copy-out -a failed'
++ LOG_ERROR 'Check virt-copy-out -a failed'
++ message='Check virt-copy-out -a failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-copy-out -a failed'
+Thu Jun 22 15:58:59 2023 - ERROR - Check virt-copy-out -a failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-copy-out.sh line 35'
++ message='oe_test_libguestfs_virt-copy-out.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-copy-out.sh line 35'
+Thu Jun 22 15:58:59 2023 - ERROR - oe_test_libguestfs_virt-copy-out.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-copy-out -d openEuler-2003 /etc/a.txt ./
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0xaaaaaac5948f60, program = virt-copy-out
+libguestfs: trace: add_domain "openEuler-2003" "readonly:true" "allowuuid:true" "readonlydisk:read"
+libguestfs: opening libvirt handle: URI = NULL, auth = default+wrapper, flags = 0
+libguestfs: successfully opened libvirt handle: conn = 0xaaaaaac5949a90
+libguestfs: error: no libvirt domain called ‘openEuler-2003’: Domain not found: no domain with matching name 'openEuler-2003'
+libguestfs: trace: add_domain = -1 (error)
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0xaaaaaac5948f60 (state 0)
++ CHECK_RESULT 1 0 0 'Check virt-copy-out -d failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check virt-copy-out -d failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check virt-copy-out -d failed'
++ LOG_ERROR 'Check virt-copy-out -d failed'
++ message='Check virt-copy-out -d failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-copy-out -d failed'
+Thu Jun 22 15:59:00 2023 - ERROR - Check virt-copy-out -d failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-copy-out.sh line 37'
++ message='oe_test_libguestfs_virt-copy-out.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-copy-out.sh line 37'
+Thu Jun 22 15:59:00 2023 - ERROR - oe_test_libguestfs_virt-copy-out.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-copy-out -h
++ grep 'display a list of commands'
+help                 display a list of commands or help on a command
++ CHECK_RESULT 0 0 0 'Check virt-copy-out -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check virt-copy-out -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ virt-copy-out -V
+++ rpm -q libguestfs --queryformat '%{version}\n'
++ grep 1.49.5
+libguestfs: trace: set_verbose true
+libguestfs: trace: set_verbose = 0
+libguestfs: create: flags = 0, handle = 0xaaaaaac6193f60, program = virt-copy-out
+libguestfs: trace: close
+libguestfs: closing guestfs handle 0xaaaaaac6193f60 (state 0)
+virt-copy-out 1.49.5libvirt
++ CHECK_RESULT 0 0 0 'Check virt-copy-out -V failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check virt-copy-out -V failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 15:59:01 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 15:59:02 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:59:03 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test
++ virsh start openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh destroy openEuler-2003
+error: failed to get domain 'openEuler-2003'
+
++ virsh undefine openEuler-2003 --nvram
+error: failed to get domain 'openEuler-2003'
+
++ unset LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:15:27 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:15:27 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: 'Last metadata expiration check: 0:15:27 ago on Thu 22 Jun 2023 03:43:21 PM CST.\nPackage libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.\nPackage virt-manager-4.1.0-1.oe2303.noarch is already installed.\nPackage qemu-10:6.2.0-68.oe2303.riscv64 is already installed.\nPackage libvirt-6.2.0-52.oe2303.riscv64 is already installed.\nPackage python3-paramiko-2.11.0-1.oe2303.noarch is already installed.\nNo match for argument: edk2-devel\nError: Unable to find a match: edk2-devel'
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*' 'file*'
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 22 15:59:07 2023 - INFO  - Finish to restore the test environment.

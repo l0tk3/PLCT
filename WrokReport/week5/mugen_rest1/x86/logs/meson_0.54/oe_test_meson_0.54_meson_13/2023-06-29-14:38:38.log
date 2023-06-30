@@ -1,0 +1,451 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:38:38 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc'
++ pkgs='meson tar gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc' --node 1 --tempfile ''
+Thu Jun 29 14:38:39 2023 - INFO  - pkgs:(meson tar gcc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ tar -xvf common/0.54/test_2.tgz
+test_2/
+test_2/.git/
+test_2/.git/COMMIT_EDITMSG
+test_2/.git/FETCH_HEAD
+test_2/.git/hooks/
+test_2/.git/hooks/post-update.sample
+test_2/.git/hooks/applypatch-msg.sample
+test_2/.git/hooks/commit-msg.sample
+test_2/.git/hooks/pre-push.sample
+test_2/.git/hooks/pre-rebase.sample
+test_2/.git/hooks/pre-merge-commit.sample
+test_2/.git/hooks/prepare-commit-msg.sample
+test_2/.git/hooks/fsmonitor-watchman.sample
+test_2/.git/hooks/update.sample
+test_2/.git/hooks/pre-applypatch.sample
+test_2/.git/hooks/pre-receive.sample
+test_2/.git/hooks/pre-commit.sample
+test_2/.git/branches/
+test_2/.git/refs/
+test_2/.git/refs/heads/
+test_2/.git/refs/heads/master
+test_2/.git/refs/tags/
+test_2/.git/logs/
+test_2/.git/logs/refs/
+test_2/.git/logs/refs/heads/
+test_2/.git/logs/refs/heads/master
+test_2/.git/logs/HEAD
+test_2/.git/HEAD
+test_2/.git/config
+test_2/.git/info/
+test_2/.git/info/exclude
+test_2/.git/description
+test_2/.git/objects/
+test_2/.git/objects/2b/
+test_2/.git/objects/2b/5aa49079b7e147e263a05de2e780753b43d3c9
+test_2/.git/objects/74/
+test_2/.git/objects/74/fdb3cd30af2d184e854858359c7a104e8c934b
+test_2/.git/objects/30/
+test_2/.git/objects/30/f6d0056ffc3ef9ade5ecfeb500930477bdd92e
+test_2/.git/objects/30/ae43c727e349c9fb3300bc4124124c26b4cb24
+test_2/.git/objects/pack/
+test_2/.git/objects/86/
+test_2/.git/objects/86/9c5a5578ae12571f2481c63d0781eb10789edb
+test_2/.git/objects/41/
+test_2/.git/objects/41/cff28198b68ba776fd69e4b42d2336fe7e5d3f
+test_2/.git/objects/06/
+test_2/.git/objects/06/37a088a01e8ddab3bf3fa98dbe804cbde1a0dc
+test_2/.git/objects/df/
+test_2/.git/objects/df/f85badb2ec623fd479381e12b2bb851c30a184
+test_2/.git/objects/c4/
+test_2/.git/objects/c4/f2e3eb93d8c11bcf90714c99b3fe7970d8d26f
+test_2/.git/objects/9f/
+test_2/.git/objects/9f/8c45aba1462f8a6d18fb4e6bb751f42b4e7ab6
+test_2/.git/objects/07/
+test_2/.git/objects/07/eb7a55ef964d54af4d37e1a5156e0057182b85
+test_2/.git/objects/00/
+test_2/.git/objects/00/45861f6ea6af0b8f48c85fe8d37a3258dcbf3a
+test_2/.git/objects/90/
+test_2/.git/objects/90/457c85ae9376efba88dce06ea473364c4ae355
+test_2/.git/objects/51/
+test_2/.git/objects/51/35b3f3136e524c87038844b1acc25e09303a5b
+test_2/.git/objects/13/
+test_2/.git/objects/13/1ab6fe433508ef7207e16de357c087175f6698
+test_2/.git/objects/83/
+test_2/.git/objects/83/2ec7f91106a35defaf261a6e1581426d2cf5c0
+test_2/.git/objects/9a/
+test_2/.git/objects/9a/004db8c4aacb819d0900eedc0d7f633aecabe1
+test_2/.git/objects/9a/649440764ff2337ca8cd84f0d5ce169d44b549
+test_2/.git/objects/52/
+test_2/.git/objects/52/ea090e9e29a64e65e46d65c57aee522b198cfd
+test_2/.git/objects/62/
+test_2/.git/objects/62/9012862bc87e4fb4ad81e0b8902f817a24b941
+test_2/.git/objects/a2/
+test_2/.git/objects/a2/7020ebda7c75c70af41b7c8844e3a516a3df69
+test_2/.git/objects/5d/
+test_2/.git/objects/5d/9a052b23a31b2735b45285a83697fdb80e4acb
+test_2/.git/objects/ed/
+test_2/.git/objects/ed/48b4ed80dab4b3913e6760c54b209da7e98e5e
+test_2/.git/objects/17/
+test_2/.git/objects/17/9565743b75a0b291ae260628222dc4e274c82a
+test_2/.git/objects/4f/
+test_2/.git/objects/4f/8c0c5a62a4775326d4d5fc4e979196e19bcc35
+test_2/.git/objects/0f/
+test_2/.git/objects/0f/b36656ed9fb8c2c72c36ba26c1ed2a981e2fdb
+test_2/.git/objects/6e/
+test_2/.git/objects/6e/871cd80bbdbfe753f7adbe92ca5dc1ff126924
+test_2/.git/objects/b2/
+test_2/.git/objects/b2/8b47fba668b203b143a0da5d56d2259174fd8b
+test_2/.git/objects/fa/
+test_2/.git/objects/fa/1d3c9371501270ba0c10d0688884f811060fe8
+test_2/.git/objects/9c/
+test_2/.git/objects/9c/ebfc3c50b5c9f073b90f711153bae2834e9769
+test_2/.git/objects/e3/
+test_2/.git/objects/e3/026b1981c88bc0ba26993f8f2ce21c04ddcce4
+test_2/.git/objects/e3/b0a7bdad46b3a35474b3c1b37cc40e7c7bc4d2
+test_2/.git/objects/cc/
+test_2/.git/objects/cc/4d4cae86d8a5d341c936144b29ef121edc9fd6
+test_2/.git/objects/56/
+test_2/.git/objects/56/a4932eca0e725ef55f376b317d04d56523de2b
+test_2/.git/objects/93/
+test_2/.git/objects/93/1d0e080dc893116b45c6aa74299c4ec1a7c97c
+test_2/.git/objects/50/
+test_2/.git/objects/50/91ebf5ab69c23a0eb596e96dc0a2ec2f9ed4ea
+test_2/.git/objects/a8/
+test_2/.git/objects/a8/b4079064f64561a19cf2d77bd2f858a7681ea8
+test_2/.git/objects/bd/
+test_2/.git/objects/bd/99ebafad9f5aee0e95524ead61d2d98cc93eb4
+test_2/.git/objects/info/
+test_2/.git/objects/08/
+test_2/.git/objects/08/8ab758a4465c674afef6ae82f9f43d92908d6b
+test_2/.git/objects/44/
+test_2/.git/objects/44/b003a6d7ebdf9911d033d819e111e868421710
+test_2/.git/objects/81/
+test_2/.git/objects/81/05834f56aa3fa3f8d8fb17ac48f8d10851cc5a
+test_2/.git/objects/81/8138c11b684d9413abc71f19daae76ae0f1997
+test_2/.git/objects/b5/
+test_2/.git/objects/b5/157a628459ae61f9f868d9d0c2665fca4d109b
+test_2/.git/objects/48/
+test_2/.git/objects/48/2c0e338367d0aeb4ddc43602ac727276f77052
+test_2/.git/objects/d5/
+test_2/.git/objects/d5/a7b1bb5d4e9355e2bfdf878e5ca214fc0b1d30
+test_2/.git/objects/cb/
+test_2/.git/objects/cb/d46b1cda50ae272d3617377eb2934077d42016
+test_2/.git/objects/a1/
+test_2/.git/objects/a1/73d583696b5f6524ff1000a0bf31d3782b04a7
+test_2/.git/objects/a3/
+test_2/.git/objects/a3/b10a96fbd9fc911971175ad9ad9bf7ae4a780a
+test_2/.git/objects/be/
+test_2/.git/objects/be/c657053eba5e8b4062dfb026ac3e9b54210310
+test_2/.git/objects/4e/
+test_2/.git/objects/4e/9223d43b0dd27f02bbbdea9300eaef084e19f2
+test_2/.git/objects/f3/
+test_2/.git/objects/f3/a734330d4cb3b602459f6759c28e592e13863d
+test_2/.git/objects/f2/
+test_2/.git/objects/f2/04adb11dc996e75e5541d8a31bae334e9f60a4
+test_2/.git/objects/e6/
+test_2/.git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+test_2/.git/objects/d3/
+test_2/.git/objects/d3/62707e3f25e6c400a702e4edaa984233166504
+test_2/.git/objects/f5/
+test_2/.git/objects/f5/ccbb93615ddad3de1580104cc7bcad1b4021d6
+test_2/.git/objects/09/
+test_2/.git/objects/09/8de49826761ec5c4f15714cee1bfd5a5315870
+test_2/.git/objects/5c/
+test_2/.git/objects/5c/8f65040d705fdd79ed4cfbb80ae28fe8d71367
+test_2/.git/objects/38/
+test_2/.git/objects/38/6160e97ea3a1178b1d6a10e480920f7af878e8
+test_2/.git/objects/22/
+test_2/.git/objects/22/f1f41dedd10fcc78de298a4ab8774f60511160
+test_2/.git/objects/9e/
+test_2/.git/objects/9e/fd23f13c435eccb13b75d6606a9c001590a206
+test_2/.git/objects/f4/
+test_2/.git/objects/f4/8d2b0b8870a8ce578ac8f3ad22880f219a02e6
+test_2/.git/objects/35/
+test_2/.git/objects/35/775ab819d818a986878acbebc2692ea6249cd3
+test_2/.git/objects/1d/
+test_2/.git/objects/1d/09571ff089963f809dc382af1f064c8e0c754c
+test_2/.git/objects/1a/
+test_2/.git/objects/1a/48dc8926e83846db0a746802b19c7d82ad8b87
+test_2/.git/objects/32/
+test_2/.git/objects/32/8c06ba5cf3a6c163afdf7f5a159f32fd9c3b01
+test_2/.git/index
+test_2/builddir/
+test_2/builddir/main1
+test_2/builddir/verset@sha/
+test_2/builddir/verset@sha/versioned.c.o
+test_2/builddir/.ninja_deps
+test_2/builddir/libbothset.so
+test_2/builddir/settosame@sha/
+test_2/builddir/settosame@sha/versioned.c.o
+test_2/builddir/libsoverset.so.1.2.3
+test_2/builddir/libverset.so
+test_2/builddir/soverset@sha/
+test_2/builddir/soverset@sha/versioned.c.o
+test_2/builddir/libsettosame.so.7.8.9
+test_2/builddir/liblinked_module2.so
+test_2/builddir/libnover.so
+test_2/builddir/libbothset.so.1.2.3
+test_2/builddir/libsoverset.so
+test_2/builddir/linked_module1@sha/
+test_2/builddir/linked_module1@sha/liblinked_module1.so.symbols
+test_2/builddir/linked_module1@sha/versioned.c.o
+test_2/builddir/main1@exe/
+test_2/builddir/main1@exe/main.c.o
+test_2/builddir/compile_commands.json
+test_2/builddir/main2@exe/
+test_2/builddir/main2@exe/main.c.o
+test_2/builddir/libverset.so.4
+test_2/builddir/build.ninja
+test_2/builddir/meson-info/
+test_2/builddir/meson-info/intro-targets.json
+test_2/builddir/meson-info/intro-installed.json
+test_2/builddir/meson-info/intro-benchmarks.json
+test_2/builddir/meson-info/intro-tests.json
+test_2/builddir/meson-info/intro-buildsystem_files.json
+test_2/builddir/meson-info/intro-buildoptions.json
+test_2/builddir/meson-info/intro-dependencies.json
+test_2/builddir/meson-info/intro-projectinfo.json
+test_2/builddir/meson-info/meson-info.json
+test_2/builddir/libverset.so.4.5.6
+test_2/builddir/libsettosame.so
+test_2/builddir/.ninja_log
+test_2/builddir/meson-logs/
+test_2/builddir/meson-logs/meson-log.txt
+test_2/builddir/bothset@sha/
+test_2/builddir/bothset@sha/versioned.c.o
+test_2/builddir/meson-private/
+test_2/builddir/meson-private/build.dat
+test_2/builddir/meson-private/meson_test_setup.dat
+test_2/builddir/meson-private/install.dat
+test_2/builddir/meson-private/sanitycheckc.exe
+test_2/builddir/meson-private/coredata.dat
+test_2/builddir/meson-private/cmd_line.txt
+test_2/builddir/meson-private/meson_benchmark_setup.dat
+test_2/builddir/meson-private/sanitycheckc.c
+test_2/builddir/meson-private/meson.lock
+test_2/builddir/linked_module2@sha/
+test_2/builddir/linked_module2@sha/versioned.c.o
+test_2/builddir/linked_module2@sha/liblinked_module2.so.symbols
+test_2/builddir/some_module@sha/
+test_2/builddir/some_module@sha/versioned.c.o
+test_2/builddir/main2
+test_2/builddir/liblinked_module1.so
+test_2/builddir/libsome_module.so
+test_2/builddir/meson-dist/
+test_2/builddir/meson-dist/vertest-undefined.tar.xz.sha256sum
+test_2/builddir/meson-dist/vertest-undefined.tar.xz
+test_2/builddir/nover@sha/
+test_2/builddir/nover@sha/versioned.c.o
+test_2/builddir/libbothset.so.4.5.6
+test_2/versioned.c
+test_2/meson.build
+test_2/main.c
+test_2/CMakeLists.txt
++ cd test_2/builddir
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:38:39 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 29 14:38:39 2023 - INFO  - Start testing...
++ meson setup --reconfigure --sbindir sbin
++ grep 'Build dir:'
+Build dir: /root/mugen/testcases/cli-test/meson/test_2/builddir
++ CHECK_RESULT 0 0 0 'meson-setup --sbindir SBINDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup --sbindir SBINDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson setup --reconfigure --sharedstatedir com
++ grep ninja-1.8.2
++ CHECK_RESULT 1 0 0 'meson-setup --sharedstatedir SHAREDSTATEDIR  failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='meson-setup --sharedstatedir SHAREDSTATEDIR  failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'meson-setup --sharedstatedir SHAREDSTATEDIR  failed'
++ LOG_ERROR 'meson-setup --sharedstatedir SHAREDSTATEDIR  failed'
++ message='meson-setup --sharedstatedir SHAREDSTATEDIR  failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'meson-setup --sharedstatedir SHAREDSTATEDIR  failed'
+Thu Jun 29 14:38:40 2023 - ERROR - meson-setup --sharedstatedir SHAREDSTATEDIR  failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_meson_0.54_meson_13.sh line 34'
++ message='oe_test_meson_0.54_meson_13.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_meson_0.54_meson_13.sh line 34'
+Thu Jun 29 14:38:40 2023 - ERROR - oe_test_meson_0.54_meson_13.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ meson setup --reconfigure --sysconfdir etc
++ grep ninja
+Found ninja-1.11.1 at /usr/bin/ninja
++ CHECK_RESULT 0 0 0 'meson-setup --sysconfdir SYSCONFDIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup --sysconfdir SYSCONFDIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson setup --reconfigure --auto-features enabled
++ grep 'Host machine cpu'
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
++ CHECK_RESULT 0 0 0 'meson-setup --auto-features failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup --auto-features failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson setup --reconfigure --backend ninja
++ grep 'Build type'
+Build type: native build
++ CHECK_RESULT 0 0 0 'meson-setup --backend failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup --backend failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson setup --reconfigure --buildtype plain
++ grep 'C linker'
+C linker for the host machine: cc ld.bfd 2.37
++ CHECK_RESULT 0 0 0 'meson-setup --buildtype INFODIR failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup --buildtype INFODIR failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson setup --reconfigure --debug
++ grep 'Build dir:'
+Build dir: /root/mugen/testcases/cli-test/meson/test_2/builddir
++ CHECK_RESULT 0 0 0 'meson-setup --debug failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup --debug failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson setup --reconfigure --default-library shared
++ grep 'Host machine cpu family'
+Host machine cpu family: x86_64
++ CHECK_RESULT 0 0 0 'meson-setup --default-library failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup --default-library failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson setup --reconfigure --errorlogs
++ grep 'The Meson build system'
+The Meson build system
++ CHECK_RESULT 0 0 0 'meson-setup --errorlogs failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup --errorlogs failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson setup --reconfigure --install-umask 022
++ grep 'C compiler'
+C compiler for the host machine: cc (gcc 10.3.1 "cc (GCC) 10.3.1")
++ CHECK_RESULT 0 0 0 'meson-setup  --install-umask INSTALL_UMAS failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson-setup  --install-umask INSTALL_UMAS failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:38:42 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 14:38:42 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:38:42 2023 - INFO  - Start to restore the test environment.
++ rm -rf ../../test_2
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:38:42 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:38:42 2023 - INFO  - End to restore the test environment.

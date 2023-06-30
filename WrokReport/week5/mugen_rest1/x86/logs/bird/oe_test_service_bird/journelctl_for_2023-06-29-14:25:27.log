@@ -1,0 +1,2662 @@
+Jun 29 14:20:36 localhost systemd[1]: Finished dracut pre-pivot and cleanup hook.
+░░ Subject: A start job for unit dracut-pre-pivot.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dracut-pre-pivot.service has finished successfully.
+░░ 
+░░ The job identifier is 42.
+Jun 29 14:20:36 localhost systemd[1]: Starting Cleaning Up and Shutting Down Daemons...
+░░ Subject: A start job for unit initrd-cleanup.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit initrd-cleanup.service has begun execution.
+░░ 
+░░ The job identifier is 85.
+Jun 29 14:20:36 localhost systemctl[1196]: [systemctl --no-block isolate initrd-switch-root.target] called by PID 1 (/init)
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Timer Units.
+░░ Subject: A stop job for unit timers.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit timers.target has finished.
+░░ 
+░░ The job identifier is 145 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: dracut-pre-pivot.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit dracut-pre-pivot.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped dracut pre-pivot and cleanup hook.
+░░ Subject: A stop job for unit dracut-pre-pivot.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit dracut-pre-pivot.service has finished.
+░░ 
+░░ The job identifier is 140 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Initrd Default Target.
+░░ Subject: A stop job for unit initrd.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit initrd.target has finished.
+░░ 
+░░ The job identifier is 121 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Basic System.
+░░ Subject: A stop job for unit basic.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit basic.target has finished.
+░░ 
+░░ The job identifier is 123 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Initrd Root Device.
+░░ Subject: A stop job for unit initrd-root-device.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit initrd-root-device.target has finished.
+░░ 
+░░ The job identifier is 129 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Path Units.
+░░ Subject: A stop job for unit paths.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit paths.target has finished.
+░░ 
+░░ The job identifier is 122 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Remote File Systems.
+░░ Subject: A stop job for unit remote-fs.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit remote-fs.target has finished.
+░░ 
+░░ The job identifier is 137 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Preparation for Remote File Systems.
+░░ Subject: A stop job for unit remote-fs-pre.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit remote-fs-pre.target has finished.
+░░ 
+░░ The job identifier is 133 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Slice Units.
+░░ Subject: A stop job for unit slices.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit slices.target has finished.
+░░ 
+░░ The job identifier is 143 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Socket Units.
+░░ Subject: A stop job for unit sockets.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit sockets.target has finished.
+░░ 
+░░ The job identifier is 125 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target System Initialization.
+░░ Subject: A stop job for unit sysinit.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit sysinit.target has finished.
+░░ 
+░░ The job identifier is 147 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Swaps.
+░░ Subject: A stop job for unit swap.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit swap.target has finished.
+░░ 
+░░ The job identifier is 126 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: dracut-mount.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit dracut-mount.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped dracut mount hook.
+░░ Subject: A stop job for unit dracut-mount.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit dracut-mount.service has finished.
+░░ 
+░░ The job identifier is 142 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: dracut-pre-mount.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit dracut-pre-mount.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped dracut pre-mount hook.
+░░ Subject: A stop job for unit dracut-pre-mount.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit dracut-pre-mount.service has finished.
+░░ 
+░░ The job identifier is 132 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: dracut-initqueue.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit dracut-initqueue.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped dracut initqueue hook.
+░░ Subject: A stop job for unit dracut-initqueue.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit dracut-initqueue.service has finished.
+░░ 
+░░ The job identifier is 128 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Starting Plymouth switch root service...
+░░ Subject: A start job for unit plymouth-switch-root.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit plymouth-switch-root.service has begun execution.
+░░ 
+░░ The job identifier is 119.
+Jun 29 14:20:36 localhost systemd[1]: systemd-sysctl.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-sysctl.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Apply Kernel Variables.
+░░ Subject: A stop job for unit systemd-sysctl.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-sysctl.service has finished.
+░░ 
+░░ The job identifier is 124 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: systemd-modules-load.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-modules-load.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Load Kernel Modules.
+░░ Subject: A stop job for unit systemd-modules-load.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-modules-load.service has finished.
+░░ 
+░░ The job identifier is 130 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: systemd-tmpfiles-setup.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-tmpfiles-setup.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Create Volatile Files and Directories.
+░░ Subject: A stop job for unit systemd-tmpfiles-setup.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-tmpfiles-setup.service has finished.
+░░ 
+░░ The job identifier is 136 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Local File Systems.
+░░ Subject: A stop job for unit local-fs.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit local-fs.target has finished.
+░░ 
+░░ The job identifier is 141 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Preparation for Local File Systems.
+░░ Subject: A stop job for unit local-fs-pre.target has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit local-fs-pre.target has finished.
+░░ 
+░░ The job identifier is 138 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: systemd-udev-settle.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-udev-settle.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Wait for udev To Complete Device Initialization.
+░░ Subject: A stop job for unit systemd-udev-settle.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-udev-settle.service has finished.
+░░ 
+░░ The job identifier is 112 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: systemd-udev-trigger.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-udev-trigger.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Coldplug All udev Devices.
+░░ Subject: A stop job for unit systemd-udev-trigger.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-udev-trigger.service has finished.
+░░ 
+░░ The job identifier is 109 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: dracut-pre-trigger.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit dracut-pre-trigger.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped dracut pre-trigger hook.
+░░ Subject: A stop job for unit dracut-pre-trigger.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit dracut-pre-trigger.service has finished.
+░░ 
+░░ The job identifier is 134 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Stopping Rule-based Manager for Device Events and Files...
+░░ Subject: A stop job for unit systemd-udevd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-udevd.service has begun execution.
+░░ 
+░░ The job identifier is 108.
+Jun 29 14:20:36 localhost systemd[1]: initrd-cleanup.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit initrd-cleanup.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Finished Cleaning Up and Shutting Down Daemons.
+░░ Subject: A start job for unit initrd-cleanup.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit initrd-cleanup.service has finished successfully.
+░░ 
+░░ The job identifier is 85.
+Jun 29 14:20:36 localhost systemd[1]: systemd-udevd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-udevd.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Rule-based Manager for Device Events and Files.
+░░ Subject: A stop job for unit systemd-udevd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-udevd.service has finished.
+░░ 
+░░ The job identifier is 108 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Finished Plymouth switch root service.
+░░ Subject: A start job for unit plymouth-switch-root.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit plymouth-switch-root.service has finished successfully.
+░░ 
+░░ The job identifier is 119.
+Jun 29 14:20:36 localhost systemd[1]: systemd-udevd-control.socket: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-udevd-control.socket has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Closed udev Control Socket.
+░░ Subject: A stop job for unit systemd-udevd-control.socket has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-udevd-control.socket has finished.
+░░ 
+░░ The job identifier is 110 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: systemd-udevd-kernel.socket: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-udevd-kernel.socket has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Closed udev Kernel Socket.
+░░ Subject: A stop job for unit systemd-udevd-kernel.socket has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-udevd-kernel.socket has finished.
+░░ 
+░░ The job identifier is 111 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: dracut-pre-udev.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit dracut-pre-udev.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped dracut pre-udev hook.
+░░ Subject: A stop job for unit dracut-pre-udev.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit dracut-pre-udev.service has finished.
+░░ 
+░░ The job identifier is 131 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: dracut-cmdline.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit dracut-cmdline.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped dracut cmdline hook.
+░░ Subject: A stop job for unit dracut-cmdline.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit dracut-cmdline.service has finished.
+░░ 
+░░ The job identifier is 139 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: dracut-cmdline-ask.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit dracut-cmdline-ask.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped dracut ask for additional cmdline parameters.
+░░ Subject: A stop job for unit dracut-cmdline-ask.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit dracut-cmdline-ask.service has finished.
+░░ 
+░░ The job identifier is 135 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: Starting Cleanup udev Database...
+░░ Subject: A start job for unit initrd-udevadm-cleanup-db.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit initrd-udevadm-cleanup-db.service has begun execution.
+░░ 
+░░ The job identifier is 107.
+Jun 29 14:20:36 localhost rngd[229]: [hwrng ]: Shutting down
+Jun 29 14:20:36 localhost rngd[229]: [jitter]: Shutting down
+Jun 29 14:20:36 localhost systemd[1]: Stopping Hardware RNG Entropy Gatherer Daemon...
+░░ Subject: A stop job for unit rngd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit rngd.service has begun execution.
+░░ 
+░░ The job identifier is 144.
+Jun 29 14:20:36 localhost systemd[1]: systemd-tmpfiles-setup-dev.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-tmpfiles-setup-dev.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Create Static Device Nodes in /dev.
+░░ Subject: A stop job for unit systemd-tmpfiles-setup-dev.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit systemd-tmpfiles-setup-dev.service has finished.
+░░ 
+░░ The job identifier is 127 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: kmod-static-nodes.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit kmod-static-nodes.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Create List of Static Device Nodes.
+░░ Subject: A stop job for unit kmod-static-nodes.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit kmod-static-nodes.service has finished.
+░░ 
+░░ The job identifier is 146 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: initrd-udevadm-cleanup-db.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit initrd-udevadm-cleanup-db.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Finished Cleanup udev Database.
+░░ Subject: A start job for unit initrd-udevadm-cleanup-db.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit initrd-udevadm-cleanup-db.service has finished successfully.
+░░ 
+░░ The job identifier is 107.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Switch Root.
+░░ Subject: A start job for unit initrd-switch-root.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit initrd-switch-root.target has finished successfully.
+░░ 
+░░ The job identifier is 89.
+Jun 29 14:20:36 localhost systemd[1]: Starting Switch Root...
+░░ Subject: A start job for unit initrd-switch-root.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit initrd-switch-root.service has begun execution.
+░░ 
+░░ The job identifier is 120.
+Jun 29 14:20:36 localhost systemd[1]: rngd.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit rngd.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Hardware RNG Entropy Gatherer Daemon.
+░░ Subject: A stop job for unit rngd.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit rngd.service has finished.
+░░ 
+░░ The job identifier is 144 and the job result is done.
+Jun 29 14:20:36 localhost systemctl[1205]: [systemctl --no-block switch-root /sysroot] called by PID 1 (/init)
+Jun 29 14:20:36 localhost systemd[1]: Switching root.
+Jun 29 14:20:36 localhost systemd-journald[230]: Journal stopped
+░░ Subject: The journal has been stopped
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The system journal process has shut down and closed all currently
+░░ active journal files.
+Jun 29 14:20:36 localhost systemd-journald[230]: Received SIGTERM from PID 1 (systemd).
+Jun 29 14:20:36 localhost systemd[1]: systemd v249-49.oe2303 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA -SMACK +SECCOMP +GCRYPT +GNUTLS -OPENSSL +ACL +BLKID -CURL -ELFUTILS -FIDO2 +IDN2 -IDN -IPTC +KMOD -LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB -ZSTD +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=legacy)
+Jun 29 14:20:36 localhost systemd[1]: Detected virtualization kvm.
+Jun 29 14:20:36 localhost systemd[1]: Detected architecture x86-64.
+Jun 29 14:20:36 localhost systemd-rc-local-generator[1217]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:20:36 localhost systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:20:36 localhost systemd[1]: initrd-switch-root.service: Deactivated successfully.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Switch Root.
+Jun 29 14:20:36 localhost systemd[1]: systemd-journald.service: Scheduled restart job, restart counter is at 1.
+Jun 29 14:20:36 localhost systemd[1]: Created slice Slice /system/getty.
+Jun 29 14:20:36 localhost systemd[1]: Created slice Slice /system/serial-getty.
+Jun 29 14:20:36 localhost systemd[1]: Created slice Slice /system/sshd-keygen.
+Jun 29 14:20:36 localhost systemd[1]: Created slice User and Session Slice.
+Jun 29 14:20:36 localhost systemd[1]: systemd-ask-password-plymouth.path: Deactivated successfully.
+Jun 29 14:20:36 localhost systemd[1]: Stopped systemd-ask-password-plymouth.path.
+Jun 29 14:20:36 localhost systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+Jun 29 14:20:36 localhost systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Switch Root.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Initrd File Systems.
+Jun 29 14:20:36 localhost systemd[1]: Stopped target Initrd Root File System.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Remote File Systems.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Slice Units.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Swaps.
+Jun 29 14:20:36 localhost systemd[1]: Listening on Device-mapper event daemon FIFOs.
+Jun 29 14:20:36 localhost systemd[1]: Listening on LVM2 poll daemon socket.
+Jun 29 14:20:36 localhost systemd[1]: Listening on Process Core Dump Socket.
+Jun 29 14:20:36 localhost systemd[1]: Listening on initctl Compatibility Named Pipe.
+Jun 29 14:20:36 localhost systemd[1]: Listening on udev Control Socket.
+Jun 29 14:20:36 localhost systemd[1]: Listening on udev Kernel Socket.
+Jun 29 14:20:36 localhost systemd[1]: Mounting Huge Pages File System...
+Jun 29 14:20:36 localhost systemd[1]: Mounting POSIX Message Queue File System...
+Jun 29 14:20:36 localhost systemd[1]: Mounting Kernel Debug File System...
+Jun 29 14:20:36 localhost systemd[1]: Mounting Kernel Trace File System...
+Jun 29 14:20:36 localhost systemd[1]: Mounting Temporary Directory /tmp...
+Jun 29 14:20:36 localhost systemd[1]: Starting Create List of Static Device Nodes...
+Jun 29 14:20:36 localhost systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+Jun 29 14:20:36 localhost systemd[1]: Starting Load Kernel Module configfs...
+Jun 29 14:20:36 localhost systemd[1]: Starting Load Kernel Module drm...
+Jun 29 14:20:36 localhost systemd[1]: Starting Load Kernel Module fuse...
+Jun 29 14:20:36 localhost systemd[1]: Stopping plymouth-start.service...
+Jun 29 14:20:36 localhost systemd[1]: plymouth-switch-root.service: Deactivated successfully.
+Jun 29 14:20:36 localhost systemd[1]: Stopped plymouth-switch-root.service.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+Jun 29 14:20:36 localhost systemd[1]: systemd-fsck-root.service: Deactivated successfully.
+Jun 29 14:20:36 localhost systemd[1]: Stopped File System Check on Root Device.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Journal Service.
+Jun 29 14:20:36 localhost systemd[1]: Starting Journal Service...
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in Load Kernel Modules being skipped.
+Jun 29 14:20:36 localhost systemd[1]: Starting Remount Root and Kernel File Systems...
+Jun 29 14:20:36 localhost systemd[1]: Starting Apply Kernel Variables...
+Jun 29 14:20:36 localhost systemd[1]: Starting Coldplug All udev Devices...
+Jun 29 14:20:36 localhost systemd[1]: systemd-vconsole-setup.service: Deactivated successfully.
+Jun 29 14:20:36 localhost systemd[1]: Stopped Setup Virtual Console.
+Jun 29 14:20:36 localhost systemd[1]: Mounted Huge Pages File System.
+Jun 29 14:20:36 localhost systemd[1]: Mounted POSIX Message Queue File System.
+Jun 29 14:20:36 localhost systemd[1]: Mounted Kernel Debug File System.
+Jun 29 14:20:36 localhost systemd[1]: Mounted Kernel Trace File System.
+Jun 29 14:20:36 localhost systemd[1]: Mounted Temporary Directory /tmp.
+Jun 29 14:20:36 localhost kernel: EXT4-fs (vda2): re-mounted. Quota mode: none.
+Jun 29 14:20:36 localhost systemd[1]: modprobe@configfs.service: Deactivated successfully.
+Jun 29 14:20:36 localhost systemd[1]: Finished Load Kernel Module configfs.
+Jun 29 14:20:36 localhost systemd-journald[1237]: Journal started
+░░ Subject: The journal has been started
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The system journal process has started up, opened the journal
+░░ files for writing and is now ready to process requests.
+Jun 29 14:20:36 localhost systemd-journald[1237]: Runtime Journal (/run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8) is 8.0M, max 79.5M, 71.5M free.
+░░ Subject: Disk space used by the journal
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Runtime Journal (/run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8) is currently using 8.0M.
+░░ Maximum allowed usage is set to 79.5M.
+░░ Leaving at least 39.7M free (of currently available 742.6M of disk space).
+░░ Enforced usage limit is thus 79.5M, of which 71.5M are still available.
+░░ 
+░░ The limits controlling how much disk space is used by the journal may
+░░ be configured with SystemMaxUse=, SystemKeepFree=, SystemMaxFileSize=,
+░░ RuntimeMaxUse=, RuntimeKeepFree=, RuntimeMaxFileSize= settings in
+░░ /etc/systemd/journald.conf. See journald.conf(5) for details.
+Jun 29 14:20:36 localhost systemd[1]: Queued start job for default target Multi-User System.
+Jun 29 14:20:36 localhost systemd[1]: systemd-journald.service: unit configures an IP firewall, but the local system does not support BPF/cgroup firewalling.
+Jun 29 14:20:36 localhost systemd[1]: (This warning is only shown for the first unit using IP firewalling.)
+Jun 29 14:20:36 localhost systemd[1]: systemd-journald.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-journald.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Started Journal Service.
+Jun 29 14:20:36 localhost systemd[1]: modprobe@drm.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit modprobe@drm.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Finished Load Kernel Module drm.
+░░ Subject: A start job for unit modprobe@drm.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit modprobe@drm.service has finished successfully.
+░░ 
+░░ The job identifier is 244.
+Jun 29 14:20:36 localhost systemd[1]: Finished Remount Root and Kernel File Systems.
+░░ Subject: A start job for unit systemd-remount-fs.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-remount-fs.service has finished successfully.
+░░ 
+░░ The job identifier is 183.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in Rebuild Hardware Database being skipped.
+░░ Subject: A start job for unit systemd-hwdb-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-hwdb-update.service has finished successfully.
+░░ 
+░░ The job identifier is 204.
+Jun 29 14:20:36 localhost systemd[1]: Starting Flush Journal to Persistent Storage...
+░░ Subject: A start job for unit systemd-journal-flush.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-journal-flush.service has begun execution.
+░░ 
+░░ The job identifier is 175.
+Jun 29 14:20:36 localhost systemd[1]: Starting Load/Save Random Seed...
+░░ Subject: A start job for unit systemd-random-seed.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-random-seed.service has begun execution.
+░░ 
+░░ The job identifier is 194.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in Create System Users being skipped.
+░░ Subject: A start job for unit systemd-sysusers.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-sysusers.service has finished successfully.
+░░ 
+░░ The job identifier is 196.
+Jun 29 14:20:36 localhost systemd[1]: Finished Create List of Static Device Nodes.
+░░ Subject: A start job for unit kmod-static-nodes.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit kmod-static-nodes.service has finished successfully.
+░░ 
+░░ The job identifier is 186.
+Jun 29 14:20:36 localhost systemd[1]: Starting Create Static Device Nodes in /dev...
+░░ Subject: A start job for unit systemd-tmpfiles-setup-dev.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-setup-dev.service has begun execution.
+░░ 
+░░ The job identifier is 164.
+Jun 29 14:20:36 localhost systemd[1]: Received SIGRTMIN+21 from PID 924 (plymouthd).
+Jun 29 14:20:36 localhost systemd[1]: Received SIGRTMIN+21 from PID 924 (plymouthd).
+Jun 29 14:20:36 localhost kernel: fuse: init (API version 7.37)
+Jun 29 14:20:36 localhost systemd[1]: plymouth-start.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit plymouth-start.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Stopped plymouth-start.service.
+░░ Subject: A stop job for unit plymouth-start.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit plymouth-start.service has finished.
+░░ 
+░░ The job identifier is 263 and the job result is done.
+Jun 29 14:20:36 localhost systemd[1]: modprobe@fuse.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit modprobe@fuse.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Finished Load Kernel Module fuse.
+░░ Subject: A start job for unit modprobe@fuse.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit modprobe@fuse.service has finished successfully.
+░░ 
+░░ The job identifier is 159.
+Jun 29 14:20:36 localhost systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+░░ Subject: A start job for unit systemd-ask-password-console.path has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-ask-password-console.path has finished successfully.
+░░ 
+░░ The job identifier is 165.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Path Units.
+░░ Subject: A start job for unit paths.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit paths.target has finished successfully.
+░░ 
+░░ The job identifier is 217.
+Jun 29 14:20:36 localhost systemd[1]: Mounting FUSE Control File System...
+░░ Subject: A start job for unit sys-fs-fuse-connections.mount has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sys-fs-fuse-connections.mount has begun execution.
+░░ 
+░░ The job identifier is 158.
+Jun 29 14:20:36 localhost systemd[1]: Mounted FUSE Control File System.
+░░ Subject: A start job for unit sys-fs-fuse-connections.mount has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sys-fs-fuse-connections.mount has finished successfully.
+░░ 
+░░ The job identifier is 158.
+Jun 29 14:20:36 localhost systemd-tmpfiles[1249]: /usr/lib/tmpfiles.d/dbus.conf:13: Line references path below legacy directory /var/run/, updating /var/run/dbus/containers → /run/dbus/containers; please update the tmpfiles.d/ drop-in file accordingly.
+Jun 29 14:20:36 localhost systemd-journald[1237]: Runtime Journal (/run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8) is 8.0M, max 79.5M, 71.5M free.
+░░ Subject: Disk space used by the journal
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Runtime Journal (/run/log/journal/c78e8c10bbba4687b4aa7ab68adfb5e8) is currently using 8.0M.
+░░ Maximum allowed usage is set to 79.5M.
+░░ Leaving at least 39.7M free (of currently available 742.6M of disk space).
+░░ Enforced usage limit is thus 79.5M, of which 71.5M are still available.
+░░ 
+░░ The limits controlling how much disk space is used by the journal may
+░░ be configured with SystemMaxUse=, SystemKeepFree=, SystemMaxFileSize=,
+░░ RuntimeMaxUse=, RuntimeKeepFree=, RuntimeMaxFileSize= settings in
+░░ /etc/systemd/journald.conf. See journald.conf(5) for details.
+Jun 29 14:20:36 localhost systemd[1]: Finished Flush Journal to Persistent Storage.
+░░ Subject: A start job for unit systemd-journal-flush.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-journal-flush.service has finished successfully.
+░░ 
+░░ The job identifier is 175.
+Jun 29 14:20:36 localhost systemd[1]: Finished Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+░░ Subject: A start job for unit lvm2-monitor.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit lvm2-monitor.service has finished successfully.
+░░ 
+░░ The job identifier is 201.
+Jun 29 14:20:36 localhost systemd[1]: Finished Load/Save Random Seed.
+░░ Subject: A start job for unit systemd-random-seed.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-random-seed.service has finished successfully.
+░░ 
+░░ The job identifier is 194.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in First Boot Complete being skipped.
+░░ Subject: A start job for unit first-boot-complete.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit first-boot-complete.target has finished successfully.
+░░ 
+░░ The job identifier is 195.
+Jun 29 14:20:36 localhost systemd[1]: Finished Create Static Device Nodes in /dev.
+░░ Subject: A start job for unit systemd-tmpfiles-setup-dev.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-setup-dev.service has finished successfully.
+░░ 
+░░ The job identifier is 164.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Preparation for Local File Systems.
+░░ Subject: A start job for unit local-fs-pre.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit local-fs-pre.target has finished successfully.
+░░ 
+░░ The job identifier is 184.
+Jun 29 14:20:36 localhost systemd[1]: boot.mount: Directory /boot to mount over is not empty, mounting anyway.
+░░ Subject: Mount point is not empty
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The directory /boot is specified as the mount point (second field in
+░░ /etc/fstab or Where= field in systemd unit file) and is not empty.
+░░ This does not interfere with mounting, but the pre-exisiting files in
+░░ this directory become inaccessible. To see those over-mounted files,
+░░ please manually mount the underlying file system to a secondary
+░░ location.
+Jun 29 14:20:36 localhost systemd[1]: Mounting /boot...
+░░ Subject: A start job for unit boot.mount has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit boot.mount has begun execution.
+░░ 
+░░ The job identifier is 180.
+Jun 29 14:20:36 localhost systemd[1]: Starting Rule-based Manager for Device Events and Files...
+░░ Subject: A start job for unit systemd-udevd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-udevd.service has begun execution.
+░░ 
+░░ The job identifier is 171.
+Jun 29 14:20:36 localhost systemd[1]: Finished Apply Kernel Variables.
+░░ Subject: A start job for unit systemd-sysctl.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-sysctl.service has finished successfully.
+░░ 
+░░ The job identifier is 188.
+Jun 29 14:20:36 localhost systemd[1]: Finished Coldplug All udev Devices.
+░░ Subject: A start job for unit systemd-udev-trigger.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-udev-trigger.service has finished successfully.
+░░ 
+░░ The job identifier is 170.
+Jun 29 14:20:36 localhost kernel: FAT-fs (vda1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+Jun 29 14:20:36 localhost systemd[1]: Mounted /boot.
+░░ Subject: A start job for unit boot.mount has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit boot.mount has finished successfully.
+░░ 
+░░ The job identifier is 180.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Local File Systems.
+░░ Subject: A start job for unit local-fs.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit local-fs.target has finished successfully.
+░░ 
+░░ The job identifier is 179.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in Rebuild Dynamic Linker Cache being skipped.
+░░ Subject: A start job for unit ldconfig.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit ldconfig.service has finished successfully.
+░░ 
+░░ The job identifier is 168.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in Commit a transient machine-id on disk being skipped.
+░░ Subject: A start job for unit systemd-machine-id-commit.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-machine-id-commit.service has finished successfully.
+░░ 
+░░ The job identifier is 191.
+Jun 29 14:20:36 localhost systemd[1]: Starting Create Volatile Files and Directories...
+░░ Subject: A start job for unit systemd-tmpfiles-setup.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-setup.service has begun execution.
+░░ 
+░░ The job identifier is 197.
+Jun 29 14:20:36 localhost systemd-tmpfiles[1270]: /usr/lib/tmpfiles.d/dbus.conf:13: Line references path below legacy directory /var/run/, updating /var/run/dbus/containers → /run/dbus/containers; please update the tmpfiles.d/ drop-in file accordingly.
+Jun 29 14:20:36 localhost systemd[1]: Finished Create Volatile Files and Directories.
+░░ Subject: A start job for unit systemd-tmpfiles-setup.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-setup.service has finished successfully.
+░░ 
+░░ The job identifier is 197.
+Jun 29 14:20:36 localhost systemd[1]: Starting Security Auditing Service...
+░░ Subject: A start job for unit auditd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit auditd.service has begun execution.
+░░ 
+░░ The job identifier is 246.
+Jun 29 14:20:36 localhost systemd[1]: Starting MD array monitor...
+░░ Subject: A start job for unit mdmonitor.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mdmonitor.service has begun execution.
+░░ 
+░░ The job identifier is 248.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in Rebuild Journal Catalog being skipped.
+░░ Subject: A start job for unit systemd-journal-catalog-update.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-journal-catalog-update.service has finished successfully.
+░░ 
+░░ The job identifier is 187.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in Update is Completed being skipped.
+░░ Subject: A start job for unit systemd-update-done.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-done.service has finished successfully.
+░░ 
+░░ The job identifier is 190.
+Jun 29 14:20:36 localhost systemd[1]: Started Rule-based Manager for Device Events and Files.
+░░ Subject: A start job for unit systemd-udevd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-udevd.service has finished successfully.
+░░ 
+░░ The job identifier is 171.
+Jun 29 14:20:36 localhost systemd[1]: mdmonitor.service: Can't open PID file /run/mdadm/mdadm.pid (yet?) after start: Operation not permitted
+Jun 29 14:20:36 localhost systemd[1]: mdmonitor.service: Failed with result 'protocol'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit mdmonitor.service has entered the 'failed' state with result 'protocol'.
+Jun 29 14:20:36 localhost systemd[1]: Failed to start MD array monitor.
+░░ Subject: A start job for unit mdmonitor.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit mdmonitor.service has finished with a failure.
+░░ 
+░░ The job identifier is 248 and the job result is failed.
+Jun 29 14:20:36 localhost auditd[1288]: No plugins found, not dispatching events
+Jun 29 14:20:36 localhost auditd[1288]: Init complete, auditd 3.0.9 listening for events (startup state enable)
+Jun 29 14:20:36 localhost systemd[1]: Starting Load Kernel Module configfs...
+░░ Subject: A start job for unit modprobe@configfs.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit modprobe@configfs.service has begun execution.
+░░ 
+░░ The job identifier is 272.
+Jun 29 14:20:36 localhost systemd[1]: modprobe@configfs.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit modprobe@configfs.service has successfully entered the 'dead' state.
+Jun 29 14:20:36 localhost systemd[1]: Finished Load Kernel Module configfs.
+░░ Subject: A start job for unit modprobe@configfs.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit modprobe@configfs.service has finished successfully.
+░░ 
+░░ The job identifier is 272.
+Jun 29 14:20:36 localhost systemd[1]: Started Security Auditing Service.
+░░ Subject: A start job for unit auditd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit auditd.service has finished successfully.
+░░ 
+░░ The job identifier is 246.
+Jun 29 14:20:36 localhost systemd[1]: Starting Record System Boot/Shutdown in UTMP...
+░░ Subject: A start job for unit systemd-update-utmp.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-utmp.service has begun execution.
+░░ 
+░░ The job identifier is 254.
+Jun 29 14:20:36 localhost systemd[1]: Finished Record System Boot/Shutdown in UTMP.
+░░ Subject: A start job for unit systemd-update-utmp.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-utmp.service has finished successfully.
+░░ 
+░░ The job identifier is 254.
+Jun 29 14:20:36 localhost systemd[1]: Reached target System Initialization.
+░░ Subject: A start job for unit sysinit.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sysinit.target has finished successfully.
+░░ 
+░░ The job identifier is 153.
+Jun 29 14:20:36 localhost systemd[1]: Started dnf makecache --timer.
+░░ Subject: A start job for unit dnf-makecache.timer has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dnf-makecache.timer has finished successfully.
+░░ 
+░░ The job identifier is 212.
+Jun 29 14:20:36 localhost systemd[1]: Started Run system activity accounting tool every 10 minutes.
+░░ Subject: A start job for unit sysstat-collect.timer has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sysstat-collect.timer has finished successfully.
+░░ 
+░░ The job identifier is 241.
+Jun 29 14:20:36 localhost systemd[1]: Started Generate summary of yesterday's process accounting.
+░░ Subject: A start job for unit sysstat-summary.timer has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sysstat-summary.timer has finished successfully.
+░░ 
+░░ The job identifier is 242.
+Jun 29 14:20:36 localhost systemd[1]: Started Daily Cleanup of Temporary Directories.
+░░ Subject: A start job for unit systemd-tmpfiles-clean.timer has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-tmpfiles-clean.timer has finished successfully.
+░░ 
+░░ The job identifier is 211.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Timer Units.
+░░ Subject: A start job for unit timers.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit timers.target has finished successfully.
+░░ 
+░░ The job identifier is 210.
+Jun 29 14:20:36 localhost systemd[1]: Listening on D-Bus System Message Bus Socket.
+░░ Subject: A start job for unit dbus.socket has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dbus.socket has finished successfully.
+░░ 
+░░ The job identifier is 209.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Socket Units.
+░░ Subject: A start job for unit sockets.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sockets.target has finished successfully.
+░░ 
+░░ The job identifier is 206.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Basic System.
+░░ Subject: A start job for unit basic.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit basic.target has finished successfully.
+░░ 
+░░ The job identifier is 150.
+Jun 29 14:20:36 localhost kernel: parport_pc 00:03: reported by Plug and Play ACPI
+Jun 29 14:20:36 localhost kernel: parport0: PC-style at 0x378, irq 7 [PCSPP,TRISTATE]
+Jun 29 14:20:36 localhost kernel: piix4_smbus 0000:00:01.3: SMBus Host Controller at 0x700, revision 0
+Jun 29 14:20:36 localhost kernel: sr 1:0:0:0: Attached scsi generic sg0 type 5
+Jun 29 14:20:36 localhost systemd[1]: Starting NTP client/server...
+░░ Subject: A start job for unit chronyd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit chronyd.service has begun execution.
+░░ 
+░░ The job identifier is 229.
+Jun 29 14:20:36 localhost systemd-udevd[1287]: Using default interface naming scheme 'v249'.
+Jun 29 14:20:36 localhost systemd[1]: Starting D-Bus System Message Bus...
+░░ Subject: A start job for unit dbus.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dbus.service has begun execution.
+░░ 
+░░ The job identifier is 232.
+Jun 29 14:20:36 localhost chronyd[1348]: chronyd version 4.3 starting (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS -NTS +SECHASH +IPV6 +DEBUG)
+Jun 29 14:20:36 localhost systemd[1]: Starting Builds and install new kernel modules through DKMS...
+░░ Subject: A start job for unit dkms.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dkms.service has begun execution.
+░░ 
+░░ The job identifier is 250.
+Jun 29 14:20:36 localhost systemd[1]: Starting Restore /run/initramfs on shutdown...
+░░ Subject: A start job for unit dracut-shutdown.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dracut-shutdown.service has begun execution.
+░░ 
+░░ The job identifier is 199.
+Jun 29 14:20:36 localhost systemd[1]: Starting Update RTC With System Clock...
+░░ Subject: A start job for unit hwclock-save.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit hwclock-save.service has begun execution.
+░░ 
+░░ The job identifier is 192.
+Jun 29 14:20:36 localhost systemd[1]: Starting Hardware Monitoring Sensors...
+░░ Subject: A start job for unit lm_sensors.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit lm_sensors.service has begun execution.
+░░ 
+░░ The job identifier is 228.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+░░ Subject: A start job for unit sshd-keygen@ecdsa.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd-keygen@ecdsa.service has finished successfully.
+░░ 
+░░ The job identifier is 235.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+░░ Subject: A start job for unit sshd-keygen@ed25519.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd-keygen@ed25519.service has finished successfully.
+░░ 
+░░ The job identifier is 237.
+Jun 29 14:20:36 localhost systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+░░ Subject: A start job for unit sshd-keygen@rsa.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd-keygen@rsa.service has finished successfully.
+░░ 
+░░ The job identifier is 238.
+Jun 29 14:20:36 localhost systemd[1]: Reached target sshd-keygen.target.
+░░ Subject: A start job for unit sshd-keygen.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd-keygen.target has finished successfully.
+░░ 
+░░ The job identifier is 234.
+Jun 29 14:20:36 localhost lm_sensors-modprobe-wrapper[1413]: No sensors with loadable kernel modules configured.
+Jun 29 14:20:36 localhost lm_sensors-modprobe-wrapper[1413]: Please, run 'sensors-detect' as root in order to search for available sensors.
+Jun 29 14:20:36 localhost kernel: input: PC Speaker as /devices/platform/pcspkr/input/input7
+Jun 29 14:20:36 localhost systemd[1]: Starting Resets System Activity Logs...
+░░ Subject: A start job for unit sysstat.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sysstat.service has begun execution.
+░░ 
+░░ The job identifier is 240.
+Jun 29 14:20:36 localhost systemd[1]: Starting User Login Management...
+░░ Subject: A start job for unit systemd-logind.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-logind.service has begun execution.
+░░ 
+░░ The job identifier is 243.
+Jun 29 14:20:36 localhost systemd[1]: Started D-Bus System Message Bus.
+░░ Subject: A start job for unit dbus.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dbus.service has finished successfully.
+░░ 
+░░ The job identifier is 232.
+Jun 29 14:20:36 localhost systemd[1]: Started NTP client/server.
+░░ Subject: A start job for unit chronyd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit chronyd.service has finished successfully.
+░░ 
+░░ The job identifier is 229.
+Jun 29 14:20:36 localhost systemd[1]: Finished Restore /run/initramfs on shutdown.
+░░ Subject: A start job for unit dracut-shutdown.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dracut-shutdown.service has finished successfully.
+░░ 
+░░ The job identifier is 199.
+Jun 29 14:20:36 localhost systemd[1]: Finished Update RTC With System Clock.
+░░ Subject: A start job for unit hwclock-save.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit hwclock-save.service has finished successfully.
+░░ 
+░░ The job identifier is 192.
+Jun 29 14:20:36 localhost systemd[1]: Finished Resets System Activity Logs.
+░░ Subject: A start job for unit sysstat.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sysstat.service has finished successfully.
+░░ 
+░░ The job identifier is 240.
+Jun 29 14:20:36 localhost systemd[1]: Starting Network Manager...
+░░ Subject: A start job for unit NetworkManager.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager.service has begun execution.
+░░ 
+░░ The job identifier is 215.
+Jun 29 14:20:36 localhost sensors[1435]: No sensors found!
+Jun 29 14:20:36 localhost sensors[1435]: Make sure you loaded all the kernel drivers you need.
+Jun 29 14:20:36 localhost sensors[1435]: Try sensors-detect to find out which these are.
+Jun 29 14:20:36 localhost kernel: ppdev: user-space parallel port driver
+Jun 29 14:20:36 localhost systemd[1]: lm_sensors.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit lm_sensors.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:20:36 localhost systemd[1]: lm_sensors.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit lm_sensors.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:20:36 localhost systemd[1]: Failed to start Hardware Monitoring Sensors.
+░░ Subject: A start job for unit lm_sensors.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit lm_sensors.service has finished with a failure.
+░░ 
+░░ The job identifier is 228 and the job result is failed.
+Jun 29 14:20:36 localhost systemd-logind[1433]: New seat seat0.
+░░ Subject: A new seat seat0 is now available
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ Documentation: sd-login(3)
+░░ 
+░░ A new seat seat0 has been configured and is now available.
+Jun 29 14:20:36 localhost systemd-logind[1433]: Watching system buttons on /dev/input/event0 (Power Button)
+Jun 29 14:20:36 localhost systemd-logind[1433]: Watching system buttons on /dev/input/event4 (QEMU QEMU USB Keyboard)
+Jun 29 14:20:36 localhost systemd-logind[1433]: Watching system buttons on /dev/input/event1 (AT Translated Set 2 keyboard)
+Jun 29 14:20:36 localhost systemd[1]: Started User Login Management.
+░░ Subject: A start job for unit systemd-logind.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-logind.service has finished successfully.
+░░ 
+░░ The job identifier is 243.
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.8420] NetworkManager (version 1.32.12-16.oe2303) is starting... (for the first time)
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.8421] Read config: /etc/NetworkManager/NetworkManager.conf
+Jun 29 14:20:36 localhost systemd[1]: Started Network Manager.
+░░ Subject: A start job for unit NetworkManager.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager.service has finished successfully.
+░░ 
+░░ The job identifier is 215.
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.8454] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+Jun 29 14:20:36 localhost systemd[1]: Reached target Network.
+░░ Subject: A start job for unit network.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit network.target has finished successfully.
+░░ 
+░░ The job identifier is 216.
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.8490] manager[0x559dfa1a0000]: monitoring kernel firmware directory '/lib/firmware'.
+Jun 29 14:20:36 localhost dbus-daemon[1327]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.2' (uid=0 pid=1441 comm="/usr/sbin/NetworkManager --no-daemon")
+Jun 29 14:20:36 localhost systemd[1]: Starting Network Manager Wait Online...
+░░ Subject: A start job for unit NetworkManager-wait-online.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager-wait-online.service has begun execution.
+░░ 
+░░ The job identifier is 214.
+Jun 29 14:20:36 localhost systemd[1]: Starting OpenSSH server daemon...
+░░ Subject: A start job for unit sshd.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd.service has begun execution.
+░░ 
+░░ The job identifier is 233.
+Jun 29 14:20:36 localhost systemd[1]: Starting Permit User Sessions...
+░░ Subject: A start job for unit systemd-user-sessions.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-user-sessions.service has begun execution.
+░░ 
+░░ The job identifier is 227.
+Jun 29 14:20:36 localhost systemd[1]: Starting Hostname Service...
+░░ Subject: A start job for unit systemd-hostnamed.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-hostnamed.service has begun execution.
+░░ 
+░░ The job identifier is 278.
+Jun 29 14:20:36 localhost systemd[1]: Finished Permit User Sessions.
+░░ Subject: A start job for unit systemd-user-sessions.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-user-sessions.service has finished successfully.
+░░ 
+░░ The job identifier is 227.
+Jun 29 14:20:36 localhost systemd[1]: Started Command Scheduler.
+░░ Subject: A start job for unit crond.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit crond.service has finished successfully.
+░░ 
+░░ The job identifier is 239.
+Jun 29 14:20:36 localhost crond[1496]: (CRON) STARTUP (1.6.1)
+Jun 29 14:20:36 localhost crond[1496]: (CRON) INFO (Syslog will be used instead of sendmail.)
+Jun 29 14:20:36 localhost crond[1496]: (CRON) INFO (RANDOM_DELAY will be scaled with factor 2% if used.)
+Jun 29 14:20:36 localhost crond[1496]: (CRON) INFO (running with inotify support)
+Jun 29 14:20:36 localhost systemd[1]: Started Getty on tty1.
+░░ Subject: A start job for unit getty@tty1.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit getty@tty1.service has finished successfully.
+░░ 
+░░ The job identifier is 220.
+Jun 29 14:20:36 localhost sshd[1489]: Server listening on 0.0.0.0 port 22.
+Jun 29 14:20:36 localhost sshd[1489]: Server listening on :: port 22.
+Jun 29 14:20:36 localhost systemd[1]: Started Serial Getty on ttyS0.
+░░ Subject: A start job for unit serial-getty@ttyS0.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit serial-getty@ttyS0.service has finished successfully.
+░░ 
+░░ The job identifier is 224.
+Jun 29 14:20:36 localhost systemd[1]: Reached target Login Prompts.
+░░ Subject: A start job for unit getty.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit getty.target has finished successfully.
+░░ 
+░░ The job identifier is 219.
+Jun 29 14:20:36 localhost systemd[1]: Started OpenSSH server daemon.
+░░ Subject: A start job for unit sshd.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit sshd.service has finished successfully.
+░░ 
+░░ The job identifier is 233.
+Jun 29 14:20:36 localhost dbus-daemon[1327]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jun 29 14:20:36 localhost systemd[1]: Started Hostname Service.
+░░ Subject: A start job for unit systemd-hostnamed.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-hostnamed.service has finished successfully.
+░░ 
+░░ The job identifier is 278.
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9076] hostname: hostname: using hostnamed
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9080] dns-mgr[0x559dfa185250]: init: dns=default rc-manager=symlink
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9127] manager[0x559dfa1a0000]: rfkill: Wi-Fi hardware radio set enabled
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9127] manager[0x559dfa1a0000]: rfkill: WWAN hardware radio set enabled
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9168] Loaded device plugin: NMAtmManager (/usr/lib64/NetworkManager/1.32.12-16.oe2303/libnm-device-plugin-adsl.so)
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9185] Loaded device plugin: NMTeamFactory (/usr/lib64/NetworkManager/1.32.12-16.oe2303/libnm-device-plugin-team.so)
+Jun 29 14:20:36 localhost dbus-daemon[1327]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.2' (uid=0 pid=1441 comm="/usr/sbin/NetworkManager --no-daemon")
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9186] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9187] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9187] manager: Networking is enabled by state file
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9193] dhcp-init: Using DHCP client 'dhclient'
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9204] settings: Loaded settings plugin: ifcfg-rh ("/usr/lib64/NetworkManager/1.32.12-16.oe2303/libnm-settings-plugin-ifcfg-rh.so")
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9205] settings: Loaded settings plugin: keyfile (internal)
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9219] device (lo): carrier: link connected
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9221] manager: (lo): new Generic device (/org/freedesktop/NetworkManager/Devices/1)
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9231] manager: (ens6): new Ethernet device (/org/freedesktop/NetworkManager/Devices/2)
+Jun 29 14:20:36 localhost systemd[1]: Starting Network Manager Script Dispatcher Service...
+░░ Subject: A start job for unit NetworkManager-dispatcher.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager-dispatcher.service has begun execution.
+░░ 
+░░ The job identifier is 340.
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9271] settings: (ens6): created default wired connection 'Wired connection 1'
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9276] device (ens6): state change: unmanaged -> unavailable (reason 'managed', sys-iface-state: 'external')
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9283] device (ens6): carrier: link connected
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9303] device (ens6): state change: unavailable -> disconnected (reason 'none', sys-iface-state: 'managed')
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9312] policy: auto-activating connection 'Wired connection 1' (fb0d112d-f1ea-3718-8e1c-7b6bc5ed1412)
+Jun 29 14:20:36 localhost dbus-daemon[1327]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9316] device (ens6): Activation: starting connection 'Wired connection 1' (fb0d112d-f1ea-3718-8e1c-7b6bc5ed1412)
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9317] device (ens6): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jun 29 14:20:36 localhost systemd[1]: Started Network Manager Script Dispatcher Service.
+░░ Subject: A start job for unit NetworkManager-dispatcher.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager-dispatcher.service has finished successfully.
+░░ 
+░░ The job identifier is 340.
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9317] manager: NetworkManager state is now CONNECTING
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9318] device (ens6): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9322] device (ens6): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9332] dhcp4 (ens6): activation: beginning transaction (timeout in 45 seconds)
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9579] dhcp4 (ens6): dhclient started with pid 1578
+Jun 29 14:20:36 localhost systemd[1]: Finished Builds and install new kernel modules through DKMS.
+░░ Subject: A start job for unit dkms.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit dkms.service has finished successfully.
+░░ 
+░░ The job identifier is 250.
+Jun 29 14:20:36 localhost dhclient[1578]: DHCPDISCOVER on ens6 to 255.255.255.255 port 67 interval 3 (xid=0x65691f18)
+Jun 29 14:20:36 localhost dhclient[1578]: DHCPOFFER of 10.0.2.15 from 10.0.2.2
+Jun 29 14:20:36 localhost dhclient[1578]: DHCPREQUEST for 10.0.2.15 on ens6 to 255.255.255.255 port 67 (xid=0x65691f18)
+Jun 29 14:20:36 localhost dhclient[1578]: DHCPACK of 10.0.2.15 from 10.0.2.2 (xid=0x65691f18)
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9849] dhcp4 (ens6):   address 10.0.2.15
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9849] dhcp4 (ens6):   plen 24 (255.255.255.0)
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9849] dhcp4 (ens6):   gateway 10.0.2.2
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9849] dhcp4 (ens6):   lease time 86400
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9849] dhcp4 (ens6):   nameserver '10.0.2.3'
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9850] dhcp4 (ens6): state changed unknown -> bound, address=10.0.2.15
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9854] device (ens6): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9923] device (ens6): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9926] device (ens6): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9929] manager: NetworkManager state is now CONNECTED_LOCAL
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9932] manager: NetworkManager state is now CONNECTED_SITE
+Jun 29 14:20:36 localhost NetworkManager[1441]: <info>  [1688048436.9932] policy: set 'Wired connection 1' (ens6) as default for IPv4 routing and DNS
+Jun 29 14:20:36 localhost dhclient[1578]: bound to 10.0.2.15 -- renewal in 42887 seconds.
+Jun 29 14:20:37 localhost NetworkManager[1441]: <info>  [1688048437.0027] device (ens6): Activation: successful, device activated.
+Jun 29 14:20:37 localhost NetworkManager[1441]: <info>  [1688048437.0032] manager: NetworkManager state is now CONNECTED_GLOBAL
+Jun 29 14:20:37 localhost NetworkManager[1441]: <info>  [1688048437.0035] manager: startup complete
+Jun 29 14:20:37 localhost systemd[1]: Finished Network Manager Wait Online.
+░░ Subject: A start job for unit NetworkManager-wait-online.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit NetworkManager-wait-online.service has finished successfully.
+░░ 
+░░ The job identifier is 214.
+Jun 29 14:20:37 localhost systemd[1]: Reached target Network is Online.
+░░ Subject: A start job for unit network-online.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit network-online.target has finished successfully.
+░░ 
+░░ The job identifier is 213.
+Jun 29 14:20:37 localhost systemd[1]: Starting Crash recovery kernel arming...
+░░ Subject: A start job for unit kdump.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit kdump.service has begun execution.
+░░ 
+░░ The job identifier is 247.
+Jun 29 14:20:37 localhost systemd[1]: Starting System Logging Service...
+░░ Subject: A start job for unit rsyslog.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit rsyslog.service has begun execution.
+░░ 
+░░ The job identifier is 251.
+Jun 29 14:20:37 localhost rsyslogd[1608]: [origin software="rsyslogd" swVersion="8.2210.0" x-pid="1608" x-info="https://www.rsyslog.com"] start
+Jun 29 14:20:37 localhost rsyslogd[1608]: imjournal: No statefile exists, /run/log/imjournal.state will be created (ignore if this is first run): No such file or directory [v8.2210.0 try https://www.rsyslog.com/e/2040 ]
+Jun 29 14:20:37 localhost kdumpctl[1611]: No memory reserved for crash kernel
+Jun 29 14:20:37 localhost kdumpctl[1611]: Starting kdump: [FAILED]
+Jun 29 14:20:37 localhost systemd[1]: kdump.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit kdump.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:20:37 localhost systemd[1]: kdump.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit kdump.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:20:37 localhost systemd[1]: Failed to start Crash recovery kernel arming.
+░░ Subject: A start job for unit kdump.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit kdump.service has finished with a failure.
+░░ 
+░░ The job identifier is 247 and the job result is failed.
+Jun 29 14:20:37 localhost systemd[1]: Started System Logging Service.
+░░ Subject: A start job for unit rsyslog.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit rsyslog.service has finished successfully.
+░░ 
+░░ The job identifier is 251.
+Jun 29 14:20:37 localhost systemd[1]: Reached target Multi-User System.
+░░ Subject: A start job for unit multi-user.target has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit multi-user.target has finished successfully.
+░░ 
+░░ The job identifier is 149.
+Jun 29 14:20:37 localhost systemd[1]: Starting Record Runlevel Change in UTMP...
+░░ Subject: A start job for unit systemd-update-utmp-runlevel.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-utmp-runlevel.service has begun execution.
+░░ 
+░░ The job identifier is 253.
+Jun 29 14:20:37 localhost systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-update-utmp-runlevel.service has successfully entered the 'dead' state.
+Jun 29 14:20:37 localhost systemd[1]: Finished Record Runlevel Change in UTMP.
+░░ Subject: A start job for unit systemd-update-utmp-runlevel.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit systemd-update-utmp-runlevel.service has finished successfully.
+░░ 
+░░ The job identifier is 253.
+Jun 29 14:20:37 localhost systemd[1]: Startup finished in 5.013s (kernel) + 7.321s (initrd) + 678ms (userspace) = 13.013s.
+░░ Subject: System start-up is now complete
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ All system services necessary queued for starting at boot have been
+░░ started. Note that this does not mean that the machine is now idle as services
+░░ might still be busy with completing start-up.
+░░ 
+░░ Kernel start-up required 5013478 microseconds.
+░░ 
+░░ Initial RAM disk start-up required 7321351 microseconds.
+░░ 
+░░ Userspace start-up required 678389 microseconds.
+Jun 29 14:20:37 localhost rsyslogd[1608]: imjournal: journal files changed, reloading...  [v8.2210.0 try https://www.rsyslog.com/e/0 ]
+Jun 29 14:20:38 localhost NetworkManager[1441]: <info>  [1688048438.3662] policy: set 'Wired connection 1' (ens6) as default for IPv6 routing and DNS
+Jun 29 14:20:38 localhost sshd[1638]: Connection from 10.0.2.2 port 40660 on 10.0.2.15 port 22 rdomain ""
+Jun 29 14:20:38 localhost sshd[1638]: Failed publickey for root from 10.0.2.2 port 40660 ssh2: RSA SHA256:Shy3Llk3TFRBBBd0n7YDfrLTyPhvfjNKRVvwR5jzggQ
+Jun 29 14:20:38 localhost sshd[1638]: Accepted password for root from 10.0.2.2 port 40660 ssh2
+Jun 29 14:20:38 localhost sshd[1638]: pam_unix(sshd:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:20:38 localhost sshd[1638]: User child is on pid 1641
+Jun 29 14:20:38 localhost sshd[1640]: Connection from 10.0.2.2 port 40664 on 10.0.2.15 port 22 rdomain ""
+Jun 29 14:20:38 localhost sshd[1640]: Accepted password for root from 10.0.2.2 port 40664 ssh2
+Jun 29 14:20:38 localhost sshd[1640]: pam_unix(sshd:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:20:38 localhost sshd[1640]: User child is on pid 1643
+Jun 29 14:20:38 localhost sshd[1643]: Starting session: command for root from 10.0.2.2 port 40664 id 0
+Jun 29 14:20:38 localhost sshd[1641]: Read error from remote host 10.0.2.2 port 40660: Connection reset by peer
+Jun 29 14:20:38 localhost sshd[1638]: pam_unix(sshd:session): session closed for user root
+Jun 29 14:20:39 localhost sudo[1709]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdcl_01 -x
+Jun 29 14:20:39 localhost sudo[1709]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:20:39 localhost NetworkManager[1441]: <info>  [1688048439.6201] policy: set-hostname: set hostname to 'localhost.localdomain' (no hostname found)
+Jun 29 14:20:39 localhost.localdomain systemd-hostnamed[1493]: Hostname set to <localhost.localdomain> (transient)
+Jun 29 14:20:42 localhost.localdomain chronyd[1348]: Selected source 116.203.151.74 (pool.ntp.org)
+Jun 29 14:20:48 localhost.localdomain sshd[1777]: Connection from 10.0.2.2 port 58324 on 10.0.2.15 port 22 rdomain ""
+Jun 29 14:20:48 localhost.localdomain sshd[1777]: Connection closed by 10.0.2.2 port 58324 [preauth]
+Jun 29 14:20:50 localhost.localdomain systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit NetworkManager-dispatcher.service has successfully entered the 'dead' state.
+Jun 29 14:21:09 localhost.localdomain systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit systemd-hostnamed.service has successfully entered the 'dead' state.
+Jun 29 14:22:28 localhost.localdomain kernel: clocksource: timekeeping watchdog on CPU0: kvm-clock wd-wd read-back delay of 127366ns
+Jun 29 14:22:28 localhost.localdomain kernel: clocksource: wd-tsc-wd read-back delay of 127068ns, clock-skew test skipped!
+Jun 29 14:23:12 localhost.localdomain [RPM][1801]: Transaction ID 649d93d0 started
+Jun 29 14:23:12 localhost.localdomain groupadd[1807]: group added to /etc/group: name=bird, GID=988
+Jun 29 14:23:12 localhost.localdomain groupadd[1807]: group added to /etc/gshadow: name=bird
+Jun 29 14:23:12 localhost.localdomain groupadd[1807]: new group: name=bird, GID=988
+Jun 29 14:23:12 localhost.localdomain useradd[1814]: new user: name=bird, UID=988, GID=988, home=/var/lib/bird, shell=/sbin/nologin, from=none
+Jun 29 14:23:13 localhost.localdomain systemctl[1822]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 1821 (/bin/sh /var/tmp/rpm-tmp.meleCk 1)
+Jun 29 14:23:13 localhost.localdomain [RPM][1801]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:13 localhost.localdomain systemctl[1826]: [/usr/bin/systemctl daemon-reload] called by PID 1825 (/bin/sh /var/tmp/rpm-tmp.m5eLW7 0)
+Jun 29 14:23:13 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:13 localhost.localdomain systemd-rc-local-generator[1834]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:13 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:13 localhost.localdomain [RPM][1801]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:13 localhost.localdomain [RPM][1801]: Transaction ID 649d93d0 finished: 0
+Jun 29 14:23:13 localhost.localdomain bird[1843]: device1: Initializing
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel1: Initializing
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel2: Initializing
+Jun 29 14:23:13 localhost.localdomain bird[1843]: static1: Initializing
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Initializing
+Jun 29 14:23:13 localhost.localdomain bird[1843]: device1: Starting
+Jun 29 14:23:13 localhost.localdomain bird[1843]: device1: Scanning interfaces
+Jun 29 14:23:13 localhost.localdomain bird[1843]: device1: State changed to up
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel1: Starting
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel1: State changed to up
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel2: Starting
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel2: State changed to up
+Jun 29 14:23:13 localhost.localdomain bird[1843]: static1: Starting
+Jun 29 14:23:13 localhost.localdomain bird[1843]: static1: State changed to up
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Starting
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Adding area 0.0.0.0
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: State changed to up
+Jun 29 14:23:13 localhost.localdomain bird[1843]: Started
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel1: Scanning routing table
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel1: Pruning table master4
+Jun 29 14:23:13 localhost.localdomain bird[1843]: kernel2: Pruning table master6
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Updating router state for area 0.0.0.0
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Scheduling routing table calculation
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Starting routing table calculation
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Starting routing table calculation for ext routes
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Starting routing table synchronization
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Area number: 1
+Jun 29 14:23:13 localhost.localdomain bird[1843]: Disabling protocol ospf1
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Shutting down
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: Shutdown requested
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: State changed to flush
+Jun 29 14:23:13 localhost.localdomain bird[1843]: ospf1: State changed to down
+Jun 29 14:23:13 localhost.localdomain [RPM][1903]: Transaction ID 649d93d1 started
+Jun 29 14:23:13 localhost.localdomain [RPM][1903]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:13 localhost.localdomain systemctl[1908]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 1907 (/bin/sh /var/tmp/rpm-tmp.O2aq4G 0)
+Jun 29 14:23:14 localhost.localdomain systemctl[1911]: [/usr/bin/systemctl daemon-reload] called by PID 1909 (/bin/sh /var/tmp/rpm-tmp.7u2iyj 0)
+Jun 29 14:23:14 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:14 localhost.localdomain systemd-rc-local-generator[1919]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:14 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:14 localhost.localdomain [RPM][1903]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:14 localhost.localdomain [RPM][1903]: Transaction ID 649d93d1 finished: 0
+Jun 29 14:23:14 localhost.localdomain sudo[1709]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:23:14 localhost.localdomain sudo[1945]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdcl_02 -x
+Jun 29 14:23:14 localhost.localdomain sudo[1945]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:23:46 localhost.localdomain [RPM][2016]: Transaction ID 649d93f2 started
+Jun 29 14:23:46 localhost.localdomain systemctl[2023]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 2022 (/bin/sh /var/tmp/rpm-tmp.XFmPdP 1)
+Jun 29 14:23:46 localhost.localdomain [RPM][2016]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:46 localhost.localdomain systemctl[2027]: [/usr/bin/systemctl daemon-reload] called by PID 2026 (/bin/sh /var/tmp/rpm-tmp.zCqmbC 0)
+Jun 29 14:23:46 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:46 localhost.localdomain systemd-rc-local-generator[2035]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:46 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:46 localhost.localdomain [RPM][2016]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:46 localhost.localdomain [RPM][2016]: Transaction ID 649d93f2 finished: 0
+Jun 29 14:23:46 localhost.localdomain bird[2043]: I found another BIRD running.
+Jun 29 14:23:46 localhost.localdomain bird[1843]: Enabling protocol ospf1
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Starting
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Adding area 0.0.0.0
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: State changed to up
+Jun 29 14:23:46 localhost.localdomain bird[1843]: Restarting protocol ospf1
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Shutting down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Shutdown requested
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: State changed to flush
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: State changed to down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Starting
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Adding area 0.0.0.0
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: State changed to up
+Jun 29 14:23:46 localhost.localdomain bird[1843]: Reloading protocol ospf1
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Scheduling routing table calculation with route reload
+Jun 29 14:23:46 localhost.localdomain bird[1843]: Reconfiguring
+Jun 29 14:23:46 localhost.localdomain bird[1843]: device1: Reconfigured
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel1: Reconfigured
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel2: Reconfigured
+Jun 29 14:23:46 localhost.localdomain bird[1843]: static1: Reconfigured
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Reconfigured
+Jun 29 14:23:46 localhost.localdomain bird[1843]: Reconfigured
+Jun 29 14:23:46 localhost.localdomain bird[1843]: Shutting down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: device1: Shutting down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: device1: State changed to flush
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel1: Shutting down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel1: Flushing kernel routes
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel1: State changed to flush
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel2: Shutting down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel2: Flushing kernel routes
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel2: State changed to flush
+Jun 29 14:23:46 localhost.localdomain bird[1843]: static1: Shutting down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: static1: State changed to flush
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Shutting down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: Shutdown requested
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: State changed to flush
+Jun 29 14:23:46 localhost.localdomain bird[1843]: device1: Flushing interfaces
+Jun 29 14:23:46 localhost.localdomain bird[1843]: device1: State changed to down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel1: State changed to down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: static1: State changed to down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: ospf1: State changed to down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: kernel2: State changed to down
+Jun 29 14:23:46 localhost.localdomain bird[1843]: Shutdown completed
+Jun 29 14:23:47 localhost.localdomain [RPM][2093]: Transaction ID 649d93f3 started
+Jun 29 14:23:47 localhost.localdomain [RPM][2093]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:47 localhost.localdomain systemctl[2098]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 2097 (/bin/sh /var/tmp/rpm-tmp.CDd0zQ 0)
+Jun 29 14:23:47 localhost.localdomain systemctl[2101]: [/usr/bin/systemctl daemon-reload] called by PID 2099 (/bin/sh /var/tmp/rpm-tmp.CpAlvi 0)
+Jun 29 14:23:47 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:47 localhost.localdomain systemd-rc-local-generator[2109]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:47 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:47 localhost.localdomain [RPM][2093]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:47 localhost.localdomain [RPM][2093]: Transaction ID 649d93f3 finished: 0
+Jun 29 14:23:47 localhost.localdomain sudo[1945]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:23:47 localhost.localdomain sudo[2131]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdcl_03 -x
+Jun 29 14:23:47 localhost.localdomain sudo[2131]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:23:50 localhost.localdomain [RPM][2202]: Transaction ID 649d93f6 started
+Jun 29 14:23:50 localhost.localdomain systemctl[2209]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 2208 (/bin/sh /var/tmp/rpm-tmp.c6Judk 1)
+Jun 29 14:23:50 localhost.localdomain [RPM][2202]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:50 localhost.localdomain systemctl[2213]: [/usr/bin/systemctl daemon-reload] called by PID 2212 (/bin/sh /var/tmp/rpm-tmp.BSjrMs 0)
+Jun 29 14:23:50 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:50 localhost.localdomain systemd-rc-local-generator[2221]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:50 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:50 localhost.localdomain [RPM][2202]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:50 localhost.localdomain [RPM][2202]: Transaction ID 649d93f6 finished: 0
+Jun 29 14:23:50 localhost.localdomain bird[2230]: device1: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel1: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel2: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2230]: static1: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2230]: ospf1: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2230]: device1: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2230]: device1: Scanning interfaces
+Jun 29 14:23:50 localhost.localdomain bird[2230]: device1: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel1: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel1: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel2: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel2: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2230]: static1: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2230]: static1: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2230]: ospf1: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2230]: ospf1: Adding area 0.0.0.0
+Jun 29 14:23:50 localhost.localdomain bird[2230]: ospf1: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2230]: Started
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel1: Scanning routing table
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel1: Pruning table master4
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel2: Pruning table master6
+Jun 29 14:23:50 localhost.localdomain bird[2230]: Shutting down for graceful restart
+Jun 29 14:23:50 localhost.localdomain bird[2230]: device1: Shutting down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: device1: State changed to flush
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel1: Shutting down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel1: State changed to flush
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel2: Shutting down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel2: State changed to flush
+Jun 29 14:23:50 localhost.localdomain bird[2230]: static1: Shutting down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: static1: State changed to flush
+Jun 29 14:23:50 localhost.localdomain bird[2230]: ospf1: Shutting down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: ospf1: Shutdown requested
+Jun 29 14:23:50 localhost.localdomain bird[2230]: ospf1: State changed to flush
+Jun 29 14:23:50 localhost.localdomain bird[2230]: device1: Flushing interfaces
+Jun 29 14:23:50 localhost.localdomain bird[2230]: device1: State changed to down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel1: State changed to down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: static1: State changed to down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: ospf1: State changed to down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: kernel2: State changed to down
+Jun 29 14:23:50 localhost.localdomain bird[2230]: Shutdown completed
+Jun 29 14:23:50 localhost.localdomain bird[2242]: device1: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel1: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel2: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2242]: static1: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2242]: ospf1: Initializing
+Jun 29 14:23:50 localhost.localdomain bird[2242]: device1: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2242]: device1: Scanning interfaces
+Jun 29 14:23:50 localhost.localdomain bird[2242]: device1: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel1: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel1: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel2: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel2: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2242]: static1: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2242]: static1: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2242]: ospf1: Starting
+Jun 29 14:23:50 localhost.localdomain bird[2242]: ospf1: Adding area 0.0.0.0
+Jun 29 14:23:50 localhost.localdomain bird[2242]: ospf1: State changed to up
+Jun 29 14:23:50 localhost.localdomain bird[2242]: Started
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel1: Scanning routing table
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel1: Pruning table master4
+Jun 29 14:23:50 localhost.localdomain bird[2242]: kernel2: Pruning table master6
+Jun 29 14:23:51 localhost.localdomain [RPM][2280]: Transaction ID 649d93f7 started
+Jun 29 14:23:51 localhost.localdomain [RPM][2280]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:51 localhost.localdomain systemctl[2285]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 2284 (/bin/sh /var/tmp/rpm-tmp.qxVY9i 0)
+Jun 29 14:23:51 localhost.localdomain systemctl[2288]: [/usr/bin/systemctl daemon-reload] called by PID 2286 (/bin/sh /var/tmp/rpm-tmp.fjfhBG 0)
+Jun 29 14:23:51 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:51 localhost.localdomain systemd-rc-local-generator[2296]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:51 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:51 localhost.localdomain [RPM][2280]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:51 localhost.localdomain [RPM][2280]: Transaction ID 649d93f7 finished: 0
+Jun 29 14:23:51 localhost.localdomain sudo[2131]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:23:51 localhost.localdomain sudo[2320]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdc_01 -x
+Jun 29 14:23:51 localhost.localdomain sudo[2320]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:23:53 localhost.localdomain [RPM][2391]: Transaction ID 649d93f9 started
+Jun 29 14:23:53 localhost.localdomain systemctl[2398]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 2397 (/bin/sh /var/tmp/rpm-tmp.72rRJ9 1)
+Jun 29 14:23:53 localhost.localdomain [RPM][2391]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:53 localhost.localdomain systemctl[2402]: [/usr/bin/systemctl daemon-reload] called by PID 2401 (/bin/sh /var/tmp/rpm-tmp.Prw6Sr 0)
+Jun 29 14:23:53 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:53 localhost.localdomain systemd-rc-local-generator[2410]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:53 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:53 localhost.localdomain [RPM][2391]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:53 localhost.localdomain [RPM][2391]: Transaction ID 649d93f9 finished: 0
+Jun 29 14:23:53 localhost.localdomain bird[2418]: I found another BIRD running.
+Jun 29 14:23:54 localhost.localdomain bird[2242]: Disabling protocol ospf1
+Jun 29 14:23:54 localhost.localdomain bird[2242]: ospf1: Shutting down
+Jun 29 14:23:54 localhost.localdomain bird[2242]: ospf1: State changed to flush
+Jun 29 14:23:54 localhost.localdomain bird[2242]: ospf1: State changed to down
+Jun 29 14:23:54 localhost.localdomain [RPM][2480]: Transaction ID 649d93fa started
+Jun 29 14:23:54 localhost.localdomain [RPM][2480]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:54 localhost.localdomain systemctl[2485]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 2484 (/bin/sh /var/tmp/rpm-tmp.LtLSPX 0)
+Jun 29 14:23:54 localhost.localdomain systemctl[2488]: [/usr/bin/systemctl daemon-reload] called by PID 2486 (/bin/sh /var/tmp/rpm-tmp.mRUZg4 0)
+Jun 29 14:23:54 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:54 localhost.localdomain systemd-rc-local-generator[2496]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:54 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:54 localhost.localdomain [RPM][2480]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:54 localhost.localdomain [RPM][2480]: Transaction ID 649d93fa finished: 0
+Jun 29 14:23:54 localhost.localdomain sudo[2320]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:23:54 localhost.localdomain sudo[2521]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdc_02 -x
+Jun 29 14:23:54 localhost.localdomain sudo[2521]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:23:56 localhost.localdomain [RPM][2592]: Transaction ID 649d93fc started
+Jun 29 14:23:57 localhost.localdomain systemctl[2599]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 2598 (/bin/sh /var/tmp/rpm-tmp.AI0bDS 1)
+Jun 29 14:23:57 localhost.localdomain [RPM][2592]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:57 localhost.localdomain systemctl[2603]: [/usr/bin/systemctl daemon-reload] called by PID 2602 (/bin/sh /var/tmp/rpm-tmp.g3TlMr 0)
+Jun 29 14:23:57 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:57 localhost.localdomain systemd-rc-local-generator[2611]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:57 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:57 localhost.localdomain [RPM][2592]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:57 localhost.localdomain [RPM][2592]: Transaction ID 649d93fc finished: 0
+Jun 29 14:23:57 localhost.localdomain bird[2619]: I found another BIRD running.
+Jun 29 14:23:57 localhost.localdomain bird[2242]: Enabling protocol ospf1
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: Starting
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: State changed to up
+Jun 29 14:23:57 localhost.localdomain bird[2242]: Restarting protocol ospf1
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: Shutting down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: State changed to flush
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: State changed to down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: Starting
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: State changed to up
+Jun 29 14:23:57 localhost.localdomain bird[2242]: Reloading protocol ospf1
+Jun 29 14:23:57 localhost.localdomain bird[2242]: Reconfiguring
+Jun 29 14:23:57 localhost.localdomain bird[2242]: device1: Reconfigured
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel1: Reconfigured
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel2: Reconfigured
+Jun 29 14:23:57 localhost.localdomain bird[2242]: static1: Reconfigured
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: Reconfigured
+Jun 29 14:23:57 localhost.localdomain bird[2242]: Reconfigured
+Jun 29 14:23:57 localhost.localdomain bird[2242]: Shutting down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: device1: Shutting down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: device1: State changed to flush
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel1: Shutting down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel1: Flushing kernel routes
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel1: State changed to flush
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel2: Shutting down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel2: Flushing kernel routes
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel2: State changed to flush
+Jun 29 14:23:57 localhost.localdomain bird[2242]: static1: Shutting down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: static1: State changed to flush
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: Shutting down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: Shutdown requested
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: State changed to flush
+Jun 29 14:23:57 localhost.localdomain bird[2242]: device1: Flushing interfaces
+Jun 29 14:23:57 localhost.localdomain bird[2242]: device1: State changed to down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel1: State changed to down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: static1: State changed to down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: ospf1: State changed to down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: kernel2: State changed to down
+Jun 29 14:23:57 localhost.localdomain bird[2242]: Shutdown completed
+Jun 29 14:23:57 localhost.localdomain [RPM][2669]: Transaction ID 649d93fd started
+Jun 29 14:23:57 localhost.localdomain [RPM][2669]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:57 localhost.localdomain systemctl[2674]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 2673 (/bin/sh /var/tmp/rpm-tmp.0pVarZ 0)
+Jun 29 14:23:57 localhost.localdomain systemctl[2677]: [/usr/bin/systemctl daemon-reload] called by PID 2675 (/bin/sh /var/tmp/rpm-tmp.XzlijX 0)
+Jun 29 14:23:57 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:23:57 localhost.localdomain systemd-rc-local-generator[2685]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:23:58 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:23:58 localhost.localdomain [RPM][2669]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:23:58 localhost.localdomain [RPM][2669]: Transaction ID 649d93fd finished: 0
+Jun 29 14:23:58 localhost.localdomain sudo[2521]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:23:58 localhost.localdomain sudo[2707]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_birdc_03 -x
+Jun 29 14:23:58 localhost.localdomain sudo[2707]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:25:00 localhost.localdomain [RPM][2778]: Transaction ID 649d943c started
+Jun 29 14:25:00 localhost.localdomain systemctl[2786]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 2785 (/bin/sh /var/tmp/rpm-tmp.1Nhmgj 1)
+Jun 29 14:25:00 localhost.localdomain [RPM][2778]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:00 localhost.localdomain systemctl[2790]: [/usr/bin/systemctl daemon-reload] called by PID 2789 (/bin/sh /var/tmp/rpm-tmp.Bvmhde 0)
+Jun 29 14:25:00 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:25:00 localhost.localdomain systemd-rc-local-generator[2798]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:25:00 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:25:00 localhost.localdomain [RPM][2778]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:00 localhost.localdomain [RPM][2778]: Transaction ID 649d943c finished: 0
+Jun 29 14:25:00 localhost.localdomain bird[2807]: device1: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel1: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel2: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2807]: static1: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2807]: ospf1: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2807]: device1: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2807]: device1: Scanning interfaces
+Jun 29 14:25:00 localhost.localdomain bird[2807]: device1: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel1: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel1: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel2: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel2: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2807]: static1: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2807]: static1: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2807]: ospf1: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2807]: ospf1: Adding area 0.0.0.0
+Jun 29 14:25:00 localhost.localdomain bird[2807]: ospf1: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2807]: Started
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel1: Scanning routing table
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel1: Pruning table master4
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel2: Pruning table master6
+Jun 29 14:25:00 localhost.localdomain bird[2807]: Shutting down for graceful restart
+Jun 29 14:25:00 localhost.localdomain bird[2807]: device1: Shutting down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: device1: State changed to flush
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel1: Shutting down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel1: State changed to flush
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel2: Shutting down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel2: State changed to flush
+Jun 29 14:25:00 localhost.localdomain bird[2807]: static1: Shutting down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: static1: State changed to flush
+Jun 29 14:25:00 localhost.localdomain bird[2807]: ospf1: Shutting down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: ospf1: Shutdown requested
+Jun 29 14:25:00 localhost.localdomain bird[2807]: ospf1: State changed to flush
+Jun 29 14:25:00 localhost.localdomain bird[2807]: device1: Flushing interfaces
+Jun 29 14:25:00 localhost.localdomain bird[2807]: device1: State changed to down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel1: State changed to down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: static1: State changed to down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: ospf1: State changed to down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: kernel2: State changed to down
+Jun 29 14:25:00 localhost.localdomain bird[2807]: Shutdown completed
+Jun 29 14:25:00 localhost.localdomain bird[2819]: device1: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel1: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel2: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2819]: static1: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2819]: ospf1: Initializing
+Jun 29 14:25:00 localhost.localdomain bird[2819]: device1: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2819]: device1: Scanning interfaces
+Jun 29 14:25:00 localhost.localdomain bird[2819]: device1: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel1: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel1: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel2: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel2: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2819]: static1: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2819]: static1: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2819]: ospf1: Starting
+Jun 29 14:25:00 localhost.localdomain bird[2819]: ospf1: Adding area 0.0.0.0
+Jun 29 14:25:00 localhost.localdomain bird[2819]: ospf1: State changed to up
+Jun 29 14:25:00 localhost.localdomain bird[2819]: Started
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel1: Scanning routing table
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel1: Pruning table master4
+Jun 29 14:25:00 localhost.localdomain bird[2819]: kernel2: Pruning table master6
+Jun 29 14:25:01 localhost.localdomain [RPM][2857]: Transaction ID 649d943d started
+Jun 29 14:25:01 localhost.localdomain [RPM][2857]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:01 localhost.localdomain systemctl[2862]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 2861 (/bin/sh /var/tmp/rpm-tmp.Nh4gZI 0)
+Jun 29 14:25:01 localhost.localdomain systemctl[2865]: [/usr/bin/systemctl daemon-reload] called by PID 2863 (/bin/sh /var/tmp/rpm-tmp.R4KCjO 0)
+Jun 29 14:25:01 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:25:01 localhost.localdomain systemd-rc-local-generator[2873]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:25:01 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:25:01 localhost.localdomain [RPM][2857]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:01 localhost.localdomain [RPM][2857]: Transaction ID 649d943d finished: 0
+Jun 29 14:25:01 localhost.localdomain sudo[2707]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:25:01 localhost.localdomain sudo[2897]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_bird_01 -x
+Jun 29 14:25:01 localhost.localdomain sudo[2897]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:25:03 localhost.localdomain [RPM][2968]: Transaction ID 649d943f started
+Jun 29 14:25:04 localhost.localdomain systemctl[2975]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 2974 (/bin/sh /var/tmp/rpm-tmp.mtXHxs 1)
+Jun 29 14:25:04 localhost.localdomain [RPM][2968]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:04 localhost.localdomain systemctl[2979]: [/usr/bin/systemctl daemon-reload] called by PID 2978 (/bin/sh /var/tmp/rpm-tmp.GsTfaw 0)
+Jun 29 14:25:04 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:25:04 localhost.localdomain systemd-rc-local-generator[2987]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:25:04 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:25:04 localhost.localdomain [RPM][2968]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:04 localhost.localdomain [RPM][2968]: Transaction ID 649d943f finished: 0
+Jun 29 14:25:04 localhost.localdomain bird[3004]: I found another BIRD running.
+Jun 29 14:25:08 localhost.localdomain chronyd[1348]: Selected source 185.209.85.222 (pool.ntp.org)
+Jun 29 14:25:10 localhost.localdomain bird[3018]: I found another BIRD running.
+Jun 29 14:25:12 localhost.localdomain useradd[3023]: new group: name=testdemo, GID=1000
+Jun 29 14:25:12 localhost.localdomain useradd[3023]: new user: name=testdemo, UID=1000, GID=1000, home=/home/testdemo, shell=/bin/bash, from=none
+Jun 29 14:25:12 localhost.localdomain bird[3030]: I found another BIRD running.
+Jun 29 14:25:14 localhost.localdomain bird[3041]: I found another BIRD running.
+Jun 29 14:25:17 localhost.localdomain [RPM][3056]: Transaction ID 649d944d started
+Jun 29 14:25:17 localhost.localdomain [RPM][3056]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:17 localhost.localdomain systemctl[3061]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 3060 (/bin/sh /var/tmp/rpm-tmp.dhhQNC 0)
+Jun 29 14:25:17 localhost.localdomain systemctl[3064]: [/usr/bin/systemctl daemon-reload] called by PID 3062 (/bin/sh /var/tmp/rpm-tmp.XHr8CB 0)
+Jun 29 14:25:17 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:25:17 localhost.localdomain systemd-rc-local-generator[3072]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:25:17 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:25:17 localhost.localdomain [RPM][3056]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:17 localhost.localdomain [RPM][3056]: Transaction ID 649d944d finished: 0
+Jun 29 14:25:17 localhost.localdomain userdel[3078]: delete user 'testdemo'
+Jun 29 14:25:17 localhost.localdomain userdel[3078]: removed group 'testdemo' owned by 'testdemo'
+Jun 29 14:25:17 localhost.localdomain userdel[3078]: removed shadow group 'testdemo' owned by 'testdemo'
+Jun 29 14:25:17 localhost.localdomain sudo[2897]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:25:17 localhost.localdomain sudo[3101]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_bird_02 -x
+Jun 29 14:25:17 localhost.localdomain sudo[3101]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:25:20 localhost.localdomain [RPM][3172]: Transaction ID 649d9450 started
+Jun 29 14:25:20 localhost.localdomain systemctl[3179]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 3178 (/bin/sh /var/tmp/rpm-tmp.jRcbju 1)
+Jun 29 14:25:20 localhost.localdomain [RPM][3172]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:20 localhost.localdomain systemctl[3183]: [/usr/bin/systemctl daemon-reload] called by PID 3182 (/bin/sh /var/tmp/rpm-tmp.U2OmIL 0)
+Jun 29 14:25:20 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:25:20 localhost.localdomain systemd-rc-local-generator[3191]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:25:20 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:25:20 localhost.localdomain [RPM][3172]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:20 localhost.localdomain [RPM][3172]: Transaction ID 649d9450 finished: 0
+Jun 29 14:25:20 localhost.localdomain bird[3203]: device1: Initializing
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel1: Initializing
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel2: Initializing
+Jun 29 14:25:20 localhost.localdomain bird[3203]: static1: Initializing
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Initializing
+Jun 29 14:25:20 localhost.localdomain bird[3203]: device1: Starting
+Jun 29 14:25:20 localhost.localdomain bird[3203]: device1: Scanning interfaces
+Jun 29 14:25:20 localhost.localdomain bird[3203]: device1: State changed to up
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel1: Starting
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel1: State changed to up
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel2: Starting
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel2: State changed to up
+Jun 29 14:25:20 localhost.localdomain bird[3203]: static1: Starting
+Jun 29 14:25:20 localhost.localdomain bird[3203]: static1: State changed to up
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Starting
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Adding area 0.0.0.0
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: State changed to up
+Jun 29 14:25:20 localhost.localdomain bird[3203]: Started
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel1: Scanning routing table
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel1: Pruning table master4
+Jun 29 14:25:20 localhost.localdomain bird[3203]: kernel2: Pruning table master6
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Updating router state for area 0.0.0.0
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Scheduling routing table calculation
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Starting routing table calculation
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Starting routing table calculation for ext routes
+Jun 29 14:25:20 localhost.localdomain bird[3203]: ospf1: Starting routing table synchronization
+Jun 29 14:25:22 localhost.localdomain bird[3210]: I found another BIRD running.
+Jun 29 14:25:24 localhost.localdomain bird[3217]: I found another BIRD running.
+Jun 29 14:25:24 localhost.localdomain bird[3222]: device1: Initializing
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel1: Initializing
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel2: Initializing
+Jun 29 14:25:24 localhost.localdomain bird[3222]: static1: Initializing
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Initializing
+Jun 29 14:25:24 localhost.localdomain bird[3222]: device1: Starting
+Jun 29 14:25:24 localhost.localdomain bird[3222]: device1: Scanning interfaces
+Jun 29 14:25:24 localhost.localdomain bird[3222]: device1: State changed to up
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel1: Starting
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel1: State changed to up
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel2: Starting
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel2: State changed to up
+Jun 29 14:25:24 localhost.localdomain bird[3222]: static1: Starting
+Jun 29 14:25:24 localhost.localdomain bird[3222]: static1: State changed to up
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Starting
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Adding area 0.0.0.0
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: State changed to up
+Jun 29 14:25:24 localhost.localdomain bird[3222]: Started
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel1: Scanning routing table
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel1: Pruning table master4
+Jun 29 14:25:24 localhost.localdomain bird[3222]: kernel2: Pruning table master6
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Updating router state for area 0.0.0.0
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Originating LSA: Type: 2001, Id: 10.10.1.10, Rt: 10.10.1.10, Seq: 80000001
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Scheduling routing table calculation
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Starting routing table calculation
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Starting routing table calculation for area 0.0.0.0
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Starting routing table calculation for inter-area (area 0.0.0.0)
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Starting routing table calculation for ext routes
+Jun 29 14:25:24 localhost.localdomain bird[3222]: ospf1: Starting routing table synchronization
+Jun 29 14:25:27 localhost.localdomain [RPM][3232]: Transaction ID 649d9457 started
+Jun 29 14:25:27 localhost.localdomain [RPM][3232]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:27 localhost.localdomain systemctl[3237]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 3236 (/bin/sh /var/tmp/rpm-tmp.XTNJpI 0)
+Jun 29 14:25:27 localhost.localdomain systemctl[3240]: [/usr/bin/systemctl daemon-reload] called by PID 3238 (/bin/sh /var/tmp/rpm-tmp.qhlXBn 0)
+Jun 29 14:25:27 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:25:27 localhost.localdomain systemd-rc-local-generator[3248]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:25:27 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:25:27 localhost.localdomain [RPM][3232]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:25:27 localhost.localdomain [RPM][3232]: Transaction ID 649d9457 finished: 0
+Jun 29 14:25:27 localhost.localdomain sudo[3101]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:25:27 localhost.localdomain sudo[3271]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f bird -r oe_test_service_bird -x
+Jun 29 14:25:27 localhost.localdomain sudo[3271]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+Jun 29 14:26:20 localhost.localdomain bird[3203]: device1: Scanning interfaces
+Jun 29 14:26:20 localhost.localdomain bird[3203]: kernel1: Scanning routing table
+Jun 29 14:26:20 localhost.localdomain bird[3203]: kernel1: Pruning table master4
+Jun 29 14:26:20 localhost.localdomain bird[3203]: kernel2: Pruning table master6
+Jun 29 14:26:24 localhost.localdomain bird[3222]: device1: Scanning interfaces
+Jun 29 14:26:24 localhost.localdomain bird[3222]: kernel1: Scanning routing table
+Jun 29 14:26:24 localhost.localdomain bird[3222]: kernel1: Pruning table master4
+Jun 29 14:26:24 localhost.localdomain bird[3222]: kernel2: Pruning table master6
+Jun 29 14:26:29 localhost.localdomain [RPM][3342]: Transaction ID 649d9495 started
+Jun 29 14:26:29 localhost.localdomain systemctl[3352]: [/usr/bin/systemctl --no-reload preset bird.service] called by PID 3351 (/bin/sh /var/tmp/rpm-tmp.GyHZ0r 1)
+Jun 29 14:26:29 localhost.localdomain [RPM][3342]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:26:30 localhost.localdomain systemctl[3356]: [/usr/bin/systemctl daemon-reload] called by PID 3355 (/bin/sh /var/tmp/rpm-tmp.hoJfsl 0)
+Jun 29 14:26:30 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:26:30 localhost.localdomain systemd-rc-local-generator[3364]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:26:30 localhost.localdomain [RPM][3342]: install bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:26:30 localhost.localdomain [RPM][3342]: Transaction ID 649d9495 finished: 0
+Jun 29 14:26:30 localhost.localdomain systemctl[3375]: [systemctl restart bird.service] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:30 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 410.
+Jun 29 14:26:30 localhost.localdomain bird[3376]: I found another BIRD running.
+Jun 29 14:26:30 localhost.localdomain bird[3376]: bird: I found another BIRD running.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 1.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 472 and the job result is done.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 472.
+Jun 29 14:26:30 localhost.localdomain bird[3381]: I found another BIRD running.
+Jun 29 14:26:30 localhost.localdomain bird[3381]: bird: I found another BIRD running.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 2.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 534 and the job result is done.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 534.
+Jun 29 14:26:30 localhost.localdomain bird[3384]: I found another BIRD running.
+Jun 29 14:26:30 localhost.localdomain bird[3384]: bird: I found another BIRD running.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:30 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 3.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 596 and the job result is done.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 596.
+Jun 29 14:26:31 localhost.localdomain bird[3387]: I found another BIRD running.
+Jun 29 14:26:31 localhost.localdomain bird[3387]: bird: I found another BIRD running.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 4.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 658 and the job result is done.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 658.
+Jun 29 14:26:31 localhost.localdomain bird[3389]: I found another BIRD running.
+Jun 29 14:26:31 localhost.localdomain bird[3389]: bird: I found another BIRD running.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 5.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 720 and the job result is done.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Start request repeated too quickly.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:31 localhost.localdomain systemd[1]: Failed to start BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished with a failure.
+░░ 
+░░ The job identifier is 720 and the job result is failed.
+Jun 29 14:26:35 localhost.localdomain systemctl[3395]: [systemctl stop bird.service] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:40 localhost.localdomain systemctl[3401]: [systemctl start bird.service] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:40 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 783.
+Jun 29 14:26:40 localhost.localdomain bird[3402]: I found another BIRD running.
+Jun 29 14:26:40 localhost.localdomain bird[3402]: bird: I found another BIRD running.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 1.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 845 and the job result is done.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 845.
+Jun 29 14:26:40 localhost.localdomain bird[3406]: I found another BIRD running.
+Jun 29 14:26:40 localhost.localdomain bird[3406]: bird: I found another BIRD running.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 2.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 907 and the job result is done.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 907.
+Jun 29 14:26:40 localhost.localdomain bird[3408]: I found another BIRD running.
+Jun 29 14:26:40 localhost.localdomain bird[3408]: bird: I found another BIRD running.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:40 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 3.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 969 and the job result is done.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 969.
+Jun 29 14:26:41 localhost.localdomain bird[3411]: I found another BIRD running.
+Jun 29 14:26:41 localhost.localdomain bird[3411]: bird: I found another BIRD running.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 4.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1031 and the job result is done.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1031.
+Jun 29 14:26:41 localhost.localdomain bird[3414]: I found another BIRD running.
+Jun 29 14:26:41 localhost.localdomain bird[3414]: bird: I found another BIRD running.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 5.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1093 and the job result is done.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Start request repeated too quickly.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:41 localhost.localdomain systemd[1]: Failed to start BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished with a failure.
+░░ 
+░░ The job identifier is 1093 and the job result is failed.
+Jun 29 14:26:45 localhost.localdomain systemctl[3422]: [systemctl enable bird.service] called by PID 3421 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:45 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:26:45 localhost.localdomain systemd-rc-local-generator[3432]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:26:45 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:26:45 localhost.localdomain systemctl[3438]: [systemctl disable bird.service] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:45 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:26:45 localhost.localdomain systemd-rc-local-generator[3446]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:26:45 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:26:45 localhost.localdomain systemctl[3457]: [systemctl start bird.service] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:45 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1155.
+Jun 29 14:26:45 localhost.localdomain bird[3458]: I found another BIRD running.
+Jun 29 14:26:45 localhost.localdomain bird[3458]: bird: I found another BIRD running.
+Jun 29 14:26:45 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:45 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:45 localhost.localdomain systemctl[3461]: [systemctl daemon-reload] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:45 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:26:45 localhost.localdomain systemd-rc-local-generator[3469]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:26:45 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:26:46 localhost.localdomain systemctl[3474]: [systemctl reload bird.service] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:46 localhost.localdomain systemd[1]: bird.service: Unit cannot be reloaded because it is inactive.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 1.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1218 and the job result is done.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1218.
+Jun 29 14:26:46 localhost.localdomain bird[3479]: bird: I found another BIRD running.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:46 localhost.localdomain systemctl[3485]: [systemctl daemon-reload] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:26:46 localhost.localdomain systemd-rc-local-generator[3493]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: bird.service: Scheduled restart job, restart counter is at 2.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ Automatic restarting of the unit bird.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1280 and the job result is done.
+Jun 29 14:26:46 localhost.localdomain systemctl[3498]: [systemctl reload bird.service] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Started BIRD Internet Routing Daemon.
+░░ Subject: A start job for unit bird.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit bird.service has finished successfully.
+░░ 
+░░ The job identifier is 1280.
+Jun 29 14:26:46 localhost.localdomain bird[3499]: I found another BIRD running.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Reloading BIRD Internet Routing Daemon...
+░░ Subject: A reload job for unit bird.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A reload job for unit bird.service has begun execution.
+░░ 
+░░ The job identifier is 1342.
+Jun 29 14:26:46 localhost.localdomain bird[3499]: bird: I found another BIRD running.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: bird.service: Main process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStart= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:46 localhost.localdomain kill[3500]: kill: sending signal to 3499 failed: No such process
+Jun 29 14:26:46 localhost.localdomain systemd[1]: bird.service: Control process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecReload= process belonging to unit bird.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: bird.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit bird.service has entered the 'failed' state with result 'exit-code'.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Reload failed for BIRD Internet Routing Daemon.
+░░ Subject: A reload job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A reload job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1342 and the job result is failed.
+Jun 29 14:26:46 localhost.localdomain systemctl[3502]: [systemctl stop bird.service] called by PID 3318 (bash -x oe_test_service_bird.sh)
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Stopped BIRD Internet Routing Daemon.
+░░ Subject: A stop job for unit bird.service has finished
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A stop job for unit bird.service has finished.
+░░ 
+░░ The job identifier is 1343 and the job result is done.
+Jun 29 14:26:46 localhost.localdomain [RPM][3504]: Transaction ID 649d94a6 started
+Jun 29 14:26:46 localhost.localdomain [RPM][3504]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:26:46 localhost.localdomain systemctl[3509]: [/usr/bin/systemctl --no-reload --now disable bird.service] called by PID 3508 (/bin/sh /var/tmp/rpm-tmp.UWI6wT 0)
+Jun 29 14:26:46 localhost.localdomain systemctl[3512]: [/usr/bin/systemctl daemon-reload] called by PID 3510 (/bin/sh /var/tmp/rpm-tmp.EhByrM 0)
+Jun 29 14:26:46 localhost.localdomain systemd[1]: Reloading.
+Jun 29 14:26:46 localhost.localdomain systemd-rc-local-generator[3520]: /etc/rc.d/rc.local is not marked executable, skipping.
+Jun 29 14:26:46 localhost.localdomain systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Jun 29 14:26:46 localhost.localdomain [RPM][3504]: erase bird-2.0.9-1.oe2303.x86_64: success
+Jun 29 14:26:46 localhost.localdomain [RPM][3504]: Transaction ID 649d94a6 finished: 0
+Jun 29 14:26:47 localhost.localdomain sudo[3271]: pam_unix(sudo:session): session closed for user root
+Jun 29 14:26:47 localhost.localdomain sudo[3533]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/journalctl -xe --no-pager
+Jun 29 14:26:47 localhost.localdomain sudo[3533]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)

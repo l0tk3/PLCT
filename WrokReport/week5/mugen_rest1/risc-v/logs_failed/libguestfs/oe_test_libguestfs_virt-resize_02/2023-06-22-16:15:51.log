@@ -1,0 +1,380 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 16:15:53 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:32:54 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:32:54 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+++ uname -i
++ test riscv64X == aarch64X
++ systemctl start libvirtd
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get riscv64 qcow2 libguestfs pkg'
++ message='get riscv64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get riscv64 qcow2 libguestfs pkg'
+Thu Jun 22 16:16:18 2023 - INFO  - get riscv64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 ']'
+++ arch
+++ arch
+++ arch
++ wget https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz --no-check-certificate -O ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+--2023-06-22 16:16:18--  https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+Resolving repo.huaweicloud.com (repo.huaweicloud.com)... 119.167.243.54, 119.167.243.53, 119.167.243.56, ...
+Connecting to repo.huaweicloud.com (repo.huaweicloud.com)|119.167.243.54|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2023-06-22 16:16:21 ERROR 404: Not Found.
+
+++ arch
++ xz -d ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+xz: ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz: File format not recognized
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+cp: cannot stat './common/openEuler-20.03-LTS-SP3-riscv64.qcow2': No such file or directory
++ cp /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+cp: cannot stat '/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2': No such file or directory
++ qemu-img create -f qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2 50G
+Formatting '/home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=53687091200 lazy_refcounts=off refcount_bits=16 cache=writeback
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 16:16:22 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:16:23 2023 - INFO  - Start to run test.
++ virt-resize --machine-readable /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 33: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --machine-readable failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --machine-readable failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --machine-readable failed'
++ LOG_ERROR 'Check virt-resize --machine-readable failed'
++ message='Check virt-resize --machine-readable failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --machine-readable failed'
+Thu Jun 22 16:16:23 2023 - ERROR - Check virt-resize --machine-readable failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 34'
++ message='oe_test_libguestfs_virt-resize_02.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 34'
+Thu Jun 22 16:16:24 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize --no-copy-boot-loader /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 35: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --no-copy-boot-loader failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --no-copy-boot-loader failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --no-copy-boot-loader failed'
++ LOG_ERROR 'Check virt-resize --no-copy-boot-loader failed'
++ message='Check virt-resize --no-copy-boot-loader failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --no-copy-boot-loader failed'
+Thu Jun 22 16:16:25 2023 - ERROR - Check virt-resize --no-copy-boot-loader failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 36'
++ message='oe_test_libguestfs_virt-resize_02.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 36'
+Thu Jun 22 16:16:25 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize --no-expand-content /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 37: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --no-expand-content failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --no-expand-content failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --no-expand-content failed'
++ LOG_ERROR 'Check virt-resize --no-expand-content failed'
++ message='Check virt-resize --no-expand-content failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --no-expand-content failed'
+Thu Jun 22 16:16:26 2023 - ERROR - Check virt-resize --no-expand-content failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 38'
++ message='oe_test_libguestfs_virt-resize_02.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 38'
+Thu Jun 22 16:16:26 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize --no-extra-partition /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 39: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --no-extra-partition failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --no-extra-partition failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --no-extra-partition failed'
++ LOG_ERROR 'Check virt-resize --no-extra-partition failed'
++ message='Check virt-resize --no-extra-partition failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --no-extra-partition failed'
+Thu Jun 22 16:16:27 2023 - ERROR - Check virt-resize --no-extra-partition failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 40'
++ message='oe_test_libguestfs_virt-resize_02.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 40'
+Thu Jun 22 16:16:27 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize --no-sparse /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 41: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --no-sparse failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --no-sparse failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --no-sparse failed'
++ LOG_ERROR 'Check virt-resize --no-sparse failed'
++ message='Check virt-resize --no-sparse failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --no-sparse failed'
+Thu Jun 22 16:16:28 2023 - ERROR - Check virt-resize --no-sparse failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 42'
++ message='oe_test_libguestfs_virt-resize_02.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 42'
+Thu Jun 22 16:16:28 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize --ntfsresize-force /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 43: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --ntfsresize-force failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --ntfsresize-force failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --ntfsresize-force failed'
++ LOG_ERROR 'Check virt-resize --ntfsresize-force failed'
++ message='Check virt-resize --ntfsresize-force failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --ntfsresize-force failed'
+Thu Jun 22 16:16:29 2023 - ERROR - Check virt-resize --ntfsresize-force failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 44'
++ message='oe_test_libguestfs_virt-resize_02.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 44'
+Thu Jun 22 16:16:29 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize --output-format raw /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 45: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --output-format failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --output-format failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --output-format failed'
++ LOG_ERROR 'Check virt-resize --output-format failed'
++ message='Check virt-resize --output-format failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --output-format failed'
+Thu Jun 22 16:16:30 2023 - ERROR - Check virt-resize --output-format failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 46'
++ message='oe_test_libguestfs_virt-resize_02.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 46'
+Thu Jun 22 16:16:30 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize -q /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 47: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize -q failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize -q failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize -q failed'
++ LOG_ERROR 'Check virt-resize -q failed'
++ message='Check virt-resize -q failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize -q failed'
+Thu Jun 22 16:16:31 2023 - ERROR - Check virt-resize -q failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 48'
++ message='oe_test_libguestfs_virt-resize_02.sh line 48'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 48'
+Thu Jun 22 16:16:31 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 48
++ '[' 0 -eq 1 ']'
++ return 0
+++ fdisk -l
+++ grep Device -A 1
+++ grep -o '/dev/[a-z0-9]*'
++ device=/dev/vda1
++ virt-resize --resize-force /dev/vda1=+128K /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 50: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --resize-force failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --resize-force failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --resize-force failed'
++ LOG_ERROR 'Check virt-resize --resize-force failed'
++ message='Check virt-resize --resize-force failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --resize-force failed'
+Thu Jun 22 16:16:32 2023 - ERROR - Check virt-resize --resize-force failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 51'
++ message='oe_test_libguestfs_virt-resize_02.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 51'
+Thu Jun 22 16:16:33 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize --unknown-filesystems ignore /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_02.sh: line 52: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize --unknown-filesystems failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize --unknown-filesystems failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize --unknown-filesystems failed'
++ LOG_ERROR 'Check virt-resize --unknown-filesystems failed'
++ message='Check virt-resize --unknown-filesystems failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize --unknown-filesystems failed'
+Thu Jun 22 16:16:33 2023 - ERROR - Check virt-resize --unknown-filesystems failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_02.sh line 53'
++ message='oe_test_libguestfs_virt-resize_02.sh line 53'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_02.sh line 53'
+Thu Jun 22 16:16:34 2023 - ERROR - oe_test_libguestfs_virt-resize_02.sh line 53
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 16:16:34 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 10
++ test 10 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 16:16:35 2023 - ERROR - failed to execute the case.
++ exit 10
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:16:35 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test_resize
++ unset LIBGUESTFS_BACKEND LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:32:54 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:32:54 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.
+Package virt-manager-4.1.0-1.oe2303.noarch is already installed.
+Package qemu-10:6.2.0-68.oe2303.riscv64 is already installed.
+Package libvirt-6.2.0-52.oe2303.riscv64 is already installed.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+OSError: [Errno 36] File name too long: 'Last metadata expiration check: 0:32:54 ago on Thu 22 Jun 2023 03:43:21 PM CST.\nPackage libguestfs-1:1.49.5-2.oe2303.riscv64 is already installed.\nPackage virt-manager-4.1.0-1.oe2303.noarch is already installed.\nPackage qemu-10:6.2.0-68.oe2303.riscv64 is already installed.\nPackage libvirt-6.2.0-52.oe2303.riscv64 is already installed.\nPackage python3-paramiko-2.11.0-1.oe2303.noarch is already installed.\nNo match for argument: edk2-devel\nError: Unable to find a match: edk2-devel'
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*'
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 22 16:16:38 2023 - INFO  - Finish to restore the test environment.

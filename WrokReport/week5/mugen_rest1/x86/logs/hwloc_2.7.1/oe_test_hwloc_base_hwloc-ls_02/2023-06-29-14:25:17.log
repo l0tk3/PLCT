@@ -1,0 +1,224 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:25:17 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:25:18 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:25:18 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 29 14:25:18 2023 - INFO  - Start testing...
++ hwloc-ls --taskset
++ grep PU
+              PU L#0 (P#0) cpuset=0x1
+              PU L#1 (P#1) cpuset=0x2
+              PU L#2 (P#2) cpuset=0x4
+              PU L#3 (P#3) cpuset=0x8
++ CHECK_RESULT 0 0 0 'hwloc-ls --taskset failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --taskset failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --ignore pu
++ grep -v PU
+Machine (3975MB total)
+  Package L#0
+    NUMANode L#0 (P#0 3975MB)
+    L3 L#0 (16MB)
+      L2 L#0 (4096KB) + L1d L#0 (32KB) + L1i L#0 (32KB) + Core L#0
+      L2 L#1 (4096KB) + L1d L#1 (32KB) + L1i L#1 (32KB) + Core L#1
+      L2 L#2 (4096KB) + L1d L#2 (32KB) + L1i L#2 (32KB) + Core L#2
+      L2 L#3 (4096KB) + L1d L#3 (32KB) + L1i L#3 (32KB) + Core L#3
+  HostBridge
+    PCI 00:01.1 (IDE)
+      Block(Removable Media Device) "sr0"
+    PCI 00:02.0 (VGA)
+    PCI 00:03.0 (Other)
+    PCI 00:04.0 (SCSI)
+      Block "vda"
+    PCI 00:06.0 (Ethernet)
+      Net "ens6"
+  Misc(MemoryModule)
++ CHECK_RESULT 0 0 0 'hwloc-ls --ignore   failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --ignore   failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --no-caches
++ grep ' HostBridge'
+  HostBridge
++ CHECK_RESULT 0 0 0 'hwloc-ls --no-caches  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --no-caches  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --no-useless-caches
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --no-useless-caches  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --no-useless-caches  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --no-collapse
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --no-collapse  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --no-collapse  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --no-icaches
++ grep ' HostBridge'
+  HostBridge
++ CHECK_RESULT 0 0 0 'hwloc-ls --no-icaches  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --no-icaches  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --merge
++ grep HostBridge
+  HostBridge
++ CHECK_RESULT 0 0 0 'hwloc-ls --merge  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --merge  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --restrict 0x00000001
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --restrict  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --restrict  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --restrict binding
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --restrict binding  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --restrict binding  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls --restrict-flags 1
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --restrict-flags  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --restrict-flags  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:25:18 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:25:18 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:25:18 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:25:18 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:25:18 2023 - INFO  - End to restore the test environment.

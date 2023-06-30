@@ -1,0 +1,136 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 16:28:35 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'libguestfs virt-manager'
++ pkgs='libguestfs virt-manager'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager' --node 1 --tempfile ''
+Thu Jun 22 16:28:43 2023 - INFO  - pkgs:(libguestfs virt-manager) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 16:28:44 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:28:45 2023 - INFO  - Start to run test.
++ virt-v2v-copy-to-local --help
++ grep virt-v2v-copy-to-local
+oe_test_libguestfs_virt-v2v-copy-to-local.sh: line 29: virt-v2v-copy-to-local: command not found
++ CHECK_RESULT 0 0 0 'Check virt-v2v-copy-to-local --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check virt-v2v-copy-to-local --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ virt-v2v-copy-to-local -V
+oe_test_libguestfs_virt-v2v-copy-to-local.sh: line 31: virt-v2v-copy-to-local: command not found
+++ rpm -q libguestfs --queryformat '%{version}\n'
++ grep 1.49.5
++ CHECK_RESULT 1 0 0 'Check virt-v2v-copy-to-local -V failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check virt-v2v-copy-to-local -V failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check virt-v2v-copy-to-local -V failed'
++ LOG_ERROR 'Check virt-v2v-copy-to-local -V failed'
++ message='Check virt-v2v-copy-to-local -V failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-v2v-copy-to-local -V failed'
+Thu Jun 22 16:28:45 2023 - ERROR - Check virt-v2v-copy-to-local -V failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-v2v-copy-to-local.sh line 32'
++ message='oe_test_libguestfs_virt-v2v-copy-to-local.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-v2v-copy-to-local.sh line 32'
+Thu Jun 22 16:28:46 2023 - ERROR - oe_test_libguestfs_virt-v2v-copy-to-local.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-v2v-copy-to-local --version
+oe_test_libguestfs_virt-v2v-copy-to-local.sh: line 33: virt-v2v-copy-to-local: command not found
+++ rpm -q libguestfs --queryformat '%{version}\n'
++ grep 1.49.5
++ CHECK_RESULT 1 0 0 'Check virt-v2v-copy-to-local --version failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check virt-v2v-copy-to-local --version failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check virt-v2v-copy-to-local --version failed'
++ LOG_ERROR 'Check virt-v2v-copy-to-local --version failed'
++ message='Check virt-v2v-copy-to-local --version failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-v2v-copy-to-local --version failed'
+Thu Jun 22 16:28:46 2023 - ERROR - Check virt-v2v-copy-to-local --version failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-v2v-copy-to-local.sh line 34'
++ message='oe_test_libguestfs_virt-v2v-copy-to-local.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-v2v-copy-to-local.sh line 34'
+Thu Jun 22 16:28:47 2023 - ERROR - oe_test_libguestfs_virt-v2v-copy-to-local.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 16:28:47 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 16:28:48 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:28:48 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 16:28:49 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 22 16:28:49 2023 - INFO  - Finish to restore the test environment.

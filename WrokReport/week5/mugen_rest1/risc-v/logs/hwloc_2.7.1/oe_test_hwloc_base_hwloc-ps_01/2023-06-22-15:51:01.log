@@ -1,0 +1,252 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 15:51:03 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpl2gg1eae
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpl2gg1eae
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 15:51:36 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 15:51:36 2023 - INFO  - Start to run test.
++ hwloc-ps -a
++ grep Machine:0
+1	Machine:0		/sbin/init
+194	Machine:0		/usr/lib/systemd/systemd-journald
+221	Machine:0		/usr/lib/systemd/systemd-udevd
+275	Machine:0		/usr/lib/systemd/systemd-logind
+277	Machine:0		/usr/sbin/NetworkManager
+282	Machine:0		sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+292	Machine:0		/usr/sbin/crond
+293	Machine:0		/sbin/agetty
+294	Machine:0		/sbin/agetty
+313	Machine:0		sshd: root [priv]
+316	Machine:0		sshd: root@notty
+317	Machine:0		python3
+856	Machine:0		sh
+857	Machine:0		sudo
+858	Machine:0		tee
+859	Machine:0		bash
+903	Machine:0		python3
+904	Machine:0		bash
+937	Machine:0		hwloc-ps
+938	Machine:0		grep
++ CHECK_RESULT 0 0 0 'hwloc-ps -a failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps -a failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ ps -fC bash
+++ sed 1d
+++ awk 'NR==1 {print $2}'
++ Pid=859
+++ hwloc-ps --pid 859
++ out='859	Machine:0		bash'
++ echo 859 Machine:0 bash
++ grep 859
+859 Machine:0 bash
++ CHECK_RESULT 0 0 0 'hwloc-ps --pid failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --pid failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps --pid 859 -c
++ grep 0x
+859	0x0000000f		bash
++ CHECK_RESULT 0 0 0 'hwloc-ps -c failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps -c failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -e -a
++ grep hwloc-ps
+948	Core:3		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-ps -e failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps -e failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps --name bash
++ grep bash
+859	Machine:0		bash
+904	Machine:0		bash
++ CHECK_RESULT 0 0 0 'hwloc-ps --name failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --name failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a -p
++ grep hwloc-ps
+952	Machine:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-ps -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a -l
++ grep hwloc-ps
+954	Machine:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-ps -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -t -a
++ grep Machine:0
+1	Machine:0		/sbin/init
+194	Machine:0		/usr/lib/systemd/systemd-journald
+221	Machine:0		/usr/lib/systemd/systemd-udevd
+275	Machine:0		/usr/lib/systemd/systemd-logind
+277	Machine:0		/usr/sbin/NetworkManager
+ 277	Machine:0		NetworkManager
+ 278	Machine:0		gmain
+ 279	Machine:0		gdbus
+282	Machine:0		sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+292	Machine:0		/usr/sbin/crond
+293	Machine:0		/sbin/agetty
+294	Machine:0		/sbin/agetty
+313	Machine:0		sshd: root [priv]
+316	Machine:0		sshd: root@notty
+317	Machine:0		python3
+856	Machine:0		sh
+857	Machine:0		sudo
+858	Machine:0		tee
+859	Machine:0		bash
+903	Machine:0		python3
+904	Machine:0		bash
+956	Machine:0		hwloc-ps
+957	Machine:0		grep
++ CHECK_RESULT 0 0 0 'hwloc-ps -t failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps -t failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a --pid-cmd echo
++ grep bash
+859	Machine:0		bash	859
+904	Machine:0		bash	904
++ CHECK_RESULT 0 0 0 'hwloc-ps --pid-cmd failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --pid-cmd failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ps -a --whole-system
++ grep systemd
+194	Machine:0		/usr/lib/systemd/systemd-journald
+221	Machine:0		/usr/lib/systemd/systemd-udevd
+275	Machine:0		/usr/lib/systemd/systemd-logind
++ CHECK_RESULT 0 0 0 'hwloc-ps --whole-system failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ps --whole-system failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 15:51:38 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:51:39 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:51:39 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpl2gg1eae ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpl2gg1eae
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 15:51:50 2023 - INFO  - End to restore the test environment.

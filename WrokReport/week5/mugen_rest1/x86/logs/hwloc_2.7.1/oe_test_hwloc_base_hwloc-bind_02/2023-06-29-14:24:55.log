@@ -1,0 +1,256 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 14:24:55 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:24:55 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 14:24:55 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 29 14:24:55 2023 - INFO  - Start testing...
++ hwloc-bind --nodeset core:0 hwloc-info core:0
++ grep Core
+Core L#0
+ type = Core
+ full type = Core
++ CHECK_RESULT 0 0 0 'hwloc-bind --nodeset failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --nodeset failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --taskset core:0 lstopo
++ grep L#
+  Package L#0
+    NUMANode L#0 (P#0 3975MB)
+    L3 L#0 (16MB)
+      L2 L#0 (4096KB) + L1d L#0 (32KB) + L1i L#0 (32KB) + Core L#0 + PU L#0 (P#0)
+      L2 L#1 (4096KB) + L1d L#1 (32KB) + L1i L#1 (32KB) + Core L#1 + PU L#1 (P#1)
+      L2 L#2 (4096KB) + L1d L#2 (32KB) + L1i L#2 (32KB) + Core L#2 + PU L#2 (P#2)
+      L2 L#3 (4096KB) + L1d L#3 (32KB) + L1i L#3 (32KB) + Core L#3 + PU L#3 (P#3)
++ CHECK_RESULT 0 0 0 'hwloc-bind --taskset failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --taskset failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --whole-system core:0 echo demo
++ grep demo
+demo
++ CHECK_RESULT 0 0 0 'hwloc-bind --whole-system failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --whole-system failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind -v hwloc-ps -a
++ grep Machine
+assuming the command starts at hwloc-ps
+1	Machine:0		/usr/lib/systemd/systemd
+1231	Machine:0		/usr/lib/systemd/systemd-journald
+1272	Machine:0		/usr/lib/systemd/systemd-udevd
+1299	Machine:0		/sbin/auditd
+1356	Machine:0		/usr/lib/systemd/systemd-logind
+1367	Machine:0		/usr/sbin/NetworkManager
+1437	Machine:0		sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+1448	Machine:0		/usr/sbin/crond
+1452	Machine:0		/sbin/agetty
+1458	Machine:0		/sbin/agetty
+1533	Machine:0		/sbin/dhclient
+1614	Machine:0		/usr/sbin/rsyslogd
+1658	Machine:0		sshd: root [priv]
+1661	Machine:0		sshd: root@notty
+1662	Machine:0		python3
+2820	Machine:0		sh
+2821	Machine:0		sudo
+2822	Machine:0		tee
+2823	Machine:0		bash
+2867	Machine:0		python3
+2868	Machine:0		bash
+2887	Machine:0		hwloc-ps
+2888	Machine:0		grep
++ CHECK_RESULT 0 0 0 'hwloc-bind -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind -q core:0 hwloc-ps -a
++ grep hwloc-ps
+2889	Core:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-bind -q failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind -q failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --pid core:0 ps
++ grep PID
+    PID TTY          TIME CMD
++ CHECK_RESULT 0 0 0 'hwloc-bind --pid failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --pid failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --tid core:0 echo hello
++ grep hello
+hello
++ CHECK_RESULT 0 0 0 'hwloc-bind --tid failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --tid failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --restrict 0x00000001 hwloc-info
++ grep Package
+ depth 1:          1 Package (type #1)
++ CHECK_RESULT 0 0 0 'hwloc-bind ---restrict failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind ---restrict failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind --hbm core:0 hwloc-ps -a
++ grep Machine
+1	Machine:0		/usr/lib/systemd/systemd
+1231	Machine:0		/usr/lib/systemd/systemd-journald
+1272	Machine:0		/usr/lib/systemd/systemd-udevd
+1299	Machine:0		/sbin/auditd
+1356	Machine:0		/usr/lib/systemd/systemd-logind
+1367	Machine:0		/usr/sbin/NetworkManager
+1437	Machine:0		sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+1448	Machine:0		/usr/sbin/crond
+1452	Machine:0		/sbin/agetty
+1458	Machine:0		/sbin/agetty
+1533	Machine:0		/sbin/dhclient
+1614	Machine:0		/usr/sbin/rsyslogd
+1658	Machine:0		sshd: root [priv]
+1661	Machine:0		sshd: root@notty
+1662	Machine:0		python3
+2820	Machine:0		sh
+2821	Machine:0		sudo
+2822	Machine:0		tee
+2823	Machine:0		bash
+2867	Machine:0		python3
+2868	Machine:0		bash
+2898	Machine:0		grep
++ CHECK_RESULT 0 0 0 'hwloc-bind --hbm failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind --hbm failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-bind -f core:0 hwloc-ps -a
++ grep hwloc-ps
+2899	Core:0		hwloc-ps
++ CHECK_RESULT 0 0 0 'hwloc-bind -f failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-bind -f failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 14:24:56 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:24:56 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 14:24:56 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:24:56 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 14:24:56 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,160 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 16:34:17 2023 - INFO  - Start environmental preparation.
++ adduser -G wheel -Z sysadm_u example
+adduser: -Z requires SELinux enabled kernel
++ passwd example
+New password: Retype new password: Changing password for user example.
+passwd: all authentication tokens updated successfully.
++ LOG_INFO 'End of environmental preparation.'
++ message='End of environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation.'
+Thu Jun 22 16:34:17 2023 - INFO  - End of environmental preparation.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Thu Jun 22 16:34:18 2023 - INFO  - Start executing testcase.
++ setsebool -P ssh_sysadm_login on
+oe_test_selinux_confining_admin_to_sysadm_u.sh: line 34: setsebool: command not found
++ getsebool ssh_sysadm_login
++ grep 'ssh_sysadm_login --> on'
+getsebool:  SELinux is disabled
++ CHECK_RESULT 1 0 0 'set ssh_sysadm_login on failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='set ssh_sysadm_login on failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'set ssh_sysadm_login on failed'
++ LOG_ERROR 'set ssh_sysadm_login on failed'
++ message='set ssh_sysadm_login on failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'set ssh_sysadm_login on failed'
+Thu Jun 22 16:34:19 2023 - ERROR - set ssh_sysadm_login on failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_confining_admin_to_sysadm_u.sh line 36'
++ message='oe_test_selinux_confining_admin_to_sysadm_u.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_confining_admin_to_sysadm_u.sh line 36'
+Thu Jun 22 16:34:19 2023 - ERROR - oe_test_selinux_confining_admin_to_sysadm_u.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ semanage login -l
++ grep 'example.*sysadm_u.*s0'
+oe_test_selinux_confining_admin_to_sysadm_u.sh: line 37: semanage: command not found
++ CHECK_RESULT 1 0 0 'Check example sysadm_u failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check example sysadm_u failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check example sysadm_u failed'
++ LOG_ERROR 'Check example sysadm_u failed'
++ message='Check example sysadm_u failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check example sysadm_u failed'
+Thu Jun 22 16:34:20 2023 - ERROR - Check example sysadm_u failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_confining_admin_to_sysadm_u.sh line 38'
++ message='oe_test_selinux_confining_admin_to_sysadm_u.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_confining_admin_to_sysadm_u.sh line 38'
+Thu Jun 22 16:34:20 2023 - ERROR - oe_test_selinux_confining_admin_to_sysadm_u.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ expect
+spawn ssh example@localhost
+example@localhost's password: 
+Last login: Thu Jun 22 16:33:53 2023 from ::1
+
+
+Welcome to 6.1.8-3.oe2303.riscv64
+
+System information as of time: 	Thu Jun 22 04:34:32 PM CST 2023
+
+System load: 	[0;33;40m1.08[0m
+Processes: 	108
+Memory used: 	2.3%
+Swap used: 	0.0%
+Usage On: 	29%
+IP address: 	10.0.2.15
+Users online: 	1
+To run a command as administrator(user "root"),use "sudo <command>".
+[example@openeuler-riscv64 ~]$ id -Z
+id: --context (-Z) works only on an SELinux-enabled kernel
+[example@openeuler-riscv64 ~]$ sudo -i
+[sudo] password for example: 
+example is not in the sudoers file.
+[example@openeuler-riscv64 ~]$ id -Z
+id: --context (-Z) works only on an SELinux-enabled kernel
+[example@openeuler-riscv64 ~]$ + grep -c sysadm_u:sysadm_r:sysadm_t:s0 testlog
++ grep 2
++ CHECK_RESULT 1 0 0 'Check id -Z failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check id -Z failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check id -Z failed'
++ LOG_ERROR 'Check id -Z failed'
++ message='Check id -Z failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check id -Z failed'
+Thu Jun 22 16:34:43 2023 - ERROR - Check id -Z failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_selinux_confining_admin_to_sysadm_u.sh line 75'
++ message='oe_test_selinux_confining_admin_to_sysadm_u.sh line 75'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_selinux_confining_admin_to_sysadm_u.sh line 75'
+Thu Jun 22 16:34:43 2023 - ERROR - oe_test_selinux_confining_admin_to_sysadm_u.sh line 75
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Thu Jun 22 16:34:44 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 16:34:44 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 16:34:45 2023 - INFO  - start environment cleanup.
++ userdel -rfZ example
+userdel: -Z requires SELinux enabled kernel
++ rm -rf testlog
++ setsebool -P ssh_sysadm_login off
+oe_test_selinux_confining_admin_to_sysadm_u.sh: line 83: setsebool: command not found
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 16:34:45 2023 - INFO  - Finish environment cleanup!

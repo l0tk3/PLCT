@@ -1,0 +1,530 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment!'
++ message='Start to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment!'
+Thu Jun 22 17:46:22 2023 - INFO  - Start to prepare the test environment!
++ DNF_INSTALL rust
++ pkgs=rust
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs rust --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:02:52 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rust
+Error: Unable to find a match: rust'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:02:52 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rust
+Error: Unable to find a match: rust'
++ cp ../common/hello.rs ../common/lib.rs ../common/main.rs ../common/myhello.rs ../common/pub.rs ../common/test.rs ../common/war.rs ./
++ LOG_INFO 'End to prepare the test environment!'
++ message='End to prepare the test environment!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment!'
+Thu Jun 22 17:46:43 2023 - INFO  - End to prepare the test environment!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 17:46:43 2023 - INFO  - Start to run test.
++ rustdoc -h
++ grep Options
+oe_test_rustdoc.sh: line 31: rustdoc: command not found
++ CHECK_RESULT 1 0 0 'Help information printing failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Help information printing failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Help information printing failed'
++ LOG_ERROR 'Help information printing failed'
++ message='Help information printing failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Help information printing failed'
+Thu Jun 22 17:46:44 2023 - ERROR - Help information printing failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 32'
++ message='oe_test_rustdoc.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 32'
+Thu Jun 22 17:46:44 2023 - ERROR - oe_test_rustdoc.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc -V
++ grep -E '[0-9]'
+oe_test_rustdoc.sh: line 33: rustdoc: command not found
++ CHECK_RESULT 1 0 0 'Failed to output the version information'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to output the version information'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to output the version information'
++ LOG_ERROR 'Failed to output the version information'
++ message='Failed to output the version information'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to output the version information'
+Thu Jun 22 17:46:45 2023 - ERROR - Failed to output the version information
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 34'
++ message='oe_test_rustdoc.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 34'
+Thu Jun 22 17:46:45 2023 - ERROR - oe_test_rustdoc.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc -v -V
++ grep -E 'release|version|[0-9]'
+oe_test_rustdoc.sh: line 35: rustdoc: command not found
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 36'
++ message='oe_test_rustdoc.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 36'
+Thu Jun 22 17:46:46 2023 - ERROR - oe_test_rustdoc.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs -o doc --crate-name mycrate
+oe_test_rustdoc.sh: line 37: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 38'
++ message='oe_test_rustdoc.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 38'
+Thu Jun 22 17:46:46 2023 - ERROR - oe_test_rustdoc.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ test -d doc/mycrate
++ CHECK_RESULT 1 0 0 'Failed to specify the output path'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to specify the output path'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to specify the output path'
++ LOG_ERROR 'Failed to specify the output path'
++ message='Failed to specify the output path'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to specify the output path'
+Thu Jun 22 17:46:47 2023 - ERROR - Failed to specify the output path
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 40'
++ message='oe_test_rustdoc.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 40'
+Thu Jun 22 17:46:47 2023 - ERROR - oe_test_rustdoc.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs -L doc/
+oe_test_rustdoc.sh: line 41: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 42'
++ message='oe_test_rustdoc.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 42'
+Thu Jun 22 17:46:47 2023 - ERROR - oe_test_rustdoc.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc hello.rs --cfg hello
+oe_test_rustdoc.sh: line 43: rustdoc: command not found
++ test -d doc/hello
++ CHECK_RESULT 1 0 0 'Failed to pass configuration parameters'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to pass configuration parameters'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to pass configuration parameters'
++ LOG_ERROR 'Failed to pass configuration parameters'
++ message='Failed to pass configuration parameters'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to pass configuration parameters'
+Thu Jun 22 17:46:48 2023 - ERROR - Failed to pass configuration parameters
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 45'
++ message='oe_test_rustdoc.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 45'
+Thu Jun 22 17:46:48 2023 - ERROR - oe_test_rustdoc.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs --extern doc/
+oe_test_rustdoc.sh: line 46: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 47'
++ message='oe_test_rustdoc.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 47'
+Thu Jun 22 17:46:49 2023 - ERROR - oe_test_rustdoc.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs -C target_feature=+avx
+oe_test_rustdoc.sh: line 48: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 49'
++ message='oe_test_rustdoc.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 49'
+Thu Jun 22 17:46:49 2023 - ERROR - oe_test_rustdoc.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc --document-private-items test.rs
+oe_test_rustdoc.sh: line 50: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 51'
++ message='oe_test_rustdoc.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 51'
+Thu Jun 22 17:46:50 2023 - ERROR - oe_test_rustdoc.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs --test
++ grep -E 'running|tests'
+oe_test_rustdoc.sh: line 52: rustdoc: command not found
++ CHECK_RESULT 1 0 0 'Failed to run the test code'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to run the test code'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to run the test code'
++ LOG_ERROR 'Failed to run the test code'
++ message='Failed to run the test code'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to run the test code'
+Thu Jun 22 17:46:50 2023 - ERROR - Failed to run the test code
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 53'
++ message='oe_test_rustdoc.sh line 53'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 53'
+Thu Jun 22 17:46:51 2023 - ERROR - oe_test_rustdoc.sh line 53
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs --html-in-header doc/hello/all.html
+oe_test_rustdoc.sh: line 54: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 55'
++ message='oe_test_rustdoc.sh line 55'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 55'
+Thu Jun 22 17:46:51 2023 - ERROR - oe_test_rustdoc.sh line 55
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs --html-after-content doc/hello/all.html
+oe_test_rustdoc.sh: line 56: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 57'
++ message='oe_test_rustdoc.sh line 57'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 57'
+Thu Jun 22 17:46:52 2023 - ERROR - oe_test_rustdoc.sh line 57
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs --html-after-content doc/hello/all.html
+oe_test_rustdoc.sh: line 58: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 59'
++ message='oe_test_rustdoc.sh line 59'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 59'
+Thu Jun 22 17:46:52 2023 - ERROR - oe_test_rustdoc.sh line 59
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs --markdown-no-toc
+oe_test_rustdoc.sh: line 60: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 61'
++ message='oe_test_rustdoc.sh line 61'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 61'
+Thu Jun 22 17:46:53 2023 - ERROR - oe_test_rustdoc.sh line 61
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc test.rs -e doc/dark.css
+oe_test_rustdoc.sh: line 62: rustdoc: command not found
++ CHECK_RESULT 127
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 63'
++ message='oe_test_rustdoc.sh line 63'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 63'
+Thu Jun 22 17:46:53 2023 - ERROR - oe_test_rustdoc.sh line 63
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc lib.rs --crate-type=lib -W missing-docs
++ grep warning
++ CHECK_RESULT 1 0 0 'Failed to set Linter option Warn'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Warn'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to set Linter option Warn'
++ LOG_ERROR 'Failed to set Linter option Warn'
++ message='Failed to set Linter option Warn'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to set Linter option Warn'
+Thu Jun 22 17:46:54 2023 - ERROR - Failed to set Linter option Warn
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 65'
++ message='oe_test_rustdoc.sh line 65'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 65'
+Thu Jun 22 17:46:54 2023 - ERROR - oe_test_rustdoc.sh line 65
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc lib.rs --crate-type=lib -A missing-docs -o hello_A
+oe_test_rustdoc.sh: line 66: rustdoc: command not found
++ test -d hello_A
++ CHECK_RESULT 1 0 0 'Failed to set Linter option Allow'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Allow'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to set Linter option Allow'
++ LOG_ERROR 'Failed to set Linter option Allow'
++ message='Failed to set Linter option Allow'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to set Linter option Allow'
+Thu Jun 22 17:46:55 2023 - ERROR - Failed to set Linter option Allow
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 68'
++ message='oe_test_rustdoc.sh line 68'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 68'
+Thu Jun 22 17:46:55 2023 - ERROR - oe_test_rustdoc.sh line 68
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc lib.rs --crate-type=lib -D missing-docs
++ grep error
++ CHECK_RESULT 1 0 0 'Failed to set Linter option Deny'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Deny'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to set Linter option Deny'
++ LOG_ERROR 'Failed to set Linter option Deny'
++ message='Failed to set Linter option Deny'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to set Linter option Deny'
+Thu Jun 22 17:46:56 2023 - ERROR - Failed to set Linter option Deny
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 70'
++ message='oe_test_rustdoc.sh line 70'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 70'
+Thu Jun 22 17:46:56 2023 - ERROR - oe_test_rustdoc.sh line 70
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc lib.rs --crate-type=lib -F missing-docs
++ grep error
++ CHECK_RESULT 1 0 0 'Failed to set Linter option Forbit'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter option Forbit'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to set Linter option Forbit'
++ LOG_ERROR 'Failed to set Linter option Forbit'
++ message='Failed to set Linter option Forbit'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to set Linter option Forbit'
+Thu Jun 22 17:46:57 2023 - ERROR - Failed to set Linter option Forbit
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 72'
++ message='oe_test_rustdoc.sh line 72'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 72'
+Thu Jun 22 17:46:57 2023 - ERROR - oe_test_rustdoc.sh line 72
++ '[' 0 -eq 1 ']'
++ return 0
++ rustdoc war.rs --cap-lints warn
+oe_test_rustdoc.sh: line 73: rustdoc: command not found
++ CHECK_RESULT 127 0 0 'Failed to set Linter level warning'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Failed to set Linter level warning'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Failed to set Linter level warning'
++ LOG_ERROR 'Failed to set Linter level warning'
++ message='Failed to set Linter level warning'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to set Linter level warning'
+Thu Jun 22 17:46:57 2023 - ERROR - Failed to set Linter level warning
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rustdoc.sh line 74'
++ message='oe_test_rustdoc.sh line 74'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rustdoc.sh line 74'
+Thu Jun 22 17:46:58 2023 - ERROR - oe_test_rustdoc.sh line 74
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 17:46:58 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 21
++ test 21 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 17:46:59 2023 - ERROR - failed to execute the case.
++ exit 21
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 22 17:46:59 2023 - INFO  - start environment cleanup.
++ rm -rf ./hello.rs ./lib.rs ./main.rs ./myhello.rs ./pub.rs ./test.rs ./war.rs 'doc*' hello.rs
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:02:52 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rust
+Error: Unable to find a match: rust ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:02:52 ago on Thu 22 Jun 2023 05:43:49 PM CST.
+No match for argument: rust
+Error: Unable to find a match: rust'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:02:52 ago on Thu 22 Jun 2023 05:43:49 PM CST.\nNo match for argument: rust\nError: Unable to find a match: rust'
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 22 17:47:02 2023 - INFO  - Finish environment cleanup!

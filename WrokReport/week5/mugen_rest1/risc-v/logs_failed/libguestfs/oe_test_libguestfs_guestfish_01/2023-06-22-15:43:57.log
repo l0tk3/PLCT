@@ -1,0 +1,347 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 15:44:00 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:01:01 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:01:01 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+++ uname -i
++ test riscv64X == aarch64X
++ systemctl start libvirtd
+Failed to start libvirtd.service: Unit libvirtd.service not found.
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get riscv64 qcow2 libguestfs pkg'
++ message='get riscv64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get riscv64 qcow2 libguestfs pkg'
+Thu Jun 22 15:44:23 2023 - INFO  - get riscv64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 ']'
+++ arch
+++ arch
+++ arch
++ wget https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz --no-check-certificate -O ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+--2023-06-22 15:44:23--  https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+Resolving repo.huaweicloud.com (repo.huaweicloud.com)... 58.205.215.42, 121.194.10.211
+Connecting to repo.huaweicloud.com (repo.huaweicloud.com)|58.205.215.42|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2023-06-22 15:44:25 ERROR 404: Not Found.
+
+++ arch
++ xz -d ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+xz: ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz: File format not recognized
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+cp: cannot stat './common/openEuler-20.03-LTS-SP3-riscv64.qcow2': No such file or directory
++ virt-install --name openEuler-2003 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 23: virt-install: command not found
++ virsh destroy openEuler-2003
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 24: virsh: command not found
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 15:44:25 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 15:44:26 2023 - INFO  - Start to run test.
++ guestfish -h
++ grep help
++ CHECK_RESULT 1 0 0 'Check guestfish -h failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -h failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish -h failed'
++ LOG_ERROR 'Check guestfish -h failed'
++ message='Check guestfish -h failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish -h failed'
+Thu Jun 22 15:44:26 2023 - ERROR - Check guestfish -h failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 32'
++ message='oe_test_libguestfs_guestfish_01.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 32'
+Thu Jun 22 15:44:27 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish -h cat
++ grep cat
+oe_test_libguestfs_guestfish_01.sh: line 33: guestfish: command not found
++ CHECK_RESULT 1 0 0 'Check guestfish -h cat failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -h cat failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish -h cat failed'
++ LOG_ERROR 'Check guestfish -h cat failed'
++ message='Check guestfish -h cat failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish -h cat failed'
+Thu Jun 22 15:44:27 2023 - ERROR - Check guestfish -h cat failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 34'
++ message='oe_test_libguestfs_guestfish_01.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 34'
+Thu Jun 22 15:44:28 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish --csh -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+oe_test_libguestfs_guestfish_01.sh: line 35: guestfish: command not found
++ CHECK_RESULT 127 0 0 'Check guestfish --csh failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestfish --csh failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestfish --csh failed'
++ LOG_ERROR 'Check guestfish --csh failed'
++ message='Check guestfish --csh failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish --csh failed'
+Thu Jun 22 15:44:29 2023 - ERROR - Check guestfish --csh failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 36'
++ message='oe_test_libguestfs_guestfish_01.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 36'
+Thu Jun 22 15:44:29 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish -c test:///default -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+oe_test_libguestfs_guestfish_01.sh: line 37: guestfish: command not found
++ CHECK_RESULT 127 0 0 'Check guestfish -c failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -c failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestfish -c failed'
++ LOG_ERROR 'Check guestfish -c failed'
++ message='Check guestfish -c failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish -c failed'
+Thu Jun 22 15:44:30 2023 - ERROR - Check guestfish -c failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 38'
++ message='oe_test_libguestfs_guestfish_01.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 38'
+Thu Jun 22 15:44:30 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish -d openEuler-2003 -i cat /etc/group
+oe_test_libguestfs_guestfish_01.sh: line 39: guestfish: command not found
++ CHECK_RESULT 127 0 0 'Check guestfish -d failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -d failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestfish -d failed'
++ LOG_ERROR 'Check guestfish -d failed'
++ message='Check guestfish -d failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish -d failed'
+Thu Jun 22 15:44:31 2023 - ERROR - Check guestfish -d failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 40'
++ message='oe_test_libguestfs_guestfish_01.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 40'
+Thu Jun 22 15:44:31 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish --echo-keys -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+oe_test_libguestfs_guestfish_01.sh: line 41: guestfish: command not found
++ CHECK_RESULT 127 0 0 'Check guestfish --echo-keys failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestfish --echo-keys failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestfish --echo-keys failed'
++ LOG_ERROR 'Check guestfish --echo-keys failed'
++ message='Check guestfish --echo-keys failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish --echo-keys failed'
+Thu Jun 22 15:44:32 2023 - ERROR - Check guestfish --echo-keys failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 42'
++ message='oe_test_libguestfs_guestfish_01.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 42'
+Thu Jun 22 15:44:33 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ echo --help
++ guestfish -f file.txt -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+oe_test_libguestfs_guestfish_01.sh: line 44: guestfish: command not found
++ CHECK_RESULT 127 0 0 'Check guestfish -f failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestfish -f failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestfish -f failed'
++ LOG_ERROR 'Check guestfish -f failed'
++ message='Check guestfish -f failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish -f failed'
+Thu Jun 22 15:44:33 2023 - ERROR - Check guestfish -f failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 45'
++ message='oe_test_libguestfs_guestfish_01.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 45'
+Thu Jun 22 15:44:34 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish --format=qcow2 -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -i cat /etc/group
+oe_test_libguestfs_guestfish_01.sh: line 46: guestfish: command not found
++ CHECK_RESULT 127 0 0 'Check guestfish --format failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestfish --format failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestfish --format failed'
++ LOG_ERROR 'Check guestfish --format failed'
++ message='Check guestfish --format failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish --format failed'
+Thu Jun 22 15:44:34 2023 - ERROR - Check guestfish --format failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 47'
++ message='oe_test_libguestfs_guestfish_01.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 47'
+Thu Jun 22 15:44:35 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ guestfish --help
++ grep 'guest filesystem shell'
++ CHECK_RESULT 1 0 0 'Check guestfish --help failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestfish --help failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestfish --help failed'
++ LOG_ERROR 'Check guestfish --help failed'
++ message='Check guestfish --help failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestfish --help failed'
+Thu Jun 22 15:44:35 2023 - ERROR - Check guestfish --help failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_guestfish_01.sh line 49'
++ message='oe_test_libguestfs_guestfish_01.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_guestfish_01.sh line 49'
+Thu Jun 22 15:44:36 2023 - ERROR - oe_test_libguestfs_guestfish_01.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 15:44:37 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 9
++ test 9 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 15:44:37 2023 - ERROR - failed to execute the case.
++ exit 9
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:44:38 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test
++ virsh start openEuler-2003
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 48: virsh: command not found
++ virsh destroy openEuler-2003
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 49: virsh: command not found
++ virsh undefine openEuler-2003 --nvram
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 50: virsh: command not found
++ unset LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:01:01 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:01:01 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:01:01 ago on Thu 22 Jun 2023 03:43:21 PM CST.\nPackage python3-paramiko-2.11.0-1.oe2303.noarch is already installed.\nNo match for argument: edk2-devel\nError: Unable to find a match: edk2-devel'
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*' file.txt
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 22 15:44:41 2023 - INFO  - Finish to restore the test environment.

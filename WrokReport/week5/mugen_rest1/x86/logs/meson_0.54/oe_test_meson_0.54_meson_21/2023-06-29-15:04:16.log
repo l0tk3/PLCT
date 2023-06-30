@@ -1,0 +1,213 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 29 15:04:16 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar'
++ pkgs='meson tar'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar' --node 1 --tempfile ''
+Thu Jun 29 15:04:17 2023 - INFO  - pkgs:(meson tar) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ cd common/0.54/
++ tar -xf kwargs.tgz
++ cd kwargs/
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 29 15:04:17 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 29 15:04:17 2023 - INFO  - Start testing...
++ meson rewrite kwargs --help
++ grep 'usage: meson rewrite kwargs'
+usage: meson rewrite kwargs [-h]
++ CHECK_RESULT 0 0 0 'meson rewrite kwargs --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite kwargs --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson rewrite kwargs -h
++ grep 'usage: meson rewrite kwargs'
+usage: meson rewrite kwargs [-h]
++ CHECK_RESULT 0 0 0 'meson rewrite kwargs -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite kwargs -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson rewrite kwargs info project /
++ grep '"version": "0.0.1"'
+      "version": "0.0.1"
++ CHECK_RESULT 0 0 0 'meson rewrite kwargs info project failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite kwargs info project failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson rewrite kwargs info target tgt1
++ grep '"build_by_default": true'
+      "build_by_default": true
++ CHECK_RESULT 0 0 0 'meson rewrite kwargs info target failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite kwargs info target failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson rewrite kwargs info dependency dep1
++ grep '"required": false'
+      "required": false
++ CHECK_RESULT 0 0 0 'meson rewrite kwargs info dependency failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite kwargs info dependency failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson rewrite kwargs set project / license GPL
++ cat meson.build
++ grep 'license : '\''GPL'\'''
+project('rewritetest', 'cpp', version : '0.0.1', license : 'GPL')
++ CHECK_RESULT 0 0 0 'meson rewrite kwargs set project failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite kwargs set project failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson rewrite kwargs add project / license MIT
++ cat meson.build
++ grep 'license : \['\''GPL'\'', '\''MIT'\'']'
+license : ['GPL', 'MIT']
++ CHECK_RESULT 0 0 0 'meson rewrite kwargs add project failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite kwargs add project failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson rewrite kwargs remove project / license MIT
++ cat meson.build
++ grep 'license : '\''GPL'\'')'
+project('rewritetest', 'cpp', version : '0.0.1', license : 'GPL')
++ CHECK_RESULT 0 0 0 'meson rewrite kwargs remove project failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite kwargs remove project failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson rewrite kwargs delete project / version null
++ cat meson.build
++ grep 'version : '\''0.0.1'\'''
++ CHECK_RESULT 1 1 0 'meson rewrite kwargs delete project failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='meson rewrite kwargs delete project failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ meson rewrite default-options set cpp_std c++14 buildtype release debug true
++ cat meson.build
++ grep ''\''debug=True'\'''
+default_options : ['buildtype=release', 'cpp_std=c++14', 'debug=True']
++ CHECK_RESULT 0 0 0 'meson rewrite default-options set failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson rewrite default-options set failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 29 15:04:20 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 15:04:20 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 15:04:21 2023 - INFO  - Start to restore the test environment.
++ cd ../
++ rm -rf kwargs
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 15:04:21 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 29 15:04:21 2023 - INFO  - End to restore the test environment.

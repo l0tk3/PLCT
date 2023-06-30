@@ -1,0 +1,237 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 15:48:24 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp1f1odeqv
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp1f1odeqv
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 15:48:57 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 15:48:57 2023 - INFO  - Start to run test.
++ hwloc-info --topology
++ grep depth
+depth 0:           1 Machine (type #0)
+ depth 1:          1 Package (type #1)
+  depth 2:         4 Core (type #2)
+   depth 3:        4 PU (type #3)
+Special depth -3:  1 NUMANode (type #13)
+Special depth -6:  2 OSDev (type #16)
++ CHECK_RESULT 0 0 0 'hwloc-info --topology failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --topology failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info --support
++ grep cpubind
+cpubind:set_thisproc_cpubind = 1
+cpubind:get_thisproc_cpubind = 1
+cpubind:set_proc_cpubind = 1
+cpubind:get_proc_cpubind = 1
+cpubind:set_thisthread_cpubind = 1
+cpubind:get_thisthread_cpubind = 1
+cpubind:set_thread_cpubind = 1
+cpubind:get_thread_cpubind = 1
+cpubind:get_thisproc_last_cpu_location = 1
+cpubind:get_proc_last_cpu_location = 1
+cpubind:get_thisthread_last_cpu_location = 1
++ CHECK_RESULT 0 0 0 'hwloc-info --support failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --support failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info -p
++ grep 'type #1'
+ depth 1:          1 Package (type #1)
+Special depth -3:  1 NUMANode (type #13)
+Special depth -6:  2 OSDev (type #16)
++ CHECK_RESULT 0 0 0 'hwloc-info -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info -l
++ grep depth
+depth 0:           1 Machine (type #0)
+ depth 1:          1 Package (type #1)
+  depth 2:         4 Core (type #2)
+   depth 3:        4 PU (type #3)
+Special depth -3:  1 NUMANode (type #13)
+Special depth -6:  2 OSDev (type #16)
++ CHECK_RESULT 0 0 0 'hwloc-info -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info --children machine:0
++ grep 'type = Package'
+ type = Package
+ full type = Package
++ CHECK_RESULT 0 0 0 'hwloc-info --children failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --children failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info --descendants pu core:0
++ grep 'type = PU'
+ type = PU
+ full type = PU
++ CHECK_RESULT 0 0 0 'hwloc-info --descendants <type> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --descendants <type> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-info --descendants pu machine:0
++ grep 'type = Core'
++ CHECK_RESULT 1 1 0 'hwloc-info --descendants <type> failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='hwloc-info --descendants <type> failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ hwloc-info --no-icaches
++ grep iCache
++ CHECK_RESULT 1 1 0 'hwloc-info --no-icaches failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='hwloc-info --no-icaches failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ hwloc-info --no-io
++ grep Bridge
++ CHECK_RESULT 1 1 0 'hwloc-info --no-io failed'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='hwloc-info --no-io failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ hwloc-info --no-bridges
++ grep PU
+   depth 3:        4 PU (type #3)
++ CHECK_RESULT 0 0 0 'hwloc-info --no-bridges failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --no-bridges failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -i 'node:2 8' ./old.xml
++ hwloc-info --input-format xml -i old.xml
++ grep '2 NUMANode'
+Special depth -3:  2 NUMANode (type #13)
++ CHECK_RESULT 0 0 0 'hwloc-info --input-format failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-info --input-format failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 15:48:59 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 15:48:59 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:49:00 2023 - INFO  - Start to restore the test environment.
++ rm -rf old.xml
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp1f1odeqv ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp1f1odeqv
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 15:49:10 2023 - INFO  - End to restore the test environment.

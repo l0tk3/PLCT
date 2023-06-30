@@ -1,0 +1,172 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 15:22:01 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp2gty12ly
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp2gty12ly
+++ uname -i
++ test x86_64X == aarch64X
++ systemctl start libvirtd
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get x86_64 qcow2 libguestfs pkg'
++ message='get x86_64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get x86_64 qcow2 libguestfs pkg'
+Thu Jun 29 15:22:34 2023 - INFO  - get x86_64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 ']'
++ LOG_INFO 'qcow2 file already exists'
++ message='qcow2 file already exists'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'qcow2 file already exists'
+Thu Jun 29 15:22:34 2023 - INFO  - qcow2 file already exists
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-x86_64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
++ cp /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
++ qemu-img create -f qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2 50G
+Formatting '/home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=53687091200 lazy_refcounts=off refcount_bits=16 cache=writeback
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 15:22:49 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 15:22:49 2023 - INFO  - Start to run test.
++ virt-resize -V
+oe_test_libguestfs_virt-resize_03.sh: line 33: virt-resize: command not found
+++ rpm -q libguestfs --queryformat '%{version}\n'
++ grep 1.49.5
++ CHECK_RESULT 1 0 0 'Check virt-resize -V failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize -V failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check virt-resize -V failed'
++ LOG_ERROR 'Check virt-resize -V failed'
++ message='Check virt-resize -V failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize -V failed'
+Thu Jun 29 15:22:49 2023 - ERROR - Check virt-resize -V failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_03.sh line 34'
++ message='oe_test_libguestfs_virt-resize_03.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_03.sh line 34'
+Thu Jun 29 15:22:49 2023 - ERROR - oe_test_libguestfs_virt-resize_03.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize -v /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_03.sh: line 35: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize -v failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize -v failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize -v failed'
++ LOG_ERROR 'Check virt-resize -v failed'
++ message='Check virt-resize -v failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize -v failed'
+Thu Jun 29 15:22:49 2023 - ERROR - Check virt-resize -v failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_03.sh line 36'
++ message='oe_test_libguestfs_virt-resize_03.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_03.sh line 36'
+Thu Jun 29 15:22:49 2023 - ERROR - oe_test_libguestfs_virt-resize_03.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ virt-resize -x /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3-1.qcow2
+oe_test_libguestfs_virt-resize_03.sh: line 37: virt-resize: command not found
++ CHECK_RESULT 127 0 0 'Check virt-resize -x failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check virt-resize -x failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check virt-resize -x failed'
++ LOG_ERROR 'Check virt-resize -x failed'
++ message='Check virt-resize -x failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check virt-resize -x failed'
+Thu Jun 29 15:22:49 2023 - ERROR - Check virt-resize -x failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfs_virt-resize_03.sh line 38'
++ message='oe_test_libguestfs_virt-resize_03.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfs_virt-resize_03.sh line 38'
+Thu Jun 29 15:22:49 2023 - ERROR - oe_test_libguestfs_virt-resize_03.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 29 15:22:49 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 29 15:22:49 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 29 15:22:49 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test_resize
++ unset LIBGUESTFS_BACKEND LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp2gty12ly ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp2gty12ly
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*'
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 29 15:22:52 2023 - INFO  - Finish to restore the test environment.

@@ -1,0 +1,201 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:25:38 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp7945i6au
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp7945i6au
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:26:11 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 16:26:11 2023 - INFO  - Start to run test.
++ hwloc-ls --help
++ grep 'Usage: hwloc-ls'
+Usage: hwloc-ls [ options ] ... [ filename.format ]
++ CHECK_RESULT 0 0 0 'hwloc-ls --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-ls -l --export-xml-flags 1
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'hwloc-ls --export-xml-flags failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-ls --export-xml-flags failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo --help
++ grep 'Usage: lstopo'
+Usage: lstopo [ options ] ... [ filename.format ]
++ CHECK_RESULT 0 0 0 'lstopo --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --export-xml-flags 1
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo --export-xml-flags failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --export-xml-flags failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics --help
++ grep 'Usage: lstopo-no-graphics'
+Usage: lstopo-no-graphics [ options ] ... [ filename.format ]
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --help failed '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --help failed '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo-no-graphics -l --export-xml-flags 1
++ grep Machine
+Machine (3937MB total)
++ CHECK_RESULT 0 0 0 'lstopo-no-graphics --export-xml-flags failed '
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo-no-graphics --export-xml-flags failed '
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-patch -h
++ grep 'Usage: hwloc-patch'
+Usage: hwloc-patch [options] [<old.xml> | refname] [<diff.xml> | -] [<output.xml>]
++ CHECK_RESULT 0 0 0 'hwloc-patch -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-patch -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-patch --help
++ grep 'Usage: hwloc-patch'
+Usage: hwloc-patch [options] [<old.xml> | refname] [<diff.xml> | -] [<output.xml>]
++ CHECK_RESULT 0 0 0 'hwloc-patch --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-patch --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-diff -h
++ grep 'hwloc-diff \[options\]'
+Usage: hwloc-diff [options] <old.xml> <new.xml> [<output.diff.xml>]
++ CHECK_RESULT 0 0 0 'hwloc-diff --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-diff --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ hwloc-diff --help
++ grep 'hwloc-diff \[options\]'
+Usage: hwloc-diff [options] <old.xml> <new.xml> [<output.diff.xml>]
++ CHECK_RESULT 0 0 0 'hwloc-diff -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='hwloc-diff -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 16:26:12 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 22 16:26:13 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:26:13 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp7945i6au ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp7945i6au
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:26:25 2023 - INFO  - End to restore the test environment.

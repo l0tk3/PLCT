@@ -1,0 +1,294 @@
++ source /root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 22 15:43:04 2023 - INFO  - Start environmental preparation.
++ libguestfs_pre_test
++ libguestfs_pre_test_no_install
++ DNF_INSTALL 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ pkgs='libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'libguestfs virt-manager qemu libvirt openssl-devel numactl numactl-devel libcap-ng-devel traceroute iperf3 python3-paramiko edk2-devel qemu-guest-agent virt-install.noarch' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:00:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:00:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+++ uname -i
++ test riscv64X == aarch64X
++ systemctl start libvirtd
+Failed to start libvirtd.service: Unit libvirtd.service not found.
++ mkdir -p /home/kvm/images
++ chown root:root /home/kvm/images
++ chmod 755 /home/kvm/images
+++ arch
++ LOG_INFO 'get riscv64 qcow2 libguestfs pkg'
++ message='get riscv64 qcow2 libguestfs pkg'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'get riscv64 qcow2 libguestfs pkg'
+Thu Jun 22 15:43:38 2023 - INFO  - get riscv64 qcow2 libguestfs pkg
+++ arch
++ '[' '!' -f ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 ']'
+++ arch
+++ arch
+++ arch
++ wget https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz --no-check-certificate -O ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+--2023-06-22 15:43:38--  https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP3/virtual_machine_img/riscv64/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+Resolving repo.huaweicloud.com (repo.huaweicloud.com)... 119.167.243.54, 119.167.243.55, 119.167.243.52, ...
+Connecting to repo.huaweicloud.com (repo.huaweicloud.com)|119.167.243.54|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2023-06-22 15:43:39 ERROR 404: Not Found.
+
+++ arch
++ xz -d ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz
+xz: ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2.xz: File format not recognized
+++ arch
++ cp ./common/openEuler-20.03-LTS-SP3-riscv64.qcow2 /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2
+cp: cannot stat './common/openEuler-20.03-LTS-SP3-riscv64.qcow2': No such file or directory
++ virt-install --name openEuler-2003 --ram 2048 --vcpus=2 --disk path=/home/kvm/images/openEuler-20.03-LTS-SP3.qcow2,bus=virtio,format=qcow2 --network=bridge:virbr0 --force --import --autostart --noautoconsole --graphics none
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 23: virt-install: command not found
++ virsh destroy openEuler-2003
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 24: virsh: command not found
++ unset LIBGUESTFS_BACKEND
++ export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1
++ LIBGUESTFS_DEBUG=1
++ LIBGUESTFS_TRACE=1
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 22 15:43:40 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 15:43:41 2023 - INFO  - Start to run test.
+++ fdisk -l
+++ grep Device -A 1
+++ grep -o '/dev/[a-z0-9]*'
++ device=/dev/vda1
++ guestunmount --help
++ grep guestunmount
+oe_test_libguestfish_guestunmount.sh: line 32: guestunmount: command not found
++ CHECK_RESULT 1 0 0 'Check guestunmount --help failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check guestunmount --help failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check guestunmount --help failed'
++ LOG_ERROR 'Check guestunmount --help failed'
++ message='Check guestunmount --help failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestunmount --help failed'
+Thu Jun 22 15:43:41 2023 - ERROR - Check guestunmount --help failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfish_guestunmount.sh line 33'
++ message='oe_test_libguestfish_guestunmount.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfish_guestunmount.sh line 33'
+Thu Jun 22 15:43:42 2023 - ERROR - oe_test_libguestfish_guestunmount.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ guestmount -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -m /dev/vda1 --ro /mnt
+oe_test_libguestfish_guestunmount.sh: line 34: guestmount: command not found
++ guestunmount -q /mnt
+oe_test_libguestfish_guestunmount.sh: line 35: guestunmount: command not found
++ CHECK_RESULT 127 0 0 'Check guestunmount -q failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestunmount -q failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestunmount -q failed'
++ LOG_ERROR 'Check guestunmount -q failed'
++ message='Check guestunmount -q failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestunmount -q failed'
+Thu Jun 22 15:43:42 2023 - ERROR - Check guestunmount -q failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfish_guestunmount.sh line 36'
++ message='oe_test_libguestfish_guestunmount.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfish_guestunmount.sh line 36'
+Thu Jun 22 15:43:43 2023 - ERROR - oe_test_libguestfish_guestunmount.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ guestmount -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -m /dev/vda1 --ro /mnt
+oe_test_libguestfish_guestunmount.sh: line 37: guestmount: command not found
++ guestunmount --no-retry /mnt/
+oe_test_libguestfish_guestunmount.sh: line 38: guestunmount: command not found
++ CHECK_RESULT 127 0 0 'Check guestunmount --no-retry failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestunmount --no-retry failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestunmount --no-retry failed'
++ LOG_ERROR 'Check guestunmount --no-retry failed'
++ message='Check guestunmount --no-retry failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestunmount --no-retry failed'
+Thu Jun 22 15:43:44 2023 - ERROR - Check guestunmount --no-retry failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfish_guestunmount.sh line 39'
++ message='oe_test_libguestfish_guestunmount.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfish_guestunmount.sh line 39'
+Thu Jun 22 15:43:44 2023 - ERROR - oe_test_libguestfish_guestunmount.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ guestmount -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -m /dev/vda1 --ro /mnt
+oe_test_libguestfish_guestunmount.sh: line 40: guestmount: command not found
++ guestunmount --retry=5 /mnt/
+oe_test_libguestfish_guestunmount.sh: line 41: guestunmount: command not found
++ CHECK_RESULT 127 0 0 'Check guestunmount --retry failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestunmount --retry failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestunmount --retry failed'
++ LOG_ERROR 'Check guestunmount --retry failed'
++ message='Check guestunmount --retry failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestunmount --retry failed'
+Thu Jun 22 15:43:45 2023 - ERROR - Check guestunmount --retry failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfish_guestunmount.sh line 42'
++ message='oe_test_libguestfish_guestunmount.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfish_guestunmount.sh line 42'
+Thu Jun 22 15:43:45 2023 - ERROR - oe_test_libguestfish_guestunmount.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ guestmount -a /home/kvm/images/openEuler-20.03-LTS-SP3.qcow2 -m /dev/vda1 --ro /mnt
+oe_test_libguestfish_guestunmount.sh: line 43: guestmount: command not found
++ guestunmount -v /mnt
+oe_test_libguestfish_guestunmount.sh: line 44: guestunmount: command not found
++ CHECK_RESULT 127 0 0 'Check guestunmount -v failed'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Check guestunmount -v failed'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Check guestunmount -v failed'
++ LOG_ERROR 'Check guestunmount -v failed'
++ message='Check guestunmount -v failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestunmount -v failed'
+Thu Jun 22 15:43:46 2023 - ERROR - Check guestunmount -v failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfish_guestunmount.sh line 45'
++ message='oe_test_libguestfish_guestunmount.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfish_guestunmount.sh line 45'
+Thu Jun 22 15:43:46 2023 - ERROR - oe_test_libguestfish_guestunmount.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ guestunmount -V
+++ rpm -q libguestfs --queryformat '%{version}\n'
++ grep package libguestfs is not installed
+grep: libguestfs: No such file or directory
+grep: is: No such file or directory
+grep: not: No such file or directory
+grep: installed: No such file or directory
++ CHECK_RESULT 2 0 0 'Check guestunmount -V failed'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Check guestunmount -V failed'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Check guestunmount -V failed'
++ LOG_ERROR 'Check guestunmount -V failed'
++ message='Check guestunmount -V failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check guestunmount -V failed'
+Thu Jun 22 15:43:47 2023 - ERROR - Check guestunmount -V failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_libguestfish_guestunmount.sh line 47'
++ message='oe_test_libguestfish_guestunmount.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_libguestfish_guestunmount.sh line 47'
+Thu Jun 22 15:43:48 2023 - ERROR - oe_test_libguestfish_guestunmount.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 22 15:43:48 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 15:43:49 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 15:43:49 2023 - INFO  - Start to restore the test environment.
++ libguestfs_post_test
++ virsh start openEuler-2003
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 48: virsh: command not found
++ virsh destroy openEuler-2003
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 49: virsh: command not found
++ virsh undefine openEuler-2003 --nvram
+/root/mugen/testcases/cli-test/libguestfs/common/common_libguestfs.sh: line 50: virsh: command not found
++ unset LIBGUESTFS_DEBUG LIBGUESTFS_TRACE
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:00:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:00:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.
+Package python3-paramiko-2.11.0-1.oe2303.noarch is already installed.
+No match for argument: edk2-devel
+Error: Unable to find a match: edk2-devel'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 173, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 144, in rpm_remove
+    with open(tmpfile, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:00:15 ago on Thu 22 Jun 2023 03:43:21 PM CST.\nPackage python3-paramiko-2.11.0-1.oe2303.noarch is already installed.\nNo match for argument: edk2-devel\nError: Unable to find a match: edk2-devel'
++ '[' 0 -ne 0 ']'
++ rm -rf /home/kvm/images/ a.txt './*.xz' 'initramfs*' output 'p2v*' 'pidfile*' 'pre-*' 'qemu-4.2.0*' test1.img 'vmlinuz*' 'file*'
++ LOG_INFO 'Finish to restore the test environment.'
++ message='Finish to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish to restore the test environment.'
+Thu Jun 22 15:43:52 2023 - INFO  - Finish to restore the test environment.

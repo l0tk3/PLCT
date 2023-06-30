@@ -1,0 +1,305 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Thu Jun 29 14:25:04 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL hwloc
++ pkgs=hwloc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs hwloc --node 1 --tempfile ''
+Thu Jun 29 14:25:04 2023 - INFO  - pkgs:(hwloc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Thu Jun 29 14:25:04 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 29 14:25:04 2023 - INFO  - Start to run test.
++ lstopo -l
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l common/test_fn.console
++ cat common/test_fn.console
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo -l failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -l failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -p
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --of console
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo --of failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --of failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l common/test_fn.console -f
++ cat common/test_fn.console
++ grep Machine
+Machine (3975MB total)
++ CHECK_RESULT 0 0 0 'lstopo -f failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -f failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --only PU
++ grep PU
+PU L#0
+PU L#1
+PU L#2
+PU L#3
++ CHECK_RESULT 0 0 0 'lstopo -only <type> failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -only <type> failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l -v
++ grep local
+Machine (total=4070840KB DMIProductName="Standard PC (i440FX + PIIX, 1996)" DMIProductVersion=pc-i440fx-8.1 DMIProductSerial= DMIChassisVendor=QEMU DMIChassisType=1 DMIChassisVersion=pc-i440fx-8.1 DMIChassisSerial= DMIChassisAssetTag= DMIBIOSVendor=SeaBIOS DMIBIOSVersion=rel-1.16.2-0-gea1b7a073390-prebuilt.qemu.org DMIBIOSDate=04/01/2014 DMISysVendor=QEMU Backend=Linux LinuxCgroup=/ OSName=Linux OSRelease=6.1.19-7.0.0.17.oe2303.x86_64 OSVersion="#1 SMP PREEMPT_DYNAMIC Tue Mar 28 00:01:02 CST 2023" HostName=localhost.localdomain Architecture=x86_64 hwlocVersion=2.7.1 ProcessName=lstopo)
+    NUMANode L#0 (local=4070840KB total=4070840KB)
++ CHECK_RESULT 0 0 0 'lstopo -v failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -v failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l -s
++ grep depth
+depth 0:           1 Machine (type #0)
+ depth 1:          1 Package (type #1)
+  depth 2:         1 L3Cache (type #6)
+   depth 3:        4 L2Cache (type #5)
+    depth 4:       4 L1dCache (type #4)
+     depth 5:      4 L1iCache (type #9)
+      depth 6:     4 Core (type #2)
+       depth 7:    4 PU (type #3)
+Special depth -3:  1 NUMANode (type #13)
+Special depth -4:  1 Bridge (type #14)
+Special depth -5:  5 PCIDev (type #15)
+Special depth -6:  3 OSDev (type #16)
+Special depth -7:  1 Misc (type #17)
++ CHECK_RESULT 0 0 0 'lstopo -s failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -s failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l -c
++ grep cpuset
+Machine (3975MB total) cpuset=0x0000000f
+  Package L#0 cpuset=0x0000000f
+    NUMANode L#0 (3975MB) cpuset=0x0000000f
+    L3 L#0 (16MB) cpuset=0x0000000f
+      L2 L#0 (4096KB) cpuset=0x00000001
+        L1d L#0 (32KB) cpuset=0x00000001
+          L1i L#0 (32KB) cpuset=0x00000001
+            Core L#0 cpuset=0x00000001
+              PU L#0 cpuset=0x00000001
+      L2 L#1 (4096KB) cpuset=0x00000002
+        L1d L#1 (32KB) cpuset=0x00000002
+          L1i L#1 (32KB) cpuset=0x00000002
+            Core L#1 cpuset=0x00000002
+              PU L#1 cpuset=0x00000002
+      L2 L#2 (4096KB) cpuset=0x00000004
+        L1d L#2 (32KB) cpuset=0x00000004
+          L1i L#2 (32KB) cpuset=0x00000004
+            Core L#2 cpuset=0x00000004
+              PU L#2 cpuset=0x00000004
+      L2 L#3 (4096KB) cpuset=0x00000008
+        L1d L#3 (32KB) cpuset=0x00000008
+          L1i L#3 (32KB) cpuset=0x00000008
+            Core L#3 cpuset=0x00000008
+              PU L#3 cpuset=0x00000008
++ CHECK_RESULT 0 0 0 'lstopo -c failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -c failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l -C
++ grep 0x
+0x0000000f
+  0x0000000f
+    0x0000000f
+    0x0000000f
+      0x00000001
+        0x00000001
+          0x00000001
+            0x00000001
+              0x00000001
+      0x00000002
+        0x00000002
+          0x00000002
+            0x00000002
+              0x00000002
+      0x00000004
+        0x00000004
+          0x00000004
+            0x00000004
+              0x00000004
+      0x00000008
+        0x00000008
+          0x00000008
+            0x00000008
+              0x00000008
++ CHECK_RESULT 0 0 0 'lstopo -C failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo -C failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lstopo -l --taskset
++ grep cpuset
+Machine (3975MB total) cpuset=0xf
+  Package L#0 cpuset=0xf
+    NUMANode L#0 (3975MB) cpuset=0xf
+    L3 L#0 (16MB) cpuset=0xf
+      L2 L#0 (4096KB) cpuset=0x1
+        L1d L#0 (32KB) cpuset=0x1
+          L1i L#0 (32KB) cpuset=0x1
+            Core L#0 cpuset=0x1
+              PU L#0 cpuset=0x1
+      L2 L#1 (4096KB) cpuset=0x2
+        L1d L#1 (32KB) cpuset=0x2
+          L1i L#1 (32KB) cpuset=0x2
+            Core L#1 cpuset=0x2
+              PU L#1 cpuset=0x2
+      L2 L#2 (4096KB) cpuset=0x4
+        L1d L#2 (32KB) cpuset=0x4
+          L1i L#2 (32KB) cpuset=0x4
+            Core L#2 cpuset=0x4
+              PU L#2 cpuset=0x4
+      L2 L#3 (4096KB) cpuset=0x8
+        L1d L#3 (32KB) cpuset=0x8
+          L1i L#3 (32KB) cpuset=0x8
+            Core L#3 cpuset=0x8
+              PU L#3 cpuset=0x8
++ CHECK_RESULT 0 0 0 'lstopo --taskset failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='lstopo --taskset failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Thu Jun 29 14:25:05 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Thu Jun 29 14:25:05 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Thu Jun 29 14:25:05 2023 - INFO  - start environment cleanup.
++ rm -f common/test_fn.console
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 29 14:25:05 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Thu Jun 29 14:25:05 2023 - INFO  - Finish environment cleanup!

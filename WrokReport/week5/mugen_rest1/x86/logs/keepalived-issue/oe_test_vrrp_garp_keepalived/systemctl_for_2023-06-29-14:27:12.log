@@ -1,0 +1,14 @@
+× keepalived.service
+     Loaded: not-found (Reason: Unit keepalived.service not found.)
+     Active: failed (Result: timeout) since Thu 2023-06-29 14:37:17 UTC; 1min 58s ago
+
+Jun 29 14:27:17 localhost.localdomain Keepalived_vrrp[1840]: Registering Kernel netlink reflector
+Jun 29 14:27:17 localhost.localdomain Keepalived_vrrp[1840]: Registering Kernel netlink command channel
+Jun 29 14:27:17 localhost.localdomain Keepalived_vrrp[1840]: (/etc/keepalived/keepalived.conf: Line 15) *** Configuration line starting `interface` is missing a parameter after keyword `interface` at word position 2
+Jun 29 14:27:17 localhost.localdomain Keepalived[1839]: pid 1840 exited with permanent error CONFIG. Terminating
+Jun 29 14:27:17 localhost.localdomain Keepalived[1839]: CPU usage (self/children) user: 0.000000/0.000953 system: 0.000837/0.000000
+Jun 29 14:27:17 localhost.localdomain systemd[1]: keepalived.service: Can't open PID file /run/keepalived.pid (yet?) after start: Operation not permitted
+Jun 29 14:27:17 localhost.localdomain Keepalived[1839]: Stopped Keepalived v2.2.4 (08/21,2021)
+Jun 29 14:37:17 localhost.localdomain systemd[1]: keepalived.service: start operation timed out. Terminating.
+Jun 29 14:37:17 localhost.localdomain systemd[1]: keepalived.service: Failed with result 'timeout'.
+Jun 29 14:37:17 localhost.localdomain systemd[1]: Failed to start LVS and VRRP High Availability Monitor.

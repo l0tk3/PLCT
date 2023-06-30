@@ -1,0 +1,391 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Thu Jun 22 16:07:21 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'meson tar gcc'
++ pkgs='meson tar gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'meson tar gcc' --node 1 --tempfile ''
+Thu Jun 22 16:07:29 2023 - INFO  - pkgs:(meson tar gcc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ cd common/0.54/
++ tar -xvf test_5.tgz
+test_5/
+test_5/meson.build
+test_5/2 testsetups/
+test_5/2 testsetups/impl.c
+test_5/2 testsetups/meson.build
+test_5/2 testsetups/impl.h
+test_5/2 testsetups/builddir/
+test_5/2 testsetups/builddir/devenv/
+test_5/2 testsetups/builddir/.ninja_log
+test_5/2 testsetups/builddir/1
+test_5/2 testsetups/builddir/.ninja_deps
+test_5/2 testsetups/builddir/meson-private/
+test_5/2 testsetups/builddir/meson-private/dist-install/
+test_5/2 testsetups/builddir/meson-private/meson_benchmark_setup.dat
+test_5/2 testsetups/builddir/meson-private/dist-build/
+test_5/2 testsetups/builddir/meson-private/meson_test_setup.dat
+test_5/2 testsetups/builddir/meson-private/build.dat
+test_5/2 testsetups/builddir/meson-private/sanitycheckc.exe
+test_5/2 testsetups/builddir/meson-private/coredata.dat
+test_5/2 testsetups/builddir/meson-private/meson.lock
+test_5/2 testsetups/builddir/meson-private/sanitycheckc.c
+test_5/2 testsetups/builddir/meson-private/dist-unpack/
+test_5/2 testsetups/builddir/meson-private/dist-unpack/test_1-0.1/
+test_5/2 testsetups/builddir/meson-private/cmd_line.txt
+test_5/2 testsetups/builddir/meson-private/coredata.dat.prev
+test_5/2 testsetups/builddir/meson-private/install.dat
+test_5/2 testsetups/builddir/build.ninja
+test_5/2 testsetups/builddir/meson-info/
+test_5/2 testsetups/builddir/meson-info/intro-buildoptions.json
+test_5/2 testsetups/builddir/meson-info/meson-info.json
+test_5/2 testsetups/builddir/meson-info/intro-installed.json
+test_5/2 testsetups/builddir/meson-info/intro-dependencies.json
+test_5/2 testsetups/builddir/meson-info/intro-tests.json
+test_5/2 testsetups/builddir/meson-info/intro-projectinfo.json
+test_5/2 testsetups/builddir/meson-info/intro-benchmarks.json
+test_5/2 testsetups/builddir/meson-info/intro-targets.json
+test_5/2 testsetups/builddir/meson-info/intro-buildsystem_files.json
+test_5/2 testsetups/builddir/builddir/
+test_5/2 testsetups/builddir/compile_commands.json
+test_5/2 testsetups/builddir/buggy@exe/
+test_5/2 testsetups/builddir/buggy@exe/buggy.c.o
+test_5/2 testsetups/builddir/buggy
+test_5/2 testsetups/builddir/test_1/
+test_5/2 testsetups/builddir/meson-logs/
+test_5/2 testsetups/builddir/meson-logs/testlog-worksforall.txt
+test_5/2 testsetups/builddir/meson-logs/testlog-valgrind.txt
+test_5/2 testsetups/builddir/meson-logs/testlog-valgrind.json
+test_5/2 testsetups/builddir/meson-logs/meson-log.txt
+test_5/2 testsetups/builddir/meson-logs/testlog-worksforall.json
+test_5/2 testsetups/builddir/meson-logs/testlog.json
+test_5/2 testsetups/builddir/meson-logs/testlog.txt
+test_5/2 testsetups/builddir/test_1@exe/
+test_5/2 testsetups/builddir/test_1@exe/test_1.c.o
+test_5/2 testsetups/builddir/meson-dist/
+test_5/2 testsetups/builddir/meson-dist/test_1-0.1.tar.xz
+test_5/2 testsetups/.git/
+test_5/2 testsetups/.git/hooks/
+test_5/2 testsetups/.git/hooks/post-update.sample
+test_5/2 testsetups/.git/hooks/pre-rebase.sample
+test_5/2 testsetups/.git/hooks/pre-receive.sample
+test_5/2 testsetups/.git/hooks/applypatch-msg.sample
+test_5/2 testsetups/.git/hooks/commit-msg.sample
+test_5/2 testsetups/.git/hooks/prepare-commit-msg.sample
+test_5/2 testsetups/.git/hooks/pre-merge-commit.sample
+test_5/2 testsetups/.git/hooks/pre-applypatch.sample
+test_5/2 testsetups/.git/hooks/update.sample
+test_5/2 testsetups/.git/hooks/fsmonitor-watchman.sample
+test_5/2 testsetups/.git/hooks/pre-push.sample
+test_5/2 testsetups/.git/hooks/pre-commit.sample
+test_5/2 testsetups/.git/branches/
+test_5/2 testsetups/.git/info/
+test_5/2 testsetups/.git/info/exclude
+test_5/2 testsetups/.git/description
+test_5/2 testsetups/.git/config
+test_5/2 testsetups/.git/objects/
+test_5/2 testsetups/.git/objects/pack/
+test_5/2 testsetups/.git/objects/info/
+test_5/2 testsetups/.git/HEAD
+test_5/2 testsetups/.git/refs/
+test_5/2 testsetups/.git/refs/tags/
+test_5/2 testsetups/.git/refs/heads/
+test_5/2 testsetups/test_1.c
+test_5/2 testsetups/buggy.c
+test_5/2 testsetups/envcheck.py
+test_5/subprojects/
+test_5/subprojects/zstd.wrap
+test_5/subprojects/s1/
+test_5/subprojects/s1/meson.build
+test_5/subprojects/s1/s1.c
+test_5/subprojects/s1/subprojects/
+test_5/subprojects/s1/subprojects/scommon/
+test_5/subprojects/s1/subprojects/scommon/scommon_broken.c
+test_5/subprojects/s1/subprojects/scommon/meson.build
+test_5/subprojects/s1/subprojects/s3/
+test_5/subprojects/s1/subprojects/s3/meson.build
+test_5/subprojects/s1/subprojects/s3/s3.c
+test_5/subprojects/s2/
+test_5/subprojects/s2/meson.build
+test_5/subprojects/s2/s2.c
+test_5/subprojects/s2/subprojects/
+test_5/subprojects/s2/subprojects/scommon/
+test_5/subprojects/s2/subprojects/scommon/meson.build
+test_5/subprojects/s2/subprojects/scommon/scommon_ok.c
+test_5/subprojects/s2/subprojects/athing.wrap
++ cd test_5/
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Thu Jun 22 16:07:30 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Thu Jun 22 16:07:30 2023 - INFO  - Start testing...
++ meson wrap list
++ grep zlib
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/mesonbuild/mesonmain.py", line 194, in run
+    return options.run_func(options)
+  File "/usr/lib/python3.10/site-packages/mesonbuild/wrap/wraptool.py", line 230, in run
+    options.wrap_func(options)
+  File "/usr/lib/python3.10/site-packages/mesonbuild/wrap/wraptool.py", line 76, in list_projects
+    releases = get_releases(options.allow_insecure)
+  File "/usr/lib/python3.10/site-packages/mesonbuild/wrap/wrap.py", line 116, in get_releases
+    data = get_releases_data(allow_insecure)
+  File "/usr/lib/python3.10/site-packages/mesonbuild/wrap/wrap.py", line 112, in get_releases_data
+    url = open_wrapdburl('https://wrapdb.mesonbuild.com/v2/releases.json', allow_insecure, True)
+  File "/usr/lib/python3.10/site-packages/mesonbuild/wrap/wrap.py", line 85, in open_wrapdburl
+    return T.cast('http.client.HTTPResponse', urllib.request.urlopen(urllib.parse.urlunparse(url), timeout=REQ_TIMEOUT))
+  File "/usr/lib64/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib64/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.10/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/usr/lib64/python3.10/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib64/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/usr/lib64/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib64/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
++ CHECK_RESULT 1 0 0 ' meson wrap list failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=' meson wrap list failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ' meson wrap list failed'
++ LOG_ERROR ' meson wrap list failed'
++ message=' meson wrap list failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message ' meson wrap list failed'
+Thu Jun 22 16:12:20 2023 - ERROR -  meson wrap list failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_meson_0.54_meson_20.sh line 32'
++ message='oe_test_meson_0.54_meson_20.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_meson_0.54_meson_20.sh line 32'
+Thu Jun 22 16:12:20 2023 - ERROR - oe_test_meson_0.54_meson_20.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ meson wrap search jpeg
+libjpeg-turbo
++ CHECK_RESULT 0 0 0 'meson wrap search failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson wrap search failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson wrap install wren
++ grep -E 'wren|exists'
+ERROR: WrapDB connection failed to https://wrapdb.mesonbuild.com/v2/wren_0.4.0-1/wren.wrap with error <urlopen error [Errno 111] Connection refused>.
++ CHECK_RESULT 0 0 0 'meson wrap install failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson wrap install failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson wrap info zstd
++ grep 'Available versions of zstd'
+Available versions of zstd:
++ CHECK_RESULT 0 0 0 'meson wrap info failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson wrap info failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson wrap status
++ grep status
+Subproject status
++ CHECK_RESULT 0 0 0 'meson wrap status failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson wrap status failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson wrap promote subprojects/s1/subprojects/scommon
++ CHECK_RESULT 0 0 0 'meson wrap promote failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson wrap promote failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson wrap update zstd
++ grep zstd
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/mesonbuild/mesonmain.py", line 194, in run
+    return options.run_func(options)
+  File "/usr/lib/python3.10/site-packages/mesonbuild/wrap/wraptool.py", line 230, in run
+    options.wrap_func(options)
+  File "/usr/lib/python3.10/site-packages/mesonbuild/msubprojects.py", line 716, in run
+    results = loop.run_until_complete(asyncio.gather(*tasks))
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/usr/lib64/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/site-packages/mesonbuild/msubprojects.py", line 130, in run
+    result = self.run_method()
+  File "/usr/lib/python3.10/site-packages/mesonbuild/msubprojects.py", line 172, in update_wrapdb
+    update_wrap_file(filename, self.wrap.name,
+  File "/usr/lib/python3.10/site-packages/mesonbuild/wrap/wrap.py", line 120, in update_wrap_file
+    url = open_wrapdburl(f'https://wrapdb.mesonbuild.com/v2/{name}_{new_version}-{new_revision}/{name}.wrap',
+  File "/usr/lib/python3.10/site-packages/mesonbuild/wrap/wrap.py", line 85, in open_wrapdburl
+    return T.cast('http.client.HTTPResponse', urllib.request.urlopen(urllib.parse.urlunparse(url), timeout=REQ_TIMEOUT))
+  File "/usr/lib64/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python3.10/urllib/request.py", line 525, in open
+    response = meth(req, response)
+  File "/usr/lib64/python3.10/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+  File "/usr/lib64/python3.10/urllib/request.py", line 557, in error
+    result = self._call_chain(*args)
+  File "/usr/lib64/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.10/urllib/request.py", line 749, in http_error_302
+    return self.parent.open(new, timeout=req.timeout)
+  File "/usr/lib64/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib64/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.10/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/usr/lib64/python3.10/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib64/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/usr/lib64/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib64/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+Progress: 0 / 1 (zstd)
++ CHECK_RESULT 0 0 0 'meson wrap update failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson wrap update failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson wrap --help
++ grep wrap
+usage: meson wrap [-h]
+    update                              Update wrap files from WrapDB (Since
++ CHECK_RESULT 0 0 0 'meson wrap --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson wrap --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ meson wrap -h
++ grep wrap
+usage: meson wrap [-h]
+    update                              Update wrap files from WrapDB (Since
++ CHECK_RESULT 0 0 0 'meson wrap -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='meson wrap -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Thu Jun 22 16:19:44 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 16:19:44 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Thu Jun 22 16:19:45 2023 - INFO  - Start to restore the test environment.
++ cd subprojects/
++ rm -rf scommon/
++ rm -f wren.wrap
++ cd ../..
++ rm -rf test_5/
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Thu Jun 22 16:19:45 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Thu Jun 22 16:19:46 2023 - INFO  - End to restore the test environment.

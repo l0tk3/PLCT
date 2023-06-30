@@ -1,0 +1,159 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Thu Jun 22 18:25:27 2023 - INFO  - Start to run test.
++ systool -h
++ grep systool
+oe_test_systools.sh: line 24: systool: command not found
++ CHECK_RESULT 1 0 0 'Systool help display failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Systool help display failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Systool help display failed'
++ LOG_ERROR 'Systool help display failed'
++ message='Systool help display failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Systool help display failed'
+Thu Jun 22 18:25:28 2023 - ERROR - Systool help display failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_systools.sh line 25'
++ message='oe_test_systools.sh line 25'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_systools.sh line 25'
+Thu Jun 22 18:25:28 2023 - ERROR - oe_test_systools.sh line 25
++ '[' 0 -eq 1 ']'
++ return 0
++ systool
++ grep -E 'buses|classes|devices|modules'
+oe_test_systools.sh: line 26: systool: command not found
++ CHECK_RESULT 1 0 0 'systool information query failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='systool information query failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'systool information query failed'
++ LOG_ERROR 'systool information query failed'
++ message='systool information query failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'systool information query failed'
+Thu Jun 22 18:25:29 2023 - ERROR - systool information query failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_systools.sh line 27'
++ message='oe_test_systools.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_systools.sh line 27'
+Thu Jun 22 18:25:29 2023 - ERROR - oe_test_systools.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ systool -b pci -av
++ grep pci
+oe_test_systools.sh: line 28: systool: command not found
++ CHECK_RESULT 1 0 0 'Buses information query failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Buses information query failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Buses information query failed'
++ LOG_ERROR 'Buses information query failed'
++ message='Buses information query failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Buses information query failed'
+Thu Jun 22 18:25:30 2023 - ERROR - Buses information query failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_systools.sh line 29'
++ message='oe_test_systools.sh line 29'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_systools.sh line 29'
+Thu Jun 22 18:25:30 2023 - ERROR - oe_test_systools.sh line 29
++ '[' 0 -eq 1 ']'
++ return 0
++ systool -c pps -av
++ grep pps
+oe_test_systools.sh: line 30: systool: command not found
++ CHECK_RESULT 1 0 0 'classes information query failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='classes information query failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'classes information query failed'
++ LOG_ERROR 'classes information query failed'
++ message='classes information query failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'classes information query failed'
+Thu Jun 22 18:25:31 2023 - ERROR - classes information query failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_systools.sh line 31'
++ message='oe_test_systools.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_systools.sh line 31'
+Thu Jun 22 18:25:31 2023 - ERROR - oe_test_systools.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ systool -m acpi -av
++ grep acpi
+oe_test_systools.sh: line 32: systool: command not found
++ CHECK_RESULT 1 0 0 'modules information query failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='modules information query failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'modules information query failed'
++ LOG_ERROR 'modules information query failed'
++ message='modules information query failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'modules information query failed'
+Thu Jun 22 18:25:32 2023 - ERROR - modules information query failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_systools.sh line 33'
++ message='oe_test_systools.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_systools.sh line 33'
+Thu Jun 22 18:25:32 2023 - ERROR - oe_test_systools.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Thu Jun 22 18:25:33 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 5
++ test 5 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Thu Jun 22 18:25:33 2023 - ERROR - failed to execute the case.
++ exit 5
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_systools.sh post_test'
++ message='oe_test_systools.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_systools.sh post_test'
+Thu Jun 22 18:25:34 2023 - INFO  - oe_test_systools.sh post_test
