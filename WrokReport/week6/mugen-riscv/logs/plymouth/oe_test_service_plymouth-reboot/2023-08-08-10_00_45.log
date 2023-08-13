@@ -1,0 +1,210 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:00:47 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL plymouth
++ pkgs=plymouth
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs plymouth --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpxd47p3w4
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpxd47p3w4
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:01:51 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:01:52 2023 - INFO  - Start testing...
++ test_execution plymouth-reboot.service
++ service=plymouth-reboot.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 10:01:52'
++ test_restart plymouth-reboot.service
++ service=plymouth-reboot.service
++ systemctl restart plymouth-reboot.service
++ CHECK_RESULT 0 0 0 'plymouth-reboot.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='plymouth-reboot.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status plymouth-reboot.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 10:01:52 CST; 5s ago
++ CHECK_RESULT 0 0 0 'plymouth-reboot.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='plymouth-reboot.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop plymouth-reboot.service
++ CHECK_RESULT 0 0 0 'plymouth-reboot.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='plymouth-reboot.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status plymouth-reboot.service
++ grep 'Active: inactive'
+     Active: inactive (dead)
++ CHECK_RESULT 0 0 0 'plymouth-reboot.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='plymouth-reboot.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start plymouth-reboot.service
++ CHECK_RESULT 0 0 0 'plymouth-reboot.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='plymouth-reboot.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status plymouth-reboot.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 10:02:04 CST; 5s ago
++ CHECK_RESULT 0 0 0 'plymouth-reboot.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='plymouth-reboot.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled plymouth-reboot.service
++ service=plymouth-reboot.service
+++ systemctl is-enabled plymouth-reboot.service
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
+Tue Aug  8 10:02:11 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
++ journalctl --since '2023-08-08 10:01:52' -u plymouth-reboot.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of plymouth-reboot.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of plymouth-reboot.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload plymouth-reboot.service
++ service=plymouth-reboot.service
++ systemctl start plymouth-reboot.service
++ systemctl reload plymouth-reboot.service
++ grep 'Job type reload is not applicable'
+Failed to reload plymouth-reboot.service: Job type reload is not applicable for unit plymouth-reboot.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit plymouth-reboot.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit plymouth-reboot.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status plymouth-reboot.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 10:02:04 CST; 6s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 10:02:12 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:02:12 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:02:13 2023 - INFO  - start environment cleanup.
++ systemctl stop plymouth-reboot.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpxd47p3w4 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpxd47p3w4
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:02:27 2023 - INFO  - Finish environment cleanup!

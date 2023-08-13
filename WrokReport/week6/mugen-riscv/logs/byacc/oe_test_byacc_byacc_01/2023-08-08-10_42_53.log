@@ -1,0 +1,178 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:42:56 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL byacc
++ pkgs=byacc
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs byacc --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpqov5omxu
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpqov5omxu
++ test -d tmp
++ mkdir tmp
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:43:30 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:43:30 2023 - INFO  - Start testing...
++ byacc -V
++ grep 'byacc - '
++ grep '[[:digit:]]*'
+byacc - 2.0 20230219
++ CHECK_RESULT 0 0 0 'Failed option: -V'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -V'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ byacc -b ./tmp/test_b ./common/test.y
++ test -f ./tmp/test_b.tab.c
++ CHECK_RESULT 0 0 0 'Failed option: -b'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -b'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ byacc ./common/test.y -o ./tmp/test_o.tab.c
++ test -f ./tmp/test_o.tab.c
++ CHECK_RESULT 0 0 0 'Failed option: -o'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -o'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ byacc -H ./tmp/test_h.c ./common/test.y -o ./tmp/test_h.c
++ test -f ./tmp/test_h.c
++ CHECK_RESULT 0 0 0 'Failed option: -H'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -H'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ byacc -b ./tmp/test_g -g ./common/test.y -o ./tmp/test_g.dot
++ test -f ./tmp/test_g.dot
++ CHECK_RESULT 0 0 0 'Failed option: -g'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -g'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ byacc -p test_p ./common/test.y -o ./tmp/test_p.tab.c
++ cat ./tmp/test_p.tab.c
++ grep -m 1 test_p
+#define yyparse    test_pparse
++ CHECK_RESULT 0 0 0 'Failed option: -p'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -p'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ byacc -l ./common/test.y -o ./tmp/test_l.tab.c
++ cat ./tmp/test_l.tab.c
++ grep '#line'
++ CHECK_RESULT 1 0 'Failed option: -l' 0
++ actual_result=1
++ expect_result=0
++ mode='Failed option: -l'
++ error_log=0
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' Failed option: -l -eq 0 ']'
+/root/mugen/libs/locallibs/common_lib.sh: line 38: [: too many arguments
++ test 1x == 0x
++ return 0
++ byacc --no-lines ./common/test.y -o ./tmp/test_ll.tab.c
++ cat ./tmp/test_ll.tab.c
++ grep '#line'
++ CHECK_RESULT 1 0 'Failed option: --no-lines' 0
++ actual_result=1
++ expect_result=0
++ mode='Failed option: --no-lines'
++ error_log=0
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' Failed option: --no-lines -eq 0 ']'
+/root/mugen/libs/locallibs/common_lib.sh: line 38: [: too many arguments
++ test 1x == 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 10:43:31 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:43:32 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:43:32 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpqov5omxu ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpqov5omxu
++ '[' 0 -ne 0 ']'
++ rm -rf ./tmp
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:43:42 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,128 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 13:08:42 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL aide
++ pkgs=aide
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs aide --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpf0uj9bhz
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpf0uj9bhz
++ sed -i '$a/home DATAONLY' /etc/aide.conf
++ aide --init
+Start timestamp: 2023-08-08 13:09:06 +0800 (AIDE 0.18.5)
+AIDE successfully initialized database.
+New AIDE database written to /var/lib/aide/aide.db.new.gz
+
+Number of entries:	50744
+
+---------------------------------------------------
+The attributes of the (uncompressed) database(s):
+---------------------------------------------------
+
+/var/lib/aide/aide.db.new.gz
+ MD5       : IeyDS3Ifnh05t+s+IZTUgg==
+ SHA1      : zEUhzsz5oDlvatV24LP+Li4ecHk=
+ SHA256    : dxVr0T07nzQaSFwuXMWESbV99GYJw+VI
+             sr4UG/9GeWw=
+ SHA512    : no43k5wMysQlEAWG4dnKNsUBwTuV1cZR
+             yMm/Xak9MkgGxn6LBC9kPMASlX9cQnxe
+             VfBv3ch+W+pCOSMiVU163Q==
+ RMD160    : 3Frp8X4ivPF2ofpnbtx40ZVMqzU=
+ TIGER     : 2E8nJ3FOeZ7TGy6C2f2b/BNGJrMMsqU9
+ CRC32     : +/UZOQ==
+ WHIRLPOOL : reWKkVKA8ipFylxoU9CRI73KUdE4Mp7s
+             9WWOPBLfs2JRUQWRpN7qmUbaAvDBxYwc
+             0UUU0P8jTMSZx2eQZIvfUg==
+ GOST      : 0OvMKB/fZlciDx7otWKvYqY3PSKBDQGQ
+             ANfCXOrwMg8=
+ STRIBOG256: aWoyD+MNNexjtTf/iytk89+zG73PPwhu
+             msm8EX0rO5U=
+ STRIBOG512: v0o+Oo5h6KwH1iKgRJ8I6PKwMqzkU6oX
+             N6qyQS8AGntrg76nzE/VxqC4l0zJ7Wmx
+             L4v7IMYlJwYRGaw8GKrepA==
+ SM3       : KQf47txREimHu3g0kfVrwt1mzVrxeASm
+             6SSYRhPtnPY=
+
+
+End timestamp: 2023-08-08 13:14:47 +0800 (run time: 5m 41s)
++ mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 13:14:48 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 13:14:48 2023 - INFO  - Start to run test.
++ aide --config=/etc/aide.conf
++ grep -E 'Total number of entries|Added entries|Changed entries|Removed entries'
+  Total number of entries:	50744
+  Added entries:		0
+  Removed entries:		0
+  Changed entries:		1
+Changed entries:
++ CHECK_RESULT 0 0 0 'Get aide configuration items: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Get aide configuration items: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 13:21:49 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 13:21:50 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 13:21:50 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpf0uj9bhz ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpf0uj9bhz
++ '[' 0 -ne 0 ']'
++ rm -rf /var/lib/aide
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 13:21:59 2023 - INFO  - End to restore the test environment.

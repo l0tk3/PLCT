@@ -1,0 +1,122 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 13:58:03 2023 - INFO  - Start environment preparation.
++ cat
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 13:58:03 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 13:58:04 2023 - INFO  - Start testing...
++ tr --v
+tr (GNU coreutils) 9.3
+Copyright (C) 2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jim Meyering.
++ CHECK_RESULT 0 0 0 'Version is error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Version is error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd /tmp
++ tr -d gghh
++ grep gghh /tmp/tr.result
++ CHECK_RESULT 1 1 0 'delete testfile fail'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='delete testfile fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ tr -t '[123456]' '[oopptt]'
++ grep oopp /tmp/tr.result
+oopptt
++ CHECK_RESULT 0 0 0 'cover testfile fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='cover testfile fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tr -s '[abcdef]'
++ grep abc /tmp/tr.result
+abcdef
++ CHECK_RESULT 0 0 0 'duplicate removal error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='duplicate removal error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tr -c 0-9 '*'
++ grep 123456 /tmp/tr.result
+******************123456******
++ CHECK_RESULT 0 0 0 'replace testfile fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='replace testfile fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 13:58:04 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 13:58:05 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/test_tr
++ rm -rf /tmp/tr.result
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 13:58:05 2023 - INFO  - Finish environment cleanup!

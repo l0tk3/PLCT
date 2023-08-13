@@ -1,0 +1,169 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 09:59:25 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL patchutils
++ pkgs=patchutils
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs patchutils --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpesakwx5y
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpesakwx5y
++ mkdir patchutils
++ cd patchutils
++ cp ../common/1.csv ../common/1.txt ../common/2.txt ../common/3.txt ../common/t1.html ./
++ diff -Naur 1.txt 2.txt
++ diff -Naur 2.txt 3.txt
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 09:59:51 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 09:59:52 2023 - INFO  - Start to run test.
++ interdiff -z --interpolate test1.patch test2.patch
++ grep '\-bbb'
+-bbb
++ CHECK_RESULT 0 0 0 'Check interdiff -z --interpolate test1.patch test2.patch failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check interdiff -z --interpolate test1.patch test2.patch failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ interdiff --combine test1.patch test2.patch
++ grep '\--- 1.txt'
+--- 1.txt	2023-08-08 09:59:51.412000000 +0800
++ CHECK_RESULT 0 0 0 'Check interdiff --combine test1.patch test2.patch failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check interdiff --combine test1.patch test2.patch failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ interdiff --flip test1.patch test2.patch
++ grep '=== 8< === cut here === 8< ==='
+=== 8< === cut here === 8< ===
++ CHECK_RESULT 0 0 0 'Check interdiff --flip test1.patch test2.patch failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check interdiff --flip test1.patch test2.patch failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ interdiff --no-revert-omitted test1.patch test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check interdiff --no-revert-omitted test1.patch test2.patch failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check interdiff --no-revert-omitted test1.patch test2.patch failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ espdiff --help
++ grep 'usage: espdiff'
+usage: espdiff [OPTION...] [FILE...]
++ CHECK_RESULT 0 0 0 'Check espdiff --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check espdiff --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ espdiff --version
++ grep 'espdiff - patchutils version [[:digit:]]'
+espdiff - patchutils version 0.4.2
++ CHECK_RESULT 0 0 0 'Check espdiff --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check espdiff --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ espdiff --deep-brainwave-mode --recurse --compare 1.txt
++ grep 'No brainwave activity detected'
+No brainwave activity detected.  Aborting.
++ CHECK_RESULT 0 0 0 'Check espdiff --deep-brainwave-mode --recurse --compare failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check espdiff --deep-brainwave-mode --recurse --compare failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:59:59 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:59:59 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:00:00 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpesakwx5y ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpesakwx5y
++ '[' 0 -ne 0 ']'
++ cd ..
++ rm -rf patchutils
++ LOG_INFO 'Finish restore the test environment.'
++ message='Finish restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restore the test environment.'
+Tue Aug  8 10:00:07 2023 - INFO  - Finish restore the test environment.

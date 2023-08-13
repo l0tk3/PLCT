@@ -1,0 +1,227 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 09:49:54 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL patchutils
++ pkgs=patchutils
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs patchutils --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpe0hjjmn8
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpe0hjjmn8
++ mkdir patchutils
++ cd patchutils
++ cp ../common/1.csv ../common/1.txt ../common/2.txt ../common/3.txt ../common/t1.html ./
++ diff -Naur 1.txt 2.txt
++ diff -Naur 2.txt 3.txt
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 09:50:27 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 09:50:27 2023 - INFO  - Start to run test.
++ combinediff --help
++ grep 'usage: combinediff'
+usage: combinediff [OPTIONS] patch1 patch2
++ CHECK_RESULT 0 0 0 'Check combinediff --help  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check combinediff --help  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ combinediff --version
++ grep 'combinediff - patchutils version [[:digit:]]'
+combinediff - patchutils version 0.4.2
++ CHECK_RESULT 0 0 0 'Check combinediff --version  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check combinediff --version  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ combinediff -U 10 -i -w -b -B -q test1.patch test2.patch
++ grep '@@ -2 +2,3 @@'
++ CHECK_RESULT 1 0 0 'Check combinediff -U 10 -i -w -b -B -q test1.patch test2.patch  failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check combinediff -U 10 -i -w -b -B -q test1.patch test2.patch  failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check combinediff -U 10 -i -w -b -B -q test1.patch test2.patch  failed'
++ LOG_ERROR 'Check combinediff -U 10 -i -w -b -B -q test1.patch test2.patch  failed'
++ message='Check combinediff -U 10 -i -w -b -B -q test1.patch test2.patch  failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check combinediff -U 10 -i -w -b -B -q test1.patch test2.patch  failed'
+Tue Aug  8 09:50:28 2023 - ERROR - Check combinediff -U 10 -i -w -b -B -q test1.patch test2.patch  failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_patchutils_combinediff_01.sh line 40'
++ message='oe_test_patchutils_combinediff_01.sh line 40'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_patchutils_combinediff_01.sh line 40'
+Tue Aug  8 09:50:29 2023 - ERROR - oe_test_patchutils_combinediff_01.sh line 40
++ '[' 0 -eq 1 ']'
++ return 0
++ combinediff --unified=10 --ignore-case --ignore-all-space --ignore-space-change --ignore-blank-lines --quiet test1.patch test2.patch
++ grep '@@ -2 +2,3 @@'
++ CHECK_RESULT 1 0 0 'Check combinediff --unified=10 --ignore-case --ignore-all-space --ignore-space-change --ignore-blank-lines --quiet test1.patch test2.patch  failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check combinediff --unified=10 --ignore-case --ignore-all-space --ignore-space-change --ignore-blank-lines --quiet test1.patch test2.patch  failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check combinediff --unified=10 --ignore-case --ignore-all-space --ignore-space-change --ignore-blank-lines --quiet test1.patch test2.patch  failed'
++ LOG_ERROR 'Check combinediff --unified=10 --ignore-case --ignore-all-space --ignore-space-change --ignore-blank-lines --quiet test1.patch test2.patch  failed'
++ message='Check combinediff --unified=10 --ignore-case --ignore-all-space --ignore-space-change --ignore-blank-lines --quiet test1.patch test2.patch  failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check combinediff --unified=10 --ignore-case --ignore-all-space --ignore-space-change --ignore-blank-lines --quiet test1.patch test2.patch  failed'
+Tue Aug  8 09:50:30 2023 - ERROR - Check combinediff --unified=10 --ignore-case --ignore-all-space --ignore-space-change --ignore-blank-lines --quiet test1.patch test2.patch  failed
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_patchutils_combinediff_01.sh line 42'
++ message='oe_test_patchutils_combinediff_01.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_patchutils_combinediff_01.sh line 42'
+Tue Aug  8 09:50:30 2023 - ERROR - oe_test_patchutils_combinediff_01.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ combinediff -p 1 test1.patch test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check combinediff -p 1 test1.patch test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check combinediff -p 1 test1.patch test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ combinediff --strip-match=1 test1.patch test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check combinediff --strip-match=1 test1.patch test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check combinediff --strip-match=1 test1.patch test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ combinediff -d 1 test1.patch test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check combinediff -d 1 test1.patch test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check combinediff -d 1 test1.patch test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ combinediff --drop-context=1 test1.patch test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check combinediff --drop-context=1 test1.patch test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check combinediff --drop-context=1 test1.patch test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ combinediff -z --interpolate test1.patch test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check combinediff -z --interpolate test1.patch test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check combinediff -z --interpolate test1.patch test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ combinediff --decompress --interpolate test1.patch test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check combinediff --decompress --interpolate test1.patch test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check combinediff --decompress --interpolate test1.patch test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:50:31 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 09:50:32 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 09:50:32 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpe0hjjmn8 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpe0hjjmn8
++ '[' 0 -ne 0 ']'
++ cd ..
++ rm -rf patchutils
++ LOG_INFO 'Finish restore the test environment.'
++ message='Finish restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restore the test environment.'
+Tue Aug  8 09:50:41 2023 - INFO  - Finish restore the test environment.

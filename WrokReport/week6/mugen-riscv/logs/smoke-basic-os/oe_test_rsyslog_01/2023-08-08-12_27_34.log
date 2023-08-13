@@ -1,0 +1,201 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:27:36 2023 - INFO  - Start to prepare the test environment.
++ systemctl start rsyslog
+Failed to start rsyslog.service: Unit rsyslog.service not found.
++ cp -f /var/log/messages /var/log/messages.bak
+cp: cannot stat '/var/log/messages': No such file or directory
++ echo ''
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:27:37 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:27:37 2023 - INFO  - Start to run test.
++ systemctl status rsyslog
++ grep running
+Unit rsyslog.service could not be found.
++ CHECK_RESULT 1 0 0 'Service not started'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Service not started'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Service not started'
++ LOG_ERROR 'Service not started'
++ message='Service not started'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Service not started'
+Tue Aug  8 12:27:38 2023 - ERROR - Service not started
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_01.sh line 33'
++ message='oe_test_rsyslog_01.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_01.sh line 33'
+Tue Aug  8 12:27:38 2023 - ERROR - oe_test_rsyslog_01.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
+Unit rsyslog.service could not be found.
++ old_pid=
++ echo 'num=0
+    while ((num<200));do
+        dnf install -y vi
+        let num+=1
+    done
+    '
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ sh test.sh
++ kill -9 ''
+oe_test_rsyslog_01.sh: line 43: kill: `': not a pid or valid job spec
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
+Last metadata expiration check: 1:58:38 ago on Tue Aug  8 10:29:04 2023.
+Package vim-minimal-2:9.0-33.oe2309.riscv64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 1:58:42 ago on Tue Aug  8 10:29:04 2023.
+Package vim-minimal-2:9.0-33.oe2309.riscv64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
++ systemctl status rsyslog
++ grep running
+Unit rsyslog.service could not be found.
++ CHECK_RESULT 1 0 0 'The service was not pulled up again'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='The service was not pulled up again'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'The service was not pulled up again'
++ LOG_ERROR 'The service was not pulled up again'
++ message='The service was not pulled up again'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'The service was not pulled up again'
+Tue Aug  8 12:27:48 2023 - ERROR - The service was not pulled up again
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_01.sh line 46'
++ message='oe_test_rsyslog_01.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_01.sh line 46'
+Tue Aug  8 12:27:49 2023 - ERROR - oe_test_rsyslog_01.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
+++ jobs -l
+++ grep test.sh
+++ awk '{print $2}'
++ kill -9 27897
++ CHECK_RESULT 0 0 0 'Service not started'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Service not started'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+oe_test_rsyslog_01.sh: line 50: 27897 Killed                  sh test.sh
+++ grep -c ldapdb /var/log/messages
++ test 0 -lt 100
++ CHECK_RESULT 0 0 0 'Quantity is greater than 100'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Quantity is greater than 100'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
+Unit rsyslog.service could not be found.
++ test '' -ne ''
+oe_test_rsyslog_01.sh: line 51: test: : integer expression expected
++ CHECK_RESULT 2 0 0 'Pid unchanged'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='Pid unchanged'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'Pid unchanged'
++ LOG_ERROR 'Pid unchanged'
++ message='Pid unchanged'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Pid unchanged'
+Tue Aug  8 12:27:49 2023 - ERROR - Pid unchanged
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_01.sh line 52'
++ message='oe_test_rsyslog_01.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_01.sh line 52'
+Tue Aug  8 12:27:50 2023 - ERROR - oe_test_rsyslog_01.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:27:50 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 12:27:51 2023 - ERROR - failed to execute the case.
+Last metadata expiration check: 1:58:47 ago on Tue Aug  8 10:29:04 2023.
++ exit 3
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Package vim-minimal-2:9.0-33.oe2309.riscv64 is already installed.
+Tue Aug  8 12:27:51 2023 - INFO  - Start to restore the test environment.
+Dependencies resolved.
++ mv -f /var/log/messages.bak /var/log/messages
+Nothing to do.
+Complete!
+mv: cannot stat '/var/log/messages.bak': No such file or directory
++ rm -rf test.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:27:52 2023 - INFO  - End to restore the test environment.

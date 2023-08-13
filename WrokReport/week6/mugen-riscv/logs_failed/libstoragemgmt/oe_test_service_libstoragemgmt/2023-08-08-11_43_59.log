@@ -1,0 +1,627 @@
++ source ../common/common_lib.sh
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
++ main
+++ type -t post_test
+++ type -t post_test
++ '[' -n function ']'
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
++ rpm -qa
++ grep expect
+++ type -t config_params
+++ type -t config_params
++ '[' -n '' ']'
++ '[' -n '' ']'
+++ type -t pre_test
+++ type -t pre_test
++ '[' -n function ']'
++ '[' -n function ']'
++ pre_test
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 11:44:01 2023 - INFO  - Start environmental preparation.
+Tue Aug  8 11:44:01 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL libstoragemgmt
++ pkgs=libstoragemgmt
++ node=1
++ '[' -z '' ']'
++ tmpfile=
++ DNF_INSTALL libstoragemgmt
++ pkgs=libstoragemgmt
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libstoragemgmt --node 1 --tempfile ''
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libstoragemgmt --node 1 --tempfile ''
++ tmpfile2=/tmp/tmps9qzi6h9
++ '[' -z '' ']'
++ tmpfile=/tmp/tmps9qzi6h9
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 11:44:38 2023 - INFO  - End of environmental preparation!
++ tmpfile2='Waiting for process with pid 487 to finish.
+Last metadata expiration check: 14:42:24 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch        Version            Repo      Size
+================================================================================
+Installing:
+ libstoragemgmt                   riscv64     1.9.6-1.oe2309     base     213 k
+Installing dependencies:
+ libconfig                        riscv64     1.7.3-2.oe2309     base      69 k
+ python3-libstoragemgmt           riscv64     1.9.6-1.oe2309     base     203 k
+ python3-libstoragemgmt-clibs     riscv64     1.9.6-1.oe2309     base      28 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 513 k
+Installed size: 2.0 M
+Downloading Packages:
+[SKIPPED] libconfig-1.7.3-2.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded        
+[SKIPPED] python3-libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded
+[SKIPPED] python3-libstoragemgmt-clibs-1.9.6-1.oe2309.riscv64.rpm: Already downloaded
+Running transaction check
+Waiting for process with pid 487 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/libconfig-1.7.3-2.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ '[' -z '' ']'
++ tmpfile='Waiting for process with pid 487 to finish.
+Last metadata expiration check: 14:42:24 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch        Version            Repo      Size
+================================================================================
+Installing:
+ libstoragemgmt                   riscv64     1.9.6-1.oe2309     base     213 k
+Installing dependencies:
+ libconfig                        riscv64     1.7.3-2.oe2309     base      69 k
+ python3-libstoragemgmt           riscv64     1.9.6-1.oe2309     base     203 k
+ python3-libstoragemgmt-clibs     riscv64     1.9.6-1.oe2309     base      28 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 513 k
+Installed size: 2.0 M
+Downloading Packages:
+[SKIPPED] libconfig-1.7.3-2.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded        
+[SKIPPED] python3-libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded
+[SKIPPED] python3-libstoragemgmt-clibs-1.9.6-1.oe2309.riscv64.rpm: Already downloaded
+Running transaction check
+Waiting for process with pid 487 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/libconfig-1.7.3-2.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:44:39 2023 - INFO  - End of environmental preparation!
+Tue Aug  8 11:44:39 2023 - INFO  - Start testing...
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
++ test_execution libstoragemgmt.service
++ service=libstoragemgmt.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 11:44:39'
++ test_restart libstoragemgmt.service
++ service=libstoragemgmt.service
++ systemctl restart libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
+Tue Aug  8 11:44:39 2023 - INFO  - Start testing...
++ test_execution libstoragemgmt.service
++ service=libstoragemgmt.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 11:44:39'
++ test_restart libstoragemgmt.service
++ service=libstoragemgmt.service
++ systemctl restart libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status libstoragemgmt.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 11:44:40 CST; 5s ago
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status libstoragemgmt.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'libstoragemgmt.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'libstoragemgmt.service restart failed'
++ LOG_ERROR 'libstoragemgmt.service restart failed'
++ message='libstoragemgmt.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'libstoragemgmt.service restart failed'
+Tue Aug  8 11:44:46 2023 - ERROR - libstoragemgmt.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Tue Aug  8 11:44:47 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status libstoragemgmt.service
++ grep 'Active: inactive'
+     Active: inactive (dead) since Tue 2023-08-08 11:44:45 CST; 5s ago
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status libstoragemgmt.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'libstoragemgmt.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'libstoragemgmt.service stop failed'
++ LOG_ERROR 'libstoragemgmt.service stop failed'
++ message='libstoragemgmt.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'libstoragemgmt.service stop failed'
+Tue Aug  8 11:44:53 2023 - ERROR - libstoragemgmt.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Tue Aug  8 11:44:54 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status libstoragemgmt.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 11:44:51 CST; 5s ago
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled libstoragemgmt.service
++ service=libstoragemgmt.service
+++ systemctl is-enabled libstoragemgmt.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable libstoragemgmt.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
++ find /etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
+find: ‘/etc/systemd/system/multi-user.target.wants/libstoragemgmt.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'libstoragemgmt.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='libstoragemgmt.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable libstoragemgmt.service
+Created symlink /etc/systemd/system/multi-user.target.wants/libstoragemgmt.service → /usr/lib/systemd/system/libstoragemgmt.service.
++ systemctl status libstoragemgmt.service
++ grep 'Active: active'
++ find /etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
+/etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-08-08 11:44:39' -u libstoragemgmt.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+     Active: active (running) since Tue 2023-08-08 11:44:51 CST; 9s ago
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled libstoragemgmt.service
++ service=libstoragemgmt.service
+++ systemctl is-enabled libstoragemgmt.service
++ CHECK_RESULT 1 0 1 'There is an error message for the log of libstoragemgmt.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of libstoragemgmt.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start libstoragemgmt.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable libstoragemgmt.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ sed -i 's\ExecStart=/usr/bin/lsmd\ExecStart=/usr/bin/lsmd -v\g' /usr/lib/systemd/system/libstoragemgmt.service
++ systemctl daemon-reload
++ symlink_file=/etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
++ find /etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
+find: ‘/etc/systemd/system/multi-user.target.wants/libstoragemgmt.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'libstoragemgmt.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='libstoragemgmt.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable libstoragemgmt.service
++ systemctl reload libstoragemgmt.service
+Created symlink /etc/systemd/system/multi-user.target.wants/libstoragemgmt.service → /usr/lib/systemd/system/libstoragemgmt.service.
++ find /etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
+/etc/systemd/system/multi-user.target.wants/libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-08-08 11:44:39' -u libstoragemgmt.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service reload failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service reload failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 'Active: active'
++ systemctl status libstoragemgmt.service
++ CHECK_RESULT 1 0 1 'There is an error message for the log of libstoragemgmt.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of libstoragemgmt.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start libstoragemgmt.service
+     Active: active (running) since Tue 2023-08-08 11:44:51 CST; 14s ago
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service reload causes the service status to change'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service reload causes the service status to change'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
++ sed -i 's\ExecStart=/usr/bin/lsmd\ExecStart=/usr/bin/lsmd -v\g' /usr/lib/systemd/system/libstoragemgmt.service
++ systemctl daemon-reload
+Tue Aug  8 11:45:07 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:45:07 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:45:08 2023 - INFO  - start environment cleanup.
++ sed -i 's\ExecStart=/usr/bin/lsmd -v\ExecStart=/usr/bin/lsmd\g' /usr/lib/systemd/system/libstoragemgmt.service
++ systemctl daemon-reload
++ systemctl reload libstoragemgmt.service
++ systemctl reload libstoragemgmt.service
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service reload failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service reload failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status libstoragemgmt.service
++ grep 'Active: active'
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmps9qzi6h9 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmps9qzi6h9
+     Active: active (running) since Tue 2023-08-08 11:44:51 CST; 18s ago
++ CHECK_RESULT 0 0 0 'libstoragemgmt.service reload causes the service status to change'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='libstoragemgmt.service reload causes the service status to change'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 11:45:10 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 11:45:11 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:45:12 2023 - INFO  - start environment cleanup.
++ sed -i 's\ExecStart=/usr/bin/lsmd -v\ExecStart=/usr/bin/lsmd\g' /usr/lib/systemd/system/libstoragemgmt.service
++ systemctl daemon-reload
++ systemctl reload libstoragemgmt.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Waiting for process with pid 487 to finish.
+Last metadata expiration check: 14:42:24 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch        Version            Repo      Size
+================================================================================
+Installing:
+ libstoragemgmt                   riscv64     1.9.6-1.oe2309     base     213 k
+Installing dependencies:
+ libconfig                        riscv64     1.7.3-2.oe2309     base      69 k
+ python3-libstoragemgmt           riscv64     1.9.6-1.oe2309     base     203 k
+ python3-libstoragemgmt-clibs     riscv64     1.9.6-1.oe2309     base      28 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 513 k
+Installed size: 2.0 M
+Downloading Packages:
+[SKIPPED] libconfig-1.7.3-2.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded        
+[SKIPPED] python3-libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded
+[SKIPPED] python3-libstoragemgmt-clibs-1.9.6-1.oe2309.riscv64.rpm: Already downloaded
+Running transaction check
+Waiting for process with pid 487 to finish.
+[Errno 2] No such file or directory: '/var/cache/dnf/base-1e078561a1901b1e/packages/libconfig-1.7.3-2.oe2309.riscv64.rpm'
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Waiting for process with pid 487 to finish.
+Last metadata expiration check: 14:42:24 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package                          Arch        Version            Repo      Size
+================================================================================
+Installing:
+ libstoragemgmt                   riscv64     1.9.6-1.oe2309     base     213 k
+Installing dependencies:
+ libconfig                        riscv64     1.7.3-2.oe2309     base      69 k
+ python3-libstoragemgmt           riscv64     1.9.6-1.oe2309     base     203 k
+ python3-libstoragemgmt-clibs     riscv64     1.9.6-1.oe2309     base      28 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total size: 513 k
+Installed size: 2.0 M
+Downloading Packages:
+[SKIPPED] libconfig-1.7.3-2.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded        
+[SKIPPED] python3-libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded
+[SKIPPED] python3-libstoragemgmt-clibs-1.9.6-1.oe2309.riscv64.rpm: Already downloaded
+Running transaction check
+Waiting for process with pid 487 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/libconfig-1.7.3-2.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+OSError: [Errno 36] File name too long: "Waiting for process with pid 487 to finish.\nLast metadata expiration check: 14:42:24 ago on Mon Aug  7 21:02:07 2023.\nDependencies resolved.\n================================================================================\n Package                          Arch        Version            Repo      Size\n================================================================================\nInstalling:\n libstoragemgmt                   riscv64     1.9.6-1.oe2309     base     213 k\nInstalling dependencies:\n libconfig                        riscv64     1.7.3-2.oe2309     base      69 k\n python3-libstoragemgmt           riscv64     1.9.6-1.oe2309     base     203 k\n python3-libstoragemgmt-clibs     riscv64     1.9.6-1.oe2309     base      28 k\n\nTransaction Summary\n================================================================================\nInstall  4 Packages\n\nTotal size: 513 k\nInstalled size: 2.0 M\nDownloading Packages:\n[SKIPPED] libconfig-1.7.3-2.oe2309.riscv64.rpm: Already downloaded             \n[SKIPPED] libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded        \n[SKIPPED] python3-libstoragemgmt-1.9.6-1.oe2309.riscv64.rpm: Already downloaded\n[SKIPPED] python3-libstoragemgmt-clibs-1.9.6-1.oe2309.riscv64.rpm: Already downloaded\nRunning transaction check\nWaiting for process with pid 487 to finish.\n[Errno 2] No such file or directory: '/var/cache/dnf/base-1e078561a1901b1e/packages/libconfig-1.7.3-2.oe2309.riscv64.rpm'\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 11:45:17 2023 - INFO  - Finish environment cleanup!
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 11:45:22 2023 - INFO  - Finish environment cleanup!

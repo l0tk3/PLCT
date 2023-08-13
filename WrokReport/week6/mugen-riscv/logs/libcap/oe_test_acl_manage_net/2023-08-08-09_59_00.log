@@ -1,0 +1,125 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 09:59:02 2023 - INFO  - Start environmental preparation.
++ grep '^example:' /etc/passwd
++ DNF_INSTALL net-tools
++ pkgs=net-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs net-tools --node 1 --tempfile ''
+Tue Aug  8 09:59:10 2023 - INFO  - pkgs:(net-tools) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
+++ ip a
+++ grep 10.0.2.15
+++ awk -F ' ' '{printf $NF}'
++ net_card=enp0s2
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 09:59:11 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Tue Aug  8 09:59:11 2023 - INFO  - Start executing testcase.
++ useradd example
++ passwd example
+New password: Retype new password: Changing password for user example.
+passwd: all authentication tokens updated successfully.
++ su - example -c '/sbin/ifconfig enp0s2:1 192.168.1.1 netmask 255.255.255.0'
+SIOCSIFADDR: Operation not permitted
+SIOCSIFFLAGS: Operation not permitted
+SIOCSIFNETMASK: Operation not permitted
++ CHECK_RESULT 255 0 1 'Switching example users to view network devices succeeded, but it should fail here'
++ actual_result=255
++ expect_result=0
++ mode=1
++ error_log='Switching example users to view network devices succeeded, but it should fail here'
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 1 -eq 0 ']'
++ test 255x == 0x
++ return 0
++ setcap cap_net_admin=eip /sbin/ifconfig
++ CHECK_RESULT 0 0 0 'Failed to set cap'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to set cap'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - example -c '/sbin/ifconfig enp0s2:1 192.168.1.1 netmask 255.255.255.0'
++ CHECK_RESULT 0 0 0 'Failed to switch example users to view network devices'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to switch example users to view network devices'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a show enp0s2
++ grep enp0s2:1
++ grep 192.168.1.1
+    inet 192.168.1.1/24 brd 192.168.1.255 scope global enp0s2:1
++ CHECK_RESULT 0 0 0 'Failed to display protocol address'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display protocol address'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Tue Aug  8 09:59:15 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:59:16 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 09:59:16 2023 - INFO  - start environment cleanup.
++ ifconfig enp0s2:1 down
++ setcap -r /sbin/ifconfig
++ userdel -rf example
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 09:59:17 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,196 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 13:35:41 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL aide
++ pkgs=aide
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs aide --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp_qg33olz
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp_qg33olz
++ sed -i '$a/home DATAONLY' /etc/aide.conf
++ aide --init
+Start timestamp: 2023-08-08 13:36:06 +0800 (AIDE 0.18.5)
+AIDE successfully initialized database.
+New AIDE database written to /var/lib/aide/aide.db.new.gz
+
+Number of entries:	50754
+
+---------------------------------------------------
+The attributes of the (uncompressed) database(s):
+---------------------------------------------------
+
+/var/lib/aide/aide.db.new.gz
+ MD5       : RBNKaiYNK3UrTMR/+2xAyg==
+ SHA1      : O69rtypcTGUyA4DkTT/RtSwstqI=
+ SHA256    : 5kQ2t2UF33ukeisFxM683yndtMS4WGdW
+             tHMNIxEWuUI=
+ SHA512    : 3ZT8tI+5DkuLD60bl6H7JbOORVyhDCls
+             1sIJcvKit6BXX/fR3etP4g6v1YR3pt7l
+             ujVvbA4efu4d53qq5o0c8Q==
+ RMD160    : 4hGeqJvcvgYsKEgwEhNDH7EiMSs=
+ TIGER     : WKEy1pcu4PTAnV5bPGzDfApwU/bIY0ue
+ CRC32     : 6QYN+g==
+ WHIRLPOOL : VAtT52qI6RnuaZyOXNONqQbqEBeQHEEn
+             pn4zYLURnrr1IaEhI8w8O3GrLSt0Px3Y
+             z6HmBTbPcHT5iqZLNgHeQA==
+ GOST      : fZnPo9/Q9a+4EJXgzV0UAOWOhBHkLHs8
+             VuixakazWkI=
+ STRIBOG256: mR/t+27kmsTZYbkLGD51yP5w33xCv9Pf
+             5Q7ncjTYlv8=
+ STRIBOG512: kqYpgQjX0lFg3BDUntMuPb1J8FApnjai
+             YLaGWDvtrBha7BjhsxEdDpYwT3OYua/m
+             av8ZQRqSSpVrZy6Tr2F96Q==
+ SM3       : q6yeWMc7W3pa8l9duVZScjT3Cu8wwhdP
+             eDQXCMdAoIk=
+
+
+End timestamp: 2023-08-08 13:41:47 +0800 (run time: 5m 41s)
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 13:41:48 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 13:41:48 2023 - INFO  - Start to run test.
++ ls -l /etc/aide.conf
++ awk '{print $3}'
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check aide.conf file owner failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.conf file owner failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /etc/aide.conf
++ awk '{print $4}'
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check aide.conf file group failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.conf file group failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /etc/aide.conf
++ awk '{print $1}'
++ cut -b 2-10
++ grep rw-------
+rw-------
++ CHECK_RESULT 0 0 0 'Check aide.conf file permission failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.conf file permission failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /var/log/aide/aide.log
++ awk '{print $3}'
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check aide.log file owner failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.log file owner failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /var/log/aide/aide.log
++ awk '{print $4}'
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check aide.log file group failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.log file group failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /var/log/aide/aide.log
++ awk '{print $1}'
++ cut -b 2-10
++ grep rw-------
+rw-------
++ CHECK_RESULT 0 0 0 'Check aide.log file permission failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check aide.log file permission failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 13:41:49 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 13:41:49 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 13:41:50 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp_qg33olz ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp_qg33olz
++ '[' 0 -ne 0 ']'
++ rm -rf /var/log/aide/
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 13:41:58 2023 - INFO  - End to restore the test environment.

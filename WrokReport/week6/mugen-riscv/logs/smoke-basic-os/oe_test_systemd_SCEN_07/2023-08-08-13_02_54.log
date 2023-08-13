@@ -1,0 +1,147 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 13:02:56 2023 - INFO  - Start to prepare the test environment.
++ echo '[Unit]
+Description=Test Service A
+Requires=TestB.service
+[Service]
+ExecStart=/usr/bin/sleep 200'
++ echo '[Unit]
+Description=Test Service B
+[Service]
+ExecStart=/usr/bin/sleep 200'
++ systemctl daemon-reload
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 13:02:57 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 13:02:58 2023 - INFO  - Start to run test.
++ systemctl start TestB
++ CHECK_RESULT 0 0 0 'TestB.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='TestB.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status TestB
++ grep running
+     Active: active (running) since Tue 2023-08-08 13:02:58 CST; 174ms ago
++ CHECK_RESULT 0 0 0 'TestB.service is not running'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='TestB.service is not running'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start TestA
++ CHECK_RESULT 0 0 0 'TestA.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='TestA.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status TestA
++ grep running
+     Active: active (running) since Tue 2023-08-08 13:02:58 CST; 176ms ago
++ CHECK_RESULT 0 0 0 'TestA.service is not running'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='TestA.service is not running'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl restart TestA
++ CHECK_RESULT 0 0 0 'TestA.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='TestA.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ systemctl status TestA
+++ grep running
+++ awk '{print $7}'
++ TestA_status=13:03:04
++ systemctl status TestB
++ grep running
++ grep 13:03:04
++ CHECK_RESULT 1 0 1 'TestB.service restart success'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='TestB.service restart success'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 13:03:05 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 13:03:06 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 13:03:06 2023 - INFO  - Start to restore the test environment.
++ systemctl stop TestA
++ systemctl stop TestB
++ rm -rf /usr/lib/systemd/system/TestA.service /usr/lib/systemd/system/TestB.service
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 13:03:07 2023 - INFO  - End to restore the test environment.

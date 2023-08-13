@@ -1,0 +1,259 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:30:20 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL glusterfs-thin-arbiter
++ pkgs=glusterfs-thin-arbiter
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs glusterfs-thin-arbiter --node 1 --tempfile ''
++ tmpfile2=/tmp/tmppg_8zn66
++ '[' -z '' ']'
++ tmpfile=/tmp/tmppg_8zn66
++ expect
+spawn /usr/share/glusterfs/scripts/setup-thin-arbiter.sh -s
+
+******************************************************
+User will be required to enter a path/folder for arbiter volume.
+Please note that this path will be used for ALL VOLUMES using this
+node to host thin-arbiter. After setting, if a volume
+has been created using this host and path then path for
+thin-arbiter can not be changed 
+******************************************************
+ 
+Enter brick path for thin arbiter volumes:  
+/mnt/ta
+Entered brick path : /mnt/ta 
+Please note that this brick path will be used for ALL
+VOLUMES using this node to host thin-arbiter brick
+Want to continue? (y/N):  
+y
+ 
+Directory path to be used for thin-arbiter volume is: /mnt/ta
+ 
+========================================================
+Starting thin-arbiter process
+Created symlink /etc/systemd/system/multi-user.target.wants/gluster-ta-volume.service → /usr/lib/systemd/system/gluster-ta-volume.service.
+thin-arbiter process has been setup and running
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:31:08 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:31:09 2023 - INFO  - Start testing...
++ test_execution gluster-ta-volume.service
++ service=gluster-ta-volume.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 10:31:09'
++ test_restart gluster-ta-volume.service
++ service=gluster-ta-volume.service
++ systemctl restart gluster-ta-volume.service
++ CHECK_RESULT 0 0 0 'gluster-ta-volume.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gluster-ta-volume.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status gluster-ta-volume.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 10:31:09 CST; 5s ago
++ CHECK_RESULT 0 0 0 'gluster-ta-volume.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gluster-ta-volume.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop gluster-ta-volume.service
++ CHECK_RESULT 0 0 0 'gluster-ta-volume.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gluster-ta-volume.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status gluster-ta-volume.service
++ grep 'Active: inactive'
+     Active: inactive (dead) since Tue 2023-08-08 10:31:15 CST; 5s ago
++ CHECK_RESULT 0 0 0 'gluster-ta-volume.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gluster-ta-volume.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start gluster-ta-volume.service
++ CHECK_RESULT 0 0 0 'gluster-ta-volume.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gluster-ta-volume.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status gluster-ta-volume.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 10:31:21 CST; 5s ago
++ CHECK_RESULT 0 0 0 'gluster-ta-volume.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gluster-ta-volume.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled gluster-ta-volume.service
++ service=gluster-ta-volume.service
+++ systemctl is-enabled gluster-ta-volume.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable gluster-ta-volume.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/gluster-ta-volume.service
++ find /etc/systemd/system/multi-user.target.wants/gluster-ta-volume.service
+find: ‘/etc/systemd/system/multi-user.target.wants/gluster-ta-volume.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'gluster-ta-volume.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='gluster-ta-volume.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable gluster-ta-volume.service
+Created symlink /etc/systemd/system/multi-user.target.wants/gluster-ta-volume.service → /usr/lib/systemd/system/gluster-ta-volume.service.
++ find /etc/systemd/system/multi-user.target.wants/gluster-ta-volume.service
+/etc/systemd/system/multi-user.target.wants/gluster-ta-volume.service
++ CHECK_RESULT 0 0 0 'gluster-ta-volume.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='gluster-ta-volume.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-08-08 10:31:09' -u gluster-ta-volume.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of gluster-ta-volume.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of gluster-ta-volume.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload gluster-ta-volume.service
++ service=gluster-ta-volume.service
++ systemctl start gluster-ta-volume.service
++ systemctl reload gluster-ta-volume.service
++ grep 'Job type reload is not applicable'
+Failed to reload gluster-ta-volume.service: Job type reload is not applicable for unit gluster-ta-volume.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit gluster-ta-volume.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit gluster-ta-volume.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status gluster-ta-volume.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 10:31:21 CST; 10s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 10:31:32 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:31:33 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:31:34 2023 - INFO  - start environment cleanup.
++ systemctl stop gluster-ta-volume.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmppg_8zn66 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmppg_8zn66
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:31:49 2023 - INFO  - Finish environment cleanup!

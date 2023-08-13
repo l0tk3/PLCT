@@ -1,0 +1,319 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
++ main
+++ type -t post_test
+++ type -t post_test
++ '[' -n function ']'
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ rpm -qa
++ grep expect
++ grep expect
+++ type -t config_params
+++ type -t config_params
++ '[' -n '' ']'
++ '[' -n '' ']'
+++ type -t pre_test
+++ type -t pre_test
++ '[' -n function ']'
++ '[' -n function ']'
++ pre_test
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 11:36:20 2023 - INFO  - Start environmental preparation.
+Tue Aug  8 11:36:20 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL flac
++ pkgs=flac
++ node=1
++ '[' -z '' ']'
++ tmpfile=
++ DNF_INSTALL flac
++ pkgs=flac
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs flac --node 1 --tempfile ''
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs flac --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 14:34:45 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package         Architecture     Version                   Repository     Size
+================================================================================
+Installing:
+ flac            riscv64          1.4.2-1.oe2309            base          363 k
+Installing dependencies:
+ libogg          riscv64          2:1.3.5-2.oe2309          base           31 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total size: 394 k
+Installed size: 1.0 M
+Downloading Packages:
+[SKIPPED] flac-1.4.2-1.oe2309.riscv64.rpm: Already downloaded                  
+[SKIPPED] libogg-1.3.5-2.oe2309.riscv64.rpm: Already downloaded                
+Running transaction check
+Waiting for process with pid 487 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/flac-1.4.2-1.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 14:34:45 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package         Architecture     Version                   Repository     Size
+================================================================================
+Installing:
+ flac            riscv64          1.4.2-1.oe2309            base          363 k
+Installing dependencies:
+ libogg          riscv64          2:1.3.5-2.oe2309          base           31 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total size: 394 k
+Installed size: 1.0 M
+Downloading Packages:
+[SKIPPED] flac-1.4.2-1.oe2309.riscv64.rpm: Already downloaded                  
+[SKIPPED] libogg-1.3.5-2.oe2309.riscv64.rpm: Already downloaded                
+Running transaction check
+Waiting for process with pid 487 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/flac-1.4.2-1.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
++ tmpfile2=/tmp/tmpng_xk47d
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpng_xk47d
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 11:36:55 2023 - INFO  - End of environmental preparation!
+Tue Aug  8 11:36:55 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 11:36:55 2023 - INFO  - Start to run test.
+Tue Aug  8 11:36:55 2023 - INFO  - Start to run test.
++ flac -d cron.flac
++ flac -d cron.flac
+
+flac 1.4.2
+Copyright (C) 2000-2009  Josh Coalson, 2011-2022  Xiph.Org Foundation
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+
+flac 1.4.2
+Copyright (C) 2000-2009  Josh Coalson, 2011-2022  Xiph.Org Foundation
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+ERROR: output file cron.wav already exists, use -f to override
++ test -e cron.wav
++ CHECK_RESULT 0 0 0 'wav not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='wav not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ flac -a cron.flac
+
+flac 1.4.2
+Copyright (C) 2000-2009  Josh Coalson, 2011-2022  Xiph.Org Foundation
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+cron.flac: 6% completecron.flac: analyzing, 9% complete15% completeanalyzing, 19% complete23% completeanalyzing, 28% complete31% completeanalyzing, 38% complete39% completeanalyzing, 47% complete48% completeanalyzing, 57% complete56% completeanalyzing, 66% complete64% completeanalyzing, 76% complete72% completeanalyzing, 85% complete80% completeanalyzing, 95% completedone                    
++ test -e cron.ana
++ CHECK_RESULT 0 0 0 'ana not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ana not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+88% complete97% completedone         
++ test -e cron.wav
++ CHECK_RESULT 0 0 0 'wav not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='wav not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ flac -a cron.flac
+
+flac 1.4.2
+Copyright (C) 2000-2009  Josh Coalson, 2011-2022  Xiph.Org Foundation
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+ERROR: output file cron.ana already exists, use -f to override
++ test -e cron.ana
++ CHECK_RESULT 0 0 0 'ana not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ana not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 11:36:59 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:36:59 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:36:59 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:37:00 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:37:00 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpng_xk47d ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpng_xk47d
+Tue Aug  8 11:37:00 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 14:34:45 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package         Architecture     Version                   Repository     Size
+================================================================================
+Installing:
+ flac            riscv64          1.4.2-1.oe2309            base          363 k
+Installing dependencies:
+ libogg          riscv64          2:1.3.5-2.oe2309          base           31 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total size: 394 k
+Installed size: 1.0 M
+Downloading Packages:
+[SKIPPED] flac-1.4.2-1.oe2309.riscv64.rpm: Already downloaded                  
+[SKIPPED] libogg-1.3.5-2.oe2309.riscv64.rpm: Already downloaded                
+Running transaction check
+Waiting for process with pid 487 to finish.
+[Errno 2] No such file or directory: '/var/cache/dnf/base-1e078561a1901b1e/packages/flac-1.4.2-1.oe2309.riscv64.rpm'
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 14:34:45 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package         Architecture     Version                   Repository     Size
+================================================================================
+Installing:
+ flac            riscv64          1.4.2-1.oe2309            base          363 k
+Installing dependencies:
+ libogg          riscv64          2:1.3.5-2.oe2309          base           31 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total size: 394 k
+Installed size: 1.0 M
+Downloading Packages:
+[SKIPPED] flac-1.4.2-1.oe2309.riscv64.rpm: Already downloaded                  
+[SKIPPED] libogg-1.3.5-2.oe2309.riscv64.rpm: Already downloaded                
+Running transaction check
+Waiting for process with pid 487 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/flac-1.4.2-1.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 14:34:45 ago on Mon Aug  7 21:02:07 2023.\nDependencies resolved.\n================================================================================\n Package         Architecture     Version                   Repository     Size\n================================================================================\nInstalling:\n flac            riscv64          1.4.2-1.oe2309            base          363 k\nInstalling dependencies:\n libogg          riscv64          2:1.3.5-2.oe2309          base           31 k\n\nTransaction Summary\n================================================================================\nInstall  2 Packages\n\nTotal size: 394 k\nInstalled size: 1.0 M\nDownloading Packages:\n[SKIPPED] flac-1.4.2-1.oe2309.riscv64.rpm: Already downloaded                  \n[SKIPPED] libogg-1.3.5-2.oe2309.riscv64.rpm: Already downloaded                \nRunning transaction check\nWaiting for process with pid 487 to finish.\n[Errno 2] No such file or directory: '/var/cache/dnf/base-1e078561a1901b1e/packages/flac-1.4.2-1.oe2309.riscv64.rpm'\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ rm -rf cron.wav cron.ana
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 11:37:04 2023 - INFO  - Finish environment cleanup!
++ '[' 0 -ne 0 ']'
++ rm -rf cron.wav cron.ana
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'

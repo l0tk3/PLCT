@@ -1,0 +1,528 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
++ main
+++ type -t post_test
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ rpm -qa
++ grep expect
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 10:47:57 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libosinfo
++ pkgs=libosinfo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libosinfo --node 1 --tempfile ''
+Tue Aug  8 10:47:58 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libosinfo
++ pkgs=libosinfo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libosinfo --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp9owl1dsz
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp9owl1dsz
+++ grep VERSION_ID /etc/os-release
+++ awk -F '\"' '{print$2}'
++ VERSION_ID=23.03
++ tmpfile2='Last metadata expiration check: 13:46:22 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package                       Arch        Version               Repo      Size
+================================================================================
+Installing:
+ libosinfo                     riscv64     1.10.0-4.oe2309       base     271 k
+Installing dependencies:
+ duktape                       riscv64     2.7.0-1.oe2309        base     161 k
+ fonts-filesystem              noarch      4.0.2-2.oe2309        base     7.5 k
+ glib-networking               riscv64     2.74.0-1.oe2309       base     181 k
+ gsettings-desktop-schemas     riscv64     43.0-1.oe2309         base     739 k
+ hwdata                        noarch      0.370-1.oe2309        base     1.8 M
+ json-glib                     riscv64     1.6.6-3.oe2309        base     153 k
+ libproxy                      riscv64     0.4.18-1.oe2309       base     109 k
+ libsoup                       riscv64     2.74.3-1.oe2309       base     353 k
+ libsoup3                      riscv64     3.2.2-1.oe2309        base     327 k
+ libxslt                       riscv64     1.1.38-1.oe2309       base     177 k
+ osinfo-db                     riscv64     20220214-3.oe2309     base     258 k
+ osinfo-db-tools               riscv64     1.10.0-1.oe2309       base      52 k
+Installing weak dependencies:
+ abattis-cantarell-fonts       noarch      0.303.1-3.oe2309      base     112 k
+ libproxy-duktape              riscv64     0.4.18-1.oe2309       base      15 k
+
+Transaction Summary
+================================================================================
+Install  15 Packages
+
+Total size: 4.6 M
+Installed size: 23 M
+Downloading Packages:
+[SKIPPED] abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm: Already downloaded
+[SKIPPED] duktape-2.7.0-1.oe2309.riscv64.rpm: Already downloaded               
+[SKIPPED] fonts-filesystem-4.0.2-2.oe2309.noarch.rpm: Already downloaded       
+[SKIPPED] glib-networking-2.74.0-1.oe2309.riscv64.rpm: Already downloaded      
+[SKIPPED] gsettings-desktop-schemas-43.0-1.oe2309.riscv64.rpm: Already downloaded
+[SKIPPED] hwdata-0.370-1.oe2309.noarch.rpm: Already downloaded                 
+[SKIPPED] json-glib-1.6.6-3.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libosinfo-1.10.0-4.oe2309.riscv64.rpm: Already downloaded            
+[SKIPPED] libproxy-0.4.18-1.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libproxy-duktape-0.4.18-1.oe2309.riscv64.rpm: Already downloaded     
+[SKIPPED] libsoup-2.74.3-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] libsoup3-3.2.2-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] osinfo-db-20220214-3.oe2309.riscv64.rpm: Already downloaded          
+[SKIPPED] osinfo-db-tools-1.10.0-1.oe2309.riscv64.rpm: Already downloaded      
+Running transaction check
+Waiting for process with pid 483 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
++ LOG_INFO 'Finish preparing the test environment.'
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ message='Finish preparing the test environment.'
++ '[' -z '' ']'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
++ tmpfile='Last metadata expiration check: 13:46:22 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package                       Arch        Version               Repo      Size
+================================================================================
+Installing:
+ libosinfo                     riscv64     1.10.0-4.oe2309       base     271 k
+Installing dependencies:
+ duktape                       riscv64     2.7.0-1.oe2309        base     161 k
+ fonts-filesystem              noarch      4.0.2-2.oe2309        base     7.5 k
+ glib-networking               riscv64     2.74.0-1.oe2309       base     181 k
+ gsettings-desktop-schemas     riscv64     43.0-1.oe2309         base     739 k
+ hwdata                        noarch      0.370-1.oe2309        base     1.8 M
+ json-glib                     riscv64     1.6.6-3.oe2309        base     153 k
+ libproxy                      riscv64     0.4.18-1.oe2309       base     109 k
+ libsoup                       riscv64     2.74.3-1.oe2309       base     353 k
+ libsoup3                      riscv64     3.2.2-1.oe2309        base     327 k
+ libxslt                       riscv64     1.1.38-1.oe2309       base     177 k
+ osinfo-db                     riscv64     20220214-3.oe2309     base     258 k
+ osinfo-db-tools               riscv64     1.10.0-1.oe2309       base      52 k
+Installing weak dependencies:
+ abattis-cantarell-fonts       noarch      0.303.1-3.oe2309      base     112 k
+ libproxy-duktape              riscv64     0.4.18-1.oe2309       base      15 k
+
+Transaction Summary
+================================================================================
+Install  15 Packages
+
+Total size: 4.6 M
+Installed size: 23 M
+Downloading Packages:
+[SKIPPED] abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm: Already downloaded
+[SKIPPED] duktape-2.7.0-1.oe2309.riscv64.rpm: Already downloaded               
+[SKIPPED] fonts-filesystem-4.0.2-2.oe2309.noarch.rpm: Already downloaded       
+[SKIPPED] glib-networking-2.74.0-1.oe2309.riscv64.rpm: Already downloaded      
+[SKIPPED] gsettings-desktop-schemas-43.0-1.oe2309.riscv64.rpm: Already downloaded
+[SKIPPED] hwdata-0.370-1.oe2309.noarch.rpm: Already downloaded                 
+[SKIPPED] json-glib-1.6.6-3.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libosinfo-1.10.0-4.oe2309.riscv64.rpm: Already downloaded            
+[SKIPPED] libproxy-0.4.18-1.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libproxy-duktape-0.4.18-1.oe2309.riscv64.rpm: Already downloaded     
+[SKIPPED] libsoup-2.74.3-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] libsoup3-3.2.2-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] osinfo-db-20220214-3.oe2309.riscv64.rpm: Already downloaded          
+[SKIPPED] osinfo-db-tools-1.10.0-1.oe2309.riscv64.rpm: Already downloaded      
+Running transaction check
+Waiting for process with pid 483 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+++ grep VERSION_ID /etc/os-release
+++ awk -F '\"' '{print$2}'
++ VERSION_ID=23.03
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Tue Aug  8 10:48:44 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:48:44 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:48:45 2023 - INFO  - Start to run test.
++ osinfo-detect --help
++ grep -E 'Usage:|osinfo-detect \[OPTION…\]'
+Tue Aug  8 10:48:45 2023 - INFO  - Start to run test.
++ osinfo-detect --help
++ grep -E 'Usage:|osinfo-detect \[OPTION…\]'
+Usage:
+  osinfo-detect [OPTION…] - Detect if media is bootable and the relevant OS and distribution.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 20
++ wait_time=20
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 20 --cmd '' --mode 1
++ nohup wget https://repo.openeuler.org/openEuler-20.03-LTS/ISO/aarch64/openEuler-20.03-LTS-aarch64-dvd.iso
+Usage:
+  osinfo-detect [OPTION…] - Detect if media is bootable and the relevant OS and distribution.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 20
++ wait_time=20
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 20 --cmd '' --mode 1
++ nohup wget https://repo.openeuler.org/openEuler-20.03-LTS/ISO/aarch64/openEuler-20.03-LTS-aarch64-dvd.iso
++ '[' 23.03 '!=' 22.03 ']'
++ osinfo-detect --format=env openEuler-20.03-LTS-aarch64-dvd.iso
+Error while parsing commandline options: Invalid value 'env'
+Usage:
+  osinfo-detect [OPTION…] - Detect if media is bootable and the relevant OS and distribution.
+
+Help Options:
+  -h, --help              Show help options
+
+Application Options:
+  -f, --format=FORMAT     Select the output format
+  -t, --type=TYPE         Select the type of what is being detected
+  -a, --all               Report all matches, not just the first
+
+The only value available for FORMAT is 'plain', which means plain text.
+TYPE can be either 'media' (the default) for CD/DVD ISOs,
+or 'tree' for install trees.
+
++ CHECK_RESULT 255
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_osinfo-detect.sh line 37'
++ message='oe_test_osinfo-detect.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_osinfo-detect.sh line 37'
++ '[' 23.03 '!=' 22.03 ']'
++ osinfo-detect --format=env openEuler-20.03-LTS-aarch64-dvd.iso
+Error while parsing commandline options: Invalid value 'env'
+Usage:
+  osinfo-detect [OPTION…] - Detect if media is bootable and the relevant OS and distribution.
+
+Help Options:
+  -h, --help              Show help options
+
+Application Options:
+  -f, --format=FORMAT     Select the output format
+  -t, --type=TYPE         Select the type of what is being detected
+  -a, --all               Report all matches, not just the first
+
+The only value available for FORMAT is 'plain', which means plain text.
+TYPE can be either 'media' (the default) for CD/DVD ISOs,
+or 'tree' for install trees.
+
++ CHECK_RESULT 255
++ actual_result=255
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 255 ']'
++ '[' 0 -eq 0 ']'
++ test 255x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_osinfo-detect.sh line 37'
++ message='oe_test_osinfo-detect.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_osinfo-detect.sh line 37'
+Tue Aug  8 10:49:07 2023 - ERROR - oe_test_osinfo-detect.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ osinfo-detect --format=plain openEuler-20.03-LTS-aarch64-dvd.iso
+Tue Aug  8 10:49:07 2023 - ERROR - oe_test_osinfo-detect.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ osinfo-detect --format=plain openEuler-20.03-LTS-aarch64-dvd.iso
+Media is bootable.
+Media is bootable.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ osinfo-detect --type=media openEuler-20.03-LTS-aarch64-dvd.iso
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ osinfo-detect --type=media openEuler-20.03-LTS-aarch64-dvd.iso
+Media is bootable.
+Media is bootable.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 10:50:15 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 10:50:16 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 10:50:16 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:50:16 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:50:16 2023 - INFO  - Start to restore the test environment.
+++ pgrep -f wget
++ kill -9 525 527
+++ ls
+++ grep -v .sh
++ roc='openEuler-20.03-LTS-aarch64-dvd.iso
+openEuler-20.03-LTS-aarch64-dvd.iso.1'
++ rm -rf openEuler-20.03-LTS-aarch64-dvd.iso openEuler-20.03-LTS-aarch64-dvd.iso.1
+Tue Aug  8 10:50:17 2023 - INFO  - Start to restore the test environment.
+/root/mugen/libs/locallibs/common_lib_python.sh: line 19:   527 Killed                  nohup wget https://repo.openeuler.org/openEuler-20.03-LTS/ISO/aarch64/openEuler-20.03-LTS-aarch64-dvd.iso > /dev/null 2>&1
+++ pgrep -f wget
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+++ ls
+++ grep -v .sh
++ roc=openEuler-20.03-LTS-aarch64-dvd.iso.1
++ rm -rf openEuler-20.03-LTS-aarch64-dvd.iso.1
+oe_test_osinfo-detect.sh: line 48:   525 Killed                  nohup wget https://repo.openeuler.org/openEuler-20.03-LTS/ISO/aarch64/openEuler-20.03-LTS-aarch64-dvd.iso > /dev/null 2>&1
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp9owl1dsz ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp9owl1dsz
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 13:46:22 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package                       Arch        Version               Repo      Size
+================================================================================
+Installing:
+ libosinfo                     riscv64     1.10.0-4.oe2309       base     271 k
+Installing dependencies:
+ duktape                       riscv64     2.7.0-1.oe2309        base     161 k
+ fonts-filesystem              noarch      4.0.2-2.oe2309        base     7.5 k
+ glib-networking               riscv64     2.74.0-1.oe2309       base     181 k
+ gsettings-desktop-schemas     riscv64     43.0-1.oe2309         base     739 k
+ hwdata                        noarch      0.370-1.oe2309        base     1.8 M
+ json-glib                     riscv64     1.6.6-3.oe2309        base     153 k
+ libproxy                      riscv64     0.4.18-1.oe2309       base     109 k
+ libsoup                       riscv64     2.74.3-1.oe2309       base     353 k
+ libsoup3                      riscv64     3.2.2-1.oe2309        base     327 k
+ libxslt                       riscv64     1.1.38-1.oe2309       base     177 k
+ osinfo-db                     riscv64     20220214-3.oe2309     base     258 k
+ osinfo-db-tools               riscv64     1.10.0-1.oe2309       base      52 k
+Installing weak dependencies:
+ abattis-cantarell-fonts       noarch      0.303.1-3.oe2309      base     112 k
+ libproxy-duktape              riscv64     0.4.18-1.oe2309       base      15 k
+
+Transaction Summary
+================================================================================
+Install  15 Packages
+
+Total size: 4.6 M
+Installed size: 23 M
+Downloading Packages:
+[SKIPPED] abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm: Already downloaded
+[SKIPPED] duktape-2.7.0-1.oe2309.riscv64.rpm: Already downloaded               
+[SKIPPED] fonts-filesystem-4.0.2-2.oe2309.noarch.rpm: Already downloaded       
+[SKIPPED] glib-networking-2.74.0-1.oe2309.riscv64.rpm: Already downloaded      
+[SKIPPED] gsettings-desktop-schemas-43.0-1.oe2309.riscv64.rpm: Already downloaded
+[SKIPPED] hwdata-0.370-1.oe2309.noarch.rpm: Already downloaded                 
+[SKIPPED] json-glib-1.6.6-3.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libosinfo-1.10.0-4.oe2309.riscv64.rpm: Already downloaded            
+[SKIPPED] libproxy-0.4.18-1.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libproxy-duktape-0.4.18-1.oe2309.riscv64.rpm: Already downloaded     
+[SKIPPED] libsoup-2.74.3-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] libsoup3-3.2.2-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] osinfo-db-20220214-3.oe2309.riscv64.rpm: Already downloaded          
+[SKIPPED] osinfo-db-tools-1.10.0-1.oe2309.riscv64.rpm: Already downloaded      
+Running transaction check
+Waiting for process with pid 483 to finish.
+[Errno 2] No such file or directory: '/var/cache/dnf/base-1e078561a1901b1e/packages/abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm'
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 13:46:22 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package                       Arch        Version               Repo      Size
+================================================================================
+Installing:
+ libosinfo                     riscv64     1.10.0-4.oe2309       base     271 k
+Installing dependencies:
+ duktape                       riscv64     2.7.0-1.oe2309        base     161 k
+ fonts-filesystem              noarch      4.0.2-2.oe2309        base     7.5 k
+ glib-networking               riscv64     2.74.0-1.oe2309       base     181 k
+ gsettings-desktop-schemas     riscv64     43.0-1.oe2309         base     739 k
+ hwdata                        noarch      0.370-1.oe2309        base     1.8 M
+ json-glib                     riscv64     1.6.6-3.oe2309        base     153 k
+ libproxy                      riscv64     0.4.18-1.oe2309       base     109 k
+ libsoup                       riscv64     2.74.3-1.oe2309       base     353 k
+ libsoup3                      riscv64     3.2.2-1.oe2309        base     327 k
+ libxslt                       riscv64     1.1.38-1.oe2309       base     177 k
+ osinfo-db                     riscv64     20220214-3.oe2309     base     258 k
+ osinfo-db-tools               riscv64     1.10.0-1.oe2309       base      52 k
+Installing weak dependencies:
+ abattis-cantarell-fonts       noarch      0.303.1-3.oe2309      base     112 k
+ libproxy-duktape              riscv64     0.4.18-1.oe2309       base      15 k
+
+Transaction Summary
+================================================================================
+Install  15 Packages
+
+Total size: 4.6 M
+Installed size: 23 M
+Downloading Packages:
+[SKIPPED] abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm: Already downloaded
+[SKIPPED] duktape-2.7.0-1.oe2309.riscv64.rpm: Already downloaded               
+[SKIPPED] fonts-filesystem-4.0.2-2.oe2309.noarch.rpm: Already downloaded       
+[SKIPPED] glib-networking-2.74.0-1.oe2309.riscv64.rpm: Already downloaded      
+[SKIPPED] gsettings-desktop-schemas-43.0-1.oe2309.riscv64.rpm: Already downloaded
+[SKIPPED] hwdata-0.370-1.oe2309.noarch.rpm: Already downloaded                 
+[SKIPPED] json-glib-1.6.6-3.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libosinfo-1.10.0-4.oe2309.riscv64.rpm: Already downloaded            
+[SKIPPED] libproxy-0.4.18-1.oe2309.riscv64.rpm: Already downloaded             
+[SKIPPED] libproxy-duktape-0.4.18-1.oe2309.riscv64.rpm: Already downloaded     
+[SKIPPED] libsoup-2.74.3-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] libsoup3-3.2.2-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] osinfo-db-20220214-3.oe2309.riscv64.rpm: Already downloaded          
+[SKIPPED] osinfo-db-tools-1.10.0-1.oe2309.riscv64.rpm: Already downloaded      
+Running transaction check
+Waiting for process with pid 483 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 13:46:22 ago on Mon Aug  7 21:02:07 2023.\nDependencies resolved.\n================================================================================\n Package                       Arch        Version               Repo      Size\n================================================================================\nInstalling:\n libosinfo                     riscv64     1.10.0-4.oe2309       base     271 k\nInstalling dependencies:\n duktape                       riscv64     2.7.0-1.oe2309        base     161 k\n fonts-filesystem              noarch      4.0.2-2.oe2309        base     7.5 k\n glib-networking               riscv64     2.74.0-1.oe2309       base     181 k\n gsettings-desktop-schemas     riscv64     43.0-1.oe2309         base     739 k\n hwdata                        noarch      0.370-1.oe2309        base     1.8 M\n json-glib                     riscv64     1.6.6-3.oe2309        base     153 k\n libproxy                      riscv64     0.4.18-1.oe2309       base     109 k\n libsoup                       riscv64     2.74.3-1.oe2309       base     353 k\n libsoup3                      riscv64     3.2.2-1.oe2309        base     327 k\n libxslt                       riscv64     1.1.38-1.oe2309       base     177 k\n osinfo-db                     riscv64     20220214-3.oe2309     base     258 k\n osinfo-db-tools               riscv64     1.10.0-1.oe2309       base      52 k\nInstalling weak dependencies:\n abattis-cantarell-fonts       noarch      0.303.1-3.oe2309      base     112 k\n libproxy-duktape              riscv64     0.4.18-1.oe2309       base      15 k\n\nTransaction Summary\n================================================================================\nInstall  15 Packages\n\nTotal size: 4.6 M\nInstalled size: 23 M\nDownloading Packages:\n[SKIPPED] abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm: Already downloaded\n[SKIPPED] duktape-2.7.0-1.oe2309.riscv64.rpm: Already downloaded               \n[SKIPPED] fonts-filesystem-4.0.2-2.oe2309.noarch.rpm: Already downloaded       \n[SKIPPED] glib-networking-2.74.0-1.oe2309.riscv64.rpm: Already downloaded      \n[SKIPPED] gsettings-desktop-schemas-43.0-1.oe2309.riscv64.rpm: Already downloaded\n[SKIPPED] hwdata-0.370-1.oe2309.noarch.rpm: Already downloaded                 \n[SKIPPED] json-glib-1.6.6-3.oe2309.riscv64.rpm: Already downloaded             \n[SKIPPED] libosinfo-1.10.0-4.oe2309.riscv64.rpm: Already downloaded            \n[SKIPPED] libproxy-0.4.18-1.oe2309.riscv64.rpm: Already downloaded             \n[SKIPPED] libproxy-duktape-0.4.18-1.oe2309.riscv64.rpm: Already downloaded     \n[SKIPPED] libsoup-2.74.3-1.oe2309.riscv64.rpm: Already downloaded              \n[SKIPPED] libsoup3-3.2.2-1.oe2309.riscv64.rpm: Already downloaded              \n[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              \n[SKIPPED] osinfo-db-20220214-3.oe2309.riscv64.rpm: Already downloaded          \n[SKIPPED] osinfo-db-tools-1.10.0-1.oe2309.riscv64.rpm: Already downloaded      \nRunning transaction check\nWaiting for process with pid 483 to finish.\n[Errno 2] No such file or directory: '/var/cache/dnf/base-1e078561a1901b1e/packages/abattis-cantarell-fonts-0.303.1-3.oe2309.noarch.rpm'\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Tue Aug  8 10:50:21 2023 - INFO  - Finish restoring the test environment.
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Tue Aug  8 10:50:30 2023 - INFO  - Finish restoring the test environment.

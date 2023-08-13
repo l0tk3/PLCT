@@ -1,0 +1,196 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 11:55:07 2023 - INFO  - Start to run test.
++ iptables-save
+oe_test_iptables-save.sh: line 24: iptables-save: command not found
++ grep nat
++ CHECK_RESULT 1 0 0 'Incomplete display nat'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Incomplete display nat'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Incomplete display nat'
++ LOG_ERROR 'Incomplete display nat'
++ message='Incomplete display nat'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Incomplete display nat'
+Tue Aug  8 11:55:07 2023 - ERROR - Incomplete display nat
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iptables-save.sh line 25'
++ message='oe_test_iptables-save.sh line 25'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iptables-save.sh line 25'
+Tue Aug  8 11:55:08 2023 - ERROR - oe_test_iptables-save.sh line 25
++ '[' 0 -eq 1 ']'
++ return 0
++ iptables-save
+oe_test_iptables-save.sh: line 26: iptables-save: command not found
++ grep mangle
++ CHECK_RESULT 1 0 0 'Incomplete display mangle'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Incomplete display mangle'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Incomplete display mangle'
++ LOG_ERROR 'Incomplete display mangle'
++ message='Incomplete display mangle'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Incomplete display mangle'
+Tue Aug  8 11:55:08 2023 - ERROR - Incomplete display mangle
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iptables-save.sh line 27'
++ message='oe_test_iptables-save.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iptables-save.sh line 27'
+Tue Aug  8 11:55:09 2023 - ERROR - oe_test_iptables-save.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ iptables-save
+oe_test_iptables-save.sh: line 28: iptables-save: command not found
++ grep raw
++ CHECK_RESULT 1 0 0 'Incomplete display raw'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Incomplete display raw'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Incomplete display raw'
++ LOG_ERROR 'Incomplete display raw'
++ message='Incomplete display raw'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Incomplete display raw'
+Tue Aug  8 11:55:09 2023 - ERROR - Incomplete display raw
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iptables-save.sh line 29'
++ message='oe_test_iptables-save.sh line 29'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iptables-save.sh line 29'
+Tue Aug  8 11:55:10 2023 - ERROR - oe_test_iptables-save.sh line 29
++ '[' 0 -eq 1 ']'
++ return 0
++ iptables-save
+oe_test_iptables-save.sh: line 30: iptables-save: command not found
++ grep security
++ CHECK_RESULT 1 0 0 'Incomplete display security'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Incomplete display security'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Incomplete display security'
++ LOG_ERROR 'Incomplete display security'
++ message='Incomplete display security'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Incomplete display security'
+Tue Aug  8 11:55:10 2023 - ERROR - Incomplete display security
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iptables-save.sh line 31'
++ message='oe_test_iptables-save.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iptables-save.sh line 31'
+Tue Aug  8 11:55:11 2023 - ERROR - oe_test_iptables-save.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ iptables-save
+oe_test_iptables-save.sh: line 32: iptables-save: command not found
++ grep filter
++ CHECK_RESULT 1 0 0 'Incomplete display filter'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Incomplete display filter'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Incomplete display filter'
++ LOG_ERROR 'Incomplete display filter'
++ message='Incomplete display filter'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Incomplete display filter'
+Tue Aug  8 11:55:12 2023 - ERROR - Incomplete display filter
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iptables-save.sh line 33'
++ message='oe_test_iptables-save.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iptables-save.sh line 33'
+Tue Aug  8 11:55:12 2023 - ERROR - oe_test_iptables-save.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ iptables-save -t filter
+oe_test_iptables-save.sh: line 34: iptables-save: command not found
++ grep filter
++ CHECK_RESULT 1 0 0 'Failed to display filter'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to display filter'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to display filter'
++ LOG_ERROR 'Failed to display filter'
++ message='Failed to display filter'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to display filter'
+Tue Aug  8 11:55:13 2023 - ERROR - Failed to display filter
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_iptables-save.sh line 35'
++ message='oe_test_iptables-save.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_iptables-save.sh line 35'
+Tue Aug  8 11:55:13 2023 - ERROR - oe_test_iptables-save.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ iptables-save -t filter
+oe_test_iptables-save.sh: line 36: iptables-save: command not found
++ grep -E 'nat|mangle|raw|security'
++ CHECK_RESULT 1 0 1 'Not just filter'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Not just filter'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 11:55:14 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 11:55:14 2023 - ERROR - failed to execute the case.
++ exit 6
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_iptables-save.sh post_test'
++ message='oe_test_iptables-save.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_iptables-save.sh post_test'
+Tue Aug  8 11:55:15 2023 - INFO  - oe_test_iptables-save.sh post_test

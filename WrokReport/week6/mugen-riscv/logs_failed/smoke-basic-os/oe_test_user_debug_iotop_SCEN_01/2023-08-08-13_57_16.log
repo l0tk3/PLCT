@@ -1,0 +1,206 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 13:57:18 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL iotop
++ pkgs=iotop
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs iotop --node 1 --tempfile ''
+Tue Aug  8 13:57:24 2023 - INFO  - pkgs:(iotop) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 13:57:25 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 13:57:26 2023 - INFO  - Start to run test.
++ iotop -b -n 1 -d 10
++ awk '{print $2}'
++ grep '?sys'
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
+?sys
++ CHECK_RESULT 0 1 0 'Verify PRIO:failed!'
++ actual_result=0
++ expect_result=1
++ mode=0
++ error_log='Verify PRIO:failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 1x
++ test -n 'Verify PRIO:failed!'
++ LOG_ERROR 'Verify PRIO:failed!'
++ message='Verify PRIO:failed!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Verify PRIO:failed!'
+Tue Aug  8 13:57:28 2023 - ERROR - Verify PRIO:failed!
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_user_debug_iotop_SCEN_01.sh line 30'
++ message='oe_test_user_debug_iotop_SCEN_01.sh line 30'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_user_debug_iotop_SCEN_01.sh line 30'
+Tue Aug  8 13:57:28 2023 - ERROR - oe_test_user_debug_iotop_SCEN_01.sh line 30
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 13:57:28 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 13:57:29 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 13:57:29 2023 - INFO  - Start to restore the test environment.
++ DNF REMOVE
+oe_test_user_debug_iotop_SCEN_01.sh: line 36: DNF: command not found
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 13:57:30 2023 - INFO  - End to restore the test environment.

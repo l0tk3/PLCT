@@ -1,0 +1,157 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 13:42:04 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL audit
++ pkgs=audit
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs audit --node 1 --tempfile ''
++ tmpfile2=/tmp/tmph69s0xpi
++ '[' -z '' ']'
++ tmpfile=/tmp/tmph69s0xpi
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 13:42:33 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 13:42:33 2023 - INFO  - Start to run test.
++ systemctl start auditd
++ CHECK_RESULT 0 0 0 'Start audit: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Start audit: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status auditd
++ grep 'active (running)'
+     Active: active (running) since Tue 2023-08-08 13:42:34 CST; 144ms ago
++ CHECK_RESULT 0 0 0 'Check audit status: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check audit status: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep Restart=on-failure /usr/lib/systemd/system/auditd.service
+Restart=on-failure
++ CHECK_RESULT 0 0 0 'View auditd.service file: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='View auditd.service file: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ systemctl status auditd
+++ grep 'Main PID'
+++ tr -cd '[0-9]'
++ kill -9 35686
++ CHECK_RESULT 0 0 0 'Kill auditd.service server: failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Kill auditd.service server: failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ systemctl status auditd
++ grep 'active (running)'
+     Active: active (running) since Tue 2023-08-08 13:42:35 CST; 2s ago
++ CHECK_RESULT 0 0 0 'Stop audit process and get audit status:  failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Stop audit process and get audit status:  failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ systemctl status auditd
+++ grep 'Main PID'
+++ tr -cd '[0-9]'
++ pid=35716
+++ cat /var/run/auditd.pid
++ pid_1=35716
++ test 35716 == 35716
++ CHECK_RESULT 0 0 0 'Check whether the two pid are the same:  failed!'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check whether the two pid are the same:  failed!'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 13:42:39 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 13:42:39 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 13:42:40 2023 - INFO  - Start to restore the test environment.
++ kill -9 35716
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmph69s0xpi ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmph69s0xpi
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 13:42:46 2023 - INFO  - End to restore the test environment.

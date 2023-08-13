@@ -1,0 +1,129 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 09:50:48 2023 - INFO  - Start environmental preparation.
++ grep '^example1:' /etc/passwd
++ grep '^example2:' /etc/passwd
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 09:50:49 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Tue Aug  8 09:50:49 2023 - INFO  - Start executing testcase.
++ useradd example1
++ useradd example2
++ passwd example1
+New password: Retype new password: Changing password for user example1.
+passwd: all authentication tokens updated successfully.
++ passwd example2
+New password: Retype new password: Changing password for user example2.
+passwd: all authentication tokens updated successfully.
++ touch /home/test1
++ echo test
++ chown example1:example1 /home/test1
++ chmod 700 /home/test1
++ su - example1 -c 'setfacl -m u:example2:r  /home/test1'
++ su - example2 -c 'cat  /home/test1|grep test'
+test
++ CHECK_RESULT 0 0 0 'Failed to switch '\''example2'\'' user to view files'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to switch '\''example2'\'' user to view files'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - example2 -c 'setfacl -m u:example2:w  /home/test1'
+setfacl: /home/test1: Operation not permitted
++ CHECK_RESULT 1 0 1 'Switching to '\''example2'\'' failed to execute setfacl command'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Switching to '\''example2'\'' failed to execute setfacl command'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ su - example2 -c 'echo test2 >/home/test1'
+-bash: line 1: /home/test1: Permission denied
++ CHECK_RESULT 1 0 1 'Switching to '\''example2'\'' failed to execute echo command'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Switching to '\''example2'\'' failed to execute echo command'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ setfacl -m u:example2:w /home/test1
++ CHECK_RESULT 0 0 0 'Failed to add a user permission for '\''example2'\'''
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add a user permission for '\''example2'\'''
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - example2 -c 'echo test2 >/home/test1'
++ CHECK_RESULT 0 0 0 'Switching to '\''example2'\'' failed to execute echo command'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Switching to '\''example2'\'' failed to execute echo command'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Tue Aug  8 09:51:00 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:51:01 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 09:51:01 2023 - INFO  - start environment cleanup.
++ rm -rf /home/test1
++ userdel -rf example1
++ userdel -rf example2
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 09:51:02 2023 - INFO  - Finish environment cleanup!

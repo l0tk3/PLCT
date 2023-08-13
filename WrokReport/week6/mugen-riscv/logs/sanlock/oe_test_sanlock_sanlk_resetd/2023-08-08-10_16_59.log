@@ -1,0 +1,192 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:17:01 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'sanlock sanlk-reset'
++ pkgs='sanlock sanlk-reset'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'sanlock sanlk-reset' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp6m_u30pl
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp6m_u30pl
++ mkdir sanlocktest
++ cd sanlocktest
++ dd if=/dev/zero bs=1048576 count=1 of=./dev
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0297511 s, 35.2 MB/s
++ dd if=/dev/zero bs=1048576 count=1 of=./res
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0283298 s, 37.0 MB/s
++ chown sanlock:sanlock ./dev ./res
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test
++ sanlock direct init -s test:0:./dev:0
+init done 0
++ sanlock direct init -r test:testres:./res:0
+init done 0
++ sanlock client add_lockspace -s test:1:./dev:0
+add_lockspace
+add_lockspace done 0
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:18:01 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:18:01 2023 - INFO  - Start to run test.
++ sanlk-resetd -h
++ fgrep 'sanlk-resetd [options]'
+fgrep: warning: fgrep is obsolescent; using grep -F
+sanlk-resetd [options] lockspace_name ...
++ CHECK_RESULT 0 0 0 'Check sanlk-resetd -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-resetd -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-resetd --help
++ fgrep 'sanlk-resetd [options]'
+fgrep: warning: fgrep is obsolescent; using grep -F
+sanlk-resetd [options] lockspace_name ...
++ CHECK_RESULT 0 0 0 'Check sanlk-resetd --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-resetd --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-resetd -V
++ grep 'sanlk-resetd version: [[:digit:]]'
+sanlk-resetd version: 3.8.5
++ CHECK_RESULT 0 0 0 'Check sanlk-resetd -V failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-resetd -V failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-resetd --version
++ grep 'sanlk-resetd version: [[:digit:]]'
+sanlk-resetd version: 3.8.5
++ CHECK_RESULT 0 0 0 'Check sanlk-resetd --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-resetd --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlk-resetd -f -D -w 0 -b 0 -R 0 -d 2 test
++ grep 'reg_event 0 fd 6 ls test' ./info1.log
+1691461082 reg_event 0 fd 6 ls test
++ CHECK_RESULT 0 0 0 'Check sanlk-resetd -f -D -w -b -R -d failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-resetd -f -D -w -b -R -d failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlk-resetd --foreground --daemon-debug --watchdog 0 --sysrq-reboot 0 --resource-mode 0 --sysrq-delay 2 test
++ grep 'reg_event 0 fd 6 ls test' ./info2.log
+1691461092 reg_event 0 fd 6 ls test
++ CHECK_RESULT 0 0 0 'Check sanlk-resetd --foreground --daemon-debug --watchdog --sysrq-reboot --resource-mode --sysrq-delay failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-resetd --foreground --daemon-debug --watchdog --sysrq-reboot --resource-mode --sysrq-delay failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:18:23 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:18:24 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp6m_u30pl ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp6m_u30pl
++ '[' 0 -ne 0 ']'
+++ pgrep -f 'sanlock daemon'
++ kill -9 1745 1747
+++ pgrep -f 'sanlk-resetd -f -D'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+oe_test_sanlock_sanlk_resetd.sh: line 70:  1745 Killed                  nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test > ./info.log 2>&1
+++ pgrep -f 'sanlk-resetd --foreground'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ cd ..
++ rm -rf sanlocktest
++ LOG_INFO 'Finish restore the test environment.'
++ message='Finish restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restore the test environment.'
+Tue Aug  8 10:18:34 2023 - INFO  - Finish restore the test environment.

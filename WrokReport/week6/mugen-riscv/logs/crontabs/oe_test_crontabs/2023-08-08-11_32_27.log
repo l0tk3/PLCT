@@ -1,0 +1,250 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 11:32:29 2023 - INFO  - Start environmental preparation.
++ touch test.sh
++ chmod +x test.sh
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 11:32:29 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run testcase:oe_test_crontabs.'
++ message='Start to run testcase:oe_test_crontabs.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run testcase:oe_test_crontabs.'
+Tue Aug  8 11:32:30 2023 - INFO  - Start to run testcase:oe_test_crontabs.
++ systemctl start crond
++ CHECK_RESULT 0 0 0 'Failed : start'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed : start'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl restart crond
++ CHECK_RESULT 0 0 0 'Failed : restart'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed : restart'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop crond
++ CHECK_RESULT 0 0 0 'Failed : stop'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed : stop'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status crond
++ grep dead
+     Active: inactive (dead) since Tue 2023-08-08 11:32:30 CST; 182ms ago
++ CHECK_RESULT 0 0 0 'Failed : status'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed : status'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start crond
++ echo '* * * * * /bin/ls'
++ CHECK_RESULT 0 0 0 'Failed option: -e'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -e'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ crontab -u root -l
++ grep /bin/ls
+* * * * * /bin/ls
++ CHECK_RESULT 0 0 0 'Failed option: -l'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -l'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ run-parts --test .
++ grep test.sh
+./test.sh
++ CHECK_RESULT 0 0 0 'Failed option: run-parts --test'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: run-parts --test'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ run-parts --list .
++ grep crontabs.sh
+./oe_test_crontabs.sh
++ CHECK_RESULT 0 0 0 'Failed option: run-parts --list'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: run-parts --list'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ crontab -x proc /var/spool/cron/root
++ grep enabled
+debug flags enabled: proc
++ CHECK_RESULT 0 0 0 'Failed option: -x'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -x'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ crontab -u root -l -s
+Cannot obtain SELinux process context
++ CHECK_RESULT 1 0 0 'Failed option: -s'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed option: -s'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed option: -s'
++ LOG_ERROR 'Failed option: -s'
++ message='Failed option: -s'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed option: -s'
+Tue Aug  8 11:32:32 2023 - ERROR - Failed option: -s
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_crontabs.sh line 51'
++ message='oe_test_crontabs.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_crontabs.sh line 51'
+Tue Aug  8 11:32:32 2023 - ERROR - oe_test_crontabs.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ crontab -u root -r
++ CHECK_RESULT 0 0 0 'Failed option: -r'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -r'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo y
++ crontab -u root -r -i
++ grep no
+crontab: really delete root's crontab? no crontab for root
++ CHECK_RESULT 0 0 0 'Failed option: -i'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -i'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ crontab -n 10.0.2.15
++ CHECK_RESULT 0 0 0 'Failed option: -n'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -n'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ crontab -c
++ grep 10.0.2.15
+10.0.2.15
++ CHECK_RESULT 0 0 0 'Failed option: -c'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -c'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ crontab -V
++ grep '[[:digit:]]*'
+cronie 1.6.1
++ CHECK_RESULT 0 0 0 'Failed option: -V'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed option: -V'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run testcase:oe_test_crontabs.'
++ message='End to run testcase:oe_test_crontabs.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run testcase:oe_test_crontabs.'
+Tue Aug  8 11:32:33 2023 - INFO  - End to run testcase:oe_test_crontabs.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 11:32:34 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 11:32:34 2023 - INFO  - Start to restore the test environment.
++ rm test.sh
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 11:32:35 2023 - INFO  - End to restore the test environment.

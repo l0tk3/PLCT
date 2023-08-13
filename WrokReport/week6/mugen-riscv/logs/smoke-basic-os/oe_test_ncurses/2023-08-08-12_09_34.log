@@ -1,0 +1,176 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:09:36 2023 - INFO  - Start to prepare the test environment.
++ OLD_LANG=
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ printf %s 'log_file testlog
+spawn ssh -o StrictHostKeyChecking=no 127.0.0.1
+expect {
+    "password" {send "NODE1_PASSWORD\r";exp_continue}
+    "Users" {send "\rexport TERM=vt100\r";exp_continue}
+    "export" {send "\recho \$TERM\r";exp_continue}
+    "echo" {send "\rexit\n"}
+}
+expect eof
+'
++ sed -i '1i#!/usr/bin/expect' run-term
++ sed -i 's/NODE1_PASSWORD/openEuler12#$/g' run-term
++ chmod 777 run-term
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:09:37 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:09:37 2023 - INFO  - Start to run test.
++ '[' unknown ']'
++ CHECK_RESULT 0 0 0 'Failed to execute xterm'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute xterm'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ infocmp
++ grep terminfo
+#	Reconstructed via infocmp from file: /usr/share/terminfo/u/unknown
++ CHECK_RESULT 0 0 0 'Failed to execute infocmp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute infocmp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ infocmp
++ infotocap test.log
++ grep capabilities
++ CHECK_RESULT 1 0 0 'Failed to execute infotocap'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to execute infotocap'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to execute infotocap'
++ LOG_ERROR 'Failed to execute infotocap'
++ message='Failed to execute infotocap'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to execute infotocap'
+Tue Aug  8 12:09:38 2023 - ERROR - Failed to execute infotocap
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ncurses.sh line 50'
++ message='oe_test_ncurses.sh line 50'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ncurses.sh line 50'
+Tue Aug  8 12:09:38 2023 - ERROR - oe_test_ncurses.sh line 50
++ '[' 0 -eq 1 ']'
++ return 0
++ ./run-term
+spawn ssh -o StrictHostKeyChecking=no 127.0.0.1
+root@127.0.0.1's password: 
+Last login: Mon Aug  7 23:06:31 2023
+
+
+Welcome to 6.4.0-1.0.0.4.oe2309.riscv64
+
+System information as of time: 	Tue Aug  8 12:09:41 PM CST 2023
+
+System load: 	[0;33;40m1.51[0m
+Processes: 	121
+Memory used: 	4.9%
+Swap used: 	0.0%
+Usage On: 	31%
+IP address: 	10.0.2.15
+Users online: 	1
+
+
+
+export TERM=vt100
+
+echo $TERM
+
+exit
+[root@openeuler-riscv64 ~]# 
+[root@openeuler-riscv64 ~]# export TERM=vt100
+[root@openeuler-riscv64 ~]# 
+[root@openeuler-riscv64 ~]# echo $TERM
+vt100
+[root@openeuler-riscv64 ~]# 
+[root@openeuler-riscv64 ~]# exit
+logout
+Connection to 127.0.0.1 closed.
++ CHECK_RESULT 0 0 0 'Failed to execute run-term'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute run-term'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep '$TERM' testlog
+echo $TERM
+[root@openeuler-riscv64 ~]# echo $TERM
++ CHECK_RESULT 0 0 0 'Failed to display term'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display term'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:09:42 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 12:09:43 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:09:43 2023 - INFO  - Start to restore the test environment.
++ rm -rf testlog run-term test.log
++ export LANG=
++ LANG=
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:09:44 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,232 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:10:25 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL sanlock
++ pkgs=sanlock
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs sanlock --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpbx11zd8o
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpbx11zd8o
++ mkdir sanlocktest
++ cd sanlocktest
++ dd if=/dev/zero bs=1048576 count=1 of=./dev
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0295089 s, 35.5 MB/s
++ dd if=/dev/zero bs=1048576 count=1 of=./res
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0291209 s, 36.0 MB/s
++ chown sanlock:sanlock ./dev ./res
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test
++ sanlock client init -s test:0:./dev:0
+init
+init done 0
++ sanlock client init -r test:testres:./res:0
+init
+init done 0
++ sanlock client format -x test:./res:0 -Z 512 -A 1M
+format done 0
++ sanlock client create -x test:./res:0 -e testres1
+create_resource done -2
++ sanlock client add_lockspace -s test:1:./dev:0
+add_lockspace
+add_lockspace done 0
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:11:25 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:11:26 2023 - INFO  - Start to run test.
++ sanlock direct lookup -x test:./res:0 -e testres1:0
++ grep 'lookup done'
+lookup done -2
++ CHECK_RESULT 0 0 0 'Check sanlock direct lookup -x -e failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct lookup -x -e failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct init -s test:0:./dev:0
++ grep 'init done 0'
+init done 0
++ CHECK_RESULT 0 0 0 'Check sanlock direct init -s test:0:./dev:0 failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct init -s test:0:./dev:0 failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct init -r test:testres:./res:0 -Z 512 -A 1M
++ grep 'init done 0'
+init done 0
++ CHECK_RESULT 0 0 0 'Check sanlock direct init -r test:testres:./res:0 -Z 512 -A 1M failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct init -r test:testres:./res:0 -Z 512 -A 1M failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct read_leader -r test:testres:./res:0 -a 1 -o 1 -Z 512 -A 1M
++ grep 'resource_name testres'
+resource_name testres
++ CHECK_RESULT 0 0 0 'Check sanlock direct read_leader -r test:testres:./res:0 -a 1 -o 1 -Z 512 -A 1M failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct read_leader -r test:testres:./res:0 -a 1 -o 1 -Z 512 -A 1M failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct read_leader -s test:1:./dev:0
++ grep 'space_name test'
+space_name test
++ CHECK_RESULT 0 0 0 'Check sanlock direct read_leader -s test:1:./dev:0 failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct read_leader -s test:1:./dev:0 failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct read_leader -r test:testres:./res:0
++ grep 'resource_name testres'
+resource_name testres
++ CHECK_RESULT 0 0 0 'Check sanlock direct read_leader -r test:testres:./res:0 failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct read_leader -r test:testres:./res:0 failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct dump ./res:0
++ grep testres
+00000000                                 test                                          testres 0000000000 0000 0000 0
++ CHECK_RESULT 0 0 0 'Check sanlock direct dump ./res:0 failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct dump ./res:0 failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct format -x test:./res:0 -Z 512 -A 1M
++ grep 'format done 0'
+format done 0
++ CHECK_RESULT 0 0 0 'Check sanlock direct format -x test:./res:0 -Z 512 -A 1M failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct format -x test:./res:0 -Z 512 -A 1M failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct update -x test:./res:0 -e testres1:0 -z 0
++ grep 'update done'
+update done -22
++ CHECK_RESULT 0 0 0 'Check sanlock direct update -x -e -z failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct update -x -e -z failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock direct rebuild -x test:./res:0
++ grep 'rebuild done 0'
+rebuild done 0
++ CHECK_RESULT 0 0 0 'Check sanlock direct rebuild -x failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock direct rebuild -x failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:11:27 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:11:28 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpbx11zd8o ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpbx11zd8o
++ '[' 0 -ne 0 ']'
+++ pgrep -f 'sanlock daemon'
++ kill -9 997 999
++ cd ..
++ rm -rf sanlocktest
++ LOG_INFO 'Finish restore the test environment.'
++ message='Finish restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restore the test environment.'
+Tue Aug  8 10:11:37 2023 - INFO  - Finish restore the test environment.
+/root/mugen/libs/locallibs/common_lib_python.sh: line 19:   997 Killed                  nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test > ./info.log 2>&1  (wd: ~/mugen/testcases/cli-test/sanlock/sanlocktest)

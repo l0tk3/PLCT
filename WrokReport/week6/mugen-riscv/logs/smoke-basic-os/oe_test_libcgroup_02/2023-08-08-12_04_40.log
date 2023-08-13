@@ -1,0 +1,116 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:04:41 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libcgroup
++ pkgs=libcgroup
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libcgroup --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpqpqv5do3
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpqpqv5do3
++ cgcreate -g cpu:test
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:05:09 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:05:10 2023 - INFO  - Start to run test.
++ cgget -g cpu:test
++ grep -A 10 test
++ grep cpu
+cpu.cfs_burst_us: 0
+cpu.cfs_period_us: 100000
+cpu.stat: nr_periods 0
+cpu.shares: 1024
+cpu.idle: 0
+cpu.cfs_quota_us: -1
++ CHECK_RESULT 0 0 0 'Failed to execute cgget'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute cgget'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cgset -r cpu.shares=2048 test
++ CHECK_RESULT 0 0 0 'Failed to execute cgset'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute cgset'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cgget -g cpu:test
++ grep 'cpu.shares: 2048'
+cpu.shares: 2048
++ CHECK_RESULT 0 0 0 'Failed to display cpu.shares'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display cpu.shares'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:05:11 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:05:11 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:05:12 2023 - INFO  - Start to restore the test environment.
++ cgdelete -g cpu:test
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpqpqv5do3 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpqpqv5do3
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:05:22 2023 - INFO  - End to restore the test environment.

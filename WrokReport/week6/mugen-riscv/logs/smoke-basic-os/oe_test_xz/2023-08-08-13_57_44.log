@@ -1,0 +1,188 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 13:57:46 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL xz
++ pkgs=xz
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs xz --node 1 --tempfile ''
+Tue Aug  8 13:57:52 2023 - INFO  - pkgs:(xz) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ echo test-xz
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 13:57:53 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 13:57:53 2023 - INFO  - Start to run test.
++ rpm -qa
++ grep xz
+xz-libs-5.4.3-1.oe2309.riscv64
+xz-5.4.3-1.oe2309.riscv64
++ CHECK_RESULT 0 0 0 'Return value error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Return value error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ xz -V
+xz (XZ Utils) 5.4.3
+liblzma 5.4.3
++ CHECK_RESULT 0 0 0 'Version is error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Version is error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ xz -h
+Usage: xz [OPTION]... [FILE]...
+Compress or decompress FILEs in the .xz format.
+
+  -z, --compress      force compression
+  -d, --decompress    force decompression
+  -t, --test          test compressed file integrity
+  -l, --list          list information about .xz files
+  -k, --keep          keep (don't delete) input files
+  -f, --force         force overwrite of output file and (de)compress links
+  -c, --stdout        write to standard output and don't delete input files
+  -0 ... -9           compression preset; default is 6; take compressor *and*
+                      decompressor memory usage into account before using 7-9!
+  -e, --extreme       try to improve compression ratio by using more CPU time;
+                      does not affect decompressor memory requirements
+  -T, --threads=NUM   use at most NUM threads; the default is 1; set to 0
+                      to use as many threads as there are processor cores
+  -q, --quiet         suppress warnings; specify twice to suppress errors too
+  -v, --verbose       be verbose; specify twice for even more verbose
+  -h, --help          display this short help and exit
+  -H, --long-help     display the long help (lists also the advanced options)
+  -V, --version       display the version number and exit
+
+With no FILE, or when FILE is -, read standard input.
+
+Report bugs to <xz@tukaani.org> (in English or Finnish).
+XZ Utils home page: <https://tukaani.org/xz/>
++ CHECK_RESULT 0 0 0 'Help value error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Help value error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ xz -z /tmp/testfile
++ test -f /tmp/testfile.xz
++ CHECK_RESULT 0 0 0 'testfile.xz is right'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='testfile.xz is right'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ xz -d /tmp/testfile.xz
++ test -f /tmp/testfile
++ CHECK_RESULT 0 0 0 'testfile is exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='testfile is exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ xz /tmp/testfile
++ test -f /tmp/testfile.xz
++ CHECK_RESULT 0 0 0 'testfile.xz is success'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='testfile.xz is success'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ unxz /tmp/testfile.xz
++ test -f /tmp/testfile
++ CHECK_RESULT 0 0 0 'testfile.xz unxz success'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='testfile.xz unxz success'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 13:57:55 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 13:57:55 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 13:57:56 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/testfile
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 13:57:56 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 13:57:57 2023 - INFO  - Finish environment cleanup!

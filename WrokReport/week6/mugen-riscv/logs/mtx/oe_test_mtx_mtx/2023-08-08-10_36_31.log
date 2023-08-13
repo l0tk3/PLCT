@@ -1,0 +1,418 @@
++ source common/common.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start to config params of the case.'
++ message='Start to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to config params of the case.'
+Tue Aug  8 10:36:33 2023 - INFO  - Start to config params of the case.
++ common_config_params
++ DRIVER_MEDIUMX=L80
++ DRIVER_TAPE=T10000B
++ LOG_INFO 'End to config params of the case.'
++ message='End to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to config params of the case.'
+Tue Aug  8 10:36:34 2023 - INFO  - End to config params of the case.
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 10:36:35 2023 - INFO  - Start to prepare the test environment.
++ common_pre
++ DNF_INSTALL 'mtx rpm-build rpmdevtools git zlib-devel'
++ pkgs='mtx rpm-build rpmdevtools git zlib-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'mtx rpm-build rpmdevtools git zlib-devel' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp5qk1rq1p
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp5qk1rq1p
++ rpmdev-setuptree
++ git clone https://gitee.com/src-openeuler/mhvtl.git ./tmp/mhvtl
+fatal: could not create work tree dir './tmp/mhvtl': File exists
++ cp ./tmp/mhvtl/1.7-0_release.tar.gz ./tmp/mhvtl/build-kernel-module.patch ./tmp/mhvtl/build-mhvtl-module.patch /root/rpmbuild/SOURCES
+cp: cannot stat './tmp/mhvtl/1.7-0_release.tar.gz': No such file or directory
+cp: cannot stat './tmp/mhvtl/build-kernel-module.patch': No such file or directory
+cp: cannot stat './tmp/mhvtl/build-mhvtl-module.patch': No such file or directory
++ rpmbuild -bb './tmp/mhvtl/*.spec'
+error: failed to stat /root/mugen/testcases/cli-test/mtx/./tmp/mhvtl/*.spec: No such file or directory
+++ arch
++ dnf install '/root/rpmbuild/RPMS/riscv64/*.rpm' -y
+Last metadata expiration check: 13:35:25 ago on Mon Aug  7 21:02:07 2023.
+Can not load RPM file: /root/rpmbuild/RPMS/riscv64/*.rpm.
+Could not open: /root/rpmbuild/RPMS/riscv64/*.rpm
++ systemctl start mhvtl.target
+Failed to start mhvtl.target: Unit mhvtl.target not found.
++ SLEEP_WAIT 5s
++ wait_time=5s
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5s --cmd '' --mode 1
+++ lsscsi -g
+common/common.sh: line 43: lsscsi: command not found
+++ grep L80
+++ grep -oE '/dev/sg.*'
++ PATH_MEDIUMX=
+++ lsscsi -g
+common/common.sh: line 45: lsscsi: command not found
+++ grep -m 1 T10000B
+++ grep -oE '/dev/st[0-9]*'
++ PATH_TAPE=
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 10:37:39 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:37:40 2023 - INFO  - Start to run test.
++ common_test
++ systemctl status mhvtl.target
++ grep 'mhvtl service allowing to start/stop'
+Unit mhvtl.target could not be found.
++ CHECK_RESULT 1 0 0 'mhvtl service WRONG'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='mhvtl service WRONG'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'mhvtl service WRONG'
++ LOG_ERROR 'mhvtl service WRONG'
++ message='mhvtl service WRONG'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'mhvtl service WRONG'
+Tue Aug  8 10:37:41 2023 - ERROR - mhvtl service WRONG
++ (( exec_result++ ))
++ LOG_ERROR 'common/common.sh line 52'
++ message='common/common.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'common/common.sh line 52'
+Tue Aug  8 10:37:41 2023 - ERROR - common/common.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx --version
++ grep 'mtx version'
+mtx version 1.3.12
++ CHECK_RESULT 0 0 0 'option: --version error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='option: --version error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mtx -f noattach
+cannot open SCSI device 'noattach' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f noattach error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f noattach error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f noattach error'
++ LOG_ERROR 'option: -f noattach error'
++ message='option: -f noattach error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f noattach error'
+Tue Aug  8 10:37:42 2023 - ERROR - option: -f noattach error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 47'
++ message='oe_test_mtx_mtx.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 47'
+Tue Aug  8 10:37:43 2023 - ERROR - oe_test_mtx_mtx.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f inquiry
++ grep L80
+cannot open SCSI device 'inquiry' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f inquiry error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f inquiry error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f inquiry error'
++ LOG_ERROR 'option: -f inquiry error'
++ message='option: -f inquiry error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f inquiry error'
+Tue Aug  8 10:37:43 2023 - ERROR - option: -f inquiry error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 49'
++ message='oe_test_mtx_mtx.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 49'
+Tue Aug  8 10:37:44 2023 - ERROR - oe_test_mtx_mtx.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f inventory
+cannot open SCSI device 'inventory' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f inventory error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f inventory error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f inventory error'
++ LOG_ERROR 'option: -f inventory error'
++ message='option: -f inventory error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f inventory error'
+Tue Aug  8 10:37:44 2023 - ERROR - option: -f inventory error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 51'
++ message='oe_test_mtx_mtx.sh line 51'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 51'
+Tue Aug  8 10:37:45 2023 - ERROR - oe_test_mtx_mtx.sh line 51
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f status
++ grep Element
+cannot open SCSI device 'status' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f status error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f status error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f status error'
++ LOG_ERROR 'option: -f status error'
++ message='option: -f status error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f status error'
+Tue Aug  8 10:37:46 2023 - ERROR - option: -f status error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 53'
++ message='oe_test_mtx_mtx.sh line 53'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 53'
+Tue Aug  8 10:37:46 2023 - ERROR - oe_test_mtx_mtx.sh line 53
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f first
++ grep done
+cannot open SCSI device 'first' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f first error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f first error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f first error'
++ LOG_ERROR 'option: -f first error'
++ message='option: -f first error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f first error'
+Tue Aug  8 10:37:47 2023 - ERROR - option: -f first error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 55'
++ message='oe_test_mtx_mtx.sh line 55'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 55'
+Tue Aug  8 10:37:48 2023 - ERROR - oe_test_mtx_mtx.sh line 55
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f last
++ grep done
+cannot open SCSI device 'last' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f last error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f last error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f last error'
++ LOG_ERROR 'option: -f last error'
++ message='option: -f last error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f last error'
+Tue Aug  8 10:37:48 2023 - ERROR - option: -f last error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 57'
++ message='oe_test_mtx_mtx.sh line 57'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 57'
+Tue Aug  8 10:37:49 2023 - ERROR - oe_test_mtx_mtx.sh line 57
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f previous
++ grep done
+cannot open SCSI device 'previous' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f previous error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f previous error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f previous error'
++ LOG_ERROR 'option: -f previous error'
++ message='option: -f previous error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f previous error'
+Tue Aug  8 10:37:50 2023 - ERROR - option: -f previous error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 59'
++ message='oe_test_mtx_mtx.sh line 59'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 59'
+Tue Aug  8 10:37:50 2023 - ERROR - oe_test_mtx_mtx.sh line 59
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f next
++ grep done
+cannot open SCSI device 'next' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f next error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f next error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f next error'
++ LOG_ERROR 'option: -f next error'
++ message='option: -f next error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f next error'
+Tue Aug  8 10:37:51 2023 - ERROR - option: -f next error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 61'
++ message='oe_test_mtx_mtx.sh line 61'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 61'
+Tue Aug  8 10:37:52 2023 - ERROR - oe_test_mtx_mtx.sh line 61
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f unload 40 0
++ grep done
+cannot open SCSI device 'unload' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f unload 40 0 error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f unload 40 0 error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f unload 40 0 error'
++ LOG_ERROR 'option: -f unload 40 0 error'
++ message='option: -f unload 40 0 error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f unload 40 0 error'
+Tue Aug  8 10:37:52 2023 - ERROR - option: -f unload 40 0 error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 63'
++ message='oe_test_mtx_mtx.sh line 63'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 63'
+Tue Aug  8 10:37:53 2023 - ERROR - oe_test_mtx_mtx.sh line 63
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f load 1 0
++ grep done
+cannot open SCSI device 'load' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f load 1 0 error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f load 1 0 error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f load 1 0 error'
++ LOG_ERROR 'option: -f load 1 0 error'
++ message='option: -f load 1 0 error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f load 1 0 error'
+Tue Aug  8 10:37:54 2023 - ERROR - option: -f load 1 0 error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 65'
++ message='oe_test_mtx_mtx.sh line 65'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 65'
+Tue Aug  8 10:37:54 2023 - ERROR - oe_test_mtx_mtx.sh line 65
++ '[' 0 -eq 1 ']'
++ return 0
++ mtx -f transfer 40 41
+cannot open SCSI device 'transfer' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f transfer 40 41 error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f transfer 40 41 error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f transfer 40 41 error'
++ LOG_ERROR 'option: -f transfer 40 41 error'
++ message='option: -f transfer 40 41 error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f transfer 40 41 error'
+Tue Aug  8 10:37:55 2023 - ERROR - option: -f transfer 40 41 error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_mtx.sh line 67'
++ message='oe_test_mtx_mtx.sh line 67'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_mtx.sh line 67'
+Tue Aug  8 10:37:56 2023 - ERROR - oe_test_mtx_mtx.sh line 67
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 10:37:56 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 12
++ test 12 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 10:37:57 2023 - ERROR - failed to execute the case.
++ exit 12
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:37:58 2023 - INFO  - Start to restore the test environment.
++ common_post
++ rm -rf ./tmp /root/rpmbuild
++ systemctl stop mhvtl.target
+Failed to stop mhvtl.target: Unit mhvtl.target not loaded.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp5qk1rq1p ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp5qk1rq1p
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 10:38:10 2023 - INFO  - End to restore the test environment.

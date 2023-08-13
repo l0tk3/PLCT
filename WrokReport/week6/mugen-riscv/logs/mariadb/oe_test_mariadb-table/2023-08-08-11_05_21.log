@@ -1,0 +1,135 @@
++ source ./common/lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 11:05:23 2023 - INFO  - Start environmental preparation.
++ mariadb_init
++ DNF_INSTALL 'mariadb mariadb-server'
++ pkgs='mariadb mariadb-server'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'mariadb mariadb-server' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpzoi96b3n
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpzoi96b3n
++ systemctl start mariadb
++ mysqladmin -u root password 123456
++ mysql -uroot -hlocalhost -p123456
++ test -d /tmp/mariadbtab
++ mkdir /tmp/mariadbtab
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 11:06:46 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:06:46 2023 - INFO  - Start testing...
++ pushd /tmp/mariadbtab
+/tmp/mariadbtab ~/mugen/testcases/cli-test/mariadb
++ mysql -uroot -hlocalhost -p123456
++ grep lisi tmp1_log
+2	lisi
++ CHECK_RESULT 0 0 0 'insert table error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='insert table error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep yang tmp1_log
+1	yang
++ CHECK_RESULT 0 0 0 'update table error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='update table error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mysql -uroot -hlocalhost -p123456
++ grep yang tmp2_log
++ CHECK_RESULT 1 0 1 'delete table error'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='delete table error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ popd
+~/mugen/testcases/cli-test/mariadb
++ LOG_INFO 'Finish testing!'
++ message='Finish testing!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testing!'
+Tue Aug  8 11:06:47 2023 - INFO  - Finish testing!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:06:48 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:06:48 2023 - INFO  - start environment cleanup.
++ stat /tmp/mariadbtab
+  File: /tmp/mariadbtab
+  Size: 80        	Blocks: 0          IO Block: 4096   directory
+Device: 0,42	Inode: 40          Links: 2
+Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2023-08-08 11:06:45.824000000 +0800
+Modify: 2023-08-08 11:06:47.060000000 +0800
+Change: 2023-08-08 11:06:47.060000000 +0800
+ Birth: 2023-08-08 11:06:45.824000000 +0800
++ rm -fr /tmp/mariadbtab
++ mariadb_clear
++ systemctl stop mariadb
++ rm -f /var/lib/mysql/aria_log.00000001 /var/lib/mysql/aria_log_control /var/lib/mysql/ib_buffer_pool /var/lib/mysql/ib_logfile0 /var/lib/mysql/ibdata1 /var/lib/mysql/mariadb /var/lib/mysql/multi-master.info /var/lib/mysql/mysql /var/lib/mysql/performance_schema
+rm: cannot remove '/var/lib/mysql/mariadb': Is a directory
+rm: cannot remove '/var/lib/mysql/mysql': Is a directory
+rm: cannot remove '/var/lib/mysql/performance_schema': Is a directory
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpzoi96b3n ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpzoi96b3n
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 11:07:01 2023 - INFO  - Finish environment cleanup!

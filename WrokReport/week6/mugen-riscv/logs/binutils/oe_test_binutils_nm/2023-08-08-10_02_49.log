@@ -1,0 +1,152 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 10:02:51 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'binutils gcc'
++ pkgs='binutils gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'binutils gcc' --node 1 --tempfile ''
+Tue Aug  8 10:02:59 2023 - INFO  - pkgs:(binutils gcc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ mkdir /tmp/test/
++ path=/tmp/test/
++ cat
++ cat
++ cat
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Tue Aug  8 10:03:00 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:03:00 2023 - INFO  - Start to run test.
++ cd /tmp/test/
++ gcc -Wall -c main.c hello.c bye.c
+main.c: In function ‘main’:
+main.c:3:1: warning: implicit declaration of function ‘hello’ [-Wimplicit-function-declaration]
+    3 | hello();
+      | ^~~~~
+main.c:4:1: warning: implicit declaration of function ‘bye’ [-Wimplicit-function-declaration]
+    4 | bye();
+      | ^~~
+hello.c: In function ‘hello’:
+hello.c:3:1: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+    3 | printf("hello!\n");
+      | ^~~~~~
+hello.c:1:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+  +++ |+#include <stdio.h>
+    1 | void hello(void)
+hello.c:3:1: warning: incompatible implicit declaration of built-in function ‘printf’ [-Wbuiltin-declaration-mismatch]
+    3 | printf("hello!\n");
+      | ^~~~~~
+hello.c:3:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+bye.c: In function ‘bye’:
+bye.c:3:1: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+    3 | printf("good bye!\n");
+      | ^~~~~~
+bye.c:1:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+  +++ |+#include <stdio.h>
+    1 | void bye(void)
+bye.c:3:1: warning: incompatible implicit declaration of built-in function ‘printf’ [-Wbuiltin-declaration-mismatch]
+    3 | printf("good bye!\n");
+      | ^~~~~~
+bye.c:3:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
++ ls -al /tmp/test/
++ grep 'main.o\|hello.o\|bye.o'
+-rw-r--r-- 1 root root 1584 Aug  8 10:03 bye.o
+-rw-r--r-- 1 root root 1592 Aug  8 10:03 hello.o
+-rw-r--r-- 1 root root 1448 Aug  8 10:03 main.o
++ CHECK_RESULT 0 0 0 'Compile failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Compile failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ nm main.o hello.o bye.o
++ test -f nm.txt
++ CHECK_RESULT 0 0 0 'file is failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='file is failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -E 'T main|T hello|T bye' /tmp/test//nm.txt
+0000000000000000 T main
+0000000000000000 T hello
+0000000000000000 T bye
++ CHECK_RESULT 0 0 0 'content is error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='content is error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 10:03:02 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:03:03 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:03:03 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/test/
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 10:03:04 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Tue Aug  8 10:03:05 2023 - INFO  - Finish restoring the test environment.

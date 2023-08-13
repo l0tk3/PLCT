@@ -1,0 +1,874 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:51:32 2023 - INFO  - Start to prepare the test environment.
++ cp -f /etc/sudoers /etc/sudoers.bak
++ chmod +w /etc/sudoers
++ useradd testuser
++ usermod -aG wheel testuser
++ echo -e 'testuser ALL=(ALL) NOPASSWD:ALL\nDefaults log_input,log_output\nDefaults maxseq=100'
++ sed -i 's/%wheel    ALL=(ALL)       ALL/%wheel      ALL=(ALL)       NOPASSWD: ALL/' /etc/sudoers
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:51:33 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:51:34 2023 - INFO  - Start to run test.
++ flag=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ su -c 'sudo ls' testuser
+oe_test_sudo_maxseq.sh
++ let flag+=1
++ (( flag < 200 ))
++ ls /var/log/sudo-io/00/00/
++ wc -l
++ grep 100
+100
++ CHECK_RESULT 0 0 0 'Failed to execute sudo'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute sudo'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:52:42 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:52:42 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:52:43 2023 - INFO  - Start to restore the test environment.
++ mv -f /etc/sudoers.bak /etc/sudoers
++ userdel -rf testuser
++ rm -rf /var/log/sudo-io/00/00/01 /var/log/sudo-io/00/00/02 /var/log/sudo-io/00/00/03 /var/log/sudo-io/00/00/04 /var/log/sudo-io/00/00/05 /var/log/sudo-io/00/00/06 /var/log/sudo-io/00/00/07 /var/log/sudo-io/00/00/08 /var/log/sudo-io/00/00/09 /var/log/sudo-io/00/00/0A /var/log/sudo-io/00/00/0B /var/log/sudo-io/00/00/0C /var/log/sudo-io/00/00/0D /var/log/sudo-io/00/00/0E /var/log/sudo-io/00/00/0F /var/log/sudo-io/00/00/0G /var/log/sudo-io/00/00/0H /var/log/sudo-io/00/00/0I /var/log/sudo-io/00/00/0J /var/log/sudo-io/00/00/0K /var/log/sudo-io/00/00/0L /var/log/sudo-io/00/00/0M /var/log/sudo-io/00/00/0N /var/log/sudo-io/00/00/0O /var/log/sudo-io/00/00/0P /var/log/sudo-io/00/00/0Q /var/log/sudo-io/00/00/0R /var/log/sudo-io/00/00/0S /var/log/sudo-io/00/00/0T /var/log/sudo-io/00/00/0U /var/log/sudo-io/00/00/0V /var/log/sudo-io/00/00/0W /var/log/sudo-io/00/00/0X /var/log/sudo-io/00/00/0Y /var/log/sudo-io/00/00/0Z /var/log/sudo-io/00/00/10 /var/log/sudo-io/00/00/11 /var/log/sudo-io/00/00/12 /var/log/sudo-io/00/00/13 /var/log/sudo-io/00/00/14 /var/log/sudo-io/00/00/15 /var/log/sudo-io/00/00/16 /var/log/sudo-io/00/00/17 /var/log/sudo-io/00/00/18 /var/log/sudo-io/00/00/19 /var/log/sudo-io/00/00/1A /var/log/sudo-io/00/00/1B /var/log/sudo-io/00/00/1C /var/log/sudo-io/00/00/1D /var/log/sudo-io/00/00/1E /var/log/sudo-io/00/00/1F /var/log/sudo-io/00/00/1G /var/log/sudo-io/00/00/1H /var/log/sudo-io/00/00/1I /var/log/sudo-io/00/00/1J /var/log/sudo-io/00/00/1K /var/log/sudo-io/00/00/1L /var/log/sudo-io/00/00/1M /var/log/sudo-io/00/00/1N /var/log/sudo-io/00/00/1O /var/log/sudo-io/00/00/1P /var/log/sudo-io/00/00/1Q /var/log/sudo-io/00/00/1R /var/log/sudo-io/00/00/1S /var/log/sudo-io/00/00/1T /var/log/sudo-io/00/00/1U /var/log/sudo-io/00/00/1V /var/log/sudo-io/00/00/1W /var/log/sudo-io/00/00/1X /var/log/sudo-io/00/00/1Y /var/log/sudo-io/00/00/1Z /var/log/sudo-io/00/00/20 /var/log/sudo-io/00/00/21 /var/log/sudo-io/00/00/22 /var/log/sudo-io/00/00/23 /var/log/sudo-io/00/00/24 /var/log/sudo-io/00/00/25 /var/log/sudo-io/00/00/26 /var/log/sudo-io/00/00/27 /var/log/sudo-io/00/00/28 /var/log/sudo-io/00/00/29 /var/log/sudo-io/00/00/2A /var/log/sudo-io/00/00/2B /var/log/sudo-io/00/00/2C /var/log/sudo-io/00/00/2D /var/log/sudo-io/00/00/2E /var/log/sudo-io/00/00/2F /var/log/sudo-io/00/00/2G /var/log/sudo-io/00/00/2H /var/log/sudo-io/00/00/2I /var/log/sudo-io/00/00/2J /var/log/sudo-io/00/00/2K /var/log/sudo-io/00/00/2L /var/log/sudo-io/00/00/2M /var/log/sudo-io/00/00/2N /var/log/sudo-io/00/00/2O /var/log/sudo-io/00/00/2P /var/log/sudo-io/00/00/2Q /var/log/sudo-io/00/00/2R /var/log/sudo-io/00/00/2S
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:52:44 2023 - INFO  - End to restore the test environment.

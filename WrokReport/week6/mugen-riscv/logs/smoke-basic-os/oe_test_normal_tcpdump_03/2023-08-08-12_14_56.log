@@ -1,0 +1,143 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:14:58 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL tcpdump
++ pkgs=tcpdump
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs tcpdump --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpcxxdervo
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpcxxdervo
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ ping -q -I enp0s2 baidu.com
+PING baidu.com (39.156.66.10) from 10.0.2.15 enp0s2: 56(84) bytes of data.
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:15:26 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:15:27 2023 - INFO  - Start to run test.
++ tcpdump -i enp0s2 -c 10 -w test.pcap
++ grep 'listening on enp0s2'
+tcpdump: listening on enp0s2, link-type EN10MB (Ethernet), snapshot length 262144 bytes
++ CHECK_RESULT 0 0 0 'Failed to execute tcpdump -w'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute tcpdump -w'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f ./test.pcap
++ CHECK_RESULT 0 0 0 'Failed to find test.pcap'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find test.pcap'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tcpdump -r test.pcap
++ grep 'reading from file test.pcap'
+reading from file test.pcap, link-type EN10MB (Ethernet), snapshot length 262144
++ CHECK_RESULT 0 0 0 'Failed to execute tcpdump -r'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute tcpdump -r'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ tcpdump -r test.pcap
++ grep -E 'IP|ARP'
+reading from file test.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+dropped privs to tcpdump
+12:15:28.024722 IP 10.0.2.3.domain > 10.0.2.15.50947: 64887 NXDomain 0/0/0 (43)
+12:15:28.039328 IP 10.0.2.15 > 10.0.2.3: ICMP 10.0.2.15 udp port 50947 unreachable, length 79
+12:15:28.076963 ARP, Request who-has 10.0.2.3 tell 10.0.2.15, length 28
+12:15:28.078077 ARP, Reply 10.0.2.3 is-at 52:55:0a:00:02:03 (oui Unknown), length 50
+12:15:28.147018 IP 10.0.2.3.domain > 10.0.2.15.38193: 58610 NXDomain 0/0/0 (43)
+12:15:28.149288 IP 10.0.2.15 > 39.156.66.10: ICMP echo request, id 60724, seq 6, length 64
+12:15:28.174172 IP 39.156.66.10 > 10.0.2.15: ICMP echo reply, id 60724, seq 6, length 64
+12:15:28.175510 IP 10.0.2.15.34130 > 10.0.2.3.domain: 22834+ PTR? 10.66.156.39.in-addr.arpa. (43)
+12:15:29.076279 IP 10.0.2.3.domain > 10.0.2.15.38443: 25558 NXDomain 0/0/0 (43)
+12:15:29.076521 IP 10.0.2.15 > 10.0.2.3: ICMP 10.0.2.15 udp port 38443 unreachable, length 79
++ CHECK_RESULT 0 0 0 'Failed to display IP'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display IP'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:15:32 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:15:32 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:15:33 2023 - INFO  - Start to restore the test environment.
+++ pgrep ping
++ kill -9 24912
++ rm -rf ./test.pcap
+oe_test_normal_tcpdump_03.sh: line 43: 24912 Killed                  ping -q -I "${NODE1_NIC}" baidu.com
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpcxxdervo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpcxxdervo
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:15:40 2023 - INFO  - End to restore the test environment.

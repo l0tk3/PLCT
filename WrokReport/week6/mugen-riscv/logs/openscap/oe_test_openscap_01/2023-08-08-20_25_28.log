@@ -1,0 +1,1324 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 20:25:30 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL 'openscap scap-security-guide'
++ pkgs='openscap scap-security-guide'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'openscap scap-security-guide' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpy7jyw9f0
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpy7jyw9f0
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 20:29:00 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 20:29:00 2023 - INFO  - Start to run test.
++ oscap -V
++ grep Version
+SCAP Version: 1.3
+XCCDF Version: 1.2
+OVAL Version: 5.11.1
+CPE Version: 2.3
+CVSS Version: 2.0
+CVE Version: 2.0
+Asset Identification Version: 1.1
+Asset Reporting Format Version: 1.1
+CVRF Version: 1.1
+SCE Version: 1.0 (from libopenscap_sce.so.25)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap --help
++ grep Usage:
+Usage: oscap [options] module operation [operation-options-and-arguments]
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap --version
++ grep Version
+SCAP Version: 1.3
+XCCDF Version: 1.2
+OVAL Version: 5.11.1
+CPE Version: 2.3
+CVSS Version: 2.0
+CVE Version: 2.0
+Asset Identification Version: 1.1
+Asset Reporting Format Version: 1.1
+CVRF Version: 1.1
+SCE Version: 1.0 (from libopenscap_sce.so.25)
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap info /usr/share/xml/scap/ssg/content/ssg-firefox-ds.xml
++ grep -E 'Imported:|Stream:|Generated:|Version:|Checklists:|Checks:|Dictionaries:'
+Imported: 2023-07-18T08:00:00
+Stream: scap_org.open-scap_datastream_from_xccdf_ssg-firefox-xccdf.xml
+Generated: (null)
+Version: 1.3
+Checklists:
+		Generated: 2023-07-27
+Checks:
+Dictionaries:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap info /usr/share/xml/scap/ssg/content/ssg-firefox-xccdf.xml
++ grep -E 'Imported:|Generated:|Referenced check files:'
+Imported: 2023-07-18T08:00:00
+Generated: 2023-07-27
+Referenced check files:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd /usr/share/xml/scap/ssg/content/
++ oscap oval eval --directives directives.xml --without-syschar --results oval-results.xml ssg-firefox-oval.xml
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+OpenSCAP Error: Unable to open file: 'directives.xml' [/home/abuild/rpmbuild/BUILD/openscap-1.3.7/src/source/oscap_source.c:288]
+Definition oval:ssg-installed_firefox_version_supported:def:1: true
+Definition oval:ssg-installed_OS_is_part_of_Unix_family:def:1: true
+Definition oval:ssg-firefox_policy-verification:def:1: false
+Definition oval:ssg-firefox_policy-user_messaging:def:1: false
+Definition oval:ssg-firefox_policy-telemetry:def:1: false
+Definition oval:ssg-firefox_policy-sync:def:1: false
+Definition oval:ssg-firefox_policy-ssl_minimum_version:def:1: false
+Definition oval:ssg-firefox_policy-search_update:def:1: false
+Definition oval:ssg-firefox_policy-search_suggestion:def:1: false
+Definition oval:ssg-firefox_policy-private_browsing:def:1: false
+Definition oval:ssg-firefox_policy-pop-up_windows:def:1: false
+Definition oval:ssg-firefox_policy-password_manager:def:1: false
+Definition oval:ssg-firefox_policy-nonessential_capabilities:def:1: false
+Definition oval:ssg-firefox_policy-no_sanitize_on_shutdown:def:1: false
+Definition oval:ssg-firefox_policy-network_prediction:def:1: false
+Definition oval:ssg-firefox_policy-javascript_window_resizing:def:1: false
+Definition oval:ssg-firefox_policy-javascript_window_changes:def:1: false
+Definition oval:ssg-firefox_policy-forget_button:def:1: false
+Definition oval:ssg-firefox_policy-fingerprinting_protection:def:1: false
+Definition oval:ssg-firefox_policy-feedback_reporting:def:1: false
+Definition oval:ssg-firefox_policy-extension_update:def:1: false
+Definition oval:ssg-firefox_policy-extension_recommendation:def:1: false
+Definition oval:ssg-firefox_policy-enhanced_tracking:def:1: false
+Definition oval:ssg-firefox_policy-encrypted_media_extensions:def:1: false
+Definition oval:ssg-firefox_policy-dns_over_https:def:1: false
+Definition oval:ssg-firefox_policy-disable_studies:def:1: false
+Definition oval:ssg-firefox_policy-disable_pocket:def:1: false
+Definition oval:ssg-firefox_policy-disable_form_history:def:1: false
+Definition oval:ssg-firefox_policy-disable_deprecated_ciphers:def:1: false
+Definition oval:ssg-firefox_policy-development_tools:def:1: false
+Definition oval:ssg-firefox_policy-cryptomining:def:1: false
+Definition oval:ssg-firefox_policy-content_blocker:def:1: false
+Definition oval:ssg-firefox_policy-autoplay_video:def:1: false
+Definition oval:ssg-firefox_policy-addons_permission:def:1: false
+Evaluation done.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap oval eval --directives directives.xml --without-syschar --datastream-id ds.xml --oval-id oval.xml --results oval-results.xml ssg-firefox-oval.xml
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/include/c++/12/riscv64-openEuler-linux/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/usr/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/share/gdb/auto-load/lib/lp64d'.
+W: oscap:     Filesystem tree cycle detected at '/usr/lib64/lp64d'.
+OpenSCAP Error: Unable to open file: 'directives.xml' [/home/abuild/rpmbuild/BUILD/openscap-1.3.7/src/source/oscap_source.c:288]
+Definition oval:ssg-installed_firefox_version_supported:def:1: true
+Definition oval:ssg-installed_OS_is_part_of_Unix_family:def:1: true
+Definition oval:ssg-firefox_policy-verification:def:1: false
+Definition oval:ssg-firefox_policy-user_messaging:def:1: false
+Definition oval:ssg-firefox_policy-telemetry:def:1: false
+Definition oval:ssg-firefox_policy-sync:def:1: false
+Definition oval:ssg-firefox_policy-ssl_minimum_version:def:1: false
+Definition oval:ssg-firefox_policy-search_update:def:1: false
+Definition oval:ssg-firefox_policy-search_suggestion:def:1: false
+Definition oval:ssg-firefox_policy-private_browsing:def:1: false
+Definition oval:ssg-firefox_policy-pop-up_windows:def:1: false
+Definition oval:ssg-firefox_policy-password_manager:def:1: false
+Definition oval:ssg-firefox_policy-nonessential_capabilities:def:1: false
+Definition oval:ssg-firefox_policy-no_sanitize_on_shutdown:def:1: false
+Definition oval:ssg-firefox_policy-network_prediction:def:1: false
+Definition oval:ssg-firefox_policy-javascript_window_resizing:def:1: false
+Definition oval:ssg-firefox_policy-javascript_window_changes:def:1: false
+Definition oval:ssg-firefox_policy-forget_button:def:1: false
+Definition oval:ssg-firefox_policy-fingerprinting_protection:def:1: false
+Definition oval:ssg-firefox_policy-feedback_reporting:def:1: false
+Definition oval:ssg-firefox_policy-extension_update:def:1: false
+Definition oval:ssg-firefox_policy-extension_recommendation:def:1: false
+Definition oval:ssg-firefox_policy-enhanced_tracking:def:1: false
+Definition oval:ssg-firefox_policy-encrypted_media_extensions:def:1: false
+Definition oval:ssg-firefox_policy-dns_over_https:def:1: false
+Definition oval:ssg-firefox_policy-disable_studies:def:1: false
+Definition oval:ssg-firefox_policy-disable_pocket:def:1: false
+Definition oval:ssg-firefox_policy-disable_form_history:def:1: false
+Definition oval:ssg-firefox_policy-disable_deprecated_ciphers:def:1: false
+Definition oval:ssg-firefox_policy-development_tools:def:1: false
+Definition oval:ssg-firefox_policy-cryptomining:def:1: false
+Definition oval:ssg-firefox_policy-content_blocker:def:1: false
+Definition oval:ssg-firefox_policy-autoplay_video:def:1: false
+Definition oval:ssg-firefox_policy-addons_permission:def:1: false
+Evaluation done.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap xccdf generate guide ssg-firefox-xccdf.xml
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f guide.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap xccdf generate guide --profile standard ssg-ol7-xccdf.xml
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f guide1.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap xccdf eval --profile standard --results xccdf-results.xml ssg-ol7-xccdf.xml
+WARNING: This content points out to the remote resources. Use `--fetch-remote-resources' option to download them.
+WARNING: Skipping https://linux.oracle.com/security/oval/com.oracle.elsa-all.xml.bz2 file which is referenced from XCCDF content
+--- Starting Evaluation ---
+
+Title	Verify File Hashes with RPM
+Rule	xccdf_org.ssgproject.content_rule_rpm_verify_hashes
+Result	notapplicable
+
+Title	Verify and Correct File Permissions with RPM
+Rule	xccdf_org.ssgproject.content_rule_rpm_verify_permissions
+Result	notapplicable
+
+Title	Ensure /var/log Located On Separate Partition
+Rule	xccdf_org.ssgproject.content_rule_partition_for_var_log
+Result	notapplicable
+
+Title	Ensure /var/log/audit Located On Separate Partition
+Rule	xccdf_org.ssgproject.content_rule_partition_for_var_log_audit
+Result	notapplicable
+
+Title	Ensure gpgcheck Enabled In Main yum Configuration
+Rule	xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated
+Result	notapplicable
+
+Title	Ensure Oracle Linux GPG Key Installed
+Rule	xccdf_org.ssgproject.content_rule_ensure_oracle_gpgkey_installed
+Result	notapplicable
+
+Title	Ensure Software Patches Installed
+Rule	xccdf_org.ssgproject.content_rule_security_patches_up_to_date
+Result	notapplicable
+
+Title	Verify All Account Password Hashes are Shadowed
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_all_shadowed
+Result	notapplicable
+
+Title	Prevent Login to Accounts With Empty Password
+Rule	xccdf_org.ssgproject.content_rule_no_empty_passwords
+Result	notapplicable
+
+Title	Ensure that Root's Path Does Not Include World or Group-Writable Directories
+Rule	xccdf_org.ssgproject.content_rule_accounts_root_path_dirs_no_write
+Result	notapplicable
+
+Title	Ensure that Root's Path Does Not Include Relative Paths or Null Directories
+Rule	xccdf_org.ssgproject.content_rule_root_path_no_dot
+Result	notapplicable
+
+Title	Record Events that Modify the System's Mandatory Access Controls
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_mac_modification
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on Exporting to Media (successful)
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_media_export
+Result	notapplicable
+
+Title	Record Events that Modify the System's Network Environment
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_networkconfig_modification
+Result	notapplicable
+
+Title	Ensure auditd Collects System Administrator Actions
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_sysadmin_actions
+Result	notapplicable
+
+Title	Record Events that Modify User/Group Information
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_usergroup_modification
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - chmod
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_chmod
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - chown
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_chown
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - fchmod
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fchmod
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - fchmodat
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fchmodat
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - fchown
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fchown
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - fchownat
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fchownat
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - fremovexattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fremovexattr
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - fsetxattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fsetxattr
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - lchown
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_lchown
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - lremovexattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_lremovexattr
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - lsetxattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_lsetxattr
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - removexattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_removexattr
+Result	notapplicable
+
+Title	Record Events that Modify the System's Discretionary Access Controls - setxattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_setxattr
+Result	notapplicable
+
+Title	Ensure auditd Collects File Deletion Events by User
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_file_deletion_events
+Result	notapplicable
+
+Title	Ensure auditd Collects Unauthorized Access Attempts to Files (unsuccessful)
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_unsuccessful_file_modification
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on Kernel Module Loading and Unloading
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_kernel_module_loading
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - at
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_at
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - chage
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_chage
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - chsh
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_chsh
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - crontab
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_crontab
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - gpasswd
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_gpasswd
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - mount
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_mount
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - newgrp
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_newgrp
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - pam_timestamp_check
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_pam_timestamp_check
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - passwd
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_passwd
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - postdrop
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_postdrop
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - postqueue
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_postqueue
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - ssh-keysign
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_ssh_keysign
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - su
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_su
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - sudo
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_sudo
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - sudoedit
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_sudoedit
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - umount
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_umount
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - unix_chkpwd
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_unix_chkpwd
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - userhelper
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_userhelper
+Result	notapplicable
+
+Title	Ensure auditd Collects Information on the Use of Privileged Commands - usernetctl
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands_usernetctl
+Result	notapplicable
+
+Title	Record attempts to alter time through adjtimex
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_adjtimex
+Result	notapplicable
+
+Title	Record Attempts to Alter Time Through clock_settime
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_clock_settime
+Result	notapplicable
+
+Title	Record attempts to alter time through settimeofday
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_settimeofday
+Result	notapplicable
+
+Title	Record Attempts to Alter Time Through stime
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_stime
+Result	notapplicable
+
+Title	Record Attempts to Alter the localtime File
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_watch_localtime
+Result	notapplicable
+
+Title	Ensure rsyslog is Installed
+Rule	xccdf_org.ssgproject.content_rule_package_rsyslog_installed
+Result	notapplicable
+
+Title	Enable rsyslog Service
+Rule	xccdf_org.ssgproject.content_rule_service_rsyslog_enabled
+Result	notapplicable
+
+Title	Verify that All World-Writable Directories Have Sticky Bits Set
+Rule	xccdf_org.ssgproject.content_rule_dir_perms_world_writable_sticky_bits
+Result	notapplicable
+
+Title	Ensure All SGID Executables Are Authorized
+Rule	xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_sgid
+Result	notapplicable
+
+Title	Ensure All SUID Executables Are Authorized
+Rule	xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_suid
+Result	notapplicable
+
+Title	Ensure No World-Writable Files Exist
+Rule	xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_world_writable
+Result	notapplicable
+
+Title	Disable the Automounter
+Rule	xccdf_org.ssgproject.content_rule_service_autofs_disabled
+Result	notapplicable
+
+Title	Add nodev Option to /dev/shm
+Rule	xccdf_org.ssgproject.content_rule_mount_option_dev_shm_nodev
+Result	notapplicable
+
+Title	Add nosuid Option to /dev/shm
+Rule	xccdf_org.ssgproject.content_rule_mount_option_dev_shm_nosuid
+Result	notapplicable
+
+Title	Disable Automatic Bug Reporting Tool (abrtd)
+Rule	xccdf_org.ssgproject.content_rule_service_abrtd_disabled
+Result	notapplicable
+
+Title	Disable ntpdate Service (ntpdate)
+Rule	xccdf_org.ssgproject.content_rule_service_ntpdate_disabled
+Result	notapplicable
+
+Title	Disable Odd Job Daemon (oddjobd)
+Rule	xccdf_org.ssgproject.content_rule_service_oddjobd_disabled
+Result	notapplicable
+
+Title	Disable Apache Qpid (qpidd)
+Rule	xccdf_org.ssgproject.content_rule_service_qpidd_disabled
+Result	notapplicable
+
+Title	Disable Network Router Discovery Daemon (rdisc)
+Rule	xccdf_org.ssgproject.content_rule_service_rdisc_disabled
+Result	notapplicable
+
+Title	Disable At Service (atd)
+Rule	xccdf_org.ssgproject.content_rule_service_atd_disabled
+Result	notapplicable
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap ds sds-split ssg-rhel7-ds.xml extracted/
+WARNING: Datastream component 'scap_org.open-scap_cref_security-data-oval-com.redhat.rhsa-RHEL7.xml.bz2' points out to the remote 'https://access.redhat.com/security/data/oval/com.redhat.rhsa-RHEL7.xml.bz2'. Use '--fetch-remote-resources' option to download it.
+WARNING: Skipping 'https://access.redhat.com/security/data/oval/com.redhat.rhsa-RHEL7.xml.bz2' file which is referenced from datastream
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -d extracted
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap ds sds-validate ssg-rhel7-ds.xml
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap cpe validate ssg-rhel7-cpe-oval.xml
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap xccdf eval --results results.xml --profile xccdf_org.ssgproject.content_profile_pci-dss ssg-rhel7-ds.xml
++ grep -E 'Title|Rule|Ident|Result'
+WARNING: Datastream component 'scap_org.open-scap_cref_security-data-oval-com.redhat.rhsa-RHEL7.xml.bz2' points out to the remote 'https://access.redhat.com/security/data/oval/com.redhat.rhsa-RHEL7.xml.bz2'. Use '--fetch-remote-resources' option to download it.
+WARNING: Skipping 'https://access.redhat.com/security/data/oval/com.redhat.rhsa-RHEL7.xml.bz2' file which is referenced from datastream
+WARNING: Skipping ./security-data-oval-com.redhat.rhsa-RHEL7.xml.bz2 file which is referenced from XCCDF content
+Title	Disable Prelinking
+Rule	xccdf_org.ssgproject.content_rule_disable_prelink
+Ident	CCE-27078-5
+Result	notapplicable
+Title	Verify File Hashes with RPM
+Rule	xccdf_org.ssgproject.content_rule_rpm_verify_hashes
+Ident	CCE-27157-7
+Result	notapplicable
+Title	Verify and Correct File Permissions with RPM
+Rule	xccdf_org.ssgproject.content_rule_rpm_verify_permissions
+Ident	CCE-27209-6
+Result	notapplicable
+Title	Install AIDE
+Rule	xccdf_org.ssgproject.content_rule_package_aide_installed
+Ident	CCE-27096-7
+Result	notapplicable
+Title	Build and Test AIDE Database
+Rule	xccdf_org.ssgproject.content_rule_aide_build_database
+Ident	CCE-27220-3
+Result	notapplicable
+Title	Configure Periodic Execution of AIDE
+Rule	xccdf_org.ssgproject.content_rule_aide_periodic_cron_checking
+Ident	CCE-26952-2
+Result	notapplicable
+Title	Install Intrusion Detection Software
+Rule	xccdf_org.ssgproject.content_rule_install_hids
+Ident	CCE-26818-5
+Result	notapplicable
+Title	Make sure that the dconf databases are up-to-date with regards to respective keyfiles
+Rule	xccdf_org.ssgproject.content_rule_dconf_db_up_to_date
+Ident	CCE-81004-4
+Result	notapplicable
+Title	Enable GNOME3 Screensaver Idle Activation
+Rule	xccdf_org.ssgproject.content_rule_dconf_gnome_screensaver_idle_activation_enabled
+Ident	CCE-80111-8
+Result	notapplicable
+Title	Set GNOME3 Screensaver Inactivity Timeout
+Rule	xccdf_org.ssgproject.content_rule_dconf_gnome_screensaver_idle_delay
+Ident	CCE-80110-0
+Result	notapplicable
+Title	Enable GNOME3 Screensaver Lock After Idle Period
+Rule	xccdf_org.ssgproject.content_rule_dconf_gnome_screensaver_lock_enabled
+Ident	CCE-80112-6
+Result	notapplicable
+Title	Implement Blank Screensaver
+Rule	xccdf_org.ssgproject.content_rule_dconf_gnome_screensaver_mode_blank
+Ident	CCE-80113-4
+Result	notapplicable
+Title	Ensure gpgcheck Enabled In Main yum Configuration
+Rule	xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated
+Ident	CCE-26989-4
+Result	notapplicable
+Title	Ensure gpgcheck Enabled for All yum Package Repositories
+Rule	xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled
+Ident	CCE-26876-3
+Result	notapplicable
+Title	Ensure Red Hat GPG Key Installed
+Rule	xccdf_org.ssgproject.content_rule_ensure_redhat_gpgkey_installed
+Ident	CCE-26957-1
+Result	notapplicable
+Title	Ensure Software Patches Installed
+Rule	xccdf_org.ssgproject.content_rule_security_patches_up_to_date
+Ident	CCE-26895-3
+Result	notapplicable
+Title	Ensure PAM Displays Last Logon/Access Notification
+Rule	xccdf_org.ssgproject.content_rule_display_login_attempts
+Ident	CCE-27275-7
+Result	notapplicable
+Title	Limit Password Reuse
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember
+Ident	CCE-82030-8
+Result	notapplicable
+Title	Lock Accounts After Failed Password Attempts
+Rule	xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny
+Ident	CCE-27350-8
+Result	notapplicable
+Title	Set Lockout Time for Failed Password Attempts
+Rule	xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time
+Ident	CCE-26884-7
+Result	notapplicable
+Title	Ensure PAM Enforces Password Requirements - Minimum Digit Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit
+Ident	CCE-27214-6
+Result	notapplicable
+Title	Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit
+Ident	CCE-27345-8
+Result	notapplicable
+Title	Ensure PAM Enforces Password Requirements - Minimum Length
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen
+Ident	CCE-27293-0
+Result	notapplicable
+Title	Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit
+Ident	CCE-27200-5
+Result	notapplicable
+Title	Set Password Hashing Algorithm in /etc/libuser.conf
+Rule	xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_libuserconf
+Ident	CCE-82038-1
+Result	notapplicable
+Title	Set Password Hashing Algorithm in /etc/login.defs
+Rule	xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_logindefs
+Ident	CCE-82050-6
+Result	notapplicable
+Title	Set PAM''s Password Hashing Algorithm
+Rule	xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth
+Ident	CCE-82043-1
+Result	notapplicable
+Title	Enable Smart Card Login
+Rule	xccdf_org.ssgproject.content_rule_smartcard_auth
+Ident	CCE-80207-4
+Result	notapplicable
+Title	Set Account Expiration Following Inactivity
+Rule	xccdf_org.ssgproject.content_rule_account_disable_post_pw_expiration
+Ident	CCE-27355-7
+Result	notapplicable
+Title	Ensure All Accounts on the System Have Unique Names
+Rule	xccdf_org.ssgproject.content_rule_account_unique_name
+Ident	CCE-80208-2
+Result	notapplicable
+Title	Set Password Maximum Age
+Rule	xccdf_org.ssgproject.content_rule_accounts_maximum_age_login_defs
+Ident	CCE-27051-2
+Result	notapplicable
+Title	Verify All Account Password Hashes are Shadowed
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_all_shadowed
+Ident	CCE-27352-4
+Result	notapplicable
+Title	All GIDs referenced in /etc/passwd must be defined in /etc/group
+Rule	xccdf_org.ssgproject.content_rule_gid_passwd_group_same
+Ident	CCE-27503-2
+Result	notapplicable
+Title	Prevent Login to Accounts With Empty Password
+Rule	xccdf_org.ssgproject.content_rule_no_empty_passwords
+Ident	CCE-27286-4
+Result	notapplicable
+Title	Enable Auditing for Processes Which Start Prior to the Audit Daemon
+Rule	xccdf_org.ssgproject.content_rule_grub2_audit_argument
+Ident	CCE-27212-0
+Result	notapplicable
+Title	Make the auditd Configuration Immutable
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_immutable
+Ident	CCE-27097-5
+Result	notapplicable
+Title	Record Events that Modify the System's Mandatory Access Controls
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_mac_modification
+Ident	CCE-27168-4
+Result	notapplicable
+Title	Ensure auditd Collects Information on Exporting to Media (successful)
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_media_export
+Ident	CCE-27447-2
+Result	notapplicable
+Title	Record Events that Modify the System's Network Environment
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_networkconfig_modification
+Ident	CCE-27076-9
+Result	notapplicable
+Title	Record Attempts to Alter Process and Session Initiation Information
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_session_events
+Ident	CCE-27301-1
+Result	notapplicable
+Title	Ensure auditd Collects System Administrator Actions
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_sysadmin_actions
+Ident	CCE-27461-3
+Result	notapplicable
+Title	Record Events that Modify User/Group Information
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_usergroup_modification
+Ident	CCE-27192-4
+Result	notapplicable
+Title	System Audit Logs Must Be Owned By Root
+Rule	xccdf_org.ssgproject.content_rule_file_ownership_var_log_audit
+Ident	CCE-80125-8
+Result	notapplicable
+Title	System Audit Logs Must Have Mode 0640 or Less Permissive
+Rule	xccdf_org.ssgproject.content_rule_file_permissions_var_log_audit
+Ident	CCE-27205-4
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - chmod
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_chmod
+Ident	CCE-27339-1
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - chown
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_chown
+Ident	CCE-27364-9
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - fchmod
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fchmod
+Ident	CCE-27393-8
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - fchmodat
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fchmodat
+Ident	CCE-27388-8
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - fchown
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fchown
+Ident	CCE-27356-5
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - fchownat
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fchownat
+Ident	CCE-27387-0
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - fremovexattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fremovexattr
+Ident	CCE-27353-2
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - fsetxattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_fsetxattr
+Ident	CCE-27389-6
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - lchown
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_lchown
+Ident	CCE-27083-5
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - lremovexattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_lremovexattr
+Ident	CCE-27410-0
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - lsetxattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_lsetxattr
+Ident	CCE-27280-7
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - removexattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_removexattr
+Ident	CCE-27367-2
+Result	notapplicable
+Title	Record Events that Modify the System's Discretionary Access Controls - setxattr
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_dac_modification_setxattr
+Ident	CCE-27213-8
+Result	notapplicable
+Title	Ensure auditd Collects File Deletion Events by User
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_file_deletion_events
+Ident	CCE-27206-2
+Result	notapplicable
+Title	Ensure auditd Collects Unauthorized Access Attempts to Files (unsuccessful)
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_unsuccessful_file_modification
+Ident	CCE-27347-4
+Result	notapplicable
+Title	Ensure auditd Collects Information on Kernel Module Loading and Unloading
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_kernel_module_loading
+Ident	CCE-27129-6
+Result	notapplicable
+Title	Record Attempts to Alter Logon and Logout Events
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_login_events
+Ident	CCE-27204-7
+Result	notapplicable
+Title	Ensure auditd Collects Information on the Use of Privileged Commands
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_privileged_commands
+Ident	CCE-27437-3
+Result	notapplicable
+Title	Record attempts to alter time through adjtimex
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_adjtimex
+Ident	CCE-27290-6
+Result	notapplicable
+Title	Record Attempts to Alter Time Through clock_settime
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_clock_settime
+Ident	CCE-27219-5
+Result	notapplicable
+Title	Record attempts to alter time through settimeofday
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_settimeofday
+Ident	CCE-27216-1
+Result	notapplicable
+Title	Record Attempts to Alter Time Through stime
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_stime
+Ident	CCE-27299-7
+Result	notapplicable
+Title	Record Attempts to Alter the localtime File
+Rule	xccdf_org.ssgproject.content_rule_audit_rules_time_watch_localtime
+Ident	CCE-27310-2
+Result	notapplicable
+Title	Configure auditd to use audispd's syslog plugin
+Rule	xccdf_org.ssgproject.content_rule_auditd_audispd_syslog_plugin_activated
+Ident	CCE-27341-7
+Result	notapplicable
+Title	Configure auditd mail_acct Action on Low Disk Space
+Rule	xccdf_org.ssgproject.content_rule_auditd_data_retention_action_mail_acct
+Ident	CCE-27394-6
+Result	notapplicable
+Title	Configure auditd admin_space_left Action on Low Disk Space
+Rule	xccdf_org.ssgproject.content_rule_auditd_data_retention_admin_space_left_action
+Ident	CCE-27370-6
+Result	notapplicable
+Title	Configure auditd Max Log File Size
+Rule	xccdf_org.ssgproject.content_rule_auditd_data_retention_max_log_file
+Ident	CCE-27319-3
+Result	notapplicable
+Title	Configure auditd max_log_file_action Upon Reaching Maximum Log Size
+Rule	xccdf_org.ssgproject.content_rule_auditd_data_retention_max_log_file_action
+Ident	CCE-27231-0
+Result	notapplicable
+Title	Configure auditd Number of Logs Retained
+Rule	xccdf_org.ssgproject.content_rule_auditd_data_retention_num_logs
+Ident	CCE-27348-2
+Result	notapplicable
+Title	Configure auditd space_left Action on Low Disk Space
+Rule	xccdf_org.ssgproject.content_rule_auditd_data_retention_space_left_action
+Ident	CCE-27375-5
+Result	notapplicable
+Title	Verify /boot/grub2/grub.cfg Group Ownership
+Rule	xccdf_org.ssgproject.content_rule_file_groupowner_grub2_cfg
+Ident	CCE-82023-3
+Result	notapplicable
+Title	Verify /boot/grub2/grub.cfg User Ownership
+Rule	xccdf_org.ssgproject.content_rule_file_owner_grub2_cfg
+Ident	CCE-82026-6
+Result	notapplicable
+Title	Ensure Log Files Are Owned By Appropriate Group
+Rule	xccdf_org.ssgproject.content_rule_rsyslog_files_groupownership
+Ident	CCE-80190-2
+Result	notapplicable
+Title	Ensure Log Files Are Owned By Appropriate User
+Rule	xccdf_org.ssgproject.content_rule_rsyslog_files_ownership
+Ident	CCE-80189-4
+Result	notapplicable
+Title	Ensure System Log Files Have Correct Permissions
+Rule	xccdf_org.ssgproject.content_rule_rsyslog_files_permissions
+Ident	CCE-80191-0
+Result	notapplicable
+Title	Ensure Logrotate Runs Periodically
+Rule	xccdf_org.ssgproject.content_rule_ensure_logrotate_activated
+Ident	CCE-80195-1
+Result	notapplicable
+Title	Install libreswan Package
+Rule	xccdf_org.ssgproject.content_rule_package_libreswan_installed
+Ident	CCE-80170-4
+Result	notapplicable
+Title	Verify Group Who Owns group File
+Rule	xccdf_org.ssgproject.content_rule_file_groupowner_etc_group
+Ident	CCE-82037-3
+Result	notapplicable
+Title	Verify Group Who Owns passwd File
+Rule	xccdf_org.ssgproject.content_rule_file_groupowner_etc_passwd
+Ident	CCE-26639-5
+Result	notapplicable
+Title	Verify Group Who Owns shadow File
+Rule	xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow
+Ident	CCE-82051-4
+Result	notapplicable
+Title	Verify User Who Owns group File
+Rule	xccdf_org.ssgproject.content_rule_file_owner_etc_group
+Ident	CCE-82031-6
+Result	notapplicable
+Title	Verify User Who Owns passwd File
+Rule	xccdf_org.ssgproject.content_rule_file_owner_etc_passwd
+Ident	CCE-82052-2
+Result	notapplicable
+Title	Verify User Who Owns shadow File
+Rule	xccdf_org.ssgproject.content_rule_file_owner_etc_shadow
+Ident	CCE-82022-5
+Result	notapplicable
+Title	Verify Permissions on group File
+Rule	xccdf_org.ssgproject.content_rule_file_permissions_etc_group
+Ident	CCE-82032-4
+Result	notapplicable
+Title	Verify Permissions on passwd File
+Rule	xccdf_org.ssgproject.content_rule_file_permissions_etc_passwd
+Ident	CCE-82029-0
+Result	notapplicable
+Title	Verify Permissions on shadow File
+Rule	xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow
+Ident	CCE-82042-3
+Result	notapplicable
+Title	Enable the NTP Daemon
+Rule	xccdf_org.ssgproject.content_rule_service_chronyd_or_ntpd_enabled
+Ident	CCE-27444-9
+Result	notapplicable
+Title	Specify Additional Remote NTP Servers
+Rule	xccdf_org.ssgproject.content_rule_chronyd_or_ntpd_specify_multiple_servers
+Ident	CCE-27012-4
+Result	notapplicable
+Title	Specify a Remote NTP Server
+Rule	xccdf_org.ssgproject.content_rule_chronyd_or_ntpd_specify_remote_server
+Ident	CCE-27278-1
+Result	notapplicable
+Title	Set SSH Client Alive Count Max to zero
+Rule	xccdf_org.ssgproject.content_rule_sshd_set_keepalive_0
+Ident	CCE-83399-6
+Result	notapplicable
+Title	Set SSH Client Alive Interval
+Rule	xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout
+Ident	CCE-27433-2
+Result	notapplicable
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap xccdf generate report --output report.html results.xml
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f report.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 20:38:23 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 20:38:24 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 20:38:24 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpy7jyw9f0 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpy7jyw9f0
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 20:38:43 2023 - INFO  - End to restore the test environment.

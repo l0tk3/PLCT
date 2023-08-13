@@ -1,0 +1,164 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 14:00:59 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL logrotate
++ pkgs=logrotate
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs logrotate --node 1 --tempfile ''
+Tue Aug  8 14:01:06 2023 - INFO  - pkgs:(logrotate) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ touch /var/log/log-file
++ head -c 10M
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 14:01:07 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 14:01:07 2023 - INFO  - Start testing...
++ cat conf.txt
++ logrotate -vf /etc/logrotate.d/log-file
+reading config file /etc/logrotate.d/log-file
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 1 logs
+
+rotating pattern: /var/log/log-file  forced from command line (5 rotations)
+empty log files are not rotated, old logs are removed
+considering log /var/log/log-file
+Creating new state
+  Now: 2023-08-08 14:01
+  Last rotated at 2023-08-08 14:00
+  log needs rotating
+rotating log /var/log/log-file, log->rotateCount is 5
+dateext suffix '-20230808'
+glob pattern '-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+previous log /var/log/log-file.1 does not exist
+renaming /var/log/log-file.5.gz to /var/log/log-file.6.gz (rotatecount 5, logstart 1, i 5), 
+old log /var/log/log-file.5.gz does not exist
+renaming /var/log/log-file.4.gz to /var/log/log-file.5.gz (rotatecount 5, logstart 1, i 4), 
+old log /var/log/log-file.4.gz does not exist
+renaming /var/log/log-file.3.gz to /var/log/log-file.4.gz (rotatecount 5, logstart 1, i 3), 
+old log /var/log/log-file.3.gz does not exist
+renaming /var/log/log-file.2.gz to /var/log/log-file.3.gz (rotatecount 5, logstart 1, i 2), 
+old log /var/log/log-file.2.gz does not exist
+renaming /var/log/log-file.1.gz to /var/log/log-file.2.gz (rotatecount 5, logstart 1, i 1), 
+old log /var/log/log-file.1.gz does not exist
+renaming /var/log/log-file.0.gz to /var/log/log-file.1.gz (rotatecount 5, logstart 1, i 0), 
+old log /var/log/log-file.0.gz does not exist
+log /var/log/log-file.6.gz doesn't exist -- won't try to dispose of it
+renaming /var/log/log-file to /var/log/log-file.1
+creating new /var/log/log-file mode = 0644 uid = 0 gid = 0
+running postrotate script
+rsyslogd: no process found
+error: error running non-shared postrotate script for /var/log/log-file of '/var/log/log-file '
++ CHECK_RESULT 1 0 0 'Partition failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Partition failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Partition failure'
++ LOG_ERROR 'Partition failure'
++ message='Partition failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Partition failure'
+Tue Aug  8 14:01:08 2023 - ERROR - Partition failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_logrotate_004.sh line 34'
++ message='oe_test_logrotate_004.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_logrotate_004.sh line 34'
+Tue Aug  8 14:01:08 2023 - ERROR - oe_test_logrotate_004.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ test -e /var/log/log-file
++ CHECK_RESULT 0 0 0 'File does not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='File does not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -e /var/log/log-file.1
++ CHECK_RESULT 0 0 0 'File does not exist2'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='File does not exist2'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 14:01:09 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 14:01:09 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 14:01:10 2023 - INFO  - start environment cleanup.
++ rm -rf /var/log/log-file /var/log/log-file.1 /etc/logrotate.d/log-file
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 14:01:10 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 14:01:11 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,166 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 13:58:53 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL 'chkconfig network-scripts'
++ pkgs='chkconfig network-scripts'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'chkconfig network-scripts' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpqxntv3sz
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpqxntv3sz
+++ echo
++ lang=
++ LANG=en_US.UTF-8
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 13:59:25 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ chkconfig -v
++ grep chkconfig
+chkconfig version 1.24
++ CHECK_RESULT 0 0 0 'version display failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='version display failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chkconfig -h
++ grep usage
+usage:   chkconfig [--list] [--type <type>] [name]
++ CHECK_RESULT 0 0 0 'help information fails to be displayed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='help information fails to be displayed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chkconfig --del network
++ chkconfig --list
++ grep network
+
+Note: This output shows SysV services only and does not include native
+      systemd services. SysV configuration data might be overridden by native
+      systemd configuration.
+
+      If you want to list systemd services use 'systemctl list-unit-files'.
+      To see services enabled on particular target use
+      'systemctl list-dependencies [target]'.
+
++ CHECK_RESULT 1 1 0 'service deletion failure'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='service deletion failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ chkconfig --add network
++ CHECK_RESULT 0 0 0 'service added failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='service added failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chkconfig --level 6 network on
++ chkconfig --list
++ grep network
++ grep 6:on
+
+Note: This output shows SysV services only and does not include native
+      systemd services. SysV configuration data might be overridden by native
+      systemd configuration.
+
+      If you want to list systemd services use 'systemctl list-unit-files'.
+      To see services enabled on particular target use
+      'systemctl list-dependencies [target]'.
+
+network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
++ CHECK_RESULT 0 0 0 'on status setting failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='on status setting failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ chkconfig --level 6 network off
++ chkconfig --list
++ grep network
++ grep 6:off
+
+Note: This output shows SysV services only and does not include native
+      systemd services. SysV configuration data might be overridden by native
+      systemd configuration.
+
+      If you want to list systemd services use 'systemctl list-unit-files'.
+      To see services enabled on particular target use
+      'systemctl list-dependencies [target]'.
+
+network        	0:off	1:off	2:on	3:on	4:on	5:on	6:off
++ CHECK_RESULT 0 0 0 'off status setting failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='off status setting failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 13:59:32 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpqxntv3sz ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpqxntv3sz
++ '[' 0 -ne 0 ']'
++ LANG=

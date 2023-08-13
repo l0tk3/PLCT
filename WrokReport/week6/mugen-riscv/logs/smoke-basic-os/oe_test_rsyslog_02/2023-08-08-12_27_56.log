@@ -1,0 +1,85 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:27:58 2023 - INFO  - Start to run test.
++ grep '$imjournalRatelimitInterval 0' /etc/rsyslog.conf
+grep: /etc/rsyslog.conf: No such file or directory
++ CHECK_RESULT 2 0 0 'imjournalRatelimitInterval does not exist'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='imjournalRatelimitInterval does not exist'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'imjournalRatelimitInterval does not exist'
++ LOG_ERROR 'imjournalRatelimitInterval does not exist'
++ message='imjournalRatelimitInterval does not exist'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'imjournalRatelimitInterval does not exist'
+Tue Aug  8 12:27:58 2023 - ERROR - imjournalRatelimitInterval does not exist
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_02.sh line 25'
++ message='oe_test_rsyslog_02.sh line 25'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_02.sh line 25'
+Tue Aug  8 12:27:59 2023 - ERROR - oe_test_rsyslog_02.sh line 25
++ '[' 0 -eq 1 ']'
++ return 0
++ grep 'StateFile="/run/log/imjournal.state"' /etc/rsyslog.conf
+grep: /etc/rsyslog.conf: No such file or directory
++ CHECK_RESULT 2 0 0 'StateFile does not exist'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='StateFile does not exist'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'StateFile does not exist'
++ LOG_ERROR 'StateFile does not exist'
++ message='StateFile does not exist'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'StateFile does not exist'
+Tue Aug  8 12:27:59 2023 - ERROR - StateFile does not exist
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_02.sh line 27'
++ message='oe_test_rsyslog_02.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_02.sh line 27'
+Tue Aug  8 12:28:00 2023 - ERROR - oe_test_rsyslog_02.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:28:00 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 12:28:01 2023 - ERROR - failed to execute the case.
++ exit 2
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_rsyslog_02.sh post_test'
++ message='oe_test_rsyslog_02.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_rsyslog_02.sh post_test'
+Tue Aug  8 12:28:01 2023 - INFO  - oe_test_rsyslog_02.sh post_test

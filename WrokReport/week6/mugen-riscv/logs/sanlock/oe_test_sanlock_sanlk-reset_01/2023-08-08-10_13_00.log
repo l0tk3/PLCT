@@ -1,0 +1,242 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:13:02 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'sanlock sanlk-reset'
++ pkgs='sanlock sanlk-reset'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'sanlock sanlk-reset' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpm536kwel
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpm536kwel
++ mkdir sanlocktest
++ cd sanlocktest
++ dd if=/dev/zero bs=1048576 count=1 of=./dev
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0292612 s, 35.8 MB/s
++ dd if=/dev/zero bs=1048576 count=1 of=./res
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0281559 s, 37.2 MB/s
++ chown sanlock:sanlock ./dev ./res
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test
++ sanlock direct init -s test:0:./dev:0
+init done 0
++ sanlock direct init -r test:testres:./res:0
+init done 0
++ sanlock client add_lockspace -s test:1:./dev:0
+add_lockspace
+add_lockspace done 0
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlk-resetd -f -D -w 0 -b 0 -R 0 -d 2 test
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:14:13 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:14:13 2023 - INFO  - Start to run test.
++ sanlk-reset -h
++ fgrep 'sanlk-reset [options]'
+fgrep: warning: fgrep is obsolescent; using grep -F
+sanlk-reset [options] reg|end|clear|reset lockspaces
++ CHECK_RESULT 0 0 0 'Check sanlk-reset -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-reset --help
++ fgrep 'sanlk-reset [options]'
+fgrep: warning: fgrep is obsolescent; using grep -F
+sanlk-reset [options] reg|end|clear|reset lockspaces
++ CHECK_RESULT 0 0 0 'Check sanlk-reset --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-reset -V
++ grep 'sanlk-reset version: [[:digit:]]'
+sanlk-reset version: 3.8.5
++ CHECK_RESULT 0 0 0 'Check sanlk-reset -V failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset -V failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-reset --version
++ grep 'sanlk-reset version: [[:digit:]]'
+sanlk-reset version: 3.8.5
++ CHECK_RESULT 0 0 0 'Check sanlk-reset --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-reset -D reg test
++ grep 'Updated reg test'
+Updated reg test
++ CHECK_RESULT 0 0 0 'Check sanlk-reset -D reg test failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset -D reg test failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-reset -D end test
++ grep 'Updated end test'
+Updated end test
++ CHECK_RESULT 0 0 0 'Check sanlk-reset -D end test failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset -D end test failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlk-reset -D clear all
++ grep 'Updated clear all'
+Updated clear all
++ CHECK_RESULT 0 0 0 'Check sanlk-reset -D clear all failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset -D clear all failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlk-reset -D reset -i 1 -w 0 -b 0 -R 0 test
++ grep 'state live reply 0 timestamp' ./info2.log
+1691460856 0002 state live reply 0 timestamp 517 ls test:1
+1691460858 0004 state live reply 0 timestamp 517 ls test:1
+1691460860 0006 state live reply 0 timestamp 517 ls test:1
+1691460862 0008 state live reply 0 timestamp 517 ls test:1
+1691460864 0010 state live reply 0 timestamp 538 ls test:1
++ CHECK_RESULT 0 0 0 'Check sanlk-reset -D reset -i -w -b -R failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset -D reset -i -w -b -R failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlk-reset -D reset --host-id 1 --watchdog 0 --sysrq-reboot 0 --resource-mode 0 test
++ grep 'state live reply 0 timestamp' ./info3.log
+1691460866 0002 state live reply 0 timestamp 538 ls test:1
+1691460868 0004 state live reply 0 timestamp 538 ls test:1
+1691460870 0006 state live reply 0 timestamp 538 ls test:1
+1691460872 0008 state live reply 0 timestamp 538 ls test:1
+1691460874 0010 state live reply 0 timestamp 538 ls test:1
++ CHECK_RESULT 0 0 0 'Check sanlk-reset -D reset --host-id --watchdog --sysrq-reboot --resource-mode failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlk-reset -D reset --host-id --watchdog --sysrq-reboot --resource-mode failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:14:35 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:14:36 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpm536kwel ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpm536kwel
++ '[' 0 -ne 0 ']'
+++ pgrep -f 'sanlock daemon'
++ kill -9 1383 1385
+++ pgrep -f 'sanlk-resetd -f -D'
++ kill -9 1394
++ cd ..
++ rm -rf sanlocktest
+oe_test_sanlock_sanlk-reset_01.sh: line 75:  1383 Killed                  nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test > ./info.log 2>&1  (wd: ~/mugen/testcases/cli-test/sanlock/sanlocktest)
+oe_test_sanlock_sanlk-reset_01.sh: line 75:  1394 Killed                  nohup sanlk-resetd -f -D -w 0 -b 0 -R 0 -d 2 test > ./info1.log 2>&1  (wd: ~/mugen/testcases/cli-test/sanlock/sanlocktest)
++ LOG_INFO 'Finish restore the test environment.'
++ message='Finish restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restore the test environment.'
+Tue Aug  8 10:14:46 2023 - INFO  - Finish restore the test environment.

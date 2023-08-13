@@ -1,0 +1,132 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 14:02:49 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL dosfstools
++ pkgs=dosfstools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs dosfstools --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp4vkp61m5
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp4vkp61m5
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 14:03:14 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 14:03:14 2023 - INFO  - Start testing...
++ rpm -qa
++ grep dosfstools
+dosfstools-4.2-2.oe2309.riscv64
++ CHECK_RESULT 0 0 0 'Return value error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Return value error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd /tmp
++ dd if=/dev/zero of=/tmp/100k bs=1k count=100
+100+0 records in
+100+0 records out
+102400 bytes (102 kB, 100 KiB) copied, 0.0033817 s, 30.3 MB/s
++ mke2fs /tmp/100k
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:   0/100       done                            
+Creating filesystem with 100 1k blocks and 8 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+ext2fs_mkdir: Could not allocate inode in ext2 filesystem while creating /lost+found
++ file /tmp/100k
++ grep 'ext2 filesystem data' /tmp/100k_test1
++ CHECK_RESULT 1 0 0 'compile 100k_test1 fail'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='compile 100k_test1 fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'compile 100k_test1 fail'
++ LOG_ERROR 'compile 100k_test1 fail'
++ message='compile 100k_test1 fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'compile 100k_test1 fail'
+Tue Aug  8 14:03:16 2023 - ERROR - compile 100k_test1 fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mkdosfs.sh line 36'
++ message='oe_test_mkdosfs.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mkdosfs.sh line 36'
+Tue Aug  8 14:03:16 2023 - ERROR - oe_test_mkdosfs.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ mkdosfs -n test /tmp/100k
+mkfs.fat: Warning: lowercase labels might not work properly on some systems
+mkfs.fat 4.2 (2021-01-31)
++ file /tmp/100k
++ grep DOS/MBR /tmp/100k_test2
+/tmp/100k: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID "mkfs.fat", sectors/cluster 4, root entries 512, sectors 192 (volumes <=32 MB), Media descriptor 0xf8, sectors/FAT 1, sectors/track 16, serial number 0xaa48f332, label: "test       ", FAT (12 bit)
++ CHECK_RESULT 0 0 0 'compile 100k_test2 error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='compile 100k_test2 error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 14:03:17 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 14:03:17 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/100k /tmp/100k_test1 /tmp/100k_test2
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp4vkp61m5 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp4vkp61m5
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 14:03:25 2023 - INFO  - Finish environment cleanup!

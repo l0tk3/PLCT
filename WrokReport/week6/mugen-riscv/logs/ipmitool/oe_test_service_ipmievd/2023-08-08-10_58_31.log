@@ -1,0 +1,322 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:58:32 2023 - INFO  - Start environmental preparation.
++ modprobe ipmi_watchdog
++ modprobe ipmi_poweroff
++ modprobe ipmi_devintf
++ modprobe ipmi_si 
+modprobe: FATAL: Module ipmi_si  not found in directory /lib/modules/6.4.0-1.0.0.4.oe2309.riscv64
++ modprobe ipmi_msghandler
++ DNF_INSTALL ipmitool
++ pkgs=ipmitool
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs ipmitool --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp7_njwwrx
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp7_njwwrx
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:59:02 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:59:02 2023 - INFO  - Start testing...
++ test_execution ipmievd.service
++ service=ipmievd.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 10:59:02'
++ test_restart ipmievd.service
++ service=ipmievd.service
++ systemctl restart ipmievd.service
+Job for ipmievd.service failed because the control process exited with error code.
+See "systemctl status ipmievd.service" and "journalctl -xeu ipmievd.service" for details.
++ CHECK_RESULT 1 0 0 'ipmievd.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmievd.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmievd.service restart failed'
++ LOG_ERROR 'ipmievd.service restart failed'
++ message='ipmievd.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmievd.service restart failed'
+Tue Aug  8 10:59:03 2023 - ERROR - ipmievd.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Tue Aug  8 10:59:03 2023 - ERROR - ../common/common_lib.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipmievd.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'ipmievd.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmievd.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmievd.service restart failed'
++ LOG_ERROR 'ipmievd.service restart failed'
++ message='ipmievd.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmievd.service restart failed'
+Tue Aug  8 10:59:10 2023 - ERROR - ipmievd.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Tue Aug  8 10:59:10 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop ipmievd.service
++ CHECK_RESULT 0 0 0 'ipmievd.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ipmievd.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipmievd.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'ipmievd.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmievd.service stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmievd.service stop failed'
++ LOG_ERROR 'ipmievd.service stop failed'
++ message='ipmievd.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmievd.service stop failed'
+Tue Aug  8 10:59:16 2023 - ERROR - ipmievd.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Tue Aug  8 10:59:17 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start ipmievd.service
+Job for ipmievd.service failed because the control process exited with error code.
+See "systemctl status ipmievd.service" and "journalctl -xeu ipmievd.service" for details.
++ CHECK_RESULT 1 0 0 'ipmievd.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmievd.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmievd.service start failed'
++ LOG_ERROR 'ipmievd.service start failed'
++ message='ipmievd.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmievd.service start failed'
+Tue Aug  8 10:59:18 2023 - ERROR - ipmievd.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Tue Aug  8 10:59:18 2023 - ERROR - ../common/common_lib.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ipmievd.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'ipmievd.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='ipmievd.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'ipmievd.service start failed'
++ LOG_ERROR 'ipmievd.service start failed'
++ message='ipmievd.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'ipmievd.service start failed'
+Tue Aug  8 10:59:24 2023 - ERROR - ipmievd.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Tue Aug  8 10:59:25 2023 - ERROR - ../common/common_lib.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ test_enabled ipmievd.service
++ service=ipmievd.service
+++ systemctl is-enabled ipmievd.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable ipmievd.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/ipmievd.service
++ find /etc/systemd/system/multi-user.target.wants/ipmievd.service
+/etc/systemd/system/multi-user.target.wants/ipmievd.service
++ CHECK_RESULT 0 0 0 'ipmievd.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ipmievd.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable ipmievd.service
+Removed /etc/systemd/system/multi-user.target.wants/ipmievd.service.
++ find /etc/systemd/system/multi-user.target.wants/ipmievd.service
+find: ‘/etc/systemd/system/multi-user.target.wants/ipmievd.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'ipmievd.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ipmievd.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-08-08 10:59:02' -u ipmievd.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+Aug 08 10:59:02 openeuler-riscv64 systemd[1]: ipmievd.service: Control process exited, code=exited, status=1/FAILURE
+Aug 08 10:59:02 openeuler-riscv64 systemd[1]: ipmievd.service: Failed with result 'exit-code'.
+Aug 08 10:59:02 openeuler-riscv64 systemd[1]: Failed to start Ipmievd Daemon.
+Aug 08 10:59:17 openeuler-riscv64 systemd[1]: ipmievd.service: Control process exited, code=exited, status=1/FAILURE
+Aug 08 10:59:17 openeuler-riscv64 systemd[1]: ipmievd.service: Failed with result 'exit-code'.
+Aug 08 10:59:17 openeuler-riscv64 systemd[1]: Failed to start Ipmievd Daemon.
++ CHECK_RESULT 0 0 1 'There is an error message for the log of ipmievd.service'
++ actual_result=0
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of ipmievd.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 1 -eq 0 ']'
++ test 0x == 0x
++ test -n 'There is an error message for the log of ipmievd.service'
++ LOG_ERROR 'There is an error message for the log of ipmievd.service'
++ message='There is an error message for the log of ipmievd.service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'There is an error message for the log of ipmievd.service'
+Tue Aug  8 10:59:29 2023 - ERROR - There is an error message for the log of ipmievd.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 28'
++ message='../common/common_lib.sh line 28'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 28'
+Tue Aug  8 10:59:29 2023 - ERROR - ../common/common_lib.sh line 28
++ '[' 0 -eq 1 ']'
++ return 0
++ test_reload ipmievd.service
++ service=ipmievd.service
++ systemctl start ipmievd.service
+Job for ipmievd.service failed because the control process exited with error code.
+See "systemctl status ipmievd.service" and "journalctl -xeu ipmievd.service" for details.
++ systemctl reload ipmievd.service
++ grep 'Job type reload is not applicable'
+Failed to reload ipmievd.service: Job type reload is not applicable for unit ipmievd.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit ipmievd.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit ipmievd.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status ipmievd.service
++ grep 'Active: active'
++ systemctl status ipmievd.service
++ grep 'inactive (dead)'
++ return 1
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 10:59:30 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 6
++ test 6 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 10:59:31 2023 - ERROR - failed to execute the case.
++ exit 6
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:59:31 2023 - INFO  - start environment cleanup.
++ modprobe -r ipmi_watchdog
++ modprobe -r ipmi_poweroff
++ modprobe -r ipmi_devintf
++ modprobe -r ipmi_si 
+modprobe: FATAL: Module ipmi_si  not found.
++ modprobe -r ipmi_msghandler
++ systemctl stop ipmievd.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp7_njwwrx ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp7_njwwrx
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:59:42 2023 - INFO  - Finish environment cleanup!

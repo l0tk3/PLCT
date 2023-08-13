@@ -1,0 +1,84 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 20:13:07 2023 - INFO  - Start testing...
++ test_oneshot selinux-autorelabel.service 'inactive (dead)'
++ service=selinux-autorelabel.service
++ status='inactive (dead)'
++ systemctl status selinux-autorelabel.service
++ grep Active
++ grep -v 'inactive (dead)'
+Unit selinux-autorelabel.service could not be found.
++ CHECK_RESULT 1 0 1 'There is an error for the status of selinux-autorelabel.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error for the status of selinux-autorelabel.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_enabled selinux-autorelabel.service
++ service=selinux-autorelabel.service
+++ systemctl is-enabled selinux-autorelabel.service
+Failed to get unit file state for selinux-autorelabel.service: No such file or directory
++ state=
++ '[' '' == enabled ']'
++ '[' '' == disabled ']'
++ '[' '' == masked ']'
++ '[' '' == static ']'
++ LOG_INFO 'Unit is indirect, ignoring.'
++ message='Unit is indirect, ignoring.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Unit is indirect, ignoring.'
+Tue Aug  8 20:13:08 2023 - INFO  - Unit is indirect, ignoring.
++ journalctl -u selinux-autorelabel.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of selinux-autorelabel.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of selinux-autorelabel.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 20:13:09 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 20:13:09 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_service_selinux-autorelabel.sh post_test'
++ message='oe_test_service_selinux-autorelabel.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_service_selinux-autorelabel.sh post_test'
+Tue Aug  8 20:13:10 2023 - INFO  - oe_test_service_selinux-autorelabel.sh post_test

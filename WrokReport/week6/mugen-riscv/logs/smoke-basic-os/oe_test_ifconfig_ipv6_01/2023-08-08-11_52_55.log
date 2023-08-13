@@ -1,0 +1,177 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 11:52:57 2023 - INFO  - Start to prepare the test environment.
++ OLD_LANG=
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ DNF_INSTALL net-tools
++ pkgs=net-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs net-tools --node 1 --tempfile ''
+Tue Aug  8 11:53:04 2023 - INFO  - pkgs:(net-tools) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
+++ ip a
+++ grep enp0s2
+++ grep mtu
+++ awk '{print $5}'
++ old_mtu=1500
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 11:53:05 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 11:53:05 2023 - INFO  - Start to run test.
++ ifconfig enp0s2 mtu 1279
++ CHECK_RESULT 0 0 0 'Failed to add mtu 1279'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add mtu 1279'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a
++ grep 1279
+2: enp0s2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1279 qdisc fq_codel state UP group default qlen 1000
++ CHECK_RESULT 0 0 0 'Failed to check mtu 1279'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to check mtu 1279'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ifconfig enp0s2 add 2001::1/64
++ grep SIOCSIFADDR:
+SIOCSIFADDR: Invalid argument
++ CHECK_RESULT 0 0 0 'Successfully add ipv6'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Successfully add ipv6'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ifconfig enp0s2 mtu 1280
++ CHECK_RESULT 0 0 0 'Failed to add mtu 1280'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add mtu 1280'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a
++ grep 1280
+2: enp0s2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc fq_codel state UP group default qlen 1000
++ CHECK_RESULT 0 0 0 'Failed to check mtu 1280'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to check mtu 1280'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ifconfig enp0s2 add 2002::1/64
++ CHECK_RESULT 0 0 0 'Failed to add ipv6'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a
++ grep 2002::1/64
+    inet6 2002::1/64 scope global tentative noprefixroute 
++ CHECK_RESULT 0 0 0 'Failed to check ipv6'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to check ipv6'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 11:53:06 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:53:07 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 11:53:07 2023 - INFO  - Start to restore the test environment.
++ ifconfig enp0s2 mtu 1500
++ systemctl restart NetworkManager
++ ifup enp0s2
+No suitable profile "enp0s2" found!
+
+See all profiles with `nmcli connection`.
+Reload files from disk with `nmcli connection reload`
+Activate the desired profile with `nmcli connection up \"$NAME\"`
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 11:53:10 2023 - WARN  - no thing to do.
++ return 0
++ export LANG=
++ LANG=
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 11:53:11 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,123 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 10:02:31 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL 'binutils gcc'
++ pkgs='binutils gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'binutils gcc' --node 1 --tempfile ''
+Tue Aug  8 10:02:39 2023 - INFO  - pkgs:(binutils gcc) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ touch file1.c file2.c file3.c
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:02:40 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ gcc -Wall -c file1.c file2.c file3.c
++ CHECK_RESULT 0 0 0 'Compilation failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Compilation failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls
++ grep -E 'file[1-3]{1}.o'
+++ cat test-binutils.txt
++ out='file1.o
+file2.o
+file3.o'
++ file='file1.o file2.o file3.o'
++ CHECK_RESULT file1.o file2.o file3.o file1.o file2.o file3.o 0 'File generation failure'
++ actual_result=file1.o
++ expect_result=file2.o
++ mode=file3.o
++ error_log=file1.o
++ exit_mode=file2.o
++ '[' -z file1.o ']'
++ '[' file3.o -eq 0 ']'
+/root/mugen/libs/locallibs/common_lib.sh: line 38: [: file3.o: integer expression expected
++ test file1.ox == file2.ox
++ return 0
++ ar rv libNAME.a file1.o file2.o file3.o
+ar: creating libNAME.a
+a - file1.o
+a - file2.o
+a - file3.o
++ CHECK_RESULT 0 0 0 'Generation failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Generation failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f libNAME.a
++ CHECK_RESULT 0 0 0 'File does not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='File does not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:02:42 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:02:43 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 10:02:43 2023 - WARN  - no thing to do.
++ return 0
++ rm -rf file1.c file1.o file2.c file2.o file3.c file3.o libNAME.a
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:02:44 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,235 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 20:13:39 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL rsync
++ pkgs=rsync
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs rsync --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpr7d5zpsu
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpr7d5zpsu
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 20:14:06 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 20:14:06 2023 - INFO  - Start to run test.
++ test_execution rsyncd.socket
++ service=rsyncd.socket
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 20:14:06'
++ test_restart rsyncd.socket
++ service=rsyncd.socket
++ systemctl restart rsyncd.socket
++ CHECK_RESULT 0 0 0 'rsyncd.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rsyncd.socket restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status rsyncd.socket
++ grep 'Active: active'
+     Active: active (listening) since Tue 2023-08-08 20:14:06 CST; 5s ago
++ CHECK_RESULT 0 0 0 'rsyncd.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rsyncd.socket restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop rsyncd.socket
++ CHECK_RESULT 0 0 0 'rsyncd.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rsyncd.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status rsyncd.socket
++ grep 'Active: inactive'
+     Active: inactive (dead)
++ CHECK_RESULT 0 0 0 'rsyncd.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rsyncd.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start rsyncd.socket
++ CHECK_RESULT 0 0 0 'rsyncd.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rsyncd.socket start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status rsyncd.socket
++ grep 'Active: active'
+     Active: active (listening) since Tue 2023-08-08 20:14:18 CST; 5s ago
++ CHECK_RESULT 0 0 0 'rsyncd.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rsyncd.socket start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled rsyncd.socket
++ service=rsyncd.socket
+++ systemctl is-enabled rsyncd.socket
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable rsyncd.socket
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/sockets.target.wants/rsyncd.socket
++ find /etc/systemd/system/sockets.target.wants/rsyncd.socket
+/etc/systemd/system/sockets.target.wants/rsyncd.socket
++ CHECK_RESULT 0 0 0 'rsyncd.socket enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='rsyncd.socket enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable rsyncd.socket
+Removed /etc/systemd/system/sockets.target.wants/rsyncd.socket.
++ find /etc/systemd/system/sockets.target.wants/rsyncd.socket
+find: ‘/etc/systemd/system/sockets.target.wants/rsyncd.socket’: No such file or directory
++ CHECK_RESULT 1 0 1 'rsyncd.socket disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='rsyncd.socket disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-08-08 20:14:06' -u rsyncd.socket
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of rsyncd.socket'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of rsyncd.socket'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload rsyncd.socket
++ service=rsyncd.socket
++ systemctl start rsyncd.socket
++ systemctl reload rsyncd.socket
++ grep 'Job type reload is not applicable'
+Failed to reload rsyncd.socket: Job type reload is not applicable for unit rsyncd.socket.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit rsyncd.socket'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit rsyncd.socket'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status rsyncd.socket
++ grep 'Active: active'
+     Active: active (listening) since Tue 2023-08-08 20:14:18 CST; 9s ago
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 20:14:28 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 20:14:29 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 20:14:30 2023 - INFO  - start environment cleanup.
++ systtemctl stop rsyncd.socket
+oe_test_socket_rsyncd.sh: line 37: systtemctl: command not found
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpr7d5zpsu ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpr7d5zpsu
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 20:14:40 2023 - INFO  - Finish environment cleanup!

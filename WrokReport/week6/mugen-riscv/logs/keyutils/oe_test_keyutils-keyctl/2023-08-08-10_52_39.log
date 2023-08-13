@@ -1,0 +1,166 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:52:41 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL keyutils
++ pkgs=keyutils
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs keyutils --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp8jwxjldz
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp8jwxjldz
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:53:09 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:53:10 2023 - INFO  - Start testing...
++ keyctl --version
++ grep 'keyctl from keyutils'
+keyctl from keyutils-1.6.3 (Built 2023-07-26)
++ CHECK_RESULT 0 0 0 'version error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='version error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ keyctl supports
++ grep have_capabilities
+have_capabilities=1
++ CHECK_RESULT 0 0 0 'support info error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='support info error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ keyctl add user mykey:hello stuff @u
+265915484
++ keyctl list @u
++ grep 'user: mykey:hello'
+265915484: --alswrv     0     0 user: mykey:hello
++ CHECK_RESULT 0 0 0 'add user failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='add user failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ keyctl search @u user mykey:hello
+265915484
++ CHECK_RESULT 0 0 0 'search user failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='search user failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ keyctl request user mykey:hello
++ key_id=265915484
++ echo -n zebra
++ keyctl pupdate 265915484
++ keyctl pipe 265915484
++ grep zebra
+zebra
++ CHECK_RESULT 0 0 0 'keyctl update failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='keyctl update failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ keyctl revoke 265915484
++ CHECK_RESULT 0 0 0 'keyctl revoke failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='keyctl revoke failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ keyctl clear @u
++ keyctl list @u
++ grep 'user: mykey:hello'
++ CHECK_RESULT 1 0 1 'keyctl clear failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='keyctl clear failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'Finish testing!'
++ message='Finish testing!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testing!'
+Tue Aug  8 10:53:11 2023 - INFO  - Finish testing!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:53:11 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:53:12 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp8jwxjldz ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp8jwxjldz
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:53:21 2023 - INFO  - Finish environment cleanup!

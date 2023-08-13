@@ -1,0 +1,205 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:18:14 2023 - INFO  - Start to run test.
++ perl -e 'print"Hello world!\n"'
++ grep 'Hello world!'
+Hello world!
++ CHECK_RESULT 0 0 0 'Failed to execute perl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute perl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:18:15 2023 - INFO  - End to run test.
++ perl -v
+
+This is perl 5, version 34, subversion 0 (v5.34.0) built for riscv64-linux-thread-multi
+
+Copyright 1987-2021, Larry Wall
+
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
+
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using "man perl" or "perldoc perl".  If you have access to the
+Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+
++ CHECK_RESULT 0 0 0 'perl -v command execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='perl -v command execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ perl -V
+Summary of my perl5 (revision 5 version 34 subversion 0) configuration:
+   
+  Platform:
+    osname=linux
+    osvers=6.1.22
+    archname=riscv64-linux-thread-multi
+    uname='linux sg2042-evb2 6.1.22 #1 smp thu may 11 14:50:53 hkt 2023 riscv64 riscv64 riscv64 gnulinux '
+    config_args='-des -Doptimize=none -Dccflags=-O2 -time -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/generic-hardened-cc1 -fstack-protector-strong -fasynchronous-unwind-tables -fstack-clash-protection -Dldflags=-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld  -Wl,--build-id=sha1   -Dccdlflags=-Wl,--enable-new-dtags -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld  -Wl,--build-id=sha1   -Dlddlflags=-shared -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld  -Wl,--build-id=sha1   -Dshrpdir=/usr/lib64 -DDEBUGGING=-g -Dversion=5.34.0 -Dmyhostname=localhost -Dperladmin=root@localhost -Dcc=gcc -Dprefix=/usr -Dvendorprefix=/usr -Dsiteprefix=/usr/local -Dsitelib=/usr/local/share/perl5 -Dprivlib=/usr/share/perl5 -Dsitearch=/usr/local/lib64/perl5 -Dvendorlib=/usr/share/perl5/vendor_perl -Darchlib=/usr/lib64/perl5 -Dvendorarch=/usr/lib64/perl5/vendor_perl -Darchname=riscv64-linux-thread-multi -Dlibpth=/usr/local/lib64 /lib64 /usr/lib64 -Duseshrplib -Dusethreads -Duseithreads -Ui_ndbm -Di_gdbm -Dusedtrace=/usr/bin/dtrace -Ubincompat5005 -Dusesitecustomize -Duselargefiles -Dd_semctl_semun -Di_db -Duse64bitint -Di_shadow -Di_syslog -Dman3ext=3pm -Duseperlio -Dscriptdir=/usr/bin -Dinstallusrbinperl=n -Uversiononly -Dpager=/usr/bin/less -isr -Dd_gethostent_r_proto -Ud_endhostent_r_proto -Ud_sethostent_r_proto -Ud_endprotoent_r_proto -Ud_setprotoent_r_proto -Ud_endservent_r_proto -Ud_setservent_r_proto'
+    hint=recommended
+    useposix=true
+    d_sigaction=define
+    useithreads=define
+    usemultiplicity=define
+    use64bitint=define
+    use64bitall=define
+    uselongdouble=undef
+    usemymalloc=n
+    default_inc_excludes_dot=define
+  Compiler:
+    cc='gcc'
+    ccflags ='-D_REENTRANT -D_GNU_SOURCE -O2 -time -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/generic-hardened-cc1 -fstack-protector-strong -fasynchronous-unwind-tables -fstack-clash-protection -fwrapv -fno-strict-aliasing -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    optimize='  -g'
+    cppflags='-D_REENTRANT -D_GNU_SOURCE -O2 -time -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/generic-hardened-cc1 -fstack-protector-strong -fasynchronous-unwind-tables -fstack-clash-protection -fwrapv -fno-strict-aliasing -I/usr/local/include'
+    ccversion=''
+    gccversion='12.3.1 20230508 (openEuler 12.3.1-4.oe2309)'
+    gccosandvers=''
+    intsize=4
+    longsize=8
+    ptrsize=8
+    doublesize=8
+    byteorder=12345678
+    doublekind=3
+    d_longlong=define
+    longlongsize=8
+    d_longdbl=define
+    longdblsize=16
+    longdblkind=1
+    ivtype='long'
+    ivsize=8
+    nvtype='double'
+    nvsize=8
+    Off_t='off_t'
+    lseeksize=8
+    alignbytes=8
+    prototype=define
+  Linker and Libraries:
+    ld='gcc'
+    ldflags ='-Wl,-z,relro -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -Wl,--build-id=sha1  -fstack-protector-strong -L/usr/local/lib'
+    libpth=/usr/local/lib64 /lib64 /usr/lib64 /usr/local/lib /usr/lib
+    libs=-lpthread -lgdbm -ldl -lm -lcrypt -lutil -lc -lgdbm_compat
+    perllibs=-lpthread -ldl -lm -lcrypt -lutil -lc
+    libc=/lib64/lp64d/libc.so.6
+    so=so
+    useshrplib=true
+    libperl=libperl.so
+    gnulibc_version='2.36'
+  Dynamic Linking:
+    dlsrc=dl_dlopen.xs
+    dlext=so
+    d_dlsymun=undef
+    ccdlflags='-Wl,--enable-new-dtags -Wl,-z,relro -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -Wl,--build-id=sha1 '
+    cccdlflags='-fPIC'
+    lddlflags='-shared -Wl,-z,relro -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -Wl,--build-id=sha1  -L/usr/local/lib -fstack-protector-strong'
+
+
+Characteristics of this binary (from libperl): 
+  Compile-time options:
+    HAS_TIMES
+    MULTIPLICITY
+    PERLIO_LAYERS
+    PERL_COPY_ON_WRITE
+    PERL_DONT_CREATE_GVSV
+    PERL_IMPLICIT_CONTEXT
+    PERL_MALLOC_WRAP
+    PERL_OP_PARENT
+    PERL_PRESERVE_IVUV
+    USE_64_BIT_ALL
+    USE_64_BIT_INT
+    USE_ITHREADS
+    USE_LARGE_FILES
+    USE_LOCALE
+    USE_LOCALE_COLLATE
+    USE_LOCALE_CTYPE
+    USE_LOCALE_NUMERIC
+    USE_LOCALE_TIME
+    USE_PERLIO
+    USE_PERL_ATOF
+    USE_REENTRANT_API
+    USE_SITECUSTOMIZE
+    USE_THREAD_SAFE_LOCALE
+  Built under linux
+  Compiled at Jun 26 2023 00:00:00
+  @INC:
+    /usr/local/lib64/perl5
+    /usr/local/share/perl5
+    /usr/lib64/perl5/vendor_perl
+    /usr/share/perl5/vendor_perl
+    /usr/lib64/perl5
+    /usr/share/perl5
++ CHECK_RESULT 0 0 0 'perl -V command execution failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='perl -V command execution failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat
++ perl hello.pl
++ grep 'hello world !'
+hello world !
++ CHECK_RESULT 0 0 0 'not found hello world !'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='not found hello world !'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:18:16 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:18:16 2023 - INFO  - Start to restore the test environment.
++ rm -rf hello.pl
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:18:17 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,322 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 09:51:31 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL acl
++ pkgs=acl
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs acl --node 1 --tempfile ''
+Tue Aug  8 09:51:39 2023 - INFO  - pkgs:(acl) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ touch file
++ ln -s file filelink
++ mkdir -p dir/subdir
+++ whoami
++ uid=root
++ setfacl -d -m user:root:rwx dir
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 09:51:40 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 09:51:41 2023 - INFO  - Start to run test.
++ getfacl file
++ grep -qe '^# file:'
++ CHECK_RESULT 0 0 0 'L59: No Options No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L59: No Options No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -a dir
++ mapfile -t line
++ [[ 7 == 7 ]]
++ [[ # file: dir =~ file: ]]
++ [[ # owner: root =~ owner: ]]
++ [[ # group: root =~ group: ]]
++ [[ user::rwx =~ user: ]]
++ [[ group::r-x =~ group: ]]
++ [[ other::r-x =~ other: ]]
++ [[ x == x ]]
++ CHECK_RESULT 0 0 0 'L73: -a No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L73: -a No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -d dir
++ mapfile -t line
++ [[ 9 == 9 ]]
++ [[ # file: dir =~ file: ]]
++ [[ # owner: root =~ owner: ]]
++ [[ # group: root =~ group: ]]
++ [[ user::rwx =~ user: ]]
++ [[ user:root:rwx =~ user:root: ]]
++ [[ group::r-x =~ group: ]]
++ [[ mask::rwx =~ mask: ]]
++ [[ other::r-x =~ other: ]]
++ [[ x == x ]]
++ CHECK_RESULT 0 0 0 'L89: -d No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L89: -d No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -c file
++ grep -qe '^# file:'
++ CHECK_RESULT 1 1 0 'L93: -c No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L93: -c No Pass'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ getfacl -e dir
++ mapfile -t line
++ [[ 12 == 12 ]]
++ [[ # file: dir =~ file: ]]
++ [[ # owner: root =~ owner: ]]
++ [[ # group: root =~ group: ]]
++ [[ user::rwx =~ user: ]]
++ [[ group::r-x =~ group: ]]
++ [[ other::r-x =~ other: ]]
++ [[ default:user::rwx =~ default:user: ]]
++ [[ default:user:root:rwx	#effective:rwx =~ default:user:root: ]]
++ [[ default:group::r-x	#effective:r-x =~ default:group: ]]
++ [[ default:mask::rwx =~ default:mask: ]]
++ [[ default:other::r-x =~ default:other: ]]
++ [[ x == x ]]
++ grep -qe '#effective:' result
++ CHECK_RESULT 0 0 0 'L113: -e No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L113: -e No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -E dir
++ mapfile -t line
++ [[ 12 == 12 ]]
++ [[ # file: dir =~ file: ]]
++ [[ # owner: root =~ owner: ]]
++ [[ # group: root =~ group: ]]
++ [[ user::rwx =~ user: ]]
++ [[ group::r-x =~ group: ]]
++ [[ other::r-x =~ other: ]]
++ [[ default:user::rwx =~ default:user: ]]
++ [[ default:user:root:rwx =~ default:user:root: ]]
++ [[ default:group::r-x =~ default:group: ]]
++ [[ default:mask::rwx =~ default:mask: ]]
++ [[ default:other::r-x =~ default:other: ]]
++ [[ x == x ]]
++ grep -qe '#effective:' result
++ CHECK_RESULT 1 1 0 'L133: -E No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L133: -E No Pass'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ getfacl -s file dir
++ grep -qe '# file: file' result
++ CHECK_RESULT 1 1 0 'L138: -s No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L138: -s No Pass'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ getfacl -R dir
++ grep -qe '# file: dir/subdir' result
++ CHECK_RESULT 0 0 0 'L143: -R No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L143: -R No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -L filelink
++ grep -qe '# file: filelink' result
++ CHECK_RESULT 0 0 0 'L148: -L No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L148: -L No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -P filelink
+++ cat result
++ [[ x == x ]]
++ CHECK_RESULT 0 0 0 'L153: -P No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L153: -P No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -t file
++ mapfile -t line
++ [[ 5 == 5 ]]
++ [[ # file: file =~ file: file ]]
++ [[ USER   root      rw-      =~ USER  ]]
++ [[ GROUP  root      r--      =~ GROUP  ]]
++ [[ other            r--      =~ other  ]]
++ [[ x == x ]]
++ CHECK_RESULT 0 0 0 'L165: -t No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L165: -t No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -n file
++ mapfile -t line
++ [[ 7 == 7 ]]
++ [[ # owner: 0 =~ owner: ]]
++ [[ # group: 0 =~ group: ]]
++ CHECK_RESULT 0 0 0 'L174: -n No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L174: -n No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++++ dirname oe_test_acl_getfacl.sh
+++ cd .
+++ pwd
++ curr_path=/root/mugen/testcases/cli-test/acl/oe_test_acl_getfacl
+++ curr_path
+oe_test_acl_getfacl.sh: line 179: curr_path: command not found
++ getfacl /file
++ CHECK_RESULT 1 1 0 'L181: -p No Pass'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='L181: -p No Pass'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ getfacl -v
++ grep -qe '^getfacl [[:digit:]]'
++ CHECK_RESULT 0 0 0 'L185: -v No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L185: -v No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -h
++ grep -qe '^Usage: getfacl'
++ CHECK_RESULT 0 0 0 'L189: -h No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L189: -h No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:51:42 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:51:43 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 09:51:43 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 09:51:44 2023 - WARN  - no thing to do.
++ return 0
++ rm -fr file filelink dir result
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 09:51:44 2023 - INFO  - End to restore the test environment.

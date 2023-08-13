@@ -1,0 +1,132 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 11:59:36 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL lldpad
++ pkgs=lldpad
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs lldpad --node 1 --tempfile ''
++ tmpfile2=/tmp/tmps56_u6ig
++ '[' -z '' ']'
++ tmpfile=/tmp/tmps56_u6ig
+++ rpm -qa lldpad
+++ awk -F - '{print $2}'
++ lldpad_ver=1.1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:00:04 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:00:04 2023 - INFO  - Start to run test.
++ lldpad -v
++ grep 1.1
+lldpad v1.1.0
++ CHECK_RESULT 0 0 0 'Failed to execute lldpad -v'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute lldpad -v'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lldpad -h
++ grep usage:
+usage: lldpad [-hdksptv] [-f configfile] [-V level]
++ CHECK_RESULT 0 0 0 'Failed to execute lldpad -h'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute lldpad -h'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ lldpad -d
++ CHECK_RESULT 0 0 0 'Failed to execute lldpad -d'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute lldpad -d'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ps -aux
++ grep lld
+root       21552  0.0  0.0  23096  2688 ?        S    11:59   0:00 sh -c sudo bash mugen.sh -f smoke-basic-os -r oe_test_lldpad -x 2>&1 | tee -a exec.log
+root       21553  0.3  0.1  31924  6144 ?        S    11:59   0:00 sudo bash mugen.sh -f smoke-basic-os -r oe_test_lldpad -x
+root       21555  0.5  0.0  23492  3456 ?        S    11:59   0:00 bash mugen.sh -f smoke-basic-os -r oe_test_lldpad -x
+root       21599  2.0  0.3  33076 12160 ?        S    11:59   0:00 python3 /root/mugen/libs/locallibs/sleep_wait.py --time 30m --cmd bash -x oe_test_lldpad.sh --mode 1
+root       21600  0.3  0.0  23360  3072 ?        S    11:59   0:00 bash -x oe_test_lldpad.sh
+root       21662 62.5  0.0   3100  1668 ?        Ss   12:00   0:00 lldpad -d
+root       21664 28.5  0.0  22192  1536 ?        S    12:00   0:00 grep lld
++ CHECK_RESULT 0 0 0 'Failed to display lld'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display lld'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:00:05 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:00:06 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:00:06 2023 - INFO  - Start to restore the test environment.
+++ pgrep lldpad
++ kill -9 21662
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmps56_u6ig ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmps56_u6ig
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:00:16 2023 - INFO  - End to restore the test environment.

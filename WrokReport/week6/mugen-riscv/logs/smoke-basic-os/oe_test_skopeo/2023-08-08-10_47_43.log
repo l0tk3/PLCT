@@ -1,0 +1,725 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 10:47:45 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL skopeo
++ pkgs=skopeo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs skopeo --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 0:19:07 ago on Tue Aug  8 10:29:04 2023.
+No match for argument: skopeo
+Error: Unable to find a match: skopeo'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 0:19:07 ago on Tue Aug  8 10:29:04 2023.
+No match for argument: skopeo
+Error: Unable to find a match: skopeo'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:48:13 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:48:13 2023 - INFO  - Start testing...
++ (( i = 0 ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo list-tags --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 31: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_skopeo.sh line 37'
++ message='oe_test_skopeo.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_skopeo.sh line 37'
+Tue Aug  8 10:49:17 2023 - ERROR - oe_test_skopeo.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ flag_result=0
++ (( i = 0 ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ skopeo inspect --tls-verify=false docker://docker.io/nginx
+oe_test_skopeo.sh: line 40: skopeo: command not found
++ sleep 1
++ (( i++ ))
++ (( i < 60 ))
++ CHECK_RESULT 0 1
++ actual_result=0
++ expect_result=1
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 1x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_skopeo.sh line 46'
++ message='oe_test_skopeo.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_skopeo.sh line 46'
+Tue Aug  8 10:50:26 2023 - ERROR - oe_test_skopeo.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 10:50:27 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 10:50:28 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:50:28 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 0:19:07 ago on Tue Aug  8 10:29:04 2023.
+No match for argument: skopeo
+Error: Unable to find a match: skopeo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 0:19:07 ago on Tue Aug  8 10:29:04 2023.
+No match for argument: skopeo
+Error: Unable to find a match: skopeo'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 0:19:07 ago on Tue Aug  8 10:29:04 2023.\nNo match for argument: skopeo\nError: Unable to find a match: skopeo'
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:50:32 2023 - INFO  - Finish environment cleanup!

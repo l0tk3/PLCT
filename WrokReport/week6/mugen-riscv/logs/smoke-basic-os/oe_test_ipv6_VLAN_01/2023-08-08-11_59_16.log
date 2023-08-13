@@ -1,0 +1,87 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 11:59:18 2023 - INFO  - Start to run test.
++ ip link add dev vlan.1 link enp0s2 type vlan id 1
++ CHECK_RESULT 0 0 0 'Failed to add VLAN'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add VLAN'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a
++ grep vlan.1@enp0s2
+5: vlan.1@enp0s2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
++ CHECK_RESULT 0 0 0 'Failed to show VLAN'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show VLAN'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip link del dev vlan.1
++ CHECK_RESULT 0 0 0 'Failed to delete VLAN'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to delete VLAN'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip a
++ grep vlan.1@enp0s2
++ CHECK_RESULT 1 0 1 'Succeed to show VLAN'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Succeed to show VLAN'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 11:59:19 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:59:19 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_ipv6_VLAN_01.sh post_test'
++ message='oe_test_ipv6_VLAN_01.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_ipv6_VLAN_01.sh post_test'
+Tue Aug  8 11:59:20 2023 - INFO  - oe_test_ipv6_VLAN_01.sh post_test

@@ -1,0 +1,1042 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 21:07:55 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'openscap scap-security-guide'
++ pkgs='openscap scap-security-guide'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'openscap scap-security-guide' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp_8j5xo88
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp_8j5xo88
++ DNF_INSTALL 'openscap scap-security-guide' 2
++ pkgs='openscap scap-security-guide'
++ node=2
++ '[' -z /tmp/tmp_8j5xo88 ']'
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'openscap scap-security-guide' --node 2 --tempfile /tmp/tmp_8j5xo88
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 187, in <module>
+    exitcode, output = rpm_install(args.pkgs, args.node, args.tempfile)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 66, in rpm_install
+    conn = ssh_cmd.pssh_conn(
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/ssh_cmd.py", line 53, in pssh_conn
+    conn.connect(ip, port, user, password, timeout=timeout)
+  File "/usr/lib/python3.11/site-packages/paramiko/client.py", line 377, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/site-packages/paramiko/client.py", line 202, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+                ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
++ tmpfile2=
++ '[' -z /tmp/tmp_8j5xo88 ']'
++ xccdf_path=/usr/share/xml/scap/ssg/content/ssg-ol8-xccdf.xml
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 21:11:09 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Tue Aug  8 21:11:09 2023 - INFO  - Start executing testcase.
++ oscap info /usr/share/xml/scap/ssg/content/ssg-ol8-xccdf.xml
++ grep -rn 'Document type: XCCDF Checklist'
+oe_test_assess_safety_compliance.sh:32:    oscap info $xccdf_path | grep -rn "Document type: XCCDF Checklist"
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap info --profile ospp /usr/share/xml/scap/ssg/content/ssg-ol8-xccdf.xml
++ grep ospp
+	Id: xccdf_org.ssgproject.content_profile_ospp
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ oscap xccdf eval --report /tmp/report.html --profile ospp /usr/share/xml/scap/ssg/content/ssg-ol8-xccdf.xml
+WARNING: This content points out to the remote resources. Use `--fetch-remote-resources' option to download them.
+WARNING: Skipping https://linux.oracle.com/security/oval/com.oracle.elsa-all.xml.bz2 file which is referenced from XCCDF content
+--- Starting Evaluation ---
+
+Title	Install AIDE
+Rule	xccdf_org.ssgproject.content_rule_package_aide_installed
+Result	notapplicable
+
+Title	Enable Dracut FIPS Module
+Rule	xccdf_org.ssgproject.content_rule_enable_dracut_fips_module
+Result	notapplicable
+
+Title	Enable FIPS Mode
+Rule	xccdf_org.ssgproject.content_rule_enable_fips_mode
+Result	notapplicable
+
+Title	Install crypto-policies package
+Rule	xccdf_org.ssgproject.content_rule_package_crypto-policies_installed
+Result	notapplicable
+
+Title	Configure BIND to use System Crypto Policy
+Rule	xccdf_org.ssgproject.content_rule_configure_bind_crypto_policy
+Result	notapplicable
+
+Title	Configure System Cryptography Policy
+Rule	xccdf_org.ssgproject.content_rule_configure_crypto_policy
+Result	notapplicable
+
+Title	Configure Kerberos to use System Crypto Policy
+Rule	xccdf_org.ssgproject.content_rule_configure_kerberos_crypto_policy
+Result	notapplicable
+
+Title	Configure Libreswan to use System Crypto Policy
+Rule	xccdf_org.ssgproject.content_rule_configure_libreswan_crypto_policy
+Result	notapplicable
+
+Title	Configure OpenSSL library to use System Crypto Policy
+Rule	xccdf_org.ssgproject.content_rule_configure_openssl_crypto_policy
+Result	notapplicable
+
+Title	Configure SSH to use System Crypto Policy
+Rule	xccdf_org.ssgproject.content_rule_configure_ssh_crypto_policy
+Result	notapplicable
+
+Title	OpenSSL uses strong entropy source
+Rule	xccdf_org.ssgproject.content_rule_openssl_use_strong_entropy
+Result	notapplicable
+
+Title	Ensure /home Located On Separate Partition
+Rule	xccdf_org.ssgproject.content_rule_partition_for_home
+Result	notapplicable
+
+Title	Ensure /var Located On Separate Partition
+Rule	xccdf_org.ssgproject.content_rule_partition_for_var
+Result	notapplicable
+
+Title	Ensure /var/log Located On Separate Partition
+Rule	xccdf_org.ssgproject.content_rule_partition_for_var_log
+Result	notapplicable
+
+Title	Ensure /var/log/audit Located On Separate Partition
+Rule	xccdf_org.ssgproject.content_rule_partition_for_var_log_audit
+Result	notapplicable
+
+Title	Ensure /var/tmp Located On Separate Partition
+Rule	xccdf_org.ssgproject.content_rule_partition_for_var_tmp
+Result	notapplicable
+
+Title	Install sudo Package
+Rule	xccdf_org.ssgproject.content_rule_package_sudo_installed
+Result	notapplicable
+
+Title	Ensure gnutls-utils is installed
+Rule	xccdf_org.ssgproject.content_rule_package_gnutls-utils_installed
+Result	notapplicable
+
+Title	Install openscap-scanner Package
+Rule	xccdf_org.ssgproject.content_rule_package_openscap-scanner_installed
+Result	notapplicable
+
+Title	Install scap-security-guide Package
+Rule	xccdf_org.ssgproject.content_rule_package_scap-security-guide_installed
+Result	notapplicable
+
+Title	Uninstall abrt-addon-ccpp Package
+Rule	xccdf_org.ssgproject.content_rule_package_abrt-addon-ccpp_removed
+Result	notapplicable
+
+Title	Uninstall abrt-addon-kerneloops Package
+Rule	xccdf_org.ssgproject.content_rule_package_abrt-addon-kerneloops_removed
+Result	notapplicable
+
+Title	Uninstall abrt-cli Package
+Rule	xccdf_org.ssgproject.content_rule_package_abrt-cli_removed
+Result	notapplicable
+
+Title	Uninstall abrt-plugin-sosreport Package
+Rule	xccdf_org.ssgproject.content_rule_package_abrt-plugin-sosreport_removed
+Result	notapplicable
+
+Title	Uninstall gssproxy Package
+Rule	xccdf_org.ssgproject.content_rule_package_gssproxy_removed
+Result	notapplicable
+
+Title	Uninstall iprutils Package
+Rule	xccdf_org.ssgproject.content_rule_package_iprutils_removed
+Result	notapplicable
+
+Title	Uninstall krb5-workstation Package
+Rule	xccdf_org.ssgproject.content_rule_package_krb5-workstation_removed
+Result	notapplicable
+
+Title	Uninstall libreport-plugin-logger Package
+Rule	xccdf_org.ssgproject.content_rule_package_libreport-plugin-logger_removed
+Result	notapplicable
+
+Title	Uninstall libreport-plugin-rhtsupport Package
+Rule	xccdf_org.ssgproject.content_rule_package_libreport-plugin-rhtsupport_removed
+Result	notapplicable
+
+Title	Install dnf-automatic Package
+Rule	xccdf_org.ssgproject.content_rule_package_dnf-automatic_installed
+Result	notapplicable
+
+Title	Configure dnf-automatic to Install Available Updates Automatically
+Rule	xccdf_org.ssgproject.content_rule_dnf-automatic_apply_updates
+Result	notapplicable
+
+Title	Configure dnf-automatic to Install Only Security Updates
+Rule	xccdf_org.ssgproject.content_rule_dnf-automatic_security_updates_only
+Result	notapplicable
+
+Title	Ensure gpgcheck Enabled In Main yum Configuration
+Rule	xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated
+Result	notapplicable
+
+Title	Ensure gpgcheck Enabled for Local Packages
+Rule	xccdf_org.ssgproject.content_rule_ensure_gpgcheck_local_packages
+Result	notapplicable
+
+Title	Ensure gpgcheck Enabled for All yum Package Repositories
+Rule	xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled
+Result	notapplicable
+
+Title	Ensure Oracle Linux GPG Key Installed
+Rule	xccdf_org.ssgproject.content_rule_ensure_oracle_gpgkey_installed
+Result	notapplicable
+
+Title	Enable dnf-automatic Timer
+Rule	xccdf_org.ssgproject.content_rule_timer_dnf-automatic_enabled
+Result	notapplicable
+
+Title	Limit Password Reuse
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember
+Result	notapplicable
+
+Title	Lock Accounts After Failed Password Attempts
+Rule	xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny
+Result	notapplicable
+
+Title	Set Interval For Counting Failed Password Attempts
+Rule	xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval
+Result	notapplicable
+
+Title	Set Lockout Time for Failed Password Attempts
+Rule	xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time
+Result	notapplicable
+
+Title	Ensure PAM Enforces Password Requirements - Minimum Digit Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit
+Result	notapplicable
+
+Title	Ensure PAM Enforces Password Requirements - Minimum Different Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_difok
+Result	notapplicable
+
+Title	Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit
+Result	notapplicable
+
+Title	Ensure PAM Enforces Password Requirements - Maximum Consecutive Repeating Characters from Same Character Class
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_maxclassrepeat
+Result	notapplicable
+
+Title	Set Password Maximum Consecutive Repeating Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_maxrepeat
+Result	notapplicable
+
+Title	Ensure PAM Enforces Password Requirements - Minimum Length
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen
+Result	notapplicable
+
+Title	Ensure PAM Enforces Password Requirements - Minimum Special Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit
+Result	notapplicable
+
+Title	Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit
+Result	notapplicable
+
+Title	Disable debug-shell SystemD Service
+Rule	xccdf_org.ssgproject.content_rule_service_debug-shell_disabled
+Result	notapplicable
+
+Title	Disable Ctrl-Alt-Del Burst Action
+Rule	xccdf_org.ssgproject.content_rule_disable_ctrlaltdel_burstaction
+Result	notapplicable
+
+Title	Disable Ctrl-Alt-Del Reboot Activation
+Rule	xccdf_org.ssgproject.content_rule_disable_ctrlaltdel_reboot
+Result	notapplicable
+
+Title	Verify that Interactive Boot is Disabled
+Rule	xccdf_org.ssgproject.content_rule_grub2_disable_interactive_boot
+Result	notapplicable
+
+Title	Require Authentication for Single User Mode
+Rule	xccdf_org.ssgproject.content_rule_require_singleuser_auth
+Result	notapplicable
+
+Title	Install the tmux Package
+Rule	xccdf_org.ssgproject.content_rule_package_tmux_installed
+Result	notapplicable
+
+Title	Support session locking with tmux
+Rule	xccdf_org.ssgproject.content_rule_configure_bashrc_exec_tmux
+Result	notapplicable
+
+Title	Configure tmux to lock session after inactivity
+Rule	xccdf_org.ssgproject.content_rule_configure_tmux_lock_after_time
+Result	notapplicable
+
+Title	Configure the tmux Lock Command
+Rule	xccdf_org.ssgproject.content_rule_configure_tmux_lock_command
+Result	notapplicable
+
+Title	Prevent user from disabling the screen lock
+Rule	xccdf_org.ssgproject.content_rule_no_tmux_in_shells
+Result	notapplicable
+
+Title	Set Password Minimum Length in login.defs
+Rule	xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs
+Result	notapplicable
+
+Title	Prevent Login to Accounts With Empty Password
+Rule	xccdf_org.ssgproject.content_rule_no_empty_passwords
+Result	notapplicable
+
+Title	Restrict Virtual Console Root Logins
+Rule	xccdf_org.ssgproject.content_rule_securetty_root_login_console_only
+Result	notapplicable
+
+Title	Enforce usage of pam_wheel for su authentication
+Rule	xccdf_org.ssgproject.content_rule_use_pam_wheel_for_su
+Result	notapplicable
+
+Title	Limit the Number of Concurrent Login Sessions Allowed Per User
+Rule	xccdf_org.ssgproject.content_rule_accounts_max_concurrent_login_sessions
+Result	notapplicable
+
+Title	Ensure the Default Bash Umask is Set Correctly
+Rule	xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc
+Result	notapplicable
+
+Title	Ensure the Default C Shell Umask is Set Correctly
+Rule	xccdf_org.ssgproject.content_rule_accounts_umask_etc_csh_cshrc
+Result	notapplicable
+
+Title	Ensure the Default Umask is Set Correctly in /etc/profile
+Rule	xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile
+Result	notapplicable
+
+Title	Install audispd-plugins Package
+Rule	xccdf_org.ssgproject.content_rule_package_audispd-plugins_installed
+Result	notapplicable
+
+Title	Ensure the audit Subsystem is Installed
+Rule	xccdf_org.ssgproject.content_rule_package_audit_installed
+Result	notapplicable
+
+Title	Enable auditd Service
+Rule	xccdf_org.ssgproject.content_rule_service_auditd_enabled
+Result	notapplicable
+
+Title	Enable Auditing for Processes Which Start Prior to the Audit Daemon
+Rule	xccdf_org.ssgproject.content_rule_grub2_audit_argument
+Result	notapplicable
+
+Title	Extend Audit Backlog Limit for the Audit Daemon
+Rule	xccdf_org.ssgproject.content_rule_grub2_audit_backlog_limit_argument
+Result	notapplicable
+
+Title	Configure auditd flush priority
+Rule	xccdf_org.ssgproject.content_rule_auditd_data_retention_flush
+Result	notapplicable
+
+Title	Set number of records to cause an explicit flush to audit logs
+Rule	xccdf_org.ssgproject.content_rule_auditd_freq
+Result	notapplicable
+
+Title	Include Local Events in Audit Logs
+Rule	xccdf_org.ssgproject.content_rule_auditd_local_events
+Result	notapplicable
+
+Title	Resolve information before writing to audit logs
+Rule	xccdf_org.ssgproject.content_rule_auditd_log_format
+Result	notapplicable
+
+Title	Set hostname as computer node name in audit logs
+Rule	xccdf_org.ssgproject.content_rule_auditd_name_format
+Result	notapplicable
+
+Title	Write Audit Logs to the Disk
+Rule	xccdf_org.ssgproject.content_rule_auditd_write_logs
+Result	notapplicable
+
+Title	Configure auditing of unsuccessful file accesses
+Rule	xccdf_org.ssgproject.content_rule_audit_access_failed
+Result	notapplicable
+
+Title	Configure auditing of successful file accesses
+Rule	xccdf_org.ssgproject.content_rule_audit_access_success
+Result	notapplicable
+
+Title	Configure basic parameters of Audit system
+Rule	xccdf_org.ssgproject.content_rule_audit_basic_configuration
+Result	notapplicable
+
+Title	Configure auditing of unsuccessful file creations
+Rule	xccdf_org.ssgproject.content_rule_audit_create_failed
+Result	notapplicable
+
+Title	Configure auditing of successful file creations
+Rule	xccdf_org.ssgproject.content_rule_audit_create_success
+Result	notapplicable
+
+Title	Configure auditing of unsuccessful file deletions
+Rule	xccdf_org.ssgproject.content_rule_audit_delete_failed
+Result	notapplicable
+
+Title	Configure auditing of successful file deletions
+Rule	xccdf_org.ssgproject.content_rule_audit_delete_success
+Result	notapplicable
+
+Title	Configure immutable Audit login UIDs
+Rule	xccdf_org.ssgproject.content_rule_audit_immutable_login_uids
+Result	notapplicable
+
+Title	Configure auditing of unsuccessful file modifications
+Rule	xccdf_org.ssgproject.content_rule_audit_modify_failed
+Result	notapplicable
+
+Title	Configure auditing of successful file modifications
+Rule	xccdf_org.ssgproject.content_rule_audit_modify_success
+Result	notapplicable
+
+Title	Configure auditing of loading and unloading of kernel modules
+Rule	xccdf_org.ssgproject.content_rule_audit_module_load
+Result	notapplicable
+
+Title	Perform general configuration of Audit for OSPP
+Rule	xccdf_org.ssgproject.content_rule_audit_ospp_general
+Result	notapplicable
+
+Title	Configure auditing of unsuccessful ownership changes
+Rule	xccdf_org.ssgproject.content_rule_audit_owner_change_failed
+Result	notapplicable
+
+Title	Configure auditing of successful ownership changes
+Rule	xccdf_org.ssgproject.content_rule_audit_owner_change_success
+Result	notapplicable
+
+Title	Configure auditing of unsuccessful permission changes
+Rule	xccdf_org.ssgproject.content_rule_audit_perm_change_failed
+Result	notapplicable
+
+Title	Configure auditing of successful permission changes
+Rule	xccdf_org.ssgproject.content_rule_audit_perm_change_success
+Result	notapplicable
+
+Title	Configure kernel to trust the CPU random number generator
+Rule	xccdf_org.ssgproject.content_rule_grub2_kernel_trust_cpu_rng
+Result	notapplicable
+
+Title	Enable Kernel Page-Table Isolation (KPTI)
+Rule	xccdf_org.ssgproject.content_rule_grub2_pti_argument
+Result	notapplicable
+
+Title	Disable vsyscalls
+Rule	xccdf_org.ssgproject.content_rule_grub2_vsyscall_argument
+Result	notapplicable
+
+Title	Set the UEFI Boot Loader Password
+Rule	xccdf_org.ssgproject.content_rule_grub2_uefi_password
+Result	notapplicable
+
+Title	Ensure rsyslog-gnutls is installed
+Rule	xccdf_org.ssgproject.content_rule_package_rsyslog-gnutls_installed
+Result	notapplicable
+
+Title	Ensure rsyslog is Installed
+Rule	xccdf_org.ssgproject.content_rule_package_rsyslog_installed
+Result	notapplicable
+
+Title	Configure TLS for rsyslog remote logging
+Rule	xccdf_org.ssgproject.content_rule_rsyslog_remote_tls
+Result	notapplicable
+
+Title	Configure CA certificate for rsyslog remote logging
+Rule	xccdf_org.ssgproject.content_rule_rsyslog_remote_tls_cacert
+Result	notapplicable
+
+Title	Install firewalld Package
+Rule	xccdf_org.ssgproject.content_rule_package_firewalld_installed
+Result	notapplicable
+
+Title	Verify firewalld Enabled
+Rule	xccdf_org.ssgproject.content_rule_service_firewalld_enabled
+Result	notapplicable
+
+Title	Configure Accepting Router Advertisements on All IPv6 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv6_conf_all_accept_ra
+Result	notapplicable
+
+Title	Disable Accepting ICMP Redirects for All IPv6 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv6_conf_all_accept_redirects
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Accepting Source-Routed Packets on all IPv6 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv6_conf_all_accept_source_route
+Result	notapplicable
+
+Title	Disable Accepting Router Advertisements on all IPv6 Interfaces by Default
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv6_conf_default_accept_ra
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Accepting ICMP Redirects by Default on IPv6 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv6_conf_default_accept_redirects
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Accepting Source-Routed Packets on IPv6 Interfaces by Default
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv6_conf_default_accept_source_route
+Result	notapplicable
+
+Title	Disable Accepting ICMP Redirects for All IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_all_accept_redirects
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Accepting Source-Routed Packets on all IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_all_accept_source_route
+Result	notapplicable
+
+Title	Enable Kernel Parameter to Log Martian Packets on all IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_all_log_martians
+Result	notapplicable
+
+Title	Enable Kernel Parameter to Use Reverse Path Filtering on all IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_all_rp_filter
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Accepting Secure ICMP Redirects on all IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_all_secure_redirects
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Accepting ICMP Redirects by Default on IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_default_accept_redirects
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Accepting Source-Routed Packets on IPv4 Interfaces by Default
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_default_accept_source_route
+Result	notapplicable
+
+Title	Enable Kernel Paremeter to Log Martian Packets on all IPv4 Interfaces by Default
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_default_log_martians
+Result	notapplicable
+
+Title	Enable Kernel Parameter to Use Reverse Path Filtering on all IPv4 Interfaces by Default
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_default_rp_filter
+Result	notapplicable
+
+Title	Configure Kernel Parameter for Accepting Secure Redirects By Default
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_default_secure_redirects
+Result	notapplicable
+
+Title	Enable Kernel Parameter to Ignore ICMP Broadcast Echo Requests on IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_icmp_echo_ignore_broadcasts
+Result	notapplicable
+
+Title	Enable Kernel Parameter to Ignore Bogus ICMP Error Responses on IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_icmp_ignore_bogus_error_responses
+Result	notapplicable
+
+Title	Enable Kernel Parameter to Use TCP Syncookies on Network Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_tcp_syncookies
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Sending ICMP Redirects on all IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_all_send_redirects
+Result	notapplicable
+
+Title	Disable Kernel Parameter for Sending ICMP Redirects on all IPv4 Interfaces by Default
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_default_send_redirects
+Result	notapplicable
+
+Title	Disable Kernel Parameter for IP Forwarding on IPv4 Interfaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_ip_forward
+Result	notapplicable
+
+Title	Disable ATM Support
+Rule	xccdf_org.ssgproject.content_rule_kernel_module_atm_disabled
+Result	notapplicable
+
+Title	Disable CAN Support
+Rule	xccdf_org.ssgproject.content_rule_kernel_module_can_disabled
+Result	notapplicable
+
+Title	Disable IEEE 1394 (FireWire) Support
+Rule	xccdf_org.ssgproject.content_rule_kernel_module_firewire-core_disabled
+Result	notapplicable
+
+Title	Disable SCTP Support
+Rule	xccdf_org.ssgproject.content_rule_kernel_module_sctp_disabled
+Result	notapplicable
+
+Title	Disable TIPC Support
+Rule	xccdf_org.ssgproject.content_rule_kernel_module_tipc_disabled
+Result	notapplicable
+
+Title	Disable Bluetooth Kernel Module
+Rule	xccdf_org.ssgproject.content_rule_kernel_module_bluetooth_disabled
+Result	notapplicable
+
+Title	Enable Kernel Parameter to Enforce DAC on Hardlinks
+Rule	xccdf_org.ssgproject.content_rule_sysctl_fs_protected_hardlinks
+Result	notapplicable
+
+Title	Enable Kernel Parameter to Enforce DAC on Symlinks
+Rule	xccdf_org.ssgproject.content_rule_sysctl_fs_protected_symlinks
+Result	notapplicable
+
+Title	Disable Mounting of cramfs
+Rule	xccdf_org.ssgproject.content_rule_kernel_module_cramfs_disabled
+Result	notapplicable
+
+Title	Add nodev Option to /boot
+Rule	xccdf_org.ssgproject.content_rule_mount_option_boot_nodev
+Result	notapplicable
+
+Title	Add nosuid Option to /boot
+Rule	xccdf_org.ssgproject.content_rule_mount_option_boot_nosuid
+Result	notapplicable
+
+Title	Add nodev Option to /dev/shm
+Rule	xccdf_org.ssgproject.content_rule_mount_option_dev_shm_nodev
+Result	notapplicable
+
+Title	Add noexec Option to /dev/shm
+Rule	xccdf_org.ssgproject.content_rule_mount_option_dev_shm_noexec
+Result	notapplicable
+
+Title	Add nosuid Option to /dev/shm
+Rule	xccdf_org.ssgproject.content_rule_mount_option_dev_shm_nosuid
+Result	notapplicable
+
+Title	Add nodev Option to /home
+Rule	xccdf_org.ssgproject.content_rule_mount_option_home_nodev
+Result	notapplicable
+
+Title	Add nosuid Option to /home
+Rule	xccdf_org.ssgproject.content_rule_mount_option_home_nosuid
+Result	notapplicable
+
+Title	Add nodev Option to Non-Root Local Partitions
+Rule	xccdf_org.ssgproject.content_rule_mount_option_nodev_nonroot_local_partitions
+Result	notapplicable
+
+Title	Add nodev Option to /tmp
+Rule	xccdf_org.ssgproject.content_rule_mount_option_tmp_nodev
+Result	notapplicable
+
+Title	Add noexec Option to /tmp
+Rule	xccdf_org.ssgproject.content_rule_mount_option_tmp_noexec
+Result	notapplicable
+
+Title	Add nosuid Option to /tmp
+Rule	xccdf_org.ssgproject.content_rule_mount_option_tmp_nosuid
+Result	notapplicable
+
+Title	Add nodev Option to /var/log/audit
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_log_audit_nodev
+Result	notapplicable
+
+Title	Add noexec Option to /var/log/audit
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_log_audit_noexec
+Result	notapplicable
+
+Title	Add nosuid Option to /var/log/audit
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_log_audit_nosuid
+Result	notapplicable
+
+Title	Add nodev Option to /var/log
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_log_nodev
+Result	notapplicable
+
+Title	Add noexec Option to /var/log
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_log_noexec
+Result	notapplicable
+
+Title	Add nosuid Option to /var/log
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_log_nosuid
+Result	notapplicable
+
+Title	Add nodev Option to /var
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_nodev
+Result	notapplicable
+
+Title	Add nodev Option to /var/tmp
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_tmp_nodev
+Result	notapplicable
+
+Title	Add noexec Option to /var/tmp
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_tmp_noexec
+Result	notapplicable
+
+Title	Add nosuid Option to /var/tmp
+Rule	xccdf_org.ssgproject.content_rule_mount_option_var_tmp_nosuid
+Result	notapplicable
+
+Title	Disable storing core dumps
+Rule	xccdf_org.ssgproject.content_rule_sysctl_kernel_core_pattern
+Result	notapplicable
+
+Title	Restrict Access to Kernel Message Buffer
+Rule	xccdf_org.ssgproject.content_rule_sysctl_kernel_dmesg_restrict
+Result	notapplicable
+
+Title	Disable Kernel Image Loading
+Rule	xccdf_org.ssgproject.content_rule_sysctl_kernel_kexec_load_disabled
+Result	notapplicable
+
+Title	Disallow kernel profiling by unprivileged users
+Rule	xccdf_org.ssgproject.content_rule_sysctl_kernel_perf_event_paranoid
+Result	notapplicable
+
+Title	Disable Access to Network bpf() Syscall From Unprivileged Processes
+Rule	xccdf_org.ssgproject.content_rule_sysctl_kernel_unprivileged_bpf_disabled
+Result	notapplicable
+
+Title	Restrict usage of ptrace to descendant processes
+Rule	xccdf_org.ssgproject.content_rule_sysctl_kernel_yama_ptrace_scope
+Result	notapplicable
+
+Title	Harden the operation of the BPF just-in-time compiler
+Rule	xccdf_org.ssgproject.content_rule_sysctl_net_core_bpf_jit_harden
+Result	notapplicable
+
+Title	Disable the use of user namespaces
+Rule	xccdf_org.ssgproject.content_rule_sysctl_user_max_user_namespaces
+Result	notapplicable
+
+Title	Disable acquiring, saving, and processing core dumps
+Rule	xccdf_org.ssgproject.content_rule_service_systemd-coredump_disabled
+Result	notapplicable
+
+Title	Disable core dump backtraces
+Rule	xccdf_org.ssgproject.content_rule_coredump_disable_backtraces
+Result	notapplicable
+
+Title	Disable storing core dump
+Rule	xccdf_org.ssgproject.content_rule_coredump_disable_storage
+Result	notapplicable
+
+Title	Disable Core Dumps for All Users
+Rule	xccdf_org.ssgproject.content_rule_disable_users_coredumps
+Result	notapplicable
+
+Title	Restrict Exposed Kernel Pointer Addresses Access
+Rule	xccdf_org.ssgproject.content_rule_sysctl_kernel_kptr_restrict
+Result	notapplicable
+
+Title	Enable page allocator poisoning
+Rule	xccdf_org.ssgproject.content_rule_grub2_page_poison_argument
+Result	notapplicable
+
+Title	Enable SLUB/SLAB allocator poisoning
+Rule	xccdf_org.ssgproject.content_rule_grub2_slub_debug_argument
+Result	notapplicable
+
+Title	Install policycoreutils-python-utils package
+Rule	xccdf_org.ssgproject.content_rule_package_policycoreutils-python-utils_installed
+Result	notapplicable
+
+Title	Install policycoreutils Package
+Rule	xccdf_org.ssgproject.content_rule_package_policycoreutils_installed
+Result	notapplicable
+
+Title	Configure SELinux Policy
+Rule	xccdf_org.ssgproject.content_rule_selinux_policytype
+Result	notapplicable
+
+Title	Ensure SELinux State is Enforcing
+Rule	xccdf_org.ssgproject.content_rule_selinux_state
+Result	notapplicable
+
+Title	Uninstall Automatic Bug Reporting Tool (abrt)
+Rule	xccdf_org.ssgproject.content_rule_package_abrt_removed
+Result	notapplicable
+
+Title	Disable KDump Kernel Crash Analyzer (kdump)
+Rule	xccdf_org.ssgproject.content_rule_service_kdump_disabled
+Result	notapplicable
+
+Title	Install fapolicyd Package
+Rule	xccdf_org.ssgproject.content_rule_package_fapolicyd_installed
+Result	notapplicable
+
+Title	Enable the File Access Policy Service
+Rule	xccdf_org.ssgproject.content_rule_service_fapolicyd_enabled
+Result	notapplicable
+
+Title	Disable Kerberos by removing host keytab
+Rule	xccdf_org.ssgproject.content_rule_kerberos_disable_no_keytab
+Result	notapplicable
+
+Title	Uninstall Sendmail Package
+Rule	xccdf_org.ssgproject.content_rule_package_sendmail_removed
+Result	notapplicable
+
+Title	Uninstall nfs-utils Package
+Rule	xccdf_org.ssgproject.content_rule_package_nfs-utils_removed
+Result	notapplicable
+
+Title	The Chrony package is installed
+Rule	xccdf_org.ssgproject.content_rule_package_chrony_installed
+Result	notapplicable
+
+Title	Disable chrony daemon from acting as server
+Rule	xccdf_org.ssgproject.content_rule_chronyd_client_only
+Result	notapplicable
+
+Title	Disable network management of chrony daemon
+Rule	xccdf_org.ssgproject.content_rule_chronyd_no_chronyc_network
+Result	notapplicable
+
+Title	Install OpenSSH client software
+Rule	xccdf_org.ssgproject.content_rule_package_openssh-clients_installed
+Result	notapplicable
+
+Title	Install the OpenSSH Server Package
+Rule	xccdf_org.ssgproject.content_rule_package_openssh-server_installed
+Result	notapplicable
+
+Title	Configure session renegotiation for SSH client
+Rule	xccdf_org.ssgproject.content_rule_ssh_client_rekey_limit
+Result	notapplicable
+
+Title	SSH client uses strong entropy to seed (for CSH like shells)
+Rule	xccdf_org.ssgproject.content_rule_ssh_client_use_strong_rng_csh
+Result	notapplicable
+
+Title	SSH client uses strong entropy to seed (Bash-like shells)
+Rule	xccdf_org.ssgproject.content_rule_ssh_client_use_strong_rng_sh
+Result	notapplicable
+
+Title	Set SSH Client Alive Count Max to zero
+Rule	xccdf_org.ssgproject.content_rule_sshd_set_keepalive_0
+Result	notapplicable
+
+Title	Set SSH Client Alive Interval
+Rule	xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout
+Result	notapplicable
+
+Title	Disable Host-Based Authentication
+Rule	xccdf_org.ssgproject.content_rule_disable_host_auth
+Result	notapplicable
+
+Title	Disable SSH Access via Empty Passwords
+Rule	xccdf_org.ssgproject.content_rule_sshd_disable_empty_passwords
+Result	notapplicable
+
+Title	Disable GSSAPI Authentication
+Rule	xccdf_org.ssgproject.content_rule_sshd_disable_gssapi_auth
+Result	notapplicable
+
+Title	Disable Kerberos Authentication
+Rule	xccdf_org.ssgproject.content_rule_sshd_disable_kerb_auth
+Result	notapplicable
+
+Title	Disable SSH Root Login
+Rule	xccdf_org.ssgproject.content_rule_sshd_disable_root_login
+Result	notapplicable
+
+Title	Enable Use of Strict Mode Checking
+Rule	xccdf_org.ssgproject.content_rule_sshd_enable_strictmodes
+Result	notapplicable
+
+Title	Enable SSH Warning Banner
+Rule	xccdf_org.ssgproject.content_rule_sshd_enable_warning_banner
+Result	notapplicable
+
+Title	Force frequent session key renegotiation
+Rule	xccdf_org.ssgproject.content_rule_sshd_rekey_limit
+Result	notapplicable
+
+Title	SSH server uses strong entropy to seed
+Rule	xccdf_org.ssgproject.content_rule_sshd_use_strong_rng
+Result	notapplicable
+
+Title	Install usbguard Package
+Rule	xccdf_org.ssgproject.content_rule_package_usbguard_installed
+Result	notapplicable
+
+Title	Enable the USBGuard Service
+Rule	xccdf_org.ssgproject.content_rule_service_usbguard_enabled
+Result	notapplicable
+
+Title	Log USBGuard daemon audit events using Linux Audit
+Rule	xccdf_org.ssgproject.content_rule_configure_usbguard_auditbackend
+Result	notapplicable
+
+Title	Authorize Human Interface Devices and USB hubs in USBGuard daemon
+Rule	xccdf_org.ssgproject.content_rule_usbguard_allow_hid_and_hub
+Result	notapplicable
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep OpenSCAP /tmp/report.html
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect -c '
+        set timeout 300
+        spawn oscap-ssh @ 22 xccdf eval --report /tmp/remote_report.html /usr/share/xml/scap/ssg/content/ssg-ol8-xccdf.xml
+        expect {
+            "*yes/no*" {
+                send "yes\r"
+                exp_continue
+            }
+            "s password: " {
+                send "\r"
+                exp_continue
+            }
+            timeout
+        }
+    '
+spawn oscap-ssh @ 22 xccdf eval --report /tmp/remote_report.html /usr/share/xml/scap/ssg/content/ssg-ol8-xccdf.xml
+Connecting to '@' on port '22'...
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command [argument ...]]
+Failed to connect!
++ grep OpenSCAP /tmp/remote_report.html
+grep: /tmp/remote_report.html: No such file or directory
++ CHECK_RESULT 2
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_assess_safety_compliance.sh line 56'
++ message='oe_test_assess_safety_compliance.sh line 56'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_assess_safety_compliance.sh line 56'
+Tue Aug  8 21:12:51 2023 - ERROR - oe_test_assess_safety_compliance.sh line 56
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Tue Aug  8 21:12:52 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 21:12:52 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 21:12:53 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp_8j5xo88 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp_8j5xo88
++ '[' 0 -ne 0 ']'
++ DNF_REMOVE 2 'openscap scap-security-guide'
++ node=2
++ pkg_list='openscap scap-security-guide'
++ mode=0
++ [[ -z /tmp/tmp_8j5xo88 ]]
++ '[' 0 -ne 0 ']'
++ '[' 2 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 2 --pkgs 'openscap scap-security-guide' --tempfile /tmp/tmp_8j5xo88
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 153, in rpm_remove
+    conn = ssh_cmd.pssh_conn(
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/ssh_cmd.py", line 53, in pssh_conn
+    conn.connect(ip, port, user, password, timeout=timeout)
+  File "/usr/lib/python3.11/site-packages/paramiko/client.py", line 377, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/site-packages/paramiko/client.py", line 202, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+                ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
++ '[' 0 -ne 0 ']'
++ rm -rf /tmp/remote_report.html /tmp/report.html
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 21:13:13 2023 - INFO  - Finish environment cleanup!

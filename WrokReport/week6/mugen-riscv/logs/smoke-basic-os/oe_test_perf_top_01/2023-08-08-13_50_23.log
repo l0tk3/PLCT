@@ -1,0 +1,110 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 13:50:25 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL perf
++ pkgs=perf
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs perf --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpwoag59wl
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpwoag59wl
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 13:50:54 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 13:50:54 2023 - INFO  - Start to run test.
++ CHECK_RESULT 0 0 0 'perf top:failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='perf top:failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ perf top
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ grep kernel ./perf.check
++ CHECK_RESULT 1 0 0 'Verify output readability of perf top:failed!'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Verify output readability of perf top:failed!'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Verify output readability of perf top:failed!'
++ LOG_ERROR 'Verify output readability of perf top:failed!'
++ message='Verify output readability of perf top:failed!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Verify output readability of perf top:failed!'
+Tue Aug  8 13:51:00 2023 - ERROR - Verify output readability of perf top:failed!
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_perf_top_01.sh line 33'
++ message='oe_test_perf_top_01.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_perf_top_01.sh line 33'
+Tue Aug  8 13:51:01 2023 - ERROR - oe_test_perf_top_01.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 13:51:01 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Error:
+cycles: PMU Hardware doesn't support sampling/overflow-interrupts. Try 'perf stat'
+Tue Aug  8 13:51:02 2023 - ERROR - failed to execute the case.
++ exit 1
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 13:51:02 2023 - INFO  - Start to restore the test environment.
++ DNF REMOVE
+oe_test_perf_top_01.sh: line 39: DNF: command not found
++ rm -rf perf.check
+++ ps -ef
+++ grep 'perf top'
+++ grep -v grep
+++ awk '{print $2}'
++ kill -9
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 13:51:03 2023 - INFO  - End to restore the test environment.

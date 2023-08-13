@@ -1,0 +1,577 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++ source ../common/common_lib.sh
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
++ main
++ main
+++ type -t post_test
+++ type -t post_test
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ '[' -n '' ']'
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ rpm -qa
++ grep expect
++ rpm -qa
++ grep expect
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t config_params
+++ type -t run_test
++ '[' -n '' ']'
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+++ type -t pre_test
+++ type -t pre_test
++ '[' -n '' ']'
++ '[' -n '' ']'
+++ type -t run_test
+++ type -t run_test
++ '[' -n function ']'
++ '[' -n function ']'
++ run_test
++ run_test
++ LOG_INFO 'Start to run test.'
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 11:14:31 2023 - INFO  - Start to run test.
+Tue Aug  8 11:14:31 2023 - INFO  - Start to run test.
++ test_execution dbus.socket
++ service=dbus.socket
+++ date '+%Y-%m-%d %T'
+Tue Aug  8 11:14:31 2023 - INFO  - Start to run test.
++ log_time='2023-08-08 11:14:31'
++ test_execution dbus.socket
++ test_restart dbus.socket
++ service=dbus.socket
++ service=dbus.socket
++ systemctl restart dbus.socket
+++ date '+%Y-%m-%d %T'
++ test_execution dbus.socket
++ service=dbus.socket
++ log_time='2023-08-08 11:14:31'
++ test_restart dbus.socket
++ service=dbus.socket
++ systemctl restart dbus.socket
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 11:14:31'
++ test_restart dbus.socket
++ service=dbus.socket
++ systemctl restart dbus.socket
++ CHECK_RESULT 0 0 0 'dbus.socket restart failed'
++ CHECK_RESULT 0 0 0 'dbus.socket restart failed'
++ actual_result=0
++ actual_result=0
++ expect_result=0
++ expect_result=0
++ mode=0
++ mode=0
++ error_log='dbus.socket restart failed'
++ error_log='dbus.socket restart failed'
++ exit_mode=0
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ test 0x '!=' 0x
++ return 0
++ return 0
++ SLEEP_WAIT 5
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ wait_time=5
++ mode=1
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ CHECK_RESULT 0 0 0 'dbus.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status dbus.socket
++ grep 'Active: active'
++ systemctl status dbus.socket
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 11:14:32 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop dbus.socket
+     Active: active (running) since Tue 2023-08-08 11:14:32 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.socket restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop dbus.socket
++ systemctl status dbus.socket
++ grep 'Active: active'
++ CHECK_RESULT 0 0 0 'dbus.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ CHECK_RESULT 0 0 0 'dbus.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ CHECK_RESULT 1 0 0 'dbus.socket restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='dbus.socket restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'dbus.socket restart failed'
++ LOG_ERROR 'dbus.socket restart failed'
++ message='dbus.socket restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'dbus.socket restart failed'
+Tue Aug  8 11:14:38 2023 - ERROR - dbus.socket restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Tue Aug  8 11:14:39 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop dbus.socket
++ CHECK_RESULT 0 0 0 'dbus.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status dbus.socket
++ grep 'Active: inactive'
++ systemctl status dbus.socket
++ grep 'Active: inactive'
+     Active: inactive (dead) since Tue 2023-08-08 11:14:38 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start dbus.socket
+     Active: inactive (dead) since Tue 2023-08-08 11:14:38 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.socket stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start dbus.socket
++ CHECK_RESULT 0 0 0 'dbus.socket start failed'
++ CHECK_RESULT 0 0 0 'dbus.socket start failed'
++ actual_result=0
++ actual_result=0
++ expect_result=0
++ expect_result=0
++ mode=0
++ mode=0
++ error_log='dbus.socket start failed'
++ error_log='dbus.socket start failed'
++ exit_mode=0
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ test 0x '!=' 0x
++ return 0
++ return 0
++ SLEEP_WAIT 5
++ SLEEP_WAIT 5
++ wait_time=5
++ wait_time=5
++ cmd=
++ cmd=
++ mode=1
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status dbus.socket
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'dbus.socket stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='dbus.socket stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'dbus.socket stop failed'
++ LOG_ERROR 'dbus.socket stop failed'
++ message='dbus.socket stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'dbus.socket stop failed'
+Tue Aug  8 11:14:45 2023 - ERROR - dbus.socket stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Tue Aug  8 11:14:46 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start dbus.socket
++ CHECK_RESULT 0 0 0 'dbus.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status dbus.socket
++ grep 'Active: active'
++ systemctl status dbus.socket
++ grep 'Active: active'
+     Active: active (listening) since Tue 2023-08-08 11:14:44 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled dbus.socket
++ service=dbus.socket
+++ systemctl is-enabled dbus.socket
+     Active: active (listening) since Tue 2023-08-08 11:14:44 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled dbus.socket
++ service=dbus.socket
+++ systemctl is-enabled dbus.socket
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
+Tue Aug  8 11:14:50 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
++ journalctl --since '2023-08-08 11:14:31' -u dbus.socket
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+Tue Aug  8 11:14:50 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
++ journalctl --since '2023-08-08 11:14:31' -u dbus.socket
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of dbus.socket'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of dbus.socket'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start dbus.socket
++ CHECK_RESULT 1 0 1 'There is an error message for the log of dbus.socket'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of dbus.socket'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start dbus.socket
++ systemctl reload dbus.socket
++ grep 'Job type reload is not applicable for unit dbus.socket.'
++ systemctl reload dbus.socket
++ grep 'Job type reload is not applicable for unit dbus.socket.'
+Failed to reload dbus.socket: Job type reload is not applicable for unit dbus.socket.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status dbus.socket
++ grep 'Active: active'
+Failed to reload dbus.socket: Job type reload is not applicable for unit dbus.socket.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status dbus.socket
++ grep 'Active: active'
+     Active: active (listening) since Tue 2023-08-08 11:14:44 CST; 6s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+     Active: active (listening) since Tue 2023-08-08 11:14:44 CST; 7s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 11:14:51 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:14:51 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
++ systemctl status dbus.socket
++ grep 'Active: active'
+     Active: active (listening) since Tue 2023-08-08 11:14:44 CST; 7s ago
++ CHECK_RESULT 0 0 0 'dbus.socket start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.socket start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled dbus.socket
++ service=dbus.socket
+++ systemctl is-enabled dbus.socket
+Tue Aug  8 11:14:52 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_socket_dbus.sh post_test'
++ message='oe_test_socket_dbus.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_socket_dbus.sh post_test'
+Tue Aug  8 11:14:52 2023 - INFO  - succeed to execute the case.
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_socket_dbus.sh post_test'
++ message='oe_test_socket_dbus.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_socket_dbus.sh post_test'
+Tue Aug  8 11:14:52 2023 - INFO  - oe_test_socket_dbus.sh post_test
+Tue Aug  8 11:14:52 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
+Tue Aug  8 11:14:52 2023 - INFO  - oe_test_socket_dbus.sh post_test
++ journalctl --since '2023-08-08 11:14:31' -u dbus.socket
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of dbus.socket'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of dbus.socket'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start dbus.socket
++ systemctl reload dbus.socket
++ grep 'Job type reload is not applicable for unit dbus.socket.'
+Failed to reload dbus.socket: Job type reload is not applicable for unit dbus.socket.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status dbus.socket
++ grep 'Active: active'
+     Active: active (listening) since Tue 2023-08-08 11:14:44 CST; 9s ago
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 11:14:54 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 11:14:54 2023 - ERROR - failed to execute the case.
++ exit 2
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_socket_dbus.sh post_test'
++ message='oe_test_socket_dbus.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_socket_dbus.sh post_test'
+Tue Aug  8 11:14:55 2023 - INFO  - oe_test_socket_dbus.sh post_test

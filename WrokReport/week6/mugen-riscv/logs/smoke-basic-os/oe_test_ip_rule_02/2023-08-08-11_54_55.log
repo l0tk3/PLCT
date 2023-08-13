@@ -1,0 +1,122 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 11:54:57 2023 - INFO  - Start to run test.
++ ip rule add from 10.46.177.97 lookup 104 table 2 pref 1001
++ CHECK_RESULT 0 0 0 'Failed to add ipv4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip rule show
++ grep 1001:
++ grep 'from 10.46.177.97 lookup 2'
+1001:	from 10.46.177.97 lookup 2
++ CHECK_RESULT 0 0 0 'Failed to show ipv4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip rule add from 10.46.177.97 lookup 104 table 2 pref 1001
++ grep 'File exists'
+RTNETLINK answers: File exists
++ CHECK_RESULT 0 0 0 'IPV4 does not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='IPV4 does not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 rule add from fe80::366a:c2ff:fe24:34ca/64 lookup 104 pref 1500
++ CHECK_RESULT 0 0 0 'Failed to add ipv6'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 rule show
++ grep 1500:
++ grep 'from fe80::366a:c2ff:fe24:34ca/64 lookup 104'
+1500:	from fe80::366a:c2ff:fe24:34ca/64 lookup 104
++ CHECK_RESULT 0 0 0 'Failed to show ipv6'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 rule add from fe80::366a:c2ff:fe24:34ca/64 lookup 104 pref 1500
++ grep 'File exists'
+RTNETLINK answers: File exists
++ CHECK_RESULT 0 0 0 'IPV6 does not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='IPV6 does not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 11:54:58 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:54:59 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 11:54:59 2023 - INFO  - Start to restore the test environment.
++ ip -6 rule del from fe80::366a:c2ff:fe24:34ca/64 lookup 104 pref 1500
++ ip rule del from 10.46.177.97 lookup 104 table 2 pref 1001
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 11:55:00 2023 - INFO  - End to restore the test environment.

@@ -1,0 +1,172 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 09:53:02 2023 - INFO  - Start to prepare the test environment.
++ useradd test1
++ useradd test2
++ mkdir testdir
++ touch testfile
++ chacl -b u::rw,g::rx,o::-,u:test1:rw,g:test1:rw,m::rwx u::rwx,g::r,o::-,u:test1:r,m::rwx testdir
++ chacl u::rw,g::rx,o::-,u:test2:rw,g:test2:rw,m::rwx testfile
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 09:53:03 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'start to run test.'
++ message='start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start to run test.'
+Tue Aug  8 09:53:04 2023 - INFO  - start to run test.
++ getfacl testdir
++ CHECK_RESULT 0 0 0 'backup testdir acl fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='backup testdir acl fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -b testdir
++ CHECK_RESULT 0 0 0 'delete testdir acl fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='delete testdir acl fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl --set-file=acl1.txt testdir
++ CHECK_RESULT 0 0 0 'recovery testdir acl  fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='recovery testdir acl  fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl testdir
++ CHECK_RESULT 0 0 0 'get testdir acl fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='get testdir acl fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ diff acl1.txt acl1-1.txt
++ CHECK_RESULT 0 0 0 'not fully recovery testdir acl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='not fully recovery testdir acl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl testfile
++ CHECK_RESULT 0 0 0 'backup testfile acl fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='backup testfile acl fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -b testfile
++ CHECK_RESULT 0 0 0 'delete testfile acl fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='delete testfile acl fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl --set-file=acl2.txt testfile
++ CHECK_RESULT 0 0 0 'recovery testfile acl  fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='recovery testfile acl  fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl testfile
++ CHECK_RESULT 0 0 0 'get testfile acl fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='get testfile acl fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ diff acl2.txt acl2-2.txt
++ CHECK_RESULT 0 0 0 'not fully recovery testfile acl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='not fully recovery testfile acl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:53:05 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:53:05 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 09:53:06 2023 - INFO  - start environment cleanup.
++ userdel -rf test1
++ userdel -rf test2
++ rm -rf testfile testdir
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 09:53:07 2023 - INFO  - Finish environment cleanup!

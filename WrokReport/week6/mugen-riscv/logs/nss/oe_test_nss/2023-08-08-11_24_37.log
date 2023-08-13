@@ -1,0 +1,129 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 11:24:39 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL nss
++ pkgs=nss
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs nss --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp0kz6fi26
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp0kz6fi26
++ mkdir /tmp/test
++ Directory=/tmp/test
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 11:25:15 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:25:16 2023 - INFO  - Start testing...
++ cd /tmp/test
++ echo 1
++ echo dsadasdasdasdadasdasdasdasdsadfwerwerjfdksdjfksdlfhjsdk
++ certutil -N -d . -f pwdfile.txt
++ certutil -L -d .
++ grep 'Trust Attributes'
+Certificate Nickname                                         Trust Attributes
++ CHECK_RESULT 0 0 0 'Failed to create the certificate database.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to create the certificate database.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ certutil -S -n weidong_test_ca -s cn=CAcert -x -t CT,, -m 10001 -v 120 -d . -z noise.txt -f pwdfile.txt
+
+
+Generating key.  This may take a few moments...
+
++ certutil -L -d .
++ grep weidong_test_ca
+weidong_test_ca                                              CTu,u,u
++ CHECK_RESULT 0 0 0 'Failed to create a root certificate'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to create a root certificate'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ certutil -S -n weidong_test_server_cert -s cn=uos -c weidong_test_ca -t u,u,u -m 1002 -v 120 -d . -z noise.txt -f pwdfile.txt
+
+
+Generating key.  This may take a few moments...
+
+Notice: Trust flag u is set automatically if the private key is present.
++ CHECK_RESULT 0 0 0 'Failed to create an issuing certificate'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to create an issuing certificate'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ certutil -L -d . -f pwdfile.txt -n weidong_test_server_cert
++ grep 'Certificate Trust Flags'
+    Certificate Trust Flags:
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 11:25:34 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:25:34 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:25:35 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp0kz6fi26 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp0kz6fi26
++ '[' 0 -ne 0 ']'
++ rm -rf /tmp/test
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 11:25:46 2023 - INFO  - Finish environment cleanup!

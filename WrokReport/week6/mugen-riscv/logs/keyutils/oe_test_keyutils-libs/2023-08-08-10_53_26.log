@@ -1,0 +1,117 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:53:28 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'keyutils keyutils-libs-devel gcc'
++ pkgs='keyutils keyutils-libs-devel gcc'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'keyutils keyutils-libs-devel gcc' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpo0mxr_nr
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpo0mxr_nr
++ mkdir /tmp/test
++ Directory=/tmp/test
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:53:59 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:54:00 2023 - INFO  - Start testing...
++ cd /tmp/test
++ cat
++ gcc -lkeyutils t_request_key.c -o test
++ CHECK_RESULT 0 0 0 't_request_key.c failed to compile'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='t_request_key.c failed to compile'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cp /etc/request-key.conf /etc/request-key.conf_bak
++ echo 'create user mtk:* * /bin/keyctl instantiate %k %c %S'
++ CHECK_RESULT 0 0 0 'support info error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='support info error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ./test user mtk:key1 'Payload data'
+++ cat tmp.log
+++ awk '{print $NF}'
++ key_id=a859e21
++ grep a859e21 /proc/keys
+0a859e21 I--Q---     1 perm 3f010000     0     0 user      mtk:key1: 12
++ CHECK_RESULT 0 0 0 'import key error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='import key error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish testing!'
++ message='Finish testing!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testing!'
+Tue Aug  8 10:54:02 2023 - INFO  - Finish testing!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:54:03 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:54:04 2023 - INFO  - start environment cleanup.
++ mv -f /etc/request-key.conf_bak /etc/request-key.conf
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpo0mxr_nr ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpo0mxr_nr
++ '[' 0 -ne 0 ']'
++ rm -rf /tmp/test
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:54:13 2023 - INFO  - Finish environment cleanup!

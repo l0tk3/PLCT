@@ -1,0 +1,295 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:18:33 2023 - INFO  - Start to run test.
++ pip3 install --user requests
+Collecting requests
+  Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.6/62.6 kB 236.0 kB/s eta 0:00:00
+Collecting charset-normalizer<4,>=2 (from requests)
+  Downloading charset_normalizer-3.2.0-py3-none-any.whl (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.7/46.7 kB 506.5 kB/s eta 0:00:00
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3.11/site-packages (from requests) (3.4)
+Collecting urllib3<3,>=1.21.1 (from requests)
+  Downloading urllib3-2.0.4-py3-none-any.whl (123 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.9/123.9 kB 522.4 kB/s eta 0:00:00
+Collecting certifi>=2017.4.17 (from requests)
+  Downloading certifi-2023.7.22-py3-none-any.whl (158 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 158.3/158.3 kB 449.2 kB/s eta 0:00:00
+Installing collected packages: urllib3, charset-normalizer, certifi, requests
+  WARNING: The script normalizer is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed certifi-2023.7.22 charset-normalizer-3.2.0 requests-2.31.0 urllib3-2.0.4
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ CHECK_RESULT 0 0 0 'Failed to execute pip3 install --user'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --user'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ test -d /root/.local/lib/python3.11/site-packages/requests
++ CHECK_RESULT 0 0 0 'Failed to find site-packages/requests in /root'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find site-packages/requests in /root'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pip3 uninstall requests -y
+Found existing installation: requests 2.31.0
+Uninstalling requests-2.31.0:
+  Successfully uninstalled requests-2.31.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ pip3 install --root /tmp requests
+Collecting requests
+  Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in /root/.local/lib/python3.11/site-packages (from requests) (3.2.0)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3.11/site-packages (from requests) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /root/.local/lib/python3.11/site-packages (from requests) (2.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in /root/.local/lib/python3.11/site-packages (from requests) (2023.7.22)
+Installing collected packages: requests
+Successfully installed requests-2.31.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ CHECK_RESULT 0 0 0 'Failed to execute pip3 install --root'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --root'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -d /tmp/usr/local/lib/python3.11/site-packages/requests
++ CHECK_RESULT 0 0 0 'Failed to find site-packages/requests in /tmp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find site-packages/requests in /tmp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rm -rf /tmp/usr
++ pip3 install --prefix /tmp requests
+Collecting requests
+  Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in /root/.local/lib/python3.11/site-packages (from requests) (3.2.0)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3.11/site-packages (from requests) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /root/.local/lib/python3.11/site-packages (from requests) (2.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in /root/.local/lib/python3.11/site-packages (from requests) (2023.7.22)
+Installing collected packages: requests
+Successfully installed requests-2.31.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ CHECK_RESULT 0 0 0 'Failed to execute pip3 install --prefix'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --prefix'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -d /tmp/lib/python3.11/site-packages/requests
++ CHECK_RESULT 0 0 0 'Failed to find requests in /tmp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find requests in /tmp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pip3 list
++ grep charset-normalizer
+charset-normalizer 3.2.0
++ CHECK_RESULT 0 0 0 'Failed to execute pip3 list'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 list'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pip3 uninstall -y requests charset-normalizer
+WARNING: Skipping requests as it is not installed.
+Found existing installation: charset-normalizer 3.2.0
+Uninstalling charset-normalizer-3.2.0:
+  Successfully uninstalled charset-normalizer-3.2.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ pip3 install --no-deps requests
+Collecting requests
+  Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+Installing collected packages: requests
+Successfully installed requests-2.31.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ CHECK_RESULT 0 0 0 'Failed to execute pip3 install --no-deps'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --no-deps'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pip3 list
++ grep charset-normalizer
++ CHECK_RESULT 1 0 1 'Succeed to execute pip3 list'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Succeed to execute pip3 list'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ pip3 install --force-reinstall requests
++ grep Successfully
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+      Successfully uninstalled urllib3-2.0.4
+      Successfully uninstalled certifi-2023.7.22
+      Successfully uninstalled requests-2.31.0
+Successfully installed certifi-2023.7.22 charset-normalizer-3.2.0 idna-3.4 requests-2.31.0 urllib3-2.0.4
++ CHECK_RESULT 0 0 0 'Failed to execute pip3 install --force-reinstall'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --force-reinstall'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep already
++ pip3 install --upgrade requests
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Requirement already satisfied: requests in /usr/local/lib/python3.11/site-packages (2.31.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.11/site-packages (from requests) (3.2.0)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.11/site-packages (from requests) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.11/site-packages (from requests) (2.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.11/site-packages (from requests) (2023.7.22)
++ CHECK_RESULT 0 0 0 'Failed to execute pip3 install --upgrade'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --upgrade'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pip3 uninstall -y requests
+Found existing installation: requests 2.31.0
+Uninstalling requests-2.31.0:
+  Successfully uninstalled requests-2.31.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ pip3 install --upgrade requests
++ grep Successfully
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Successfully installed requests-2.31.0
++ CHECK_RESULT 0 0 0 'Failed to repead execute pip3 install --upgrade'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to repead execute pip3 install --upgrade'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ pip3 install --ignore-installed requests
++ grep 'Installing collected packages'
++ grep certifi
++ grep idna
++ grep requests
++ grep charset-normalizer
++ grep urllib3
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
++ CHECK_RESULT 0 0 0 'Failed to execute pip3 install --ignore-installed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute pip3 install --ignore-installed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:21:18 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:21:18 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:21:19 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/lib /tmp/local
++ pip3 uninstall -y requests urllib3 idna charset-normalizer certifi
+Found existing installation: requests 2.31.0
+Uninstalling requests-2.31.0:
+  Successfully uninstalled requests-2.31.0
+Found existing installation: urllib3 2.0.4
+Uninstalling urllib3-2.0.4:
+  Successfully uninstalled urllib3-2.0.4
+Found existing installation: idna 3.4
+Uninstalling idna-3.4:
+  Successfully uninstalled idna-3.4
+Found existing installation: charset-normalizer 3.2.0
+Uninstalling charset-normalizer-3.2.0:
+  Successfully uninstalled charset-normalizer-3.2.0
+Found existing installation: certifi 2023.7.22
+Uninstalling certifi-2023.7.22:
+  Successfully uninstalled certifi-2023.7.22
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:21:27 2023 - INFO  - End to restore the test environment.

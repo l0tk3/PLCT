@@ -1,0 +1,611 @@
++ source ../common/common_lib.sh
++ source ../common/common_lib.sh
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ python3 --version
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ '[' 0 -eq 0 ']'
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
++ main
++ main
+++ type -t post_test
+++ type -t post_test
++ '[' -n function ']'
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ trap post_test EXIT INT HUP TERM
+++ type -t post_test
++ grep expect
++ grep expect
++ rpm -qa
++ rpm -qa
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
+++ type -t config_params
+++ type -t config_params
++ '[' -n '' ']'
++ '[' -n '' ']'
++ '[' -n '' ']'
+++ type -t pre_test
+++ type -t pre_test
++ '[' -n function ']'
+++ type -t pre_test
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ '[' -n function ']'
++ message='Start environmental preparation.'
++ pre_test
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 11:13:49 2023 - INFO  - Start environmental preparation.
+Tue Aug  8 11:13:49 2023 - INFO  - Start environmental preparation.
+Tue Aug  8 11:13:49 2023 - INFO  - Start environmental preparation.
++ service=dbus.service
++ service=dbus.service
++ service=dbus.service
+++ date '+%Y-%m-%d %T'
+++ date '+%Y-%m-%d %T'
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 11:13:49'
++ log_time='2023-08-08 11:13:49'
++ LOG_INFO 'End of environmental preparation!'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
++ log_time='2023-08-08 11:13:49'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 11:13:50 2023 - INFO  - End of environmental preparation!
+Tue Aug  8 11:13:50 2023 - INFO  - End of environmental preparation!
+Tue Aug  8 11:13:50 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
+++ type -t run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:13:50 2023 - INFO  - Start testing...
+Tue Aug  8 11:13:50 2023 - INFO  - Start testing...
+Tue Aug  8 11:13:50 2023 - INFO  - Start testing...
++ test_restart dbus.service
++ test_restart dbus.service
++ service=dbus.service
++ systemctl restart dbus.service
++ service=dbus.service
++ systemctl restart dbus.service
++ test_restart dbus.service
++ service=dbus.service
++ systemctl restart dbus.service
++ CHECK_RESULT 0 0 0 'dbus.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CHECK_RESULT 0 0 0 'dbus.service restart failed'
++ SLEEP_WAIT 5
++ CHECK_RESULT 0 0 0 'dbus.service restart failed'
++ wait_time=5
++ cmd=
++ actual_result=0
++ mode=1
++ actual_result=0
++ expect_result=0
++ expect_result=0
++ mode=0
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ error_log='dbus.service restart failed'
++ mode=0
++ exit_mode=0
++ error_log='dbus.service restart failed'
++ '[' -z 0 ']'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ wait_time=5
++ mode=1
++ cmd=
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status dbus.service
++ grep 'Active: active'
++ systemctl status dbus.service
++ grep 'Active: active'
++ systemctl status dbus.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 11:13:51 CST; 6s ago
+     Active: active (running) since Tue 2023-08-08 11:13:51 CST; 6s ago
++ CHECK_RESULT 0 0 0 'dbus.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
+     Active: active (running) since Tue 2023-08-08 11:13:51 CST; 6s ago
++ CHECK_RESULT 0 0 0 'dbus.service restart failed'
++ return 0
++ systemctl stop dbus.service
++ actual_result=0
++ CHECK_RESULT 0 0 0 'dbus.service restart failed'
++ expect_result=0
++ mode=0
++ error_log='dbus.service restart failed'
++ exit_mode=0
++ actual_result=0
++ '[' -z 0 ']'
++ expect_result=0
++ '[' 0 -eq 0 ']'
++ mode=0
++ error_log='dbus.service restart failed'
++ test 0x '!=' 0x
++ exit_mode=0
++ return 0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ systemctl stop dbus.service
++ test 0x '!=' 0x
++ return 0
++ systemctl stop dbus.service
+Warning: Stopping dbus.service, but it can still be activated by:
+  dbus.socket
++ CHECK_RESULT 0 0 0 'dbus.service stop failed'
+Warning: Stopping dbus.service, but it can still be activated by:
++ actual_result=0
+  dbus.socket
++ expect_result=0
++ mode=0
++ error_log='dbus.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
+Warning: Stopping dbus.service, but it can still be activated by:
+  dbus.socket
++ CHECK_RESULT 0 0 0 'dbus.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ CHECK_RESULT 0 0 0 'dbus.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status dbus.service
++ grep 'Active: inactive'
++ systemctl status dbus.service
++ grep 'Active: inactive'
++ grep 'Active: inactive'
++ systemctl status dbus.service
+     Active: inactive (dead) since Tue 2023-08-08 11:13:58 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start dbus.service
+     Active: inactive (dead) since Tue 2023-08-08 11:13:58 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start dbus.service
+     Active: inactive (dead) since Tue 2023-08-08 11:13:58 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start dbus.service
++ CHECK_RESULT 0 0 0 'dbus.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ CHECK_RESULT 0 0 0 'dbus.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ CHECK_RESULT 0 0 0 'dbus.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status dbus.service
++ grep 'Active: active'
++ systemctl status dbus.service
++ grep 'Active: active'
++ grep 'Active: active'
++ systemctl status dbus.service
+     Active: active (running) since Tue 2023-08-08 11:14:04 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled dbus.service
++ service=dbus.service
+     Active: active (running) since Tue 2023-08-08 11:14:04 CST; 5s ago
+++ systemctl is-enabled dbus.service
++ CHECK_RESULT 0 0 0 'dbus.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled dbus.service
++ service=dbus.service
+++ systemctl is-enabled dbus.service
+     Active: active (running) since Tue 2023-08-08 11:14:04 CST; 5s ago
++ CHECK_RESULT 0 0 0 'dbus.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled dbus.service
++ service=dbus.service
+++ systemctl is-enabled dbus.service
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ state=static
++ '[' static == enabled ']'
++ '[' static == disabled ']'
++ '[' static == masked ']'
++ '[' static == static ']'
++ LOG_INFO 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ message='The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'The unit files have no installation config,This means they are not meant to be enabled using systemctl.'
+Tue Aug  8 11:14:10 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
++ journalctl --since '2023-08-08 11:13:49' -u dbus.service
++ grep -i 'fail\|error'
++ grep -v 'Activation via systemd failed'
+Tue Aug  8 11:14:10 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
+Tue Aug  8 11:14:11 2023 - INFO  - The unit files have no installation config,This means they are not meant to be enabled using systemctl.
++ journalctl --since '2023-08-08 11:13:49' -u dbus.service
++ CHECK_RESULT 1 0 1 'There is an error message for the log of dbus.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of dbus.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start dbus.service
++ grep -i 'fail\|error'
++ grep -v 'Activation via systemd failed'
++ grep -i 'fail\|error'
++ grep -v 'Activation via systemd failed'
++ journalctl --since '2023-08-08 11:13:49' -u dbus.service
++ CHECK_RESULT 1 0 1 'There is an error message for the log of dbus.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of dbus.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start dbus.service
++ CHECK_RESULT 1 0 1 'There is an error message for the log of dbus.service'
++ sed -i 's\ExecStart=/usr/bin/dbus-daemon\ExecStart=/usr/bin/dbus-daemon --session\g' /usr/lib/systemd/system/dbus.service
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of dbus.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl start dbus.service
++ systemctl daemon-reload
+Warning: The unit file, source configuration file or drop-ins of dbus.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+Warning: The unit file, source configuration file or drop-ins of dbus.service changed on disk. Run 'systemctl daemon-reload' to reload units.
++ sed -i 's\ExecStart=/usr/bin/dbus-daemon\ExecStart=/usr/bin/dbus-daemon --session\g' /usr/lib/systemd/system/dbus.service
++ sed -i 's\ExecStart=/usr/bin/dbus-daemon\ExecStart=/usr/bin/dbus-daemon --session\g' /usr/lib/systemd/system/dbus.service
++ systemctl daemon-reload
++ systemctl daemon-reload
++ systemctl reload dbus.service
++ systemctl reload dbus.service
++ systemctl reload dbus.service
++ CHECK_RESULT 0 0 0 'dbus.service reload failed'
++ CHECK_RESULT 0 0 0 'dbus.service reload failed'
++ actual_result=0
++ actual_result=0
++ expect_result=0
++ expect_result=0
++ mode=0
++ mode=0
++ error_log='dbus.service reload failed'
++ error_log='dbus.service reload failed'
++ exit_mode=0
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ test 0x '!=' 0x
++ return 0
++ return 0
++ CHECK_RESULT 0 0 0 'dbus.service reload failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service reload failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status dbus.service
++ grep 'Active: active'
++ grep 'Active: active'
++ grep 'Active: active'
++ systemctl status dbus.service
++ systemctl status dbus.service
+     Active: active (running) since Tue 2023-08-08 11:14:04 CST; 12s ago
++ CHECK_RESULT 0 0 0 'dbus.service reload causes the service status to change'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service reload causes the service status to change'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+     Active: active (running) since Tue 2023-08-08 11:14:04 CST; 12s ago
++ CHECK_RESULT 0 0 0 'dbus.service reload causes the service status to change'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service reload causes the service status to change'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+     Active: active (running) since Tue 2023-08-08 11:14:04 CST; 12s ago
++ CHECK_RESULT 0 0 0 'dbus.service reload causes the service status to change'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='dbus.service reload causes the service status to change'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 11:14:17 2023 - INFO  - Finish test!
+Tue Aug  8 11:14:17 2023 - INFO  - Finish test!
+Tue Aug  8 11:14:17 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:14:17 2023 - INFO  - succeed to execute the case.
+Tue Aug  8 11:14:17 2023 - INFO  - succeed to execute the case.
+Tue Aug  8 11:14:17 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:14:18 2023 - INFO  - start environment cleanup.
+Tue Aug  8 11:14:18 2023 - INFO  - start environment cleanup.
++ sed -i 's\ExecStart=/usr/bin/dbus-daemon --session\ExecStart=/usr/bin/dbus-daemon\g' /usr/lib/systemd/system/dbus.service
+Tue Aug  8 11:14:18 2023 - INFO  - start environment cleanup.
++ sed -i 's\ExecStart=/usr/bin/dbus-daemon --session\ExecStart=/usr/bin/dbus-daemon\g' /usr/lib/systemd/system/dbus.service
++ systemctl daemon-reload
++ systemctl daemon-reload
++ sed -i 's\ExecStart=/usr/bin/dbus-daemon --session\ExecStart=/usr/bin/dbus-daemon\g' /usr/lib/systemd/system/dbus.service
++ systemctl daemon-reload
++ systemctl reload dbus.service
++ systemctl reload dbus.service
++ systemctl reload dbus.service
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 11:14:24 2023 - INFO  - Finish environment cleanup!
+Tue Aug  8 11:14:24 2023 - INFO  - Finish environment cleanup!
+Tue Aug  8 11:14:24 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,141 @@
++ '﻿#!/usr/bin/bash'
+oe_test_procps-ng-sysctl.sh: line 1: ﻿#!/usr/bin/bash: No such file or directory
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 12:58:47 2023 - INFO  - Start testing...
++ sysctl -p
++ CHECK_RESULT 0 0 0 'sysctl -p Echo information error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sysctl -p Echo information error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sysctl -n net.ipv4.tcp_syncookies
+1
++ CHECK_RESULT 0 0 0 'sysctl -n net.ipv4.tcp_syncookies Echo information error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sysctl -n net.ipv4.tcp_syncookies Echo information error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sysctl -w net.ipv4.tcp_syncookies = 0
+sysctl: command line(0): invalid syntax, continuing...
++ CHECK_RESULT 1 0 1 'sysctl -w  Echo information error'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='sysctl -w  Echo information error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ sysctl -n net.ipv4.tcp_syncookies
+1
++ CHECK_RESULT 0 0 0 'sysctl -n  Echo information error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sysctl -n  Echo information error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sysctl -V
+sysctl from procps-ng 4.0.2
++ CHECK_RESULT 0 0 0 'sysctl -V Echo information error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sysctl -V Echo information error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sysctl -h
+
+Usage:
+ sysctl [options] [variable[=value] ...]
+
+Options:
+  -a, --all            display all variables
+  -A                   alias of -a
+  -X                   alias of -a
+      --deprecated     include deprecated parameters to listing
+      --dry-run        Print the key and values but do not write
+  -b, --binary         print value without new line
+  -e, --ignore         ignore unknown variables errors
+  -N, --names          print variable names without values
+  -n, --values         print only values of the given variable(s)
+  -p, --load[=<file>]  read values from file
+  -f                   alias of -p
+      --system         read values from all system directories
+  -r, --pattern <expression>
+                       select setting that match expression
+  -q, --quiet          do not echo variable set
+  -w, --write          enable writing a value to variable
+  -o                   does nothing
+  -x                   does nothing
+  -d                   alias of -h
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see sysctl(8).
++ CHECK_RESULT 0 0 0 'sysctl -h  Echo information error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='sysctl -h  Echo information error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 12:58:47 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:58:48 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_procps-ng-sysctl.sh post_test'
++ message='oe_test_procps-ng-sysctl.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_procps-ng-sysctl.sh post_test'
+Tue Aug  8 12:58:48 2023 - INFO  - oe_test_procps-ng-sysctl.sh post_test

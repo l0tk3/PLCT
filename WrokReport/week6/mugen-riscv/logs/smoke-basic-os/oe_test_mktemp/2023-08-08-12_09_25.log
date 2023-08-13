@@ -1,0 +1,131 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:09:27 2023 - INFO  - Start to run test.
++ mktemp /tmp/mktemp1.log.XXXXX
+/tmp/mktemp1.log.WZcA4
++ CHECK_RESULT 0 0 0 'Failed to execute mktemp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute mktemp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f /tmp/mktemp1.log.WZcA4
++ CHECK_RESULT 0 0 0 'File does not exist in tmp'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='File does not exist in tmp'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ rpm -qa coreutils
+++ awk -F - '{print $2}'
++ mktemp_ver=9.3
++ mktemp -V
++ grep 9.3
+mktemp (GNU coreutils) 9.3
++ CHECK_RESULT 0 0 0 'Failed to execute mktemp -V'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute mktemp -V'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mkdir testdir
++ mktemp -p testdir
+testdir/tmp.Vt1mf0Z1O0
++ CHECK_RESULT 0 0 0 'Failed to execute mktemp -p'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute mktemp -p'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f testdir/tmp.Vt1mf0Z1O0
++ CHECK_RESULT 0 0 0 'File does not exist in testdir'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='File does not exist in testdir'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mktemp -d /tmp/mktempdirXXXXX
+/tmp/mktempdirD29pG
++ CHECK_RESULT 0 0 0 'Failed to execute mktemp -d'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute mktemp -d'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -d /tmp/mktempdirD29pG
++ CHECK_RESULT 0 0 0 'Directory does not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Directory does not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:09:28 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:09:29 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:09:29 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/mktemp1.log.WZcA4 /tmp/mktempdirD29pG testdir
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:09:30 2023 - INFO  - End to restore the test environment.

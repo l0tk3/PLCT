@@ -1,0 +1,9 @@
+× ipmievd.service
+     Loaded: not-found (Reason: Unit ipmievd.service not found.)
+     Active: failed (Result: exit-code) since Tue 2023-08-08 10:59:30 CST; 15s ago
+
+Aug 08 10:59:29 openeuler-riscv64 systemd[1]: Starting Ipmievd Daemon...
+Aug 08 10:59:30 openeuler-riscv64 ipmievd[864]: Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
+Aug 08 10:59:30 openeuler-riscv64 systemd[1]: ipmievd.service: Control process exited, code=exited, status=1/FAILURE
+Aug 08 10:59:30 openeuler-riscv64 systemd[1]: ipmievd.service: Failed with result 'exit-code'.
+Aug 08 10:59:30 openeuler-riscv64 systemd[1]: Failed to start Ipmievd Daemon.

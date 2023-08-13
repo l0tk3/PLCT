@@ -1,0 +1,319 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 10:57:07 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL zenity
++ pkgs=zenity
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs zenity --node 1 --tempfile ''
++ tmpfile2=/tmp/tmph0_8pjkm
++ '[' -z '' ']'
++ tmpfile=/tmp/tmph0_8pjkm
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:58:04 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:58:04 2023 - INFO  - Start testing...
+++ yum history list
+++ grep 'install zenity'
+++ awk 'NR==1 {print $1}'
++ ID=37
++ CHECK_RESULT 0 0 0 'install fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='install fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ yum history undo 37 -y
+Last metadata expiration check: 0:29:07 ago on Tue Aug  8 10:29:04 2023.
+Dependencies resolved.
+================================================================================
+ Package                   Architecture Version                Repository  Size
+================================================================================
+Removing:
+ dconf                     riscv64      0.40.0-3.oe2309        @base      398 k
+ zenity                    riscv64      3.42.1-1.oe2309        @base       11 M
+Removing dependent packages:
+ adwaita-cursor-theme      noarch       43-1.oe2309            @base       12 M
+ adwaita-icon-theme        noarch       43-1.oe2309            @base      4.8 M
+ at-spi2-atk               riscv64      2.38.0-2.oe2309        @base      295 k
+ at-spi2-core              riscv64      2.44.1-2.oe2309        @base      591 k
+ cairo-gobject             riscv64      1.17.8-1.oe2309        @base       40 k
+ colord-libs               riscv64      1.4.6-1.oe2309         @base      929 k
+ gtk3                      riscv64      3.24.36-2.oe2309       @base       21 M
+ lcms2                     riscv64      2.13.1-2.oe2309        @base      447 k
+ libXtst                   riscv64      1.2.4-1.oe2309         @base       37 k
+ libatomic                 riscv64      12.3.1-4.oe2309        @base       36 k
+ libepoxy                  riscv64      1.5.10-2.oe2309        @base      1.8 M
+ libgusb                   riscv64      0.3.10-1.oe2309        @base      128 k
+ libusbx                   riscv64      1.0.26-1.oe2309        @base      182 k
+ wayland                   riscv64      1.21.0-2.oe2309        @base      220 k
+
+Transaction Summary
+================================================================================
+Remove  16 Packages
+
+Freed space: 53 M
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Erasing          : zenity-3.42.1-1.oe2309.riscv64                        1/16 
+  Running scriptlet: gtk3-3.24.36-2.oe2309.riscv64                         2/16 
+  Erasing          : gtk3-3.24.36-2.oe2309.riscv64                         2/16 
+  Running scriptlet: gtk3-3.24.36-2.oe2309.riscv64                         2/16 
+  Erasing          : colord-libs-1.4.6-1.oe2309.riscv64                    3/16 
+  Erasing          : at-spi2-atk-2.38.0-2.oe2309.riscv64                   4/16 
+  Erasing          : adwaita-icon-theme-43-1.oe2309.noarch                 5/16 
+  Erasing          : at-spi2-core-2.44.1-2.oe2309.riscv64                  6/16 
+  Erasing          : libgusb-0.3.10-1.oe2309.riscv64                       7/16 
+  Erasing          : adwaita-cursor-theme-43-1.oe2309.noarch               8/16 
+  Erasing          : libusbx-1.0.26-1.oe2309.riscv64                       9/16 
+  Erasing          : libatomic-12.3.1-4.oe2309.riscv64                    10/16 
+  Erasing          : libXtst-1.2.4-1.oe2309.riscv64                       11/16 
+  Erasing          : lcms2-2.13.1-2.oe2309.riscv64                        12/16 
+  Erasing          : cairo-gobject-1.17.8-1.oe2309.riscv64                13/16 
+  Erasing          : libepoxy-1.5.10-2.oe2309.riscv64                     14/16 
+  Erasing          : wayland-1.21.0-2.oe2309.riscv64                      15/16 
+  Erasing          : dconf-0.40.0-3.oe2309.riscv64                        16/16 
+  Running scriptlet: dconf-0.40.0-3.oe2309.riscv64                        16/16 
+  Verifying        : adwaita-cursor-theme-43-1.oe2309.noarch               1/16 
+  Verifying        : adwaita-icon-theme-43-1.oe2309.noarch                 2/16 
+  Verifying        : at-spi2-atk-2.38.0-2.oe2309.riscv64                   3/16 
+  Verifying        : at-spi2-core-2.44.1-2.oe2309.riscv64                  4/16 
+  Verifying        : cairo-gobject-1.17.8-1.oe2309.riscv64                 5/16 
+  Verifying        : colord-libs-1.4.6-1.oe2309.riscv64                    6/16 
+  Verifying        : dconf-0.40.0-3.oe2309.riscv64                         7/16 
+  Verifying        : gtk3-3.24.36-2.oe2309.riscv64                         8/16 
+  Verifying        : lcms2-2.13.1-2.oe2309.riscv64                         9/16 
+  Verifying        : libXtst-1.2.4-1.oe2309.riscv64                       10/16 
+  Verifying        : libatomic-12.3.1-4.oe2309.riscv64                    11/16 
+  Verifying        : libepoxy-1.5.10-2.oe2309.riscv64                     12/16 
+  Verifying        : libgusb-0.3.10-1.oe2309.riscv64                      13/16 
+  Verifying        : libusbx-1.0.26-1.oe2309.riscv64                      14/16 
+  Verifying        : wayland-1.21.0-2.oe2309.riscv64                      15/16 
+  Verifying        : zenity-3.42.1-1.oe2309.riscv64                       16/16 
+
+Removed:
+  adwaita-cursor-theme-43-1.oe2309.noarch adwaita-icon-theme-43-1.oe2309.noarch
+  at-spi2-atk-2.38.0-2.oe2309.riscv64     at-spi2-core-2.44.1-2.oe2309.riscv64 
+  cairo-gobject-1.17.8-1.oe2309.riscv64   colord-libs-1.4.6-1.oe2309.riscv64   
+  dconf-0.40.0-3.oe2309.riscv64           gtk3-3.24.36-2.oe2309.riscv64        
+  lcms2-2.13.1-2.oe2309.riscv64           libXtst-1.2.4-1.oe2309.riscv64       
+  libatomic-12.3.1-4.oe2309.riscv64       libepoxy-1.5.10-2.oe2309.riscv64     
+  libgusb-0.3.10-1.oe2309.riscv64         libusbx-1.0.26-1.oe2309.riscv64      
+  wayland-1.21.0-2.oe2309.riscv64         zenity-3.42.1-1.oe2309.riscv64       
+
+Complete!
++ CHECK_RESULT 0 0 0 'remove fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='remove fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpm -qa
++ grep -w zenity
++ CHECK_RESULT 1 0 1 'remove fail'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='remove fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ yum history redo 37 -y
+Last metadata expiration check: 0:29:21 ago on Tue Aug  8 10:29:04 2023.
+Dependencies resolved.
+================================================================================
+ Package                   Architecture Version                 Repo       Size
+================================================================================
+Installing:
+ zenity                    riscv64      3.42.1-1.oe2309         base      3.1 M
+Installing dependencies:
+ adwaita-cursor-theme      noarch       43-1.oe2309             base      649 k
+ adwaita-icon-theme        noarch       43-1.oe2309             base      4.2 M
+ at-spi2-atk               riscv64      2.38.0-2.oe2309         base       81 k
+ at-spi2-core              riscv64      2.44.1-2.oe2309         base      185 k
+ cairo-gobject             riscv64      1.17.8-1.oe2309         base       16 k
+ colord-libs               riscv64      1.4.6-1.oe2309          base      214 k
+ gtk3                      riscv64      3.24.36-2.oe2309        base      5.0 M
+ lcms2                     riscv64      2.13.1-2.oe2309         base      164 k
+ libXtst                   riscv64      1.2.4-1.oe2309          base       19 k
+ libatomic                 riscv64      12.3.1-4.oe2309         base       18 k
+ libepoxy                  riscv64      1.5.10-2.oe2309         base      252 k
+ libgusb                   riscv64      0.3.10-1.oe2309         base       45 k
+ libusbx                   riscv64      1.0.26-1.oe2309         base       72 k
+ wayland                   riscv64      1.21.0-2.oe2309         base       64 k
+Installing weak dependencies:
+ dconf                     riscv64      0.40.0-3.oe2309         base       98 k
+
+Transaction Summary
+================================================================================
+Install  16 Packages
+
+Total download size: 14 M
+Installed size: 53 M
+Downloading Packages:
+(1/16): at-spi2-atk-2.38.0-2.oe2309.riscv64.rpm 440 kB/s |  81 kB     00:00    
+(2/16): at-spi2-core-2.44.1-2.oe2309.riscv64.rp 1.8 MB/s | 185 kB     00:00    
+(3/16): adwaita-cursor-theme-43-1.oe2309.noarch 1.7 MB/s | 649 kB     00:00    
+(4/16): cairo-gobject-1.17.8-1.oe2309.riscv64.r 195 kB/s |  16 kB     00:00    
+(5/16): dconf-0.40.0-3.oe2309.riscv64.rpm       1.3 MB/s |  98 kB     00:00    
+(6/16): colord-libs-1.4.6-1.oe2309.riscv64.rpm  1.7 MB/s | 214 kB     00:00    
+(7/16): lcms2-2.13.1-2.oe2309.riscv64.rpm       1.3 MB/s | 164 kB     00:00    
+(8/16): libXtst-1.2.4-1.oe2309.riscv64.rpm      338 kB/s |  19 kB     00:00    
+(9/16): libatomic-12.3.1-4.oe2309.riscv64.rpm   173 kB/s |  18 kB     00:00    
+(10/16): libepoxy-1.5.10-2.oe2309.riscv64.rpm   1.4 MB/s | 252 kB     00:00    
+(11/16): adwaita-icon-theme-43-1.oe2309.noarch. 3.5 MB/s | 4.2 MB     00:01    
+(12/16): libgusb-0.3.10-1.oe2309.riscv64.rpm    211 kB/s |  45 kB     00:00    
+(13/16): libusbx-1.0.26-1.oe2309.riscv64.rpm    1.4 MB/s |  72 kB     00:00    
+(14/16): wayland-1.21.0-2.oe2309.riscv64.rpm    1.1 MB/s |  64 kB     00:00    
+(15/16): gtk3-3.24.36-2.oe2309.riscv64.rpm      4.0 MB/s | 5.0 MB     00:01    
+(16/16): zenity-3.42.1-1.oe2309.riscv64.rpm     5.1 MB/s | 3.1 MB     00:00    
+--------------------------------------------------------------------------------
+Total                                           7.4 MB/s |  14 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : wayland-1.21.0-2.oe2309.riscv64                       1/16 
+  Installing       : libepoxy-1.5.10-2.oe2309.riscv64                      2/16 
+  Installing       : libatomic-12.3.1-4.oe2309.riscv64                     3/16 
+  Installing       : libusbx-1.0.26-1.oe2309.riscv64                       4/16 
+  Installing       : libgusb-0.3.10-1.oe2309.riscv64                       5/16 
+  Installing       : libXtst-1.2.4-1.oe2309.riscv64                        6/16 
+  Installing       : at-spi2-core-2.44.1-2.oe2309.riscv64                  7/16 
+  Installing       : at-spi2-atk-2.38.0-2.oe2309.riscv64                   8/16 
+  Installing       : lcms2-2.13.1-2.oe2309.riscv64                         9/16 
+  Installing       : colord-libs-1.4.6-1.oe2309.riscv64                   10/16 
+  Installing       : dconf-0.40.0-3.oe2309.riscv64                        11/16 
+  Installing       : cairo-gobject-1.17.8-1.oe2309.riscv64                12/16 
+  Installing       : adwaita-cursor-theme-43-1.oe2309.noarch              13/16 
+  Installing       : adwaita-icon-theme-43-1.oe2309.noarch                14/16 
+  Running scriptlet: gtk3-3.24.36-2.oe2309.riscv64                        15/16 
+  Installing       : gtk3-3.24.36-2.oe2309.riscv64                        15/16 
+  Running scriptlet: gtk3-3.24.36-2.oe2309.riscv64                        15/16 
+  Installing       : zenity-3.42.1-1.oe2309.riscv64                       16/16 
+  Running scriptlet: dconf-0.40.0-3.oe2309.riscv64                        16/16 
+  Running scriptlet: zenity-3.42.1-1.oe2309.riscv64                       16/16 
+  Running scriptlet: adwaita-icon-theme-43-1.oe2309.noarch                16/16 
+  Verifying        : adwaita-cursor-theme-43-1.oe2309.noarch               1/16 
+  Verifying        : adwaita-icon-theme-43-1.oe2309.noarch                 2/16 
+  Verifying        : at-spi2-atk-2.38.0-2.oe2309.riscv64                   3/16 
+  Verifying        : at-spi2-core-2.44.1-2.oe2309.riscv64                  4/16 
+  Verifying        : cairo-gobject-1.17.8-1.oe2309.riscv64                 5/16 
+  Verifying        : colord-libs-1.4.6-1.oe2309.riscv64                    6/16 
+  Verifying        : dconf-0.40.0-3.oe2309.riscv64                         7/16 
+  Verifying        : gtk3-3.24.36-2.oe2309.riscv64                         8/16 
+  Verifying        : lcms2-2.13.1-2.oe2309.riscv64                         9/16 
+  Verifying        : libXtst-1.2.4-1.oe2309.riscv64                       10/16 
+  Verifying        : libatomic-12.3.1-4.oe2309.riscv64                    11/16 
+  Verifying        : libepoxy-1.5.10-2.oe2309.riscv64                     12/16 
+  Verifying        : libgusb-0.3.10-1.oe2309.riscv64                      13/16 
+  Verifying        : libusbx-1.0.26-1.oe2309.riscv64                      14/16 
+  Verifying        : wayland-1.21.0-2.oe2309.riscv64                      15/16 
+  Verifying        : zenity-3.42.1-1.oe2309.riscv64                       16/16 
+
+Installed:
+  adwaita-cursor-theme-43-1.oe2309.noarch adwaita-icon-theme-43-1.oe2309.noarch
+  at-spi2-atk-2.38.0-2.oe2309.riscv64     at-spi2-core-2.44.1-2.oe2309.riscv64 
+  cairo-gobject-1.17.8-1.oe2309.riscv64   colord-libs-1.4.6-1.oe2309.riscv64   
+  dconf-0.40.0-3.oe2309.riscv64           gtk3-3.24.36-2.oe2309.riscv64        
+  lcms2-2.13.1-2.oe2309.riscv64           libXtst-1.2.4-1.oe2309.riscv64       
+  libatomic-12.3.1-4.oe2309.riscv64       libepoxy-1.5.10-2.oe2309.riscv64     
+  libgusb-0.3.10-1.oe2309.riscv64         libusbx-1.0.26-1.oe2309.riscv64      
+  wayland-1.21.0-2.oe2309.riscv64         zenity-3.42.1-1.oe2309.riscv64       
+
+Complete!
++ CHECK_RESULT 0 0 0 'install fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='install fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpm -qa
++ grep -w zenity
+zenity-3.42.1-1.oe2309.riscv64
++ CHECK_RESULT 0 0 0 'install fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='install fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 10:58:56 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:58:57 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:58:57 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmph0_8pjkm ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmph0_8pjkm
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 10:59:12 2023 - INFO  - Finish environment cleanup!

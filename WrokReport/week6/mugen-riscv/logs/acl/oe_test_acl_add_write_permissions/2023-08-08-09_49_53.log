@@ -1,0 +1,146 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 09:49:55 2023 - INFO  - Start environmental preparation.
++ grep '^example:' /etc/passwd
+++ umask
++ local_umask=0022
++ umask
++ grep 0022
+0022
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 09:49:56 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start executing testcase.'
++ message='Start executing testcase.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start executing testcase.'
+Tue Aug  8 09:49:56 2023 - INFO  - Start executing testcase.
++ useradd example
++ passwd example
+New password: Retype new password: Changing password for user example.
+passwd: all authentication tokens updated successfully.
++ touch /tmp/my_pwd
++ ls -l /tmp/my_pwd
++ grep '\-rw\-r\-\-r\-\-.'
+grep: warning: stray \ before -
+grep: warning: stray \ before -
+grep: warning: stray \ before -
+grep: warning: stray \ before -
+grep: warning: stray \ before -
+-rw-r--r-- 1 root root 0 Aug  8 09:49 /tmp/my_pwd
++ CHECK_RESULT 0 0 0 'Check file default umask failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check file default umask failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -m u:example:w /tmp/my_pwd
++ CHECK_RESULT 0 0 0 'Failed to add a user permission for '\''example'\'''
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add a user permission for '\''example'\'''
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl /tmp/my_pwd
+getfacl: Removing leading '/' from absolute path names
++ echo '# file: tmp/my_pwd
+# owner: root
+# group: root
+user::rw-
+user:example:-w-
+group::r--
+mask::rw-
+other::r--
+'
++ diff tmp_log diff_file
++ CHECK_RESULT 0 0 0 'Comparison between tmp_log and diff_file failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Comparison between tmp_log and diff_file failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls -l /tmp/my_pwd
++ grep '\-rw\-rw\-r\-\-+'
+grep: warning: stray \ before -
+grep: warning: stray \ before -
+grep: warning: stray \ before -
+grep: warning: stray \ before -
+-rw-rw-r--+ 1 root root 0 Aug  8 09:49 /tmp/my_pwd
++ CHECK_RESULT 0 0 0 'Check file umask failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check file umask failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - example -c 'echo test>/tmp/my_pwd'
++ CHECK_RESULT 0 0 0 'Switching to '\''example'\'' failed to execute echo command'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Switching to '\''example'\'' failed to execute echo command'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish testcase execution.'
++ message='Finish testcase execution.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish testcase execution.'
+Tue Aug  8 09:49:59 2023 - INFO  - Finish testcase execution.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:50:00 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 09:50:01 2023 - INFO  - start environment cleanup.
++ rm -rf tmp_log diff_file /tmp/my_pwd
++ userdel -rf example
++ umask 0022
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 09:50:02 2023 - INFO  - Finish environment cleanup!

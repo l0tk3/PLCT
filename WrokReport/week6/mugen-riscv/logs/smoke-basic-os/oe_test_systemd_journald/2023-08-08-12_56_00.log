@@ -1,0 +1,883 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:56:01 2023 - INFO  - Start to run test.
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl -f'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl -f'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ journalctl -f
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ grep -E 'begins at|begin at|[0-9]|entries' testlog
+Aug 08 12:55:54 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:55:54 openeuler-riscv64 [RPM][30943]: Transaction ID 64d1cad3 finished: 0
+Aug 08 12:55:54 openeuler-riscv64 systemctl[30986]: [/usr/bin/systemctl start man-db-cache-update] called by PID 1 (/sbin/init)
+Aug 08 12:55:54 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:55:55 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:55:55 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:55:55 openeuler-riscv64 systemd[1]: run-r7ecb95a675a94034aa0f897df740642b.service: Deactivated successfully.
+Aug 08 12:55:57 openeuler-riscv64 sudo[30759]: pam_unix(sudo:session): session closed for user root
+Aug 08 12:55:57 openeuler-riscv64 sudo[31004]:     root : PWD=/root/mugen ; USER=root ; COMMAND=/usr/bin/bash mugen.sh -f smoke-basic-os -r oe_test_systemd_journald -x
+Aug 08 12:55:57 openeuler-riscv64 sudo[31004]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
++ CHECK_RESULT 0 0 0 'Failed to find begin'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to find begin'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ pgrep journalctl
++ kill -9 31060
++ journalctl --reverse --lines 10 --no-pager
++ grep -vcE 'begins at|begin at'
++ grep 10
+10
+oe_test_systemd_journald.sh: line 22: 31060 Killed                  journalctl -f > testlog
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl --lines'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl --lines'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --show-cursor
++ grep cursor
+Aug 08 10:57:41 openeuler-riscv64 [RPM][9430]: install adwaita-cursor-theme-43-1.oe2309.noarch: success
+Aug 08 10:58:00 openeuler-riscv64 [RPM][9430]: install adwaita-cursor-theme-43-1.oe2309.noarch: success
+Aug 08 10:58:13 openeuler-riscv64 [RPM][9454]: erase adwaita-cursor-theme-43-1.oe2309.noarch: success
+Aug 08 10:58:19 openeuler-riscv64 [RPM][9454]: erase adwaita-cursor-theme-43-1.oe2309.noarch: success
+Aug 08 10:58:34 openeuler-riscv64 [RPM][9463]: install adwaita-cursor-theme-43-1.oe2309.noarch: success
+Aug 08 10:58:51 openeuler-riscv64 [RPM][9463]: install adwaita-cursor-theme-43-1.oe2309.noarch: success
+Aug 08 10:59:05 openeuler-riscv64 [RPM][9485]: erase adwaita-cursor-theme-43-1.oe2309.noarch: success
+Aug 08 10:59:10 openeuler-riscv64 [RPM][9485]: erase adwaita-cursor-theme-43-1.oe2309.noarch: success
+-- cursor: s=07d47f28fb874b58b62bc5dff27ee862;i=1ee3;b=a87b556151814610b66420f97da45fd0;m=29b025701;t=602622dbf645a;x=725cc9b998e82a25
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl -show-cursor'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl -show-cursor'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mkdir /tmp/log
++ cp /run/log/journal/e83fe25b1fbc4fca83c888279c7a036f/system.journal /tmp/log
++ journalctl --directory /tmp/log/ --rotate --vacuum-size=8M
+Vacuuming done, freed 0B of archived journals from /tmp/log/.
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl --directory'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl --directory'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl /usr/lib/systemd/systemd
+Aug 08 10:51:10 openeuler-riscv64 systemd[1]: Stopping Flush Journal to Persistent Storage...
+Aug 08 10:51:10 openeuler-riscv64 systemd[1]: systemd-journal-flush.service: Deactivated successfully.
+Aug 08 10:51:10 openeuler-riscv64 systemd[1]: Stopped Flush Journal to Persistent Storage.
+Aug 08 10:51:10 openeuler-riscv64 systemd[1]: Starting Flush Journal to Persistent Storage...
+Aug 08 10:51:11 openeuler-riscv64 systemd[1]: Finished Flush Journal to Persistent Storage.
+Aug 08 10:55:57 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 10:55:58 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 10:56:01 openeuler-riscv64 systemd[1]: Starting NTP client/server...
+Aug 08 10:56:02 openeuler-riscv64 systemd[1]: Started NTP client/server.
+Aug 08 10:56:09 openeuler-riscv64 systemd[1]: Time has been changed
+Aug 08 10:56:12 openeuler-riscv64 systemd[1]: Stopping NTP client/server...
+Aug 08 10:56:13 openeuler-riscv64 systemd[1]: chronyd.service: Deactivated successfully.
+Aug 08 10:56:13 openeuler-riscv64 systemd[1]: Stopped NTP client/server.
+Aug 08 10:56:13 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 10:56:14 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 10:59:46 openeuler-riscv64 systemd[1]: Starting Locale Service...
+Aug 08 10:59:47 openeuler-riscv64 systemd[1]: Started Locale Service.
+Aug 08 11:00:07 openeuler-riscv64 systemd[1]: Starting Hostname Service...
+Aug 08 11:00:07 openeuler-riscv64 systemd[1]: Started Hostname Service.
+Aug 08 11:00:21 openeuler-riscv64 systemd[1]: systemd-localed.service: Deactivated successfully.
+Aug 08 11:00:41 openeuler-riscv64 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Aug 08 11:01:11 openeuler-riscv64 systemd[1]: Stopping Command Scheduler...
+Aug 08 11:01:11 openeuler-riscv64 systemd[1]: crond.service: Deactivated successfully.
+Aug 08 11:01:11 openeuler-riscv64 systemd[1]: Stopped Command Scheduler.
+Aug 08 11:01:11 openeuler-riscv64 systemd[1]: Started Command Scheduler.
+Aug 08 11:02:34 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 11:02:34 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 11:02:35 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 11:02:35 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 11:02:36 openeuler-riscv64 systemd[1]: run-r813da7f4810548b088cf83b93357c9ca.service: Deactivated successfully.
+Aug 08 11:03:27 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:03:28 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:03:28 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/acpid.socket:6: ListenStream= references a path below legacy directory /var/run/, updating /var/run/acpid.socket → /run/acpid.socket; please update the unit file accordingly.
+Aug 08 11:03:39 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:03:40 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:37:49 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:37:50 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:37:52 openeuler-riscv64 systemd[1]: Started Deferred execution scheduler.
+Aug 08 11:38:55 openeuler-riscv64 systemd[1]: Stopping Deferred execution scheduler...
+Aug 08 11:38:55 openeuler-riscv64 systemd[1]: atd.service: Deactivated successfully.
+Aug 08 11:38:55 openeuler-riscv64 systemd[1]: Stopped Deferred execution scheduler.
+Aug 08 11:39:02 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:39:03 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:40:57 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 11:40:57 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 11:40:58 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 11:40:58 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 11:40:58 openeuler-riscv64 systemd[1]: run-rc1a762e7244e43f18cd6874bc6e9f030.service: Deactivated successfully.
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: NetworkManager-wait-online.service: Deactivated successfully.
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: Stopped Network Manager Wait Online.
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: Stopping Network Manager Wait Online...
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: Stopping Network Manager...
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: Starting Network Manager Script Dispatcher Service...
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: NetworkManager.service: Deactivated successfully.
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: Stopped Network Manager.
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: Starting Network Manager...
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: Started Network Manager Script Dispatcher Service.
+Aug 08 11:41:00 openeuler-riscv64 systemd[1]: Started Network Manager.
+Aug 08 11:41:01 openeuler-riscv64 systemd[1]: Starting Network Manager Wait Online...
+Aug 08 11:41:01 openeuler-riscv64 systemd[1]: Starting Hostname Service...
+Aug 08 11:41:02 openeuler-riscv64 systemd[1]: Started Hostname Service.
+Aug 08 11:41:03 openeuler-riscv64 systemd[1]: Finished Network Manager Wait Online.
+Aug 08 11:41:09 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 11:41:09 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 11:41:10 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 11:41:10 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 11:41:10 openeuler-riscv64 systemd[1]: run-r601c5939b46849aa8df6450d73d48304.service: Deactivated successfully.
+Aug 08 11:41:13 openeuler-riscv64 systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+Aug 08 11:41:32 openeuler-riscv64 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Aug 08 11:42:13 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:42:14 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:42:15 openeuler-riscv64 systemd[1]: Starting dnf makecache...
+Aug 08 11:42:17 openeuler-riscv64 systemd[1]: Starting Samba SMB Daemon...
+Aug 08 11:42:18 openeuler-riscv64 systemd[1]: dnf-makecache.service: Deactivated successfully.
+Aug 08 11:42:18 openeuler-riscv64 systemd[1]: Finished dnf makecache.
+Aug 08 11:42:18 openeuler-riscv64 systemd[1]: Started Samba SMB Daemon.
+Aug 08 11:42:23 openeuler-riscv64 systemd[1]: Stopping Samba SMB Daemon...
+Aug 08 11:42:23 openeuler-riscv64 systemd[1]: smb.service: Deactivated successfully.
+Aug 08 11:42:23 openeuler-riscv64 systemd[1]: Stopped Samba SMB Daemon.
+Aug 08 11:42:31 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:42:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:43:13 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:43:13 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:43:15 openeuler-riscv64 systemd[1]: Starting Vsftpd ftp daemon...
+Aug 08 11:43:16 openeuler-riscv64 systemd[1]: Started Vsftpd ftp daemon.
+Aug 08 11:43:31 openeuler-riscv64 systemd[1]: Stopping Vsftpd ftp daemon...
+Aug 08 11:43:31 openeuler-riscv64 systemd[1]: vsftpd.service: Deactivated successfully.
+Aug 08 11:43:31 openeuler-riscv64 systemd[1]: Stopped Vsftpd ftp daemon.
+Aug 08 11:43:31 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:43:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:44:14 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 11:44:14 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 11:44:14 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:44:15 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:44:16 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 11:44:16 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 11:44:16 openeuler-riscv64 systemd[1]: run-r287226fad1424090a5f8847e90f296dc.service: Deactivated successfully.
+Aug 08 11:44:22 openeuler-riscv64 systemd[1]: Starting One-time temporary TLS key generation for httpd.service...
+Aug 08 11:44:23 openeuler-riscv64 systemd[1]: httpd-init.service: Deactivated successfully.
+Aug 08 11:44:23 openeuler-riscv64 systemd[1]: Finished One-time temporary TLS key generation for httpd.service.
+Aug 08 11:44:23 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+Aug 08 11:44:26 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+Aug 08 11:44:44 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 11:44:45 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 11:44:45 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+Aug 08 11:44:47 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+Aug 08 11:44:47 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+Aug 08 11:44:49 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 11:44:49 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 11:44:50 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 11:44:50 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 11:44:51 openeuler-riscv64 systemd[1]: run-r05989b28229e44ec828e651511c6d068.service: Deactivated successfully.
+Aug 08 11:46:25 openeuler-riscv64 systemd[1]: dbus.service: Main process exited, code=killed, status=9/KILL
+Aug 08 11:46:25 openeuler-riscv64 systemd[1]: dbus.service: Failed with result 'signal'.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: dbus.service: Scheduled restart job, restart counter is at 1.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: NetworkManager-wait-online.service: Deactivated successfully.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Stopped Network Manager Wait Online.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Stopping Network Manager Wait Online...
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Stopping Network Manager...
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: NetworkManager.service: Deactivated successfully.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Stopped Network Manager.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Stopped D-Bus System Message Bus.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Starting D-Bus System Message Bus...
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Started D-Bus System Message Bus.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Starting Network Manager...
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: systemd-logind.service: Deactivated successfully.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: systemd-logind.service: Scheduled restart job, restart counter is at 1.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Stopped User Login Management.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Starting Load Kernel Module drm...
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: modprobe@drm.service: Deactivated successfully.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Finished Load Kernel Module drm.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Starting User Login Management...
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Started Network Manager.
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Starting Network Manager Wait Online...
+Aug 08 11:46:27 openeuler-riscv64 systemd[1]: Starting Hostname Service...
+Aug 08 11:46:28 openeuler-riscv64 systemd[1]: Started User Login Management.
+Aug 08 11:46:28 openeuler-riscv64 systemd[1]: Started Hostname Service.
+Aug 08 11:46:29 openeuler-riscv64 systemd[1]: Starting Network Manager Script Dispatcher Service...
+Aug 08 11:46:29 openeuler-riscv64 systemd[1]: Started Network Manager Script Dispatcher Service.
+Aug 08 11:46:29 openeuler-riscv64 systemd[1]: Finished Network Manager Wait Online.
+Aug 08 11:46:40 openeuler-riscv64 systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+Aug 08 11:46:59 openeuler-riscv64 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: NetworkManager-wait-online.service: Deactivated successfully.
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Stopped Network Manager Wait Online.
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Stopping Network Manager Wait Online...
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Stopping Network Manager...
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Starting Network Manager Script Dispatcher Service...
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: NetworkManager.service: Deactivated successfully.
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Stopped Network Manager.
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Starting Network Manager...
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Started Network Manager Script Dispatcher Service.
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Started Network Manager.
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Starting Network Manager Wait Online...
+Aug 08 11:53:08 openeuler-riscv64 systemd[1]: Starting Hostname Service...
+Aug 08 11:53:09 openeuler-riscv64 systemd[1]: Started Hostname Service.
+Aug 08 11:53:10 openeuler-riscv64 systemd[1]: Finished Network Manager Wait Online.
+Aug 08 11:53:21 openeuler-riscv64 systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+Aug 08 11:53:39 openeuler-riscv64 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Aug 08 11:56:09 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 11:56:09 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 11:56:10 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 11:56:10 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 11:56:10 openeuler-riscv64 systemd[1]: run-rb51cb58e671741f995589d70794e8da5.service: Deactivated successfully.
+Aug 08 11:56:20 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 11:56:21 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 11:56:21 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 11:56:21 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 11:56:22 openeuler-riscv64 systemd[1]: run-rabb1123d7ad14456bc8082d8f50544b2.service: Deactivated successfully.
+Aug 08 12:00:00 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:00:01 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:00:13 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:00:14 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:00:50 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:00:51 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:00:52 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:00:52 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:00:54 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:00:54 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:00:54 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:00:55 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:00:56 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:00:56 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:00:56 openeuler-riscv64 systemd[1]: run-r6d420075c7a549e6a94c451893ad4f2e.service: Deactivated successfully.
+Aug 08 12:00:58 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:00:59 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:01:02 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:01:02 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:01:03 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:01:06 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:01:07 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:01:10 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:01:11 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:01:11 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:01:14 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:01:15 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:01:18 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:01:18 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:01:18 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:01:22 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:01:22 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:01:26 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:01:26 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:01:26 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:01:30 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:01:30 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:01:34 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:01:34 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:01:34 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:01:38 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:01:38 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:01:42 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:01:42 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:01:42 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:01:46 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:01:46 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:01:50 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:01:50 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:01:50 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:01:54 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:01:54 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:01:57 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:01:57 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:01:57 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:02:01 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:02:01 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:02:05 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:02:05 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:02:05 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:02:09 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:02:09 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:02:13 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:02:13 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:02:13 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:02:17 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:02:17 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:02:21 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:02:21 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:02:21 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:02:25 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:02:25 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:02:29 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:02:29 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:02:29 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:02:33 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:02:33 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:02:37 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:02:37 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:02:37 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:02:41 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:02:41 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:02:45 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:02:45 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:02:45 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:02:49 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:02:49 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:02:53 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:02:53 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:02:53 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:02:57 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:02:58 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:03:01 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:03:01 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:03:01 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:03:05 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:03:05 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:03:09 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:03:09 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:03:09 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:03:13 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:03:13 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:03:17 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:03:17 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:03:17 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:03:21 openeuler-riscv64 systemd[1]: Starting Open-iSCSI...
+Aug 08 12:03:21 openeuler-riscv64 systemd[1]: Started Open-iSCSI.
+Aug 08 12:03:25 openeuler-riscv64 systemd[1]: Stopping Open-iSCSI...
+Aug 08 12:03:25 openeuler-riscv64 systemd[1]: iscsid.service: Deactivated successfully.
+Aug 08 12:03:25 openeuler-riscv64 systemd[1]: Stopped Open-iSCSI.
+Aug 08 12:03:37 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:03:38 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:03:40 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:03:40 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:03:41 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:03:41 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:03:41 openeuler-riscv64 systemd[1]: run-rf2bc4f71f0bc4f979dbff586ab170149.service: Deactivated successfully.
+Aug 08 12:04:21 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:04:22 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:04:32 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:04:33 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:05:06 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:05:07 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:05:18 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:05:19 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:05:54 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:05:55 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:06:11 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:06:12 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:06:45 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:06:46 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:06:58 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:06:59 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:07:10 openeuler-riscv64 systemd[1]: Starting Hostname Service...
+Aug 08 12:07:11 openeuler-riscv64 systemd[1]: Started Hostname Service.
+Aug 08 12:07:41 openeuler-riscv64 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Aug 08 12:09:09 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:09:09 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:09:10 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:09:10 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:09:11 openeuler-riscv64 systemd[1]: run-r103c888c5d574986af77b41d0eb56cb6.service: Deactivated successfully.
+Aug 08 12:09:19 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:09:19 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:09:20 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:09:20 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:09:21 openeuler-riscv64 systemd[1]: run-r3ba78076540740d3b04bcaf4c9410fa4.service: Deactivated successfully.
+Aug 08 12:09:39 openeuler-riscv64 systemd[1]: Starting Hostname Service...
+Aug 08 12:09:40 openeuler-riscv64 systemd[1]: Started Hostname Service.
+Aug 08 12:10:10 openeuler-riscv64 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Aug 08 12:10:20 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:10:20 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:10:21 openeuler-riscv64 systemd[1]: Mounting RPC Pipe File System...
+Aug 08 12:10:21 openeuler-riscv64 systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+Aug 08 12:10:21 openeuler-riscv64 systemd[1]: Starting GSSAPI Proxy Daemon...
+Aug 08 12:10:21 openeuler-riscv64 systemd[1]: Mounted RPC Pipe File System.
+Aug 08 12:10:21 openeuler-riscv64 systemd[1]: Reached target rpc_pipefs.target.
+Aug 08 12:10:22 openeuler-riscv64 systemd[1]: Started GSSAPI Proxy Daemon.
+Aug 08 12:10:22 openeuler-riscv64 systemd[1]: Condition check resulted in RPC security service for NFS client and server being skipped.
+Aug 08 12:10:22 openeuler-riscv64 systemd[1]: Reached target NFS client services.
+Aug 08 12:10:22 openeuler-riscv64 systemd[1]: Stopping GSSAPI Proxy Daemon...
+Aug 08 12:10:22 openeuler-riscv64 systemd[1]: gssproxy.service: Deactivated successfully.
+Aug 08 12:10:22 openeuler-riscv64 systemd[1]: Stopped GSSAPI Proxy Daemon.
+Aug 08 12:10:22 openeuler-riscv64 systemd[1]: Starting GSSAPI Proxy Daemon...
+Aug 08 12:10:22 openeuler-riscv64 systemd[1]: Started GSSAPI Proxy Daemon.
+Aug 08 12:10:23 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:10:23 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:10:23 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:10:24 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:10:25 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:10:25 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:10:25 openeuler-riscv64 systemd[1]: run-r5d5d84c096e64dff830af68da4bc9853.service: Deactivated successfully.
+Aug 08 12:10:36 openeuler-riscv64 systemd[1]: Stopped target NFS client services.
+Aug 08 12:10:36 openeuler-riscv64 systemd[1]: Stopped target rpc_pipefs.target.
+Aug 08 12:10:36 openeuler-riscv64 systemd[1]: Unmounting RPC Pipe File System...
+Aug 08 12:10:36 openeuler-riscv64 systemd[1]: var-lib-nfs-rpc_pipefs.mount: Deactivated successfully.
+Aug 08 12:10:36 openeuler-riscv64 systemd[1]: Unmounted RPC Pipe File System.
+Aug 08 12:10:36 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:10:37 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:10:38 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:10:39 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:10:40 openeuler-riscv64 systemd[1]: Stopping GSSAPI Proxy Daemon...
+Aug 08 12:10:40 openeuler-riscv64 systemd[1]: gssproxy.service: Deactivated successfully.
+Aug 08 12:10:40 openeuler-riscv64 systemd[1]: Stopped GSSAPI Proxy Daemon.
+Aug 08 12:10:40 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:10:40 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:10:40 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:10:41 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:10:42 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:10:42 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:10:42 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:10:43 openeuler-riscv64 systemd[1]: run-r6efa5a93c5b744cbbab13d4b8cae59d4.service: Deactivated successfully.
+Aug 08 12:11:15 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:11:16 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:11:17 openeuler-riscv64 systemd[1]: Mounting RPC Pipe File System...
+Aug 08 12:11:17 openeuler-riscv64 systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+Aug 08 12:11:17 openeuler-riscv64 systemd[1]: Starting GSSAPI Proxy Daemon...
+Aug 08 12:11:17 openeuler-riscv64 systemd[1]: Mounted RPC Pipe File System.
+Aug 08 12:11:17 openeuler-riscv64 systemd[1]: Reached target rpc_pipefs.target.
+Aug 08 12:11:18 openeuler-riscv64 systemd[1]: Started GSSAPI Proxy Daemon.
+Aug 08 12:11:18 openeuler-riscv64 systemd[1]: Condition check resulted in RPC security service for NFS client and server being skipped.
+Aug 08 12:11:18 openeuler-riscv64 systemd[1]: Reached target NFS client services.
+Aug 08 12:11:18 openeuler-riscv64 systemd[1]: Stopping GSSAPI Proxy Daemon...
+Aug 08 12:11:18 openeuler-riscv64 systemd[1]: gssproxy.service: Deactivated successfully.
+Aug 08 12:11:18 openeuler-riscv64 systemd[1]: Stopped GSSAPI Proxy Daemon.
+Aug 08 12:11:18 openeuler-riscv64 systemd[1]: Starting GSSAPI Proxy Daemon...
+Aug 08 12:11:18 openeuler-riscv64 systemd[1]: Started GSSAPI Proxy Daemon.
+Aug 08 12:11:19 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:11:19 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:11:19 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:11:21 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:11:21 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:11:21 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:11:22 openeuler-riscv64 systemd[1]: run-r31fc2ac5c1b144beb8312196c3771fe7.service: Deactivated successfully.
+Aug 08 12:11:28 openeuler-riscv64 systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+Aug 08 12:11:28 openeuler-riscv64 systemd[1]: Listening on RPCbind Server Activation Socket.
+Aug 08 12:11:28 openeuler-riscv64 systemd[1]: Starting NFSv4 ID-name mapping service...
+Aug 08 12:11:28 openeuler-riscv64 systemd[1]: Starting NFS Mount Daemon...
+Aug 08 12:11:29 openeuler-riscv64 systemd[1]: Starting NFSv4 Client Tracking Daemon...
+Aug 08 12:11:29 openeuler-riscv64 systemd[1]: Condition check resulted in RPC security service for NFS client and server being skipped.
+Aug 08 12:11:29 openeuler-riscv64 systemd[1]: Starting RPC Bind...
+Aug 08 12:11:29 openeuler-riscv64 systemd[1]: Started NFSv4 Client Tracking Daemon.
+Aug 08 12:11:29 openeuler-riscv64 systemd[1]: Started RPC Bind.
+Aug 08 12:11:29 openeuler-riscv64 systemd[1]: Started NFS Mount Daemon.
+Aug 08 12:11:30 openeuler-riscv64 systemd[1]: Started NFSv4 ID-name mapping service.
+Aug 08 12:11:30 openeuler-riscv64 systemd[1]: Starting NFS server and services...
+Aug 08 12:11:30 openeuler-riscv64 systemd[1]: Finished NFS server and services.
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: Stopping NFS server and services...
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: nfs-server.service: Deactivated successfully.
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: Stopped NFS server and services.
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: Stopping NFSv4 ID-name mapping service...
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: Stopping NFS Mount Daemon...
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: nfs-idmapd.service: Deactivated successfully.
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: Stopped NFSv4 ID-name mapping service.
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: nfs-mountd.service: Deactivated successfully.
+Aug 08 12:11:33 openeuler-riscv64 systemd[1]: Stopped NFS Mount Daemon.
+Aug 08 12:11:40 openeuler-riscv64 systemd[1]: Stopped target NFS client services.
+Aug 08 12:11:40 openeuler-riscv64 systemd[1]: Stopping NFSv4 Client Tracking Daemon...
+Aug 08 12:11:40 openeuler-riscv64 systemd[1]: nfsdcld.service: Deactivated successfully.
+Aug 08 12:11:40 openeuler-riscv64 systemd[1]: Stopped NFSv4 Client Tracking Daemon.
+Aug 08 12:11:40 openeuler-riscv64 systemd[1]: Stopped target rpc_pipefs.target.
+Aug 08 12:11:40 openeuler-riscv64 systemd[1]: Unmounting RPC Pipe File System...
+Aug 08 12:11:40 openeuler-riscv64 systemd[1]: var-lib-nfs-rpc_pipefs.mount: Deactivated successfully.
+Aug 08 12:11:40 openeuler-riscv64 systemd[1]: Unmounted RPC Pipe File System.
+Aug 08 12:11:41 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:11:42 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:11:42 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:11:43 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:11:44 openeuler-riscv64 systemd[1]: Stopping GSSAPI Proxy Daemon...
+Aug 08 12:11:44 openeuler-riscv64 systemd[1]: gssproxy.service: Deactivated successfully.
+Aug 08 12:11:44 openeuler-riscv64 systemd[1]: Stopped GSSAPI Proxy Daemon.
+Aug 08 12:11:45 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:11:45 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:11:45 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:11:45 openeuler-riscv64 systemd[1]: Stopping RPC Bind...
+Aug 08 12:11:45 openeuler-riscv64 systemd[1]: rpcbind.service: Deactivated successfully.
+Aug 08 12:11:45 openeuler-riscv64 systemd[1]: Stopped RPC Bind.
+Aug 08 12:11:45 openeuler-riscv64 systemd[1]: rpcbind.socket: Deactivated successfully.
+Aug 08 12:11:45 openeuler-riscv64 systemd[1]: Closed RPCbind Server Activation Socket.
+Aug 08 12:11:46 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:11:47 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:11:47 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:11:47 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:11:48 openeuler-riscv64 systemd[1]: run-rb6b533e406954087a58b5e2c51f53702.service: Deactivated successfully.
+Aug 08 12:12:24 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:12:25 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Mounting RPC Pipe File System...
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Starting GSSAPI Proxy Daemon...
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Mounted RPC Pipe File System.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Reached target rpc_pipefs.target.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Started GSSAPI Proxy Daemon.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Condition check resulted in RPC security service for NFS client and server being skipped.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Reached target NFS client services.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Stopping GSSAPI Proxy Daemon...
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: gssproxy.service: Deactivated successfully.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Stopped GSSAPI Proxy Daemon.
+Aug 08 12:12:26 openeuler-riscv64 systemd[1]: Starting GSSAPI Proxy Daemon...
+Aug 08 12:12:27 openeuler-riscv64 systemd[1]: Started GSSAPI Proxy Daemon.
+Aug 08 12:12:27 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:12:28 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:12:28 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:12:29 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:12:30 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:12:30 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:12:30 openeuler-riscv64 systemd[1]: run-r8abfbbef16604282bb3b417f4019f505.service: Deactivated successfully.
+Aug 08 12:12:32 openeuler-riscv64 systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+Aug 08 12:12:32 openeuler-riscv64 systemd[1]: Listening on RPCbind Server Activation Socket.
+Aug 08 12:12:32 openeuler-riscv64 systemd[1]: Starting NFSv4 ID-name mapping service...
+Aug 08 12:12:32 openeuler-riscv64 systemd[1]: Starting NFS Mount Daemon...
+Aug 08 12:12:32 openeuler-riscv64 systemd[1]: Starting NFSv4 Client Tracking Daemon...
+Aug 08 12:12:32 openeuler-riscv64 systemd[1]: Condition check resulted in RPC security service for NFS client and server being skipped.
+Aug 08 12:12:32 openeuler-riscv64 systemd[1]: Started NFSv4 Client Tracking Daemon.
+Aug 08 12:12:32 openeuler-riscv64 systemd[1]: Starting RPC Bind...
+Aug 08 12:12:33 openeuler-riscv64 systemd[1]: Started RPC Bind.
+Aug 08 12:12:33 openeuler-riscv64 systemd[1]: Started NFS Mount Daemon.
+Aug 08 12:12:33 openeuler-riscv64 systemd[1]: Started NFSv4 ID-name mapping service.
+Aug 08 12:12:33 openeuler-riscv64 systemd[1]: Starting NFS server and services...
+Aug 08 12:12:34 openeuler-riscv64 systemd[1]: Finished NFS server and services.
+Aug 08 12:12:37 openeuler-riscv64 systemd[1]: home-test.mount: Deactivated successfully.
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: Stopping NFS server and services...
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: nfs-server.service: Deactivated successfully.
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: Stopped NFS server and services.
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: Stopping NFSv4 ID-name mapping service...
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: Stopping NFS Mount Daemon...
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: nfs-idmapd.service: Deactivated successfully.
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: Stopped NFSv4 ID-name mapping service.
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: nfs-mountd.service: Deactivated successfully.
+Aug 08 12:12:38 openeuler-riscv64 systemd[1]: Stopped NFS Mount Daemon.
+Aug 08 12:12:45 openeuler-riscv64 systemd[1]: Stopped target NFS client services.
+Aug 08 12:12:45 openeuler-riscv64 systemd[1]: Stopping NFSv4 Client Tracking Daemon...
+Aug 08 12:12:45 openeuler-riscv64 systemd[1]: nfsdcld.service: Deactivated successfully.
+Aug 08 12:12:45 openeuler-riscv64 systemd[1]: Stopped NFSv4 Client Tracking Daemon.
+Aug 08 12:12:45 openeuler-riscv64 systemd[1]: Stopped target rpc_pipefs.target.
+Aug 08 12:12:45 openeuler-riscv64 systemd[1]: Unmounting RPC Pipe File System...
+Aug 08 12:12:45 openeuler-riscv64 systemd[1]: var-lib-nfs-rpc_pipefs.mount: Deactivated successfully.
+Aug 08 12:12:45 openeuler-riscv64 systemd[1]: Unmounted RPC Pipe File System.
+Aug 08 12:12:46 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:12:47 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:12:47 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:12:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:12:49 openeuler-riscv64 systemd[1]: Stopping GSSAPI Proxy Daemon...
+Aug 08 12:12:49 openeuler-riscv64 systemd[1]: gssproxy.service: Deactivated successfully.
+Aug 08 12:12:49 openeuler-riscv64 systemd[1]: Stopped GSSAPI Proxy Daemon.
+Aug 08 12:12:50 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:12:50 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:12:50 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/quota_nld.service:9: PIDFile= references a path below legacy directory /var/run/, updating /var/run/quota_nld.pid → /run/quota_nld.pid; please update the unit file accordingly.
+Aug 08 12:12:50 openeuler-riscv64 systemd[1]: Stopping RPC Bind...
+Aug 08 12:12:50 openeuler-riscv64 systemd[1]: rpcbind.service: Deactivated successfully.
+Aug 08 12:12:50 openeuler-riscv64 systemd[1]: Stopped RPC Bind.
+Aug 08 12:12:50 openeuler-riscv64 systemd[1]: rpcbind.socket: Deactivated successfully.
+Aug 08 12:12:50 openeuler-riscv64 systemd[1]: Closed RPCbind Server Activation Socket.
+Aug 08 12:12:51 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:12:51 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:12:52 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:12:52 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:12:52 openeuler-riscv64 systemd[1]: run-r247c83b8cc424bf9b2db04f469fce893.service: Deactivated successfully.
+Aug 08 12:13:26 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:13:26 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:13:27 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:13:27 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:13:27 openeuler-riscv64 systemd[1]: run-rd289ff8de99f466db44326550900365c.service: Deactivated successfully.
+Aug 08 12:13:38 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:13:38 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:13:39 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:13:39 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:13:39 openeuler-riscv64 systemd[1]: run-r40754a0afb7d4c458a0a047694b2288f.service: Deactivated successfully.
+Aug 08 12:14:20 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:14:20 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:14:21 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:14:21 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:14:22 openeuler-riscv64 systemd[1]: run-rb797a43f6ffc4e8a9c6fa435ef357c92.service: Deactivated successfully.
+Aug 08 12:14:50 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:14:50 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:14:51 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:14:51 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:14:51 openeuler-riscv64 systemd[1]: run-r103a794967c14c00af25ffcd4d428f5e.service: Deactivated successfully.
+Aug 08 12:16:14 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:16:14 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:16:17 openeuler-riscv64 systemd[1]: Starting Network Time Service...
+Aug 08 12:16:18 openeuler-riscv64 systemd[1]: Started Network Time Service.
+Aug 08 12:16:18 openeuler-riscv64 systemd[1]: Stopping Network Time Service...
+Aug 08 12:16:18 openeuler-riscv64 systemd[1]: ntpd.service: Deactivated successfully.
+Aug 08 12:16:18 openeuler-riscv64 systemd[1]: Stopped Network Time Service.
+Aug 08 12:16:18 openeuler-riscv64 systemd[1]: Starting Network Time Service...
+Aug 08 12:16:18 openeuler-riscv64 systemd[1]: Started Network Time Service.
+Aug 08 12:16:26 openeuler-riscv64 systemd[1]: Stopping Network Time Service...
+Aug 08 12:16:26 openeuler-riscv64 systemd[1]: ntpd.service: Deactivated successfully.
+Aug 08 12:16:26 openeuler-riscv64 systemd[1]: Stopped Network Time Service.
+Aug 08 12:16:27 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:16:27 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:17:04 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:17:05 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:17:47 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:17:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:22:25 openeuler-riscv64 systemd[1]: Starting Locale Service...
+Aug 08 12:22:26 openeuler-riscv64 systemd[1]: Started Locale Service.
+Aug 08 12:23:08 openeuler-riscv64 systemd[1]: systemd-localed.service: Deactivated successfully.
+Aug 08 12:23:13 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:23:13 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:23:13 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:23:14 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:23:15 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:23:15 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:23:15 openeuler-riscv64 systemd[1]: run-r07a30ac3e5494987832aa4e22bc654c5.service: Deactivated successfully.
+Aug 08 12:23:17 openeuler-riscv64 systemd[1]: Starting The Apache HTTP Server...
+Aug 08 12:23:20 openeuler-riscv64 systemd[1]: Started The Apache HTTP Server.
+Aug 08 12:23:32 openeuler-riscv64 systemd[1]: Stopping The Apache HTTP Server...
+Aug 08 12:23:33 openeuler-riscv64 systemd[1]: httpd.service: Deactivated successfully.
+Aug 08 12:23:33 openeuler-riscv64 systemd[1]: Stopped The Apache HTTP Server.
+Aug 08 12:23:34 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:23:35 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:23:37 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:23:37 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:23:38 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:23:38 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:23:38 openeuler-riscv64 systemd[1]: run-r92e65b8ea3b74e2e9d844987da96dba0.service: Deactivated successfully.
+Aug 08 12:25:57 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:25:58 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:26:00 openeuler-riscv64 systemd[1]: Listening on RPCbind Server Activation Socket.
+Aug 08 12:26:00 openeuler-riscv64 systemd[1]: Starting RPC Bind...
+Aug 08 12:26:00 openeuler-riscv64 systemd[1]: Started RPC Bind.
+Aug 08 12:26:21 openeuler-riscv64 systemd[1]: Stopping RPC Bind...
+Aug 08 12:26:21 openeuler-riscv64 systemd[1]: rpcbind.service: Deactivated successfully.
+Aug 08 12:26:21 openeuler-riscv64 systemd[1]: Stopped RPC Bind.
+Aug 08 12:26:21 openeuler-riscv64 systemd[1]: rpcbind.socket: Deactivated successfully.
+Aug 08 12:26:21 openeuler-riscv64 systemd[1]: Closed RPCbind Server Activation Socket.
+Aug 08 12:26:21 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:26:22 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:28:08 openeuler-riscv64 systemd[1]: Stopping Flush Journal to Persistent Storage...
+Aug 08 12:28:08 openeuler-riscv64 systemd[1]: systemd-journal-flush.service: Deactivated successfully.
+Aug 08 12:28:08 openeuler-riscv64 systemd[1]: Stopped Flush Journal to Persistent Storage.
+Aug 08 12:28:09 openeuler-riscv64 systemd[1]: Starting Flush Journal to Persistent Storage...
+Aug 08 12:28:09 openeuler-riscv64 systemd[1]: Finished Flush Journal to Persistent Storage.
+Aug 08 12:34:38 openeuler-riscv64 systemd[1]: Starting Time & Date Service...
+Aug 08 12:34:39 openeuler-riscv64 systemd[1]: Started Time & Date Service.
+Aug 08 12:35:09 openeuler-riscv64 systemd[1]: systemd-timedated.service: Deactivated successfully.
+Aug 08 12:49:44 openeuler-riscv64 systemd[1]: Starting Time & Date Service...
+Aug 08 12:49:45 openeuler-riscv64 systemd[1]: Started Time & Date Service.
+Aug 08 12:50:15 openeuler-riscv64 systemd[1]: systemd-timedated.service: Deactivated successfully.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Stopping OpenSSH server daemon...
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Deactivated successfully.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 297 (sshd) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 300 (sshd) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 301 (python3) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 1214 (bash) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 1285 (grep) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 29571 (sh) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 29572 (sudo) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 29573 (tee) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 29574 (bash) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 29618 (python3) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 29619 (bash) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Unit process 29628 (systemctl) remains running after unit stopped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Stopped OpenSSH server daemon.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Stopped target sshd-keygen.target.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Stopping sshd-keygen.target...
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Condition check resulted in OpenSSH ecdsa Server Key Generation being skipped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Condition check resulted in OpenSSH ed25519 Server Key Generation being skipped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Condition check resulted in OpenSSH rsa Server Key Generation being skipped.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Reached target sshd-keygen.target.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 297 (sshd) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 300 (sshd) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 301 (python3) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 1214 (bash) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 1285 (grep) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 29571 (sh) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 29572 (sudo) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 29573 (tee) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 29574 (bash) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 29618 (python3) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 29619 (bash) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: sshd.service: Found left-over process 29628 (systemctl) in control group while starting unit. Ignoring.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: This usually indicates unclean termination of a previous run, or service implementation deficiencies.
+Aug 08 12:51:07 openeuler-riscv64 systemd[1]: Starting OpenSSH server daemon...
+Aug 08 12:51:08 openeuler-riscv64 systemd[1]: Started OpenSSH server daemon.
+Aug 08 12:53:16 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:53:17 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:54:33 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:54:34 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:54:46 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:54:47 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:55:32 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:32 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:55:32 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:55:33 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:55:34 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:55:34 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:55:34 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:55:35 openeuler-riscv64 systemd[1]: run-r2b38fd7dee3b4ad5a0c1d08ebf5ccf93.service: Deactivated successfully.
+Aug 08 12:55:41 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:41 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:41 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:48 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd-kcm.socket:6: ListenStream= references a path below legacy directory /var/run/, updating /var/run/.heim_org.h5l.kcm-socket → /run/.heim_org.h5l.kcm-socket; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd-kcm.socket:6: ListenStream= references a path below legacy directory /var/run/, updating /var/run/.heim_org.h5l.kcm-socket → /run/.heim_org.h5l.kcm-socket; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd-kcm.socket:6: ListenStream= references a path below legacy directory /var/run/, updating /var/run/.heim_org.h5l.kcm-socket → /run/.heim_org.h5l.kcm-socket; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd-kcm.socket:6: ListenStream= references a path below legacy directory /var/run/, updating /var/run/.heim_org.h5l.kcm-socket → /run/.heim_org.h5l.kcm-socket; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:49 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/sssd.service:16: PIDFile= references a path below legacy directory /var/run/, updating /var/run/sssd.pid → /run/sssd.pid; please update the unit file accordingly.
+Aug 08 12:55:50 openeuler-riscv64 systemd[1]: Reloading.
+Aug 08 12:55:51 openeuler-riscv64 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Aug 08 12:55:54 openeuler-riscv64 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+Aug 08 12:55:54 openeuler-riscv64 systemd[1]: Starting man-db-cache-update.service...
+Aug 08 12:55:55 openeuler-riscv64 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+Aug 08 12:55:55 openeuler-riscv64 systemd[1]: Finished man-db-cache-update.service.
+Aug 08 12:55:55 openeuler-riscv64 systemd[1]: run-r7ecb95a675a94034aa0f897df740642b.service: Deactivated successfully.
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl /usr/lib/systemd/systemd1
+Couldn't canonicalize path: No such file or directory
++ CHECK_RESULT 1 0 1 'Succeed to execute journalctl'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Succeed to execute journalctl'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
+++ lsblk
+++ grep disk
+++ grep da
+++ awk '{print $1}'
+++ head -n 1
++ local_disk=vda
++ journalctl /dev/vda
++ grep -E 'begins at|begin at|[0-9]|entries'
+-- No entries --
++ CHECK_RESULT 0 0 0 'Failed to execute journalctl disk'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute journalctl disk'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl /dev/testdev
+Couldn't canonicalize path: No such file or directory
++ CHECK_RESULT 1 0 1 'Succeed to execute journalctl disk'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Succeed to execute journalctl disk'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:56:07 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:56:08 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:56:08 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/log testlog
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:56:09 2023 - INFO  - End to restore the test environment.

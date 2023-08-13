@@ -1,0 +1,186 @@
+测试套/软件包名,测试用例名,日志文件,原因,Broken testcase,pkg not found,preinstall absent,kernel module absent,file missing,systemd unit restart failure,systemd unit runtime error,systemd unit enable failure,timeout
+netcf,oe_test_service_netcf-transaction,2023-08-08-11_47_03.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+qperf,oe_test_qperf_01,2023-08-08-20_15_33.log,"timeout
+",0,0,0,0,0,0,0,0,1
+dmidecode,oe_test_dmidecode,2023-08-08-11_34_20.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+patchutils,oe_test_patchutils_interdiff_01,2023-08-08-09_58_35.log,,0,0,0,0,0,0,0,0,0
+patchutils,oe_test_patchutils_combinediff_01,2023-08-08-09_49_51.log,,0,0,0,0,0,0,0,0,0
+patchutils,oe_test_patchutils_flipdiff_01,2023-08-08-09_54_04.log,,0,0,0,0,0,0,0,0,0
+tog-pegasus,oe_test_service_tog-pegasus,2023-08-08-12_02_40.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+smoke-basic-os,oe_test_user_debug_iotop_SCEN_01,2023-08-08-13_57_16.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_perf,2023-08-08-10_45_07.log,"timeout
+",0,0,0,0,0,0,0,0,1
+smoke-basic-os,oe_test_grub2_mkconfig,2023-08-08-11_52_08.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_glibc_getaddrinfo_01,2023-08-08-11_50_54.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_llvm,2023-08-08-11_00_18.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_08,2023-08-08-12_33_07.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_gettext,2023-08-08-12_21_58.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_firewalld_server,2023-08-08-11_50_43.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_criu,2023-08-08-10_21_33.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_os-prober_02,2023-08-08-12_18_04.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_ip6tables_02,2023-08-08-11_53_37.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_yumgroup_001,2023-08-08-10_54_21.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_rpm_cmd,2023-08-08-12_26_28.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_ncurses,2023-08-08-12_09_34.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_logrotate_004,2023-08-08-14_00_57.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_aide_init_database,2023-08-08-13_29_13.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_sevice_001,2023-08-08-10_47_20.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_ipv6_dnsmasq,2023-08-08-11_56_27.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_iptables,2023-08-08-11_55_20.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_07,2023-08-08-12_32_56.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_os-prober_01,2023-08-08-12_17_56.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_CPUinfo_001,2023-08-08-09_51_27.log,"timeout
+",0,0,0,0,0,0,0,0,1
+smoke-basic-os,oe_test_rsyslog_05,2023-08-08-12_28_46.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_01,2023-08-08-12_27_34.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_09,2023-08-08-12_33_47.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_02,2023-08-08-12_27_56.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_syslog_logrotate_001,2023-08-08-10_51_20.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_iptables-save,2023-08-08-11_55_05.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_perf_top_01,2023-08-08-13_50_23.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_log_001,2023-08-08-10_35_48.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_bbr_02,2023-08-08-13_43_52.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_skopeo,2023-08-08-10_47_43.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_pwd_001,2023-08-08-10_46_04.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_cmp,2023-08-08-10_59_36.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_03,2023-08-08-12_28_05.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_ip6tables_01,2023-08-08-11_53_15.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_mkdosfs,2023-08-08-14_02_47.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_dumpe2fs,2023-08-08-14_03_29.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_cat_001,2023-08-08-09_50_19.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_MEMinfo_001,2023-08-08-10_38_47.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_04,2023-08-08-12_28_17.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_sort,2023-08-08-10_47_30.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_network_001,2023-08-08-10_41_13.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_ebtables,2023-08-08-11_50_00.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_mke2fs,2023-08-08-14_04_17.log,,0,0,0,0,0,0,0,0,0
+smoke-basic-os,oe_test_ima_v2_manual_gen_digest_01,2023-08-08-13_44_23.log,"file missing
+",0,0,0,0,1,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_10,2023-08-08-12_34_36.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_ethtool_01,2023-08-08-11_50_11.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_rsyslog_06,2023-08-08-12_32_38.log,"preinstall absent
+",0,0,1,0,0,0,0,0,0
+smoke-basic-os,oe_test_setools,2023-08-08-12_50_05.log,,0,0,0,0,0,0,0,0,0
+libosinfo,oe_test_osinfo-detect,2023-08-08-10_47_55.log,"file missing
+",0,0,0,0,1,0,0,0,0
+libosinfo,oe_test_osinfo-db-import,2023-08-08-10_53_57.log,,0,0,0,0,0,0,0,0,0
+libosinfo,oe_test_osinfo-install-script,2023-08-08-10_50_35.log,"file missing
+",0,0,0,0,1,0,0,0,0
+openscap,oe_test_assess_safety_compliance,2023-08-08-21_07_53.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+openscap,oe_test_ensure_security_compliance,2023-08-08-21_04_08.log,,0,0,0,0,0,0,0,0,0
+openscap,oe_test_scanning_remote_system,2023-08-08-21_00_31.log,"file missing
+timeout
+",0,0,0,0,1,0,0,0,1
+crontabs,oe_test_crontabs,2023-08-08-11_32_27.log,,0,0,0,0,0,0,0,0,0
+plymouth,oe_test_service_plymouth-switch-root-initramfs,2023-08-08-10_07_32.log,"systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,0,1,1,0,0
+valgrind,oe_test_valgrind,2023-08-08-12_05_24.log,"file missing
+",0,0,0,0,1,0,0,0,0
+mtx,oe_test_mtx_mtx,2023-08-08-20_19_05.log,"file missing
+",0,0,0,0,1,0,0,0,0
+mtx,oe_test_mtx_loaderinfo,2023-08-08-20_16_23.log,"file missing
+",0,0,0,0,1,0,0,0,0
+mtx,oe_test_mtx_scsieject,2023-08-08-20_20_39.log,"file missing
+",0,0,0,0,1,0,0,0,0
+mtx,oe_test_mtx_tapeinfo,2023-08-08-20_17_45.log,"file missing
+",0,0,0,0,1,0,0,0,0
+mtx,oe_test_mtx_scsitape,2023-08-08-20_22_01.log,"file missing
+",0,0,0,0,1,0,0,0,0
+acl,oe_test_access_providepam,2023-08-08-09_52_11.log,,0,0,0,0,0,0,0,0,0
+gdm,oe_test_service_gdm,2023-08-08-20_22_28.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+policycoreutils,oe_test_service_restorecond,2023-08-08-20_12_16.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+keyutils,oe_test_keyutils-api,2023-08-08-10_51_47.log,"file missing
+",0,0,0,0,1,0,0,0,0
+openvpn,oe_test_openvpn,2023-08-08-20_18_01.log,"timeout
+",0,0,0,0,0,0,0,0,1
+ipmitool,oe_test_service_exchange-bmc-os-info,2023-08-08-10_57_16.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+ipmitool,oe_test_service_ipmievd,2023-08-08-10_58_31.log,"kernel module absent
+file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,1,1,1,1,1,0
+ipmitool,oe_test_service_bmc-snmp-proxy,2023-08-08-10_55_56.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0
+dbus,oe_test_socket_dbus,2023-08-08-11_14_29.log,,0,0,0,0,0,0,0,0,0
+fontconfig,oe_test_fontconfig_fc-list,2023-08-08-12_14_11.log,"Broken testcase
+",1,0,0,0,0,0,0,0,0
+libstoragemgmt,oe_test_service_libstoragemgmt,2023-08-08-11_43_59.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+quota,oe_test_service_rpc-rquotad,2023-08-08-11_21_43.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+quota,oe_test_service_quota_nld,2023-08-08-11_20_11.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+systemd unit enable failure
+",0,0,0,0,1,1,1,1,0
+iputils,oe_test_service_rdisc,2023-08-08-20_26_21.log,"preinstall absent
+systemd unit restart failure
+systemd unit runtime error
+",0,0,1,0,0,1,1,0,0
+iputils,oe_test_service_ninfod,2023-08-08-20_25_13.log,"file missing
+systemd unit restart failure
+systemd unit runtime error
+",0,0,0,0,1,1,1,0,0

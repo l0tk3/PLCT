@@ -1,0 +1,141 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 10:33:38 2023 - INFO  - Start testing...
++ journalctl --no-pager
++ CHECK_RESULT 0 0 0 'journalctl --no-pager failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='journalctl --no-pager failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat all_log
++ grep -E 'LVM|NetworkManager'
+Aug 08 09:49:33 openeuler-riscv64 systemd[1]: Listening on LVM2 poll daemon socket.
+Aug 08 09:49:33 openeuler-riscv64 systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+Aug 08 09:49:33 openeuler-riscv64 systemd[1]: Finished Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+Aug 08 09:49:40 openeuler-riscv64 NetworkManager[259]: <info>  [1691459380.3129] NetworkManager (version 1.32.12-18.oe2309) is starting... (for the first time)
+Aug 08 09:49:40 openeuler-riscv64 NetworkManager[259]: <info>  [1691459380.3165] Read config: /etc/NetworkManager/NetworkManager.conf
+Aug 08 09:49:40 openeuler-riscv64 NetworkManager[259]: <info>  [1691459380.5132] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+Aug 08 09:49:40 openeuler-riscv64 NetworkManager[259]: <info>  [1691459380.7288] manager[0x2ab80dc000]: monitoring kernel firmware directory '/lib/firmware'.
+Aug 08 09:49:40 openeuler-riscv64 dbus-daemon[253]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.2' (uid=0 pid=259 comm="/usr/sbin/NetworkManager --no-daemon")
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.5378] hostname: hostname: using hostnamed
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.5389] hostname: hostname changed from (none) to "openeuler-riscv64"
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.5504] dns-mgr[0x2ab80bf250]: init: dns=default rc-manager=symlink
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.6823] manager[0x2ab80dc000]: rfkill: Wi-Fi hardware radio set enabled
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.6831] manager[0x2ab80dc000]: rfkill: WWAN hardware radio set enabled
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.7659] Loaded device plugin: NMAtmManager (/usr/lib64/NetworkManager/1.32.12-18.oe2309/libnm-device-plugin-adsl.so)
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.7970] Loaded device plugin: NMTeamFactory (/usr/lib64/NetworkManager/1.32.12-18.oe2309/libnm-device-plugin-team.so)
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.8011] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.8025] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.8038] manager: Networking is enabled by state file
+Aug 08 09:49:42 openeuler-riscv64 dbus-daemon[253]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.2' (uid=0 pid=259 comm="/usr/sbin/NetworkManager --no-daemon")
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.8126] dhcp-init: default DHCP client 'dhclient' is not available
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.8136] dhcp-init: Using DHCP client 'internal'
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.8390] settings: Loaded settings plugin: ifcfg-rh ("/usr/lib64/NetworkManager/1.32.12-18.oe2309/libnm-settings-plugin-ifcfg-rh.so")
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.8437] settings: Loaded settings plugin: keyfile (internal)
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.8848] device (lo): carrier: link connected
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.9000] manager: (lo): new Generic device (/org/freedesktop/NetworkManager/Devices/1)
+Aug 08 09:49:42 openeuler-riscv64 NetworkManager[259]: <info>  [1691459382.9439] manager: (enp0s2): new Ethernet device (/org/freedesktop/NetworkManager/Devices/2)
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.0501] settings: (enp0s2): created default wired connection 'Wired connection 1'
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.0801] device (enp0s2): state change: unmanaged -> unavailable (reason 'managed', sys-iface-state: 'external')
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.1066] device (enp0s2): carrier: link connected
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.2591] device (enp0s2): state change: unavailable -> disconnected (reason 'none', sys-iface-state: 'managed')
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.2831] policy: auto-activating connection 'Wired connection 1' (ab386e69-14fb-3b87-b2cb-dd59b9c67a71)
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.2988] device (enp0s2): Activation: starting connection 'Wired connection 1' (ab386e69-14fb-3b87-b2cb-dd59b9c67a71)
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.3026] device (enp0s2): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.3105] manager: NetworkManager state is now CONNECTING
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.3210] device (enp0s2): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.3377] device (enp0s2): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.3541] dhcp4 (enp0s2): activation: beginning transaction (timeout in 45 seconds)
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.4295] dhcp4 (enp0s2): state changed unknown -> bound, address=10.0.2.15
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.4549] device (enp0s2): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.5459] device (enp0s2): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.5549] device (enp0s2): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.5636] manager: NetworkManager state is now CONNECTED_LOCAL
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.5715] manager: NetworkManager state is now CONNECTED_SITE
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.5733] policy: set 'Wired connection 1' (enp0s2) as default for IPv4 routing and DNS
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.6190] device (enp0s2): Activation: successful, device activated.
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.6369] manager: NetworkManager state is now CONNECTED_GLOBAL
+Aug 08 09:49:43 openeuler-riscv64 NetworkManager[259]: <info>  [1691459383.6514] manager: startup complete
+Aug 08 09:49:45 openeuler-riscv64 NetworkManager[259]: <info>  [1691459385.1719] policy: set 'Wired connection 1' (enp0s2) as default for IPv6 routing and DNS
+Aug 08 09:49:54 openeuler-riscv64 systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
++ CHECK_RESULT 0 0 0 'grep LVM|NetworkManager failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='grep LVM|NetworkManager failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl -k --no-pager
++ cat kernel_log
++ grep -i NetworkManager
++ CHECK_RESULT 1 0 1 'NetworkManager exist'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='NetworkManager exist'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl -b --no-pager
++ CHECK_RESULT 0 0 0 'journalctl -b failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='journalctl -b failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 10:33:39 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:33:40 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 10:33:40 2023 - INFO  - start environment cleanup.
++ rm -rf all_log boot_log kernel_log
++ LOG_INFO 'Finsh environment cleanup! '
++ message='Finsh environment cleanup! '
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finsh environment cleanup! '
+Tue Aug  8 10:33:41 2023 - INFO  - Finsh environment cleanup! 

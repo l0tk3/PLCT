@@ -1,0 +1,65 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:51:15 2023 - INFO  - Start to run test.
++ local exp root_maj_min maj min maj_hex min_hex
+++ lsblk -o MAJ:MIN,MOUNTPOINT
+++ grep ' /$'
+++ awk '{print $1}'
++ root_maj_min=253:2
++ maj=253
++ min=2
+++ printf %x 253
++ maj_hex=fd
+++ printf %x 2
++ min_hex=2
++ exp=fd02
++ stat -c %D /etc/passwd
++ grep fd02
+fd02
++ CHECK_RESULT 0 0 0 'Failed to execute stat'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute stat'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:51:16 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:51:16 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_stat.sh post_test'
++ message='oe_test_stat.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_stat.sh post_test'
+Tue Aug  8 12:51:17 2023 - INFO  - oe_test_stat.sh post_test

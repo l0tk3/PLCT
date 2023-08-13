@@ -1,0 +1,255 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:11:44 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL sanlock
++ pkgs=sanlock
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs sanlock --node 1 --tempfile ''
++ tmpfile2=/tmp/tmprn_7cq6s
++ '[' -z '' ']'
++ tmpfile=/tmp/tmprn_7cq6s
++ mkdir sanlocktest
++ cd sanlocktest
++ dd if=/dev/zero bs=1048576 count=1 of=./dev
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0279386 s, 37.5 MB/s
++ dd if=/dev/zero bs=1048576 count=1 of=./res
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0339221 s, 30.9 MB/s
++ chown sanlock:sanlock ./dev ./res
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test
++ sanlock direct init -s test:0:./dev:0
+init done 0
++ sanlock direct init -r test:testres:./res:0
+init done 0
++ sanlock client init -s test:0:./dev:0
+init
+init done 0
++ sanlock client init -r test:testres:./res:0
+init
+init done 0
++ sanlock client add_lockspace -s test:1:./dev:0
+add_lockspace
+add_lockspace done 0
++ systemctl start wdmd
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:12:44 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:12:45 2023 - INFO  - Start to run test.
++ wdmd -h
++ fgrep 'wdmd [options]'
+fgrep: warning: fgrep is obsolescent; using grep -F
+wdmd [options]
++ CHECK_RESULT 0 0 0 'Check wdmd -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd --help
++ fgrep 'wdmd [options]'
+fgrep: warning: fgrep is obsolescent; using grep -F
+wdmd [options]
++ CHECK_RESULT 0 0 0 'Check wdmd --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd --version
++ grep 'wdmd version [[:digit:]]'
+wdmd version 3.8.5
++ CHECK_RESULT 0 0 0 'Check wdmd --version failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd --version failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd -V
++ grep 'wdmd version [[:digit:]]'
+wdmd version 3.8.5
++ CHECK_RESULT 0 0 0 'Check wdmd -V failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd -V failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd -d -D
++ grep 'client 0 name signal pid'
+client 0 name signal pid 0 fd 6 dead 0 ref 0 now 462 renewal 0 expire 0
++ CHECK_RESULT 0 0 0 'Check wdmd -d -D failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd -d -D failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd -d -p
++ grep 'client 0 name signal pid'
+client 0 name signal pid 0 fd 6 dead 0 ref 0 now 462 renewal 0 expire 0
++ CHECK_RESULT 0 0 0 'Check wdmd -d -p failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd -d -p failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd -d -H 0
++ grep 'client 0 name signal pid'
+client 0 name signal pid 0 fd 6 dead 0 ref 0 now 462 renewal 0 expire 0
++ CHECK_RESULT 0 0 0 'Check wdmd -d -HD failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd -d -HD failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd -d -G sanlock
++ grep 'client 0 name signal pid'
+client 0 name signal pid 0 fd 6 dead 0 ref 0 now 462 renewal 0 expire 0
++ CHECK_RESULT 0 0 0 'Check wdmd -d -G failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd -d -G failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd -d -S 1
++ grep 'client 0 name signal pid'
+client 0 name signal pid 0 fd 6 dead 0 ref 0 now 462 renewal 0 expire 0
++ CHECK_RESULT 0 0 0 'Check wdmd -d -S failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd -d -S failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd -d -s /etc/wdmd.d -k 1000 -w /dev/watchdog0
++ grep 'client 0 name signal pid'
+client 0 name signal pid 0 fd 6 dead 0 ref 0 now 462 renewal 0 expire 0
++ CHECK_RESULT 0 0 0 'Check wdmd -s -k -w failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd -s -k -w failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ wdmd --dump --probe
++ grep 'client 0 name signal pid'
+client 0 name signal pid 0 fd 6 dead 0 ref 0 now 462 renewal 0 expire 0
++ CHECK_RESULT 0 0 0 'Check wdmd --dump --probe failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check wdmd --dump --probe failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:12:46 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:12:46 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmprn_7cq6s ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmprn_7cq6s
++ '[' 0 -ne 0 ']'
+++ pgrep -f 'sanlock daemon'
++ kill -9 1180 1182
++ cd ..
++ rm -rf sanlocktest
++ systemctl stop wdmd
+Failed to stop wdmd.service: Unit wdmd.service not loaded.
+oe_test_sanlock_wdmd.sh: line 79:  1180 Killed                  nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test > ./info.log 2>&1  (wd: ~/mugen/testcases/cli-test/sanlock/sanlocktest)
++ LOG_INFO 'Finish restore the test environment.'
++ message='Finish restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restore the test environment.'
+Tue Aug  8 10:12:56 2023 - INFO  - Finish restore the test environment.

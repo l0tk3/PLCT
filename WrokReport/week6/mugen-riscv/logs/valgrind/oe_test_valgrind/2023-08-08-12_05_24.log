@@ -1,0 +1,175 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 12:05:26 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'valgrind glibc-devel glibc-debuginfo'
++ pkgs='valgrind glibc-devel glibc-debuginfo'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'valgrind glibc-devel glibc-debuginfo' --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 15:03:45 ago on Mon Aug  7 21:02:07 2023.
+No match for argument: valgrind
+Package glibc-devel-2.36-18.oe2309.riscv64 is already installed.
+No match for argument: glibc-debuginfo
+Error: Unable to find a match: valgrind glibc-debuginfo'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 15:03:45 ago on Mon Aug  7 21:02:07 2023.
+No match for argument: valgrind
+Package glibc-devel-2.36-18.oe2309.riscv64 is already installed.
+No match for argument: glibc-debuginfo
+Error: Unable to find a match: valgrind glibc-debuginfo'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 12:05:54 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:05:54 2023 - INFO  - Start to run test.
++ valgrind --version
+oe_test_valgrind.sh: line 29: valgrind: command not found
++ grep -E 'valgrind-[0-9]+.[0-9]+.[0-9]+'
++ CHECK_RESULT 1 0 0 'check valgrind version error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='check valgrind version error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'check valgrind version error'
++ LOG_ERROR 'check valgrind version error'
++ message='check valgrind version error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'check valgrind version error'
+Tue Aug  8 12:05:55 2023 - ERROR - check valgrind version error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_valgrind.sh line 30'
++ message='oe_test_valgrind.sh line 30'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_valgrind.sh line 30'
+Tue Aug  8 12:05:55 2023 - ERROR - oe_test_valgrind.sh line 30
++ '[' 0 -eq 1 ']'
++ return 0
++ cat
++ gcc -g -o valgrind_test valgrind_test.c
++ CHECK_RESULT 0 0 0 'compile valgrind_test error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='compile valgrind_test error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ valgrind --tool=memcheck --leak-check=full ./valgrind_test
++ CHECK_RESULT 127 0 0 'execute valgrind command error'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='execute valgrind command error'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'execute valgrind command error'
++ LOG_ERROR 'execute valgrind command error'
++ message='execute valgrind command error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'execute valgrind command error'
+Tue Aug  8 12:05:58 2023 - ERROR - execute valgrind command error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_valgrind.sh line 44'
++ message='oe_test_valgrind.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_valgrind.sh line 44'
+Tue Aug  8 12:05:59 2023 - ERROR - oe_test_valgrind.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ grep '8 bytes in 1 blocks are definitely lost in loss record' valgrind_test.log
++ CHECK_RESULT 1 0 0 'check valgrind_test.log error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='check valgrind_test.log error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'check valgrind_test.log error'
++ LOG_ERROR 'check valgrind_test.log error'
++ message='check valgrind_test.log error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'check valgrind_test.log error'
+Tue Aug  8 12:05:59 2023 - ERROR - check valgrind_test.log error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_valgrind.sh line 46'
++ message='oe_test_valgrind.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_valgrind.sh line 46'
+Tue Aug  8 12:06:00 2023 - ERROR - oe_test_valgrind.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:06:00 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 12:06:01 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 12:06:02 2023 - INFO  - start environment cleanup.
++ rm -rf valgrind_test valgrind_test.c valgrind_test.log
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 15:03:45 ago on Mon Aug  7 21:02:07 2023.
+No match for argument: valgrind
+Package glibc-devel-2.36-18.oe2309.riscv64 is already installed.
+No match for argument: glibc-debuginfo
+Error: Unable to find a match: valgrind glibc-debuginfo ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 15:03:45 ago on Mon Aug  7 21:02:07 2023.
+No match for argument: valgrind
+Package glibc-devel-2.36-18.oe2309.riscv64 is already installed.
+No match for argument: glibc-debuginfo
+Error: Unable to find a match: valgrind glibc-debuginfo'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+OSError: [Errno 36] File name too long: 'Last metadata expiration check: 15:03:45 ago on Mon Aug  7 21:02:07 2023.\nNo match for argument: valgrind\nPackage glibc-devel-2.36-18.oe2309.riscv64 is already installed.\nNo match for argument: glibc-debuginfo\nError: Unable to find a match: valgrind glibc-debuginfo'
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 12:06:05 2023 - INFO  - Finish environment cleanup!

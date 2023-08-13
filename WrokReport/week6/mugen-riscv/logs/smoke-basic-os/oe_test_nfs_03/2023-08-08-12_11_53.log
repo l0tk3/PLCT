@@ -1,0 +1,133 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:11:55 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL nfs-utils
++ pkgs=nfs-utils
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs nfs-utils --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpgrppxi9o
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpgrppxi9o
++ cp /etc/exports /etc/exports.bak
++ echo '/home/nfs *(rw,sync,all_squash)'
++ mkdir /home/nfs /home/test
++ exportfs -avr
+exportfs: /etc/exports [1]: Neither 'subtree_check' or 'no_subtree_check' specified for export "*:/home/nfs".
+  Assuming default behaviour ('no_subtree_check').
+  NOTE: this default has changed since nfs-utils version 1.0.x
+
+exporting *:/home/nfs
++ systemctl restart nfs
++ chmod 777 /home/nfs
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:12:34 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:12:35 2023 - INFO  - Start to run test.
++ mount -t nfs -o ro 127.0.0.1:/home/nfs /home/test
++ CHECK_RESULT 0 0 0 'Mount failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Mount failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ touch /home/test/test
+touch: cannot touch '/home/test/test': Read-only file system
++ CHECK_RESULT 1 0 1 'Folder is not read-only'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Folder is not read-only'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ mount -o remount,rw /home/test
++ CHECK_RESULT 0 0 0 'Failed to modify permission'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to modify permission'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ touch /home/test/test
++ CHECK_RESULT 0 0 0 'Folder is not write'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Folder is not write'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:12:36 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:12:37 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:12:37 2023 - INFO  - Start to restore the test environment.
++ umount /home/test
++ rm -rf /home/nfs /home/test
++ mv -f /etc/exports.bak /etc/exports
++ exportfs -avr
+exportfs: No file systems exported!
++ systemctl stop nfs
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpgrppxi9o ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpgrppxi9o
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:12:53 2023 - INFO  - End to restore the test environment.

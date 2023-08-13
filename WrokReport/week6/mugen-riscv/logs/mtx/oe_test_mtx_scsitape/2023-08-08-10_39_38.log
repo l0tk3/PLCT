@@ -1,0 +1,365 @@
++ source common/common.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ LOG_INFO 'Start to config params of the case.'
++ message='Start to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to config params of the case.'
+Tue Aug  8 10:39:40 2023 - INFO  - Start to config params of the case.
++ common_config_params
++ DRIVER_MEDIUMX=L80
++ DRIVER_TAPE=T10000B
++ LOG_INFO 'End to config params of the case.'
++ message='End to config params of the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to config params of the case.'
+Tue Aug  8 10:39:41 2023 - INFO  - End to config params of the case.
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 10:39:41 2023 - INFO  - Start to prepare the test environment.
++ common_pre
++ DNF_INSTALL 'mtx rpm-build rpmdevtools git zlib-devel'
++ pkgs='mtx rpm-build rpmdevtools git zlib-devel'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'mtx rpm-build rpmdevtools git zlib-devel' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpodzpffca
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpodzpffca
++ rpmdev-setuptree
++ git clone https://gitee.com/src-openeuler/mhvtl.git ./tmp/mhvtl
+Cloning into './tmp/mhvtl'...
++ cp ./tmp/mhvtl/1.7-0_release.tar.gz ./tmp/mhvtl/build-kernel-module.patch ./tmp/mhvtl/build-mhvtl-module.patch /root/rpmbuild/SOURCES
++ rpmbuild -bb ./tmp/mhvtl/mhvtl-utils.spec
+warning: %patchN is deprecated (2 usages found), use %patch N (or %patch -P N)
+warning: bogus date in %changelog: Wed Dec 22 2022 lutkunpeng <lutkunpeng@163.com> - 1.7-3
+error: Failed build dependencies:
+	kernel-devel is needed by mhvtl-utils-1.7-3.riscv64
+
+RPM build warnings:
+    %patchN is deprecated (2 usages found), use %patch N (or %patch -P N)
+    bogus date in %changelog: Wed Dec 22 2022 lutkunpeng <lutkunpeng@163.com> - 1.7-3
+++ arch
++ dnf install '/root/rpmbuild/RPMS/riscv64/*.rpm' -y
+Last metadata expiration check: 13:38:38 ago on Mon Aug  7 21:02:07 2023.
+Can not load RPM file: /root/rpmbuild/RPMS/riscv64/*.rpm.
+Could not open: /root/rpmbuild/RPMS/riscv64/*.rpm
++ systemctl start mhvtl.target
+Failed to start mhvtl.target: Unit mhvtl.target not found.
++ SLEEP_WAIT 5s
++ wait_time=5s
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5s --cmd '' --mode 1
+++ lsscsi -g
+common/common.sh: line 43: lsscsi: command not found
+++ grep L80
+++ grep -oE '/dev/sg.*'
++ PATH_MEDIUMX=
+++ lsscsi -g
+common/common.sh: line 45: lsscsi: command not found
+++ grep -m 1 T10000B
+++ grep -oE '/dev/st[0-9]*'
++ PATH_TAPE=
++ common_load
++ mtx -f next
+cannot open SCSI device 'next' - No such file or directory
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 10:40:52 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:40:52 2023 - INFO  - Start to run test.
++ common_test
++ systemctl status mhvtl.target
++ grep 'mhvtl service allowing to start/stop'
+Unit mhvtl.target could not be found.
++ CHECK_RESULT 1 0 0 'mhvtl service WRONG'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='mhvtl service WRONG'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'mhvtl service WRONG'
++ LOG_ERROR 'mhvtl service WRONG'
++ message='mhvtl service WRONG'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'mhvtl service WRONG'
+Tue Aug  8 10:40:53 2023 - ERROR - mhvtl service WRONG
++ (( exec_result++ ))
++ LOG_ERROR 'common/common.sh line 52'
++ message='common/common.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'common/common.sh line 52'
+Tue Aug  8 10:40:54 2023 - ERROR - common/common.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ scsitape -f setblk 5
+cannot open SCSI device 'setblk' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f setblk error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f setblk error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f setblk error'
++ LOG_ERROR 'option: -f setblk error'
++ message='option: -f setblk error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f setblk error'
+Tue Aug  8 10:40:54 2023 - ERROR - option: -f setblk error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 46'
++ message='oe_test_mtx_scsitape.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 46'
+Tue Aug  8 10:40:55 2023 - ERROR - oe_test_mtx_scsitape.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ scsitape -f fsf 0
+cannot open SCSI device 'fsf' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f fsf error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f fsf error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f fsf error'
++ LOG_ERROR 'option: -f fsf error'
++ message='option: -f fsf error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f fsf error'
+Tue Aug  8 10:40:56 2023 - ERROR - option: -f fsf error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 49'
++ message='oe_test_mtx_scsitape.sh line 49'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 49'
+Tue Aug  8 10:40:56 2023 - ERROR - oe_test_mtx_scsitape.sh line 49
++ '[' 0 -eq 1 ']'
++ return 0
++ scsitape -f bsf 0
+cannot open SCSI device 'bsf' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f bsf error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f bsf error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f bsf error'
++ LOG_ERROR 'option: -f bsf error'
++ message='option: -f bsf error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f bsf error'
+Tue Aug  8 10:40:57 2023 - ERROR - option: -f bsf error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 52'
++ message='oe_test_mtx_scsitape.sh line 52'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 52'
+Tue Aug  8 10:40:57 2023 - ERROR - oe_test_mtx_scsitape.sh line 52
++ '[' 0 -eq 1 ']'
++ return 0
++ scsitape -f eod
+cannot open SCSI device 'eod' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f eod error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f eod error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f eod error'
++ LOG_ERROR 'option: -f eod error'
++ message='option: -f eod error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f eod error'
+Tue Aug  8 10:40:58 2023 - ERROR - option: -f eod error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 55'
++ message='oe_test_mtx_scsitape.sh line 55'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 55'
+Tue Aug  8 10:40:59 2023 - ERROR - oe_test_mtx_scsitape.sh line 55
++ '[' 0 -eq 1 ']'
++ return 0
++ scsitape -f rewind
+cannot open SCSI device 'rewind' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f rewind error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f rewind error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f rewind error'
++ LOG_ERROR 'option: -f rewind error'
++ message='option: -f rewind error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f rewind error'
+Tue Aug  8 10:40:59 2023 - ERROR - option: -f rewind error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 58'
++ message='oe_test_mtx_scsitape.sh line 58'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 58'
+Tue Aug  8 10:41:00 2023 - ERROR - oe_test_mtx_scsitape.sh line 58
++ '[' 0 -eq 1 ']'
++ return 0
++ scsitape -f mark 0
+cannot open SCSI device 'mark' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f mark error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f mark error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f mark error'
++ LOG_ERROR 'option: -f mark error'
++ message='option: -f mark error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f mark error'
+Tue Aug  8 10:41:00 2023 - ERROR - option: -f mark error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 61'
++ message='oe_test_mtx_scsitape.sh line 61'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 61'
+Tue Aug  8 10:41:01 2023 - ERROR - oe_test_mtx_scsitape.sh line 61
++ '[' 0 -eq 1 ']'
++ return 0
++ scsitape -f seek 0
+cannot open SCSI device 'seek' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f seek  error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f seek  error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f seek  error'
++ LOG_ERROR 'option: -f seek  error'
++ message='option: -f seek  error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f seek  error'
+Tue Aug  8 10:41:02 2023 - ERROR - option: -f seek  error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 64'
++ message='oe_test_mtx_scsitape.sh line 64'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 64'
+Tue Aug  8 10:41:02 2023 - ERROR - oe_test_mtx_scsitape.sh line 64
++ '[' 0 -eq 1 ']'
++ return 0
++ echo '01AB.测试。
+' -f write 5 50
++ CHECK_RESULT 0 0 0 'option: -f write  error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='option: -f write  error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ scsitape -f read 5 50
+cannot open SCSI device 'read' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f read  error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f read  error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f read  error'
++ LOG_ERROR 'option: -f read  error'
++ message='option: -f read  error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f read  error'
+Tue Aug  8 10:41:03 2023 - ERROR - option: -f read  error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 70'
++ message='oe_test_mtx_scsitape.sh line 70'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 70'
+Tue Aug  8 10:41:04 2023 - ERROR - oe_test_mtx_scsitape.sh line 70
++ '[' 0 -eq 1 ']'
++ return 0
++ scsitape -f eject
+cannot open SCSI device 'eject' - No such file or directory
++ CHECK_RESULT 1 0 0 'option: -f eject  error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='option: -f eject  error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'option: -f eject  error'
++ LOG_ERROR 'option: -f eject  error'
++ message='option: -f eject  error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'option: -f eject  error'
+Tue Aug  8 10:41:04 2023 - ERROR - option: -f eject  error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mtx_scsitape.sh line 73'
++ message='oe_test_mtx_scsitape.sh line 73'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mtx_scsitape.sh line 73'
+Tue Aug  8 10:41:05 2023 - ERROR - oe_test_mtx_scsitape.sh line 73
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 10:41:06 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 10
++ test 10 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 10:41:06 2023 - ERROR - failed to execute the case.
++ exit 10
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:41:07 2023 - INFO  - Start to restore the test environment.
++ common_post
++ rm -rf ./tmp /root/rpmbuild
++ systemctl stop mhvtl.target
+Failed to stop mhvtl.target: Unit mhvtl.target not loaded.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpodzpffca ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpodzpffca

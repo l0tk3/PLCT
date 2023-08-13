@@ -1,0 +1,244 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 11:53:58 2023 - INFO  - Start to run test.
++ ip -6 addr add 4::4/64 dev enp0s2
++ CHECK_RESULT 0 0 0 'Failed to add ipv6 4::4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 4::4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dev enp0s2
++ grep 4::4/64
+    inet6 4::4/64 scope global tentative 
++ CHECK_RESULT 0 0 0 'Failed to show ipv6 4::4'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 4::4'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr add ::7/64 dev enp0s2
++ CHECK_RESULT 0 0 0 'Failed to add ipv6 ::7'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 ::7'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dev enp0s2
++ grep ::7/64
+    inet6 ::7/64 scope global tentative 
++ CHECK_RESULT 0 0 0 'Failed to show ipv6 ::7'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 ::7'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr add 1111:1111:1111:1111:1111:1111:1111:1111/64 dev enp0s2
++ CHECK_RESULT 0 0 0 'Failed to add ipv6 1111:'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 1111:'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dev enp0s2
++ grep 1111:1111:1111:1111:1111:1111:1111:1111/64
+    inet6 1111:1111:1111:1111:1111:1111:1111:1111/64 scope global tentative 
++ CHECK_RESULT 0 0 0 'Failed to show ipv6 1111:'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 1111:'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr add 2001:da8:8000:d010:0:5efe:3.3.3.3/64 dev enp0s2
++ CHECK_RESULT 0 0 0 'Failed to add ipv6 2001:'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 2001:'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dev enp0s2
++ grep 2001:da8:8000:d010:0:5efe:303:303/64
+    inet6 2001:da8:8000:d010:0:5efe:303:303/64 scope global tentative 
++ CHECK_RESULT 0 0 0 'Failed to show ipv6 2001:'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 2001:'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr add 9000:0000:0000:0000:0000:0000:0000:0009/64 dev enp0s2
++ CHECK_RESULT 0 0 0 'Failed to add ipv6 9000:'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 9000:'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dev enp0s2
++ grep 9000::9/64
+    inet6 9000::9/64 scope global tentative 
++ CHECK_RESULT 0 0 0 'Failed to show ipv6 9000:'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 9000:'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr add 2000::/3 dev enp0s2
++ CHECK_RESULT 0 0 0 'Failed to add ipv6 2000::'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 2000::'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dev enp0s2
++ grep 2000::/3
+    inet6 2000::/3 scope global tentative 
++ CHECK_RESULT 0 0 0 'Failed to show ipv6 2000::'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 2000::'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr add fec0::/10 dev enp0s2
++ CHECK_RESULT 0 0 0 'Failed to add ipv6 fec0::'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 fec0::'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dev enp0s2
++ grep fec0::/10
+    inet6 fec0::/10 scope site tentative 
++ CHECK_RESULT 0 0 0 'Failed to show ipv6 fec0::'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 fec0::'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 addr add fe80::/10 dev enp0s2
++ CHECK_RESULT 0 0 0 'Failed to add ipv6 fe80::'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to add ipv6 fe80::'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ip -6 address show dev enp0s2
++ grep fe80::/10
+    inet6 fe80::/10 scope link tentative 
++ CHECK_RESULT 0 0 0 'Failed to show ipv6 fe80::'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to show ipv6 fe80::'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 11:53:59 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:53:59 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 11:54:00 2023 - INFO  - Start to restore the test environment.
++ ip -6 addr del 4::4/64 dev enp0s2
++ ip -6 addr del ::7/64 dev enp0s2
++ ip -6 addr del 1111:1111:1111:1111:1111:1111:1111:1111/64 dev enp0s2
++ ip -6 addr del 2001:da8:8000:d010:0:5efe:3.3.3.3/64 dev enp0s2
++ ip -6 addr del 9000:0000:0000:0000:0000:0000:0000:0009/64 dev enp0s2
++ ip -6 addr del 2000::/3 dev enp0s2
++ ip -6 addr del fec0::/10 dev enp0s2
++ ip -6 addr del fe80::/10 dev enp0s2
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 11:54:01 2023 - INFO  - End to restore the test environment.

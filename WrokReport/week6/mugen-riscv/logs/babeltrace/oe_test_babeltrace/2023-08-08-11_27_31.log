@@ -1,0 +1,292 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
++ main
+++ type -t post_test
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ rpm -qa
++ grep expect
++ grep expect
+++ type -t config_params
+++ type -t config_params
++ '[' -n '' ']'
++ '[' -n '' ']'
+++ type -t pre_test
+++ type -t pre_test
++ '[' -n function ']'
++ '[' -n function ']'
++ pre_test
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 11:27:33 2023 - INFO  - Start to prepare the test environment.
+Tue Aug  8 11:27:33 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL babeltrace
++ DNF_INSTALL babeltrace
++ pkgs=babeltrace
++ pkgs=babeltrace
++ node=1
++ node=1
++ '[' -z '' ']'
++ '[' -z '' ']'
++ tmpfile=
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs babeltrace --node 1 --tempfile ''
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs babeltrace --node 1 --tempfile ''
+Tue Aug  8 11:27:44 2023 - INFO  - pkgs:(babeltrace) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ OLD_LANG=
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 11:27:44 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:27:45 2023 - INFO  - pkgs:(babeltrace) is already installed
+Tue Aug  8 11:27:45 2023 - INFO  - Start testing...
++ babeltrace --help
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ OLD_LANG=
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+BabelTrace Trace Viewer and Converter 1.5.8
+
+usage : babeltrace [OPTIONS] FILE...
+
+  FILE                           Input trace file(s) and/or directory(ies)
+                                     (space-separated)
+  -w, --output OUTPUT            Output trace path (default: stdout)
+
+  -i, --input-format FORMAT      Input trace format (default: ctf)
+  -o, --output-format FORMAT     Output trace format (default: text)
+
+  -h, --help                     This help message
+  -l, --list                     List available formats
+  -v, --verbose                  Verbose mode
+                                 (or set BABELTRACE_VERBOSE environment variable)
+  -d, --debug                    Debug mode
+                                 (or set BABELTRACE_DEBUG environment variable)
+      --no-delta                 Do not print time delta between consecutive events
+  -n, --names name1<,name2,...>  Print field names:
+                                     (payload OR args OR arg)
+                                     none, all, scope, header, (context OR ctx)
+                                        (default: payload,context)
+  -f, --fields name1<,name2,...> Print additional fields:
+                                     all, trace, trace:hostname, trace:domain,
+                                     trace:procname, trace:vpid, loglevel, emf, callsite.
+                                     (default: trace:hostname,trace:procname,trace:vpid)
+      --clock-cycles             Timestamp in cycles
+      --clock-offset seconds     Clock offset in seconds
+      --clock-offset-ns ns       Clock offset in nanoseconds
+      --clock-seconds            Print the timestamps as [sec.ns]
+                                 (default is: [hh:mm:ss.ns])
+      --clock-date               Print clock date
+      --clock-gmt                Print clock in GMT time zone (default: local time zone)
+      --clock-force-correlate    Assume that clocks are inherently correlated
+                                 across traces.
+      --stream-intersection      Only print events when all streams are active.
+      --debug-info-dir           Directory in which to look for debugging information
+                                 files. (default: /usr/lib/debug/)
+      --debug-info-target-prefix Directory to use as a prefix for executable lookup
+      --debug-info-full-path     Show full debug info source and binary paths (if available)
+
+Formats available: ctf, dummy, lttng-live, ctf-metadata, text.
+
++ CHECK_RESULT 0 0 0 'babeltrace --help fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='babeltrace --help fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ babeltrace -l
++ grep 'Formats available: ctf, dummy, lttng-live, ctf-metadata, text'
+Formats available: ctf, dummy, lttng-live, ctf-metadata, text.
++ CHECK_RESULT 0 0 0 'babeltrace fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='babeltrace fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 11:27:46 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:27:46 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:27:46 2023 - INFO  - Start testing...
++ babeltrace --help
+BabelTrace Trace Viewer and Converter 1.5.8
+
+usage : babeltrace [OPTIONS] FILE...
+
+  FILE                           Input trace file(s) and/or directory(ies)
+                                     (space-separated)
+  -w, --output OUTPUT            Output trace path (default: stdout)
+
+  -i, --input-format FORMAT      Input trace format (default: ctf)
+  -o, --output-format FORMAT     Output trace format (default: text)
+
+  -h, --help                     This help message
+  -l, --list                     List available formats
+  -v, --verbose                  Verbose mode
+                                 (or set BABELTRACE_VERBOSE environment variable)
+  -d, --debug                    Debug mode
+                                 (or set BABELTRACE_DEBUG environment variable)
+      --no-delta                 Do not print time delta between consecutive events
+  -n, --names name1<,name2,...>  Print field names:
+                                     (payload OR args OR arg)
+                                     none, all, scope, header, (context OR ctx)
+                                        (default: payload,context)
+  -f, --fields name1<,name2,...> Print additional fields:
+                                     all, trace, trace:hostname, trace:domain,
+                                     trace:procname, trace:vpid, loglevel, emf, callsite.
+                                     (default: trace:hostname,trace:procname,trace:vpid)
+      --clock-cycles             Timestamp in cycles
+      --clock-offset seconds     Clock offset in seconds
+      --clock-offset-ns ns       Clock offset in nanoseconds
+      --clock-seconds            Print the timestamps as [sec.ns]
+                                 (default is: [hh:mm:ss.ns])
+      --clock-date               Print clock date
+      --clock-gmt                Print clock in GMT time zone (default: local time zone)
+      --clock-force-correlate    Assume that clocks are inherently correlated
+                                 across traces.
+      --stream-intersection      Only print events when all streams are active.
+      --debug-info-dir           Directory in which to look for debugging information
+                                 files. (default: /usr/lib/debug/)
+      --debug-info-target-prefix Directory to use as a prefix for executable lookup
+      --debug-info-full-path     Show full debug info source and binary paths (if available)
+
+Formats available: ctf, dummy, lttng-live, ctf-metadata, text.
+
++ CHECK_RESULT 0 0 0 'babeltrace --help fail'
+Tue Aug  8 11:27:46 2023 - INFO  - succeed to execute the case.
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='babeltrace --help fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ babeltrace -l
++ grep 'Formats available: ctf, dummy, lttng-live, ctf-metadata, text'
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to clean the test environment.'
++ message='Start to clean the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to clean the test environment.'
+Formats available: ctf, dummy, lttng-live, ctf-metadata, text.
++ CHECK_RESULT 0 0 0 'babeltrace fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='babeltrace fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 11:27:47 2023 - INFO  - Start to clean the test environment.
+Tue Aug  8 11:27:47 2023 - INFO  - Finish test!
++ export LANG=
++ LANG=
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:27:47 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to clean the test environment.'
++ message='End to clean the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to clean the test environment.'
+Tue Aug  8 11:27:47 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to clean the test environment.'
++ message='Start to clean the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to clean the test environment.'
+Tue Aug  8 11:27:48 2023 - INFO  - End to clean the test environment.
+Tue Aug  8 11:27:48 2023 - INFO  - Start to clean the test environment.
++ export LANG=
++ LANG=
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 11:27:48 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'End to clean the test environment.'
++ message='End to clean the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to clean the test environment.'
+Tue Aug  8 11:27:49 2023 - INFO  - End to clean the test environment.

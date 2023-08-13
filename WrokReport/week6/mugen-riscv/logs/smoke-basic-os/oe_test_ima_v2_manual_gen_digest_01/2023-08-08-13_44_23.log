@@ -1,0 +1,191 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 13:44:25 2023 - INFO  - Start to prepare the test environment.
++ mkdir -p /tmp/test/test1
++ touch /tmp/test/doc.txt
++ DNF_INSTALL digest-list-tools
++ pkgs=digest-list-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs digest-list-tools --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 3:15:44 ago on Tue Aug  8 10:29:04 2023.
+Error: 
+ Problem: conflicting requests
+  - nothing provides libcrypto.so.1.1()(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64
+  - nothing provides libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 3:15:44 ago on Tue Aug  8 10:29:04 2023.
+Error: 
+ Problem: conflicting requests
+  - nothing provides libcrypto.so.1.1()(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64
+  - nothing provides libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 13:44:49 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 13:44:49 2023 - INFO  - Start to run test.
++ gen_digest_lists -t metadata -f compact -i l: -o add -p -1 -m immutable -i I:/tmp/test -d /tmp/ -i i: -i x:
+oe_test_ima_v2_manual_gen_digest_01.sh: line 31: gen_digest_lists: command not found
++ CHECK_RESULT 127 0 0 'Set digest file: failed!'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Set digest file: failed!'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Set digest file: failed!'
++ LOG_ERROR 'Set digest file: failed!'
++ message='Set digest file: failed!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Set digest file: failed!'
+Tue Aug  8 13:44:50 2023 - ERROR - Set digest file: failed!
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ima_v2_manual_gen_digest_01.sh line 32'
++ message='oe_test_ima_v2_manual_gen_digest_01.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ima_v2_manual_gen_digest_01.sh line 32'
+Tue Aug  8 13:44:50 2023 - ERROR - oe_test_ima_v2_manual_gen_digest_01.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f /tmp/0-metadata_list-compact-test
++ CHECK_RESULT 1 0 0 'Check digest file: failed!'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check digest file: failed!'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check digest file: failed!'
++ LOG_ERROR 'Check digest file: failed!'
++ message='Check digest file: failed!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check digest file: failed!'
+Tue Aug  8 13:44:51 2023 - ERROR - Check digest file: failed!
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ima_v2_manual_gen_digest_01.sh line 34'
++ message='oe_test_ima_v2_manual_gen_digest_01.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ima_v2_manual_gen_digest_01.sh line 34'
+Tue Aug  8 13:44:51 2023 - ERROR - oe_test_ima_v2_manual_gen_digest_01.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ gen_digest_lists -t metadata -f compact -i l: -o add -p -1 -m immutable -i I:/tmp/test -d /tmp/ -i i: -T
+oe_test_ima_v2_manual_gen_digest_01.sh: line 35: gen_digest_lists: command not found
++ CHECK_RESULT 127 0 0 'Set tlv file: failed!'
++ actual_result=127
++ expect_result=0
++ mode=0
++ error_log='Set tlv file: failed!'
++ exit_mode=0
++ '[' -z 127 ']'
++ '[' 0 -eq 0 ']'
++ test 127x '!=' 0x
++ test -n 'Set tlv file: failed!'
++ LOG_ERROR 'Set tlv file: failed!'
++ message='Set tlv file: failed!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Set tlv file: failed!'
+Tue Aug  8 13:44:52 2023 - ERROR - Set tlv file: failed!
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ima_v2_manual_gen_digest_01.sh line 36'
++ message='oe_test_ima_v2_manual_gen_digest_01.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ima_v2_manual_gen_digest_01.sh line 36'
+Tue Aug  8 13:44:52 2023 - ERROR - oe_test_ima_v2_manual_gen_digest_01.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ test -f /tmp/0-metadata_list-compact_tlv-test
++ CHECK_RESULT 1 0 0 'Check tlv file: failed!'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Check tlv file: failed!'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Check tlv file: failed!'
++ LOG_ERROR 'Check tlv file: failed!'
++ message='Check tlv file: failed!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Check tlv file: failed!'
+Tue Aug  8 13:44:53 2023 - ERROR - Check tlv file: failed!
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_ima_v2_manual_gen_digest_01.sh line 38'
++ message='oe_test_ima_v2_manual_gen_digest_01.sh line 38'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_ima_v2_manual_gen_digest_01.sh line 38'
+Tue Aug  8 13:44:53 2023 - ERROR - oe_test_ima_v2_manual_gen_digest_01.sh line 38
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 13:44:54 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 13:44:54 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 13:44:55 2023 - INFO  - Start to restore the test environment.
++ rm -rf /tmp/test /tmp/0-metadata_list-compact-test /tmp/0-metadata_list-compact_tlv-test
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 3:15:44 ago on Tue Aug  8 10:29:04 2023.
+Error: 
+ Problem: conflicting requests
+  - nothing provides libcrypto.so.1.1()(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64
+  - nothing provides libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64
+(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages) ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 3:15:44 ago on Tue Aug  8 10:29:04 2023.
+Error: 
+ Problem: conflicting requests
+  - nothing provides libcrypto.so.1.1()(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64
+  - nothing provides libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64
+(try to add '\''--skip-broken'\'' to skip uninstallable packages or '\''--nobest'\'' to use not only best candidate packages)'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 3:15:44 ago on Tue Aug  8 10:29:04 2023.\nError: \n Problem: conflicting requests\n  - nothing provides libcrypto.so.1.1()(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64\n  - nothing provides libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) needed by digest-list-tools-0.3.95-13.oe2309.riscv64\n(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)"
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 13:44:58 2023 - INFO  - End to restore the test environment.

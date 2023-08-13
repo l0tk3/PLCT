@@ -1,0 +1,320 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the database config.'
++ message='Start to prepare the database config.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the database config.'
+Tue Aug  8 09:56:14 2023 - INFO  - Start to prepare the database config.
+++ date +%Y%m%d%H%M%S
++ cur_date=20230808095614
++ user=test20230808095614
++ useradd test20230808095614
+++ cat /etc/passwd
+++ grep test20230808095614
+++ cut -d : -f 3
++ uid=1000
+++ cat /etc/passwd
+++ grep test20230808095614
+++ cut -d : -f 4
++ gid=1000
++ cp /usr/bin/ping ./
++ LOG_INFO 'End to prepare the database config.'
++ message='End to prepare the database config.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the database config.'
+Tue Aug  8 09:56:15 2023 - INFO  - End to prepare the database config.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 09:56:16 2023 - INFO  - Start to run test.
++ capsh --help
+usage: capsh [args ...]
+  --addamb=xxx   add xxx,... capabilities to ambient set
+  --cap-uid=<n>  use libcap cap_setuid() to change uid
+  --caps=xxx     set caps as per cap_from_text()
+  --chroot=path  chroot(2) to this path
+  --current      show current caps and IAB vectors
+  --decode=xxx   decode a hex string to a list of caps
+  --delamb=xxx   remove xxx,... capabilities from ambient
+  --drop=xxx     drop xxx,... caps from bounding set
+  --explain=xxx  explain what capability xxx permits
+  --forkfor=<n>  fork and make child sleep for <n> sec
+  --gid=<n>      set gid to <n> (hint: id <username>)
+  --groups=g,... set the supplemental groups
+  --has-a=xxx    exit 1 if capability xxx not ambient
+  --has-b=xxx    exit 1 if capability xxx not dropped
+  --has-ambient  exit 1 unless ambient vector supported
+  --has-i=xxx    exit 1 if capability xxx not inheritable
+  --has-p=xxx    exit 1 if capability xxx not permitted
+  --has-no-new-privs  exit 1 if privs not limited
+  --help, -h     this message (or try 'man capsh')
+  --iab=...      use cap_iab_from_text() to set iab
+  --inh=xxx      set xxx,.. inheritable set
+  --inmode=<xxx> exit 1 if current mode is not <xxx>
+  --is-uid=<n>   exit 1 if uid != <n>
+  --is-gid=<n>   exit 1 if gid != <n>
+  --keep=<n>     set keep-capability bit to <n>
+  --killit=<n>   send signal(n) to child
+  --license      display license info
+  --mode         display current libcap mode
+  --mode=<xxx>   set libcap mode to <xxx>
+  --modes        list libcap named modes
+  --no-new-privs set sticky process privilege limiter
+  --noamb        reset (drop) all ambient capabilities
+  --noenv        no fixup of env vars (for --user)
+  --print        display capability relevant state
+  --quiet        if first argument skip max cap check
+  --secbits=<n>  write a new value for securebits
+  --shell=/xx/yy use /xx/yy instead of /bin/bash for --
+  --strict       toggle --caps, --drop and --inh fixups
+  --suggest=text search cap descriptions for text
+  --supports=xxx exit 1 if capability xxx unsupported
+  --uid=<n>      set uid to <n> (hint: id <username>)
+  --user=<name>  set uid,gid and groups to that of user
+  ==             re-exec(capsh) with args as for --
+  =+             cap_launch capsh with args as for -+
+  --             remaining arguments are for /bin/bash
+  -+             cap_launch /bin/bash with remaining args
+                 (without -- [capsh] will simply exit(0))
++ CHECK_RESULT 0 0 0 'Check capsh --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ capsh '--caps=cap_net_raw+eip cap_setpcap,cap_setuid,cap_setgid+ep' --keep=1 --user=test20230808095614 --addamb=cap_net_raw -- -c 'ping -c1 127.0.0.1'
+PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=3.10 ms
+
+--- 127.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 3.099/3.099/3.099/0.000 ms
++ CHECK_RESULT 0 0 0 'Check capsh ping local failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh ping local failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ capsh --user=test20230808095614 -- -c whoami
++ grep test20230808095614
+test20230808095614
++ CHECK_RESULT 0 0 0 'Check capsh --user failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --user failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ capsh --uid=1000 -- -c whoami
++ grep test20230808095614
+test20230808095614
++ CHECK_RESULT 0 0 0 'Check capsh --uid failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --uid failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ capsh --gid=1000 -- -c whoami
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check capsh --gid failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --gid failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ capsh --mode=NOPRIV -- -c whoami
++ grep root
+root
++ CHECK_RESULT 0 0 0 'Check capsh --mode failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --mode failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setcap cap_net_raw,cap_net_admin=eip ./ping
++ CHECK_RESULT 0 0 0 'Check setcap failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check setcap failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getcap ./ping
++ grep cap_net_admin,cap_net_raw.eip
+./ping cap_net_admin,cap_net_raw=eip
++ CHECK_RESULT 0 0 0 'Check getcap failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check getcap failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setcap -r ./ping
++ CHECK_RESULT 0 0 0 'Check setcap -r failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check setcap -r failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getcap ./ping
++ grep cap_net_raw,cap_net_admin=eip
++ CHECK_RESULT 1 1 0 'Check getcap after revert failed.'
++ actual_result=1
++ expect_result=1
++ mode=0
++ error_log='Check getcap after revert failed.'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 1x
++ return 0
++ getpcaps --help
+usage: getcaps [opts] <pid> [<pid> ...]
+
+  This program displays the capabilities on the queried process(es).
+  The capabilities are displayed in the cap_from_text(3) format.
+
+  Optional arguments:
+     --help, -h or --usage display this message.
+     --verbose             use a more verbose output format.
+     --ugly or --legacy    use the archaic legacy output format.
+     --iab                 show IAB of process too.
+     --license             display license info
++ CHECK_RESULT 0 0 0 'Check capsh --help failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --help failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getpcaps --usage
+usage: getcaps [opts] <pid> [<pid> ...]
+
+  This program displays the capabilities on the queried process(es).
+  The capabilities are displayed in the cap_from_text(3) format.
+
+  Optional arguments:
+     --help, -h or --usage display this message.
+     --verbose             use a more verbose output format.
+     --ugly or --legacy    use the archaic legacy output format.
+     --iab                 show IAB of process too.
+     --license             display license info
++ CHECK_RESULT 0 0 0 'Check capsh --usage failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --usage failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getpcaps --verbose
++ CHECK_RESULT 0 0 0 'Check capsh --verbose failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --verbose failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getpcaps --ugly
++ CHECK_RESULT 0 0 0 'Check capsh --ugly failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --ugly failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getpcaps --legacy
++ CHECK_RESULT 0 0 0 'Check capsh --legacy failed.'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check capsh --legacy failed.'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:56:17 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:56:17 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 09:56:18 2023 - INFO  - Start to restore the test environment.
++ userdel test20230808095614
++ rm -r ./ping
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 09:56:19 2023 - INFO  - End to restore the test environment.

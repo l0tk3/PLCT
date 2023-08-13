@@ -1,0 +1,183 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:11:45 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libaec
++ pkgs=libaec
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libaec --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpz0thky72
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpz0thky72
++ test -d tmp
++ mkdir tmp
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:12:16 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:12:17 2023 - INFO  - Start to run test.
++ aec
++ grep OPTIONS
+OPTIONS
++ CHECK_RESULT 0 0 0 'aec help error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='aec help error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aec -n 01 -j 16 -r 16 common/test_p256n01.dat tmp/test_p256n01-basic.rz
++ test -f ./tmp/test_p256n01-basic.rz
++ CHECK_RESULT 0 0 0 'options: -n 01 -j 16 -r 16 error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='options: -n 01 -j 16 -r 16 error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aec -n 01 -j 16 -r 16 -t common/test_p256n01.dat tmp/test_p256n01-restricted.rz
++ test -f ./tmp/test_p256n01-restricted.rz
++ CHECK_RESULT 0 0 0 'options: -n 01 -j 16 -r 16 -t error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='options: -n 01 -j 16 -r 16 -t error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aec -d -n 32 -j 16 -r 256 -p common/sar32bit.j16.r256.rz tmp/sar32bit.dat
++ test -f ./tmp/sar32bit.dat
++ CHECK_RESULT 0 0 0 'options: -d -n 32 -j 16 -r 256 -p error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='options: -d -n 32 -j 16 -r 256 -p error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aec -N common/Lowset1_8bit.dat tmp/Lowset1_8bit--N.rz
++ test -f ./tmp/Lowset1_8bit--N.rz
++ CHECK_RESULT 0 0 0 'options: -N error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='options: -N error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aec -s common/Lowset1_8bit.dat tmp/Lowset1_8bit--s.rz
++ test -f ./tmp/Lowset1_8bit--s.rz
++ CHECK_RESULT 0 0 0 'options: -s error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='options: -s error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aec -3 common/Lowset1_8bit.dat tmp/Lowset1_8bit--3.rz
++ test -f ./tmp/Lowset1_8bit--3.rz
++ CHECK_RESULT 0 0 0 'options: -3 error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='options: -3 error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aec -m common/Lowset1_8bit.dat tmp/Lowset1_8bit--m.rz
++ test -f ./tmp/Lowset1_8bit--m.rz
++ CHECK_RESULT 0 0 0 'options: -m error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='options: -m error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ aec -b 02 common/Lowset1_8bit.dat tmp/Lowset1_8bit--b-02.rz
++ test -f ./tmp/Lowset1_8bit--b-02.rz
++ CHECK_RESULT 0 0 0 'options: -b 02 error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='options: -b 02 error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:12:18 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:12:19 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:12:19 2023 - INFO  - Start to restore the test environment.
++ rm -rf ./tmp
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpz0thky72 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpz0thky72
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:12:28 2023 - INFO  - End to restore the test environment.

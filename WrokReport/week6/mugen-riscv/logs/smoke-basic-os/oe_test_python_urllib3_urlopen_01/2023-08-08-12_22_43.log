@@ -1,0 +1,152 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:22:45 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL httpd
++ pkgs=httpd
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs httpd --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpnyoae6xx
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpnyoae6xx
++ getenforce
++ grep Enforcing
++ systemctl status firewalld
++ grep running
+Unit firewalld.service could not be found.
++ mkdir /var/www/html/test
++ chmod 777 /var/www/html -R
++ systemctl restart httpd
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:23:21 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:23:21 2023 - INFO  - Start to run test.
++ expect
+spawn python3
+Python 3.11.4 (main, Jun 30 2023, 00:00:00) [GCC 12.3.1 20230508 (openEuler 12.3.1-4.oe2309)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import urllib
+>>> import urllib.request
+>>> response = urllib.request.urlopen('http://10.0.2.15/test/')
+>>> response.status
+200
+>>> exit()
++ grep 200 ./testlog1
+200
++ CHECK_RESULT 0 0 0 'Status 200 code return failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Status 200 code return failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ expect
+spawn python3
+Python 3.11.4 (main, Jun 30 2023, 00:00:00) [GCC 12.3.1 20230508 (openEuler 12.3.1-4.oe2309)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import urllib
+>>> import urllib.request
+>>> headers = {'User-Agent': 'PostmanRuntime/7.29.0','Host': '1'}
+>>> data = bytes(urllib.parse.urlencode({'word':'hollow'}), encoding='utf8')
+>>> 
+request =  urllib.request.Request(url='http://10.0.2.15/test/',data=data, headers=headers, method='POST')
+>>> <5/test/',data=data, headers=headers, method='POST')
+>>> response = urllib.request.urlopen(request)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib64/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib64/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+>>> exit()
++ grep 400 ./testlog2
+urllib.error.HTTPError: HTTP Error 400: Bad Request
++ CHECK_RESULT 0 0 0 'Status 400 code return failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Status 400 code return failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:23:25 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:23:25 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:23:26 2023 - INFO  - Start to restore the test environment.
++ rm -rf testlog1 testlog2 /var/www/html/test
++ getenforce
++ grep Permissive
++ systemctl status firewalld
++ grep dead
+Unit firewalld.service could not be found.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpnyoae6xx ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpnyoae6xx
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:23:38 2023 - INFO  - End to restore the test environment.

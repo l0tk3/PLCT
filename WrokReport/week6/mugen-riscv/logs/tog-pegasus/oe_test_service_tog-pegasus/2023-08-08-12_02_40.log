@@ -1,0 +1,309 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 12:02:42 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL tog-pegasus
++ pkgs=tog-pegasus
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs tog-pegasus --node 1 --tempfile ''
++ tmpfile2='Last metadata expiration check: 15:00:59 ago on Mon Aug  7 21:02:07 2023.
+No match for argument: tog-pegasus
+Error: Unable to find a match: tog-pegasus'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 15:00:59 ago on Mon Aug  7 21:02:07 2023.
+No match for argument: tog-pegasus
+Error: Unable to find a match: tog-pegasus'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 12:03:08 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 12:03:08 2023 - INFO  - Start testing...
++ test_execution tog-pegasus.service
++ service=tog-pegasus.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 12:03:08'
++ test_restart tog-pegasus.service
++ service=tog-pegasus.service
++ systemctl restart tog-pegasus.service
+Failed to restart tog-pegasus.service: Unit tog-pegasus.service not found.
++ CHECK_RESULT 5 0 0 'tog-pegasus.service restart failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='tog-pegasus.service restart failed'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'tog-pegasus.service restart failed'
++ LOG_ERROR 'tog-pegasus.service restart failed'
++ message='tog-pegasus.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'tog-pegasus.service restart failed'
+Tue Aug  8 12:03:09 2023 - ERROR - tog-pegasus.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 34'
++ message='../common/common_lib.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 34'
+Tue Aug  8 12:03:09 2023 - ERROR - ../common/common_lib.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status tog-pegasus.service
++ grep 'Active: active'
+Unit tog-pegasus.service could not be found.
++ CHECK_RESULT 1 0 0 'tog-pegasus.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='tog-pegasus.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'tog-pegasus.service restart failed'
++ LOG_ERROR 'tog-pegasus.service restart failed'
++ message='tog-pegasus.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'tog-pegasus.service restart failed'
+Tue Aug  8 12:03:15 2023 - ERROR - tog-pegasus.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Tue Aug  8 12:03:16 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop tog-pegasus.service
+Failed to stop tog-pegasus.service: Unit tog-pegasus.service not loaded.
++ CHECK_RESULT 5 0 0 'tog-pegasus.service stop failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='tog-pegasus.service stop failed'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'tog-pegasus.service stop failed'
++ LOG_ERROR 'tog-pegasus.service stop failed'
++ message='tog-pegasus.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'tog-pegasus.service stop failed'
+Tue Aug  8 12:03:16 2023 - ERROR - tog-pegasus.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 39'
++ message='../common/common_lib.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 39'
+Tue Aug  8 12:03:17 2023 - ERROR - ../common/common_lib.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status tog-pegasus.service
++ grep 'Active: inactive'
+Unit tog-pegasus.service could not be found.
++ CHECK_RESULT 1 0 0 'tog-pegasus.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='tog-pegasus.service stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'tog-pegasus.service stop failed'
++ LOG_ERROR 'tog-pegasus.service stop failed'
++ message='tog-pegasus.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'tog-pegasus.service stop failed'
+Tue Aug  8 12:03:23 2023 - ERROR - tog-pegasus.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Tue Aug  8 12:03:24 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start tog-pegasus.service
+Failed to start tog-pegasus.service: Unit tog-pegasus.service not found.
++ CHECK_RESULT 5 0 0 'tog-pegasus.service start failed'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='tog-pegasus.service start failed'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'tog-pegasus.service start failed'
++ LOG_ERROR 'tog-pegasus.service start failed'
++ message='tog-pegasus.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'tog-pegasus.service start failed'
+Tue Aug  8 12:03:24 2023 - ERROR - tog-pegasus.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 44'
++ message='../common/common_lib.sh line 44'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 44'
+Tue Aug  8 12:03:25 2023 - ERROR - ../common/common_lib.sh line 44
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status tog-pegasus.service
++ grep 'Active: active'
+Unit tog-pegasus.service could not be found.
++ CHECK_RESULT 1 0 0 'tog-pegasus.service start failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='tog-pegasus.service start failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'tog-pegasus.service start failed'
++ LOG_ERROR 'tog-pegasus.service start failed'
++ message='tog-pegasus.service start failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'tog-pegasus.service start failed'
+Tue Aug  8 12:03:31 2023 - ERROR - tog-pegasus.service start failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 47'
++ message='../common/common_lib.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 47'
+Tue Aug  8 12:03:32 2023 - ERROR - ../common/common_lib.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ test_enabled tog-pegasus.service
++ service=tog-pegasus.service
+++ systemctl is-enabled tog-pegasus.service
+Failed to get unit file state for tog-pegasus.service: No such file or directory
++ state=
++ '[' '' == enabled ']'
++ '[' '' == disabled ']'
++ '[' '' == masked ']'
++ '[' '' == static ']'
++ LOG_INFO 'Unit is indirect, ignoring.'
++ message='Unit is indirect, ignoring.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Unit is indirect, ignoring.'
+Tue Aug  8 12:03:32 2023 - INFO  - Unit is indirect, ignoring.
++ journalctl --since '2023-08-08 12:03:08' -u tog-pegasus.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of tog-pegasus.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of tog-pegasus.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload tog-pegasus.service
++ service=tog-pegasus.service
++ systemctl start tog-pegasus.service
+Failed to start tog-pegasus.service: Unit tog-pegasus.service not found.
++ systemctl reload tog-pegasus.service
++ grep 'Job type reload is not applicable'
++ CHECK_RESULT 1 0 0 'Job type reload is not applicable for unit tog-pegasus.service'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit tog-pegasus.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Job type reload is not applicable for unit tog-pegasus.service'
++ LOG_ERROR 'Job type reload is not applicable for unit tog-pegasus.service'
++ message='Job type reload is not applicable for unit tog-pegasus.service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Job type reload is not applicable for unit tog-pegasus.service'
+Tue Aug  8 12:03:33 2023 - ERROR - Job type reload is not applicable for unit tog-pegasus.service
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 91'
++ message='../common/common_lib.sh line 91'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 91'
+Tue Aug  8 12:03:33 2023 - ERROR - ../common/common_lib.sh line 91
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl status tog-pegasus.service
++ grep 'Active: active'
+Unit tog-pegasus.service could not be found.
++ systemctl status tog-pegasus.service
++ grep 'inactive (dead)'
+Unit tog-pegasus.service could not be found.
++ return 1
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 12:03:34 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 7
++ test 7 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 12:03:35 2023 - ERROR - failed to execute the case.
++ exit 7
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 12:03:35 2023 - INFO  - start environment cleanup.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 15:00:59 ago on Mon Aug  7 21:02:07 2023.
+No match for argument: tog-pegasus
+Error: Unable to find a match: tog-pegasus ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 15:00:59 ago on Mon Aug  7 21:02:07 2023.
+No match for argument: tog-pegasus
+Error: Unable to find a match: tog-pegasus'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Last metadata expiration check: 15:00:59 ago on Mon Aug  7 21:02:07 2023.\nNo match for argument: tog-pegasus\nError: Unable to find a match: tog-pegasus'
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 12:03:38 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,341 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 11:00:20 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL 'llvm clang'
++ pkgs='llvm clang'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'llvm clang' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpztrt5ttd
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpztrt5ttd
++ mkdir /tmp/test_llvm
++ path=/tmp/test_llvm
++ cat
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 11:02:37 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:02:37 2023 - INFO  - Start testing...
++ rpm -qa
++ grep llvm
+llvm-libs-15.0.7-4.oe2309.riscv64
+llvm-15.0.7-4.oe2309.riscv64
++ CHECK_RESULT 0 0 0 'Installation failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Installation failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ rpm -ql llvm
+/etc/ima/digest_lists.tlv/0-metadata_list-compact_tlv-llvm-15.0.7-4.oe2309.riscv64
+/etc/ima/digest_lists/0-metadata_list-compact-llvm-15.0.7-4.oe2309.riscv64
+/usr/bin/FileCheck
+/usr/bin/UnicodeNameMappingGenerator
+/usr/bin/bugpoint
+/usr/bin/dsymutil
+/usr/bin/llc
+/usr/bin/lli
+/usr/bin/llvm-PerfectShuffle
+/usr/bin/llvm-addr2line
+/usr/bin/llvm-ar
+/usr/bin/llvm-as
+/usr/bin/llvm-bcanalyzer
+/usr/bin/llvm-bitcode-strip
+/usr/bin/llvm-c-test
+/usr/bin/llvm-cat
+/usr/bin/llvm-cfi-verify
+/usr/bin/llvm-config
+/usr/bin/llvm-cov
+/usr/bin/llvm-cvtres
+/usr/bin/llvm-cxxdump
+/usr/bin/llvm-cxxfilt
+/usr/bin/llvm-cxxmap
+/usr/bin/llvm-debuginfod
+/usr/bin/llvm-debuginfod-find
+/usr/bin/llvm-diff
+/usr/bin/llvm-dis
+/usr/bin/llvm-dlltool
+/usr/bin/llvm-dwarfdump
+/usr/bin/llvm-dwarfutil
+/usr/bin/llvm-dwp
+/usr/bin/llvm-exegesis
+/usr/bin/llvm-extract
+/usr/bin/llvm-gsymutil
+/usr/bin/llvm-ifs
+/usr/bin/llvm-install-name-tool
+/usr/bin/llvm-jitlink
+/usr/bin/llvm-jitlink-executor
+/usr/bin/llvm-lib
+/usr/bin/llvm-libtool-darwin
+/usr/bin/llvm-link
+/usr/bin/llvm-lipo
+/usr/bin/llvm-lto
+/usr/bin/llvm-lto2
+/usr/bin/llvm-mc
+/usr/bin/llvm-mca
+/usr/bin/llvm-ml
+/usr/bin/llvm-modextract
+/usr/bin/llvm-mt
+/usr/bin/llvm-nm
+/usr/bin/llvm-objcopy
+/usr/bin/llvm-objdump
+/usr/bin/llvm-opt-report
+/usr/bin/llvm-otool
+/usr/bin/llvm-pdbutil
+/usr/bin/llvm-profdata
+/usr/bin/llvm-profgen
+/usr/bin/llvm-ranlib
+/usr/bin/llvm-rc
+/usr/bin/llvm-readelf
+/usr/bin/llvm-readobj
+/usr/bin/llvm-reduce
+/usr/bin/llvm-remark-size-diff
+/usr/bin/llvm-rtdyld
+/usr/bin/llvm-sim
+/usr/bin/llvm-size
+/usr/bin/llvm-split
+/usr/bin/llvm-stress
+/usr/bin/llvm-strings
+/usr/bin/llvm-strip
+/usr/bin/llvm-symbolizer
+/usr/bin/llvm-tapi-diff
+/usr/bin/llvm-tblgen
+/usr/bin/llvm-tli-checker
+/usr/bin/llvm-undname
+/usr/bin/llvm-windres
+/usr/bin/llvm-xray
+/usr/bin/obj2yaml
+/usr/bin/opt
+/usr/bin/sancov
+/usr/bin/sanstats
+/usr/bin/split-file
+/usr/bin/verify-uselistorder
+/usr/bin/yaml2obj
+/usr/share/licenses/llvm
+/usr/share/licenses/llvm/LICENSE.TXT
+/usr/share/man/man1/FileCheck.1.gz
+/usr/share/man/man1/bugpoint.1.gz
+/usr/share/man/man1/clang-tblgen.1.gz
+/usr/share/man/man1/dsymutil.1.gz
+/usr/share/man/man1/lit.1.gz
+/usr/share/man/man1/llc.1.gz
+/usr/share/man/man1/lldb-tblgen.1.gz
+/usr/share/man/man1/lli.1.gz
+/usr/share/man/man1/llvm-addr2line.1.gz
+/usr/share/man/man1/llvm-ar.1.gz
+/usr/share/man/man1/llvm-as.1.gz
+/usr/share/man/man1/llvm-bcanalyzer.1.gz
+/usr/share/man/man1/llvm-config.1.gz
+/usr/share/man/man1/llvm-cov.1.gz
+/usr/share/man/man1/llvm-cxxfilt.1.gz
+/usr/share/man/man1/llvm-cxxmap.1.gz
+/usr/share/man/man1/llvm-diff.1.gz
+/usr/share/man/man1/llvm-dis.1.gz
+/usr/share/man/man1/llvm-dwarfdump.1.gz
+/usr/share/man/man1/llvm-dwarfutil.1.gz
+/usr/share/man/man1/llvm-exegesis.1.gz
+/usr/share/man/man1/llvm-extract.1.gz
+/usr/share/man/man1/llvm-ifs.1.gz
+/usr/share/man/man1/llvm-install-name-tool.1.gz
+/usr/share/man/man1/llvm-lib.1.gz
+/usr/share/man/man1/llvm-libtool-darwin.1.gz
+/usr/share/man/man1/llvm-link.1.gz
+/usr/share/man/man1/llvm-lipo.1.gz
+/usr/share/man/man1/llvm-locstats.1.gz
+/usr/share/man/man1/llvm-mca.1.gz
+/usr/share/man/man1/llvm-nm.1.gz
+/usr/share/man/man1/llvm-objcopy.1.gz
+/usr/share/man/man1/llvm-objdump.1.gz
+/usr/share/man/man1/llvm-otool.1.gz
+/usr/share/man/man1/llvm-pdbutil.1.gz
+/usr/share/man/man1/llvm-profdata.1.gz
+/usr/share/man/man1/llvm-profgen.1.gz
+/usr/share/man/man1/llvm-ranlib.1.gz
+/usr/share/man/man1/llvm-readelf.1.gz
+/usr/share/man/man1/llvm-readobj.1.gz
+/usr/share/man/man1/llvm-remark-size-diff.1.gz
+/usr/share/man/man1/llvm-size.1.gz
+/usr/share/man/man1/llvm-stress.1.gz
+/usr/share/man/man1/llvm-strings.1.gz
+/usr/share/man/man1/llvm-strip.1.gz
+/usr/share/man/man1/llvm-symbolizer.1.gz
+/usr/share/man/man1/llvm-tblgen.1.gz
+/usr/share/man/man1/llvm-tli-checker.1.gz
+/usr/share/man/man1/mlir-tblgen.1.gz
+/usr/share/man/man1/opt.1.gz
+/usr/share/man/man1/tblgen.1.gz
++ CHECK_RESULT 0 0 0 'No path is queried'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='No path is queried'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ clang /tmp/test_llvm/llvm_test.c -o /tmp/test_llvm/test
+/usr/bin/ld: cannot find crtbeginS.o: No such file or directory
+/usr/bin/ld: cannot find -lgcc
+/usr/bin/ld: cannot find -lgcc_s
+clang-15: error: linker command failed with exit code 1 (use -v to see invocation)
++ CHECK_RESULT 1 0 0 'compilation fails'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='compilation fails'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'compilation fails'
++ LOG_ERROR 'compilation fails'
++ message='compilation fails'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'compilation fails'
+Tue Aug  8 11:02:44 2023 - ERROR - compilation fails
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_llvm.sh line 45'
++ message='oe_test_llvm.sh line 45'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_llvm.sh line 45'
+Tue Aug  8 11:02:44 2023 - ERROR - oe_test_llvm.sh line 45
++ '[' 0 -eq 1 ']'
++ return 0
++ ls /tmp/test_llvm/test
+ls: cannot access '/tmp/test_llvm/test': No such file or directory
++ CHECK_RESULT 2 0 0 'test does not exist'
++ actual_result=2
++ expect_result=0
++ mode=0
++ error_log='test does not exist'
++ exit_mode=0
++ '[' -z 2 ']'
++ '[' 0 -eq 0 ']'
++ test 2x '!=' 0x
++ test -n 'test does not exist'
++ LOG_ERROR 'test does not exist'
++ message='test does not exist'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'test does not exist'
+Tue Aug  8 11:02:45 2023 - ERROR - test does not exist
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_llvm.sh line 47'
++ message='oe_test_llvm.sh line 47'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_llvm.sh line 47'
+Tue Aug  8 11:02:45 2023 - ERROR - oe_test_llvm.sh line 47
++ '[' 0 -eq 1 ']'
++ return 0
++ clang -O3 -emit-llvm /tmp/test_llvm/llvm_test.c -c -o /tmp/test_llvm/test.bc
++ CHECK_RESULT 0 0 0 'compilation fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='compilation fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ls /tmp/test_llvm/test.bc
+/tmp/test_llvm/test.bc
++ CHECK_RESULT 0 0 0 'test.bc does not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test.bc does not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ /tmp/test_llvm/test
+oe_test_llvm.sh: line 54: /tmp/test_llvm/test: No such file or directory
++ grep -w 'hello llvm'
++ CHECK_RESULT 1 0 0 'test on failure'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='test on failure'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'test on failure'
++ LOG_ERROR 'test on failure'
++ message='test on failure'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'test on failure'
+Tue Aug  8 11:02:47 2023 - ERROR - test on failure
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_llvm.sh line 55'
++ message='oe_test_llvm.sh line 55'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_llvm.sh line 55'
+Tue Aug  8 11:02:48 2023 - ERROR - oe_test_llvm.sh line 55
++ '[' 0 -eq 1 ']'
++ return 0
++ lli /tmp/test_llvm/test.bc
++ grep -w 'hello llvm'
+hello llvm
++ CHECK_RESULT 0 0 0 'test.bc on failure'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test.bc on failure'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z 3
++ test 3 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 11:02:49 2023 - ERROR - failed to execute the case.
++ exit 3
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:02:49 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/test_llvm
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpztrt5ttd ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpztrt5ttd
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 11:02:56 2023 - INFO  - Finish environment cleanup!

@@ -1,0 +1,239 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 10:05:32 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL sanlock
++ pkgs=sanlock
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs sanlock --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpq9dj06vt
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpq9dj06vt
++ mkdir sanlocktest
++ cd sanlocktest
++ dd if=/dev/zero bs=1048576 count=1 of=./dev
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0293219 s, 35.8 MB/s
++ dd if=/dev/zero bs=1048576 count=1 of=./res
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.028599 s, 36.7 MB/s
++ chown sanlock:sanlock ./dev ./res
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 10:06:04 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:06:04 2023 - INFO  - Start to run test.
++ sanlock -h
++ grep 'sanlock <command>'
+sanlock <command> <action> ...
++ CHECK_RESULT 0 0 0 'Check sanlock -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock --help
++ grep 'sanlock <command>'
+sanlock <command> <action> ...
++ CHECK_RESULT 0 0 0 'Check sanlock --help failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock --help failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -e test
++ grep 'sanlock daemon started' ./start.log
+2023-08-08 10:06:04 61 [439]: sanlock daemon started 3.8.5 host test (openeuler-riscv64)
++ CHECK_RESULT 0 0 0 'Check sanlock daemon -D -Q -R -H -L -S -U -G -e failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock daemon -D -Q -R -H -L -S -U -G -e failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
+++ pgrep -f 'sanlock daemon'
++ kill -9 439 441
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
+/root/mugen/libs/locallibs/common_lib_python.sh: line 164:   439 Killed                  nohup sanlock daemon -D -Q 0 -R 1 -H 60 -L -1 -S 3 -U sanlock -G sanlock -e test > ./start.log 2>&1
++ SLEEP_WAIT 10
++ nohup sanlock daemon -D -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ grep 'sanlock daemon started' ./start1.log
+2023-08-08 10:06:26 83 [449]: sanlock daemon started 3.8.5 host test (openeuler-riscv64)
++ CHECK_RESULT 0 0 0 'Check sanlock daemon -D -U -G -t -g -w -h -l -b -e failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock daemon -D -U -G -t -g -w -h -l -b -e failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock client init -s test:0:./dev:0 -Z 512 -A 1M
++ grep 'init done'
+init done 0
++ CHECK_RESULT 0 0 0 'Check sanlock client init -s -Z -A failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock client init -s -Z -A failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock client add_lockspace -s test:1:./dev:0
+add_lockspace
+add_lockspace done 0
++ SLEEP_WAIT 10
++ wait_time=10
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 10 --cmd '' --mode 1
++ sanlock client host_status -s test:1:./dev:0 -D
++ grep '1 timestamp'
+1 timestamp 93
++ CHECK_RESULT 0 0 0 'Check sanlock client host_status -s -D failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock client host_status -s -D failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock client status -D -o p
++ grep our_host_name=test
+    our_host_name=test
++ CHECK_RESULT 0 0 0 'Check sanlock client status -D -o failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock client status -D -o failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock client gets -h 0
++ grep test:1:./dev:0
+s test:1:./dev:0 
++ CHECK_RESULT 0 0 0 'Check sanlock client gets -h failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock client gets -h failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock client renewal -s test:0:./dev:0 -D
++ grep 'read_ms=0 write_ms=0 next_timeouts=0 next_errors=0'
+timestamp=93 read_ms=0 write_ms=0 next_timeouts=0 next_errors=0
++ CHECK_RESULT 0 0 0 'Check sanlock client renewal -s -D failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock client renewal -s -D failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ sanlock client set_event -s test:0:./dev:0 -i 2000 -g gen -e 0 -d 0
++ grep 'set_event done 0'
+set_event done 0
++ CHECK_RESULT 0 0 0 'Check sanlock client set_event -s -i -g -e -d failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check sanlock client set_event -s -i -g -e -d failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:07:09 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:07:09 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpq9dj06vt ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpq9dj06vt
++ '[' 0 -ne 0 ']'
+++ pgrep -f 'sanlock daemon'
++ kill -9 449 451
++ cd ..
++ rm -rf sanlocktest
++ LOG_INFO 'Finish restore the test environment.'
++ message='Finish restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restore the test environment.'
+Tue Aug  8 10:07:19 2023 - INFO  - Finish restore the test environment.
+/root/mugen/libs/locallibs/common_lib_python.sh: line 19:   449 Killed                  nohup sanlock daemon -D -U sanlock -G sanlock -t 4 -g 20 -w 0 -h 1 -l 2 -b 12 -e test > ./start1.log 2>&1  (wd: ~/mugen/testcases/cli-test/sanlock/sanlocktest)

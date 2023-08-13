@@ -1,0 +1,198 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:28:19 2023 - INFO  - Start to prepare the test environment.
++ cp -f /run/log/imjournal.state /run/log/imjournal.state.bak
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:28:19 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:28:20 2023 - INFO  - Start to run test.
++ systemctl stop rsyslog
+Failed to stop rsyslog.service: Unit rsyslog.service not loaded.
++ CHECK_RESULT 5 0 0 'Failed to stop service'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to stop service'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to stop service'
++ LOG_ERROR 'Failed to stop service'
++ message='Failed to stop service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to stop service'
+Tue Aug  8 12:28:20 2023 - ERROR - Failed to stop service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_04.sh line 31'
++ message='oe_test_rsyslog_04.sh line 31'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_04.sh line 31'
+Tue Aug  8 12:28:21 2023 - ERROR - oe_test_rsyslog_04.sh line 31
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ echo ''
++ systemctl start rsyslog
+Failed to start rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to start service'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to start service'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to start service'
++ LOG_ERROR 'Failed to start service'
++ message='Failed to start service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to start service'
+Tue Aug  8 12:28:25 2023 - ERROR - Failed to start service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_04.sh line 35'
++ message='oe_test_rsyslog_04.sh line 35'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_04.sh line 35'
+Tue Aug  8 12:28:25 2023 - ERROR - oe_test_rsyslog_04.sh line 35
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
+Unit rsyslog.service could not be found.
++ main_pid=
++ grep rsyslog /var/log/messages
++ grep ''
++ CHECK_RESULT 1 0 0 'Log not recorded'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Log not recorded'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Log not recorded'
++ LOG_ERROR 'Log not recorded'
++ message='Log not recorded'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Log not recorded'
+Tue Aug  8 12:28:31 2023 - ERROR - Log not recorded
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_04.sh line 39'
++ message='oe_test_rsyslog_04.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_04.sh line 39'
+Tue Aug  8 12:28:32 2023 - ERROR - oe_test_rsyslog_04.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ rm -rf /run/log/imjournal.state
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart service'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart service'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart service'
++ LOG_ERROR 'Failed to restart service'
++ message='Failed to restart service'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart service'
+Tue Aug  8 12:28:33 2023 - ERROR - Failed to restart service
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_04.sh line 42'
++ message='oe_test_rsyslog_04.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_04.sh line 42'
+Tue Aug  8 12:28:33 2023 - ERROR - oe_test_rsyslog_04.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
+++ systemctl status rsyslog
+++ grep 'Main PID'
+++ awk '{print $3}'
+Unit rsyslog.service could not be found.
++ main_pid=
++ grep rsyslog /var/log/messages
++ grep ''
++ CHECK_RESULT 1 0 0 'The pid not recorded'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='The pid not recorded'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'The pid not recorded'
++ LOG_ERROR 'The pid not recorded'
++ message='The pid not recorded'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'The pid not recorded'
+Tue Aug  8 12:28:39 2023 - ERROR - The pid not recorded
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_04.sh line 46'
++ message='oe_test_rsyslog_04.sh line 46'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_04.sh line 46'
+Tue Aug  8 12:28:40 2023 - ERROR - oe_test_rsyslog_04.sh line 46
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:28:40 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 5
++ test 5 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 12:28:41 2023 - ERROR - failed to execute the case.
++ exit 5
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:28:41 2023 - INFO  - Start to restore the test environment.
++ mv -f /run/log/imjournal.state.bak /run/log/imjournal.state
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:28:42 2023 - INFO  - End to restore the test environment.

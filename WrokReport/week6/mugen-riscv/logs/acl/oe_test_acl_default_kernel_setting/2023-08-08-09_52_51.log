@@ -1,0 +1,81 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'start to run test.'
++ message='start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start to run test.'
+Tue Aug  8 09:52:53 2023 - INFO  - start to run test.
++ grep -i CONFIG_XFS_POSIX_ACL=y
+++ uname -r
++ grep -i acl /boot/config-6.4.0-1.0.0.4.oe2309.riscv64
+CONFIG_XFS_POSIX_ACL=y
++ CHECK_RESULT 0 0 0 'ACL kernel parameter of xfs file system is not enabled'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ACL kernel parameter of xfs file system is not enabled'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -i CONFIG_EXT4_FS_POSIX_ACL=y
+++ uname -r
++ grep -i acl /boot/config-6.4.0-1.0.0.4.oe2309.riscv64
+CONFIG_EXT4_FS_POSIX_ACL=y
++ CHECK_RESULT 0 0 0 'ACL kernel parameter of ext4 file system is not enabled'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ACL kernel parameter of ext4 file system is not enabled'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep -i =n
+++ uname -r
++ grep -i acl /boot/config-6.4.0-1.0.0.4.oe2309.riscv64
++ CHECK_RESULT 1 0 1 'ACL kernel default parm setting is incorrect'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ACL kernel default parm setting is incorrect'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:52:54 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:52:55 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_acl_default_kernel_setting.sh post_test'
++ message='oe_test_acl_default_kernel_setting.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_acl_default_kernel_setting.sh post_test'
+Tue Aug  8 09:52:55 2023 - INFO  - oe_test_acl_default_kernel_setting.sh post_test

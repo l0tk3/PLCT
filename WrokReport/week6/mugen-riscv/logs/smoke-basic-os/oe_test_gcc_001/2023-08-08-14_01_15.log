@@ -1,0 +1,152 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 14:01:17 2023 - INFO  - Start environment preparation.
++ mkdir -p /tmp/test /tmp/person
++ path1=/tmp/test
++ path2=/tmp/person
++ cat
++ cat
++ cat
++ DNF_INSTALL 'glibc-static libstdc++-static gcc-c++'
++ pkgs='glibc-static libstdc++-static gcc-c++'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'glibc-static libstdc++-static gcc-c++' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpi45y1tr3
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpi45y1tr3
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 14:01:47 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 14:01:47 2023 - INFO  - Start testing...
++ cd /tmp/person
++ g++ -c /tmp/person/person.cpp
++ test -f /tmp/person/person.o
++ CHECK_RESULT 0 0 0 'person file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='person file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd /tmp/test
++ g++ main.cpp ../person/person.o -I ../person/ -o main
++ test -f /tmp/test/main
++ CHECK_RESULT 0 0 0 'main file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='main file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ./main
++ grep 'test g++' /tmp/test/main.txt
+test g++
++ CHECK_RESULT 0 0 0 'main.txt file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='main.txt file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ldd main
++ grep libstdc++.so.6 /tmp/test/main.txt1
+	libstdc++.so.6 => /lib/libstdc++.so.6 (0x0000003f90400000)
++ CHECK_RESULT 0 0 0 'ldd main file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ldd main file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd /tmp/test
++ g++ main.cpp ../person/person.o -o main_static -I ../person/ -static
++ test -f /tmp/test/main_static
++ CHECK_RESULT 0 0 0 'main_static file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='main_static file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ ldd main_static
++ grep 'not a dynamic executable' /tmp/test/main_static.txt
+	not a dynamic executable
++ CHECK_RESULT 0 0 0 'ldd main_static file fails'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ldd main_static file fails'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 14:02:04 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 14:02:04 2023 - INFO  - start environment cleanup.
++ rm -rf /tmp/test /tmp/person
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpi45y1tr3 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpi45y1tr3
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 14:02:11 2023 - INFO  - Finish environment cleanup!

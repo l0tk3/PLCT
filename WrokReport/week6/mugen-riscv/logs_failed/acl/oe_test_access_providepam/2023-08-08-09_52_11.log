@@ -1,0 +1,74 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 09:52:13 2023 - INFO  - Start to run test.
++ rpm -qa
++ grep pam
+pam-1.5.3-1.oe2309.riscv64
++ CHECK_RESULT 0 0 0 'pam not exist'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='pam not exist'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -e /usr/lib64/security/pam_systemd.so
++ CHECK_RESULT 1 0 0 'pam_systemd.so not exist'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='pam_systemd.so not exist'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'pam_systemd.so not exist'
++ LOG_ERROR 'pam_systemd.so not exist'
++ message='pam_systemd.so not exist'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'pam_systemd.so not exist'
+Tue Aug  8 09:52:15 2023 - ERROR - pam_systemd.so not exist
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_access_providepam.sh line 27'
++ message='oe_test_access_providepam.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_access_providepam.sh line 27'
+Tue Aug  8 09:52:15 2023 - ERROR - oe_test_access_providepam.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test'
++ message='End of the test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test'
+Tue Aug  8 09:52:16 2023 - INFO  - End of the test
++ CASE_RESULT 0
++ case_re=0
++ test -z 1
++ test 1 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 09:52:16 2023 - ERROR - failed to execute the case.
++ exit 1
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_access_providepam.sh post_test'
++ message='oe_test_access_providepam.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_access_providepam.sh post_test'
+Tue Aug  8 09:52:17 2023 - INFO  - oe_test_access_providepam.sh post_test

@@ -1,0 +1,141 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 09:53:13 2023 - INFO  - Start to prepare the test environment.
++ useradd test1
++ echo 'test1:deepin12#$'
++ chpasswd
++ mkdir testdir
++ chacl -b u::rw,g::rx,o::-,u:test1:rw,g:test1:rw,m::rwx u::rwx,g::r,o::-,u:test1:r,m::rwx testdir
++ mkdir testdir/subtestdir
++ touch testdir/subtestfile
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Tue Aug  8 09:53:14 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 09:53:15 2023 - INFO  - Start to run test.
++ setfacl -x mask testdir
+setfacl: testdir: Malformed access ACL `user::rw-,user:test1:rw-,group::r-x,group:test1:rw-,other::---': Missing or wrong entry at entry 5
++ CHECK_RESULT 1 0 1 'ACL_MASK deleted successfully'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ACL_MASK deleted successfully'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ setfacl -x test1 testdir/
++ getfacl testdir
++ grep user::rw-
+user::rw-
++ CHECK_RESULT 0 0 0 'ACL_ USER deletion failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ACL_ USER deletion failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -x g:test1 testdir
++ getfacl testdir
++ grep group::r-x
+group::r-x
++ CHECK_RESULT 0 0 0 'ACL_GROUP deletion failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ACL_GROUP deletion failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -x mask testdir
++ getfacl testdir
++ grep mask::r-x
++ CHECK_RESULT 1 0 1 'ACL_MASK deleted failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ACL_MASK deleted failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ setfacl -k testdir
++ getfacl testdir
++ grep default
++ CHECK_RESULT 1 0 1 'ACL_ALL deleted failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ACL_ALL deleted failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ setfacl -R -b testdir
++ getfacl testdir/subtestdir testdir/subtestfile
++ grep default
++ CHECK_RESULT 1 0 1 'ACL_ALL Recursive deletion failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ACL_ALL Recursive deletion failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 09:53:16 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:53:16 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 09:53:17 2023 - INFO  - Start to restore the test environment.
++ rm -rf testdir
++ userdel -rf test1
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Tue Aug  8 09:53:18 2023 - INFO  - Finish restoring the test environment.

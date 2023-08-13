@@ -1,0 +1,617 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 20:15:35 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL qperf
++ pkgs=qperf
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs qperf --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpys1_dsr9
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpys1_dsr9
++ DNF_INSTALL qperf 2
++ pkgs=qperf
++ node=2
++ '[' -z /tmp/tmpys1_dsr9 ']'
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs qperf --node 2 --tempfile /tmp/tmpys1_dsr9
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 187, in <module>
+    exitcode, output = rpm_install(args.pkgs, args.node, args.tempfile)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 66, in rpm_install
+    conn = ssh_cmd.pssh_conn(
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/ssh_cmd.py", line 53, in pssh_conn
+    conn.connect(ip, port, user, password, timeout=timeout)
+  File "/usr/lib/python3.11/site-packages/paramiko/client.py", line 377, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/site-packages/paramiko/client.py", line 202, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+                ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
++ tmpfile2=
++ '[' -z /tmp/tmpys1_dsr9 ']'
++ SSH_CMD 'systemctl stop firewalld && nohup qperf &'
++ cmd='systemctl stop firewalld && nohup qperf &'
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen/libs/locallibs/sshcmd.sh -c 'systemctl stop firewalld && nohup qperf &' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Tue Aug  8 20:16:12 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 20:16:13 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 20:16:13 2023 - INFO  - Start to run test.
++ qperf tcp_bw
++ grep tcp_bw:
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_qperf_01.sh line 30'
++ message='oe_test_qperf_01.sh line 30'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_qperf_01.sh line 30'
+Tue Aug  8 20:16:14 2023 - ERROR - oe_test_qperf_01.sh line 30
++ '[' 0 -eq 1 ']'
++ return 0
++ qperf tcp_lat
++ grep tcp_lat:
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_qperf_01.sh line 32'
++ message='oe_test_qperf_01.sh line 32'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_qperf_01.sh line 32'
+Tue Aug  8 20:16:14 2023 - ERROR - oe_test_qperf_01.sh line 32
++ '[' 0 -eq 1 ']'
++ return 0
++ qperf udp_bw
++ grep udp_bw:
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_qperf_01.sh line 34'
++ message='oe_test_qperf_01.sh line 34'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_qperf_01.sh line 34'
+Tue Aug  8 20:16:15 2023 - ERROR - oe_test_qperf_01.sh line 34
++ '[' 0 -eq 1 ']'
++ return 0
++ qperf udp_lat
++ grep udp_lat:
++ CHECK_RESULT 1
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n ''
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_qperf_01.sh line 36'
++ message='oe_test_qperf_01.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_qperf_01.sh line 36'
+Tue Aug  8 20:16:15 2023 - ERROR - oe_test_qperf_01.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ qperf -t 60 --use_bits_per_sec tcp_bw tcp_lat
++ grep -E 'tcp_bw:|tcp_lat:'
+tcp_lat:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf -t 60 --use_bits_per_sec udp_bw udp_lat
++ grep -E 'udp_bw:|udp_lat:'
+udp_lat:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf -t 60 --use_bits_per_sec udp_bw tcp_bw
++ grep -E 'udp_bw:|tcp_bw:'
+tcp_bw:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf -t 60 --use_bits_per_sec udp_lat tcp_lat
++ grep -E 'udp_lat:|tcp_lat:'
+tcp_lat:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf -t 10 -vvu tcp_lat udp_lat conf
++ grep -E 'tcp_lat:|udp_lat:|conf:'
+udp_lat:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf -oo 'msg_size:1:64K:*2' -vu tcp_bw tcp_lat
++ grep -E 'tcp_bw:|tcp_lat:'
+tcp_lat:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf -oo 'msg_size:1:64K:*2' -vu udp_bw udp_lat
++ grep -E 'udp_bw:|udp_lat:'
+udp_lat:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf udp_lat quit
++ grep -E 'udp_lat:|quit:'
+quit:
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf --help tests
++ grep -E 'Miscellaneous|Socket Based'
+Miscellaneous
+Socket Based
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf --help opts
+--access_recv OnOff (-ar)           Turn on/off accessing received data
+  -ar1                              Cause received data to be accessed
+--alt_port Port (-ap)               Set alternate path port
+  --loc_alt_port Port (-lap)        Set local alternate path port
+  --rem_alt_port Port (-rap)        Set remote alternate path port
+--cpu_affinity PN (-ca)             Set processor affinity
+  --loc_cpu_affinity PN (-lca)      Set local processor affinity
+  --rem_cpu_affinity PN (-rca)      Set remote processor affinity
+--flip OnOff (-f)                   Flip on/off sender and receiver
+  -f1                               Flip (on) sender and receiver
+--help Topic (-h)                   Get more information on a topic
+--host Node (-H)                    Identify server node
+--id Device:Port (-i)               Set RDMA device and port
+  --loc_id Device:Port (-li)        Set local RDMA device and port
+  --rem_id Device:Port (-ri)        Set remote RDMA device and port
+--listen_port Port (-lp)            Set server listen port
+--loop Var:Init:Last:Incr (-oo)     Sequence through values
+--msg_size Size (-m)                Set message size
+--mtu_size Size (-mt)               Set MTU size (RDMA only)
+--no_msgs Count (-n)                Send Count messages
+--cq_poll OnOff                     Set polling mode on/off
+  --loc_cq_poll OnOff (-lcp)        Set local polling mode on/off
+  --rem_cq_poll OnOff (-rcp)        Set remote polling mode on/off
+  -cp1                              Turn polling mode on
+  -lcp1                             Turn local polling mode on
+  -rcp1                             Turn remote polling mode on
+--ip_port Port (-ip)                Set TCP port used for tests
+--precision Digits (-e)             Set precision reported
+--rd_atomic Max (-nr)               Set RDMA read/atomic count
+    --loc_rd_atomic Max (-lnr)      Set local RDMA read/atomic count
+    --rem_rd_atomic Max (-rnr)      Set remote RDMA read/atomic count
+--service_level SL (-sl)            Set service level
+  --service_level SL (-lsl)         Set local service level
+  --service_level SL (-rsl)         Set remote service level
+--sock_buf_size Size (-sb)          Set socket buffer size
+  --loc_sock_buf_size Size (-lsb)   Set local socket buffer size
+  --rem_sock_buf_size Size (-rsb)   Set remote socket buffer size
+--src_path_bits num (-sp)           Set source path bits
+  --loc_src_path_bits num (-lsp)    Set local source path bits
+  --rem_src_path_bits num (-rsp)    Set remote source path bits
+--static_rate (-sr)                 Set IB static rate
+  --loc_static_rate (-lsr)          Set local IB static rate
+  --rem_static_rate (-rsr)          Set remote IB static rate
+--time Time (-t)                    Set test duration
+--timeout Time (-to)                Set timeout
+  --loc_timeout Time (-lto)         Set local timeout
+  --rem_timeout Time (-rto)         Set remote timeout
+--unify_nodes (-un)                 Unify nodes
+--unify_units (-uu)                 Unify units
+--use_bits_per_sec (-ub)            Use bits/sec rather than bytes/sec
+--use_cm OnOff (-cm)                Use RDMA Connection Manager or not
+  -cm1                              Use RDMA Connection Manager
+--verbose (-v)                      Verbose; turn on all of -v[cstu]
+  --verbose_conf (-vc)              Show configuration information
+  --verbose_stat (-vs)              Show statistical information
+  --verbose_time (-vt)              Show timing information
+  --verbose_used (-vu)              Show information on parameters
+  --verbose_more (-vv)              More verbose; turn on all of -v[CSTU]
+  --verbose_more_conf (-vvc)        Show more configuration information
+  --verbose_more_stat (-vvs)        Show more statistical information
+  --verbose_more_time (-vvt)        Show more timing information
+  --verbose_more_used (-vvu)        Show more information on parameters
+--version (-V)                      Print out version
+--wait_server Time (-ws)            Set time to wait for server
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf --help examples
++ grep 'In these examples'
+In these examples, we first run qperf on a node called myserver in server
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf --help options
+--access_recv OnOff (-ar)
+      If OnOff is non-zero, data is accessed once received.  Otherwise,
+      data is ignored.  By default, OnOff is 0.  This can help to mimic
+      some applications.
+  -ar1
+      Cause received data to be accessed.
+--alt_port Port (-ap)
+      Set alternate path port. This enables automatic path failover.
+  --loc_alt_port Port (-lap)
+      Set local alternate path port. This enables automatic path failover.
+  --rem_alt_port Port (-rap)
+      Set remote alternate path port. This enables automatic path failover.
+--cpu_affinity PN (-ca)
+      Set cpu affinity to PN.  CPUs are numbered sequentially from 0.  If
+      PN is "any", any cpu is allowed otherwise the cpu is limited to the
+      one specified.
+  --loc_cpu_affinity PN (-lca)
+      Set local processor affinity to PN.
+  --rem_cpu_affinity PN (-rca)
+      Set remote processor affinity to PN.
+--flip OnOff (-f)
+      If non-zero, cause sender and receiver to play opposite roles.
+  -f1
+      Cause sender and receiver to play opposite roles.
+--help Topic (-h)
+      Print out information about Topic.  To see the list of topics, type
+          qperf --help
+--host Host (-H)
+      Run test between the current node and the qperf running on node Host.
+      This can also be specified as the first non-option argument.
+--id Device:Port (-i)
+      Use RDMA Device and Port.
+  --loc_id Device:Port (-li)
+      Use local RDMA Device and Port.
+  --rem_id Device:Port (-ri)
+      Use remote RDMA Device and Port.
+--listen_port Port (-lp)
+      Set the port we listen on to ListenPort.  This must be set to the
+      same port on both the server and client machines.  The default value
+      is 19765.
+--loop Var:Init:Last:Incr (-oo)
+    Run a test multiple times sequencing through a series of values.  Var
+    is the loop variable; Init is the initial value; Last is the value it
+    must not exceed and Incr is the increment.  It is useful to set the
+    --verbose_used (-vu) option in conjunction with this option.
+--msg_size Size (-m)
+      Set the message size to Size.  The default value varies by test.  It
+      is assumed that the value is specified in bytes however, a trailing
+      kib or K, mib or M, or gib or G indicates that the size is being
+      specified in kibibytes, mebibytes or gibibytes respectively while a
+      trailing kb or k, mb or m, or gb or g indicates kilobytes, megabytes
+      or gigabytes respectively.
+--mtu_size Size (-mt)
+      Set the MTU size.  Only relevant to the RDMA UC/RC tests.  Units are
+      specified in the same manner as the --msg_size option.
+--no_msgs N (-n)
+    Set test duration by number of messages sent instead of time.
+--cq_poll OnOff (-cp)
+      Turn polling mode on or off.  This is only relevant to the RDMA tests
+      and determines whether they poll or wait on the completion queues.
+      If OnOff is 0, they wait; otherwise they poll.
+  --loc_cq_poll OnOff (-lcp)
+      Locally turn polling mode on or off.
+  --rem_cq_poll OnOff (-rcp)
+      Remotely turn polling mode on or off.
+  -cp1
+      Turn polling mode on.
+  -lcp1
+      Turn local polling mode on.
+  -rcp1
+      Turn remote polling mode on.
+--ip_port Port (-ip)
+      Use Port to run the socket tests.  This is different from
+      --listen_port which is used for synchronization.  This is only
+      relevant for the socket tests and refers to the TCP/UDP/SDP/RDS/SCTP
+      port that the test is run on.
+--precision Digits (-e)
+      Set the number of significant digits that are used to report results.
+--rd_atomic Max (-nr)
+      Set the number of in-flight operations that can be handled for a RDMA
+      read or atomic operation to Max.  This is only relevant to the RDMA
+      Read and Atomic tests.
+  --loc_rd_atomic Max (-lnr)
+      Set local read/atomic count.
+  --rem_rd_atomic Max (-rnr)
+      Set remote read/atomic count.
+--service_level SL (-sl)
+      Set RDMA service level to SL.  This is only used by the RDMA tests.
+      The service level must be between 0 and 15.  The default service
+      level is 0.
+  --loc_service_level SL (-lsl)
+      Set local service level.
+  --rem_service_level SL (-rsl)
+      Set remote service level.
+--sock_buf_size Size (-sb)
+      Set the socket buffer size.  This is only relevant to the socket
+      tests.
+  --loc_sock_buf_size Size (-lsb)
+      Set local socket buffer size.
+  --rem_sock_buf_size Size (-rsb)
+      Set remote socket buffer size.
+--src_path_bits N (-sp)
+      Set source path bits. If the LMC is not zero, this will cause the
+      connection to use a LID with the low order LMC bits set to N.
+  --loc_src_path_bits N (-lsp)
+      Set local source path bits.
+  --rem_src_path_bits N (-rsp)
+      Set remote source path bits.
+--static_rate Rate (-sr)
+      Force InfiniBand static rate.  Rate can be one of: 2.5, 5, 10, 20,
+      30, 40, 60, 80, 120, 1xSDR (2.5 Gbps), 1xDDR (5 Gbps), 1xQDR (10
+      Gbps), 4xSDR (2.5 Gbps), 4xDDR (5 Gbps), 4xQDR (10 Gbps), 8xSDR (2.5
+      Gbps), 8xDDR (5 Gbps), 8xQDR (10 Gbps).
+  --loc_static_rate (-lsr)
+      Force local InfiniBand static rate
+  --rem_static_rate (-rsr)
+      Force remote InfiniBand static rate
+--time Time (-t)
+      Set test duration to Time.  Specified in seconds however a trailing
+      m, h or d indicates that the time is specified in minutes, hours or
+      days respectively.
+--timeout Time (-to)
+      Set timeout to Time.  This is the timeout used for various things
+      such as exchanging messages.  The default is 5 seconds.
+  --loc_timeout Time (-lto)
+      Set local timeout to Time.  This may be used on the server to set
+      the timeout when initially exchanging data with each client.
+      However, as soon as we receive the client's parameters, the client's
+      remote timeout will override this parameter.
+  --rem_timeout Time (-rto)
+      Set remote timeout to Time.
+--unify_nodes (-un)
+      Unify the nodes.  Describe them in terms of local and remote rather
+      than send and receive.
+--unify_units (-uu)
+      Unify the units that results are shown in.  Uses the lowest common
+      denominator.  Helpful for scripts.
+--use_bits_per_sec (-ub)
+      Use bits/sec rather than bytes/sec when displaying networking speed.
+--use_cm OnOff (-cm)
+      Use the RDMA Connection Manager (CM) if OnOff is non-zero.  It is
+      necessary to use the CM for iWARP devices.  The default is to
+      establish the connection without using the CM.  This only works for
+      the tests that use the RC transport.
+  -cm1
+      Use RDMA Connection Manager.
+--verbose (-v)
+      Provide more detailed output.  Turns on -vc, -vs, -vt and -vu.
+  --verbose_conf (-vc)
+      Provide information on configuration.
+  --verbose_stat (-vs)
+      Provide information on statistics.
+  --verbose_time (-vt)
+      Provide information on timing.
+  --verbose_used (-vu)
+      Provide information on parameters used.
+  --verbose_more (-vv)
+      Provide even more detailed output.  Turns on -vvc, -vvs, -vvt and
+      -vvu.
+  --verbose_more_conf (-vvc)
+      Provide more information on configuration.
+  --verbose_more_stat (-vvs)
+      Provide more information on statistics.
+  --verbose_more_time (-vvt)
+      Provide more information on timing.
+  --verbose_more_used (-vvu)
+      Provide more information on parameters used.
+--version (-V)
+      The current version of qperf is printed.
+--wait_server Time (-ws)
+      If the server is not ready, continue to try connecting for Time
+      seconds before giving up.  The default is 5 seconds.
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf --version
++ grep qperf
+qperf 0.4.9
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ qperf --help
++ grep Synopsis
+Synopsis
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 20:16:25 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 4
++ test 4 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 20:16:26 2023 - ERROR - failed to execute the case.
++ exit 4
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 20:16:26 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpys1_dsr9 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpys1_dsr9
++ '[' 0 -ne 0 ']'
++ SSH_CMD 'systemctl start firewalld'
++ cmd='systemctl start firewalld'
++ remoteip=
++ remotepasswd='openEuler12#$'
++ remoteuser=root
++ timeout=300
++ connport=22
++ bash /root/mugen/libs/locallibs/sshcmd.sh -c 'systemctl start firewalld' -i '' -u root -p 'openEuler12#$' -t 300 -o 22
+Usage: sshcmd.sh -c "command" -i "remote machinet ip" [-u login_user] [-p login_password] [-o port] [-t timeout]+ ret=1
++ test 1 -ne 0
++ LOG_ERROR 'Failed in remote CMD operation:1'
++ message='Failed in remote CMD operation:1'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed in remote CMD operation:1'
+Tue Aug  8 20:16:38 2023 - ERROR - Failed in remote CMD operation:1
++ return 1
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 20:16:38 2023 - INFO  - End to restore the test environment.

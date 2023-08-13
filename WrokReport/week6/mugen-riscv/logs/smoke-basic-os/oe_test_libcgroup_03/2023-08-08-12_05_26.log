@@ -1,0 +1,133 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 12:05:28 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libcgroup
++ pkgs=libcgroup
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libcgroup --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpk6bmher7
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpk6bmher7
++ cgcreate -g cpu:test
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 12:05:58 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:05:58 2023 - INFO  - Start to run test.
++ cgexec -g cpu:test ip a
++ grep 10.0.2.15
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s2
++ CHECK_RESULT 0 0 0 'Failed to execute cgexec'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute cgexec'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ ping -q www.baidu.com
+PING www.a.shifen.com (110.242.68.4) 56(84) bytes of data.
+++ pgrep -f 'ping -q www.baidu.com'
++ ping_pid=22562
++ cgclassify -g cpu:test 22562
++ CHECK_RESULT 0 0 0 'Failed to execute cgclassify'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to execute cgclassify'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ grep 22562 /sys/fs/cgroup/cpu/test/tasks
+22562
++ CHECK_RESULT 0 0 0 'Failed to display pid'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to display pid'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ kill -9 22562
++ wc -l /sys/fs/cgroup/cpu/test/tasks
++ grep 0
+0 /sys/fs/cgroup/cpu/test/tasks
+oe_test_libcgroup_03.sh: line 29: 22562 Killed                  ping -q www.baidu.com
++ CHECK_RESULT 0 0 0 'File is not empty'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='File is not empty'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:06:03 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:06:03 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 12:06:04 2023 - INFO  - Start to restore the test environment.
++ cgdelete -g cpu:test
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpk6bmher7 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpk6bmher7
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 12:06:14 2023 - INFO  - End to restore the test environment.

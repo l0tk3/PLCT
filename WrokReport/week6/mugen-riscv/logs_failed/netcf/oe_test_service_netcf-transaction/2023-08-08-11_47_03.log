@@ -1,0 +1,590 @@
++ source ../common/common_lib.sh
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
++ main
+++ type -t post_test
+++ type -t post_test
++ '[' -n function ']'
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
++ rpm -qa
++ grep expect
+++ type -t config_params
+++ type -t config_params
++ '[' -n '' ']'
++ '[' -n '' ']'
+++ type -t pre_test
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ '[' -n function ']'
++ LOG_INFO 'Start environmental preparation.'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 11:47:05 2023 - INFO  - Start environmental preparation.
+Tue Aug  8 11:47:05 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL netcf
++ pkgs=netcf
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs netcf --node 1 --tempfile ''
++ DNF_INSTALL netcf
++ pkgs=netcf
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs netcf --node 1 --tempfile ''
++ tmpfile2=/tmp/tmprf6rjwaq
++ '[' -z '' ']'
++ tmpfile=/tmp/tmprf6rjwaq
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
++ tmpfile2='Last metadata expiration check: 14:45:28 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package          Architecture     Version                  Repository     Size
+================================================================================
+Installing:
+ netcf            riscv64          0.2.8-21.oe2309          base           75 k
+Installing dependencies:
+ augeas           riscv64          1.14.0-1.oe2309          base          396 k
+ libxslt          riscv64          1.1.38-1.oe2309          base          177 k
+
+Transaction Summary
+================================================================================
+Install  3 Packages
+
+Total size: 648 k
+Installed size: 2.0 M
+Downloading Packages:
+[SKIPPED] augeas-1.14.0-1.oe2309.riscv64.rpm: Already downloaded               
+[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] netcf-0.2.8-21.oe2309.riscv64.rpm: Already downloaded                
+Running transaction check
+Waiting for process with pid 484 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/augeas-1.14.0-1.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ '[' -z '' ']'
++ tmpfile='Last metadata expiration check: 14:45:28 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package          Architecture     Version                  Repository     Size
+================================================================================
+Installing:
+ netcf            riscv64          0.2.8-21.oe2309          base           75 k
+Installing dependencies:
+ augeas           riscv64          1.14.0-1.oe2309          base          396 k
+ libxslt          riscv64          1.1.38-1.oe2309          base          177 k
+
+Transaction Summary
+================================================================================
+Install  3 Packages
+
+Total size: 648 k
+Installed size: 2.0 M
+Downloading Packages:
+[SKIPPED] augeas-1.14.0-1.oe2309.riscv64.rpm: Already downloaded               
+[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] netcf-0.2.8-21.oe2309.riscv64.rpm: Already downloaded                
+Running transaction check
+Waiting for process with pid 484 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/augeas-1.14.0-1.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 11:47:44 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:47:44 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 11:47:44 2023 - INFO  - Start testing...
++ test_execution netcf-transaction.service
++ service=netcf-transaction.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 11:47:44'
++ test_restart netcf-transaction.service
++ service=netcf-transaction.service
++ systemctl restart netcf-transaction.service
+Tue Aug  8 11:47:45 2023 - INFO  - Start testing...
++ CHECK_RESULT 0 0 0 'netcf-transaction.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ test_execution netcf-transaction.service
++ service=netcf-transaction.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 11:47:45'
++ test_restart netcf-transaction.service
++ service=netcf-transaction.service
++ systemctl restart netcf-transaction.service
++ CHECK_RESULT 0 0 0 'netcf-transaction.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status netcf-transaction.service
++ grep 'Active: active'
+     Active: active (exited) since Tue 2023-08-08 11:47:45 CST; 5s ago
++ CHECK_RESULT 0 0 0 'netcf-transaction.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop netcf-transaction.service
++ CHECK_RESULT 0 0 0 'netcf-transaction.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status netcf-transaction.service
++ grep 'Active: active'
++ CHECK_RESULT 1 0 0 'netcf-transaction.service restart failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service restart failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'netcf-transaction.service restart failed'
++ LOG_ERROR 'netcf-transaction.service restart failed'
++ message='netcf-transaction.service restart failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'netcf-transaction.service restart failed'
+Tue Aug  8 11:47:51 2023 - ERROR - netcf-transaction.service restart failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 37'
++ message='../common/common_lib.sh line 37'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 37'
+Tue Aug  8 11:47:52 2023 - ERROR - ../common/common_lib.sh line 37
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl stop netcf-transaction.service
++ CHECK_RESULT 0 0 0 'netcf-transaction.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status netcf-transaction.service
++ grep 'Active: inactive'
+     Active: inactive (dead) since Tue 2023-08-08 11:47:51 CST; 5s ago
++ CHECK_RESULT 0 0 0 'netcf-transaction.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start netcf-transaction.service
++ CHECK_RESULT 0 0 0 'netcf-transaction.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status netcf-transaction.service
++ grep 'Active: inactive'
++ CHECK_RESULT 1 0 0 'netcf-transaction.service stop failed'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service stop failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'netcf-transaction.service stop failed'
++ LOG_ERROR 'netcf-transaction.service stop failed'
++ message='netcf-transaction.service stop failed'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'netcf-transaction.service stop failed'
+Tue Aug  8 11:47:58 2023 - ERROR - netcf-transaction.service stop failed
++ (( exec_result++ ))
++ LOG_ERROR '../common/common_lib.sh line 42'
++ message='../common/common_lib.sh line 42'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message '../common/common_lib.sh line 42'
+Tue Aug  8 11:47:59 2023 - ERROR - ../common/common_lib.sh line 42
++ '[' 0 -eq 1 ']'
++ return 0
++ systemctl start netcf-transaction.service
++ CHECK_RESULT 0 0 0 'netcf-transaction.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status netcf-transaction.service
++ grep 'Active: active'
+     Active: active (exited) since Tue 2023-08-08 11:47:57 CST; 5s ago
++ CHECK_RESULT 0 0 0 'netcf-transaction.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled netcf-transaction.service
++ service=netcf-transaction.service
+++ systemctl is-enabled netcf-transaction.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable netcf-transaction.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/netcf-transaction.service
++ find /etc/systemd/system/multi-user.target.wants/netcf-transaction.service
+find: ‘/etc/systemd/system/multi-user.target.wants/netcf-transaction.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'netcf-transaction.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='netcf-transaction.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable netcf-transaction.service
+Created symlink /etc/systemd/system/multi-user.target.wants/netcf-transaction.service → /usr/lib/systemd/system/netcf-transaction.service.
++ systemctl status netcf-transaction.service
++ grep 'Active: active'
++ find /etc/systemd/system/multi-user.target.wants/netcf-transaction.service
+/etc/systemd/system/multi-user.target.wants/netcf-transaction.service
++ CHECK_RESULT 0 0 0 'netcf-transaction.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-08-08 11:47:44' -u netcf-transaction.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+     Active: active (exited) since Tue 2023-08-08 11:47:57 CST; 9s ago
++ CHECK_RESULT 0 0 0 'netcf-transaction.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled netcf-transaction.service
++ service=netcf-transaction.service
+++ systemctl is-enabled netcf-transaction.service
++ CHECK_RESULT 1 0 1 'There is an error message for the log of netcf-transaction.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of netcf-transaction.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload netcf-transaction.service
++ service=netcf-transaction.service
++ systemctl start netcf-transaction.service
++ state=enabled
++ '[' enabled == enabled ']'
+++ systemctl disable netcf-transaction.service
+++ grep Removed
+++ awk '{print $2}'
+++ awk '{print substr($0,1,length($0)-1)}'
++ systemctl reload netcf-transaction.service
++ grep 'Job type reload is not applicable'
+Failed to reload netcf-transaction.service: Job type reload is not applicable for unit netcf-transaction.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit netcf-transaction.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit netcf-transaction.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status netcf-transaction.service
++ grep 'Active: active'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/netcf-transaction.service
++ find /etc/systemd/system/multi-user.target.wants/netcf-transaction.service
+find: ‘/etc/systemd/system/multi-user.target.wants/netcf-transaction.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'netcf-transaction.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='netcf-transaction.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ systemctl enable netcf-transaction.service
+     Active: active (exited) since Tue 2023-08-08 11:47:57 CST; 11s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Created symlink /etc/systemd/system/multi-user.target.wants/netcf-transaction.service → /usr/lib/systemd/system/netcf-transaction.service.
+Tue Aug  8 11:48:09 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 11:48:09 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
++ find /etc/systemd/system/multi-user.target.wants/netcf-transaction.service
+/etc/systemd/system/multi-user.target.wants/netcf-transaction.service
++ CHECK_RESULT 0 0 0 'netcf-transaction.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='netcf-transaction.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ journalctl --since '2023-08-08 11:47:45' -u netcf-transaction.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
+Tue Aug  8 11:48:10 2023 - INFO  - start environment cleanup.
++ systemctl stop netcf-transaction.service
++ CHECK_RESULT 1 0 1 'There is an error message for the log of netcf-transaction.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of netcf-transaction.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload netcf-transaction.service
++ service=netcf-transaction.service
++ systemctl start netcf-transaction.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmprf6rjwaq ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmprf6rjwaq
++ systemctl reload netcf-transaction.service
++ grep 'Job type reload is not applicable'
+Failed to reload netcf-transaction.service: Job type reload is not applicable for unit netcf-transaction.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit netcf-transaction.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit netcf-transaction.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status netcf-transaction.service
++ grep 'Active: active'
+     Active: active (exited) since Tue 2023-08-08 11:48:10 CST; 266ms ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 11:48:11 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 11:48:12 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 11:48:13 2023 - INFO  - start environment cleanup.
++ systemctl stop netcf-transaction.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z Last metadata expiration check: 14:45:28 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package          Architecture     Version                  Repository     Size
+================================================================================
+Installing:
+ netcf            riscv64          0.2.8-21.oe2309          base           75 k
+Installing dependencies:
+ augeas           riscv64          1.14.0-1.oe2309          base          396 k
+ libxslt          riscv64          1.1.38-1.oe2309          base          177 k
+
+Transaction Summary
+================================================================================
+Install  3 Packages
+
+Total size: 648 k
+Installed size: 2.0 M
+Downloading Packages:
+[SKIPPED] augeas-1.14.0-1.oe2309.riscv64.rpm: Already downloaded               
+[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] netcf-0.2.8-21.oe2309.riscv64.rpm: Already downloaded                
+Running transaction check
+Waiting for process with pid 484 to finish.
+[Errno 2] No such file or directory: '/var/cache/dnf/base-1e078561a1901b1e/packages/augeas-1.14.0-1.oe2309.riscv64.rpm'
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing 'dnf clean packages'. ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile 'Last metadata expiration check: 14:45:28 ago on Mon Aug  7 21:02:07 2023.
+Dependencies resolved.
+================================================================================
+ Package          Architecture     Version                  Repository     Size
+================================================================================
+Installing:
+ netcf            riscv64          0.2.8-21.oe2309          base           75 k
+Installing dependencies:
+ augeas           riscv64          1.14.0-1.oe2309          base          396 k
+ libxslt          riscv64          1.1.38-1.oe2309          base          177 k
+
+Transaction Summary
+================================================================================
+Install  3 Packages
+
+Total size: 648 k
+Installed size: 2.0 M
+Downloading Packages:
+[SKIPPED] augeas-1.14.0-1.oe2309.riscv64.rpm: Already downloaded               
+[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              
+[SKIPPED] netcf-0.2.8-21.oe2309.riscv64.rpm: Already downloaded                
+Running transaction check
+Waiting for process with pid 484 to finish.
+[Errno 2] No such file or directory: '\''/var/cache/dnf/base-1e078561a1901b1e/packages/augeas-1.14.0-1.oe2309.riscv64.rpm'\''
+The downloaded packages were saved in cache until the next successful transaction.
+You can remove cached packages by executing '\''dnf clean packages'\''.'
+Traceback (most recent call last):
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 192, in <module>
+    exitcode = rpm_remove(args.node, args.pkgs, args.tempfile)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/mugen/libs/locallibs/rpm_manage.py", line 163, in rpm_remove
+    with open(tmpfile, "r") as f:
+         ^^^^^^^^^^^^^^^^^^
+OSError: [Errno 36] File name too long: "Last metadata expiration check: 14:45:28 ago on Mon Aug  7 21:02:07 2023.\nDependencies resolved.\n================================================================================\n Package          Architecture     Version                  Repository     Size\n================================================================================\nInstalling:\n netcf            riscv64          0.2.8-21.oe2309          base           75 k\nInstalling dependencies:\n augeas           riscv64          1.14.0-1.oe2309          base          396 k\n libxslt          riscv64          1.1.38-1.oe2309          base          177 k\n\nTransaction Summary\n================================================================================\nInstall  3 Packages\n\nTotal size: 648 k\nInstalled size: 2.0 M\nDownloading Packages:\n[SKIPPED] augeas-1.14.0-1.oe2309.riscv64.rpm: Already downloaded               \n[SKIPPED] libxslt-1.1.38-1.oe2309.riscv64.rpm: Already downloaded              \n[SKIPPED] netcf-0.2.8-21.oe2309.riscv64.rpm: Already downloaded                \nRunning transaction check\nWaiting for process with pid 484 to finish.\n[Errno 2] No such file or directory: '/var/cache/dnf/base-1e078561a1901b1e/packages/augeas-1.14.0-1.oe2309.riscv64.rpm'\nThe downloaded packages were saved in cache until the next successful transaction.\nYou can remove cached packages by executing 'dnf clean packages'."
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 11:48:16 2023 - INFO  - Finish environment cleanup!

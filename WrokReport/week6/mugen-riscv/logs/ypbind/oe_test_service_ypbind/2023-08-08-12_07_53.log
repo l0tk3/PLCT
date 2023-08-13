@@ -1,0 +1,300 @@
++ source ../common/common_lib.sh
+++ source /root/mugen/libs/locallibs/common_lib.sh
++++ python3 --version
++++ '[' 0 -eq 0 ']'
++++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 12:07:55 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL 'ypbind ypserv'
++ pkgs='ypbind ypserv'
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs 'ypbind ypserv' --node 1 --tempfile ''
++ tmpfile2=/tmp/tmprwrhycdj
++ '[' -z '' ']'
++ tmpfile=/tmp/tmprwrhycdj
+++ hostname
++ host_name=openeuler-riscv64
++ systemctl start ypserv
++ systemctl start yppasswdd
+Job for yppasswdd.service failed because the control process exited with error code.
+See "systemctl status yppasswdd.service" and "journalctl -xeu yppasswdd.service" for details.
++ nisdomainname openeuler-riscv64
++ echo NISDOMAIN=openeuler-riscv64
++ echo '* : * : * : none'
++ sed -i 's/YPPASSWDD_ARGS=/YPPASSWDD_ARGS='\''--port 1012'\''/g' /etc/sysconfig/yppasswdd
++ touch /etc/netgroup /etc/publickey
++ echo -e 004
++ /usr/lib64/yp/ypinit -m
+
+At this point, we have to construct a list of the hosts which will run NIS
+servers.  openeuler-riscv64 is in the list of NIS server hosts.  Please continue to add
+the names for the other hosts, one per line.  When you are done with the
+list, type a <control D>.
+	next host to add:  openeuler-riscv64
+	next host to add:  	next host to add:  
+The current list of NIS servers looks like this:
+
+openeuler-riscv64
+004
+
+Is this correct?  [y/n: y]  We need a few minutes to build the databases...
+Building /var/yp/openeuler-riscv64/ypservers...
+Running /var/yp/Makefile...
+gmake[1]: Entering directory '/var/yp/openeuler-riscv64'
+egrep: warning: egrep is obsolescent; using grep -E
+Updating passwd.byname...
+egrep: warning: egrep is obsolescent; using grep -E
+Updating passwd.byuid...
+egrep: warning: egrep is obsolescent; using grep -E
+Updating group.byname...
+egrep: warning: egrep is obsolescent; using grep -E
+Updating group.bygid...
+Updating hosts.byname...
+Updating hosts.byaddr...
+Updating rpc.byname...
+Updating rpc.bynumber...
+Updating services.byname...
+Updating services.byservicename...
+Updating netid.byname...
+Updating protocols.bynumber...
+Updating protocols.byname...
+Updating netgroup...
+Updating netgroup.byhost...
+Updating netgroup.byuser...
+Updating mail.aliases...
+Updating shadow.byname... Ignored -> merged with passwd
+Updating publickey.byname...
+gmake[1]: Leaving directory '/var/yp/openeuler-riscv64'
+
+openeuler-riscv64 has been set up as a NIS master server.
+
+Now you can run ypinit -s openeuler-riscv64 on all slave server.
++ systemctl restart ypserv
++ systemctl restart yppasswdd
++ echo 'domain openeuler-riscv64 server localhost'
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 12:09:21 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 12:09:22 2023 - INFO  - Start testing...
++ test_execution ypbind.service
++ service=ypbind.service
+++ date '+%Y-%m-%d %T'
++ log_time='2023-08-08 12:09:22'
++ test_restart ypbind.service
++ service=ypbind.service
++ systemctl restart ypbind.service
++ CHECK_RESULT 0 0 0 'ypbind.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ypbind.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ypbind.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 12:09:23 CST; 5s ago
++ CHECK_RESULT 0 0 0 'ypbind.service restart failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ypbind.service restart failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl stop ypbind.service
++ CHECK_RESULT 0 0 0 'ypbind.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ypbind.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ypbind.service
++ grep 'Active: inactive'
+     Active: inactive (dead) since Tue 2023-08-08 12:09:29 CST; 5s ago
++ CHECK_RESULT 0 0 0 'ypbind.service stop failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ypbind.service stop failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl start ypbind.service
++ CHECK_RESULT 0 0 0 'ypbind.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ypbind.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ SLEEP_WAIT 5
++ wait_time=5
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 5 --cmd '' --mode 1
++ systemctl status ypbind.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 12:09:36 CST; 5s ago
++ CHECK_RESULT 0 0 0 'ypbind.service start failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ypbind.service start failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test_enabled ypbind.service
++ service=ypbind.service
+++ systemctl is-enabled ypbind.service
++ state=disabled
++ '[' disabled == enabled ']'
++ '[' disabled == disabled ']'
+++ systemctl enable ypbind.service
+++ grep 'Created symlink'
+++ awk '{print $3}'
++ symlink_file=/etc/systemd/system/multi-user.target.wants/ypbind.service
++ find /etc/systemd/system/multi-user.target.wants/ypbind.service
+/etc/systemd/system/multi-user.target.wants/ypbind.service
++ CHECK_RESULT 0 0 0 'ypbind.service enable failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='ypbind.service enable failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl disable ypbind.service
+Removed /etc/systemd/system/multi-user.target.wants/ypbind.service.
++ find /etc/systemd/system/multi-user.target.wants/ypbind.service
+find: ‘/etc/systemd/system/multi-user.target.wants/ypbind.service’: No such file or directory
++ CHECK_RESULT 1 0 1 'ypbind.service disable failed'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='ypbind.service disable failed'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ journalctl --since '2023-08-08 12:09:22' -u ypbind.service
++ grep -i 'fail\|error'
++ grep -v -i 'DEBUG\|INFO\|WARNING'
++ CHECK_RESULT 1 0 1 'There is an error message for the log of ypbind.service'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='There is an error message for the log of ypbind.service'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ test_reload ypbind.service
++ service=ypbind.service
++ systemctl start ypbind.service
++ systemctl reload ypbind.service
++ grep 'Job type reload is not applicable'
+Failed to reload ypbind.service: Job type reload is not applicable for unit ypbind.service.
++ CHECK_RESULT 0 0 0 'Job type reload is not applicable for unit ypbind.service'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Job type reload is not applicable for unit ypbind.service'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ systemctl status ypbind.service
++ grep 'Active: active'
+     Active: active (running) since Tue 2023-08-08 12:09:36 CST; 9s ago
++ LOG_INFO 'Finish test!'
++ message='Finish test!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish test!'
+Tue Aug  8 12:09:46 2023 - INFO  - Finish test!
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 12:09:47 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 12:09:47 2023 - INFO  - start environment cleanup.
++ sed -i '/^NISDOMAIN=openeuler-riscv64$/d' /etc/sysconfig/network
++ sed -i '$d' /etc/ypserv.conf
++ sed -i 's/YPPASSWDD_ARGS='\''--port 1012'\''/YPPASSWDD_ARGS=/g' /etc/sysconfig/yppasswdd
++ sed -i '/^domain openeuler-riscv64 server localhost$/d' /etc/yp.conf
++ systemctl stop ypserv
++ systemctl stop yppasswdd
++ systemctl stop ypbind.service
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmprwrhycdj ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmprwrhycdj
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 12:10:01 2023 - INFO  - Finish environment cleanup!

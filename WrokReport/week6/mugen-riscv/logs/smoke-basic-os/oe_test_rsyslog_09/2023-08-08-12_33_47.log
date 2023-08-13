@@ -1,0 +1,428 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n '' ']'
++ trap POST_TEST_DEFAULT EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n '' ']'
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 12:33:49 2023 - INFO  - Start to run test.
++ flag=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:33:50 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:33:50 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:33:54 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:33:55 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:33:59 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:33:59 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:34:03 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:34:04 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:34:08 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:34:08 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:34:13 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:34:13 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:34:17 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:34:18 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:34:22 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:34:22 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ systemctl restart rsyslog
+Failed to restart rsyslog.service: Unit rsyslog.service not found.
++ CHECK_RESULT 5 0 0 'Failed to restart rsyslog'
++ actual_result=5
++ expect_result=0
++ mode=0
++ error_log='Failed to restart rsyslog'
++ exit_mode=0
++ '[' -z 5 ']'
++ '[' 0 -eq 0 ']'
++ test 5x '!=' 0x
++ test -n 'Failed to restart rsyslog'
++ LOG_ERROR 'Failed to restart rsyslog'
++ message='Failed to restart rsyslog'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to restart rsyslog'
+Tue Aug  8 12:34:27 2023 - ERROR - Failed to restart rsyslog
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_rsyslog_09.sh line 27'
++ message='oe_test_rsyslog_09.sh line 27'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_rsyslog_09.sh line 27'
+Tue Aug  8 12:34:27 2023 - ERROR - oe_test_rsyslog_09.sh line 27
++ '[' 0 -eq 1 ']'
++ return 0
++ SLEEP_WAIT 3
++ wait_time=3
++ cmd=
++ mode=1
++ python3 /root/mugen/libs/locallibs/sleep_wait.py --time 3 --cmd '' --mode 1
++ tail -n 10 /var/log/messages
++ grep rsyslog
++ grep -iE 'fail|erro'
++ CHECK_RESULT 1 0 1 'Failure information exists in the log'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='Failure information exists in the log'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ let flag+=1
++ (( flag < 10 ))
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 12:34:31 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 9
++ test 9 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 12:34:32 2023 - ERROR - failed to execute the case.
++ exit 9
++ POST_TEST_DEFAULT
++ LOG_INFO 'oe_test_rsyslog_09.sh post_test'
++ message='oe_test_rsyslog_09.sh post_test'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'oe_test_rsyslog_09.sh post_test'
+Tue Aug  8 12:34:32 2023 - INFO  - oe_test_rsyslog_09.sh post_test

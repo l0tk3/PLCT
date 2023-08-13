@@ -1,0 +1,206 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environmental preparation.'
++ message='Start environmental preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environmental preparation.'
+Tue Aug  8 09:52:28 2023 - INFO  - Start environmental preparation.
++ DNF_INSTALL patchutils
++ pkgs=patchutils
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs patchutils --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpg9a9b7qw
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpg9a9b7qw
++ mkdir patchutils
++ cd patchutils
++ cp ../common/1.csv ../common/1.txt ../common/2.txt ../common/3.txt ../common/t1.html ./
++ diff -Naur 2.txt 3.txt
++ gzip 1.txt
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 09:52:58 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 09:52:58 2023 - INFO  - Start to run test.
++ filterdiff -# 1 test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check filterdiff -# 1 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff -# 1 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff --hunks=1 test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check filterdiff --hunks=1 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff --hunks=1 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff -F 1 --lines=-5 test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check filterdiff -F 1 --lines=-5 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff -F 1 --lines=-5 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff --files=1 --lines=-5 test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check filterdiff --files=1 --lines=-5 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff --files=1 --lines=-5 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff --annotate --lines=-5 test2.patch
++ grep '@@ -1,2 +1,4 @@ Hunk'
+@@ -1,2 +1,4 @@ Hunk #1, 2.txt
++ CHECK_RESULT 0 0 0 'Check filterdiff --annotate --lines=-5 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff --annotate --lines=-5 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff --as-numbered-lines=before --lines=-5 test2.patch
++ grep :aaa
+1	:aaa
++ CHECK_RESULT 0 0 0 'Check filterdiff --as-numbered-lines=before --lines=-5 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff --as-numbered-lines=before --lines=-5 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff --format=context --lines=-5 test2.patch
++ grep '*** 1,2'
+*** 1,2 ****
++ CHECK_RESULT 0 0 0 'Check filterdiff --format=context --lines=-5 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff --format=context --lines=-5 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff --remove-timestamps --lines=-5 test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check filterdiff --remove-timestamps --lines=-5 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff --remove-timestamps --lines=-5 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff --clean --lines=-5 test2.patch
++ grep '@@ -1,2 +1,4 @@'
+@@ -1,2 +1,4 @@
++ CHECK_RESULT 0 0 0 'Check filterdiff --clean --lines=-5 test2.patch  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff --clean --lines=-5 test2.patch  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ filterdiff -z 1.txt.gz
++ CHECK_RESULT 0 0 0 'Check filterdiff -z 1.txt.gz  failed'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Check filterdiff -z 1.txt.gz  failed'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:52:59 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:53:00 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 09:53:00 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpg9a9b7qw ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpg9a9b7qw
++ '[' 0 -ne 0 ']'
++ cd ..
++ rm -rf patchutils
++ LOG_INFO 'Finish restore the test environment.'
++ message='Finish restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restore the test environment.'
+Tue Aug  8 09:53:08 2023 - INFO  - Finish restore the test environment.

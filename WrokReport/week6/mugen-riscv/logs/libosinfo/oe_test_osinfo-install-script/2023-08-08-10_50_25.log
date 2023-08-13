@@ -1,0 +1,189 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 10:50:28 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL libosinfo
++ pkgs=libosinfo
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs libosinfo --node 1 --tempfile ''
++ tmpfile2=/tmp/tmp64nf6639
++ '[' -z '' ']'
++ tmpfile=/tmp/tmp64nf6639
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Tue Aug  8 10:51:13 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:51:13 2023 - INFO  - Start to run test.
++ osinfo-install-script --help
++ grep -E 'Usage:|osinfo-install-script \[OPTION…\]'
+Usage:
+  osinfo-install-script [OPTION…] - Generate an OS install script
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ osinfo-install-script --profile jeos --config l10n-timezone=GMT --config l10n-keyboard=uk --config l10n-language=en_GB --config admin-password=123456 --config user-login=berrange --config user-password=123456 --config 'user-realname=Daniel P Berrange' fedora16
+
+** (osinfo-install-script:817): WARNING **: 10:51:14.194: When setting user or admin password, use --config-file instead.
+
+
+** (osinfo-install-script:817): WARNING **: 10:51:14.196: When setting user or admin password, use --config-file instead.
+
+fedora.ks
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f fedora.ks
++ rm -rf fedora.ks
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ mkdir testdir
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ osinfo-install-script --profile jeos --config l10n-timezone=GMT --config l10n-keyboard=uk --config l10n-language=en_GB --config admin-password=123456 --config user-login=berrange --config user-password=123456 --config 'user-realname=Daniel P Berrange' fedora16 --output-dir testdir/
+
+** (osinfo-install-script:825): WARNING **: 10:51:25.177: When setting user or admin password, use --config-file instead.
+
+
+** (osinfo-install-script:825): WARNING **: 10:51:25.179: When setting user or admin password, use --config-file instead.
+
+fedora.ks
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f testdir/fedora.ks
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ osinfo-install-script --profile jeos --config l10n-timezone=GMT --config l10n-keyboard=uk --config l10n-language=en_GB --config admin-password=123456 --config user-login=berrange --config user-password=123456 --config 'user-realname=Daniel P Berrange' fedora16 -q
+
+** (osinfo-install-script:833): WARNING **: 10:51:36.699: When setting user or admin password, use --config-file instead.
+
+
+** (osinfo-install-script:833): WARNING **: 10:51:36.701: When setting user or admin password, use --config-file instead.
+
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -f fedora.ks
++ CHECK_RESULT 0
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log=
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 10:51:46 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 10:51:47 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:51:48 2023 - INFO  - Start to restore the test environment.
+++ ls
+++ grep -v .sh
++ roc='fedora.ks
+fedora.ks~
+testdir'
++ rm -rf fedora.ks fedora.ks~ testdir
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmp64nf6639 ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmp64nf6639
++ '[' 0 -ne 0 ']'
++ LOG_INFO 'Finish restoring the test environment.'
++ message='Finish restoring the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish restoring the test environment.'
+Tue Aug  8 10:52:03 2023 - INFO  - Finish restoring the test environment.

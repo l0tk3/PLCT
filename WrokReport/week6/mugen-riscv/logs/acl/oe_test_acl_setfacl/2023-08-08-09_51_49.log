@@ -1,0 +1,448 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n function ']'
++ config_params
++ myfilelist='myacl f f-M f-set f-set-file f-mask f-n f-b factual f-test'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 09:51:52 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL acl
++ pkgs=acl
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs acl --node 1 --tempfile ''
+Tue Aug  8 09:52:00 2023 - INFO  - pkgs:(acl) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ mkdir -p dir/subdir dir2/subdir2
++ touch myacl f f-M f-set f-set-file f-mask f-n f-b factual f-test
++ ln -s factual filelink
+++ whoami
++ uid=root
+++ id -gn
++ gid=root
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 09:52:00 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 09:52:01 2023 - INFO  - Start to run test.
++ getfacl f
++ grep -e '^mask::' -c
++ grep -q 0
++ setfacl -m m::rx f
++ getfacl f
++ grep -qe '^mask::r-x'
++ CHECK_RESULT 0 0 0 'L67: -m No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L67: -m No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo m::rx
++ getfacl f-M
++ grep -e '^mask::' -c
++ grep -q 0
++ setfacl -Mmyacl f-M
++ getfacl f-M
++ grep -qe '^mask::r-x'
++ CHECK_RESULT 0 0 0 'L73: -M No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L73: -M No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -x m f
++ getfacl f
++ grep -e '^mask:' -c
++ grep -q 0
++ CHECK_RESULT 0 0 0 'L77: -x No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L77: -x No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ echo m
++ setfacl -Xmyacl f-M
++ getfacl f-M
++ grep -e '^mask:' -c
++ grep -q 0
++ CHECK_RESULT 0 0 0 'L82: -X No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L82: -X No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl f-b
++ grep -e '^group:root:' -e '^mask::' -c
++ grep -q 0
++ setfacl -m g:root:rw,m::rx f-b
++ getfacl f-b
++ grep -e '^group:root:rw-' -e '^mask::r-x' -c
++ grep -q 2
++ setfacl -b f-b
++ getfacl f-b
++ grep -e '^group:root:' -e '^mask::' -c
++ grep -q 0
++ CHECK_RESULT 0 0 0 'L90: -b No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L90: -b No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl f-set
++ grep -qe '^user::rw-$ -e ^group::r--$' -e '^other::r--$'
++ setfacl --set u::rw,g::rw,o::rw f-set
++ getfacl f-set
++ grep -qe '^user::rw-$ -e ^group::rw-$' -e '^other::rw-$'
++ CHECK_RESULT 0 0 0 'L96: --set No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L96: --set No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat
++ [[ 0 == 0 ]]
++ getfacl f-set-file
++ grep -qe '^user::rw-$ -e ^group::r--$' -e '^other::r--$'
++ setfacl --set-file=acl f-set-file
++ getfacl f-set-file
++ grep -qe '^user::rw-$ -e ^group::rw-$' -e '^other::rw-$'
++ CHECK_RESULT 0 0 0 'L107: --set-file No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L107: --set-file No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -m m::wx f
++ getfacl f
++ grep -qe '^mask::-wx$'
++ setfacl --mask -m m::- f
++ getfacl f
++ grep -qe '^mask::r--$'
++ CHECK_RESULT 0 0 0 'L112: --mask No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L112: --mask No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -m m::wx f-n
++ getfacl f-n
++ grep -qe '^mask::-wx$'
++ setfacl -n -m m::- f-n
++ getfacl f-n
++ grep -qe '^mask::---'
++ CHECK_RESULT 0 0 0 'L117: -n No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L117: -n No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl dir/subdir
++ grep -e '^default:' -c
++ grep -q 0
++ setfacl -d -m user:root:rwx dir/subdir
++ getfacl dir/subdir
++ grep -qe '^default:' -c
++ CHECK_RESULT 0 0 0 'L123: -d No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L123: -d No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -k dir/subdir
++ getfacl dir/subdir
++ grep -e '^default:' -c
++ grep -q 0
++ CHECK_RESULT 0 0 0 'L128: -k No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L128: -k No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl -R dir2
++ grep -e '^mask::' -c
++ grep -q 0
++ setfacl -R -m m::rw dir2
++ getfacl -R dir2
++ grep -e '^mask::rw-' -c
++ grep -q 2
++ CHECK_RESULT 0 0 0 'L133: -m No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L133: -m No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl factual
++ grep -e '^mask::' -c
++ grep -q 0
++ setfacl -L -m m::rx filelink
++ getfacl factual
++ grep -qe '^mask::r-x'
++ CHECK_RESULT 0 0 0 'L138: -L No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L138: -L No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -P -m m::- filelink
++ getfacl factual
++ grep -qe '^mask::r-x'
++ CHECK_RESULT 0 0 0 'L143: -P No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L143: -P No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cat
++ read -d '' myaclold
+++ getfacl -R dir2
++ read -d '' myacl
+++ cat acl
++ [[ x# file: dir2
+# owner: root
+# group: root
+user::rwx
+group::r-x	#effective:r--
+mask::rw-
+other::r-x
+
+# file: dir2/subdir2
+# owner: root
+# group: root
+user::rwx
+group::r-x	#effective:r--
+mask::rw-
+other::r-x != x ]]
++ [[ x# file: dir2
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: dir2/subdir2
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x != x ]]
++ [[ # file: dir2
+# owner: root
+# group: root
+user::rwx
+group::r-x	#effective:r--
+mask::rw-
+other::r-x
+
+# file: dir2/subdir2
+# owner: root
+# group: root
+user::rwx
+group::r-x	#effective:r--
+mask::rw-
+other::r-x != # file: dir2
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: dir2/subdir2
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x ]]
++ setfacl --restore acl
++ read -d '' myaclnew
+++ getfacl -R dir2
++ [[ x1628myaclnew != x ]]
++ [[ # file: dir2
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: dir2/subdir2
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x == # file: dir2
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: dir2/subdir2
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x ]]
++ CHECK_RESULT 0 0 0 'L167: --restore No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L167: --restore No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ getfacl f-test
++ grep -e '^mask::' -c
++ grep -q 0
++ setfacl --test -m m::- f-test
+f-test: u::rw-,g::r--,m::---,o::r--,*
++ getfacl f-test
++ grep -e '^mask::' -c
++ grep -q 0
++ CHECK_RESULT 0 0 0 'L172: -test No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L172: -test No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -v
++ grep -qe '^setfacl [[:digit:]]'
++ CHECK_RESULT 0 0 0 'L176: -v No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L176: -v No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ setfacl -h
++ grep -qe '^Usage: setfacl'
++ CHECK_RESULT 0 0 0 'L180: -h No Pass'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='L180: -h No Pass'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:52:04 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:52:04 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 09:52:05 2023 - INFO  - Start to restore the test environment.
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 09:52:06 2023 - WARN  - no thing to do.
++ return 0
++ rm -rf dir dir2 acl filelink myacl f f-M f-set f-set-file f-mask f-n f-b factual f-test
++ LOG_INFO 'End to restore the test environment.'
++ message='End to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to restore the test environment.'
+Tue Aug  8 09:52:06 2023 - INFO  - End to restore the test environment.

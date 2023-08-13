@@ -1,0 +1,178 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 09:52:24 2023 - INFO  - Start to prepare the test environment.
++ useradd test1
++ useradd test2
++ echo 'test1:deepin12#$'
++ chpasswd
++ echo 'test2:deepin12#$'
++ chpasswd
++ chmod 755 /home/test1
++ chmod 755 /home/test2
++ LOG_INFO 'End to prepare the test environment.'
++ message='End to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to prepare the test environment.'
+Tue Aug  8 09:52:26 2023 - INFO  - End to prepare the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'start to run test.'
++ message='start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start to run test.'
+Tue Aug  8 09:52:27 2023 - INFO  - start to run test.
++ su - test1 -c 'echo '\''uname -a'\'' > /home/test1/testfile'
++ CHECK_RESULT 0 0 0 'test1 creat testfile fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test1 creat testfile fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - test1 -c 'chmod 000 /home/test1/testfile'
++ CHECK_RESULT 0 0 0 'test1 set testfile permission fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test1 set testfile permission fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - test2 -c 'bash /home/test1/testfile'
+bash: /home/test1/testfile: Permission denied
++ CHECK_RESULT 126 0 1 'test2 should be not execute testfile'
++ actual_result=126
++ expect_result=0
++ mode=1
++ error_log='test2 should be not execute testfile'
++ exit_mode=0
++ '[' -z 126 ']'
++ '[' 1 -eq 0 ']'
++ test 126x == 0x
++ return 0
++ su - test2 -c 'cat /home/test1/testfile'
+cat: /home/test1/testfile: Permission denied
++ CHECK_RESULT 1 0 1 'test2 should be not read testfile'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='test2 should be not read testfile'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ su - test1 -c 'setfacl -m u:test2:r-x /home/test1/testfile'
++ CHECK_RESULT 0 0 0 'set permission which permit test2 to rx fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='set permission which permit test2 to rx fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - test2 -c 'bash /home/test1/testfile'
+Linux openeuler-riscv64 6.4.0-1.0.0.4.oe2309.riscv64 #1 SMP Wed Jul 26 01:59:42 UTC 2023 riscv64 riscv64 riscv64 GNU/Linux
++ CHECK_RESULT 0 0 0 'test2 should be execute testfile'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test2 should be execute testfile'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - test2 -c 'cat /home/test1/testfile'
+uname -a
++ CHECK_RESULT 0 0 0 'test2 should be read testfile'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test2 should be read testfile'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - test2 -c 'echo '\''beijing'\''>>/home/test1/testfile'
+-bash: line 1: /home/test1/testfile: Permission denied
++ CHECK_RESULT 1 0 1 'test2 should be not write testfile'
++ actual_result=1
++ expect_result=0
++ mode=1
++ error_log='test2 should be not write testfile'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 1 -eq 0 ']'
++ test 1x == 0x
++ return 0
++ su - test1 -c 'setfacl -m u:test2:rwx /home/test1/testfile'
++ CHECK_RESULT 0 0 0 'set permission which permit test2 to rwx fail'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='set permission which permit test2 to rwx fail'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ su - test2 -c 'echo '\''beijing'\''>>/home/test1/testfile'
++ CHECK_RESULT 0 0 0 'test2 should be write testfile'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='test2 should be write testfile'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ LOG_INFO 'End to run test.'
++ message='End to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End to run test.'
+Tue Aug  8 09:52:44 2023 - INFO  - End to run test.
++ CASE_RESULT 0
++ case_re=0
++ test -z ''
++ test 0 -eq 0
++ LOG_INFO 'succeed to execute the case.'
++ message='succeed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'succeed to execute the case.'
+Tue Aug  8 09:52:44 2023 - INFO  - succeed to execute the case.
++ exec_result=
++ exit 0
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 09:52:45 2023 - INFO  - start environment cleanup.
++ userdel -rf test1
++ userdel -rf test2
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 09:52:46 2023 - INFO  - Finish environment cleanup!

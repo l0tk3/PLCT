@@ -1,0 +1,150 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start environment preparation.'
++ message='Start environment preparation.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start environment preparation.'
+Tue Aug  8 14:04:19 2023 - INFO  - Start environment preparation.
++ DNF_INSTALL e2fsprogs
++ pkgs=e2fsprogs
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs e2fsprogs --node 1 --tempfile ''
+Tue Aug  8 14:04:26 2023 - INFO  - pkgs:(e2fsprogs) is already installed
++ tmpfile2=
++ '[' -z '' ']'
++ tmpfile=
++ LOG_INFO 'End of environmental preparation!'
++ message='End of environmental preparation!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of environmental preparation!'
+Tue Aug  8 14:04:27 2023 - INFO  - End of environmental preparation!
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start testing...'
++ message='Start testing...'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start testing...'
+Tue Aug  8 14:04:27 2023 - INFO  - Start testing...
++ rpm -qa
++ grep e2fsprogs
+e2fsprogs-help-1.46.5-6.oe2309.noarch
+e2fsprogs-1.47.0-2.oe2309.riscv64
++ CHECK_RESULT 0 0 0 'Return value error'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Return value error'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ cd /tmp
++ dd if=/dev/zero of=/tmp/100k bs=1k count=100
+100+0 records in
+100+0 records out
+102400 bytes (102 kB, 100 KiB) copied, 0.0026033 s, 39.3 MB/s
++ mke2fs /tmp/100k
+mke2fs 1.47.0 (5-Feb-2023)
+Discarding device blocks:   0/100       done                            
+Creating filesystem with 100 1k blocks and 8 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+ext2fs_mkdir: Could not allocate inode in ext2 filesystem while creating /lost+found
++ file /tmp/100k
++ grep 'ext2 filesystem data' /tmp/100k_test1
++ CHECK_RESULT 1 0 0 'compile 100k_test1 fail'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='compile 100k_test1 fail'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'compile 100k_test1 fail'
++ LOG_ERROR 'compile 100k_test1 fail'
++ message='compile 100k_test1 fail'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'compile 100k_test1 fail'
+Tue Aug  8 14:04:29 2023 - ERROR - compile 100k_test1 fail
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mke2fs.sh line 36'
++ message='oe_test_mke2fs.sh line 36'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mke2fs.sh line 36'
+Tue Aug  8 14:04:29 2023 - ERROR - oe_test_mke2fs.sh line 36
++ '[' 0 -eq 1 ']'
++ return 0
++ mkdir /opt/test
++ mount /tmp/100k /opt/test
+mount: /opt/test: wrong fs type, bad option, bad superblock on /dev/loop0, missing codepage or helper program, or other error.
+       dmesg(1) may have more information after failed mount system call.
++ df -h
++ grep /opt/test
++ grep /dev/loop0 /tmp/100k_test2
++ CHECK_RESULT 1 0 0 'compile 100k_test2 error'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='compile 100k_test2 error'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'compile 100k_test2 error'
++ LOG_ERROR 'compile 100k_test2 error'
++ message='compile 100k_test2 error'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'compile 100k_test2 error'
+Tue Aug  8 14:04:34 2023 - ERROR - compile 100k_test2 error
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_mke2fs.sh line 41'
++ message='oe_test_mke2fs.sh line 41'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_mke2fs.sh line 41'
+Tue Aug  8 14:04:34 2023 - ERROR - oe_test_mke2fs.sh line 41
++ '[' 0 -eq 1 ']'
++ return 0
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 14:04:35 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'start environment cleanup.'
++ message='start environment cleanup.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'start environment cleanup.'
+Tue Aug  8 14:04:35 2023 - INFO  - start environment cleanup.
++ umount /opt/test
+umount: /opt/test: not mounted.
++ rm -rf /tmp/100k /tmp/100k_test1 /tmp/100k_test2
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z '' ]]
++ [[ -z '' ]]
++ LOG_WARN 'no thing to do.'
++ message='no thing to do.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level warn --message 'no thing to do.'
+Tue Aug  8 14:04:36 2023 - WARN  - no thing to do.
++ return 0
++ LOG_INFO 'Finish environment cleanup!'
++ message='Finish environment cleanup!'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish environment cleanup!'
+Tue Aug  8 14:04:37 2023 - INFO  - Finish environment cleanup!

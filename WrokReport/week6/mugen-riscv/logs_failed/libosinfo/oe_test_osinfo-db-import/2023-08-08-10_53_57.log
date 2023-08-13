@@ -1,0 +1,141 @@
++ source /root/mugen/libs/locallibs/common_lib.sh
+++ python3 --version
+++ '[' 0 -eq 0 ']'
+++ source /root/mugen/libs/locallibs/common_lib_python.sh
++ main
+++ type -t post_test
++ '[' -n function ']'
++ trap post_test EXIT INT HUP TERM
++ rpm -qa
++ grep expect
+++ type -t config_params
++ '[' -n '' ']'
+++ type -t pre_test
++ '[' -n function ']'
++ pre_test
++ LOG_INFO 'Start to prepare the test environment.'
++ message='Start to prepare the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to prepare the test environment.'
+Tue Aug  8 10:53:59 2023 - INFO  - Start to prepare the test environment.
++ DNF_INSTALL osinfo-db-tools
++ pkgs=osinfo-db-tools
++ node=1
++ '[' -z '' ']'
++ tmpfile=
+++ python3 /root/mugen/libs/locallibs/rpm_manage.py install --pkgs osinfo-db-tools --node 1 --tempfile ''
++ tmpfile2=/tmp/tmpvz_h2v0m
++ '[' -z '' ']'
++ tmpfile=/tmp/tmpvz_h2v0m
+++ pwd
++ pwd=/root/mugen/testcases/cli-test/libosinfo/oe_test_osinfo-db-import
++ LOG_INFO 'Finish preparing the test environment.'
++ message='Finish preparing the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Finish preparing the test environment.'
+Tue Aug  8 10:54:32 2023 - INFO  - Finish preparing the test environment.
+++ type -t run_test
++ '[' -n function ']'
++ run_test
++ LOG_INFO 'Start to run test.'
++ message='Start to run test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to run test.'
+Tue Aug  8 10:54:32 2023 - INFO  - Start to run test.
++ wget https://releases.pagure.org/libosinfo/osinfo-db-20230308.tar.xz
+--2023-08-08 10:54:32--  https://releases.pagure.org/libosinfo/osinfo-db-20230308.tar.xz
+Resolving releases.pagure.org (releases.pagure.org)... 8.43.85.76, 2620:52:3:1:dead:beef:cafe:fed8
+Connecting to releases.pagure.org (releases.pagure.org)|8.43.85.76|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 138760 (136K) [application/x-xz]
+Saving to: ‘osinfo-db-20230308.tar.xz.1’
+
+     0K .......... .......... .......... .......... .......... 36% 15.6K 5s
+    50K .......... .......... .......... .......... .......... 73% 11.3K 3s
+   100K .......... .......... .......... .....                100% 18.2K=9.6s
+
+2023-08-08 10:54:46 (14.2 KB/s) - ‘osinfo-db-20230308.tar.xz.1’ saved [138760/138760]
+
++ osinfo-db-import --local osinfo-db-20230308.tar.xz
+osinfo-db-import: cannot open archive /root/mugen/testcases/cli-test/libosinfo/oe_test_osinfo-db-import/osinfo-db-20230308.tar.xz: Failed to open '/root/mugen/testcases/cli-test/libosinfo/oe_test_osinfo-db-import/osinfo-db-20230308.tar.xz'
++ CHECK_RESULT 1 0 0 'Failed to import data'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Failed to import data'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Failed to import data'
++ LOG_ERROR 'Failed to import data'
++ message='Failed to import data'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Failed to import data'
+Tue Aug  8 10:54:46 2023 - ERROR - Failed to import data
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_osinfo-db-import.sh line 33'
++ message='oe_test_osinfo-db-import.sh line 33'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_osinfo-db-import.sh line 33'
+Tue Aug  8 10:54:47 2023 - ERROR - oe_test_osinfo-db-import.sh line 33
++ '[' 0 -eq 1 ']'
++ return 0
++ mkdir testdir
++ cd testdir
++ osinfo-db-export
++ CHECK_RESULT 0 0 0 'Failed to export data'
++ actual_result=0
++ expect_result=0
++ mode=0
++ error_log='Failed to export data'
++ exit_mode=0
++ '[' -z 0 ']'
++ '[' 0 -eq 0 ']'
++ test 0x '!=' 0x
++ return 0
++ test -e osinfo-db-20230331.tar.xz
++ CHECK_RESULT 1 0 0 'Export file does not exist'
++ actual_result=1
++ expect_result=0
++ mode=0
++ error_log='Export file does not exist'
++ exit_mode=0
++ '[' -z 1 ']'
++ '[' 0 -eq 0 ']'
++ test 1x '!=' 0x
++ test -n 'Export file does not exist'
++ LOG_ERROR 'Export file does not exist'
++ message='Export file does not exist'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'Export file does not exist'
+Tue Aug  8 10:54:55 2023 - ERROR - Export file does not exist
++ (( exec_result++ ))
++ LOG_ERROR 'oe_test_osinfo-db-import.sh line 39'
++ message='oe_test_osinfo-db-import.sh line 39'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'oe_test_osinfo-db-import.sh line 39'
+Tue Aug  8 10:54:56 2023 - ERROR - oe_test_osinfo-db-import.sh line 39
++ '[' 0 -eq 1 ']'
++ return 0
++ LOG_INFO 'End of the test.'
++ message='End of the test.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'End of the test.'
+Tue Aug  8 10:54:56 2023 - INFO  - End of the test.
++ CASE_RESULT 0
++ case_re=0
++ test -z 2
++ test 2 -gt 0
++ LOG_ERROR 'failed to execute the case.'
++ message='failed to execute the case.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level error --message 'failed to execute the case.'
+Tue Aug  8 10:54:57 2023 - ERROR - failed to execute the case.
++ exit 2
++ post_test
++ LOG_INFO 'Start to restore the test environment.'
++ message='Start to restore the test environment.'
++ python3 /root/mugen/libs/locallibs/mugen_log.py --level info --message 'Start to restore the test environment.'
+Tue Aug  8 10:54:57 2023 - INFO  - Start to restore the test environment.
++ cd /root/mugen/testcases/cli-test/libosinfo/oe_test_osinfo-db-import
++ rm -rf testdir osinfo-db-20230308.tar.xz
++ DNF_REMOVE
++ node=1
++ pkg_list=
++ mode=0
++ [[ -z /tmp/tmpvz_h2v0m ]]
++ '[' 0 -ne 0 ']'
++ '[' 1 == 0 ']'
++ python3 /root/mugen/libs/locallibs/rpm_manage.py remove --node 1 --pkgs '' --tempfile /tmp/tmpvz_h2v0m
